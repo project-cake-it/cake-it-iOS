@@ -1,5 +1,5 @@
 ---
-name: "2. Bug report \U0001F47E"
+name: "2. Bug report \U0001F6E0"
 about: 버그 이슈 등록
 title: ''
 labels: bug
@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## Describe the bug
+## Describe the bug 👾
 
 (버그에 관해서 설명해주세요)
 
