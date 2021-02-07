@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		38D8C71125BC622700C1F10D /* cake_itTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C71025BC622700C1F10D /* cake_itTests.swift */; };
 		38D8C71C25BC622700C1F10D /* cake_itUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C71B25BC622700C1F10D /* cake_itUITests.swift */; };
 		38D8C73025BC627F00C1F10D /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C72F25BC627F00C1F10D /* Order.storyboard */; };
+		BAE39D084B27C2AEF8CF70C2 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5FA7B0877090BFFC4DF174 /* Pods_cake_itTests.framework */; };
+		F5F81AEF6C89360AA25576C5 /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435C407F242C25DF57063C29 /* Pods_cake_it_cake_itUITests.framework */; };
+		F7566AD025CFEC98005F6CA6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7566ACF25CFEC98005F6CA6 /* LoginModel.swift */; };
+		F77E299E25C6980F0098D422 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E299D25C6980F0098D422 /* NetworkManager.swift */; };
+		F783C12F25CFF351004EB56E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783C12E25CFF351004EB56E /* BaseModel.swift */; };
+		FE6C5735106CC055DDBE3AF3 /* Pods_cake_it.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C09072CD9E89655EA622153 /* Pods_cake_it.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,18 @@
 		38D8C71B25BC622700C1F10D /* cake_itUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cake_itUITests.swift; sourceTree = "<group>"; };
 		38D8C71D25BC622700C1F10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38D8C72F25BC627F00C1F10D /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		3C6FB9750C4EC89C1AE2486E /* Pods-cake-itTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-itTests.debug.xcconfig"; path = "Target Support Files/Pods-cake-itTests/Pods-cake-itTests.debug.xcconfig"; sourceTree = "<group>"; };
+		435C407F242C25DF57063C29 /* Pods_cake_it_cake_itUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it_cake_itUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43D673855D0405E9662AF5DC /* Pods-cake-it-cake-itUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.debug.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C09072CD9E89655EA622153 /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CB3B33164C0074B09052F0B /* Pods-cake-itTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-itTests.release.xcconfig"; path = "Target Support Files/Pods-cake-itTests/Pods-cake-itTests.release.xcconfig"; sourceTree = "<group>"; };
+		81E3E8535A0C9E854B59A746 /* Pods-cake-it.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.debug.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.debug.xcconfig"; sourceTree = "<group>"; };
+		8C71B96970538B15D597BC65 /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CD5FA7B0877090BFFC4DF174 /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E92932AB6FCE3AFF54E6B82E /* Pods-cake-it.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.release.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.release.xcconfig"; sourceTree = "<group>"; };
+		F7566ACF25CFEC98005F6CA6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F77E299D25C6980F0098D422 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F783C12E25CFF351004EB56E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6C5735106CC055DDBE3AF3 /* Pods_cake_it.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAE39D084B27C2AEF8CF70C2 /* Pods_cake_itTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F81AEF6C89360AA25576C5 /* Pods_cake_it_cake_itUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +106,8 @@
 				38D8C70F25BC622700C1F10D /* cake-itTests */,
 				38D8C71A25BC622700C1F10D /* cake-itUITests */,
 				38D8C6F725BC622500C1F10D /* Products */,
+				768AB2F58D6502EDFCC43D20 /* Pods */,
+				8E45C8A58B76FF4CB3DD4882 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +124,7 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
+				F77E299C25C698020098D422 /* Network */,
 				38D8C72C25BC623100C1F10D /* Main */,
 				38D8C72D25BC623B00C1F10D /* Order */,
 				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
@@ -135,7 +159,6 @@
 			children = (
 				38D8C6FF25BC622500C1F10D /* Main.storyboard */,
 				38D8C73A25BC631900C1F10D /* Home */,
-				38D8C72E25BC626200C1F10D /* MyPage */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -148,19 +171,53 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
-		38D8C72E25BC626200C1F10D /* MyPage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyPage;
-			sourceTree = "<group>";
-		};
 		38D8C73A25BC631900C1F10D /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				38D8C6FD25BC622500C1F10D /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		768AB2F58D6502EDFCC43D20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81E3E8535A0C9E854B59A746 /* Pods-cake-it.debug.xcconfig */,
+				E92932AB6FCE3AFF54E6B82E /* Pods-cake-it.release.xcconfig */,
+				43D673855D0405E9662AF5DC /* Pods-cake-it-cake-itUITests.debug.xcconfig */,
+				8C71B96970538B15D597BC65 /* Pods-cake-it-cake-itUITests.release.xcconfig */,
+				3C6FB9750C4EC89C1AE2486E /* Pods-cake-itTests.debug.xcconfig */,
+				6CB3B33164C0074B09052F0B /* Pods-cake-itTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8E45C8A58B76FF4CB3DD4882 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C09072CD9E89655EA622153 /* Pods_cake_it.framework */,
+				435C407F242C25DF57063C29 /* Pods_cake_it_cake_itUITests.framework */,
+				CD5FA7B0877090BFFC4DF174 /* Pods_cake_itTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7566ACE25CFEC89005F6CA6 /* LoginTest */ = {
+			isa = PBXGroup;
+			children = (
+				F7566ACF25CFEC98005F6CA6 /* LoginModel.swift */,
+			);
+			path = LoginTest;
+			sourceTree = "<group>";
+		};
+		F77E299C25C698020098D422 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F783C12E25CFF351004EB56E /* BaseModel.swift */,
+				F77E299D25C6980F0098D422 /* NetworkManager.swift */,
+				F7566ACE25CFEC89005F6CA6 /* LoginTest */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38D8C72025BC622700C1F10D /* Build configuration list for PBXNativeTarget "cake-it" */;
 			buildPhases = (
+				E5C9B8CF41706E77AE539F9F /* [CP] Check Pods Manifest.lock */,
 				38D8C6F225BC622500C1F10D /* Sources */,
 				38D8C6F325BC622500C1F10D /* Frameworks */,
 				38D8C6F425BC622500C1F10D /* Resources */,
+				682968490E5801B47DF56DF0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +246,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38D8C72325BC622700C1F10D /* Build configuration list for PBXNativeTarget "cake-itTests" */;
 			buildPhases = (
+				E4A25430361390E3F331E8CA /* [CP] Check Pods Manifest.lock */,
 				38D8C70825BC622700C1F10D /* Sources */,
 				38D8C70925BC622700C1F10D /* Frameworks */,
 				38D8C70A25BC622700C1F10D /* Resources */,
@@ -205,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38D8C72625BC622700C1F10D /* Build configuration list for PBXNativeTarget "cake-itUITests" */;
 			buildPhases = (
+				E9C4289C6EFFD1D7AA86FDF3 /* [CP] Check Pods Manifest.lock */,
 				38D8C71325BC622700C1F10D /* Sources */,
 				38D8C71425BC622700C1F10D /* Frameworks */,
 				38D8C71525BC622700C1F10D /* Resources */,
+				0F12596101CF9641E4B2C6F0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -289,11 +351,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F12596101CF9641E4B2C6F0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		682968490E5801B47DF56DF0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4A25430361390E3F331E8CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cake-itTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C9B8CF41706E77AE539F9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cake-it-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9C4289C6EFFD1D7AA86FDF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cake-it-cake-itUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		38D8C6F225BC622500C1F10D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F783C12F25CFF351004EB56E /* BaseModel.swift in Sources */,
+				F77E299E25C6980F0098D422 /* NetworkManager.swift in Sources */,
+				F7566AD025CFEC98005F6CA6 /* LoginModel.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
@@ -469,11 +637,14 @@
 		};
 		38D8C72125BC622700C1F10D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81E3E8535A0C9E854B59A746 /* Pods-cake-it.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QKG65XDLX8;
 				INFOPLIST_FILE = "cake-it/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,11 +658,14 @@
 		};
 		38D8C72225BC622700C1F10D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E92932AB6FCE3AFF54E6B82E /* Pods-cake-it.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QKG65XDLX8;
 				INFOPLIST_FILE = "cake-it/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,6 +679,7 @@
 		};
 		38D8C72425BC622700C1F10D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C6FB9750C4EC89C1AE2486E /* Pods-cake-itTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -526,6 +701,7 @@
 		};
 		38D8C72525BC622700C1F10D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CB3B33164C0074B09052F0B /* Pods-cake-itTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -547,6 +723,7 @@
 		};
 		38D8C72725BC622700C1F10D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43D673855D0405E9662AF5DC /* Pods-cake-it-cake-itUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -566,6 +743,7 @@
 		};
 		38D8C72825BC622700C1F10D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C71B96970538B15D597BC65 /* Pods-cake-it-cake-itUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
