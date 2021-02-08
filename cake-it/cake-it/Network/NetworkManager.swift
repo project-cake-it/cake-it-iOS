@@ -19,13 +19,15 @@ class NetworkManager {
     init() { }
     
 
-    func requestGet(url: URL, completion: @escaping () -> Void) {
+    func requestGet(api: NetworkCommon.Api, completion: @escaping () -> Void) {
+        guard let url = URL(string: api.urlString) else { return }
         let request = AF.request(url)
         self.request(request: request, completion: completion)
     }
     
     
-    func requestPost(url: URL, param: BaseModel? = nil, completion: @escaping () -> Void) {
+    func requestPost(api: NetworkCommon.Api, param: BaseModel? = nil, completion: @escaping () -> Void) {
+        guard let url = URL(string: api.urlString) else { return }
         let headers: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json"]
         let request = AF.request(url,
                                  method: .post,
