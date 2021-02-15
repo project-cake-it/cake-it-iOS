@@ -10,12 +10,20 @@
 		38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C6F925BC622500C1F10D /* AppDelegate.swift */; };
 		38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C6FB25BC622500C1F10D /* SceneDelegate.swift */; };
 		38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C6FD25BC622500C1F10D /* HomeViewController.swift */; };
-		38D8C70125BC622500C1F10D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C6FF25BC622500C1F10D /* Main.storyboard */; };
+		38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */; };
 		38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C70225BC622700C1F10D /* Assets.xcassets */; };
 		38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */; };
 		38D8C71125BC622700C1F10D /* cake_itTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C71025BC622700C1F10D /* cake_itTests.swift */; };
 		38D8C71C25BC622700C1F10D /* cake_itUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C71B25BC622700C1F10D /* cake_itUITests.swift */; };
-		38D8C73025BC627F00C1F10D /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C72F25BC627F00C1F10D /* Order.storyboard */; };
+		8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3AF14525DAE16A00B9F48D /* Home.storyboard */; };
+		8B875CF625DAE61D003D9CFA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875CF525DAE61D003D9CFA /* Search.storyboard */; };
+		8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */; };
+		8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D0925DAE6B3003D9CFA /* Shops.storyboard */; };
+		8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */; };
+		8B875D1B25DAE747003D9CFA /* SavedItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D1A25DAE747003D9CFA /* SavedItem.storyboard */; };
+		8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */; };
+		8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D2E25DAE836003D9CFA /* MyPage.storyboard */; };
+		8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +48,7 @@
 		38D8C6F925BC622500C1F10D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D8C6FB25BC622500C1F10D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		38D8C6FD25BC622500C1F10D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		38D8C70025BC622500C1F10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38D8C70025BC622500C1F10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabbar.storyboard; sourceTree = "<group>"; };
 		38D8C70225BC622700C1F10D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38D8C70525BC622700C1F10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38D8C70725BC622700C1F10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -50,7 +58,15 @@
 		38D8C71725BC622700C1F10D /* cake-itUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cake-itUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D8C71B25BC622700C1F10D /* cake_itUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cake_itUITests.swift; sourceTree = "<group>"; };
 		38D8C71D25BC622700C1F10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38D8C72F25BC627F00C1F10D /* Order.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		8B3AF14525DAE16A00B9F48D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		8B875CF525DAE61D003D9CFA /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainViewController.swift; sourceTree = "<group>"; };
+		8B875D0925DAE6B3003D9CFA /* Shops.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shops.storyboard; sourceTree = "<group>"; };
+		8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopsMainViewController.swift; sourceTree = "<group>"; };
+		8B875D1A25DAE747003D9CFA /* SavedItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SavedItem.storyboard; sourceTree = "<group>"; };
+		8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemMainViewController.swift; sourceTree = "<group>"; };
+		8B875D2E25DAE836003D9CFA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +117,13 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
-				38D8C72C25BC623100C1F10D /* Main */,
-				38D8C72D25BC623B00C1F10D /* Order */,
-				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
-				38D8C6FB25BC622500C1F10D /* SceneDelegate.swift */,
+				8B3AF14425DADFD700B9F48D /* Base */,
+				38D8C73A25BC631900C1F10D /* Home */,
+				8B875CF425DAE602003D9CFA /* Search */,
+				8B875D0525DAE684003D9CFA /* Shops */,
+				8B875D1625DAE721003D9CFA /* Saved */,
+				8B875D2D25DAE7CD003D9CFA /* MyPage */,
 				38D8C70225BC622700C1F10D /* Assets.xcassets */,
-				38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */,
 				38D8C70725BC622700C1F10D /* Info.plist */,
 			);
 			path = "cake-it";
@@ -130,37 +147,60 @@
 			path = "cake-itUITests";
 			sourceTree = "<group>";
 		};
-		38D8C72C25BC623100C1F10D /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				38D8C6FF25BC622500C1F10D /* Main.storyboard */,
-				38D8C73A25BC631900C1F10D /* Home */,
-				38D8C72E25BC626200C1F10D /* MyPage */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		38D8C72D25BC623B00C1F10D /* Order */ = {
-			isa = PBXGroup;
-			children = (
-				38D8C72F25BC627F00C1F10D /* Order.storyboard */,
-			);
-			path = Order;
-			sourceTree = "<group>";
-		};
-		38D8C72E25BC626200C1F10D /* MyPage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MyPage;
-			sourceTree = "<group>";
-		};
 		38D8C73A25BC631900C1F10D /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8B3AF14525DAE16A00B9F48D /* Home.storyboard */,
 				38D8C6FD25BC622500C1F10D /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		8B3AF14425DADFD700B9F48D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */,
+				38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */,
+				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
+				38D8C6FB25BC622500C1F10D /* SceneDelegate.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		8B875CF425DAE602003D9CFA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8B875CF525DAE61D003D9CFA /* Search.storyboard */,
+				8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		8B875D0525DAE684003D9CFA /* Shops */ = {
+			isa = PBXGroup;
+			children = (
+				8B875D0925DAE6B3003D9CFA /* Shops.storyboard */,
+				8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */,
+			);
+			path = Shops;
+			sourceTree = "<group>";
+		};
+		8B875D1625DAE721003D9CFA /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				8B875D1A25DAE747003D9CFA /* SavedItem.storyboard */,
+				8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		8B875D2D25DAE7CD003D9CFA /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				8B875D2E25DAE836003D9CFA /* MyPage.storyboard */,
+				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +308,12 @@
 			files = (
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
-				38D8C70125BC622500C1F10D /* Main.storyboard in Resources */,
-				38D8C73025BC627F00C1F10D /* Order.storyboard in Resources */,
+				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
+				8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */,
+				8B875D1B25DAE747003D9CFA /* SavedItem.storyboard in Resources */,
+				8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */,
+				8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */,
+				8B875CF625DAE61D003D9CFA /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +340,11 @@
 			files = (
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
+				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
+				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
+				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
+				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,12 +380,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		38D8C6FF25BC622500C1F10D /* Main.storyboard */ = {
+		38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				38D8C70025BC622500C1F10D /* Base */,
 			);
-			name = Main.storyboard;
+			name = Tabbar.storyboard;
 			sourceTree = "<group>";
 		};
 		38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */ = {
@@ -474,6 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "cake-it/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,6 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "cake-it/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
