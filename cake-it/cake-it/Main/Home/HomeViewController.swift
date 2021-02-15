@@ -18,16 +18,21 @@ class HomeViewController: UIViewController {
     }
     
     private func networkTest() {
-//        loginNetworkTest()
+        loginNetworkTest()
         getNiknameNetworkTest()
     }
     
+    
     private func loginNetworkTest() {
         let loginInfo = LoginModel(email: "seungbong8_8@naver.com", password: "Password1!")
-        NetworkManager.shared.requestPost(api: .login, param: loginInfo, completion: {})
+        NetworkManager.shared.requestPost(api: .login, param: loginInfo, completion: { response in
+            print("\n response data : \(response.data)")
+        })
     }
     private func getNiknameNetworkTest() {
-        NetworkManager.shared.requestGet(api: .randomNikname, completion: {})
+        NetworkManager.shared.requestGet(api: .randomNikname, completion: { response in
+            print("\n response data : \(response.data)")
+        })
     }
     
 }

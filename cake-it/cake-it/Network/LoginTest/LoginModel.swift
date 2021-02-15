@@ -20,12 +20,6 @@ class LoginModel: BaseModel {
     
     
     // MARK:- Network Response
-    struct Response: Decodable {
-        var status: Int?
-        var message: String?
-        var data: String?//LoginInfo
-    }
-    
     struct LoginInfo: Decodable {
         var data: String?
     }
