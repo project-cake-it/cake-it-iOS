@@ -55,7 +55,7 @@ class NetworkManager {
                 return
             }
             let result = response.result
-            self.printNetworkLogForResponse(responseData: result)
+            self.networkingLog(response: result)
             
             switch(result) {
             case .success(_):
@@ -83,8 +83,8 @@ class NetworkManager {
     private func networkingLog(request: DataRequest) {
         print("💠 [Request Networking Log] Request Data \n: \(request)")
     }
-    private func printNetworkLogForResponse(responseData: Any) {
-        print("🌐 [Response Networking Log] Response Data \n: \(responseData)")
+    private func networkingLog(response: Any) {
+        print("🌐 [Response Networking Log] Response Data \n: \(response)")
     }
     
 }
