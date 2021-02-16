@@ -13,26 +13,23 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        networkTest()
     }
     
-    private func networkTest() {
-        loginNetworkTest()
-        getNiknameNetworkTest()
+}
+
+
+// Network Test
+extension HomeViewController {
+    
+    @IBAction func clickedTestButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Nickname", bundle: nil)
+        let testVC = storyboard.instantiateViewController(identifier: "NicknameView")
+        present(testVC, animated: true, completion: nil)
     }
     
-    
-    private func loginNetworkTest() {
-        let loginInfo = LoginModel(email: "seungbong8_8@naver.com", password: "Password1!")
-        NetworkManager.shared.requestPost(api: .login, param: loginInfo, completion: { response in
-            print("\n response data : \(response.data)")
-        })
+    @IBAction func clickedLoginTestButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "LoginTest", bundle: nil)
+        let testLoginVC = storyboard.instantiateViewController(identifier: "LoginTestView")
+        present(testLoginVC, animated: true, completion: nil)
     }
-    private func getNiknameNetworkTest() {
-        NetworkManager.shared.requestGet(api: .randomNikname, completion: { response in
-            print("\n response data : \(response.data)")
-        })
-    }
-    
 }

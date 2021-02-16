@@ -31,6 +31,24 @@
                     <view key="view" contentMode="scaleToFill" id="bIR-lW-bKY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sME-1I-xix">
+                                <rect key="frame" x="124" y="433" width="168" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="NIckname Network Test!"/>
+                                <connections>
+                                    <action selector="clickedTestButton:" destination="zyQ-N7-yuu" eventType="touchUpInside" id="vXv-aZ-ppZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYW-hj-jbH">
+                                <rect key="frame" x="139" y="493" width="137" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login Network Test!"/>
+                                <connections>
+                                    <action selector="clickedLoginTestButton:" destination="zyQ-N7-yuu" eventType="touchUpInside" id="Qgf-6I-h5O"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ozi-yd-0Jw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
@@ -38,7 +56,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqn-Wl-5og" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="673" y="-72"/>
+            <point key="canvasLocation" x="672.46376811594212" y="-72.321428571428569"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rAC-uc-4ku">

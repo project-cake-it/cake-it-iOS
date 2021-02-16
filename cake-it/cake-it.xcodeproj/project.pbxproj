@@ -18,7 +18,16 @@
 		38D8C73025BC627F00C1F10D /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C72F25BC627F00C1F10D /* Order.storyboard */; };
 		BAE39D084B27C2AEF8CF70C2 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5FA7B0877090BFFC4DF174 /* Pods_cake_itTests.framework */; };
 		F5F81AEF6C89360AA25576C5 /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435C407F242C25DF57063C29 /* Pods_cake_it_cake_itUITests.framework */; };
-		F7566AD025CFEC98005F6CA6 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7566ACF25CFEC98005F6CA6 /* LoginModel.swift */; };
+		F706AEEB25DBFB74007EF5AD /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706AEEA25DBFB74007EF5AD /* NicknameModel.swift */; };
+		F706AEF025DBFB7E007EF5AD /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706AEEF25DBFB7E007EF5AD /* NicknameViewModel.swift */; };
+		F706AEF525DBFB9B007EF5AD /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706AEF425DBFB9B007EF5AD /* NicknameViewController.swift */; };
+		F706AEFF25DBFC07007EF5AD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706AEFE25DBFC07007EF5AD /* BaseViewModel.swift */; };
+		F706AF0725DBFC11007EF5AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706AF0625DBFC11007EF5AD /* BaseViewController.swift */; };
+		F706AF1625DC026B007EF5AD /* Nickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F706AF1525DC026B007EF5AD /* Nickname.storyboard */; };
+		F706AF2225DC0465007EF5AD /* LoginTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F706AF2125DC0465007EF5AD /* LoginTest.storyboard */; };
+		F706AF2A25DC04F1007EF5AD /* LoginTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706AF2925DC04F1007EF5AD /* LoginTestViewModel.swift */; };
+		F706AF3525DC050E007EF5AD /* LoginTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F706AF3425DC050E007EF5AD /* LoginTestViewController.swift */; };
+		F7566AD025CFEC98005F6CA6 /* LoginTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7566ACF25CFEC98005F6CA6 /* LoginTestModel.swift */; };
 		F77E299E25C6980F0098D422 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E299D25C6980F0098D422 /* NetworkManager.swift */; };
 		F783C12F25CFF351004EB56E /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F783C12E25CFF351004EB56E /* BaseModel.swift */; };
 		F7E1AE0825D18A2900E2CA87 /* NetworkCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E1AE0725D18A2900E2CA87 /* NetworkCommon.swift */; };
@@ -67,7 +76,16 @@
 		8C71B96970538B15D597BC65 /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CD5FA7B0877090BFFC4DF174 /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E92932AB6FCE3AFF54E6B82E /* Pods-cake-it.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.release.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.release.xcconfig"; sourceTree = "<group>"; };
-		F7566ACF25CFEC98005F6CA6 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		F706AEEA25DBFB74007EF5AD /* NicknameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
+		F706AEEF25DBFB7E007EF5AD /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		F706AEF425DBFB9B007EF5AD /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		F706AEFE25DBFC07007EF5AD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		F706AF0625DBFC11007EF5AD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F706AF1525DC026B007EF5AD /* Nickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nickname.storyboard; sourceTree = "<group>"; };
+		F706AF2125DC0465007EF5AD /* LoginTest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginTest.storyboard; sourceTree = "<group>"; };
+		F706AF2925DC04F1007EF5AD /* LoginTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestViewModel.swift; sourceTree = "<group>"; };
+		F706AF3425DC050E007EF5AD /* LoginTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestViewController.swift; sourceTree = "<group>"; };
+		F7566ACF25CFEC98005F6CA6 /* LoginTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTestModel.swift; sourceTree = "<group>"; };
 		F77E299D25C6980F0098D422 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F783C12E25CFF351004EB56E /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		F7E1AE0725D18A2900E2CA87 /* NetworkCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCommon.swift; sourceTree = "<group>"; };
@@ -126,7 +144,9 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
+				F706AF2025DC0433007EF5AD /* Test */,
 				F77E299C25C698020098D422 /* Network */,
+				F706AEE825DBFB32007EF5AD /* Base */,
 				38D8C72C25BC623100C1F10D /* Main */,
 				38D8C72D25BC623B00C1F10D /* Order */,
 				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
@@ -204,21 +224,100 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F7566ACE25CFEC89005F6CA6 /* LoginTest */ = {
+		F706AEE825DBFB32007EF5AD /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				F7566ACF25CFEC98005F6CA6 /* LoginModel.swift */,
+				F783C12E25CFF351004EB56E /* BaseModel.swift */,
+				F706AEFE25DBFC07007EF5AD /* BaseViewModel.swift */,
+				F706AF0625DBFC11007EF5AD /* BaseViewController.swift */,
 			);
-			path = LoginTest;
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F706AEE925DBFB39007EF5AD /* Nickname_Test */ = {
+			isa = PBXGroup;
+			children = (
+				F706AF4125DC053E007EF5AD /* Model */,
+				F706AF4025DC053C007EF5AD /* ViewModel */,
+				F706AF3F25DC0539007EF5AD /* View */,
+			);
+			path = Nickname_Test;
+			sourceTree = "<group>";
+		};
+		F706AF2025DC0433007EF5AD /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				F7566ACE25CFEC89005F6CA6 /* Login_Test */,
+				F706AEE925DBFB39007EF5AD /* Nickname_Test */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		F706AF3C25DC0518007EF5AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F706AF2125DC0465007EF5AD /* LoginTest.storyboard */,
+				F706AF3425DC050E007EF5AD /* LoginTestViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F706AF3D25DC051C007EF5AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F706AF2925DC04F1007EF5AD /* LoginTestViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F706AF3E25DC0520007EF5AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7566ACF25CFEC98005F6CA6 /* LoginTestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F706AF3F25DC0539007EF5AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F706AEF425DBFB9B007EF5AD /* NicknameViewController.swift */,
+				F706AF1525DC026B007EF5AD /* Nickname.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F706AF4025DC053C007EF5AD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F706AEEF25DBFB7E007EF5AD /* NicknameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F706AF4125DC053E007EF5AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F706AEEA25DBFB74007EF5AD /* NicknameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F7566ACE25CFEC89005F6CA6 /* Login_Test */ = {
+			isa = PBXGroup;
+			children = (
+				F706AF3E25DC0520007EF5AD /* Model */,
+				F706AF3D25DC051C007EF5AD /* ViewModel */,
+				F706AF3C25DC0518007EF5AD /* View */,
+			);
+			path = Login_Test;
 			sourceTree = "<group>";
 		};
 		F77E299C25C698020098D422 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F783C12E25CFF351004EB56E /* BaseModel.swift */,
 				F7E1AE0725D18A2900E2CA87 /* NetworkCommon.swift */,
 				F77E299D25C6980F0098D422 /* NetworkManager.swift */,
-				F7566ACE25CFEC89005F6CA6 /* LoginTest */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -333,7 +432,9 @@
 			files = (
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
+				F706AF2225DC0465007EF5AD /* LoginTest.storyboard in Resources */,
 				38D8C70125BC622500C1F10D /* Main.storyboard in Resources */,
+				F706AF1625DC026B007EF5AD /* Nickname.storyboard in Resources */,
 				38D8C73025BC627F00C1F10D /* Order.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,10 +564,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F783C12F25CFF351004EB56E /* BaseModel.swift in Sources */,
+				F706AEFF25DBFC07007EF5AD /* BaseViewModel.swift in Sources */,
 				F77E299E25C6980F0098D422 /* NetworkManager.swift in Sources */,
-				F7566AD025CFEC98005F6CA6 /* LoginModel.swift in Sources */,
+				F706AEF025DBFB7E007EF5AD /* NicknameViewModel.swift in Sources */,
+				F706AF2A25DC04F1007EF5AD /* LoginTestViewModel.swift in Sources */,
+				F7566AD025CFEC98005F6CA6 /* LoginTestModel.swift in Sources */,
+				F706AF0725DBFC11007EF5AD /* BaseViewController.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
+				F706AEF525DBFB9B007EF5AD /* NicknameViewController.swift in Sources */,
+				F706AF3525DC050E007EF5AD /* LoginTestViewController.swift in Sources */,
+				F706AEEB25DBFB74007EF5AD /* NicknameModel.swift in Sources */,
 				F7E1AE0825D18A2900E2CA87 /* NetworkCommon.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 			);

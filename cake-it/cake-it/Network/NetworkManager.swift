@@ -77,7 +77,7 @@ class NetworkManager {
     
     
     private func processError(message: String) {
-        print("🔻 [Process Error] \(message)")
+        print("🔻 [Network Process Error] \n\t #file: \(#file), \n\t #function : \(#function) \n\t #line : \(#line) \n\t message : \(message)")
     }
     
     private func networkingLog(request: DataRequest) {

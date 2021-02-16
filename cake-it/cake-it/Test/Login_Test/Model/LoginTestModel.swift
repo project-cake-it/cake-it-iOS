@@ -7,11 +7,13 @@
 
 import Foundation
 
-class LoginModel: BaseModel {
+class LoginTestModel: BaseModel {
     
     // MARK:- Network Request
     var email: String?
     var password: String?
+    
+    override init() { }
     
     init(email: String, password: String) {
         self.email = email
