@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,8 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="YM1-tj-5st">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjI-0c-aSn">
+                                <rect key="frame" x="156" y="433" width="102" height="30"/>
+                                <state key="normal" title="Nickname Test"/>
+                                <connections>
+                                    <action selector="clickedTestButton:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="7Bi-17-AYo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r18-D1-l1s">
+                                <rect key="frame" x="172" y="594" width="71" height="30"/>
+                                <state key="normal" title="Login Test"/>
+                                <connections>
+                                    <action selector="clickedLoginTestButton:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="5VN-lU-klx"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KMw-FY-mXL"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="mjI-0c-aSn" firstAttribute="centerY" secondItem="KMw-FY-mXL" secondAttribute="centerY" id="EEe-ij-8GM"/>
+                            <constraint firstItem="r18-D1-l1s" firstAttribute="centerX" secondItem="mjI-0c-aSn" secondAttribute="centerX" id="WYs-lS-H1b"/>
+                            <constraint firstItem="r18-D1-l1s" firstAttribute="top" secondItem="mjI-0c-aSn" secondAttribute="bottom" constant="165" id="ap0-N8-kap"/>
+                            <constraint firstItem="mjI-0c-aSn" firstAttribute="centerX" secondItem="KMw-FY-mXL" secondAttribute="centerX" id="mJh-KY-Cgl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10f-8L-7Y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

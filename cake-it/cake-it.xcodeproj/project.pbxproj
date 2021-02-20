@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,19 @@
 		8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D2E25DAE836003D9CFA /* MyPage.storyboard */; };
 		8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */; };
 		F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */; };
+		F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */; };
+		F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */; };
+		F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */; };
+		F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F774B92225E0E0BF006EE0EC /* Nickname.storyboard */; };
+		F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92525E0E0BF006EE0EC /* LoginTestViewModel.swift */; };
+		F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92725E0E0BF006EE0EC /* LoginTestModel.swift */; };
+		F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92925E0E0BF006EE0EC /* LoginTestViewController.swift */; };
+		F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F774B92A25E0E0BF006EE0EC /* LoginTest.storyboard */; };
+		F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92C25E0E0BF006EE0EC /* NetworkManager.swift */; };
+		F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92D25E0E0BF006EE0EC /* NetworkCommon.swift */; };
+		F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94625E0E0FE006EE0EC /* BaseViewController.swift */; };
+		F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94725E0E0FE006EE0EC /* BaseViewModel.swift */; };
+		F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94825E0E0FE006EE0EC /* BaseModel.swift */; };
 		FAAB2F89308B59A58AD30653 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +91,19 @@
 		D792EB0BE229648F5A5C7460 /* Pods-cake-it.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.release.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.release.xcconfig"; sourceTree = "<group>"; };
 		E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it_cake_itUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E670015E1C84D024CD034B18 /* Pods-cake-it-cake-itUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.debug.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
+		F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		F774B92225E0E0BF006EE0EC /* Nickname.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Nickname.storyboard; sourceTree = "<group>"; };
+		F774B92525E0E0BF006EE0EC /* LoginTestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestViewModel.swift; sourceTree = "<group>"; };
+		F774B92725E0E0BF006EE0EC /* LoginTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestModel.swift; sourceTree = "<group>"; };
+		F774B92925E0E0BF006EE0EC /* LoginTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestViewController.swift; sourceTree = "<group>"; };
+		F774B92A25E0E0BF006EE0EC /* LoginTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginTest.storyboard; sourceTree = "<group>"; };
+		F774B92C25E0E0BF006EE0EC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F774B92D25E0E0BF006EE0EC /* NetworkCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkCommon.swift; sourceTree = "<group>"; };
+		F774B94625E0E0FE006EE0EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F774B94725E0E0FE006EE0EC /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		F774B94825E0E0FE006EE0EC /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -134,7 +160,9 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
+				F774B91A25E0E0BF006EE0EC /* Test */,
 				8B3AF14425DADFD700B9F48D /* Base */,
+				F774B92B25E0E0BF006EE0EC /* Network */,
 				38D8C73A25BC631900C1F10D /* Home */,
 				8B875CF425DAE602003D9CFA /* Search */,
 				8B875D0525DAE684003D9CFA /* Shops */,
@@ -183,7 +211,6 @@
 				C9D389A843537311BA9F1FA4 /* Pods-cake-itTests.debug.xcconfig */,
 				45B2B377B3AB9CD829F6B911 /* Pods-cake-itTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -200,6 +227,7 @@
 		8B3AF14425DADFD700B9F48D /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				F774B94525E0E0FE006EE0EC /* BaseModels */,
 				38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */,
 				38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */,
 				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
@@ -242,6 +270,104 @@
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		F774B91A25E0E0BF006EE0EC /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				F774B91B25E0E0BF006EE0EC /* Nickname_Test */,
+				F774B92325E0E0BF006EE0EC /* Login_Test */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		F774B91B25E0E0BF006EE0EC /* Nickname_Test */ = {
+			isa = PBXGroup;
+			children = (
+				F774B92025E0E0BF006EE0EC /* View */,
+				F774B91C25E0E0BF006EE0EC /* ViewModel */,
+				F774B91E25E0E0BF006EE0EC /* Model */,
+			);
+			path = Nickname_Test;
+			sourceTree = "<group>";
+		};
+		F774B91C25E0E0BF006EE0EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F774B91E25E0E0BF006EE0EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F774B92025E0E0BF006EE0EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */,
+				F774B92225E0E0BF006EE0EC /* Nickname.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F774B92325E0E0BF006EE0EC /* Login_Test */ = {
+			isa = PBXGroup;
+			children = (
+				F774B92425E0E0BF006EE0EC /* ViewModel */,
+				F774B92625E0E0BF006EE0EC /* Model */,
+				F774B92825E0E0BF006EE0EC /* View */,
+			);
+			path = Login_Test;
+			sourceTree = "<group>";
+		};
+		F774B92425E0E0BF006EE0EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F774B92525E0E0BF006EE0EC /* LoginTestViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F774B92625E0E0BF006EE0EC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F774B92725E0E0BF006EE0EC /* LoginTestModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F774B92825E0E0BF006EE0EC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F774B92925E0E0BF006EE0EC /* LoginTestViewController.swift */,
+				F774B92A25E0E0BF006EE0EC /* LoginTest.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F774B92B25E0E0BF006EE0EC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F774B92C25E0E0BF006EE0EC /* NetworkManager.swift */,
+				F774B92D25E0E0BF006EE0EC /* NetworkCommon.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F774B94525E0E0FE006EE0EC /* BaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				F774B94625E0E0FE006EE0EC /* BaseViewController.swift */,
+				F774B94725E0E0FE006EE0EC /* BaseViewModel.swift */,
+				F774B94825E0E0FE006EE0EC /* BaseModel.swift */,
+			);
+			path = BaseModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,8 +478,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
+				F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */,
 				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
 				8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */,
 				8B875D1B25DAE747003D9CFA /* SavedItem.storyboard in Resources */,
@@ -487,12 +615,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
+				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
+				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
+				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
+				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
+				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
 				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
+				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
+				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
+				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
+				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
+				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -671,6 +810,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QKG65XDLX8;
 				INFOPLIST_FILE = "cake-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -691,6 +831,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QKG65XDLX8;
 				INFOPLIST_FILE = "cake-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

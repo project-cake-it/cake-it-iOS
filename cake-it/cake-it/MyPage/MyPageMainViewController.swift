@@ -27,3 +27,18 @@ final class MyPageMainViewController: UIViewController {
    */
   
 }
+
+// Test
+extension MyPageMainViewController {
+    @IBAction func clickedTestButton(_ sender: Any) {
+           let storyboard = UIStoryboard(name: "Nickname", bundle: nil)
+           let testVC = storyboard.instantiateViewController(identifier: "NicknameView")
+           present(testVC, animated: true, completion: nil)
+       }
+       
+       @IBAction func clickedLoginTestButton(_ sender: Any) {
+           let storyboard = UIStoryboard(name: "LoginTest", bundle: nil)
+           let testLoginVC = storyboard.instantiateViewController(identifier: "LoginTestView")
+           present(testLoginVC, animated: true, completion: nil)
+       }
+}
