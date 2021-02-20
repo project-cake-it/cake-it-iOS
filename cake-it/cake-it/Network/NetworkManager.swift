@@ -13,8 +13,10 @@ import Foundation
 import Alamofire
 import SystemConfiguration
 
-enum GETAPIError: Error {
-  case test1
+enum APIError: Error {
+  case InternetUnavailable
+  case NetworkError
+  case InvalidDataType
 }
 
 final class NetworkManager {
@@ -25,16 +27,16 @@ final class NetworkManager {
   
   func requestGet<T: Decodable>(api: NetworkCommon.API,
                                 type: T.Type,
-                                completion: @escaping (Result<T, GETAPIError>) -> Void) {
+                                completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: api.urlString) else { return }
     let request = AF.request(url)
     self.request(request: request, type: T.self, completion: completion)
   }
   
   func requestPost<T: Decodable>(api: NetworkCommon.API,
-                   type: T.Type,
-                   param: BaseModel? = nil,
-                   completion: @escaping (Result<T, GETAPIError>) -> Void) {
+                                 type: T.Type,
+                                 param: BaseModel? = nil,
+                                 completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: api.urlString) else { return }
     let headers: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json"]
     let request = AF.request(url,
@@ -47,53 +49,34 @@ final class NetworkManager {
   
   private func request<T: Decodable>(request: DataRequest,
                                      type: T.Type,
-                                     completion: @escaping (Result<T, GETAPIError>) -> Void) {
+                                     completion: @escaping (Result<T, APIError>) -> Void) {
     if !isInternetAvailable() {
-      self.processError(message: "네트워크 연결을 확인해주세요.")
+      completion(.failure(.InternetUnavailable))
       return
     }
-    
-    self.networkingLog(request: request)
-    request.responseJSON(completionHandler: { response in
-      
-      guard let data = response.data else {
-        self.processError(message: "error type : data is nil")
-        return
-      }
+    request.responseJSON { (response) in
       let result = response.result
-      self.networkingLog(response: result)
-      
       switch(result) {
-      case .success(_):
+      case .success(let responseData):
         do {
-          let decodedResponse = try JSONDecoder().decode(NetworkCommon.Response.self, from: data)
+          let serializedData = try JSONSerialization.data(withJSONObject: responseData,
+                                                          options: .prettyPrinted)
+          let decodedResponse = try JSONDecoder().decode(NetworkCommon.Response.self,
+                                                         from: serializedData)
           if decodedResponse.status == 200 || decodedResponse.status == 201 {
             let decodedResponseDataForm = decodedResponse.data.data(using: .utf8)!
             let modelData = try JSONDecoder().decode(T.self, from: decodedResponseDataForm)
             completion(.success(modelData))
           } else {
-            self.processError(message: "error : status code : \(String(describing: decodedResponse.status)), message: \(decodedResponse.message)")
-            completion(.failure(.test1))
+            completion(.failure(.NetworkError))
           }
         } catch {
-          completion(.failure(.test1))
+          completion(.failure(.InvalidDataType))
         }
-      case .failure(let error):
-        completion(.failure(.test1))
+      case .failure(_):
+        completion(.failure(.NetworkError))
       }
-    })
-  }
-  
-  private func processError(message: String) {
-    print("🔻 [Network Process Error] \n\t #file: \(#file), \n\t #function : \(#function) \n\t #line : \(#line) \n\t message : \(message)")
-  }
-  
-  private func networkingLog(request: DataRequest) {
-    print("💠 [Request Networking Log] Request Data \n: \(request)")
-  }
-  
-  private func networkingLog(response: Any) {
-    print("🌐 [Response Networking Log] Response Data \n: \(response)")
+    }
   }
 }
 
