@@ -8,12 +8,21 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
-
-
+  
+  override func viewDidAppear(_ animated: Bool) {
+    //TODO: login token check
+    var loginToken: String?
+    
+    if let token = loginToken {
+      NSLog("HomeViewController token check : %@", token)
+    } else {
+      let loginViewController = self.storyboard?.instantiateViewController(identifier: "loginViewController") as! UIViewController
+      loginViewController.modalPresentationStyle = .overFullScreen
+      self.present(loginViewController, animated: false, completion: nil)
+    }
+  }
 }
-
