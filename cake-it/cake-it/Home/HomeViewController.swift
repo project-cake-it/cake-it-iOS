@@ -7,22 +7,33 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
   
+  let loginViewControllerID = "loginViewController"
+  
+  //MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    //TODO: login token check
-    var loginToken: String?
+    super.viewDidAppear(animated)
     
-    if let token = loginToken {
-      NSLog("HomeViewController token check : %@", token)
-    } else {
-      let loginViewController = self.storyboard?.instantiateViewController(identifier: "loginViewController") as! UIViewController
-      loginViewController.modalPresentationStyle = .overFullScreen
-      self.present(loginViewController, animated: false, completion: nil)
+    guard isLogin() else {
+      if let loginViewController = storyboard?.instantiateViewController(identifier: loginViewControllerID) {
+        loginViewController.modalPresentationStyle = .overFullScreen
+        present(loginViewController, animated: false, completion: nil)
+      }
+      return
     }
+  }
+}
+
+//MARK: - Login
+extension HomeViewController {
+  
+  private func isLogin() -> Bool {
+    //TODO: Login 상태 체크
+    return false
   }
 }
