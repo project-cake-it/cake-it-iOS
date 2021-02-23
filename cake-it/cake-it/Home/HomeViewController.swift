@@ -8,9 +8,6 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-  
-  let loginViewControllerID = "loginViewController"
-  
   //MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,7 +17,7 @@ final class HomeViewController: UIViewController {
     super.viewDidAppear(animated)
     
     guard isLogin() else {
-      if let loginViewController = storyboard?.instantiateViewController(identifier: loginViewControllerID) {
+      if let loginViewController = storyboard?.instantiateViewController(identifier: LoginViewController.ID) {
         loginViewController.modalPresentationStyle = .overFullScreen
         present(loginViewController, animated: false, completion: nil)
       }
