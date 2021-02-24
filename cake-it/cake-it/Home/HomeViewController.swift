@@ -15,22 +15,22 @@ final class HomeViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
-    guard isLogin() else {
-      if let loginViewController = storyboard?.instantiateViewController(identifier: LoginViewController.ID) {
-        loginViewController.modalPresentationStyle = .overFullScreen
-        present(loginViewController, animated: false, completion: nil)
-      }
-      return
-    }
+    checkLogin()
   }
 }
 
 //MARK: - Login
 extension HomeViewController {
-  
-  private func isLogin() -> Bool {
-    //TODO: Login 상태 체크
-    return false
+  private func checkLogin() {
+    var loginToken: String? = "test"
+    
+    guard loginToken != nil else {
+      return
+    }
+    
+    if let loginViewController = storyboard?.instantiateViewController(identifier: LoginViewController.id) {
+      loginViewController.modalPresentationStyle = .overFullScreen
+      present(loginViewController, animated: false, completion: nil)
+    }
   }
 }

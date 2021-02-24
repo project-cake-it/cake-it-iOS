@@ -9,7 +9,7 @@ import UIKit
 
 final class LoginViewController: UIViewController {
   
-  static let ID = "loginViewController"
+  static let id = "loginViewController"
   
   override func viewDidLoad() {
     super.viewDidLoad()
