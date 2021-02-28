@@ -7,10 +7,13 @@
 
 import UIKit
 import KakaoSDKAuth
+import NaverThirdPartyLogin
 
 final class LoginViewController: UIViewController {
   
   static let id = "loginViewController"
+  
+  let naverLoginSDK = NaverThirdPartyLoginConnection.getSharedInstance();
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -48,5 +51,42 @@ final class LoginViewController: UIViewController {
         }
       }
     }
+  }
+  
+  @IBAction func clickedLoginWithnNaver(_ sender: Any) {
+    naverLoginSDK?.delegate = self
+    naverLoginSDK?.requestThirdPartyLogin()
+  }
+}
+
+extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
+  func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
+    guard let isValidAccessToken = naverLoginSDK?.isValidAccessTokenExpireTimeNow() else {
+      return
+    }
+    
+    if !isValidAccessToken { return }
+    
+    print(naverLoginSDK?.accessToken)
+    closeLoginViewController()
+  }
+  
+  func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
+    guard let isValidAccessToken = naverLoginSDK?.isValidAccessTokenExpireTimeNow() else {
+      return
+    }
+    
+    if !isValidAccessToken { return }
+    
+    print(naverLoginSDK?.accessToken)
+    closeLoginViewController()
+  }
+  
+  func oauth20ConnectionDidFinishDeleteToken() {
+    
+  }
+  
+  func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
+     
   }
 }

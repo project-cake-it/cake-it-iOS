@@ -53,6 +53,19 @@
                                     <action selector="loginWithKakao:" destination="5Yd-02-kDE" eventType="touchUpInside" id="pbK-ku-YaM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhs-i1-eTV">
+                                <rect key="frame" x="30" y="513" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fnJ-Mi-gWg"/>
+                                </constraints>
+                                <state key="normal" title="Login with Naver">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickedLoginWithnNaver:" destination="5Yd-02-kDE" eventType="touchUpInside" id="hUw-Ca-OHL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CpR-Rl-Ga4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,6 +73,9 @@
                             <constraint firstItem="DLf-ag-adh" firstAttribute="leading" secondItem="CpR-Rl-Ga4" secondAttribute="leading" constant="30" id="4Pk-h7-JQY"/>
                             <constraint firstItem="DLf-ag-adh" firstAttribute="top" secondItem="CpR-Rl-Ga4" secondAttribute="top" constant="400" id="8rx-j2-HuO"/>
                             <constraint firstItem="OuF-rc-Jmf" firstAttribute="top" secondItem="CpR-Rl-Ga4" secondAttribute="top" id="F94-LL-e6v"/>
+                            <constraint firstItem="CpR-Rl-Ga4" firstAttribute="trailing" secondItem="Bhs-i1-eTV" secondAttribute="trailing" constant="30" id="bh6-V2-foe"/>
+                            <constraint firstItem="Bhs-i1-eTV" firstAttribute="leading" secondItem="CpR-Rl-Ga4" secondAttribute="leading" constant="30" id="bja-c4-HE1"/>
+                            <constraint firstItem="Bhs-i1-eTV" firstAttribute="top" secondItem="DLf-ag-adh" secondAttribute="bottom" constant="20" id="eab-BP-OIB"/>
                             <constraint firstAttribute="trailing" secondItem="OuF-rc-Jmf" secondAttribute="trailing" id="g03-u4-ysO"/>
                             <constraint firstItem="CpR-Rl-Ga4" firstAttribute="trailing" secondItem="DLf-ag-adh" secondAttribute="trailing" constant="30" id="ynh-oO-AZC"/>
                         </constraints>
@@ -71,6 +87,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

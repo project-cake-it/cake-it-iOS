@@ -9,6 +9,7 @@ import UIKit
 
 // kakao login
 import KakaoSDKCommon
+import NaverThirdPartyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // kakao sdk init
     KakaoSDKCommon.initSDK(appKey: "6401b7f5ee32ca3b74931f6f8b76bfe6")
+    
+    // naver sdk init
+    let naverLogin = NaverThirdPartyLoginConnection.getSharedInstance()
+    naverLogin?.isNaverAppOauthEnable = true
+    naverLogin?.isInAppOauthEnable = true
+    naverLogin?.isOnlyPortraitSupportedInIphone()
+    naverLogin?.serviceUrlScheme = "cakeit"
+    naverLogin?.consumerKey = "byuZm4RWfIdw5z1B8F_A"
+    naverLogin?.consumerSecret = "uKONFKpBzl"
+    naverLogin?.appName = "cakeit"
+    
     return true
   }
 

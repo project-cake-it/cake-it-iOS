@@ -27,6 +27,18 @@
 				<string>6401b7f5ee32ca3b74931f6f8b76bfe6</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string></string>
+			<key>CFBundleURLName</key>
+			<string>cakeit</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>cakeit</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
@@ -34,6 +46,8 @@
 	<array>
 		<string>kakaokompassauth</string>
 		<string>kakaolink</string>
+		<string>naversearchapp</string>
+		<string>naversearchthirdlogin</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
