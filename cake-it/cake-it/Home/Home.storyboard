@@ -39,12 +39,29 @@
                                     <action selector="closeViewController:" destination="5Yd-02-kDE" eventType="touchUpInside" id="RYK-vh-AcB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLf-ag-adh">
+                                <rect key="frame" x="30" y="444" width="354" height="50"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ozn-vM-BNB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Login with Kakao">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithKakao:" destination="5Yd-02-kDE" eventType="touchUpInside" id="pbK-ku-YaM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CpR-Rl-Ga4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DLf-ag-adh" firstAttribute="leading" secondItem="CpR-Rl-Ga4" secondAttribute="leading" constant="30" id="4Pk-h7-JQY"/>
+                            <constraint firstItem="DLf-ag-adh" firstAttribute="top" secondItem="CpR-Rl-Ga4" secondAttribute="top" constant="400" id="8rx-j2-HuO"/>
                             <constraint firstItem="OuF-rc-Jmf" firstAttribute="top" secondItem="CpR-Rl-Ga4" secondAttribute="top" id="F94-LL-e6v"/>
                             <constraint firstAttribute="trailing" secondItem="OuF-rc-Jmf" secondAttribute="trailing" id="g03-u4-ysO"/>
+                            <constraint firstItem="CpR-Rl-Ga4" firstAttribute="trailing" secondItem="DLf-ag-adh" secondAttribute="trailing" constant="30" id="ynh-oO-AZC"/>
                         </constraints>
                     </view>
                 </viewController>
