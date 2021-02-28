@@ -7,13 +7,30 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+final class HomeViewController: UIViewController {
+  //MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
   }
-
-
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    checkLogin()
+  }
 }
 
+//MARK: - Login
+extension HomeViewController {
+  private func checkLogin() {
+    var loginToken: String? = "test"
+    
+    guard loginToken != nil else {
+      return
+    }
+    
+    if let loginViewController = storyboard?.instantiateViewController(identifier: LoginViewController.id) {
+      loginViewController.modalPresentationStyle = .overFullScreen
+      present(loginViewController, animated: false, completion: nil)
+    }
+  }
+}
