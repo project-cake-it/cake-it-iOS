@@ -18,6 +18,6 @@ final class LoginTestModel: BaseModel {
   }
   
   struct Response: Decodable {
-    let data: String
+    let token: String
   }
 }

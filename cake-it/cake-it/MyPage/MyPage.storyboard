@@ -21,14 +21,21 @@
                                 <rect key="frame" x="156" y="433" width="102" height="30"/>
                                 <state key="normal" title="Nickname Test"/>
                                 <connections>
-                                    <action selector="clickedTestButton:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="7Bi-17-AYo"/>
+                                    <action selector="getNicknameButtonDidTap:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="7Bi-17-AYo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r18-D1-l1s">
                                 <rect key="frame" x="172" y="594" width="71" height="30"/>
                                 <state key="normal" title="Login Test"/>
                                 <connections>
-                                    <action selector="clickedLoginTestButton:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="5VN-lU-klx"/>
+                                    <action selector="loginTestButtonDidTap:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="5VN-lU-klx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2d-33-Q6a">
+                                <rect key="frame" x="144" y="296" width="127" height="30"/>
+                                <state key="normal" title="Photo Upload Test"/>
+                                <connections>
+                                    <action selector="photoUploadTestButtonDidTap:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="fLz-kh-EuJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -36,7 +43,9 @@
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="mjI-0c-aSn" firstAttribute="centerY" secondItem="KMw-FY-mXL" secondAttribute="centerY" id="EEe-ij-8GM"/>
+                            <constraint firstItem="g2d-33-Q6a" firstAttribute="centerX" secondItem="mjI-0c-aSn" secondAttribute="centerX" id="NED-Gk-SxG"/>
                             <constraint firstItem="r18-D1-l1s" firstAttribute="centerX" secondItem="mjI-0c-aSn" secondAttribute="centerX" id="WYs-lS-H1b"/>
+                            <constraint firstItem="mjI-0c-aSn" firstAttribute="top" secondItem="g2d-33-Q6a" secondAttribute="bottom" constant="107" id="Wrg-i7-ZAg"/>
                             <constraint firstItem="r18-D1-l1s" firstAttribute="top" secondItem="mjI-0c-aSn" secondAttribute="bottom" constant="165" id="ap0-N8-kap"/>
                             <constraint firstItem="mjI-0c-aSn" firstAttribute="centerX" secondItem="KMw-FY-mXL" secondAttribute="centerX" id="mJh-KY-Cgl"/>
                         </constraints>

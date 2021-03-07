@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import UIKit
+
+final class PhotoUploadViewModel: BaseViewModel {
+  
+  var model: PhotoUploadModel?
+  
+}

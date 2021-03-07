@@ -9,18 +9,21 @@ import Foundation
 
 class NetworkCommon {
   
-  struct Response: Decodable {
+  struct Response<T: Decodable>: Decodable {
     let status: Int
     let message: String
-    let data: String
+    let data: T
   }
   
+  static let BASE_URL = "http://13.124.173.58:8080/api/v2/"
+  
   enum API: String {
-    case loginTest = "http://13.124.173.58:8080/api/v2/login"
-    case randomNikname = "http://13.124.173.58:8080/api/v2/nickname"
+    case loginTest = "/login"
+    case randomNikname = "/nickname"
+    case uploadPhoto = "/test/post"
     
     var urlString: String {
-      return self.rawValue
+      return BASE_URL + self.rawValue
     }
   }
 }

@@ -14,14 +14,14 @@ final class LoginTestViewModel: BaseViewModel {
   func performLoginTest(email: String, password: String, completion: @escaping (String) -> Void) {
     model = LoginTestModel(email: email, password: password)
     NetworkManager.shared.requestPost(api: .loginTest,
-                                      type: String.self,
-                                      param: model) { (result) in
-      switch result {
-      case .success(let response):
-        let token = response
+                                      type: LoginTestModel.Response.self,
+                                      param: model) { (response) in
+      switch response {
+      case .success(let result):
+        let token = result.token
         completion(token)
-      case .failure(_):
-        // error 처리
+      case .failure(let error):
+        self.processingError(error: error.localizedDescription)
         break
       }
     }
