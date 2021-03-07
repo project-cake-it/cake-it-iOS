@@ -19,7 +19,7 @@ final class NicknameViewController: BaseViewController {
     viewModel = NicknameViewModel()
   }
   
-  @IBAction func NicknameGetButtonDidTap(_ sender: Any) {
+  @IBAction func nicknameGetButtonDidTap(_ sender: Any) {
     viewModel?.performGetNickname(completion: { (randNickname) in
       self.nicknameLabel.text = randNickname
     })

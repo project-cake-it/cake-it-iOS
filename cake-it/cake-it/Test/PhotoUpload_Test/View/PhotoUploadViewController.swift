@@ -17,7 +17,6 @@ final class PhotoUploadViewController: BaseViewController {
   
   var viewModel: PhotoUploadViewModel?
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -43,7 +42,6 @@ final class PhotoUploadViewController: BaseViewController {
     
     NetworkManager.shared.request(request: request,
                                   type: PhotoUploadModel.Response.self) { (response) in
-      print(response)
       switch response {
       case .success(let result):
         self.nameLabel.text = result.name

@@ -21,7 +21,6 @@ final class NicknameViewModel: BaseViewModel {
                                      type: NicknameModel.Response.self) { (response) in
       switch response {
       case .success(let result):
-        print(result)
         completion(result.nickname)
       case .failure(let error):
         self.processingError(error: error.localizedDescription)
