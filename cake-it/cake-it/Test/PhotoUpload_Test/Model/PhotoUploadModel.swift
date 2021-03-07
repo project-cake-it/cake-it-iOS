@@ -11,9 +11,9 @@ final class PhotoUploadModel: BaseModel {
   
   var name: String
   var id: Int
-  var photo: Data?
+  var photo: Data
   
-  init(name: String, id: Int, photo: Data?) {
+  init(name: String, id: Int, photo: Data) {
     self.name = name
     self.id = id
     self.photo = photo

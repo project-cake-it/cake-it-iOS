@@ -31,11 +31,11 @@ final class PhotoUploadViewController: BaseViewController {
     guard let url = URL(string: "http://13.124.173.58:8080/api/v2/test/post") else { return }
     let headers: HTTPHeaders = ["Content-Type":"multipart/form-data", "Accept":"application/json"]
     let request = AF.upload(multipartFormData: { (multipartFormData) in
-      
+       
       if let param = param as? PhotoUploadModel {
         multipartFormData.append("\(param.name)".data(using: .utf8)!, withName: "name")
         multipartFormData.append("\(param.id)".data(using: .utf8)!, withName: "id")
-        multipartFormData.append(param.photo!, withName: "photo", fileName: "photo.jpg", mimeType: "image/jpg")
+        multipartFormData.append(param.photo, withName: "photo", fileName: "photo.jpg", mimeType: "image/jpg")
       }
       
     }, to: url.absoluteString, method: .post, headers: headers)
