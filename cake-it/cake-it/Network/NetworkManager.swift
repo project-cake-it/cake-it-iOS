@@ -49,8 +49,8 @@ final class NetworkManager {
   
   
   func request<T: Decodable>(request: DataRequest,
-                                     type: T.Type,
-                                     completion: @escaping (Result<T, APIError>) -> Void) {
+                             type: T.Type,
+                             completion: @escaping (Result<T, APIError>) -> Void) {
     if !isInternetAvailable() {
       completion(.failure(.InternetUnavailable))
       return
