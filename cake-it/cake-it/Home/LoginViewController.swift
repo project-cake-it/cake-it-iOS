@@ -7,33 +7,33 @@
 
 import UIKit
 import KakaoSDKAuth
+import KakaoSDKUser
 import NaverThirdPartyLogin
 
 final class LoginViewController: UIViewController {
   
   static let id = "loginViewController"
   
-  let naverLoginSDK = NaverThirdPartyLoginConnection.getSharedInstance();
+  let naverLoginSDK = NaverThirdPartyLoginConnection.getSharedInstance()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
   }
   
   //MARK: - Private method
   func closeLoginViewController() {
     dismiss(animated: true, completion: nil)
   }
+  
   //MARK: - IBAction
-  @IBAction func closeViewController(_ sender: Any) {
+  @IBAction func closeButtonForTestDidTap(_ sender: Any) {
     //테스트용 메소드
     closeLoginViewController()
   }
   
-  @IBAction func loginWithKakao(_ sender: Any) {
-    if (AuthApi.isKakaoTalkLoginAvailable()) {
-      AuthApi.shared.loginWithKakaoTalk { (oauthToken, error) in
+  @IBAction func signInWithKakaoButtonDidTap(_ sender: Any) {
+    if (UserApi.isKakaoTalkLoginAvailable()) {
+      UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
         if let error = error {
           print(error)
         } else {
@@ -42,7 +42,7 @@ final class LoginViewController: UIViewController {
         }
       }
     } else {
-      AuthApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+      UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
         if let error = error {
           print(error)
         } else {
@@ -53,7 +53,7 @@ final class LoginViewController: UIViewController {
     }
   }
   
-  @IBAction func clickedLoginWithnNaver(_ sender: Any) {
+  @IBAction func signInWithNaverButtonDidTap(_ sender: Any) {
     naverLoginSDK?.delegate = self
     naverLoginSDK?.requestThirdPartyLogin()
   }
@@ -61,22 +61,16 @@ final class LoginViewController: UIViewController {
 
 extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
   func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
-    guard let isValidAccessToken = naverLoginSDK?.isValidAccessTokenExpireTimeNow() else {
-      return
-    }
-    
-    if !isValidAccessToken { return }
+    guard let isValidAccessToken = naverLoginSDK?.isValidAccessTokenExpireTimeNow() else { return }
+    guard isValidAccessToken else { return }
     
     print(naverLoginSDK?.accessToken)
     closeLoginViewController()
   }
   
   func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-    guard let isValidAccessToken = naverLoginSDK?.isValidAccessTokenExpireTimeNow() else {
-      return
-    }
-    
-    if !isValidAccessToken { return }
+    guard let isValidAccessToken = naverLoginSDK?.isValidAccessTokenExpireTimeNow() else { return }
+    guard isValidAccessToken else { return }
     
     print(naverLoginSDK?.accessToken)
     closeLoginViewController()

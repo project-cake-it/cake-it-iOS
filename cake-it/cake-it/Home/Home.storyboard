@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbg-e5-YJw">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,7 +12,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="Wbg-e5-YJw" customClass="HomeViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5wm-xO-1bv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="3m7-hP-NHF"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -29,18 +27,18 @@
             <objects>
                 <viewController storyboardIdentifier="loginViewController" id="5Yd-02-kDE" customClass="LoginViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zD3-Vx-khB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuF-rc-Jmf">
-                                <rect key="frame" x="384" y="44" width="30" height="30"/>
+                                <rect key="frame" x="570" y="0.0" width="30" height="30"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <action selector="closeViewController:" destination="5Yd-02-kDE" eventType="touchUpInside" id="RYK-vh-AcB"/>
+                                    <action selector="closeButtonForTestDidTap:" destination="5Yd-02-kDE" eventType="touchUpInside" id="RYK-vh-AcB"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLf-ag-adh">
-                                <rect key="frame" x="30" y="444" width="354" height="50"/>
+                                <rect key="frame" x="30" y="400" width="540" height="50"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ozn-vM-BNB"/>
@@ -50,7 +48,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginWithKakao:" destination="5Yd-02-kDE" eventType="touchUpInside" id="pbK-ku-YaM"/>
+                                    <action selector="signInWithKakaoButtonDidTap:" destination="5Yd-02-kDE" eventType="touchUpInside" id="pbK-ku-YaM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhs-i1-eTV">
@@ -63,7 +61,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="clickedLoginWithnNaver:" destination="5Yd-02-kDE" eventType="touchUpInside" id="hUw-Ca-OHL"/>
+                                    <action selector="signInWithNaverButtonDidTap:" destination="5Yd-02-kDE" eventType="touchUpInside" id="hUw-Ca-OHL"/>
                                 </connections>
                             </button>
                         </subviews>
