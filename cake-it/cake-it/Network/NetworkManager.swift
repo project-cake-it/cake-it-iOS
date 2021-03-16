@@ -20,7 +20,7 @@ enum APIError: Error {
 }
 
 final class NetworkManager {
-
+  
   static let shared = NetworkManager()
   
   init() { }
@@ -47,26 +47,28 @@ final class NetworkManager {
     self.request(request: request, type: T.self, completion: completion)
   }
   
-  private func request<T: Decodable>(request: DataRequest,
-                                     type: T.Type,
-                                     completion: @escaping (Result<T, APIError>) -> Void) {
+  
+  func request<T: Decodable>(request: DataRequest,
+                             type: T.Type,
+                             completion: @escaping (Result<T, APIError>) -> Void) {
     if !isInternetAvailable() {
       completion(.failure(.InternetUnavailable))
       return
     }
+    
     request.responseJSON { (response) in
       let result = response.result
+      
       switch(result) {
       case .success(let responseData):
         do {
           let serializedData = try JSONSerialization.data(withJSONObject: responseData,
                                                           options: .prettyPrinted)
-          let decodedResponse = try JSONDecoder().decode(NetworkCommon.Response.self,
+          let decodedResponse = try JSONDecoder().decode(NetworkCommon.Response<T>.self,
                                                          from: serializedData)
+          print(decodedResponse)
           if decodedResponse.status == 200 || decodedResponse.status == 201 {
-            let decodedResponseDataForm = decodedResponse.data.data(using: .utf8)!
-            let modelData = try JSONDecoder().decode(T.self, from: decodedResponseDataForm)
-            completion(.success(modelData))
+            completion(.success(decodedResponse.data))
           } else {
             completion(.failure(.NetworkError))
           }

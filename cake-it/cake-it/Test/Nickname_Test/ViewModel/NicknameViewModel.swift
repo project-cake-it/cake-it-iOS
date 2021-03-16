@@ -7,27 +7,25 @@
 
 import Foundation
 
-final class NicknameViewModel {
+final class NicknameViewModel: BaseViewModel {
   
   var model: NicknameModel?
   
-  init() {
+  override init() {
     model = NicknameModel()
   }
   
   func performGetNickname(completion: @escaping (String) -> Void) {
-//    NetworkManager.shared.requestGet(api: .randomNikname, completion: { result in
-//      switch result {
-//
-//      case .success(let response):
-//        if let randName: String = response.data {
-//          let userNickname = "\(randName)\(self.model?.randNum ?? 0)"
-//          completion(userNickname)
-//        }
-//      case .failure(_):
-//        // error 처리
-//        break
-//      }
-//    })
+    
+    NetworkManager.shared.requestGet(api: .randomNikname,
+                                     type: NicknameModel.Response.self) { (response) in
+      switch response {
+      case .success(let result):
+        completion(result.nickname)
+      case .failure(let error):
+        self.processingError(error: error.localizedDescription)
+        break
+      }
+    }
   }
 }

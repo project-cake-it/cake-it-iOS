@@ -40,6 +40,10 @@
 		F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94625E0E0FE006EE0EC /* BaseViewController.swift */; };
 		F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94725E0E0FE006EE0EC /* BaseViewModel.swift */; };
 		F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94825E0E0FE006EE0EC /* BaseModel.swift */; };
+		F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F4A25F393E30023CDD5 /* PhotoUploadModel.swift */; };
+		F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */; };
+		F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */; };
+		F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */; };
 		FAAB2F89308B59A58AD30653 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +110,10 @@
 		F774B94625E0E0FE006EE0EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F774B94725E0E0FE006EE0EC /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		F774B94825E0E0FE006EE0EC /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		F7A30F4A25F393E30023CDD5 /* PhotoUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadModel.swift; sourceTree = "<group>"; };
+		F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewModel.swift; sourceTree = "<group>"; };
+		F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoUpload.storyboard; sourceTree = "<group>"; };
+		F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
 		FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -278,6 +286,7 @@
 		F774B91A25E0E0BF006EE0EC /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				F7A30F4925F3934C0023CDD5 /* PhotoUpload_Test */,
 				F774B91B25E0E0BF006EE0EC /* Nickname_Test */,
 				F774B92325E0E0BF006EE0EC /* Login_Test */,
 			);
@@ -371,6 +380,41 @@
 				F774B94825E0E0FE006EE0EC /* BaseModel.swift */,
 			);
 			path = BaseModels;
+			sourceTree = "<group>";
+		};
+		F7A30F4625F393170023CDD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7A30F4A25F393E30023CDD5 /* PhotoUploadModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F7A30F4725F393190023CDD5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F7A30F4825F3931B0023CDD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */,
+				F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F7A30F4925F3934C0023CDD5 /* PhotoUpload_Test */ = {
+			isa = PBXGroup;
+			children = (
+				F7A30F4625F393170023CDD5 /* Model */,
+				F7A30F4725F393190023CDD5 /* ViewModel */,
+				F7A30F4825F3931B0023CDD5 /* View */,
+			);
+			path = PhotoUpload_Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,6 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
+				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
 				F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */,
@@ -624,6 +669,7 @@
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
+				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
@@ -631,11 +677,13 @@
 				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
+				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
+				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

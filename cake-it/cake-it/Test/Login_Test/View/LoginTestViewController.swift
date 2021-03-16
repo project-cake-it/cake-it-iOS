@@ -21,7 +21,7 @@ final class LoginTestViewController: BaseViewController {
     viewModel = LoginTestViewModel()
   }
   
-  @IBAction func clickedLoginButton(_ sender: Any) {
+  @IBAction func loginButtonDidTap(_ sender: Any) {
     if let userID = idTextField.text, let userPW = pwTextField.text {
       viewModel?.performLoginTest(email: userID, password: userPW, completion: { loginToken in
         self.tokenLabel.text = loginToken
