@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbg-e5-YJw">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,7 +12,7 @@
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="Wbg-e5-YJw" customClass="HomeViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5wm-xO-1bv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="3m7-hP-NHF"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
@@ -29,22 +27,55 @@
             <objects>
                 <viewController storyboardIdentifier="loginViewController" id="5Yd-02-kDE" customClass="LoginViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zD3-Vx-khB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OuF-rc-Jmf">
-                                <rect key="frame" x="384" y="44" width="30" height="30"/>
+                                <rect key="frame" x="570" y="0.0" width="30" height="30"/>
                                 <state key="normal" title="X"/>
                                 <connections>
-                                    <action selector="closeViewController:" destination="5Yd-02-kDE" eventType="touchUpInside" id="RYK-vh-AcB"/>
+                                    <action selector="closeButtonForTestDidTap:" destination="5Yd-02-kDE" eventType="touchUpInside" id="RYK-vh-AcB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLf-ag-adh">
+                                <rect key="frame" x="30" y="400" width="540" height="50"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.89803921568627454" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ozn-vM-BNB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Login with Kakao">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInWithKakaoButtonDidTap:" destination="5Yd-02-kDE" eventType="touchUpInside" id="pbK-ku-YaM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhs-i1-eTV">
+                                <rect key="frame" x="30" y="513" width="354" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fnJ-Mi-gWg"/>
+                                </constraints>
+                                <state key="normal" title="Login with Naver">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signInWithNaverButtonDidTap:" destination="5Yd-02-kDE" eventType="touchUpInside" id="hUw-Ca-OHL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="CpR-Rl-Ga4"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DLf-ag-adh" firstAttribute="leading" secondItem="CpR-Rl-Ga4" secondAttribute="leading" constant="30" id="4Pk-h7-JQY"/>
+                            <constraint firstItem="DLf-ag-adh" firstAttribute="top" secondItem="CpR-Rl-Ga4" secondAttribute="top" constant="400" id="8rx-j2-HuO"/>
                             <constraint firstItem="OuF-rc-Jmf" firstAttribute="top" secondItem="CpR-Rl-Ga4" secondAttribute="top" id="F94-LL-e6v"/>
+                            <constraint firstItem="CpR-Rl-Ga4" firstAttribute="trailing" secondItem="Bhs-i1-eTV" secondAttribute="trailing" constant="30" id="bh6-V2-foe"/>
+                            <constraint firstItem="Bhs-i1-eTV" firstAttribute="leading" secondItem="CpR-Rl-Ga4" secondAttribute="leading" constant="30" id="bja-c4-HE1"/>
+                            <constraint firstItem="Bhs-i1-eTV" firstAttribute="top" secondItem="DLf-ag-adh" secondAttribute="bottom" constant="20" id="eab-BP-OIB"/>
                             <constraint firstAttribute="trailing" secondItem="OuF-rc-Jmf" secondAttribute="trailing" id="g03-u4-ysO"/>
+                            <constraint firstItem="CpR-Rl-Ga4" firstAttribute="trailing" secondItem="DLf-ag-adh" secondAttribute="trailing" constant="30" id="ynh-oO-AZC"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -54,6 +85,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

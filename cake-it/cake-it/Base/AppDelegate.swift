@@ -7,13 +7,18 @@
 
 import UIKit
 
+// kakao login
+import KakaoSDKCommon
+import NaverThirdPartyLogin
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    naverSDKInit()
+    kakaoSDKInit()
+    
     return true
   }
 
@@ -31,6 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
   }
 
-
+  // MARK: - private method
+  func naverSDKInit() {
+    let naverLogin = NaverThirdPartyLoginConnection.getSharedInstance()
+    naverLogin?.isNaverAppOauthEnable = true
+    naverLogin?.isInAppOauthEnable = true
+    naverLogin?.isOnlyPortraitSupportedInIphone()
+    naverLogin?.serviceUrlScheme = "cakeit"
+    naverLogin?.consumerKey = "byuZm4RWfIdw5z1B8F_A"
+    naverLogin?.consumerSecret = "uKONFKpBzl"
+    naverLogin?.appName = "cakeit"
+  }
+  
+  func kakaoSDKInit() {
+    KakaoSDKCommon.initSDK(appKey: "6401b7f5ee32ca3b74931f6f8b76bfe6")
+  }
 }
 
