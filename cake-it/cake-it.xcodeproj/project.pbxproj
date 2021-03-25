@@ -27,6 +27,12 @@
 		8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */; };
 		8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D2E25DAE836003D9CFA /* MyPage.storyboard */; };
 		8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */; };
+		8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F2C260CC05200743512 /* CakeDesign.swift */; };
+		8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */; };
+		8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F40260CD36000743512 /* CakeDesignCell.swift */; };
+		8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEA0F41260CD36000743512 /* CakeDesignCell.xib */; };
+		8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */; };
+		8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */; };
 		F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */; };
@@ -93,6 +99,12 @@
 		8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemMainViewController.swift; sourceTree = "<group>"; };
 		8B875D2E25DAE836003D9CFA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainViewController.swift; sourceTree = "<group>"; };
+		8BEA0F2C260CC05200743512 /* CakeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesign.swift; sourceTree = "<group>"; };
+		8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		8BEA0F40260CD36000743512 /* CakeDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignCell.swift; sourceTree = "<group>"; };
+		8BEA0F41260CD36000743512 /* CakeDesignCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeDesignCell.xib; sourceTree = "<group>"; };
+		8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MoneyFormat.swift; sourceTree = "<group>"; };
 		9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +195,7 @@
 				8B875D1625DAE721003D9CFA /* Saved */,
 				8B875D2D25DAE7CD003D9CFA /* MyPage */,
 				8B62C3282601005D005F599A /* Extensions */,
+				8BEA0F26260CBE4E00743512 /* SupportFiles */,
 				38D8C70225BC622700C1F10D /* Assets.xcassets */,
 				38D8C70725BC622700C1F10D /* Info.plist */,
 			);
@@ -257,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				8B62C3122600F67D005F599A /* Controllers */,
+				8BEA0F2B260CC04700743512 /* Models */,
+				8BEA0F3F260CD34400743512 /* Views */,
 			);
 			path = DesignList;
 			sourceTree = "<group>";
@@ -265,6 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				8B62C3132600FE10005F599A /* DesignListViewController.swift */,
+				8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */,
+				8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -281,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				8B62C31F26010033005F599A /* UIViewController */,
+				8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -319,6 +337,38 @@
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		8BEA0F26260CBE4E00743512 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				8BEA0F27260CBE5A00743512 /* Fonts */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		8BEA0F27260CBE5A00743512 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8BEA0F2B260CC04700743512 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8BEA0F2C260CC05200743512 /* CakeDesign.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8BEA0F3F260CD34400743512 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8BEA0F40260CD36000743512 /* CakeDesignCell.swift */,
+				8BEA0F41260CD36000743512 /* CakeDesignCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		F774B91A25E0E0BF006EE0EC /* Test */ = {
@@ -564,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
+				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
@@ -703,15 +754,19 @@
 			files = (
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
+				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
 				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
+				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
+				8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
+				8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */,
 				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
@@ -720,6 +775,7 @@
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
+				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
 				8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */,
