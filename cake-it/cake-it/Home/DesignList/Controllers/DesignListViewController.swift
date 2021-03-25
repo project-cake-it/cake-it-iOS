@@ -9,6 +9,9 @@ import UIKit
 
 final class DesignListViewController: BaseViewController {
   
+  @IBOutlet weak var navigationBarTitleLabel: UILabel!
+  @IBOutlet weak var designsCollectionView: UICollectionView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
   }
