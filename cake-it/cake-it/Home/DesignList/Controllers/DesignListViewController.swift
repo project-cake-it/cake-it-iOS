@@ -42,6 +42,10 @@ final class DesignListViewController: BaseViewController {
     designsCollectionView.reloadData()
   }
   
+  @IBAction func backButtonDidTap(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
+  }
+  
   @objc private func navigationTitleDidTap() {
     UIView.animate(withDuration: 0.2) {
       self.navigationBarTitleArrowIcon.transform = CGAffineTransform(rotationAngle: .pi)

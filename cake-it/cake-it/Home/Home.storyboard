@@ -115,6 +115,9 @@
                                         </constraints>
                                         <color key="tintColor" name="black"/>
                                         <state key="normal" image="arrowLeft"/>
+                                        <connections>
+                                            <action selector="backButtonDidTap:" destination="bDm-9X-dQ3" eventType="touchUpInside" id="vcq-U8-10y"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vep-8G-tgO">
                                         <rect key="frame" x="193" y="16.5" width="28.5" height="17.5"/>
