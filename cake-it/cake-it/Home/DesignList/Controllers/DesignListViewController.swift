@@ -15,7 +15,10 @@ final class DesignListViewController: BaseViewController {
     static let cakeDesignCellInterItemVerticalSpace: CGFloat = 4.0
   }
   
+  @IBOutlet weak var navigationBarView: UIView!
   @IBOutlet weak var navigationBarTitleLabel: UILabel!
+  @IBOutlet weak var navigationBarTitleTapGestureView: UIView!
+  @IBOutlet weak var navigationBarTitleArrowIcon: UIImageView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
   
   private(set) var cakeDesigns: [CakeDesign] = []
@@ -38,11 +41,23 @@ final class DesignListViewController: BaseViewController {
     }
     designsCollectionView.reloadData()
   }
+  
+  @objc private func navigationTitleDidTap() {
+    UIView.animate(withDuration: 0.2) {
+      self.navigationBarTitleArrowIcon.transform = CGAffineTransform(rotationAngle: .pi)
+    }
+  }
 }
 
 extension DesignListViewController {
   private func configure() {
     configureCollectionView()
+    configureNavigationBarTapGesture()
+  }
+  
+  private func configureNavigationBarTapGesture() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigationTitleDidTap))
+    navigationBarTitleTapGestureView.addGestureRecognizer(tapGesture)
   }
   
   private func configureCollectionView() {
