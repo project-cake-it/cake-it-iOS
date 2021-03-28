@@ -30,6 +30,11 @@
 		8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D2E25DAE836003D9CFA /* MyPage.storyboard */; };
 		8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */; };
 		8B93B2D92610C3160060ACAC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2D82610C3160060ACAC /* Colors.swift */; };
+		8B93B2E52610C9E90060ACAC /* Spoqa Han Sans Neo Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E02610C9E80060ACAC /* Spoqa Han Sans Neo Bold.otf */; };
+		8B93B2E62610C9E90060ACAC /* Spoqa Han Sans Neo Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E12610C9E80060ACAC /* Spoqa Han Sans Neo Regular.otf */; };
+		8B93B2E72610C9E90060ACAC /* Spoqa Han Sans Neo Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E22610C9E80060ACAC /* Spoqa Han Sans Neo Thin.otf */; };
+		8B93B2E82610C9E90060ACAC /* Spoqa Han Sans Neo Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E32610C9E90060ACAC /* Spoqa Han Sans Neo Light.otf */; };
+		8B93B2E92610C9E90060ACAC /* Spoqa Han Sans Neo Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E42610C9E90060ACAC /* Spoqa Han Sans Neo Medium.otf */; };
 		8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F2C260CC05200743512 /* CakeDesign.swift */; };
 		8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */; };
 		8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F40260CD36000743512 /* CakeDesignCell.swift */; };
@@ -105,6 +110,11 @@
 		8B875D2E25DAE836003D9CFA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainViewController.swift; sourceTree = "<group>"; };
 		8B93B2D82610C3160060ACAC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		8B93B2E02610C9E80060ACAC /* Spoqa Han Sans Neo Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Bold.otf"; sourceTree = "<group>"; };
+		8B93B2E12610C9E80060ACAC /* Spoqa Han Sans Neo Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Regular.otf"; sourceTree = "<group>"; };
+		8B93B2E22610C9E80060ACAC /* Spoqa Han Sans Neo Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Thin.otf"; sourceTree = "<group>"; };
+		8B93B2E32610C9E90060ACAC /* Spoqa Han Sans Neo Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Light.otf"; sourceTree = "<group>"; };
+		8B93B2E42610C9E90060ACAC /* Spoqa Han Sans Neo Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Neo Medium.otf"; sourceTree = "<group>"; };
 		8BEA0F2C260CC05200743512 /* CakeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesign.swift; sourceTree = "<group>"; };
 		8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8BEA0F40260CD36000743512 /* CakeDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignCell.swift; sourceTree = "<group>"; };
@@ -375,6 +385,11 @@
 		8BEA0F27260CBE5A00743512 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				8B93B2E02610C9E80060ACAC /* Spoqa Han Sans Neo Bold.otf */,
+				8B93B2E32610C9E90060ACAC /* Spoqa Han Sans Neo Light.otf */,
+				8B93B2E42610C9E90060ACAC /* Spoqa Han Sans Neo Medium.otf */,
+				8B93B2E12610C9E80060ACAC /* Spoqa Han Sans Neo Regular.otf */,
+				8B93B2E22610C9E80060ACAC /* Spoqa Han Sans Neo Thin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -643,11 +658,16 @@
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
+				8B93B2E62610C9E90060ACAC /* Spoqa Han Sans Neo Regular.otf in Resources */,
 				F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */,
+				8B93B2E92610C9E90060ACAC /* Spoqa Han Sans Neo Medium.otf in Resources */,
+				8B93B2E52610C9E90060ACAC /* Spoqa Han Sans Neo Bold.otf in Resources */,
 				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
 				8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */,
 				8B875D1B25DAE747003D9CFA /* SavedItem.storyboard in Resources */,
+				8B93B2E72610C9E90060ACAC /* Spoqa Han Sans Neo Thin.otf in Resources */,
 				8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */,
+				8B93B2E82610C9E90060ACAC /* Spoqa Han Sans Neo Light.otf in Resources */,
 				8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */,
 				8B875CF625DAE61D003D9CFA /* Search.storyboard in Resources */,
 			);
