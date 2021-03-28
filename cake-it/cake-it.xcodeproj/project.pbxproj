@@ -29,6 +29,7 @@
 		8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */; };
 		8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D2E25DAE836003D9CFA /* MyPage.storyboard */; };
 		8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */; };
+		8B93B2D92610C3160060ACAC /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2D82610C3160060ACAC /* Colors.swift */; };
 		8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F2C260CC05200743512 /* CakeDesign.swift */; };
 		8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */; };
 		8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F40260CD36000743512 /* CakeDesignCell.swift */; };
@@ -103,6 +104,7 @@
 		8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemMainViewController.swift; sourceTree = "<group>"; };
 		8B875D2E25DAE836003D9CFA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageMainViewController.swift; sourceTree = "<group>"; };
+		8B93B2D82610C3160060ACAC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		8BEA0F2C260CC05200743512 /* CakeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesign.swift; sourceTree = "<group>"; };
 		8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8BEA0F40260CD36000743512 /* CakeDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignCell.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				8B875D1625DAE721003D9CFA /* Saved */,
 				8B875D2D25DAE7CD003D9CFA /* MyPage */,
 				8B62C3282601005D005F599A /* Extensions */,
+				8B93B2D72610C10C0060ACAC /* Common */,
 				8BEA0F26260CBE4E00743512 /* SupportFiles */,
 				38D8C70225BC622700C1F10D /* Assets.xcassets */,
 				38D8C70725BC622700C1F10D /* Info.plist */,
@@ -351,6 +354,14 @@
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		8B93B2D72610C10C0060ACAC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8B93B2D82610C3160060ACAC /* Colors.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		8BEA0F26260CBE4E00743512 /* SupportFiles */ = {
@@ -791,6 +802,7 @@
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
+				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
