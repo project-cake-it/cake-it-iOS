@@ -43,13 +43,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     naverLogin?.isInAppOauthEnable = true
     naverLogin?.isOnlyPortraitSupportedInIphone()
     naverLogin?.serviceUrlScheme = "cakeit"
-    naverLogin?.consumerKey = "byuZm4RWfIdw5z1B8F_A"
-    naverLogin?.consumerSecret = "uKONFKpBzl"
+    naverLogin?.consumerKey = "N2SMwopXbdrTDABqVn1m"
+    naverLogin?.consumerSecret = "PFv_FX3EsN"
     naverLogin?.appName = "cakeit"
   }
   
   func kakaoSDKInit() {
-    KakaoSDKCommon.initSDK(appKey: "6401b7f5ee32ca3b74931f6f8b76bfe6")
+    KakaoSDKCommon.initSDK(appKey: "336e5fa0e2a8c916ffda94b2b64f5c8d")
   }
 }
 

@@ -13,7 +13,7 @@ final class LoginTestViewModel: BaseViewModel {
   
   func performLoginTest(email: String, password: String, completion: @escaping (String) -> Void) {
     model = LoginTestModel(email: email, password: password)
-    NetworkManager.shared.requestPost(api: .loginTest,
+    NetworkManager.shared.requestPost(api: .login,
                                       type: LoginTestModel.Response.self,
                                       param: model) { (response) in
       switch response {

@@ -14,6 +14,8 @@ final class LoginViewController: UIViewController {
   
   static let id = "loginViewController"
   
+  private var model: LoginModel?
+  
   let naverLoginSDK = NaverThirdPartyLoginConnection.getSharedInstance()
   
   override func viewDidLoad() {
@@ -47,7 +49,26 @@ final class LoginViewController: UIViewController {
           print(error)
         } else {
           print("Login Success: %@", oauthToken!)
-          self.closeLoginViewController()
+          guard let accessToken = oauthToken?.accessToken else { return }
+          
+          self.model = LoginModel(token: accessToken, type:"KAKAO")
+          
+          NetworkManager.shared.requestPost(api: .login,
+                                            type: LoginModel.Response.self,
+                                            param: self.model) { (response) in
+            switch response {
+            case .success(let result):
+              let token = result.token
+              
+              self.closeLoginViewController()
+            case .failure(let error):
+              print(error)
+              
+              self.closeLoginViewController()
+              break
+            }
+          }
+          
         }
       }
     }
@@ -65,7 +86,29 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     guard isValidAccessToken else { return }
     
     print(naverLoginSDK?.accessToken)
-    closeLoginViewController()
+
+    // 서버통신
+    guard let access = naverLoginSDK?.accessToken else {
+      return
+    }
+    
+    model = LoginModel(token: access, type:"naver")
+    
+    NetworkManager.shared.requestPost(api: .login,
+                                      type: LoginModel.Response.self,
+                                      param: model) { (response) in
+      switch response {
+      case .success(let result):
+        let token = result.token
+        
+        
+        self.closeLoginViewController()
+      case .failure(let error):
+        
+        self.closeLoginViewController()
+        break
+      }
+    }
   }
   
   func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
@@ -73,7 +116,28 @@ extension LoginViewController: NaverThirdPartyLoginConnectionDelegate {
     guard isValidAccessToken else { return }
     
     print(naverLoginSDK?.accessToken)
-    closeLoginViewController()
+    
+    // 서버통신
+    guard let access = naverLoginSDK?.accessToken else {
+      return
+    }
+    
+    model = LoginModel(token: access, type:"NAVER")
+    
+    NetworkManager.shared.requestPost(api: .login,
+                                      type: LoginModel.Response.self,
+                                      param: model) { (response) in
+      switch response {
+      case .success(let result):
+        let token = result.token
+        
+      case .failure(let error):
+        
+        break
+      }
+    }
+    
+    //closeLoginViewController()
   }
   
   func oauth20ConnectionDidFinishDeleteToken() {

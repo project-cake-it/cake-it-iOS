@@ -38,7 +38,7 @@ final class NetworkManager {
                                  param: BaseModel? = nil,
                                  completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: api.urlString) else { return }
-    let headers: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json"]
+    let headers: HTTPHeaders = ["Content-Type":"application/json"]
     let request = AF.request(url,
                              method: .post,
                              parameters: param,
