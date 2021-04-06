@@ -282,6 +282,36 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		8B2A7539261C9716007757E5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8B875D0925DAE6B3003D9CFA /* Shops.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		8B2A753A261C971E007757E5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8B2A753B261C9729007757E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B2A753C261C972D007757E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8B3AF14425DADFD700B9F48D /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,8 +374,10 @@
 		8B875D0525DAE684003D9CFA /* Shops */ = {
 			isa = PBXGroup;
 			children = (
-				8B875D0925DAE6B3003D9CFA /* Shops.storyboard */,
-				8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */,
+				8B2A7539261C9716007757E5 /* Storyboards */,
+				8B2A753A261C971E007757E5 /* Controllers */,
+				8B2A753B261C9729007757E5 /* Models */,
+				8B2A753C261C972D007757E5 /* Views */,
 			);
 			path = Shops;
 			sourceTree = "<group>";
