@@ -19,6 +19,7 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var navigationBarTitleLabel: UILabel!
   @IBOutlet weak var navigationBarTitleTapGestureView: UIView!
   @IBOutlet weak var navigationBarTitleArrowIcon: UIImageView!
+  @IBOutlet weak var filterViewArea: UIView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
   
   private(set) var cakeDesigns: [CakeDesign] = []
@@ -55,8 +56,20 @@ final class DesignListViewController: BaseViewController {
 
 extension DesignListViewController {
   private func configure() {
+    configureFilterView()
     configureCollectionView()
     configureNavigationBarTapGesture()
+  }
+  
+  private func configureFilterView() {
+    let cakeFilterList = ["초기화", "찜 순", "지역", "크기", "색깔", "카테고리"]
+    let filterView = FilterView(frame: CGRect(x: 0,
+                                              y: 0,
+                                              width: filterViewArea.frame.width,
+                                              height: filterViewArea.frame.height))
+    filterView.delegate = self
+    filterView.filterList = cakeFilterList
+    filterViewArea.addSubview(filterView)
   }
   
   private func configureNavigationBarTapGesture() {
@@ -78,5 +91,10 @@ extension DesignListViewController {
   private func configureCollectionViewProtocols() {
     designsCollectionView.dataSource = self
     designsCollectionView.delegate = self
+  }
+}
+
+extension DesignListViewController: FilterViewTestDelegate {
+  func filterButtonDidTap(index: Int) {
   }
 }

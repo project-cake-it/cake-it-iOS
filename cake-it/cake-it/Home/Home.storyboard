@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbg-e5-YJw">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wbg-e5-YJw">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -125,13 +125,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vep-8G-tgO">
-                                        <rect key="frame" x="191" y="16" width="32" height="18"/>
+                                        <rect key="frame" x="193" y="16" width="28.5" height="18"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevronCompactDown" translatesAutoresizingMaskIntoConstraints="NO" id="xdY-bA-and">
-                                        <rect key="frame" x="224" y="15" width="20" height="20"/>
+                                        <rect key="frame" x="222.5" y="15" width="20" height="20"/>
                                         <color key="tintColor" name="black"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="k9O-L0-Bxd"/>
@@ -139,7 +139,7 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jv3-QA-chs" userLabel="NavigationTitleTapGestureRecognizerView">
-                                        <rect key="frame" x="189" y="6" width="57" height="38"/>
+                                        <rect key="frame" x="191" y="6" width="53.5" height="38"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -204,6 +204,7 @@
                     </view>
                     <connections>
                         <outlet property="designsCollectionView" destination="BOB-Bu-wpc" id="Ihi-OE-LQC"/>
+                        <outlet property="filterViewArea" destination="5T6-5t-X6O" id="uJd-GB-TdP"/>
                         <outlet property="navigationBarTitleArrowIcon" destination="xdY-bA-and" id="qY9-1W-ddp"/>
                         <outlet property="navigationBarTitleLabel" destination="Vep-8G-tgO" id="ZiA-tj-ZUG"/>
                         <outlet property="navigationBarTitleTapGestureView" destination="jv3-QA-chs" id="39O-xG-eOQ"/>
