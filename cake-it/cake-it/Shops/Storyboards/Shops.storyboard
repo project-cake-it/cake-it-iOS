@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크 가게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dda-u6-8EQ">
-                                        <rect key="frame" x="171" y="16" width="72.5" height="18"/>
+                                        <rect key="frame" x="172.5" y="16" width="69.5" height="18"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tcO-Rn-Bpq">
                                 <rect key="frame" x="0.0" y="158" width="414" height="704"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xZp-04-ihX">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xZp-04-ihX">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -84,6 +84,9 @@
                             <constraint firstItem="gNX-IU-ksp" firstAttribute="bottom" secondItem="tcO-Rn-Bpq" secondAttribute="bottom" id="oaW-Sx-oen"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="tcO-Rn-Bpq" id="5ad-iO-TbH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8M-dH-k2d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
