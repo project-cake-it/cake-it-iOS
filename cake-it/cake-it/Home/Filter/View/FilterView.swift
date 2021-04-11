@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FilterViewTestDelegate {
+protocol FilterViewDelegate {
   func filterButtonDidTap(index: Int)
 }
 
@@ -16,45 +16,10 @@ class FilterView: UIView {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var contentView: UIView!
   
-  var delegate: FilterViewTestDelegate?
+  var delegate: FilterViewDelegate?
   var filterList: [String] = [] {
     didSet {
       configureFilterButtonList()
-    }
-  }
-  
-  enum FilterRegion: String {
-    case gangnam = "강남구"
-    case gwangjin = "광진구"
-    case gwanak = "관악구"
-    case mapo = "마포구"
-    case seodeamun = "서대문구"
-    case songpa = "송파구"
-    
-    var name: String {
-      return self.rawValue
-    }
-  }
-  
-  enum FilterSize: String {
-    case mini = "미니"
-    case size_1 = "1호"
-    case size_2 = "2호"
-    case size_3 = "3호"
-    case two_tier = "2단"
-    
-    var name: String {
-      return self.rawValue
-    }
-    
-    var description: String {
-      switch self {
-      case .mini: return "10-11cm, 1-2인용"
-      case .size_1: return "15-16cm, 3-4인용"
-      case .size_2: return "18cm, 5-6인용"
-      case .size_3: return "21cm, 7-8인용"
-      case .two_tier: return "파티용 특별제작"
-      }
     }
   }
   
@@ -79,10 +44,11 @@ class FilterView: UIView {
   private func configureFilterButtonList() {
     var xPos: CGFloat = 20.0
     var filterButtonList: [FilterButton] = []
-    for filter in filterList {
+    for i in 0..<filterList.count {
       let button = FilterButton(frame:CGRect(x: xPos, y: 0, width: 0, height: 0))
       button.delegate = self
-      button.setTitle(filter, for: .normal)
+      button.index = i
+      button.setTitle(filterList[i], for: .normal)
       button.sizeToFit()
       filterButtonList.append(button)
       contentView.addSubview(button)
@@ -100,8 +66,7 @@ class FilterView: UIView {
 }
 
 extension FilterView: FilterButtonDelegate {
-  func filterButtonDidTap(_ sender: UIButton) {
-    let testindex = 0
-    delegate?.filterButtonDidTap(index: testindex)
+  func filterButtonDidTap(_ sender: FilterButton) {
+    delegate?.filterButtonDidTap(index: sender.index)
   }
 }

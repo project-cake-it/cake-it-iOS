@@ -8,12 +8,13 @@
 import UIKit
 
 protocol FilterButtonDelegate {
-  func filterButtonDidTap(_ sender: UIButton)
+  func filterButtonDidTap(_ sender: FilterButton)
 }
 
 class FilterButton: UIButton {
 
   var delegate: FilterButtonDelegate?
+  var index: Int = 0    // filter type을 구분할 버튼 인덱스
   
   override init(frame: CGRect) {
     super.init(frame: frame)

@@ -22,6 +22,7 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var filterViewArea: UIView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
   
+  private var filterDetailView = FilterDetailView()
   private(set) var cakeDesigns: [CakeDesign] = []
   
   override func viewDidLoad() {
@@ -62,7 +63,7 @@ extension DesignListViewController {
   }
   
   private func configureFilterView() {
-    let cakeFilterList = ["초기화", "찜 순", "지역", "크기", "색깔", "카테고리"]
+    let cakeFilterList = ["초기화", "기본순", "지역", "크기", "색깔", "카테고리"]
     let filterView = FilterView(frame: CGRect(x: 0,
                                               y: 0,
                                               width: filterViewArea.frame.width,
@@ -94,7 +95,22 @@ extension DesignListViewController {
   }
 }
 
-extension DesignListViewController: FilterViewTestDelegate {
+extension DesignListViewController: FilterViewDelegate {
   func filterButtonDidTap(index: Int) {
+    print("selected index: \(index)")
+    
+    for view in filterDetailView.subviews {
+      view.removeFromSuperview()
+    }
+    filterDetailView.removeFromSuperview()
+    
+    filterDetailView = FilterDetailView()
+    filterDetailView.index = index
+    self.view.addSubview(filterDetailView)
+    filterDetailView.translatesAutoresizingMaskIntoConstraints = false
+    filterDetailView.topAnchor.constraint(equalTo: filterViewArea.bottomAnchor).isActive = true
+    filterDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    filterDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+    filterDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
   }
 }
