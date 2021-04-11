@@ -9,15 +9,15 @@ import Foundation
 
 final class LoginModel: BaseModel {
   
-  let authCode: String
+  let accessToken: String
   let socialType: String
   
-  init(token: String, type: String) {
-    self.authCode = token
+  init(accessToken: String, type: String) {
+    self.accessToken = accessToken
     self.socialType = type
   }
   
   struct Response: Decodable {
-    let token: String
+    let accessToken: String
   }
 }

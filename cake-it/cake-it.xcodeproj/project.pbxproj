@@ -26,6 +26,8 @@
 		8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D2E25DAE836003D9CFA /* MyPage.storyboard */; };
 		8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */; };
 		AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDC83260756DF0026F5FA /* LoginModel.swift */; };
+		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
+		ACC16E71262334960094D6D2 /* SocialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC16E70262334950094D6D2 /* SocialType.swift */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */; };
 		F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */; };
@@ -93,6 +95,8 @@
 		9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AC1BDC83260756DF0026F5FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ACC16E70262334950094D6D2 /* SocialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialType.swift; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AEDF9B83790700EB68FD0211 /* Pods-cake-it.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.debug.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.debug.xcconfig"; sourceTree = "<group>"; };
 		C9D389A843537311BA9F1FA4 /* Pods-cake-itTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-itTests.debug.xcconfig"; path = "Target Support Files/Pods-cake-itTests/Pods-cake-itTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
+				AC86F9AC26233B69002DED4F /* Common */,
 				F774B91A25E0E0BF006EE0EC /* Test */,
 				8B3AF14425DADFD700B9F48D /* Base */,
 				F774B92B25E0E0BF006EE0EC /* Network */,
@@ -207,10 +212,9 @@
 		38D8C73A25BC631900C1F10D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				AC1BDC83260756DF0026F5FA /* LoginModel.swift */,
+				ACC16E6F262334240094D6D2 /* Login */,
 				8B3AF14525DAE16A00B9F48D /* Home.storyboard */,
 				38D8C6FD25BC622500C1F10D /* HomeViewController.swift */,
-				ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -284,6 +288,24 @@
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
 			);
 			path = MyPage;
+			sourceTree = "<group>";
+		};
+		AC86F9AC26233B69002DED4F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ACC16E70262334950094D6D2 /* SocialType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ACC16E6F262334240094D6D2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AC1BDC83260756DF0026F5FA /* LoginModel.swift */,
+				ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */,
+				AC94D3872614D10F004063DC /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		F774B91A25E0E0BF006EE0EC /* Test */ = {
@@ -671,6 +693,7 @@
 				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
+				ACC16E71262334960094D6D2 /* SocialType.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
@@ -686,6 +709,7 @@
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
+				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
