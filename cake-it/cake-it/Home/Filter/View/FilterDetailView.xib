@@ -23,22 +23,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" name="black"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4E-gR-G3e">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                    <color key="backgroundColor" name="white"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="100" id="QZ2-JH-dVh"/>
-                    </constraints>
-                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZvO-rT-WXk" secondAttribute="bottom" id="1jk-iy-iRd"/>
-                <constraint firstItem="L4E-gR-G3e" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="9Zv-SW-241"/>
                 <constraint firstItem="ZvO-rT-WXk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="V8C-4C-yRg"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="L4E-gR-G3e" secondAttribute="trailing" id="Zi3-gg-AtU"/>
-                <constraint firstItem="L4E-gR-G3e" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ejb-mA-8VJ"/>
                 <constraint firstItem="ZvO-rT-WXk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kHX-nM-mc5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZvO-rT-WXk" secondAttribute="trailing" id="kc9-5v-wAA"/>
             </constraints>
@@ -48,9 +38,6 @@
     <resources>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="white">
-            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

@@ -49,6 +49,10 @@
 		F708FFFD261DECF200C5390D /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F708FFF8261DECF200C5390D /* FilterView.xib */; };
 		F708FFFE261DECF200C5390D /* FilterDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F708FFF9261DECF200C5390D /* FilterDetailView.xib */; };
 		F708FFFF261DECF200C5390D /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708FFFA261DECF200C5390D /* FilterButton.swift */; };
+		F75388802625CE3100A84248 /* ColorFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F753887F2625CE3100A84248 /* ColorFilterCell.xib */; };
+		F75388882625CE3F00A84248 /* ColorFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75388872625CE3F00A84248 /* ColorFilterCell.swift */; };
+		F75388982625D32600A84248 /* DescriptionFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75388972625D32600A84248 /* DescriptionFilterCell.xib */; };
+		F753889D2625D33100A84248 /* DescriptionFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753889C2625D33100A84248 /* DescriptionFilterCell.swift */; };
 		F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */; };
 		F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */; };
 		F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */; };
@@ -66,6 +70,8 @@
 		F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */; };
 		F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */; };
 		F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */; };
+		F7A98F982625C89900C7C295 /* BasicFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A98F972625C89900C7C295 /* BasicFilterCell.xib */; };
+		F7A98F9D2625C91900C7C295 /* BasicFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A98F9C2625C91900C7C295 /* BasicFilterCell.swift */; };
 		FAAB2F89308B59A58AD30653 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +147,10 @@
 		F708FFF9261DECF200C5390D /* FilterDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterDetailView.xib; sourceTree = "<group>"; };
 		F708FFFA261DECF200C5390D /* FilterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		F708FFFB261DECF200C5390D /* FilterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailView.swift; sourceTree = "<group>"; };
+		F753887F2625CE3100A84248 /* ColorFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFilterCell.xib; sourceTree = "<group>"; };
+		F75388872625CE3F00A84248 /* ColorFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterCell.swift; sourceTree = "<group>"; };
+		F75388972625D32600A84248 /* DescriptionFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionFilterCell.xib; sourceTree = "<group>"; };
+		F753889C2625D33100A84248 /* DescriptionFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionFilterCell.swift; sourceTree = "<group>"; };
 		F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 		F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
 		F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +168,8 @@
 		F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewModel.swift; sourceTree = "<group>"; };
 		F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoUpload.storyboard; sourceTree = "<group>"; };
 		F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
+		F7A98F972625C89900C7C295 /* BasicFilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasicFilterCell.xib; sourceTree = "<group>"; };
+		F7A98F9C2625C91900C7C295 /* BasicFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicFilterCell.swift; sourceTree = "<group>"; };
 		FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -435,6 +447,7 @@
 		F7080005261DECFD00C5390D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F7A98F962625C88400C7C295 /* Cell */,
 				F708FFFA261DECF200C5390D /* FilterButton.swift */,
 				F708FFFB261DECF200C5390D /* FilterDetailView.swift */,
 				F708FFF9261DECF200C5390D /* FilterDetailView.xib */,
@@ -595,6 +608,19 @@
 			path = PhotoUpload_Test;
 			sourceTree = "<group>";
 		};
+		F7A98F962625C88400C7C295 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F7A98F972625C89900C7C295 /* BasicFilterCell.xib */,
+				F7A98F9C2625C91900C7C295 /* BasicFilterCell.swift */,
+				F753887F2625CE3100A84248 /* ColorFilterCell.xib */,
+				F75388872625CE3F00A84248 /* ColorFilterCell.swift */,
+				F75388972625D32600A84248 /* DescriptionFilterCell.xib */,
+				F753889C2625D33100A84248 /* DescriptionFilterCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -707,12 +733,15 @@
 				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
+				F7A98F982625C89900C7C295 /* BasicFilterCell.xib in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
 				8B93B2E62610C9E90060ACAC /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */,
 				8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				8B93B2E52610C9E90060ACAC /* SpoqaHanSansNeo-Bold.otf in Resources */,
+				F75388802625CE3100A84248 /* ColorFilterCell.xib in Resources */,
 				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
+				F75388982625D32600A84248 /* DescriptionFilterCell.xib in Resources */,
 				8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */,
 				F708FFFE261DECF200C5390D /* FilterDetailView.xib in Resources */,
 				8B875D1B25DAE747003D9CFA /* SavedItem.storyboard in Resources */,
@@ -872,6 +901,7 @@
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
+				F753889D2625D33100A84248 /* DescriptionFilterCell.swift in Sources */,
 				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
@@ -882,8 +912,10 @@
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
+				F75388882625CE3F00A84248 /* ColorFilterCell.swift in Sources */,
 				8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
+				F7A98F9D2625C91900C7C295 /* BasicFilterCell.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

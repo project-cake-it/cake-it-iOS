@@ -97,8 +97,6 @@ extension DesignListViewController {
 
 extension DesignListViewController: FilterViewDelegate {
   func filterButtonDidTap(index: Int) {
-    print("selected index: \(index)")
-    
     for view in filterDetailView.subviews {
       view.removeFromSuperview()
     }

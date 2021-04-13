@@ -45,87 +45,95 @@ class FilterDetailView: UIView {
   }
   
   private func configureView() {
-    var detailList: [String] = []
+    var viewList: [UIView] = []
     switch filterIndex {
     case .reset:
-      detailList = configureResetList()
+      configureResetList()
     case .basic:
-      detailList = configureBasicList()
+      viewList = configureBasicList()
     case .region:
-      detailList = configureRegionList()
+      viewList = configureRegionList()
     case .size:
-      detailList = configureSizeList()
+      viewList = configureSizeList()
     case .color:
-      detailList = configureColorList()
+      viewList = configureColorList()
     case .category:
-      detailList = configureCategoryList()
+      viewList = configureCategoryList()
     }
     
-    var labelList: [UILabel] = []
-    for text in detailList {
-      let label = UILabel()
-      label.text = text
-      label.sizeToFit()
-      labelList.append(label)
-    }
-    
-    let stackView = UIStackView(arrangedSubviews: labelList)
+    let stackView = UIStackView(arrangedSubviews: viewList)
     stackView.axis = .vertical
-    stackView.spacing = 10
-    stackView.distribution = .fillEqually
+    stackView.spacing = 35
+    stackView.distribution = .fillProportionally
+    stackView.alignment = .leading
     self.addSubview(stackView)
 
     stackView.translatesAutoresizingMaskIntoConstraints = false
     stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    stackView.heightAnchor.constraint(equalToConstant: 200.0).isActive = true
     stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
     stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-    stackView.backgroundColor = .yellow
+    stackView.sizeToFit()
   }
   
-  private func configureResetList() -> [String] {
-    return ["미니", "1호", "2호", "3호", "2단 케이크"]
+  private func configureResetList() {
   }
   
-  private func configureBasicList() -> [String] {
-    print("configureBasicList")
-    var baseicList: [String] = []
+  private func configureBasicList() -> [UIView] {
+    var viewList: [BasicFilterCell] = []
     for type in FilterBasic.allCases {
-      baseicList.append(type.rawValue)
+      let basicCell = BasicFilterCell()
+      basicCell.label.text = type.rawValue
+      viewList.append(basicCell)
     }
-    return baseicList
+    
+    return viewList
   }
-  private func configureRegionList() -> [String] {
-    print("configureRegionList")
-    var baseicList: [String] = []
+  
+  private func configureRegionList() -> [UIView] {
+    var viewList: [BasicFilterCell] = []
     for type in FilterRegion.allCases {
-      baseicList.append(type.rawValue)
+      let basicCell = BasicFilterCell()
+      basicCell.label.text = type.rawValue
+      viewList.append(basicCell)
     }
-    return baseicList
+    
+    return viewList
   }
-  private func configureSizeList() -> [String] {
-    print("configureSizeList")
-    var baseicList: [String] = []
+  
+  private func configureSizeList() -> [UIView] {
+    var viewList: [DescriptionFilterCell] = []
     for type in FilterSize.allCases {
-      baseicList.append(type.rawValue)
+      let descriptionCell = DescriptionFilterCell()
+      descriptionCell.titleLabel.text = type.title
+      descriptionCell.descriptionLabel.text = type.description
+      descriptionCell.heightAnchor.constraint(equalToConstant: 30).isActive = true
+      viewList.append(descriptionCell)
     }
-    return baseicList
+    
+    return viewList
   }
-  private func configureColorList() -> [String] {
-    print("configureColorList")
-    var baseicList: [String] = []
+  
+  private func configureColorList() -> [UIView] {
+    var viewList: [ColorFilterCell] = []
     for type in FilterColor.allCases {
-      baseicList.append(type.rawValue)
+      let colorCell = ColorFilterCell()
+      colorCell.colorLabel.text = type.rawValue
+      colorCell.colorView.backgroundColor = type.color
+      viewList.append(colorCell)
     }
-    return baseicList
+    
+    return viewList
   }
-  private func configureCategoryList() -> [String] {
-    print("configureCategoryList")
-    var baseicList: [String] = []
+  
+  private func configureCategoryList() -> [UIView] {
+    var viewList: [BasicFilterCell] = []
     for type in FilterCategory.allCases {
-      baseicList.append(type.rawValue)
+      let basicCell = BasicFilterCell()
+      basicCell.label.text = type.rawValue
+      viewList.append(basicCell)
     }
-    return baseicList
+    
+    return viewList
   }
 }
 
@@ -169,7 +177,7 @@ extension FilterDetailView {
     case size_3 = "3호"
     case two_tier = "2단"
     
-    var name: String {
+    var title: String {
       return self.rawValue
     }
     
@@ -185,13 +193,25 @@ extension FilterDetailView {
   }
   
   enum FilterColor: String, CaseIterable {
-    case whilte = "화이트"
+    case white = "화이트"
     case pink = "핑크"
-    case yellow = "옐로루"
+    case yellow = "옐로우"
     case red = "레드"
     case blue = "블루"
     case purple = "퍼플"
     case other = "기타"
+    
+    var color: UIColor {
+      switch self {
+      case .white:  return Colors.design_white
+      case .pink:   return Colors.design_pink
+      case .yellow: return Colors.design_yellow
+      case .red:    return Colors.design_red
+      case .blue:   return Colors.design_blue
+      case .purple: return Colors.design_purple
+      case .other:  return Colors.design_other
+      }
+    }
   }
   
   enum FilterCategory: String, CaseIterable {

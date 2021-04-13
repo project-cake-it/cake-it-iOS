@@ -16,4 +16,13 @@ enum Colors {
   static let grayscale05 = UIColor(named: "grayscale05")!
   static let black = UIColor(named: "black")!
   static let pointB = UIColor(named: "pointB")!
+  
+  static let design_white = UIColor(named: "design_white")!
+  static let design_yellow = UIColor(named: "design_yellow")!
+  static let design_pink = UIColor(named: "design_pink")!
+  static let design_blue = UIColor(named: "design_blue")!
+  static let design_purple = UIColor(named: "design_purple")!
+  static let design_red = UIColor(named: "design_red")!
+  static let design_other = UIColor(named: "design_other")!
+
 }
