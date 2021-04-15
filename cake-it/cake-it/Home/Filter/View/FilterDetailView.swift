@@ -11,21 +11,15 @@ import UIKit
 class FilterDetailView: UIView {
   
   @IBOutlet weak var backgroundView: UIView!
+  var filterIndex: FilterType = .reset
   var index: Int = 0 {
     didSet {
-      switch index {  // 여기 일일ㅇ ㅣ수정해주는거 바꿔야됨!!!!! 외냐면 수정할때 여기랑 extension enum 같ㅇ ㅣ바꿔야하기 때문!!
-      case 0: filterIndex = .reset
-      case 1: filterIndex = .basic
-      case 2: filterIndex = .region
-      case 3: filterIndex = .size
-      case 4: filterIndex = .color
-      case 5: filterIndex = .category
-      default: filterIndex = .reset
+      if index < FilterType.allCases.count {
+        filterIndex = FilterType.allCases[index]
       }
       configureView()
     }
   }
-  var filterIndex: FilterType = .reset
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -65,7 +59,7 @@ class FilterDetailView: UIView {
     stackView.axis = .vertical
     stackView.spacing = 35
     stackView.distribution = .fillProportionally
-    stackView.alignment = .leading
+    stackView.alignment = .fill
     self.addSubview(stackView)
 
     stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,28 +67,39 @@ class FilterDetailView: UIView {
     stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
     stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     stackView.sizeToFit()
+    
+    print("stackView 너비 : \(stackView.frame.width)")
+
   }
   
   private func configureResetList() {
   }
   
   private func configureBasicList() -> [UIView] {
-    var viewList: [BasicFilterCell] = []
-    for type in FilterBasic.allCases {
-      let basicCell = BasicFilterCell()
-      basicCell.label.text = type.rawValue
-      viewList.append(basicCell)
+    var viewList: [TitleFilterCell] = []
+    
+    for i in 0..<FilterBasic.allCases.count {
+      let baseCell = TitleFilterCell()
+      baseCell.delegate = self
+      baseCell.filterIndex = i
+      baseCell.label.text = FilterBasic.allCases[i].title
+            baseCell.heightAnchor.constraint(equalToConstant: 100).isActive = true
+      viewList.append(baseCell)
     }
     
     return viewList
   }
   
   private func configureRegionList() -> [UIView] {
-    var viewList: [BasicFilterCell] = []
-    for type in FilterRegion.allCases {
-      let basicCell = BasicFilterCell()
-      basicCell.label.text = type.rawValue
-      viewList.append(basicCell)
+    var viewList: [TitleFilterCell] = []
+    
+    for i in 0..<FilterRegion.allCases.count {
+      let regionCell = TitleFilterCell(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+      regionCell.delegate = self
+      regionCell.filterIndex = i
+      regionCell.label.text = FilterRegion.allCases[i].title
+//      baseCell.heightAnchor.constraint(equalToConstant: 100).isActive = true
+      viewList.append(regionCell)
     }
     
     return viewList
@@ -102,10 +107,13 @@ class FilterDetailView: UIView {
   
   private func configureSizeList() -> [UIView] {
     var viewList: [DescriptionFilterCell] = []
-    for type in FilterSize.allCases {
+    
+    for i in 0..<FilterSize.allCases.count {
       let descriptionCell = DescriptionFilterCell()
-      descriptionCell.titleLabel.text = type.title
-      descriptionCell.descriptionLabel.text = type.description
+      descriptionCell.delegate = self
+      descriptionCell.filterIndex = i
+      descriptionCell.titleLabel.text = FilterSize.allCases[i].title
+      descriptionCell.descriptionLabel.text = FilterSize.allCases[i].description
       descriptionCell.heightAnchor.constraint(equalToConstant: 30).isActive = true
       viewList.append(descriptionCell)
     }
@@ -115,10 +123,13 @@ class FilterDetailView: UIView {
   
   private func configureColorList() -> [UIView] {
     var viewList: [ColorFilterCell] = []
-    for type in FilterColor.allCases {
+    
+    for i in 0..<FilterColor.allCases.count {
       let colorCell = ColorFilterCell()
-      colorCell.colorLabel.text = type.rawValue
-      colorCell.colorView.backgroundColor = type.color
+      colorCell.delegate = self
+      colorCell.filterIndex = i
+      colorCell.colorLabel.text = FilterColor.allCases[i].title
+      colorCell.colorView.backgroundColor = FilterColor.allCases[i].color
       viewList.append(colorCell)
     }
     
@@ -126,22 +137,39 @@ class FilterDetailView: UIView {
   }
   
   private func configureCategoryList() -> [UIView] {
-    var viewList: [BasicFilterCell] = []
-    for type in FilterCategory.allCases {
-      let basicCell = BasicFilterCell()
-      basicCell.label.text = type.rawValue
-      viewList.append(basicCell)
+    var viewList: [TitleFilterCell] = []
+    
+    for i in 0..<FilterCategory.allCases.count {
+      let baseCell = TitleFilterCell()
+      baseCell.delegate = self
+      baseCell.filterIndex = i
+      baseCell.label.text = FilterCategory.allCases[i].title
+      viewList.append(baseCell)
     }
     
     return viewList
   }
 }
 
+extension FilterDetailView: BaseFilterCellDelegate {
+  
+  func cellDidTap(index: Int) {
+    switch filterIndex {
+    case .basic:  print(FilterBasic.allCases[index].title)
+    case .region: print(FilterRegion.allCases[index].title)
+    case .size:   print(FilterSize.allCases[index].title)
+    case .color: print(FilterColor.allCases[index].title)
+    case .category:  print(FilterCategory.allCases[index].title)
+    default: break
+    }
+  }
+  
+}
 
 // Filter Detail Enum
 extension FilterDetailView {
   
-  enum FilterType {
+  enum FilterType: CaseIterable {
     case reset    // 초기화
     case basic    // 기본순
     case region   // 지역
@@ -155,6 +183,10 @@ extension FilterDetailView {
     case zzim = "찜 순"
     case price_hight = "가격 높은 순"
     case price_low = "가격 낮은 순"
+    
+    var title: String {
+      return self.rawValue
+    }
   }
   
   enum FilterRegion: String, CaseIterable {
@@ -165,7 +197,7 @@ extension FilterDetailView {
     case seodeamun = "서대문구"
     case songpa = "송파구"
     
-    var name: String {
+    var title: String {
       return self.rawValue
     }
   }
@@ -201,6 +233,10 @@ extension FilterDetailView {
     case purple = "퍼플"
     case other = "기타"
     
+    var title: String {
+      return self.rawValue
+    }
+    
     var color: UIColor {
       switch self {
       case .white:  return Colors.design_white
@@ -219,5 +255,9 @@ extension FilterDetailView {
     case image = "이미지"
     case character = "캐릭터"
     case individuality = "개성"
+    
+    var title: String {
+      return self.rawValue
+    }
   }
 }

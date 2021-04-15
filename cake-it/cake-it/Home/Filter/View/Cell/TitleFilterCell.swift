@@ -1,5 +1,5 @@
 //
-//  BasicFilterCell.swift
+//  TitleFilterCell.swift
 //  cake-it
 //
 //  Created by seungbong on 2021/04/13.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TitleFilterCell: UIView {
+class TitleFilterCell: BaseFilterCell {
 
   @IBOutlet weak var label: UILabel!
   
@@ -15,6 +15,7 @@ class TitleFilterCell: UIView {
     super.init(frame: frame)
     commonInit()
   }
+  
   
   required init?(coder: NSCoder) {
     super.init(coder: coder)
@@ -28,5 +29,8 @@ class TitleFilterCell: UIView {
     self.addSubview(view)
   }
 
+  @IBAction func cellButtonDidTap(_ sender: Any) {
+      super.cellDidTap()
+  }
   
 }

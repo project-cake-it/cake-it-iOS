@@ -7,14 +7,18 @@
 
 import UIKit
 
+protocol BaseFilterCellDelegate {
+  func cellDidTap(index: Int)
+}
+
 class BaseFilterCell: UIView {
+  
+  var filterIndex: Int? // 아~~이거 두개 생성자로 추가하고싶다아아ㅏㅏㅏㅏㅏ 어케하누
+  var delegate: BaseFilterCellDelegate?
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+  func cellDidTap() {
+    if let index = filterIndex {
+      delegate?.cellDidTap(index: index)
     }
-    */
-
+  }
 }

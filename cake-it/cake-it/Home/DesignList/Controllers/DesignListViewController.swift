@@ -64,7 +64,7 @@ extension DesignListViewController {
   
   private func configureFilterView() {
     let cakeFilterList = ["초기화", "기본순", "지역", "크기", "색깔", "카테고리"]
-    let filterView = FilterView(frame: CGRect(x: 0,
+    let filterView = FilterTitleView(frame: CGRect(x: 0,
                                               y: 0,
                                               width: filterViewArea.frame.width,
                                               height: filterViewArea.frame.height))
@@ -110,5 +110,7 @@ extension DesignListViewController: FilterViewDelegate {
     filterDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     filterDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     filterDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    print("design vc 너비 : \(view.frame.width)")
+    print("filterDetailView 너비 : \(filterDetailView.frame.width)")
   }
 }
