@@ -11,7 +11,7 @@ protocol FilterViewDelegate {
   func filterButtonDidTap(index: Int)
 }
 
-class FilterView: UIView {
+class FilterTitleView: UIView {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var contentView: UIView!
@@ -34,7 +34,7 @@ class FilterView: UIView {
   }
   
   private func commonInit() {
-    let view = Bundle.main.loadNibNamed(String(describing: FilterView.self),
+    let view = Bundle.main.loadNibNamed(String(describing: FilterTitleView.self),
                                         owner: self,
                                         options: nil)?.first as! UIView
     
@@ -65,7 +65,7 @@ class FilterView: UIView {
   
 }
 
-extension FilterView: FilterButtonDelegate {
+extension FilterTitleView: FilterButtonDelegate {
   func filterButtonDidTap(_ sender: FilterButton) {
     delegate?.filterButtonDidTap(index: sender.index)
   }
