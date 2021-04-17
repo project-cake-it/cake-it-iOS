@@ -27,7 +27,7 @@ final class ShopsMainViewController: BaseViewController {
   
   private func fetchCakeShops() {
     for _ in 0..<20 {
-      cakeShops.append(CakeShop(image: "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966", name: "케이크 가게 이름", address: "허리도 가늘군", tags: ["파티", "개미"], saved: true))
+      cakeShops.append(CakeShop(image: "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966", name: "케이크 가게 이름", address: "허리도 가늘군", tags: ["파티", "개미"], saved: true, miniSizeCakePrice: 18000, levelOneSizeCakePrice: 32000))
     }
     collectionView.reloadData()
   }

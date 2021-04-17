@@ -11,4 +11,5 @@ struct CakeShop {
   let image, name, address: String
   let tags: [String]
   let saved: Bool
+  let miniSizeCakePrice, levelOneSizeCakePrice: Int
 }

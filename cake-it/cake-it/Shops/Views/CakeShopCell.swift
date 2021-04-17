@@ -13,6 +13,8 @@ final class CakeShopCell: UICollectionViewCell {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var tagStackView: UIStackView!
+  @IBOutlet weak var miniSizeCakePriceLabel: UILabel!
+  @IBOutlet weak var levelOneSizeCakePriceLabel: UILabel!
   
   override func prepareForReuse() {
     super.prepareForReuse()
@@ -37,6 +39,8 @@ final class CakeShopCell: UICollectionViewCell {
     }
     nameLabel.text = cakeShop.name
     addressLabel.text = cakeShop.address
+    miniSizeCakePriceLabel.text = String(cakeShop.miniSizeCakePrice).moneyFormat.won
+    levelOneSizeCakePriceLabel.text = String(cakeShop.levelOneSizeCakePrice).moneyFormat.won
   }
 }
 
