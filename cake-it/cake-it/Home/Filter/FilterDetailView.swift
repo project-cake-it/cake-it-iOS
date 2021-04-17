@@ -54,22 +54,24 @@ class FilterDetailView: UIView {
     case .category:
       viewList = configureCategoryList()
     }
+
     
     let stackView = UIStackView(arrangedSubviews: viewList)
     stackView.axis = .vertical
-    stackView.spacing = 35
-    stackView.distribution = .fillProportionally
+    stackView.distribution = .fillEqually
     stackView.alignment = .fill
     self.addSubview(stackView)
-
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-    stackView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-    stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-    stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-    stackView.sizeToFit()
     
-    print("stackView 너비 : \(stackView.frame.width)")
+//    let containerView = UIView()
+//    self.addSubview(containerView)
+//    containerView.addSubview(stackView)
+//    containerView.sizeToFit()
 
+    let viewHight = CGFloat(viewList.first?.frame.height ?? 0) * CGFloat(viewList.count)
+    stackView.constraints(topAnchor: self.topAnchor,
+                          leadingAnchor: self.leadingAnchor,
+                          trailingAnchor: self.trailingAnchor,
+                          height: viewHight)
   }
   
   private func configureResetList() {
@@ -79,11 +81,12 @@ class FilterDetailView: UIView {
     var viewList: [TitleFilterCell] = []
     
     for i in 0..<FilterBasic.allCases.count {
-      let baseCell = TitleFilterCell()
+      let baseCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
+                                                   width: UIScreen.main.bounds.width,
+                                                   height: 40))
       baseCell.delegate = self
       baseCell.filterIndex = i
       baseCell.label.text = FilterBasic.allCases[i].title
-            baseCell.heightAnchor.constraint(equalToConstant: 100).isActive = true
       viewList.append(baseCell)
     }
     
@@ -94,11 +97,12 @@ class FilterDetailView: UIView {
     var viewList: [TitleFilterCell] = []
     
     for i in 0..<FilterRegion.allCases.count {
-      let regionCell = TitleFilterCell(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+      let regionCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
+                                                     width: UIScreen.main.bounds.width,
+                                                     height: 40))
       regionCell.delegate = self
       regionCell.filterIndex = i
       regionCell.label.text = FilterRegion.allCases[i].title
-//      baseCell.heightAnchor.constraint(equalToConstant: 100).isActive = true
       viewList.append(regionCell)
     }
     
@@ -106,15 +110,16 @@ class FilterDetailView: UIView {
   }
   
   private func configureSizeList() -> [UIView] {
-    var viewList: [DescriptionFilterCell] = []
+    var viewList: [UIView] = []
     
     for i in 0..<FilterSize.allCases.count {
-      let descriptionCell = DescriptionFilterCell()
+      let descriptionCell = DescriptionFilterCell(frame: CGRect(x: 0, y: 0,
+                                                                width: UIScreen.main.bounds.width,
+                                                                height: 60))
       descriptionCell.delegate = self
       descriptionCell.filterIndex = i
       descriptionCell.titleLabel.text = FilterSize.allCases[i].title
       descriptionCell.descriptionLabel.text = FilterSize.allCases[i].description
-      descriptionCell.heightAnchor.constraint(equalToConstant: 30).isActive = true
       viewList.append(descriptionCell)
     }
     
@@ -125,7 +130,9 @@ class FilterDetailView: UIView {
     var viewList: [ColorFilterCell] = []
     
     for i in 0..<FilterColor.allCases.count {
-      let colorCell = ColorFilterCell()
+      let colorCell = ColorFilterCell(frame: CGRect(x: 0, y: 0,
+                                                    width: UIScreen.main.bounds.width,
+                                                    height: 40))
       colorCell.delegate = self
       colorCell.filterIndex = i
       colorCell.colorLabel.text = FilterColor.allCases[i].title
@@ -140,7 +147,9 @@ class FilterDetailView: UIView {
     var viewList: [TitleFilterCell] = []
     
     for i in 0..<FilterCategory.allCases.count {
-      let baseCell = TitleFilterCell()
+      let baseCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
+                                                   width: UIScreen.main.bounds.width,
+                                                   height: 40))
       baseCell.delegate = self
       baseCell.filterIndex = i
       baseCell.label.text = FilterCategory.allCases[i].title

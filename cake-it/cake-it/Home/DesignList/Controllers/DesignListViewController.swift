@@ -110,7 +110,5 @@ extension DesignListViewController: FilterViewDelegate {
     filterDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     filterDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     filterDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-    print("design vc 너비 : \(view.frame.width)")
-    print("filterDetailView 너비 : \(filterDetailView.frame.width)")
   }
 }

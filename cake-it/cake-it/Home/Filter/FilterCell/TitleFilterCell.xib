@@ -16,17 +16,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강남구" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKW-U4-f3q">
-                    <rect key="frame" x="20" y="14.5" width="374" height="21"/>
+                    <rect key="frame" x="185" y="9.5" width="44.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ct-PL-4R2">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                     <connections>
                         <action selector="cellButtonDidTap:" destination="-1" eventType="touchUpInside" id="cV4-vY-vEa"/>
                     </connections>
@@ -35,9 +35,8 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="DKW-U4-f3q" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="21u-5j-bZH"/>
                 <constraint firstItem="DKW-U4-f3q" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="6S9-cy-r81"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DKW-U4-f3q" secondAttribute="trailing" constant="20" id="PNt-Me-vdq"/>
+                <constraint firstItem="DKW-U4-f3q" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="KlV-VZ-D1k"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Ct-PL-4R2" secondAttribute="trailing" id="d14-q7-yd9"/>
                 <constraint firstItem="1Ct-PL-4R2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gZb-w9-P4y"/>
                 <constraint firstItem="1Ct-PL-4R2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="iee-OV-5Y2"/>
