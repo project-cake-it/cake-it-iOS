@@ -32,9 +32,9 @@ final class CakeDesignCell: UICollectionViewCell {
     let cakeDesignImageURL = URL(string: cakeDesign.image)
     DispatchQueue.global().async {
       let data = try? Data(contentsOf: cakeDesignImageURL!)
-//      DispatchQueue.main.async {
-//        self.cakeDesignImageView.image = UIImage(data: data!)
-//      }
+      DispatchQueue.main.async {
+        self.cakeDesignImageView.image = UIImage(data: data!)
+      }
     }
     locationAndCakeSizeLabel.text = "\(cakeDesign.location) | \(cakeDesign.size)"
     nameLabel.text = cakeDesign.name

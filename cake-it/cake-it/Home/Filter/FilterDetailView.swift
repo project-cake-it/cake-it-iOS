@@ -11,6 +11,7 @@ import UIKit
 class FilterDetailView: UIView {
   
   @IBOutlet weak var backgroundView: UIView!
+  
   var filterIndex: FilterType = .reset
   var index: Int = 0 {
     didSet {
@@ -55,17 +56,11 @@ class FilterDetailView: UIView {
       viewList = configureCategoryList()
     }
 
-    
     let stackView = UIStackView(arrangedSubviews: viewList)
     stackView.axis = .vertical
     stackView.distribution = .fillEqually
     stackView.alignment = .fill
     self.addSubview(stackView)
-    
-//    let containerView = UIView()
-//    self.addSubview(containerView)
-//    containerView.addSubview(stackView)
-//    containerView.sizeToFit()
 
     let viewHight = CGFloat(viewList.first?.frame.height ?? 0) * CGFloat(viewList.count)
     stackView.constraints(topAnchor: self.topAnchor,
@@ -158,6 +153,11 @@ class FilterDetailView: UIView {
     
     return viewList
   }
+  
+  @IBAction func tapGesture(_ sender: Any) {
+    self.removeFromSuperview()
+  }
+  
 }
 
 extension FilterDetailView: BaseFilterCellDelegate {

@@ -19,9 +19,13 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-rT-WXk" userLabel="BackgroundView">
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-rT-WXk" userLabel="BackgroundView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" name="black"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="xJ6-zI-Nxe" appends="YES" id="lIK-nW-ue8"/>
+                    </connections>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -34,6 +38,11 @@
             </constraints>
             <point key="canvasLocation" x="-266.39999999999998" y="102.99850074962519"/>
         </view>
+        <tapGestureRecognizer id="xJ6-zI-Nxe">
+            <connections>
+                <action selector="tapGesture:" destination="-1" id="cvU-Lo-csb"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <namedColor name="black">
