@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol FilterViewDelegate {
-  func filterButtonDidTap(index: Int)
+protocol FilterTitleViewDelegate {
+  func filterTitleButtonDidTap(index: Int)
 }
 
 class FilterTitleView: UIView {
@@ -16,7 +16,7 @@ class FilterTitleView: UIView {
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var contentView: UIView!
   
-  var delegate: FilterViewDelegate?
+  var delegate: FilterTitleViewDelegate?
   var filterList: [String] = [] {
     didSet {
       configureFilterButtonList()
@@ -67,6 +67,6 @@ class FilterTitleView: UIView {
 
 extension FilterTitleView: FilterButtonDelegate {
   func filterButtonDidTap(_ sender: FilterButton) {
-    delegate?.filterButtonDidTap(index: sender.index)
+    delegate?.filterTitleButtonDidTap(index: sender.index)
   }
 }

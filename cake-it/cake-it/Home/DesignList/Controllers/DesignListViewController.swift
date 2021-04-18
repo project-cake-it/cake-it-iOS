@@ -25,6 +25,8 @@ final class DesignListViewController: BaseViewController {
   private var filterDetailView = FilterDetailView()
   private(set) var cakeDesigns: [CakeDesign] = []
   
+  var selectedFilterDic: Dictionary<String, [String]> = [:]
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -95,8 +97,10 @@ extension DesignListViewController {
   }
 }
 
-extension DesignListViewController: FilterViewDelegate {
-  func filterButtonDidTap(index: Int) {
+extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDelegate {
+  
+  // filter 타이틀 클릭
+  func filterTitleButtonDidTap(index: Int) {
     for view in filterDetailView.subviews {
       view.removeFromSuperview()
     }
@@ -104,11 +108,30 @@ extension DesignListViewController: FilterViewDelegate {
     
     filterDetailView = FilterDetailView()
     filterDetailView.index = index
+    filterDetailView.delegate = self
     self.view.addSubview(filterDetailView)
     filterDetailView.translatesAutoresizingMaskIntoConstraints = false
     filterDetailView.topAnchor.constraint(equalTo: filterViewArea.bottomAnchor).isActive = true
     filterDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     filterDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     filterDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    
+    if index == 0 {
+      selectedFilterDic.removeAll()
+    }
   }
+  
+  // filter detail view 클릭
+  func filterDidSelected(key: FilterDetailView.FilterType, value: String) {
+    var savedValues = selectedFilterDic[key.title] ?? []
+    if selectedFilterDic.keys.contains(key.title) == true, savedValues.contains(value) {
+      let index = savedValues.firstIndex(of: value)!
+      savedValues.remove(at: index)  // 이미 선택된 경우 선택 취소
+    } else {
+      savedValues.append(value) // 없는 경우 추가
+    }
+    selectedFilterDic[key.title] = savedValues
+    print(selectedFilterDic)
+  }
+  
 }

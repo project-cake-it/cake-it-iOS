@@ -8,15 +8,20 @@
 import Foundation
 import UIKit
 
+protocol FilterDetailViewDelegate {
+  func filterDidSelected(key: FilterDetailView.FilterType, value: String)
+}
+
 class FilterDetailView: UIView {
   
   @IBOutlet weak var backgroundView: UIView!
   
-  var filterIndex: FilterType = .reset
+  var delegate: FilterDetailViewDelegate?
+  var filterType: FilterType = .reset
   var index: Int = 0 {
     didSet {
       if index < FilterType.allCases.count {
-        filterIndex = FilterType.allCases[index]
+        filterType = FilterType.allCases[index]
       }
       configureView()
     }
@@ -41,7 +46,7 @@ class FilterDetailView: UIView {
   
   private func configureView() {
     var viewList: [UIView] = []
-    switch filterIndex {
+    switch filterType {
     case .reset:
       configureResetList()
     case .basic:
@@ -163,14 +168,25 @@ class FilterDetailView: UIView {
 extension FilterDetailView: BaseFilterCellDelegate {
   
   func cellDidTap(index: Int) {
-    switch filterIndex {
-    case .basic:  print(FilterBasic.allCases[index].title)
-    case .region: print(FilterRegion.allCases[index].title)
-    case .size:   print(FilterSize.allCases[index].title)
-    case .color: print(FilterColor.allCases[index].title)
-    case .category:  print(FilterCategory.allCases[index].title)
-    default: break
+    
+    var value: String = ""
+    
+    switch filterType {
+    case .basic:
+      value = FilterBasic.allCases[index].title
+    case .region:
+      value = FilterRegion.allCases[index].title
+    case .size:
+      value = FilterSize.allCases[index].title
+    case .color:
+      value = FilterColor.allCases[index].title
+    case .category:
+      value = FilterCategory.allCases[index].title
+    case .reset:
+      break
     }
+    
+    delegate?.filterDidSelected(key: filterType, value: value)
   }
   
 }
@@ -178,13 +194,17 @@ extension FilterDetailView: BaseFilterCellDelegate {
 // Filter Detail Enum
 extension FilterDetailView {
   
-  enum FilterType: CaseIterable {
-    case reset    // 초기화
-    case basic    // 기본순
-    case region   // 지역
-    case size     // 크기
-    case color    // 색깔
-    case category // 카테고리
+  enum FilterType: String, CaseIterable {
+    case reset    = "reset"   // 초기화
+    case basic    = "basic"   // 기본순
+    case region   = "region"  // 지역
+    case size     = "size"    // 크기
+    case color    = "color"   // 색깔
+    case category = "category"// 카테고리
+    
+    var title: String {
+      return self.rawValue
+    }
   }
   
   enum FilterBasic: String, CaseIterable {
