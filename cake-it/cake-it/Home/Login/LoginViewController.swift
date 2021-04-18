@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import KakaoSDKAuth
-import KakaoSDKUser
-import NaverThirdPartyLogin
 
 final class LoginViewController: UIViewController {
   
@@ -27,20 +24,33 @@ final class LoginViewController: UIViewController {
     dismiss(animated: true, completion: nil)
   }
   
+  func finishLogin(success: Bool) {
+    if (success) {
+      self.closeLoginViewController()
+    } else {
+      let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
+                                    message: Constants.LOGIN_ALERT_FAIL_MESSAGE,
+                                    preferredStyle: .alert)
+      let okAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default, handler: nil)
+      alert.addAction(okAction)
+      self.present(alert, animated: false, completion: nil)
+    }
+  }
+  
   //MARK: - IBAction
   @IBAction func closeButtonForTestDidTap(_ sender: Any) {
     closeLoginViewController()
   }
   
   @IBAction func signInWithKakaoButtonDidTap(_ sender: Any) {
-    viewModel?.loginByProvider(socialType:.KAKAO, completion: { (Bool) in
-      
+    viewModel?.loginByProvider(socialType:.KAKAO, completion: { (success) in
+      self.finishLogin(success: success)
     })
   }
   
   @IBAction func signInWithNaverButtonDidTap(_ sender: Any) {
-    viewModel?.loginByProvider(socialType:.NAVER, completion: { (Bool) in
-      
+    viewModel?.loginByProvider(socialType:.NAVER, completion: { (success) in
+      self.finishLogin(success: success)
     })
   }
 }
