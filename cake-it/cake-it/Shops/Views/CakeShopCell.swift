@@ -20,13 +20,7 @@ final class CakeShopCell: UICollectionViewCell {
     super.prepareForReuse()
     
     shopImageView.image = nil
-    
-  }
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    
-    configure()
+    tagStackView.removeAllArrangedSubviews()
   }
   
   func update(with cakeShop: CakeShop) {
@@ -41,11 +35,20 @@ final class CakeShopCell: UICollectionViewCell {
     addressLabel.text = cakeShop.address
     miniSizeCakePriceLabel.text = String(cakeShop.miniSizeCakePrice).moneyFormat.won
     levelOneSizeCakePriceLabel.text = String(cakeShop.levelOneSizeCakePrice).moneyFormat.won
+    updateTagStackView(tags: cakeShop.tags)
   }
-}
-
-extension CakeShopCell {
-  private func configure() {
-    
+  
+  private func updateTagStackView(tags: [String]) {
+    tags.forEach {
+      let tagLabel = PaddingLabel()
+      tagLabel.layer.borderColor = Colors.grayscale02.cgColor
+      tagLabel.layer.borderWidth = 1.0
+      tagLabel.text = "#" + $0
+      tagLabel.textColor = Colors.grayscale04
+      tagLabel.font = Fonts.spoqaHanSans(weight: .Regular, size: 11.0)
+      tagLabel.backgroundColor = .clear
+      tagLabel.insets = .init(top: 0, left: 4, bottom: 0, right: 4)
+      tagStackView.addArrangedSubview(tagLabel)
+    }
   }
 }

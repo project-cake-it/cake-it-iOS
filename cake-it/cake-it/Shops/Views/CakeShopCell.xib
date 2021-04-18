@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -48,9 +47,9 @@
                                 <color key="textColor" name="grayscale04"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-7s-Ra5">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-7s-Ra5">
                                 <rect key="frame" x="200" y="45" width="273" height="18"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="e0j-Tc-IxM"/>
                                 </constraints>
@@ -121,12 +120,13 @@
                         <constraints>
                             <constraint firstItem="DMQ-4U-HXq" firstAttribute="leading" secondItem="3vH-Eq-dRk" secondAttribute="leading" id="DUc-Ex-PZZ"/>
                             <constraint firstAttribute="trailing" secondItem="kpe-H8-Gr7" secondAttribute="trailing" constant="20" id="Ffg-Jf-hVq"/>
+                            <constraint firstAttribute="trailing" secondItem="2bh-7s-Ra5" secondAttribute="trailing" constant="20" symbolic="YES" placeholder="YES" id="Hhi-wW-8HN"/>
                             <constraint firstItem="inK-Ow-V5Y" firstAttribute="leading" secondItem="kpe-H8-Gr7" secondAttribute="leading" id="IJf-Q8-osU"/>
                             <constraint firstItem="kpe-H8-Gr7" firstAttribute="leading" secondItem="DMQ-4U-HXq" secondAttribute="trailing" constant="12" id="IL6-gU-J88"/>
                             <constraint firstItem="kpe-H8-Gr7" firstAttribute="top" secondItem="3vH-Eq-dRk" secondAttribute="top" constant="4" id="KWn-L2-oQh"/>
                             <constraint firstItem="2bh-7s-Ra5" firstAttribute="top" secondItem="inK-Ow-V5Y" secondAttribute="bottom" constant="4" id="M2W-cU-nsE"/>
                             <constraint firstAttribute="bottom" secondItem="DMQ-4U-HXq" secondAttribute="bottom" id="P28-8I-QGe"/>
-                            <constraint firstAttribute="trailing" secondItem="2bh-7s-Ra5" secondAttribute="trailing" constant="20" id="Xw4-h6-0R6"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2bh-7s-Ra5" secondAttribute="trailing" constant="20" id="Xw4-h6-0R6"/>
                             <constraint firstAttribute="trailing" secondItem="inK-Ow-V5Y" secondAttribute="trailing" constant="20" id="a5J-Vb-uMI"/>
                             <constraint firstItem="inK-Ow-V5Y" firstAttribute="top" secondItem="kpe-H8-Gr7" secondAttribute="bottom" constant="4" id="g95-hv-5Th"/>
                             <constraint firstAttribute="trailing" secondItem="oPf-dH-ujy" secondAttribute="trailing" constant="20" id="knh-6d-u9O"/>
@@ -169,8 +169,5 @@
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

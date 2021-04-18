@@ -26,6 +26,9 @@
 		8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3AF14525DAE16A00B9F48D /* Home.storyboard */; };
 		8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62C3132600FE10005F599A /* DesignListViewController.swift */; };
 		8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62C32026010043005F599A /* UIViewController+instantiateFromStoryboard.swift */; };
+		8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B647B1A262C4D0C003FA732 /* UIView+Border.swift */; };
+		8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B647B20262C52B1003FA732 /* PaddingLabel.swift */; };
+		8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B647B25262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift */; };
 		8B875CF625DAE61D003D9CFA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875CF525DAE61D003D9CFA /* Search.storyboard */; };
 		8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */; };
 		8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875D0925DAE6B3003D9CFA /* Shops.storyboard */; };
@@ -112,6 +115,9 @@
 		8B3AF14525DAE16A00B9F48D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8B62C3132600FE10005F599A /* DesignListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListViewController.swift; sourceTree = "<group>"; };
 		8B62C32026010043005F599A /* UIViewController+instantiateFromStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+instantiateFromStoryboard.swift"; sourceTree = "<group>"; };
+		8B647B1A262C4D0C003FA732 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
+		8B647B20262C52B1003FA732 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		8B647B25262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAllArrangedSubviews.swift"; sourceTree = "<group>"; };
 		8B875CF525DAE61D003D9CFA /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainViewController.swift; sourceTree = "<group>"; };
 		8B875D0925DAE6B3003D9CFA /* Shops.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shops.storyboard; sourceTree = "<group>"; };
@@ -288,6 +294,8 @@
 			children = (
 				8B0DDA50260CE120003923D9 /* UIView+AutoLayout.swift */,
 				8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */,
+				8B647B1A262C4D0C003FA732 /* UIView+Border.swift */,
+				8B647B25262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -377,6 +385,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8B647B1F262C52A2003FA732 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				8B647B20262C52B1003FA732 /* PaddingLabel.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		8B875CF425DAE602003D9CFA /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +434,7 @@
 		8B93B2D72610C10C0060ACAC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8B647B1F262C52A2003FA732 /* UILabel */,
 				8B93B2D82610C3160060ACAC /* Colors.swift */,
 				8B93B2ED2610CF5D0060ACAC /* Fonts.swift */,
 			);
@@ -862,6 +879,8 @@
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
+				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
+				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
 				8B3AE24A261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
@@ -883,6 +902,7 @@
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
 				8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */,
+				8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
 			);
