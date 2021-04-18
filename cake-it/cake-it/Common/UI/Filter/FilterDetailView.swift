@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol FilterDetailViewDelegate {
-  func filterDidSelected(key: FilterDetailView.FilterType, value: String)
+  func filterDidSelected(key: FilterCommon.FilterType, value: String)
 }
 
 class FilterDetailView: UIView {
@@ -17,12 +17,8 @@ class FilterDetailView: UIView {
   @IBOutlet weak var backgroundView: UIView!
   
   var delegate: FilterDetailViewDelegate?
-  var filterType: FilterType = .reset
-  var index: Int = 0 {
+  var filterType: FilterCommon.FilterType = .reset {
     didSet {
-      if index < FilterType.allCases.count {
-        filterType = FilterType.allCases[index]
-      }
       configureView()
     }
   }
@@ -80,13 +76,13 @@ class FilterDetailView: UIView {
   private func configureBasicList() -> [UIView] {
     var viewList: [TitleFilterCell] = []
     
-    for i in 0..<FilterBasic.allCases.count {
+    for i in 0..<FilterCommon.FilterBasic.allCases.count {
       let baseCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
                                                    width: UIScreen.main.bounds.width,
                                                    height: 40))
       baseCell.delegate = self
       baseCell.filterIndex = i
-      baseCell.label.text = FilterBasic.allCases[i].title
+      baseCell.label.text = FilterCommon.FilterBasic.allCases[i].title
       viewList.append(baseCell)
     }
     
@@ -96,13 +92,13 @@ class FilterDetailView: UIView {
   private func configureRegionList() -> [UIView] {
     var viewList: [TitleFilterCell] = []
     
-    for i in 0..<FilterRegion.allCases.count {
+    for i in 0..<FilterCommon.FilterRegion.allCases.count {
       let regionCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
                                                      width: UIScreen.main.bounds.width,
                                                      height: 40))
       regionCell.delegate = self
       regionCell.filterIndex = i
-      regionCell.label.text = FilterRegion.allCases[i].title
+      regionCell.label.text = FilterCommon.FilterRegion.allCases[i].title
       viewList.append(regionCell)
     }
     
@@ -112,14 +108,14 @@ class FilterDetailView: UIView {
   private func configureSizeList() -> [UIView] {
     var viewList: [UIView] = []
     
-    for i in 0..<FilterSize.allCases.count {
+    for i in 0..<FilterCommon.FilterSize.allCases.count {
       let descriptionCell = DescriptionFilterCell(frame: CGRect(x: 0, y: 0,
                                                                 width: UIScreen.main.bounds.width,
                                                                 height: 60))
       descriptionCell.delegate = self
       descriptionCell.filterIndex = i
-      descriptionCell.titleLabel.text = FilterSize.allCases[i].title
-      descriptionCell.descriptionLabel.text = FilterSize.allCases[i].description
+      descriptionCell.titleLabel.text = FilterCommon.FilterSize.allCases[i].title
+      descriptionCell.descriptionLabel.text = FilterCommon.FilterSize.allCases[i].description
       viewList.append(descriptionCell)
     }
     
@@ -129,14 +125,14 @@ class FilterDetailView: UIView {
   private func configureColorList() -> [UIView] {
     var viewList: [ColorFilterCell] = []
     
-    for i in 0..<FilterColor.allCases.count {
+    for i in 0..<FilterCommon.FilterColor.allCases.count {
       let colorCell = ColorFilterCell(frame: CGRect(x: 0, y: 0,
                                                     width: UIScreen.main.bounds.width,
                                                     height: 40))
       colorCell.delegate = self
       colorCell.filterIndex = i
-      colorCell.colorLabel.text = FilterColor.allCases[i].title
-      colorCell.colorView.backgroundColor = FilterColor.allCases[i].color
+      colorCell.colorLabel.text = FilterCommon.FilterColor.allCases[i].title
+      colorCell.colorView.backgroundColor = FilterCommon.FilterColor.allCases[i].color
       viewList.append(colorCell)
     }
     
@@ -146,13 +142,13 @@ class FilterDetailView: UIView {
   private func configureCategoryList() -> [UIView] {
     var viewList: [TitleFilterCell] = []
     
-    for i in 0..<FilterCategory.allCases.count {
+    for i in 0..<FilterCommon.FilterCategory.allCases.count {
       let baseCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
                                                    width: UIScreen.main.bounds.width,
                                                    height: 40))
       baseCell.delegate = self
       baseCell.filterIndex = i
-      baseCell.label.text = FilterCategory.allCases[i].title
+      baseCell.label.text = FilterCommon.FilterCategory.allCases[i].title
       viewList.append(baseCell)
     }
     
@@ -173,120 +169,19 @@ extension FilterDetailView: BaseFilterCellDelegate {
     
     switch filterType {
     case .basic:
-      value = FilterBasic.allCases[index].title
+      value = FilterCommon.FilterBasic.allCases[index].title
     case .region:
-      value = FilterRegion.allCases[index].title
+      value = FilterCommon.FilterRegion.allCases[index].title
     case .size:
-      value = FilterSize.allCases[index].title
+      value = FilterCommon.FilterSize.allCases[index].title
     case .color:
-      value = FilterColor.allCases[index].title
+      value = FilterCommon.FilterColor.allCases[index].title
     case .category:
-      value = FilterCategory.allCases[index].title
+      value = FilterCommon.FilterCategory.allCases[index].title
     case .reset:
       break
     }
     
     delegate?.filterDidSelected(key: filterType, value: value)
-  }
-  
-}
-
-// Filter Detail Enum
-extension FilterDetailView {
-  
-  enum FilterType: String, CaseIterable {
-    case reset    = "reset"   // 초기화
-    case basic    = "basic"   // 기본순
-    case region   = "region"  // 지역
-    case size     = "size"    // 크기
-    case color    = "color"   // 색깔
-    case category = "category"// 카테고리
-    
-    var title: String {
-      return self.rawValue
-    }
-  }
-  
-  enum FilterBasic: String, CaseIterable {
-    case basic = "기본순"
-    case zzim = "찜 순"
-    case price_hight = "가격 높은 순"
-    case price_low = "가격 낮은 순"
-    
-    var title: String {
-      return self.rawValue
-    }
-  }
-  
-  enum FilterRegion: String, CaseIterable {
-    case gangnam = "강남구"
-    case gwangjin = "광진구"
-    case gwanak = "관악구"
-    case mapo = "마포구"
-    case seodeamun = "서대문구"
-    case songpa = "송파구"
-    
-    var title: String {
-      return self.rawValue
-    }
-  }
-  
-  enum FilterSize: String, CaseIterable {
-    case mini = "미니"
-    case size_1 = "1호"
-    case size_2 = "2호"
-    case size_3 = "3호"
-    case two_tier = "2단"
-    
-    var title: String {
-      return self.rawValue
-    }
-    
-    var description: String {
-      switch self {
-      case .mini: return "10-11cm, 1-2인용"
-      case .size_1: return "15-16cm, 3-4인용"
-      case .size_2: return "18cm, 5-6인용"
-      case .size_3: return "21cm, 7-8인용"
-      case .two_tier: return "파티용 특별제작"
-      }
-    }
-  }
-  
-  enum FilterColor: String, CaseIterable {
-    case white = "화이트"
-    case pink = "핑크"
-    case yellow = "옐로우"
-    case red = "레드"
-    case blue = "블루"
-    case purple = "퍼플"
-    case other = "기타"
-    
-    var title: String {
-      return self.rawValue
-    }
-    
-    var color: UIColor {
-      switch self {
-      case .white:  return Colors.design_white
-      case .pink:   return Colors.design_pink
-      case .yellow: return Colors.design_yellow
-      case .red:    return Colors.design_red
-      case .blue:   return Colors.design_blue
-      case .purple: return Colors.design_purple
-      case .other:  return Colors.design_other
-      }
-    }
-  }
-  
-  enum FilterCategory: String, CaseIterable {
-    case lettering = "문구"
-    case image = "이미지"
-    case character = "캐릭터"
-    case individuality = "개성"
-    
-    var title: String {
-      return self.rawValue
-    }
   }
 }

@@ -59,13 +59,13 @@ final class DesignListViewController: BaseViewController {
 
 extension DesignListViewController {
   private func configure() {
-    configureFilterView()
+    configureFilterHeaderView()
     configureCollectionView()
     configureNavigationBarTapGesture()
   }
   
-  private func configureFilterView() {
-    let cakeFilterList = ["초기화", "기본순", "지역", "크기", "색깔", "카테고리"]
+  private func configureFilterHeaderView() {
+    let cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
     let filterView = FilterTitleView(frame: CGRect(x: 0,
                                               y: 0,
                                               width: filterViewArea.frame.width,
@@ -100,14 +100,14 @@ extension DesignListViewController {
 extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDelegate {
   
   // filter 타이틀 클릭
-  func filterTitleButtonDidTap(index: Int) {
+  func filterTitleButtonDidTap(type: FilterCommon.FilterType) {
     for view in filterDetailView.subviews {
       view.removeFromSuperview()
     }
     filterDetailView.removeFromSuperview()
     
     filterDetailView = FilterDetailView()
-    filterDetailView.index = index
+    filterDetailView.filterType = type
     filterDetailView.delegate = self
     self.view.addSubview(filterDetailView)
     filterDetailView.translatesAutoresizingMaskIntoConstraints = false
@@ -116,13 +116,13 @@ extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDel
     filterDetailView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     filterDetailView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     
-    if index == 0 {
+    if type == .reset {
       selectedFilterDic.removeAll()
     }
   }
   
   // filter detail view 클릭
-  func filterDidSelected(key: FilterDetailView.FilterType, value: String) {
+  func filterDidSelected(key: FilterCommon.FilterType, value: String) {
     var savedValues = selectedFilterDic[key.title] ?? []
     if selectedFilterDic.keys.contains(key.title) == true, savedValues.contains(value) {
       let index = savedValues.firstIndex(of: value)!

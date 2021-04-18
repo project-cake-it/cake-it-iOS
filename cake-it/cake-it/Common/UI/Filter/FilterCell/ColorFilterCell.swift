@@ -27,6 +27,8 @@ class ColorFilterCell: BaseFilterCell {
                                         owner: self,
                                         options: nil)?.first as! UIView
     self.addSubview(view)
+    
+    colorView.layer.cornerRadius = colorView.frame.width/2
   }
 
   @IBAction func cellButtonDidTap(_ sender: Any) {

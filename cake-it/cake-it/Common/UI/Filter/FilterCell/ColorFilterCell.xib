@@ -27,15 +27,15 @@
                         <constraint firstAttribute="height" constant="21" id="CZt-QO-88j"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
+                    <color key="textColor" name="black"/>
+                    <color key="highlightedColor" name="black"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8en-sS-Fd9">
-                    <rect key="frame" x="162" y="10" width="20" height="20"/>
+                    <rect key="frame" x="169" y="13.5" width="13" height="13"/>
                     <color key="backgroundColor" name="design_pink"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="20" id="8xx-KD-5aF"/>
-                        <constraint firstAttribute="height" constant="20" id="uQL-aM-rZh"/>
+                        <constraint firstAttribute="width" constant="13" id="8xx-KD-5aF"/>
+                        <constraint firstAttribute="height" constant="13" id="uQL-aM-rZh"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-h5-5fE">
@@ -62,6 +62,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="black">
+            <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="design_pink">
             <color red="0.98431372549019602" green="0.19215686274509805" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

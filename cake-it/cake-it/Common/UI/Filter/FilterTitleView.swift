@@ -8,7 +8,8 @@
 import UIKit
 
 protocol FilterTitleViewDelegate {
-  func filterTitleButtonDidTap(index: Int)
+  func filterTitleButtonDidTap(type: FilterCommon.FilterType)
+
 }
 
 class FilterTitleView: UIView {
@@ -17,7 +18,7 @@ class FilterTitleView: UIView {
   @IBOutlet weak var contentView: UIView!
   
   var delegate: FilterTitleViewDelegate?
-  var filterList: [String] = [] {
+  var filterList: [FilterCommon.FilterType] = [] {
     didSet {
       configureFilterButtonList()
     }
@@ -48,7 +49,7 @@ class FilterTitleView: UIView {
       let button = FilterButton(frame:CGRect(x: xPos, y: 0, width: 0, height: 0))
       button.delegate = self
       button.index = i
-      button.setTitle(filterList[i], for: .normal)
+      button.setTitle(filterList[i].kor_title, for: .normal)
       button.sizeToFit()
       filterButtonList.append(button)
       contentView.addSubview(button)
@@ -67,6 +68,6 @@ class FilterTitleView: UIView {
 
 extension FilterTitleView: FilterButtonDelegate {
   func filterButtonDidTap(_ sender: FilterButton) {
-    delegate?.filterTitleButtonDidTap(index: sender.index)
+    delegate?.filterTitleButtonDidTap(type: filterList[sender.index])
   }
 }
