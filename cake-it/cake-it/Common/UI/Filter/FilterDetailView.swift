@@ -43,8 +43,6 @@ class FilterDetailView: UIView {
   private func configureView() {
     var viewList: [UIView] = []
     switch filterType {
-    case .reset:
-      configureResetList()
     case .basic:
       viewList = configureBasicList()
     case .region:
@@ -55,6 +53,8 @@ class FilterDetailView: UIView {
       viewList = configureColorList()
     case .category:
       viewList = configureCategoryList()
+    case .reset:
+      break
     }
 
     let stackView = UIStackView(arrangedSubviews: viewList)
@@ -68,9 +68,6 @@ class FilterDetailView: UIView {
                           leadingAnchor: self.leadingAnchor,
                           trailingAnchor: self.trailingAnchor,
                           height: viewHight)
-  }
-  
-  private func configureResetList() {
   }
   
   private func configureBasicList() -> [UIView] {

@@ -13,7 +13,7 @@ protocol BaseFilterCellDelegate {
 
 class BaseFilterCell: UIView {
   
-  var filterIndex: Int? // 아~~이거 두개 생성자로 추가하고싶다아아ㅏㅏㅏㅏㅏ 어케하누
+  var filterIndex: Int?
   var delegate: BaseFilterCellDelegate?
 
   func cellDidTap() {
