@@ -10,7 +10,7 @@ import UIKit
 extension UIView {
   
   enum Direction {
-    case Top, Bottom, Leading, Trailing
+    case top, bottom, leading, trailing
   }
   
   func addBorder(side: Direction, borderColor: UIColor, borderWidth: CGFloat) {
@@ -18,13 +18,13 @@ extension UIView {
     border.backgroundColor = borderColor.cgColor
     
     switch side {
-    case .Top:
+    case .top:
       border.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: borderWidth)
-    case .Bottom:
+    case .bottom:
       border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width: self.frame.size.width, height: borderWidth)
-    case .Leading:
+    case .leading:
       border.frame = CGRect(x: 0, y: 0, width: borderWidth, height: self.frame.size.height)
-    case .Trailing:
+    case .trailing:
       border.frame = CGRect(x: self.frame.size.width - borderWidth, y: 0, width: borderWidth, height: self.frame.size.height)
     }
     self.layer.addSublayer(border)
