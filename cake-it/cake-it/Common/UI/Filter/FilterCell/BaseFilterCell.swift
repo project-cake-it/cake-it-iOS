@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol BaseFilterCellDelegate {
+protocol BaseFilterCellDelegate: class {
   func cellDidTap(index: Int)
 }
 
 class BaseFilterCell: UIView {
   
   var filterIndex: Int?
-  var delegate: BaseFilterCellDelegate?
+  weak var delegate: BaseFilterCellDelegate?
 
   func cellDidTap() {
     if let index = filterIndex {

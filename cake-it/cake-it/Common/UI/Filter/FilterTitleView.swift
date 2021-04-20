@@ -7,17 +7,16 @@
 
 import UIKit
 
-protocol FilterTitleViewDelegate {
+protocol FilterTitleViewDelegate: class {
   func filterTitleButtonDidTap(type: FilterCommon.FilterType)
-
 }
 
-class FilterTitleView: UIView {
+final class FilterTitleView: UIView {
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var contentView: UIView!
   
-  var delegate: FilterTitleViewDelegate?
+  weak var delegate: FilterTitleViewDelegate?
   var filterList: [FilterCommon.FilterType] = [] {
     didSet {
       configureFilterButtonList()

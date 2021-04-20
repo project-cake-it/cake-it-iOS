@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol FilterButtonDelegate {
+protocol FilterButtonDelegate: class {
   func filterButtonDidTap(_ sender: FilterButton)
 }
 
-class FilterButton: UIButton {
+final class FilterButton: UIButton {
 
-  var delegate: FilterButtonDelegate?
+  weak var delegate: FilterButtonDelegate?
   var index: Int = 0    // filter type을 구분할 버튼 인덱스
   
   override init(frame: CGRect) {
@@ -34,7 +34,7 @@ class FilterButton: UIButton {
     self.layer.borderColor = Colors.pointB.cgColor
     self.round(cornerRadius: 15.0)
     self.contentEdgeInsets = UIEdgeInsets(top: 3, left: 10, bottom: 3, right: 10) // padding 설정
-    self.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
+    self.addTarget(self, action: #selector(buttonDidTap), for: .touchUpInside)
   }
   
   @objc private func buttonDidTap(_ sender: FilterButton) {

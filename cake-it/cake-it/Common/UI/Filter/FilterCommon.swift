@@ -5,10 +5,9 @@
 //  Created by seungbong on 2021/04/18.
 //
 
-import Foundation
 import UIKit
 
-class FilterCommon {
+final class FilterCommon {
   
   enum FilterType: String, CaseIterable {
     case reset    = "reset"   // 초기화

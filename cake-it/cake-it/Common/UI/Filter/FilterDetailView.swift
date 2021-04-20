@@ -5,18 +5,17 @@
 //  Created by seungbong on 2021/04/06.
 //
 
-import Foundation
 import UIKit
 
-protocol FilterDetailViewDelegate {
+protocol FilterDetailViewDelegate: class {
   func filterDidSelected(key: FilterCommon.FilterType, value: String)
 }
 
-class FilterDetailView: UIView {
+final class FilterDetailView: UIView {
   
   @IBOutlet weak var backgroundView: UIView!
   
-  var delegate: FilterDetailViewDelegate?
+  weak var delegate: FilterDetailViewDelegate?
   var filterType: FilterCommon.FilterType = .reset {
     didSet {
       configureView()
@@ -74,7 +73,8 @@ class FilterDetailView: UIView {
     var viewList: [TitleFilterCell] = []
     
     for i in 0..<FilterCommon.FilterBasic.allCases.count {
-      let baseCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
+      let baseCell = TitleFilterCell(frame: CGRect(x: 0,
+                                                   y: 0,
                                                    width: UIScreen.main.bounds.width,
                                                    height: 40))
       baseCell.delegate = self
@@ -90,7 +90,8 @@ class FilterDetailView: UIView {
     var viewList: [TitleFilterCell] = []
     
     for i in 0..<FilterCommon.FilterRegion.allCases.count {
-      let regionCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
+      let regionCell = TitleFilterCell(frame: CGRect(x: 0,
+                                                     y: 0,
                                                      width: UIScreen.main.bounds.width,
                                                      height: 40))
       regionCell.delegate = self
@@ -106,7 +107,8 @@ class FilterDetailView: UIView {
     var viewList: [UIView] = []
     
     for i in 0..<FilterCommon.FilterSize.allCases.count {
-      let descriptionCell = DescriptionFilterCell(frame: CGRect(x: 0, y: 0,
+      let descriptionCell = DescriptionFilterCell(frame: CGRect(x: 0,
+                                                                y: 0,
                                                                 width: UIScreen.main.bounds.width,
                                                                 height: 60))
       descriptionCell.delegate = self
@@ -123,7 +125,8 @@ class FilterDetailView: UIView {
     var viewList: [ColorFilterCell] = []
     
     for i in 0..<FilterCommon.FilterColor.allCases.count {
-      let colorCell = ColorFilterCell(frame: CGRect(x: 0, y: 0,
+      let colorCell = ColorFilterCell(frame: CGRect(x: 0,
+                                                    y: 0,
                                                     width: UIScreen.main.bounds.width,
                                                     height: 40))
       colorCell.delegate = self
@@ -140,7 +143,8 @@ class FilterDetailView: UIView {
     var viewList: [TitleFilterCell] = []
     
     for i in 0..<FilterCommon.FilterCategory.allCases.count {
-      let baseCell = TitleFilterCell(frame: CGRect(x: 0, y: 0,
+      let baseCell = TitleFilterCell(frame: CGRect(x: 0,
+                                                   y: 0,
                                                    width: UIScreen.main.bounds.width,
                                                    height: 40))
       baseCell.delegate = self
