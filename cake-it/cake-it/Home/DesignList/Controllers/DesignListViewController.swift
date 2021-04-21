@@ -67,9 +67,9 @@ extension DesignListViewController {
   private func configureFilterTitleView() {
     let cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
     let filterView = FilterTitleView(frame: CGRect(x: 0,
-                                              y: 0,
-                                              width: filterViewArea.frame.width,
-                                              height: filterViewArea.frame.height))
+                                                   y: 0,
+                                                   width: filterViewArea.frame.width,
+                                                   height: filterViewArea.frame.height))
     filterView.delegate = self
     filterView.filterList = cakeFilterList
     filterViewArea.addSubview(filterView)

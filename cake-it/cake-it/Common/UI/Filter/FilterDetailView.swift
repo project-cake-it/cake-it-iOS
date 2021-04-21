@@ -18,7 +18,7 @@ final class FilterDetailView: UIView {
   weak var delegate: FilterDetailViewDelegate?
   var filterType: FilterCommon.FilterType = .reset {
     didSet {
-      configureView()
+      updateView()
     }
   }
   
@@ -39,7 +39,7 @@ final class FilterDetailView: UIView {
     self.addSubview(view)
   }
   
-  private func configureView() {
+  private func updateView() {
     var viewList: [UIView] = []
     switch filterType {
     case .basic:
@@ -156,7 +156,7 @@ final class FilterDetailView: UIView {
     return viewList
   }
   
-  @IBAction func tapGesture(_ sender: Any) {
+  @IBAction func DidtapGesture(_ sender: Any) {
     self.removeFromSuperview()
   }
   

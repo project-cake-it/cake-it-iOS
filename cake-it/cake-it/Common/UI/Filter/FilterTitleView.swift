@@ -19,7 +19,7 @@ final class FilterTitleView: UIView {
   weak var delegate: FilterTitleViewDelegate?
   var filterList: [FilterCommon.FilterType] = [] {
     didSet {
-      configureFilterButtonList()
+      updateFilterButtonList()
     }
   }
   
@@ -41,14 +41,14 @@ final class FilterTitleView: UIView {
     self.addSubview(view)
   }
   
-  private func configureFilterButtonList() {
+  private func updateFilterButtonList() {
     var xPos: CGFloat = 20.0
     var filterButtonList: [FilterButton] = []
     for i in 0..<filterList.count {
       let button = FilterButton(frame:CGRect(x: xPos, y: 0, width: 0, height: 0))
       button.delegate = self
       button.index = i
-      button.setTitle(filterList[i].kor_title, for: .normal)
+      button.setTitle(filterList[i].korTitle, for: .normal)
       button.sizeToFit()
       filterButtonList.append(button)
       contentView.addSubview(button)
@@ -62,7 +62,6 @@ final class FilterTitleView: UIView {
     contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor).isActive = true
     contentView.widthAnchor.constraint(equalToConstant: xPos).isActive = true
   }
-  
 }
 
 extension FilterTitleView: FilterButtonDelegate {

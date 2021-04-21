@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TitleFilterItemView: BaseFilterItemView {
+final class TitleFilterItemView: BaseFilterItemView {
 
   @IBOutlet weak var label: UILabel!
   
@@ -32,5 +32,4 @@ class TitleFilterItemView: BaseFilterItemView {
   @IBAction func cellButtonDidTap(_ sender: Any) {
       super.cellDidTap()
   }
-  
 }

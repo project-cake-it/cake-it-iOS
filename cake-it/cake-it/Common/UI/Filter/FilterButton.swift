@@ -40,5 +40,4 @@ final class FilterButton: UIButton {
   @objc private func buttonDidTap(_ sender: FilterButton) {
     delegate?.filterButtonDidTap(sender)
   }
-  
 }

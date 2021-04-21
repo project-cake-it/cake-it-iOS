@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorFilterItemView: BaseFilterItemView {
+final class ColorFilterItemView: BaseFilterItemView {
  
   @IBOutlet weak var colorView: UIView!
   @IBOutlet weak var colorLabel: UILabel!

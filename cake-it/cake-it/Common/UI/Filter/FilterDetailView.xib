@@ -40,7 +40,7 @@
         </view>
         <tapGestureRecognizer id="xJ6-zI-Nxe">
             <connections>
-                <action selector="tapGesture:" destination="-1" id="cvU-Lo-csb"/>
+                <action selector="DidtapGesture:" destination="-1" id="cvU-Lo-csb"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

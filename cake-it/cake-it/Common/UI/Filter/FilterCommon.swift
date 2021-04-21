@@ -21,7 +21,7 @@ final class FilterCommon {
       return self.rawValue
     }
     
-    var kor_title: String {
+    var korTitle: String {
       switch self {
       case .reset:    return "초기화"
       case .basic:    return "기본순"
@@ -36,8 +36,8 @@ final class FilterCommon {
   enum FilterBasic: String, CaseIterable {
     case basic = "기본순"
     case zzim = "찜 순"
-    case price_hight = "가격 높은 순"
-    case price_low = "가격 낮은 순"
+    case priceHight = "가격 높은 순"
+    case priceLow = "가격 낮은 순"
     
     var title: String {
       return self.rawValue
@@ -58,11 +58,11 @@ final class FilterCommon {
   }
   
   enum FilterSize: String, CaseIterable {
-    case mini = "미니"
-    case size_1 = "1호"
-    case size_2 = "2호"
-    case size_3 = "3호"
-    case two_tier = "2단"
+    case miniSize = "미니"
+    case levelOneSize = "1호"
+    case levelTwoSize = "2호"
+    case levelThreeSize = "3호"
+    case twoTier = "2단"
     
     var title: String {
       return self.rawValue
@@ -70,11 +70,11 @@ final class FilterCommon {
     
     var description: String {
       switch self {
-      case .mini: return "10-11cm, 1-2인용"
-      case .size_1: return "15-16cm, 3-4인용"
-      case .size_2: return "18cm, 5-6인용"
-      case .size_3: return "21cm, 7-8인용"
-      case .two_tier: return "파티용 특별제작"
+      case .miniSize:       return "10-11cm, 1-2인용"
+      case .levelOneSize:   return "15-16cm, 3-4인용"
+      case .levelTwoSize:   return "18cm, 5-6인용"
+      case .levelThreeSize: return "21cm, 7-8인용"
+      case .twoTier:        return "파티용 특별제작"
       }
     }
   }
@@ -94,13 +94,13 @@ final class FilterCommon {
     
     var color: UIColor {
       switch self {
-      case .white:  return Colors.design_white
-      case .pink:   return Colors.design_pink
-      case .yellow: return Colors.design_yellow
-      case .red:    return Colors.design_red
-      case .blue:   return Colors.design_blue
-      case .purple: return Colors.design_purple
-      case .other:  return Colors.design_other
+      case .white:  return UIColor(named: "design_white")!
+      case .pink:   return UIColor(named: "design_pink")!
+      case .yellow: return UIColor(named: "design_yellow")!
+      case .red:    return UIColor(named: "design_red")!
+      case .blue:   return UIColor(named: "design_blue")!
+      case .purple: return UIColor(named: "design_purple")!
+      case .other:  return UIColor(named: "design_other")!
       }
     }
   }
@@ -115,5 +115,4 @@ final class FilterCommon {
       return self.rawValue
     }
   }
-  
 }

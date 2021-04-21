@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DescriptionFilterItemView: BaseFilterItemView {
+final class DescriptionFilterItemView: BaseFilterItemView {
 
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
