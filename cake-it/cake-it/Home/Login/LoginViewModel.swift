@@ -62,12 +62,12 @@ final class LoginViewModel: BaseViewModel {
         return
       }
       
-      self.login(accessToekn: accessToken, refreshToken: refreshToken)
+      self.login(accessToken: accessToken, refreshToken: refreshToken)
     }
   }
   
   func signInWithNaverWithCompletionHandler() {
-    //self.naverLoginSDK?.delegate = self
+    self.naverLoginSDK?.delegate = self
     self.naverLoginSDK?.requestThirdPartyLogin()
   }
   
