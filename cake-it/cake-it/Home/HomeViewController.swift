@@ -23,20 +23,22 @@ final class HomeViewController: UIViewController {
     viewController.modalPresentationStyle = .fullScreen
     present(viewController, animated: true)
   }
+  
+  //MARK: - IBActions
+  @IBAction func testLogoutButtonDidTap(_ sender: Any) {
+    LoginManager.shared.resetAccessToken()
+    checkLogin()
+  }
 }
 
 //MARK: - Login
 extension HomeViewController {
   private func checkLogin() {
-    var loginToken: String? = "test"
-    
-    guard loginToken != nil else {
-      return
-    }
-    
-    if let loginViewController = storyboard?.instantiateViewController(identifier: LoginViewController.id) {
-      loginViewController.modalPresentationStyle = .overFullScreen
-      present(loginViewController, animated: false, completion: nil)
+    if !LoginManager.shared.verifyAccessToken() {
+      if let loginViewController = storyboard?.instantiateViewController(identifier: LoginViewController.id) {
+        loginViewController.modalPresentationStyle = .overFullScreen
+        present(loginViewController, animated: false, completion: nil)
+      }
     }
   }
 }
