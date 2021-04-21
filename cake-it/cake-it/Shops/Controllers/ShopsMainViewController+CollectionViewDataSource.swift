@@ -8,15 +8,13 @@
 import UIKit
 
 extension ShopsMainViewController: UICollectionViewDataSource {
-  func collectionView(
-    _ collectionView: UICollectionView,
-    numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView,
+                      numberOfItemsInSection section: Int) -> Int {
     return cakeShops.count
   }
   
-  func collectionView(
-    _ collectionView: UICollectionView,
-    cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView,
+                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let identifier = String(describing: CakeShopCell.self)
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                   for: indexPath) as! CakeShopCell
