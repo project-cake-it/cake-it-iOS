@@ -19,13 +19,25 @@ extension UIView {
     
     switch side {
     case .top:
-      border.frame = CGRect(x: 0, y: 0, width: frame.size.width, height: borderWidth)
+      border.frame = CGRect(x: 0,
+                            y: 0,
+                            width: frame.size.width,
+                            height: borderWidth)
     case .bottom:
-      border.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width: self.frame.size.width, height: borderWidth)
+      border.frame = CGRect(x: 0,
+                            y: self.frame.size.height - borderWidth,
+                            width: self.frame.size.width,
+                            height: borderWidth)
     case .leading:
-      border.frame = CGRect(x: 0, y: 0, width: borderWidth, height: self.frame.size.height)
+      border.frame = CGRect(x: 0,
+                            y: 0,
+                            width: borderWidth,
+                            height: self.frame.size.height)
     case .trailing:
-      border.frame = CGRect(x: self.frame.size.width - borderWidth, y: 0, width: borderWidth, height: self.frame.size.height)
+      border.frame = CGRect(x: self.frame.size.width - borderWidth,
+                            y: 0,
+                            width: borderWidth,
+                            height: self.frame.size.height)
     }
     self.layer.addSublayer(border)
   }
