@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BaseViewModel : NSObject{
+class BaseViewModel: NSObject{
     
     // 에러 공통 처리
     func processingError(error: String) {

@@ -7,8 +7,12 @@
 
 import Foundation
 
-enum SocialType: String {
+enum LoginSocialType: String {
   case KAKAO = "KAKAO"
   case NAVER = "NAVER"
   case APPLE = "APPLE"
+  
+  var string: String {
+    return self.rawValue
+  }
 }

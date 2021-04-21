@@ -20,11 +20,11 @@ final class LoginViewController: UIViewController {
   }
   
   //MARK: - Private method
-  func closeLoginViewController() {
+  private func closeLoginViewController() {
     dismiss(animated: true, completion: nil)
   }
   
-  func finishLogin(success: Bool) {
+  private func finishLogin(success: Bool) {
     if (success) {
       self.closeLoginViewController()
     } else {

@@ -10,16 +10,17 @@ import KakaoSDKUser
 import KakaoSDKAuth
 import NaverThirdPartyLogin
 
-typealias CommonCompletionHandler = (Bool) -> Void
 
 final class LoginViewModel: BaseViewModel {
   
+  typealias CommonCompletionHandler = (Bool) -> Void
+  
   private var model: LoginModel?
-  private var socialType: SocialType?
+  private var socialType: LoginSocialType?
   private var completionHandler: CommonCompletionHandler?
   private let naverLoginSDK = NaverThirdPartyLoginConnection.getSharedInstance()
   
-  func loginByProvider(socialType: SocialType, completion: @escaping CommonCompletionHandler) {
+  func loginByProvider(socialType: LoginSocialType, completion: @escaping CommonCompletionHandler) {
     completionHandler = completion
     naverLoginSDK?.delegate = self
     self.socialType = socialType
@@ -61,7 +62,7 @@ final class LoginViewModel: BaseViewModel {
         return
       }
       
-      self.login(accessToekn: accessToken, refreshToekn: refreshToken)
+      self.login(accessToekn: accessToken, refreshToken: refreshToken)
     }
   }
   
@@ -70,14 +71,13 @@ final class LoginViewModel: BaseViewModel {
     self.naverLoginSDK?.requestThirdPartyLogin()
   }
   
-  func login(accessToekn: String, refreshToekn:String) {
-    
-    guard let socialType = socialType?.rawValue else {
-      self.completionHandler!(false)
+  func login(accessToken: String, refreshToken:String) {
+    guard let socialType = socialType?.string else {
+      self.completionHandler?(false)
       return
     }
     
-    model = LoginModel(accessToken: accessToekn, type:socialType)
+    model = LoginModel(accessToken: accessToken, type:socialType)
     
     NetworkManager.shared.requestPost(api: .login,
                                       type: LoginModel.Response.self,
@@ -127,7 +127,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
       return
     }
     
-    self.login(accessToekn: access, refreshToekn: refresh)
+    self.login(accessToken: access, refreshToken: refresh)
   }
 
   func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
@@ -144,8 +144,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
       return
     }
     
-    self.login(accessToekn: access, refreshToekn: refresh)
-
+    self.login(accessToken: access, refreshToken: refresh)
   }
 
   func oauth20ConnectionDidFinishDeleteToken() {
