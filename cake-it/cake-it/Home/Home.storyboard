@@ -16,21 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="5wm-xO-1bv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFe-us-2bw">
-                                <rect key="frame" x="276" y="74" width="108" height="30"/>
-                                <state key="normal" title="테스트용 로그아웃"/>
-                                <connections>
-                                    <action selector="testLogoutButtonDidTap:" destination="Wbg-e5-YJw" eventType="touchUpInside" id="o5W-Af-vih"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="3m7-hP-NHF"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                        <constraints>
-                            <constraint firstItem="yFe-us-2bw" firstAttribute="top" secondItem="3m7-hP-NHF" secondAttribute="top" constant="30" id="DSB-xu-eg9"/>
-                            <constraint firstItem="3m7-hP-NHF" firstAttribute="trailing" secondItem="yFe-us-2bw" secondAttribute="trailing" constant="30" id="bp4-7p-C2Z"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LE-M3-nrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

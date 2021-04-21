@@ -180,7 +180,7 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
-				AC86F9AC26233B69002DED4F /* Common */,
+				AC86F9AC26233B69002DED4F /* Common2 */,
 				F774B91A25E0E0BF006EE0EC /* Test */,
 				8B3AF14425DADFD700B9F48D /* Base */,
 				F774B92B25E0E0BF006EE0EC /* Network */,
@@ -294,14 +294,14 @@
 			path = MyPage;
 			sourceTree = "<group>";
 		};
-		AC86F9AC26233B69002DED4F /* Common */ = {
+		AC86F9AC26233B69002DED4F /* Common2 */ = {
 			isa = PBXGroup;
 			children = (
 				ACC16E70262334950094D6D2 /* LoginSocialType.swift */,
 				AC86FA07262C34D2002DED4F /* LoginManager.swift */,
 				AC86FA0C262C430D002DED4F /* Constants.swift */,
 			);
-			path = Common;
+			path = Common2;
 			sourceTree = "<group>";
 		};
 		ACC16E6F262334240094D6D2 /* Login */ = {
