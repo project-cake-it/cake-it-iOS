@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorFilterCell" customModule="cake_it" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ColorFilterItemView" customModule="cake_it" customModuleProvider="target">
             <connections>
                 <outlet property="colorLabel" destination="kEB-YY-dhZ" id="i3F-fZ-hbF"/>
                 <outlet property="colorView" destination="8en-sS-Fd9" id="zTV-i1-9LW"/>

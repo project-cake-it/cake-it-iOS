@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionFilterCell" customModule="cake_it" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DescriptionFilterItemView" customModule="cake_it" customModuleProvider="target">
             <connections>
                 <outlet property="descriptionLabel" destination="7J1-JV-ISG" id="4gJ-im-9oy"/>
                 <outlet property="titleLabel" destination="uwi-gd-3LC" id="Erf-z5-AJq"/>

@@ -1,5 +1,5 @@
 //
-//  BaseFilterCell.swift
+//  BaseFilterItemView.swift
 //  cake-it
 //
 //  Created by seungbong on 2021/04/15.
@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol BaseFilterCellDelegate: class {
+protocol BaseFilterItemViewDelegate: class {
   func cellDidTap(index: Int)
 }
 
-class BaseFilterCell: UIView {
+class BaseFilterItemView: UIView {
   
   var filterIndex: Int?
-  weak var delegate: BaseFilterCellDelegate?
+  weak var delegate: BaseFilterItemViewDelegate?
 
   func cellDidTap() {
     if let index = filterIndex {

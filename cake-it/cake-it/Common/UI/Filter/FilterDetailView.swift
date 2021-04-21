@@ -70,10 +70,10 @@ final class FilterDetailView: UIView {
   }
   
   private func configureBasicList() -> [UIView] {
-    var viewList: [TitleFilterCell] = []
+    var viewList: [TitleFilterItemView] = []
     
     for i in 0..<FilterCommon.FilterBasic.allCases.count {
-      let baseCell = TitleFilterCell(frame: CGRect(x: 0,
+      let baseCell = TitleFilterItemView(frame: CGRect(x: 0,
                                                    y: 0,
                                                    width: UIScreen.main.bounds.width,
                                                    height: 40))
@@ -87,10 +87,10 @@ final class FilterDetailView: UIView {
   }
   
   private func configureRegionList() -> [UIView] {
-    var viewList: [TitleFilterCell] = []
+    var viewList: [TitleFilterItemView] = []
     
     for i in 0..<FilterCommon.FilterRegion.allCases.count {
-      let regionCell = TitleFilterCell(frame: CGRect(x: 0,
+      let regionCell = TitleFilterItemView(frame: CGRect(x: 0,
                                                      y: 0,
                                                      width: UIScreen.main.bounds.width,
                                                      height: 40))
@@ -107,7 +107,7 @@ final class FilterDetailView: UIView {
     var viewList: [UIView] = []
     
     for i in 0..<FilterCommon.FilterSize.allCases.count {
-      let descriptionCell = DescriptionFilterCell(frame: CGRect(x: 0,
+      let descriptionCell = DescriptionFilterItemView(frame: CGRect(x: 0,
                                                                 y: 0,
                                                                 width: UIScreen.main.bounds.width,
                                                                 height: 60))
@@ -122,10 +122,10 @@ final class FilterDetailView: UIView {
   }
   
   private func configureColorList() -> [UIView] {
-    var viewList: [ColorFilterCell] = []
+    var viewList: [ColorFilterItemView] = []
     
     for i in 0..<FilterCommon.FilterColor.allCases.count {
-      let colorCell = ColorFilterCell(frame: CGRect(x: 0,
+      let colorCell = ColorFilterItemView(frame: CGRect(x: 0,
                                                     y: 0,
                                                     width: UIScreen.main.bounds.width,
                                                     height: 40))
@@ -140,10 +140,10 @@ final class FilterDetailView: UIView {
   }
   
   private func configureCategoryList() -> [UIView] {
-    var viewList: [TitleFilterCell] = []
+    var viewList: [TitleFilterItemView] = []
     
     for i in 0..<FilterCommon.FilterCategory.allCases.count {
-      let baseCell = TitleFilterCell(frame: CGRect(x: 0,
+      let baseCell = TitleFilterItemView(frame: CGRect(x: 0,
                                                    y: 0,
                                                    width: UIScreen.main.bounds.width,
                                                    height: 40))
@@ -162,7 +162,7 @@ final class FilterDetailView: UIView {
   
 }
 
-extension FilterDetailView: BaseFilterCellDelegate {
+extension FilterDetailView: BaseFilterItemViewDelegate {
   
   func cellDidTap(index: Int) {
     
