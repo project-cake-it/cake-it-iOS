@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FilterDetailViewDelegate: class {
-  func filterDidSelected(key: FilterCommon.FilterType, value: String)
+  func filterDetailViewDidTap(key: FilterCommon.FilterType, value: String)
 }
 
 final class FilterDetailView: UIView {
@@ -183,6 +183,6 @@ extension FilterDetailView: BaseFilterItemViewDelegate {
       break
     }
     
-    delegate?.filterDidSelected(key: filterType, value: value)
+    delegate?.filterDetailViewDidTap(key: filterType, value: value)
   }
 }

@@ -101,10 +101,12 @@ extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDel
   
   // filter 타이틀 클릭
   func filterTitleButtonDidTap(type: FilterCommon.FilterType) {
-    for view in filterDetailView.subviews {
-      view.removeFromSuperview()
+    removeFiterDetailView()
+    
+    if type == .reset {
+      selectedFilterDic.removeAll()
+      return
     }
-    filterDetailView.removeFromSuperview()
     
     filterDetailView = FilterDetailView()
     filterDetailView.filterType = type
@@ -114,14 +116,10 @@ extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDel
                                  leadingAnchor: view.leadingAnchor,
                                  bottomAnchor: view.bottomAnchor,
                                  trailingAnchor: view.trailingAnchor)
-    
-    if type == .reset {
-      selectedFilterDic.removeAll()
-    }
   }
   
   // filter detail view 클릭
-  func filterDidSelected(key: FilterCommon.FilterType, value: String) {
+  func filterDetailViewDidTap(key: FilterCommon.FilterType, value: String) {
     var savedValues = selectedFilterDic[key.title] ?? []
     if selectedFilterDic.keys.contains(key.title) == true, savedValues.contains(value) {
       let index = savedValues.firstIndex(of: value)!
@@ -130,7 +128,14 @@ extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDel
       savedValues.append(value) // 없는 경우 추가
     }
     selectedFilterDic[key.title] = savedValues
-    print(selectedFilterDic)
+    print(selectedFilterDic) // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+  }
+  
+  private func removeFiterDetailView() {
+    for view in filterDetailView.subviews {
+      view.removeFromSuperview()
+    }
+    filterDetailView.removeFromSuperview()
   }
   
 }

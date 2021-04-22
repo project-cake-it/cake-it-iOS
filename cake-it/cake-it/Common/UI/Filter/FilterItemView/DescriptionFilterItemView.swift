@@ -30,6 +30,6 @@ final class DescriptionFilterItemView: BaseFilterItemView {
   }
 
   @IBAction func cellButtonDidTap(_ sender: Any) {
-      super.cellDidTap()
+    super.cellDidTap()
   }
 }
