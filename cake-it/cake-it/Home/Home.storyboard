@@ -32,9 +32,20 @@
                                     <action selector="toDesignListButtonDidTap:" destination="Wbg-e5-YJw" eventType="touchUpInside" id="PhQ-1e-O2z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rmo-dd-NUs">
+                                <rect key="frame" x="310" y="74" width="74" height="30"/>
+                                <state key="normal" title="logout test"/>
+                                <connections>
+                                    <action selector="testLogoutButtonDidTap:" destination="Wbg-e5-YJw" eventType="touchUpInside" id="H7u-2o-GHr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3m7-hP-NHF"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="3m7-hP-NHF" firstAttribute="trailing" secondItem="Rmo-dd-NUs" secondAttribute="trailing" constant="30" id="Owr-fh-rd9"/>
+                            <constraint firstItem="Rmo-dd-NUs" firstAttribute="top" secondItem="3m7-hP-NHF" secondAttribute="top" constant="30" id="fWy-TO-pNW"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LE-M3-nrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

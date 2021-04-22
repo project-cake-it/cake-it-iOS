@@ -13,6 +13,11 @@ import NaverThirdPartyLogin
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  
+  let KAKAO_APP_KEY = "336e5fa0e2a8c916ffda94b2b64f5c8d"
+  let NAVER_CONSUMER_SECRET = "PFv_FX3EsN"
+  let NAVER_CONSUMER_KEY = "N2SMwopXbdrTDABqVn1m"
+  let APP_NAME = "cakeit"
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     
@@ -43,13 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     naverLogin?.isInAppOauthEnable = true
     naverLogin?.isOnlyPortraitSupportedInIphone()
     naverLogin?.serviceUrlScheme = "cakeit"
-    naverLogin?.consumerKey = "byuZm4RWfIdw5z1B8F_A"
-    naverLogin?.consumerSecret = "uKONFKpBzl"
-    naverLogin?.appName = "cakeit"
+    naverLogin?.consumerKey = NAVER_CONSUMER_KEY
+    naverLogin?.consumerSecret = NAVER_CONSUMER_SECRET
+    naverLogin?.appName = APP_NAME
   }
   
   func kakaoSDKInit() {
-    KakaoSDKCommon.initSDK(appKey: "6401b7f5ee32ca3b74931f6f8b76bfe6")
+    KakaoSDKCommon.initSDK(appKey: KAKAO_APP_KEY)
   }
 }
 

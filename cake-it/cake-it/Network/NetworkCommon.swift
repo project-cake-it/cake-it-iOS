@@ -18,7 +18,7 @@ class NetworkCommon {
   static let BASE_URL = "http://13.124.173.58:8080/api/v2/"
   
   enum API: String {
-    case loginTest = "/login"
+    case login = "login"
     case randomNikname = "/nickname"
     case uploadPhoto = "/test/post"
     
