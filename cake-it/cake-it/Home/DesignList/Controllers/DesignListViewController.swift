@@ -19,10 +19,14 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var navigationBarTitleLabel: UILabel!
   @IBOutlet weak var navigationBarTitleTapGestureView: UIView!
   @IBOutlet weak var navigationBarTitleArrowIcon: UIImageView!
+  @IBOutlet weak var filterViewArea: UIView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
   
+  private var filterDetailView = FilterDetailView()
   private(set) var cakeDesigns: [CakeDesign] = []
   
+  var selectedFilterDic: Dictionary<String, [String]> = [:]
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -55,8 +59,20 @@ final class DesignListViewController: BaseViewController {
 
 extension DesignListViewController {
   private func configure() {
+    configureFilterTitleView()
     configureCollectionView()
     configureNavigationBarTapGesture()
+  }
+  
+  private func configureFilterTitleView() {
+    let cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
+    let filterView = FilterTitleView(frame: CGRect(x: 0,
+                                                   y: 0,
+                                                   width: filterViewArea.frame.width,
+                                                   height: filterViewArea.frame.height))
+    filterView.delegate = self
+    filterView.filterList = cakeFilterList
+    filterViewArea.addSubview(filterView)
   }
   
   private func configureNavigationBarTapGesture() {
@@ -79,4 +95,47 @@ extension DesignListViewController {
     designsCollectionView.dataSource = self
     designsCollectionView.delegate = self
   }
+}
+
+extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDelegate {
+  
+  // filter 타이틀 클릭
+  func filterTitleButtonDidTap(type: FilterCommon.FilterType) {
+    removeFiterDetailView()
+    
+    if type == .reset {
+      selectedFilterDic.removeAll()
+      return
+    }
+    
+    filterDetailView = FilterDetailView()
+    filterDetailView.filterType = type
+    filterDetailView.delegate = self
+    self.view.addSubview(filterDetailView)
+    filterDetailView.constraints(topAnchor: filterViewArea.bottomAnchor,
+                                 leadingAnchor: view.leadingAnchor,
+                                 bottomAnchor: view.bottomAnchor,
+                                 trailingAnchor: view.trailingAnchor)
+  }
+  
+  // filter detail view 클릭
+  func filterDetailViewDidTap(key: FilterCommon.FilterType, value: String) {
+    var savedValues = selectedFilterDic[key.title] ?? []
+    if selectedFilterDic.keys.contains(key.title) == true, savedValues.contains(value) {
+      let index = savedValues.firstIndex(of: value)!
+      savedValues.remove(at: index)  // 이미 선택된 경우 선택 취소
+    } else {
+      savedValues.append(value) // 없는 경우 추가
+    }
+    selectedFilterDic[key.title] = savedValues
+    print(selectedFilterDic) // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+  }
+  
+  private func removeFiterDetailView() {
+    for view in filterDetailView.subviews {
+      view.removeFromSuperview()
+    }
+    filterDetailView.removeFromSuperview()
+  }
+  
 }

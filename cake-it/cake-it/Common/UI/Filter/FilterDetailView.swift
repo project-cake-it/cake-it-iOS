@@ -1,0 +1,188 @@
+//
+//  FilterDetailView.swift
+//  cake-it
+//
+//  Created by seungbong on 2021/04/06.
+//
+
+import UIKit
+
+protocol FilterDetailViewDelegate: class {
+  func filterDetailViewDidTap(key: FilterCommon.FilterType, value: String)
+}
+
+final class FilterDetailView: UIView {
+  
+  @IBOutlet weak var backgroundView: UIView!
+  
+  weak var delegate: FilterDetailViewDelegate?
+  var filterType: FilterCommon.FilterType = .reset {
+    didSet {
+      updateView()
+    }
+  }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    commonInit()
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    commonInit()
+  }
+  
+  private func commonInit() {
+    let view = Bundle.main.loadNibNamed(String(describing: FilterDetailView.self),
+                                        owner: self,
+                                        options: nil)?.first as! UIView
+    self.addSubview(view)
+  }
+  
+  private func updateView() {
+    var viewList: [UIView] = []
+    switch filterType {
+    case .basic:
+      viewList = configureBasicList()
+    case .region:
+      viewList = configureRegionList()
+    case .size:
+      viewList = configureSizeList()
+    case .color:
+      viewList = configureColorList()
+    case .category:
+      viewList = configureCategoryList()
+    case .reset:
+      break
+    }
+
+    let stackView = UIStackView(arrangedSubviews: viewList)
+    stackView.axis = .vertical
+    stackView.distribution = .fillEqually
+    stackView.alignment = .fill
+    self.addSubview(stackView)
+
+    let viewHight = CGFloat(viewList.first?.frame.height ?? 0) * CGFloat(viewList.count)
+    stackView.constraints(topAnchor: self.topAnchor,
+                          leadingAnchor: self.leadingAnchor,
+                          trailingAnchor: self.trailingAnchor,
+                          height: viewHight)
+  }
+  
+  private func configureBasicList() -> [UIView] {
+    var viewList: [TitleFilterItemView] = []
+    
+    for i in 0..<FilterCommon.FilterBasic.allCases.count {
+      let baseCell = TitleFilterItemView(frame: CGRect(x: 0,
+                                                   y: 0,
+                                                   width: UIScreen.main.bounds.width,
+                                                   height: 40))
+      baseCell.delegate = self
+      baseCell.filterIndex = i
+      baseCell.label.text = FilterCommon.FilterBasic.allCases[i].title
+      viewList.append(baseCell)
+    }
+    
+    return viewList
+  }
+  
+  private func configureRegionList() -> [UIView] {
+    var viewList: [TitleFilterItemView] = []
+    
+    for i in 0..<FilterCommon.FilterRegion.allCases.count {
+      let regionCell = TitleFilterItemView(frame: CGRect(x: 0,
+                                                     y: 0,
+                                                     width: UIScreen.main.bounds.width,
+                                                     height: 40))
+      regionCell.delegate = self
+      regionCell.filterIndex = i
+      regionCell.label.text = FilterCommon.FilterRegion.allCases[i].title
+      viewList.append(regionCell)
+    }
+    
+    return viewList
+  }
+  
+  private func configureSizeList() -> [UIView] {
+    var viewList: [UIView] = []
+    
+    for i in 0..<FilterCommon.FilterSize.allCases.count {
+      let descriptionCell = DescriptionFilterItemView(frame: CGRect(x: 0,
+                                                                y: 0,
+                                                                width: UIScreen.main.bounds.width,
+                                                                height: 60))
+      descriptionCell.delegate = self
+      descriptionCell.filterIndex = i
+      descriptionCell.titleLabel.text = FilterCommon.FilterSize.allCases[i].title
+      descriptionCell.descriptionLabel.text = FilterCommon.FilterSize.allCases[i].description
+      viewList.append(descriptionCell)
+    }
+    
+    return viewList
+  }
+  
+  private func configureColorList() -> [UIView] {
+    var viewList: [ColorFilterItemView] = []
+    
+    for i in 0..<FilterCommon.FilterColor.allCases.count {
+      let colorCell = ColorFilterItemView(frame: CGRect(x: 0,
+                                                    y: 0,
+                                                    width: UIScreen.main.bounds.width,
+                                                    height: 40))
+      colorCell.delegate = self
+      colorCell.filterIndex = i
+      colorCell.colorLabel.text = FilterCommon.FilterColor.allCases[i].title
+      colorCell.colorView.backgroundColor = FilterCommon.FilterColor.allCases[i].color
+      viewList.append(colorCell)
+    }
+    
+    return viewList
+  }
+  
+  private func configureCategoryList() -> [UIView] {
+    var viewList: [TitleFilterItemView] = []
+    
+    for i in 0..<FilterCommon.FilterCategory.allCases.count {
+      let baseCell = TitleFilterItemView(frame: CGRect(x: 0,
+                                                   y: 0,
+                                                   width: UIScreen.main.bounds.width,
+                                                   height: 40))
+      baseCell.delegate = self
+      baseCell.filterIndex = i
+      baseCell.label.text = FilterCommon.FilterCategory.allCases[i].title
+      viewList.append(baseCell)
+    }
+    
+    return viewList
+  }
+  
+  @IBAction func DidtapGesture(_ sender: Any) {
+    self.removeFromSuperview()
+  }
+  
+}
+
+extension FilterDetailView: BaseFilterItemViewDelegate {
+  
+  func cellDidTap(index: Int) {
+    
+    var value: String = ""
+    
+    switch filterType {
+    case .basic:
+      value = FilterCommon.FilterBasic.allCases[index].title
+    case .region:
+      value = FilterCommon.FilterRegion.allCases[index].title
+    case .size:
+      value = FilterCommon.FilterSize.allCases[index].title
+    case .color:
+      value = FilterCommon.FilterColor.allCases[index].title
+    case .category:
+      value = FilterCommon.FilterCategory.allCases[index].title
+    case .reset:
+      break
+    }
+    
+    delegate?.filterDetailViewDidTap(key: filterType, value: value)
+  }
+}

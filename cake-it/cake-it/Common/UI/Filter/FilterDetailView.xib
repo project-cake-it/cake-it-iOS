@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterDetailView" customModule="cake_it" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundView" destination="ZvO-rT-WXk" id="M31-s3-8ux"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Filter Detail View">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZvO-rT-WXk" userLabel="BackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" name="black"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="xJ6-zI-Nxe" appends="YES" id="lIK-nW-ue8"/>
+                    </connections>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ZvO-rT-WXk" secondAttribute="bottom" id="1jk-iy-iRd"/>
+                <constraint firstItem="ZvO-rT-WXk" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="V8C-4C-yRg"/>
+                <constraint firstItem="ZvO-rT-WXk" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="kHX-nM-mc5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ZvO-rT-WXk" secondAttribute="trailing" id="kc9-5v-wAA"/>
+            </constraints>
+            <point key="canvasLocation" x="-266.39999999999998" y="102.99850074962519"/>
+        </view>
+        <tapGestureRecognizer id="xJ6-zI-Nxe">
+            <connections>
+                <action selector="DidtapGesture:" destination="-1" id="cvU-Lo-csb"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <namedColor name="black">
+            <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
