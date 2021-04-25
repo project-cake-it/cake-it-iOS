@@ -57,17 +57,19 @@
 		ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC16E70262334950094D6D2 /* LoginSocialType.swift */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */; };
-		F7080000261DECF200C5390D /* FilterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708FFFB261DECF200C5390D /* FilterDetailView.swift */; };
-		F708FFFC261DECF200C5390D /* FilterTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708FFF7261DECF200C5390D /* FilterTitleView.swift */; };
-		F708FFFD261DECF200C5390D /* FilterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F708FFF8261DECF200C5390D /* FilterTitleView.xib */; };
-		F708FFFE261DECF200C5390D /* FilterDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F708FFF9261DECF200C5390D /* FilterDetailView.xib */; };
-		F708FFFF261DECF200C5390D /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F708FFFA261DECF200C5390D /* FilterButton.swift */; };
-		F72E8B6F262C4CC000C19AC6 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E8B6E262C4CC000C19AC6 /* FilterCommon.swift */; };
-		F75388802625CE3100A84248 /* ColorFilterItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F753887F2625CE3100A84248 /* ColorFilterItemView.xib */; };
-		F75388882625CE3F00A84248 /* ColorFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75388872625CE3F00A84248 /* ColorFilterItemView.swift */; };
-		F75388982625D32600A84248 /* DescriptionFilterItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75388972625D32600A84248 /* DescriptionFilterItemView.xib */; };
-		F753889D2625D33100A84248 /* DescriptionFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F753889C2625D33100A84248 /* DescriptionFilterItemView.swift */; };
-		F76C2F732628719A008D1C85 /* BaseFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76C2F722628719A008D1C85 /* BaseFilterItemView.swift */; };
+		F73B6D112635AEC50043CF89 /* FilterDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B6D032635AEC50043CF89 /* FilterDetailView.xib */; };
+		F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D042635AEC50043CF89 /* FilterTitleView.swift */; };
+		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
+		F73B6D142635AEC50043CF89 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D062635AEC50043CF89 /* FilterButton.swift */; };
+		F73B6D152635AEC50043CF89 /* DescriptionFilterItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B6D082635AEC50043CF89 /* DescriptionFilterItemView.xib */; };
+		F73B6D162635AEC50043CF89 /* TitleFilterItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B6D092635AEC50043CF89 /* TitleFilterItemView.xib */; };
+		F73B6D172635AEC50043CF89 /* ColorFilterItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B6D0A2635AEC50043CF89 /* ColorFilterItemView.xib */; };
+		F73B6D182635AEC50043CF89 /* DescriptionFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0B2635AEC50043CF89 /* DescriptionFilterItemView.swift */; };
+		F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */; };
+		F73B6D1A2635AEC50043CF89 /* BaseFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */; };
+		F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */; };
+		F73B6D1C2635AEC50043CF89 /* FilterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0F2635AEC50043CF89 /* FilterDetailView.swift */; };
+		F73B6D1D2635AEC50043CF89 /* FilterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B6D102635AEC50043CF89 /* FilterTitleView.xib */; };
 		F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */; };
 		F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */; };
 		F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */; };
@@ -85,8 +87,6 @@
 		F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */; };
 		F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */; };
 		F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */; };
-		F7A98F982625C89900C7C295 /* TitleFilterItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A98F972625C89900C7C295 /* TitleFilterItemView.xib */; };
-		F7A98F9D2625C91900C7C295 /* TitleFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A98F9C2625C91900C7C295 /* TitleFilterItemView.swift */; };
 		FAAB2F89308B59A58AD30653 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -170,17 +170,19 @@
 		D792EB0BE229648F5A5C7460 /* Pods-cake-it.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.release.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.release.xcconfig"; sourceTree = "<group>"; };
 		E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it_cake_itUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E670015E1C84D024CD034B18 /* Pods-cake-it-cake-itUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.debug.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F708FFF7261DECF200C5390D /* FilterTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTitleView.swift; sourceTree = "<group>"; };
-		F708FFF8261DECF200C5390D /* FilterTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTitleView.xib; sourceTree = "<group>"; };
-		F708FFF9261DECF200C5390D /* FilterDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterDetailView.xib; sourceTree = "<group>"; };
-		F708FFFA261DECF200C5390D /* FilterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
-		F708FFFB261DECF200C5390D /* FilterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailView.swift; sourceTree = "<group>"; };
-		F72E8B6E262C4CC000C19AC6 /* FilterCommon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
-		F753887F2625CE3100A84248 /* ColorFilterItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorFilterItemView.xib; sourceTree = "<group>"; };
-		F75388872625CE3F00A84248 /* ColorFilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilterItemView.swift; sourceTree = "<group>"; };
-		F75388972625D32600A84248 /* DescriptionFilterItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionFilterItemView.xib; sourceTree = "<group>"; };
-		F753889C2625D33100A84248 /* DescriptionFilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionFilterItemView.swift; sourceTree = "<group>"; };
-		F76C2F722628719A008D1C85 /* BaseFilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFilterItemView.swift; sourceTree = "<group>"; };
+		F73B6D032635AEC50043CF89 /* FilterDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterDetailView.xib; sourceTree = "<group>"; };
+		F73B6D042635AEC50043CF89 /* FilterTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTitleView.swift; sourceTree = "<group>"; };
+		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
+		F73B6D062635AEC50043CF89 /* FilterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		F73B6D082635AEC50043CF89 /* DescriptionFilterItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DescriptionFilterItemView.xib; sourceTree = "<group>"; };
+		F73B6D092635AEC50043CF89 /* TitleFilterItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleFilterItemView.xib; sourceTree = "<group>"; };
+		F73B6D0A2635AEC50043CF89 /* ColorFilterItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColorFilterItemView.xib; sourceTree = "<group>"; };
+		F73B6D0B2635AEC50043CF89 /* DescriptionFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionFilterItemView.swift; sourceTree = "<group>"; };
+		F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleFilterItemView.swift; sourceTree = "<group>"; };
+		F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFilterItemView.swift; sourceTree = "<group>"; };
+		F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFilterItemView.swift; sourceTree = "<group>"; };
+		F73B6D0F2635AEC50043CF89 /* FilterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailView.swift; sourceTree = "<group>"; };
+		F73B6D102635AEC50043CF89 /* FilterTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTitleView.xib; sourceTree = "<group>"; };
 		F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 		F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
 		F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
@@ -198,8 +200,6 @@
 		F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewModel.swift; sourceTree = "<group>"; };
 		F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoUpload.storyboard; sourceTree = "<group>"; };
 		F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
-		F7A98F972625C89900C7C295 /* TitleFilterItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleFilterItemView.xib; sourceTree = "<group>"; };
-		F7A98F9C2625C91900C7C295 /* TitleFilterItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleFilterItemView.swift; sourceTree = "<group>"; };
 		FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -256,7 +256,6 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
-				AC86F9AC26233B69002DED4F /* Common2 */,
 				F774B91A25E0E0BF006EE0EC /* Test */,
 				8B3AF14425DADFD700B9F48D /* Base */,
 				F774B92B25E0E0BF006EE0EC /* Network */,
@@ -519,26 +518,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		F708FFF6261DECC500C5390D /* Filter */ = {
-			isa = PBXGroup;
-			children = (
-				F7A98F962625C88400C7C295 /* FilterItemView */,
-				F708FFFA261DECF200C5390D /* FilterButton.swift */,
-				F708FFFB261DECF200C5390D /* FilterDetailView.swift */,
-				F708FFF9261DECF200C5390D /* FilterDetailView.xib */,
-				F708FFF7261DECF200C5390D /* FilterTitleView.swift */,
-				F708FFF8261DECF200C5390D /* FilterTitleView.xib */,
-				F72E8B6E262C4CC000C19AC6 /* FilterCommon.swift */,
-			);
-			path = Filter;
-		};
-		AC86F9AC26233B69002DED4F /* Common2 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common2;
-			sourceTree = "<group>";
-		};
 		ACC16E6F262334240094D6D2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +526,34 @@
 				AC94D3872614D10F004063DC /* LoginViewModel.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F73B6D022635AEC50043CF89 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				F73B6D032635AEC50043CF89 /* FilterDetailView.xib */,
+				F73B6D042635AEC50043CF89 /* FilterTitleView.swift */,
+				F73B6D052635AEC50043CF89 /* FilterCommon.swift */,
+				F73B6D062635AEC50043CF89 /* FilterButton.swift */,
+				F73B6D072635AEC50043CF89 /* FilterItemView */,
+				F73B6D0F2635AEC50043CF89 /* FilterDetailView.swift */,
+				F73B6D102635AEC50043CF89 /* FilterTitleView.xib */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		F73B6D072635AEC50043CF89 /* FilterItemView */ = {
+			isa = PBXGroup;
+			children = (
+				F73B6D082635AEC50043CF89 /* DescriptionFilterItemView.xib */,
+				F73B6D092635AEC50043CF89 /* TitleFilterItemView.xib */,
+				F73B6D0A2635AEC50043CF89 /* ColorFilterItemView.xib */,
+				F73B6D0B2635AEC50043CF89 /* DescriptionFilterItemView.swift */,
+				F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */,
+				F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */,
+				F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */,
+			);
+			path = FilterItemView;
 			sourceTree = "<group>";
 		};
 		F774B91A25E0E0BF006EE0EC /* Test */ = {
@@ -683,24 +690,10 @@
 			path = PhotoUpload_Test;
 			sourceTree = "<group>";
 		};
-		F7A98F962625C88400C7C295 /* FilterItemView */ = {
-			isa = PBXGroup;
-			children = (
-				F76C2F722628719A008D1C85 /* BaseFilterItemView.swift */,
-				F7A98F972625C89900C7C295 /* TitleFilterItemView.xib */,
-				F7A98F9C2625C91900C7C295 /* TitleFilterItemView.swift */,
-				F753887F2625CE3100A84248 /* ColorFilterItemView.xib */,
-				F75388872625CE3F00A84248 /* ColorFilterItemView.swift */,
-				F75388972625D32600A84248 /* DescriptionFilterItemView.xib */,
-				F753889C2625D33100A84248 /* DescriptionFilterItemView.swift */,
-			);
-			path = FilterItemView;
-			sourceTree = "<group>";
-		};
 		F7C53C88262C53A60075ECD9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F708FFF6261DECC500C5390D /* Filter */,
+				F73B6D022635AEC50043CF89 /* Filter */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -815,25 +808,25 @@
 			files = (
 				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
 				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
+				F73B6D152635AEC50043CF89 /* DescriptionFilterItemView.xib in Resources */,
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
-				F7A98F982625C89900C7C295 /* TitleFilterItemView.xib in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
 				8B2A7548261C9AF5007757E5 /* CakeShopCell.xib in Resources */,
 				8B93B2E62610C9E90060ACAC /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */,
 				8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				8B93B2E52610C9E90060ACAC /* SpoqaHanSansNeo-Bold.otf in Resources */,
-				F75388802625CE3100A84248 /* ColorFilterItemView.xib in Resources */,
 				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
-				F75388982625D32600A84248 /* DescriptionFilterItemView.xib in Resources */,
+				F73B6D112635AEC50043CF89 /* FilterDetailView.xib in Resources */,
+				F73B6D162635AEC50043CF89 /* TitleFilterItemView.xib in Resources */,
 				8B875D2F25DAE836003D9CFA /* MyPage.storyboard in Resources */,
-				F708FFFE261DECF200C5390D /* FilterDetailView.xib in Resources */,
+				F73B6D1D2635AEC50043CF89 /* FilterTitleView.xib in Resources */,
 				8B875D1B25DAE747003D9CFA /* SavedItem.storyboard in Resources */,
 				8B93B2E72610C9E90060ACAC /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */,
-				F708FFFD261DECF200C5390D /* FilterTitleView.xib in Resources */,
 				8B93B2E82610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf in Resources */,
+				F73B6D172635AEC50043CF89 /* ColorFilterItemView.xib in Resources */,
 				8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */,
 				8B875CF625DAE61D003D9CFA /* Search.storyboard in Resources */,
 			);
@@ -964,23 +957,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
-				F72E8B6F262C4CC000C19AC6 /* FilterCommon.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
 				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
 				8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
+				F73B6D1C2635AEC50043CF89 /* FilterDetailView.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */,
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
-				F7080000261DECF200C5390D /* FilterDetailView.swift in Sources */,
 				8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */,
-				F708FFFC261DECF200C5390D /* FilterTitleView.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
+				F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */,
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
@@ -989,31 +981,32 @@
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
 				8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */,
 				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
+				F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
-				F753889D2625D33100A84248 /* DescriptionFilterItemView.swift in Sources */,
-				F76C2F732628719A008D1C85 /* BaseFilterItemView.swift in Sources */,
 				8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */,
 				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,
+				F73B6D142635AEC50043CF89 /* FilterButton.swift in Sources */,
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
+				F73B6D182635AEC50043CF89 /* DescriptionFilterItemView.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
-				F708FFFF261DECF200C5390D /* FilterButton.swift in Sources */,
+				F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */,
+				F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
-				F75388882625CE3F00A84248 /* ColorFilterItemView.swift in Sources */,
 				8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */,
 				8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */,
+				F73B6D1A2635AEC50043CF89 /* BaseFilterItemView.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
-				F7A98F9D2625C91900C7C295 /* TitleFilterItemView.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
 				AC86FA0D262C430D002DED4F /* Constants.swift in Sources */,
 			);
