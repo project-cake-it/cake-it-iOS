@@ -22,4 +22,10 @@ extension DesignListViewController: UICollectionViewDataSource {
     cell.update(with: cakeDesign)
     return cell
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let newVC = storyboard?.instantiateViewController(identifier: DesignDetailViewController.id)
+    present(newVC!, animated: true, completion: nil)
+    
+  }
 }

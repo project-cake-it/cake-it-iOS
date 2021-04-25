@@ -226,10 +226,84 @@
             </objects>
             <point key="canvasLocation" x="1011.5942028985507" y="40.848214285714285"/>
         </scene>
+        <!--Design Detail View Controller-->
+        <scene sceneID="bwT-gu-1d3">
+            <objects>
+                <viewController storyboardIdentifier="DesignDetailViewController" id="NHP-87-oQc" customClass="DesignDetailViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BEl-5r-Jvz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HJH-3s-3iJ" userLabel="NavigationBarView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOV-in-YDj">
+                                        <rect key="frame" x="16" y="6" width="38" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="AOV-in-YDj" secondAttribute="height" multiplier="1:1" id="4Ig-bk-Xes"/>
+                                        </constraints>
+                                        <color key="tintColor" name="black"/>
+                                        <state key="normal" image="arrowLeft"/>
+                                        <connections>
+                                            <action selector="backButtonDidTap:" destination="bDm-9X-dQ3" eventType="touchUpInside" id="jjA-nS-lqa"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크 가게 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k5-yU-0ch">
+                                        <rect key="frame" x="54" y="16" width="312" height="18"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                        <color key="textColor" name="black"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icHeart" translatesAutoresizingMaskIntoConstraints="NO" id="chv-F1-egj">
+                                        <rect key="frame" x="366" y="6" width="38" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="38" id="AMH-sr-Gt1"/>
+                                            <constraint firstAttribute="width" secondItem="chv-F1-egj" secondAttribute="height" multiplier="1:1" id="az9-mD-wYk"/>
+                                            <constraint firstAttribute="height" constant="38" id="s7k-ap-Clr"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="AOV-in-YDj" secondAttribute="bottom" constant="6" id="4da-9m-4BJ"/>
+                                    <constraint firstItem="AOV-in-YDj" firstAttribute="top" secondItem="HJH-3s-3iJ" secondAttribute="top" constant="6" id="5Gu-i3-6Ia"/>
+                                    <constraint firstItem="3k5-yU-0ch" firstAttribute="leading" secondItem="AOV-in-YDj" secondAttribute="trailing" id="FxS-Fp-TTv"/>
+                                    <constraint firstItem="chv-F1-egj" firstAttribute="centerY" secondItem="HJH-3s-3iJ" secondAttribute="centerY" id="PtI-0q-Ph6"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wst-Ht-cUV"/>
+                                    <constraint firstItem="chv-F1-egj" firstAttribute="leading" secondItem="3k5-yU-0ch" secondAttribute="trailing" id="ciA-Au-qSn"/>
+                                    <constraint firstItem="AOV-in-YDj" firstAttribute="leading" secondItem="HJH-3s-3iJ" secondAttribute="leading" constant="16" id="eIC-Hi-5Zv"/>
+                                    <constraint firstItem="3k5-yU-0ch" firstAttribute="centerY" secondItem="HJH-3s-3iJ" secondAttribute="centerY" id="eYG-VT-Wcw"/>
+                                    <constraint firstAttribute="trailing" secondItem="chv-F1-egj" secondAttribute="trailing" constant="10" id="qt5-6y-7HD"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZz-yE-Ah1">
+                                <rect key="frame" x="0.0" y="102" width="414" height="414"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ALC-Lb-X7p"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="cNz-42-Uvk"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vvr-eB-rVh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HJH-3s-3iJ" firstAttribute="leading" secondItem="BEl-5r-Jvz" secondAttribute="leading" id="I5i-mC-ddn"/>
+                            <constraint firstItem="vvr-eB-rVh" firstAttribute="trailing" secondItem="HJH-3s-3iJ" secondAttribute="trailing" id="YHJ-95-6pq"/>
+                            <constraint firstItem="HJH-3s-3iJ" firstAttribute="top" secondItem="vvr-eB-rVh" secondAttribute="top" id="dRJ-hv-WKp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageScrollView" destination="HZz-yE-Ah1" id="MRW-me-GCw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T3P-QE-Oc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1732" y="41"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowLeft" width="38" height="38"/>
         <image name="chevronCompactDown" width="20" height="20"/>
+        <image name="icHeart" width="38" height="38"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

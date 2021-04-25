@@ -70,6 +70,7 @@
 		F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */; };
 		F73B6D1C2635AEC50043CF89 /* FilterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0F2635AEC50043CF89 /* FilterDetailView.swift */; };
 		F73B6D1D2635AEC50043CF89 /* FilterTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F73B6D102635AEC50043CF89 /* FilterTitleView.xib */; };
+		F73B6D522635B1240043CF89 /* DesignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D512635B1240043CF89 /* DesignDetailViewController.swift */; };
 		F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */; };
 		F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */; };
 		F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */; };
@@ -183,6 +184,7 @@
 		F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFilterItemView.swift; sourceTree = "<group>"; };
 		F73B6D0F2635AEC50043CF89 /* FilterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailView.swift; sourceTree = "<group>"; };
 		F73B6D102635AEC50043CF89 /* FilterTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTitleView.xib; sourceTree = "<group>"; };
+		F73B6D512635B1240043CF89 /* DesignDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DesignDetailViewController.swift; path = "cake-it/Common/UI/DesignDetailViewController.swift"; sourceTree = SOURCE_ROOT; };
 		F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
 		F774B91F25E0E0BF006EE0EC /* NicknameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameModel.swift; sourceTree = "<group>"; };
 		F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
@@ -294,10 +296,11 @@
 		38D8C73A25BC631900C1F10D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ACC16E6F262334240094D6D2 /* Login */,
+				F73B6D502635B1000043CF89 /* DesignDetail */,
 				8B62C3112600F670005F599A /* DesignList */,
 				8B3AF14525DAE16A00B9F48D /* Home.storyboard */,
 				38D8C6FD25BC622500C1F10D /* HomeViewController.swift */,
+				ACC16E6F262334240094D6D2 /* Login */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -554,6 +557,14 @@
 				F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */,
 			);
 			path = FilterItemView;
+			sourceTree = "<group>";
+		};
+		F73B6D502635B1000043CF89 /* DesignDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F73B6D512635B1240043CF89 /* DesignDetailViewController.swift */,
+			);
+			path = DesignDetail;
 			sourceTree = "<group>";
 		};
 		F774B91A25E0E0BF006EE0EC /* Test */ = {
@@ -984,6 +995,7 @@
 				F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
+				F73B6D522635B1240043CF89 /* DesignDetailViewController.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
