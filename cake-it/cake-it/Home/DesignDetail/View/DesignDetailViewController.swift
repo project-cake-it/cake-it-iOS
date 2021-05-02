@@ -9,11 +9,23 @@ import UIKit
 
 class DesignDetailViewController: UIViewController {
   
+  @IBOutlet weak var naviStoreNameLabel: UILabel!
+  @IBOutlet weak var naviZzimButton: UIImageView!
+  
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var imageScrollView: UIScrollView!
   @IBOutlet weak var progressBar: UIProgressView!
+  
   @IBOutlet weak var cakeSimpleView: UIView!
+  @IBOutlet weak var cakeDesignLabel: UILabel!
+  @IBOutlet weak var addressLabel: UILabel!
+  
   @IBOutlet weak var cakeInformationView: UIView!
+  @IBOutlet weak var cakeThemeLabel: UILabel!
+  @IBOutlet var cakePriceBySizeLabel: [UILabel]!
+  @IBOutlet weak var kindOfCreamsLabel: UILabel!
+  @IBOutlet weak var kindOfSheetsLabel: UILabel!
+  
   
   static let id = "DesignDetailViewController"
   
@@ -31,7 +43,9 @@ class DesignDetailViewController: UIViewController {
     scrollView.contentSize = CGSize(width: Constants.SCREEN_WIDTH,
                                     height: imageScrollView.frame.height
                                           + cakeSimpleView.frame.height
-                                          + cakeInformationView.frame.height )
+                                          + cakeInformationView.frame.height + 1308 )
+    print("image: \(imageScrollView.frame.height), simple: \(cakeSimpleView.frame.height), info: \(cakeInformationView.frame.height)")
+    print("contentsize: \(scrollView.contentSize.height)")
     scrollView.alwaysBounceVertical = true
   }
   
@@ -61,6 +75,7 @@ class DesignDetailViewController: UIViewController {
     // ProgressBar Setting
     progressBar.backgroundColor = .black
     progressBar.tintColor = .white
+    progressBar.progressViewStyle = .bar
     progressBar.progress = 1.0 / Float(colorList.count)
   }
   
@@ -73,6 +88,9 @@ class DesignDetailViewController: UIViewController {
     
   }
   
+  @IBAction func naviBackButtonDidTap(_ sender: Any) {
+  }
+
   
 }
 
