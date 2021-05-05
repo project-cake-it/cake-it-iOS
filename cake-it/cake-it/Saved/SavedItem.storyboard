@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,17 +79,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfF-sr-uiq">
-                                <rect key="frame" x="137" y="466" width="49" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qk5-E6-L8o">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eLl-li-HBG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CakeImageCell" id="PN7-Sk-Dxh" customClass="CakeImageCell" customModule="cake_it" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tjq-Hr-pyj">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ava-N8-7gm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ava-N8-7gm" firstAttribute="top" secondItem="Tjq-Hr-pyj" secondAttribute="top" id="2yd-VC-tAI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ava-N8-7gm" secondAttribute="bottom" id="eRm-bd-Lw3"/>
+                                                <constraint firstItem="Ava-N8-7gm" firstAttribute="leading" secondItem="Tjq-Hr-pyj" secondAttribute="leading" id="ffP-0I-9fc"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ava-N8-7gm" secondAttribute="trailing" id="gDv-zh-dTh"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="cakeImageView" destination="Ava-N8-7gm" id="Ssa-My-e9m"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6ZP-ad-X0m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qk5-E6-L8o" firstAttribute="top" secondItem="6ZP-ad-X0m" secondAttribute="top" id="BpX-RY-RX9"/>
+                            <constraint firstItem="qk5-E6-L8o" firstAttribute="leading" secondItem="6ZP-ad-X0m" secondAttribute="leading" id="bpw-v6-m6h"/>
+                            <constraint firstItem="6ZP-ad-X0m" firstAttribute="bottom" secondItem="qk5-E6-L8o" secondAttribute="bottom" id="bzt-Ck-i1g"/>
+                            <constraint firstAttribute="trailing" secondItem="qk5-E6-L8o" secondAttribute="trailing" id="hMM-sN-qW0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cakeImageCollectionView" destination="qk5-E6-L8o" id="rOV-0w-0Jv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edq-3F-FFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

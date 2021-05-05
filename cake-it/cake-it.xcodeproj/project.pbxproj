@@ -56,6 +56,8 @@
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
 		AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */; };
 		AC9FD4C3263F0C9100A44862 /* StoreListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C2263F0C9100A44862 /* StoreListSubViewController.swift */; };
+		AC9FD4C52642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C42642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift */; };
+		AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */; };
 		ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC16E70262334950094D6D2 /* LoginSocialType.swift */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */; };
@@ -167,6 +169,8 @@
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeListSubViewController.swift; sourceTree = "<group>"; };
 		AC9FD4C2263F0C9100A44862 /* StoreListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListSubViewController.swift; sourceTree = "<group>"; };
+		AC9FD4C42642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeImageCell.swift; sourceTree = "<group>"; };
 		ACC16E70262334950094D6D2 /* LoginSocialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSocialType.swift; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AEDF9B83790700EB68FD0211 /* Pods-cake-it.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.debug.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.debug.xcconfig"; sourceTree = "<group>"; };
@@ -459,6 +463,8 @@
 				8B875D1A25DAE747003D9CFA /* SavedItem.storyboard */,
 				8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */,
 				AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */,
+				AC9FD4C42642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift */,
+				AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */,
 				AC9FD4C2263F0C9100A44862 /* StoreListSubViewController.swift */,
 			);
 			path = Saved;
@@ -990,6 +996,7 @@
 				F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
+				AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
@@ -1003,6 +1010,7 @@
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F73B6D182635AEC50043CF89 /* DescriptionFilterItemView.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
+				AC9FD4C52642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift in Sources */,
 				F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */,
 				F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
