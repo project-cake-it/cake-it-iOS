@@ -6,24 +6,30 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
-final class SavedItemMainViewController: UIViewController {
+final class SavedItemMainViewController: ButtonBarPagerTabStripViewController {
   
   override func viewDidLoad() {
-    super.viewDidLoad()
+    initXLPagerTabStripUI()
     
-    // Do any additional setup after loading the view.
+    super.viewDidLoad()
   }
   
+  //MARK: - XLPagerTabStrip setting
+  func initXLPagerTabStripUI() {
+    settings.style.buttonBarBackgroundColor = .white
+    settings.style.buttonBarItemBackgroundColor = .white
+    settings.style.selectedBarBackgroundColor = Colors.pointB
+    settings.style.selectedBarHeight = 2.0
+    settings.style.buttonBarItemTitleColor = .black
+  }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
+  override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
+    
+    let firstSubView = CakeListSubViewController.instantiate(from: "SavedItem")
+    let secondSubView = StoreListSubViewController.instantiate(from: "SavedItem")
+    
+    return [firstSubView, secondSubView]
+  }
 }
