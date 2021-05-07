@@ -8,6 +8,14 @@
 import UIKit
 
 extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let identifier = String(describing: ShopDetailViewController.self)
+    let storyboard = UIStoryboard(name: "Shops", bundle: nil)
+    let detailVC = storyboard.instantiateViewController(identifier: identifier) as! ShopDetailViewController
+    detailVC.modalPresentationStyle = .fullScreen
+    present(detailVC, animated: false, completion: nil)
+  }
+  
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
