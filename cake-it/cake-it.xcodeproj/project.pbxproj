@@ -21,7 +21,7 @@
 		8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7540261C9812007757E5 /* CakeShop.swift */; };
 		8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */; };
 		8B2A7548261C9AF5007757E5 /* CakeShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */; };
-		8B3AE24A261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AE249261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift */; };
+		8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */; };
 		8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3AF14525DAE16A00B9F48D /* Home.storyboard */; };
 		8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62C3132600FE10005F599A /* DesignListViewController.swift */; };
@@ -128,7 +128,7 @@
 		8B2A7540261C9812007757E5 /* CakeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShop.swift; sourceTree = "<group>"; };
 		8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShopCell.swift; sourceTree = "<group>"; };
 		8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeShopCell.xib; sourceTree = "<group>"; };
-		8B3AE249261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		8B3AF14525DAE16A00B9F48D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8B62C3132600FE10005F599A /* DesignListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListViewController.swift; sourceTree = "<group>"; };
@@ -348,7 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */,
-				8B3AE249261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift */,
+				8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */,
 				8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */,
 			);
 			path = Controllers;
@@ -977,7 +977,7 @@
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
-				8B3AE24A261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift in Sources */,
+				8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
 				8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */,
 				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
