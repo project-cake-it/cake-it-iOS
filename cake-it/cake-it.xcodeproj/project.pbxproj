@@ -50,13 +50,14 @@
 		8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEA0F41260CD36000743512 /* CakeDesignCell.xib */; };
 		8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */; };
 		8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */; };
+		AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDC83260756DF0026F5FA /* LoginModel.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
 		AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */; };
 		AC9FD4C3263F0C9100A44862 /* StoreListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C2263F0C9100A44862 /* StoreListSubViewController.swift */; };
-		AC9FD4C52642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C42642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift */; };
+		AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */; };
 		AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */; };
 		ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC16E70262334950094D6D2 /* LoginSocialType.swift */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
@@ -163,13 +164,14 @@
 		8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MoneyFormat.swift; sourceTree = "<group>"; };
 		9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		AC1BDC83260756DF0026F5FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeListSubViewController.swift; sourceTree = "<group>"; };
 		AC9FD4C2263F0C9100A44862 /* StoreListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListSubViewController.swift; sourceTree = "<group>"; };
-		AC9FD4C42642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeImageCell.swift; sourceTree = "<group>"; };
 		ACC16E70262334950094D6D2 /* LoginSocialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSocialType.swift; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -463,7 +465,8 @@
 				8B875D1A25DAE747003D9CFA /* SavedItem.storyboard */,
 				8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */,
 				AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */,
-				AC9FD4C42642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift */,
+				AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */,
+				AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */,
 				AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */,
 				AC9FD4C2263F0C9100A44862 /* StoreListSubViewController.swift */,
 			);
@@ -981,6 +984,7 @@
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
+				AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
@@ -1010,7 +1014,7 @@
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F73B6D182635AEC50043CF89 /* DescriptionFilterItemView.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
-				AC9FD4C52642BB6600A44862 /* CakeListSubViewController+CollectionViewDataSource.swift in Sources */,
+				AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */,
 				F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */,
 				F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,

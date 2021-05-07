@@ -32,8 +32,8 @@ final class CakeListSubViewController: UIViewController, IndicatorInfoProvider {
   }
   
   private func configureCakeImageCollectionView() {
-    cakeImageCollectionView.delegate = self
     cakeImageCollectionView.dataSource = self
+    cakeImageCollectionView.delegate = self
     
     let layout = UICollectionViewFlowLayout()
     layout.minimumLineSpacing = 0
