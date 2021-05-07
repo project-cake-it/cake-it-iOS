@@ -1,6 +1,0 @@
-${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/KakaoSDKAuth/KakaoSDKAuth.framework
-${BUILT_PRODUCTS_DIR}/KakaoSDKCommon/KakaoSDKCommon.framework
-${BUILT_PRODUCTS_DIR}/KakaoSDKUser/KakaoSDKUser.framework
-${PODS_ROOT}/naveridlogin-sdk-ios/NaverThirdPartyLogin.framework
