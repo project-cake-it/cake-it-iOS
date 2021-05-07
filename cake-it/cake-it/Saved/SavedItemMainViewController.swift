@@ -28,7 +28,7 @@ final class SavedItemMainViewController: ButtonBarPagerTabStripViewController {
   override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
     
     let firstSubView = CakeListSubViewController.instantiate(from: "SavedItem")
-    let secondSubView = StoreListSubViewController.instantiate(from: "SavedItem")
+    let secondSubView = ShopListSubViewController.instantiate(from: "SavedItem")
     
     return [firstSubView, secondSubView]
   }

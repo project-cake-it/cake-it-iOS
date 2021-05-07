@@ -8,7 +8,7 @@
 import Foundation
 import XLPagerTabStrip
 
-final class CakeListSubViewController: UIViewController, IndicatorInfoProvider {
+final class CakeListSubViewController: BaseViewController, IndicatorInfoProvider {
   
   @IBOutlet weak var cakeImageCollectionView: UICollectionView!
   

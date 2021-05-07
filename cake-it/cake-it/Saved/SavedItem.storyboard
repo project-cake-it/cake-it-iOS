@@ -131,25 +131,47 @@
             </objects>
             <point key="canvasLocation" x="663.768115942029" y="91.741071428571431"/>
         </scene>
-        <!--Store List Sub View Controller-->
+        <!--Shop List Sub View Controller-->
         <scene sceneID="6T1-7z-gLv">
             <objects>
-                <viewController storyboardIdentifier="StoreListSubViewController" id="Crp-8Q-jIg" customClass="StoreListSubViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShopListSubViewController" id="Crp-8Q-jIg" customClass="ShopListSubViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ezi-ZM-fYc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eu-ik-9At">
-                                <rect key="frame" x="130" y="471" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VtZ-kX-Ymf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sD3-Af-rJZ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Lms-oa-QBw">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wrB-G7-GqJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PFW-1r-WMW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PFW-1r-WMW" firstAttribute="trailing" secondItem="VtZ-kX-Ymf" secondAttribute="trailing" id="0FM-4G-qLg"/>
+                            <constraint firstItem="VtZ-kX-Ymf" firstAttribute="leading" secondItem="PFW-1r-WMW" secondAttribute="leading" id="YtW-zj-vxB"/>
+                            <constraint firstItem="PFW-1r-WMW" firstAttribute="bottom" secondItem="VtZ-kX-Ymf" secondAttribute="bottom" id="yEq-xv-H0j"/>
+                            <constraint firstItem="VtZ-kX-Ymf" firstAttribute="top" secondItem="PFW-1r-WMW" secondAttribute="top" id="zg5-di-Jki"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cakeShopCollectionView" destination="VtZ-kX-Ymf" id="8wp-yC-syc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axT-5x-R3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
