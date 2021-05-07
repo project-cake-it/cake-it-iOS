@@ -26,4 +26,10 @@ target 'cake-it' do
   # Naver ID SDK
   pod 'naveridlogin-sdk-ios'
 
+  # KeychainWrapper
+  pod 'SwiftKeychainWrapper'
+
+  # XLPagerTabStrip
+  pod 'XLPagerTabStrip', '~> 9.0'
+
 end
