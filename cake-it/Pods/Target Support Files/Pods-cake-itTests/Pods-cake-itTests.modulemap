@@ -1,0 +1,6 @@
+framework module Pods_cake_itTests {
+  umbrella header "Pods-cake-itTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
