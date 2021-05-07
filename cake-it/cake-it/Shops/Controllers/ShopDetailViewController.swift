@@ -14,6 +14,11 @@ final class ShopDetailViewController: UIViewController {
   @IBOutlet weak var savedCountLabel: UILabel!
   @IBOutlet weak var showAvailableDateButton: UIButton!
   
+  @IBOutlet weak var themeLabel: UILabel!
+  @IBOutlet weak var priceInfoBySizeStackView: UIStackView!
+  @IBOutlet weak var creamInfoLabel: UILabel!
+  @IBOutlet weak var sheetInfoLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
