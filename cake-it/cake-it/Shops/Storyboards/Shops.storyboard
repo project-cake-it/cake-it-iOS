@@ -327,11 +327,17 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="56"/>
                                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                                 <state key="normal" title="케이크 디자인"/>
+                                                                <connections>
+                                                                    <action selector="cakeDesignButtonDidTap:" destination="xun-sG-jRg" eventType="touchUpInside" id="JJJ-MW-iyu"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6TQ-Jo-rva">
                                                                 <rect key="frame" x="207" y="0.0" width="207" height="56"/>
                                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                                 <state key="normal" title="가게 정보"/>
+                                                                <connections>
+                                                                    <action selector="shopInfoButtonDidTap:" destination="xun-sG-jRg" eventType="touchUpInside" id="7Ts-6O-wJ0"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -346,7 +352,7 @@
                                                                 <subviews>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vjV-Ca-IxN">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
-                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <color key="backgroundColor" name="design_pink"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oly-D8-PbE">
                                                                             <size key="itemSize" width="128" height="128"/>
                                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -370,7 +376,7 @@
                                                                     <constraint firstAttribute="bottom" secondItem="vjV-Ca-IxN" secondAttribute="bottom" id="AFW-pJ-Ww8"/>
                                                                     <constraint firstItem="vjV-Ca-IxN" firstAttribute="top" secondItem="fyX-hK-D4Q" secondAttribute="top" id="CTT-le-cZQ"/>
                                                                     <constraint firstAttribute="trailing" secondItem="vjV-Ca-IxN" secondAttribute="trailing" id="PrX-Gf-qGj"/>
-                                                                    <constraint firstAttribute="height" constant="280" placeholder="YES" id="Zn5-Qx-ZBy"/>
+                                                                    <constraint firstAttribute="height" constant="280" id="Zn5-Qx-ZBy"/>
                                                                     <constraint firstItem="vjV-Ca-IxN" firstAttribute="leading" secondItem="fyX-hK-D4Q" secondAttribute="leading" id="e7d-3B-Kda"/>
                                                                 </constraints>
                                                             </view>
@@ -604,16 +610,27 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SG-K8-SgK" userLabel="buttonIndexView">
+                                                        <rect key="frame" x="0.0" y="54" width="207" height="2"/>
+                                                        <color key="backgroundColor" name="pointB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="2" id="8OH-wb-eK8"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="XAI-0x-0Jw" firstAttribute="top" secondItem="g9Y-vi-EIn" secondAttribute="top" id="3Db-0D-bZJ"/>
                                                     <constraint firstAttribute="bottom" secondItem="YIh-zh-k47" secondAttribute="bottom" id="ODQ-4f-oir"/>
+                                                    <constraint firstItem="3SG-K8-SgK" firstAttribute="leading" secondItem="XAI-0x-0Jw" secondAttribute="leading" id="Rg3-uN-Fzd"/>
+                                                    <constraint firstItem="3SG-K8-SgK" firstAttribute="trailing" secondItem="XAI-0x-0Jw" secondAttribute="trailing" priority="250" id="RwP-XE-zdJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="YIh-zh-k47" secondAttribute="trailing" id="Sc7-0C-JY8"/>
                                                     <constraint firstItem="YIh-zh-k47" firstAttribute="leading" secondItem="g9Y-vi-EIn" secondAttribute="leading" id="Uax-2P-NaP"/>
+                                                    <constraint firstItem="3SG-K8-SgK" firstAttribute="bottom" secondItem="XAI-0x-0Jw" secondAttribute="bottom" id="UrN-02-5rD"/>
                                                     <constraint firstItem="XAI-0x-0Jw" firstAttribute="leading" secondItem="g9Y-vi-EIn" secondAttribute="leading" id="cu9-Ha-0BZ"/>
                                                     <constraint firstItem="YIh-zh-k47" firstAttribute="top" secondItem="XAI-0x-0Jw" secondAttribute="bottom" id="et6-x7-H6Z"/>
                                                     <constraint firstAttribute="trailing" secondItem="XAI-0x-0Jw" secondAttribute="trailing" id="fBI-MC-AZN"/>
+                                                    <constraint firstItem="3SG-K8-SgK" firstAttribute="width" secondItem="XAI-0x-0Jw" secondAttribute="width" multiplier="0.5" id="xIF-5W-QPA"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -658,11 +675,17 @@
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="cgV-7P-IIg" id="qCy-ae-1Xt"/>
+                        <outlet property="bottomInfoCakeDesignView" destination="fyX-hK-D4Q" id="Oat-4b-TdN"/>
+                        <outlet property="bottomInfoShopInfoView" destination="2iL-bo-Tzv" id="5WF-C3-Qui"/>
+                        <outlet property="buttonIndexViewLeadingConstraint" destination="Rg3-uN-Fzd" id="cAd-nl-xYE"/>
+                        <outlet property="buttonIndexViewTrailingConstraint" destination="RwP-XE-zdJ" id="dsN-hj-y0L"/>
+                        <outlet property="cakeDesignButton" destination="c56-OI-rRu" id="yF4-XI-42S"/>
                         <outlet property="creamInfoLabel" destination="MMO-cz-BTi" id="Zvn-ix-YLy"/>
                         <outlet property="locationInfoContainerView" destination="tMS-fr-wqt" id="cV3-II-xN2"/>
                         <outlet property="priceInfoBySizeStackView" destination="mUz-Jk-q6d" id="qCH-df-G4h"/>
                         <outlet property="savedCountLabel" destination="rGv-8d-NCM" id="KsK-rF-Yzn"/>
                         <outlet property="sheetInfoLabel" destination="Opj-ob-Fac" id="eF2-1o-qkx"/>
+                        <outlet property="shopInfoButton" destination="6TQ-Jo-rva" id="JCD-cN-XQ1"/>
                         <outlet property="shopNameLabel" destination="pMS-uQ-wUZ" id="k1T-zf-euB"/>
                         <outlet property="showAvailableDateButton" destination="9bh-nF-zlS" id="TWA-PT-m4S"/>
                         <outlet property="themeLabel" destination="hvz-Yk-p0g" id="lAO-6J-6ZH"/>
@@ -678,6 +701,9 @@
         <image name="icHeart" width="38" height="38"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="design_pink">
+            <color red="0.98431372549019602" green="0.19215686274509805" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="grayscale01">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
