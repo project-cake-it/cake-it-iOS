@@ -52,12 +52,12 @@
                                     <constraint firstItem="jHS-no-JmM" firstAttribute="leading" secondItem="ZtK-TB-IXk" secondAttribute="leading" constant="16" id="geL-Rb-OVK"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YPu-lm-kOd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YPu-lm-kOd">
                                 <rect key="frame" x="0.0" y="168" width="414" height="694"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="IDO-aM-esu" customClass="MyPageCell" customModule="cake_it" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="IDO-aM-esu" customClass="MyPageCell" customModule="cake_it" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IDO-aM-esu" id="Lww-sC-WTb">
@@ -110,7 +110,7 @@
         <!--List Board View Controller-->
         <scene sceneID="UaA-le-8am">
             <objects>
-                <viewController id="fyj-Ql-fN0" customClass="ListBoardViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ListBoardViewController" id="fyj-Ql-fN0" customClass="ListBoardViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K40-3c-eOo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -147,7 +147,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" name="grayscale01"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="67" id="RXF-UY-cH3" customClass="ListBoardCell" customModule="cake_it" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="67" id="RXF-UY-cH3" customClass="ListBoardCell" customModule="cake_it" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RXF-UY-cH3" id="lIf-Rh-qHd">
@@ -218,7 +218,7 @@
         <!--Notice View Controller-->
         <scene sceneID="kv6-HA-1Nr">
             <objects>
-                <viewController id="v1W-Gz-q1q" customClass="NoticeViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticeViewController" id="v1W-Gz-q1q" customClass="NoticeViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KA9-ft-ZcK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,7 +341,7 @@
         <!--Infomation View Controller-->
         <scene sceneID="6Gu-9F-dsy">
             <objects>
-                <viewController id="Lac-Es-OIM" customClass="InfomationViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfomationViewController" id="Lac-Es-OIM" customClass="InfomationViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Bg-El-hvE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,21 +355,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowLeft" translatesAutoresizingMaskIntoConstraints="NO" id="3la-wT-DdE">
-                                        <rect key="frame" x="16" y="6" width="38" height="38"/>
-                                        <color key="tintColor" name="black"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QY5-Ec-bBD">
+                                        <rect key="frame" x="16" y="7" width="36" height="36"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="38" id="Vm9-bs-tRR"/>
-                                            <constraint firstAttribute="height" constant="38" id="g1V-Ib-VOe"/>
+                                            <constraint firstAttribute="height" constant="36" id="3wN-X3-2gA"/>
+                                            <constraint firstAttribute="width" constant="36" id="Fro-Ni-1FJ"/>
                                         </constraints>
-                                    </imageView>
+                                        <color key="tintColor" name="black"/>
+                                        <state key="normal" title="Button" image="arrowLeft">
+                                            <color key="titleColor" name="black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonDidTap:" destination="Lac-Es-OIM" eventType="touchUpInside" id="iRv-Lu-GRp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8ff-wu-P2s"/>
                                     <constraint firstItem="xD1-2p-ihA" firstAttribute="centerX" secondItem="a24-5i-xfn" secondAttribute="centerX" id="9vA-vx-CmV"/>
-                                    <constraint firstItem="3la-wT-DdE" firstAttribute="leading" secondItem="a24-5i-xfn" secondAttribute="leading" constant="16" id="A3b-DM-vci"/>
-                                    <constraint firstItem="3la-wT-DdE" firstAttribute="centerY" secondItem="a24-5i-xfn" secondAttribute="centerY" id="B81-0m-BVw"/>
+                                    <constraint firstItem="QY5-Ec-bBD" firstAttribute="leading" secondItem="a24-5i-xfn" secondAttribute="leading" constant="16" id="QjD-cY-EVH"/>
+                                    <constraint firstItem="QY5-Ec-bBD" firstAttribute="centerY" secondItem="a24-5i-xfn" secondAttribute="centerY" id="qeD-O7-xRP"/>
                                     <constraint firstItem="xD1-2p-ihA" firstAttribute="centerY" secondItem="a24-5i-xfn" secondAttribute="centerY" id="rvH-VP-ZzG"/>
                                 </constraints>
                             </view>

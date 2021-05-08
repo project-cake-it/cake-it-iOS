@@ -7,11 +7,16 @@
 
 import UIKit
 
-class InfomationViewController: UIViewController {
+class InfomationViewController: BaseViewController {
+  
   @IBOutlet weak var viewTitleLabel: UILabel!
   @IBOutlet weak var infomationTextLabel: UILabel!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+  
+  @IBAction func backButtonDidTap(_ sender: Any) {
+    self.dismiss(animated: false, completion: nil)
+  }
 }
