@@ -19,6 +19,8 @@ final class ShopDetailViewController: UIViewController {
   @IBOutlet weak var creamInfoLabel: UILabel!
   @IBOutlet weak var sheetInfoLabel: UILabel!
   
+  @IBOutlet weak var locationInfoContainerView: UIView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -27,6 +29,12 @@ final class ShopDetailViewController: UIViewController {
   
   @IBAction func backButtonDidTap(_ sender: Any) {
     dismiss(animated: false, completion: nil)
+  }
+  
+  @IBAction func copyAddressButtonDidTap(_ sender: Any) {
+  }
+  
+  @IBAction func showMapButtonDidTap(_ sender: Any) {
   }
 }
 
@@ -41,5 +49,6 @@ extension ShopDetailViewController {
     showAvailableDateButton.layer.borderWidth = 1.0
     showAvailableDateButton.layer.borderColor = Colors.pointB.cgColor
     showAvailableDateButton.round(cornerRadius: 4.0, clipsToBounds: true)
+    locationInfoContainerView.addBorder(borderColor: Colors.grayscale02, borderWidth: 1.0)
   }
 }
