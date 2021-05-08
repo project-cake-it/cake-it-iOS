@@ -44,6 +44,11 @@ final class ShopDetailViewController: UIViewController {
     super.viewDidLoad()
     
     configure()
+    fetchDetailInfo()
+  }
+  
+  private func fetchDetailInfo() {
+    updateCakeInfoSectionView()
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
@@ -68,6 +73,37 @@ final class ShopDetailViewController: UIViewController {
 // MARK: - Update
 
 extension ShopDetailViewController {
+  private func updateCakeInfoSectionView() {
+    updateThemeInfo(themes: ["생일", "노랑", "축하", "연인", "졸업", "기념" ,"기타"])
+    updatePriceInfoBySizeStackView(priceInfos: ["미니(12cm) / 15,000원", "1호(15cm) / 24,000원", "2호(18cm) / 32,000원"])
+    updateCreamInfo(creams: ["오레오", "초코", "바닐라"])
+    updateSheetInfo(sheets: ["오레오", "초코", "바닐라", "크림"])
+  }
+  
+  private func updateThemeInfo(themes: [String]) {
+    themeLabel.text = themes.map { "#" + $0 }.joined(separator: " ")
+  }
+  
+  private func updatePriceInfoBySizeStackView(priceInfos: [String]) {
+    priceInfos.forEach {
+      let priceLabel = UILabel()
+      priceLabel.text = $0
+      priceLabel.font = Fonts.spoqaHanSans(weight: .Regular, size: 14)
+      priceLabel.textColor = Colors.grayscale05
+      priceLabel.translatesAutoresizingMaskIntoConstraints = false
+      priceLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+      priceInfoBySizeStackView.addArrangedSubview(priceLabel)
+    }
+  }
+  
+  private func updateCreamInfo(creams: [String]) {
+    creamInfoLabel.text = creams.joined(separator: ", ")
+  }
+  
+  private func updateSheetInfo(sheets: [String]) {
+    sheetInfoLabel.text = sheets.joined(separator: ", ")
+  }
+  
   private func updateButtonInfoViewHiddenState() {
     bottomInfoCakeDesignView.isHidden = bottomInfoState != .cakeDesign
     bottomInfoShopInfoView.isHidden = bottomInfoState != .shopInfo

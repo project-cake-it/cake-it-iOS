@@ -250,7 +250,7 @@
                                                         <color key="textColor" name="grayscale04"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mUz-Jk-q6d">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mUz-Jk-q6d">
                                                         <rect key="frame" x="116" y="103" width="282" height="107"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="v49-T5-Ugj"/>
@@ -277,7 +277,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-Yk-p0g">
                                                         <rect key="frame" x="116" y="67" width="282" height="20"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="hI6-5h-wsI"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="hI6-5h-wsI"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                         <color key="textColor" name="grayscale05"/>
