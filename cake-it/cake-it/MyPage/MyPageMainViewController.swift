@@ -9,42 +9,25 @@ import UIKit
 
 final class MyPageMainViewController: UIViewController {
   
+  @IBOutlet weak var myPageMessage: UILabel!
+  @IBOutlet weak var myPageTableView: UITableView!
+  
+  let firstSection: [String] = ["고객센터", "공지사항", "문의하기"]
+  let secondSection: [String] = ["정보", "서비스 이용 약관", "개인정보 수집 및 이용", "오픈소스 라이선스", "버전 정보"]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    configureMyPageTableView()
+    configureUI()
   }
   
-  
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
-  
-}
-
-// Test
-extension MyPageMainViewController {
-  @IBAction func getNicknameButtonDidTap(_ sender: Any) {
-    let storyboard = UIStoryboard(name: "Nickname", bundle: nil)
-    let testVC = storyboard.instantiateViewController(identifier: "NicknameView")
-    present(testVC, animated: true, completion: nil)
+  private func configureMyPageTableView() {
+    myPageTableView.delegate = self
+    myPageTableView.dataSource = self
   }
   
-  @IBAction func loginTestButtonDidTap(_ sender: Any) {
-    let storyboard = UIStoryboard(name: "LoginTest", bundle: nil)
-    let testLoginVC = storyboard.instantiateViewController(identifier: "LoginTestView")
-    present(testLoginVC, animated: true, completion: nil)
-  }
-  
-  @IBAction func photoUploadTestButtonDidTap(_ sender: Any) {
-    let storyboard = UIStoryboard(name: "PhotoUpload", bundle: nil)
-    let testPhotoVC = storyboard.instantiateViewController(identifier: "PhotoUploadView")
-    present(testPhotoVC, animated: true, completion: nil)
+  private func configureUI() {
+    myPageMessage.text = String.init(format: Constants.MY_PAGE_MESSAGE, "사용자 닉네임")
   }
 }

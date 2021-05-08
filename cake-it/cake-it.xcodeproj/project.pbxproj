@@ -50,6 +50,13 @@
 		8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEA0F41260CD36000743512 /* CakeDesignCell.xib */; };
 		8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */; };
 		8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */; };
+		AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */; };
+		AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD92645B413009016A9 /* MyPageCell.swift */; };
+		AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */; };
+		AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */; };
+		AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */; };
+		AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE126466778009016A9 /* InfomationViewController.swift */; };
+		AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */; };
 		AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDC83260756DF0026F5FA /* LoginModel.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
@@ -159,6 +166,13 @@
 		8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MoneyFormat.swift; sourceTree = "<group>"; };
 		9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyPageMainViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		AC0B8FD92645B413009016A9 /* MyPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCell.swift; sourceTree = "<group>"; };
+		AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyPageMainViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoardViewController.swift; sourceTree = "<group>"; };
+		AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		AC0B8FE126466778009016A9 /* InfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
+		AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoardCell.swift; sourceTree = "<group>"; };
 		AC1BDC83260756DF0026F5FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -463,6 +477,13 @@
 			children = (
 				8B875D2E25DAE836003D9CFA /* MyPage.storyboard */,
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
+				AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */,
+				AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */,
+				AC0B8FD92645B413009016A9 /* MyPageCell.swift */,
+				AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */,
+				AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */,
+				AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */,
+				AC0B8FE126466778009016A9 /* InfomationViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -964,6 +985,7 @@
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
 				F73B6D1C2635AEC50043CF89 /* FilterDetailView.swift in Sources */,
+				AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */,
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
@@ -985,6 +1007,7 @@
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
+				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
 				8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */,
@@ -992,12 +1015,17 @@
 				F73B6D142635AEC50043CF89 /* FilterButton.swift in Sources */,
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
+				AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F73B6D182635AEC50043CF89 /* DescriptionFilterItemView.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
 				F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */,
+				AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */,
+				AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */,
+				AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */,
 				F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */,
+				AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
