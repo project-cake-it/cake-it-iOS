@@ -14,6 +14,7 @@ final class ShopDetailViewController: UIViewController {
     case shopInfo
   }
   
+  @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var shopNameLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var savedCountLabel: UILabel!
@@ -31,6 +32,14 @@ final class ShopDetailViewController: UIViewController {
   @IBOutlet weak var bottomInfoCakeDesignView: UIView!
   @IBOutlet weak var bottomInfoShopInfoView: UIView!
   @IBOutlet weak var locationInfoContainerView: UIView!
+  @IBOutlet weak var contactShopButton: UIButton!
+  @IBOutlet weak var contactShopButtonBottomConstraint: NSLayoutConstraint! {
+    didSet {
+      if !UIDevice.current.hasNotch {
+        contactShopButtonBottomConstraint.constant = contactShopButtonBottomConstraint.constant - 16
+      }
+    }
+  }
   
   private var bottomInfoState: BottomInfoState = .cakeDesign {
     didSet {
@@ -163,5 +172,6 @@ extension ShopDetailViewController {
     bottomInfoShopInfoView.isHidden = true
     updateBottomInfoButton(cakeDesignButton)
     resetBottomInfoButton(shopInfoButton)
+    contactShopButton.round(cornerRadius: 8.0)
   }
 }
