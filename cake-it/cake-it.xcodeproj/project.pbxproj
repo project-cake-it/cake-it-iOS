@@ -20,6 +20,9 @@
 		8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */; };
 		8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */; };
 		8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE126484A960076E14C /* UIDevice+hasNotch.swift */; };
+		8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */; };
+		8B1DFDE626484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE526484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift */; };
+		8B1DFDE826484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE726484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift */; };
 		8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7540261C9812007757E5 /* CakeShop.swift */; };
 		8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */; };
 		8B2A7548261C9AF5007757E5 /* CakeShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */; };
@@ -129,6 +132,9 @@
 		8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorner.swift"; sourceTree = "<group>"; };
 		8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		8B1DFDE126484A960076E14C /* UIDevice+hasNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasNotch.swift"; sourceTree = "<group>"; };
+		8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignSquareImageCell.swift; sourceTree = "<group>"; };
+		8B1DFDE526484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeDesignCollectionView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		8B1DFDE726484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeDesignCollectionView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8B2A7540261C9812007757E5 /* CakeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShop.swift; sourceTree = "<group>"; };
 		8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShopCell.swift; sourceTree = "<group>"; };
 		8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeShopCell.xib; sourceTree = "<group>"; };
@@ -363,6 +369,8 @@
 				8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */,
 				8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */,
 				8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */,
+				8B1DFDE526484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift */,
+				8B1DFDE726484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 			children = (
 				8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */,
 				8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */,
+				8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -971,6 +980,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
+				8B1DFDE626484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
 				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
@@ -990,6 +1000,7 @@
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
+				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
 				8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
@@ -1004,6 +1015,7 @@
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
 				8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */,
 				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,
+				8B1DFDE826484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift in Sources */,
 				F73B6D142635AEC50043CF89 /* FilterButton.swift in Sources */,
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */,

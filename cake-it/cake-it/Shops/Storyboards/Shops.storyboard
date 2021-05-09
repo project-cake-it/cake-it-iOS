@@ -329,7 +329,7 @@
                                                                 <subviews>
                                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vjV-Ca-IxN">
                                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="280"/>
-                                                                        <color key="backgroundColor" name="design_pink"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oly-D8-PbE">
                                                                             <size key="itemSize" width="128" height="128"/>
                                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -337,13 +337,27 @@
                                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                         </collectionViewFlowLayout>
                                                                         <cells>
-                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dft-Zf-GlV">
+                                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CakeDesignSquareImageCell" id="dft-Zf-GlV" customClass="CakeDesignSquareImageCell" customModule="cake_it" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Lwl-6J-zey">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                                                     <autoresizingMask key="autoresizingMask"/>
+                                                                                    <subviews>
+                                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ggz-tP-pms">
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                                        </imageView>
+                                                                                    </subviews>
+                                                                                    <constraints>
+                                                                                        <constraint firstItem="ggz-tP-pms" firstAttribute="top" secondItem="Lwl-6J-zey" secondAttribute="top" id="BgN-zn-Z0o"/>
+                                                                                        <constraint firstItem="ggz-tP-pms" firstAttribute="leading" secondItem="Lwl-6J-zey" secondAttribute="leading" id="GHF-8a-Xa8"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="ggz-tP-pms" secondAttribute="trailing" id="cGV-ho-8N3"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="ggz-tP-pms" secondAttribute="bottom" id="pnR-8e-TBH"/>
+                                                                                    </constraints>
                                                                                 </collectionViewCellContentView>
+                                                                                <connections>
+                                                                                    <outlet property="cakeDesignImageView" destination="ggz-tP-pms" id="x7W-jD-zvS"/>
+                                                                                </connections>
                                                                             </collectionViewCell>
                                                                         </cells>
                                                                     </collectionView>
@@ -361,7 +375,7 @@
                                                                 <rect key="frame" x="0.0" y="280" width="414" height="536"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imr-zG-4x2" userLabel="Notice Section">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="134"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 안내사항" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSP-iI-7wY">
                                                                                 <rect key="frame" x="20" y="20" width="86.5" height="24"/>
@@ -373,7 +387,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgX-3P-mYq">
-                                                                                <rect key="frame" x="20" y="60" width="374" height="54"/>
+                                                                                <rect key="frame" x="20" y="60" width="374" height="34"/>
                                                                                 <string key="text">다음주 월/화는 휴무이며, 월요일은 상담 쉬어갑니다.
 *현재~3/14(일)까지 주문 가능(2월 마감)</string>
                                                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
@@ -393,10 +407,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVf-Yp-Uo6" userLabel="Detail Info Section">
-                                                                        <rect key="frame" x="0.0" y="142" width="414" height="394"/>
+                                                                        <rect key="frame" x="0.0" y="122" width="414" height="414"/>
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMS-fr-wqt">
-                                                                                <rect key="frame" x="20" y="168" width="374" height="226"/>
+                                                                                <rect key="frame" x="20" y="188" width="374" height="226"/>
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9v-KE-YZZ">
                                                                                         <rect key="frame" x="0.0" y="184" width="374" height="42"/>
@@ -452,10 +466,10 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iUZ-iO-tSc">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="148"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 - 00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3D-O4-wox">
-                                                                                        <rect key="frame" x="132" y="56" width="262" height="20"/>
+                                                                                        <rect key="frame" x="132" y="76" width="262" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="qRK-QF-SSR"/>
                                                                                         </constraints>
@@ -464,7 +478,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일요일" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re9-AY-XcM">
-                                                                                        <rect key="frame" x="132" y="92" width="262" height="20"/>
+                                                                                        <rect key="frame" x="132" y="112" width="262" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5Wq-K8-PJO"/>
                                                                                         </constraints>
@@ -473,7 +487,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000-0000-0000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48J-1w-ZPl">
-                                                                                        <rect key="frame" x="132" y="128" width="262" height="20"/>
+                                                                                        <rect key="frame" x="132" y="148" width="262" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="Mtm-e9-naV"/>
                                                                                         </constraints>
@@ -482,7 +496,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="픽업 가능 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21B-95-Xw0">
-                                                                                        <rect key="frame" x="20" y="56" width="84" height="20"/>
+                                                                                        <rect key="frame" x="20" y="76" width="84" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="7G3-xS-AbT"/>
                                                                                         </constraints>
@@ -491,7 +505,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴무일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yie-Ej-AUK">
-                                                                                        <rect key="frame" x="20" y="92" width="39" height="20"/>
+                                                                                        <rect key="frame" x="20" y="112" width="39" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="qcQ-nZ-PSD"/>
                                                                                         </constraints>
@@ -500,7 +514,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전화번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwD-VF-LrM">
-                                                                                        <rect key="frame" x="20" y="128" width="52" height="20"/>
+                                                                                        <rect key="frame" x="20" y="148" width="52" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="ibS-lv-Uhc"/>
                                                                                         </constraints>
@@ -524,7 +538,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 - 00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ti-UX-sIr">
-                                                                                <rect key="frame" x="132" y="20" width="262" height="20"/>
+                                                                                <rect key="frame" x="132" y="20" width="262" height="40"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="PJt-fW-rx1"/>
                                                                                 </constraints>
@@ -696,6 +710,8 @@
                         <outlet property="buttonIndexViewLeadingConstraint" destination="Rg3-uN-Fzd" id="cAd-nl-xYE"/>
                         <outlet property="buttonIndexViewTrailingConstraint" destination="RwP-XE-zdJ" id="dsN-hj-y0L"/>
                         <outlet property="cakeDesignButton" destination="c56-OI-rRu" id="yF4-XI-42S"/>
+                        <outlet property="cakeDesignCollectionView" destination="vjV-Ca-IxN" id="ad8-W0-tPW"/>
+                        <outlet property="cakeDesignCollectionViewHeight" destination="Zn5-Qx-ZBy" id="Dia-eT-J52"/>
                         <outlet property="contactShopButton" destination="5uV-bJ-IuV" id="VPR-90-P1P"/>
                         <outlet property="contactShopButtonBottomConstraint" destination="Ufa-3Q-8hG" id="8wa-U1-jfR"/>
                         <outlet property="creamInfoLabel" destination="MMO-cz-BTi" id="Zvn-ix-YLy"/>
@@ -720,9 +736,6 @@
         <image name="icHeart" width="38" height="38"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="design_pink">
-            <color red="0.98431372549019602" green="0.19215686274509805" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="grayscale01">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

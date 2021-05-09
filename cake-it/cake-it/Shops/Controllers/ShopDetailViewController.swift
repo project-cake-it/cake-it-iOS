@@ -14,6 +14,12 @@ final class ShopDetailViewController: BaseViewController {
     case shopInfo
   }
   
+  enum Metric {
+    static let cakeDesignsCollectionViewSidePadding: CGFloat = 0
+    static let cakeDesignCellInterItemHorizontalSpace: CGFloat = 1.0
+    static let cakeDesignCellInterItemVerticalSpace: CGFloat = 1.0
+  }
+  
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var shopNameLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
@@ -26,6 +32,8 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var sheetInfoLabel: UILabel!
   
   @IBOutlet weak var cakeDesignButton: UIButton!
+  @IBOutlet weak var cakeDesignCollectionView: UICollectionView!
+  @IBOutlet weak var cakeDesignCollectionViewHeight: NSLayoutConstraint!
   @IBOutlet weak var shopInfoButton: UIButton!
   @IBOutlet weak var buttonIndexViewLeadingConstraint: NSLayoutConstraint!
   @IBOutlet weak var buttonIndexViewTrailingConstraint: NSLayoutConstraint!
@@ -49,15 +57,32 @@ final class ShopDetailViewController: BaseViewController {
     }
   }
   
+  private(set) var cakeDesigns: [CakeDesign] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     configure()
     fetchDetailInfo()
+    fetchCakeDesigns()
   }
   
   private func fetchDetailInfo() {
     updateCakeInfoSectionView()
+  }
+  
+  private func fetchCakeDesigns() {
+    let tempImageURL = "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966"
+    for _ in 0..<5 {
+      cakeDesigns.append(CakeDesign(image: tempImageURL,
+                                    location: "강남구",
+                                    size: "1호 13cm",
+                                    name: "화중이맛 케이크",
+                                    price: 35000))
+    }
+    cakeDesignCollectionView.reloadData()
+    view.layoutIfNeeded()
+    cakeDesignCollectionViewHeight.constant = cakeDesignCollectionView.contentSize.height
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
@@ -162,6 +187,12 @@ extension ShopDetailViewController {
 extension ShopDetailViewController {
   private func configure() {
     configureViews()
+    configureCakeDesignCollectionView()
+  }
+  
+  private func configureCakeDesignCollectionView() {
+    cakeDesignCollectionView.dataSource = self
+    cakeDesignCollectionView.delegate = self
   }
   
   private func configureViews() {
