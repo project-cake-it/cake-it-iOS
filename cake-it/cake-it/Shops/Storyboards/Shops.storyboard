@@ -251,7 +251,7 @@
                                                         <color key="textColor" name="grayscale05"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-Yk-p0g">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvz-Yk-p0g">
                                                         <rect key="frame" x="116" y="67" width="282" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="hI6-5h-wsI"/>
@@ -265,6 +265,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="Opj-ob-Fac" secondAttribute="bottom" constant="20" id="0dD-F4-ejq"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="302" id="3Tx-be-aJG"/>
+                                                    <constraint firstItem="mUz-Jk-q6d" firstAttribute="top" secondItem="hvz-Yk-p0g" secondAttribute="bottom" constant="16" id="6EQ-ud-biV"/>
                                                     <constraint firstItem="hvz-Yk-p0g" firstAttribute="leading" secondItem="YfE-je-5tr" secondAttribute="leading" constant="116" id="6P7-ZB-30B"/>
                                                     <constraint firstAttribute="trailing" secondItem="mUz-Jk-q6d" secondAttribute="trailing" constant="16" id="8tv-v8-FnJ"/>
                                                     <constraint firstAttribute="trailing" secondItem="YWz-Nz-FCM" secondAttribute="trailing" id="9MP-he-GRE"/>
@@ -283,7 +284,6 @@
                                                     <constraint firstItem="mUz-Jk-q6d" firstAttribute="top" secondItem="5fd-88-Oes" secondAttribute="top" id="clV-R3-3cX"/>
                                                     <constraint firstItem="5fd-88-Oes" firstAttribute="leading" secondItem="nxp-F1-PLP" secondAttribute="leading" id="d3z-k5-h59"/>
                                                     <constraint firstItem="F4g-tQ-H3b" firstAttribute="leading" secondItem="G3t-w9-v4T" secondAttribute="leading" id="epb-yt-Xks"/>
-                                                    <constraint firstItem="5fd-88-Oes" firstAttribute="top" secondItem="nxp-F1-PLP" secondAttribute="bottom" constant="16" id="hVg-Iz-qr9"/>
                                                     <constraint firstAttribute="trailing" secondItem="hvz-Yk-p0g" secondAttribute="trailing" constant="16" id="jDI-1H-Zz8"/>
                                                     <constraint firstAttribute="trailing" secondItem="Opj-ob-Fac" secondAttribute="trailing" constant="16" id="kkE-Tw-0gT"/>
                                                     <constraint firstItem="G3t-w9-v4T" firstAttribute="top" secondItem="MMO-cz-BTi" secondAttribute="top" id="mLv-mb-oEh"/>
@@ -469,7 +469,7 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="168"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 - 00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3D-O4-wox">
-                                                                                        <rect key="frame" x="132" y="76" width="262" height="20"/>
+                                                                                        <rect key="frame" x="132" y="56" width="262" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="qRK-QF-SSR"/>
                                                                                         </constraints>
@@ -478,7 +478,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일요일" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Re9-AY-XcM">
-                                                                                        <rect key="frame" x="132" y="112" width="262" height="20"/>
+                                                                                        <rect key="frame" x="132" y="92" width="262" height="40"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="5Wq-K8-PJO"/>
                                                                                         </constraints>
@@ -496,7 +496,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="픽업 가능 시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21B-95-Xw0">
-                                                                                        <rect key="frame" x="20" y="76" width="84" height="20"/>
+                                                                                        <rect key="frame" x="20" y="56" width="84" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="7G3-xS-AbT"/>
                                                                                         </constraints>
@@ -505,7 +505,7 @@
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴무일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yie-Ej-AUK">
-                                                                                        <rect key="frame" x="20" y="112" width="39" height="20"/>
+                                                                                        <rect key="frame" x="20" y="92" width="39" height="20"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="20" id="qcQ-nZ-PSD"/>
                                                                                         </constraints>
@@ -538,7 +538,7 @@
                                                                                 </constraints>
                                                                             </view>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00 - 00:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ti-UX-sIr">
-                                                                                <rect key="frame" x="132" y="20" width="262" height="40"/>
+                                                                                <rect key="frame" x="132" y="20" width="262" height="20"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="PJt-fW-rx1"/>
                                                                                 </constraints>
