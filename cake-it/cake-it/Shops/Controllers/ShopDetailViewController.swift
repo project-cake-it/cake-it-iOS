@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShopDetailViewController: UIViewController {
+final class ShopDetailViewController: BaseViewController {
   
   enum BottomInfoState {
     case cakeDesign
