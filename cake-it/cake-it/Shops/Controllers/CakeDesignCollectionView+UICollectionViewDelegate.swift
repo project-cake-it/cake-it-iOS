@@ -25,17 +25,15 @@ extension ShopDetailViewController: UICollectionViewDelegateFlowLayout {
     return CGSize(width: roundedSide, height: roundedSide)
   }
   
-  func collectionView(
-    _ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return Metric.cakeDesignCellInterItemVerticalSpace
   }
   
-  func collectionView(
-    _ collectionView: UICollectionView,
-    layout collectionViewLayout: UICollectionViewLayout,
-    minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
 }
