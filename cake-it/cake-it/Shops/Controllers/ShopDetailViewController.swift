@@ -44,7 +44,8 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var contactShopButtonBottomConstraint: NSLayoutConstraint! {
     didSet {
       if !UIDevice.current.hasNotch {
-        contactShopButtonBottomConstraint.constant = contactShopButtonBottomConstraint.constant - 16
+        contactShopButtonBottomConstraint.constant =
+          contactShopButtonBottomConstraint.constant - UIDevice.minimumBottomSpaceInNotchDevice
       }
     }
   }
