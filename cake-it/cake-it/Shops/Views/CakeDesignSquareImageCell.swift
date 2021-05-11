@@ -12,9 +12,9 @@ final class CakeDesignSquareImageCell: UICollectionViewCell {
   @IBOutlet weak var cakeDesignImageView: UIImageView!
   
   func updateCell(imageURL: String) {
-    let cakeDesignImageURL = URL(string: imageURL)
+    guard let cakeDesignImageURL = URL(string: imageURL) else { return }
     DispatchQueue.global().async {
-      let data = try? Data(contentsOf: cakeDesignImageURL!)
+      let data = try? Data(contentsOf: cakeDesignImageURL)
       DispatchQueue.main.async {
         self.cakeDesignImageView.image = UIImage(data: data!)
       }
