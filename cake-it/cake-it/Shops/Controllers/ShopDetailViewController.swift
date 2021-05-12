@@ -18,6 +18,8 @@ final class ShopDetailViewController: BaseViewController {
     static let cakeDesignsCollectionViewSidePadding: CGFloat = 0
     static let cakeDesignCellInterItemHorizontalSpace: CGFloat = 1.0
     static let cakeDesignCellInterItemVerticalSpace: CGFloat = 1.0
+    static let contactShopButtonBottomSpaceDefault: CGFloat = -16
+    static let contactShopButtonBottomSpaceHidden: CGFloat = 200
   }
   
   @IBOutlet weak var scrollView: UIScrollView!
@@ -40,15 +42,8 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var bottomInfoCakeDesignView: UIView!
   @IBOutlet weak var bottomInfoShopInfoView: UIView!
   @IBOutlet weak var locationInfoContainerView: UIView!
-  @IBOutlet weak var contactShopButton: UIButton!
-  @IBOutlet weak var contactShopButtonBottomConstraint: NSLayoutConstraint! {
-    didSet {
-      if !UIDevice.current.hasNotch {
-        contactShopButtonBottomConstraint.constant =
-          contactShopButtonBottomConstraint.constant - UIDevice.minimumBottomSpaceInNotchDevice
-      }
-    }
-  }
+  private var contactShopButton: UIButton!
+  private var contactShopButtonBottomConstraint: NSLayoutConstraint!
   
   private var bottomInfoState: BottomInfoState = .cakeDesign {
     didSet {
@@ -183,12 +178,97 @@ extension ShopDetailViewController {
   }
 }
 
+extension ShopDetailViewController: UIGestureRecognizerDelegate {
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                         shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    return true
+  }
+}
+
 // MARK: - Configuration
 
 extension ShopDetailViewController {
   private func configure() {
     configureViews()
     configureCakeDesignCollectionView()
+    configureContactShopButton()
+    configurePanGesture()
+  }
+  
+  private func configurePanGesture() {
+    let panGestureRecognizer = UIPanGestureRecognizer(target: self,
+                                                      action: #selector(handlePanGesture(_ :)))
+    panGestureRecognizer.delegate = self
+    self.view.addGestureRecognizer(panGestureRecognizer)
+  }
+  
+  @objc private func handlePanGesture(_ sender : UIPanGestureRecognizer) {
+    let velocity = sender.velocity(in: scrollView)
+    guard abs(velocity.y) > abs(velocity.x) else { return }
+    print(velocity.y)
+    let velocityYUpThreshold: CGFloat = 180
+    let velocityYDownThreshold: CGFloat = -40
+    if velocity.y > velocityYUpThreshold {
+      showContactShopButton()
+    } else if velocity.y < velocityYDownThreshold {
+      hideContactShopButton()
+    }
+  }
+  
+  private func showContactShopButton() {
+    var constant = Self.Metric.contactShopButtonBottomSpaceDefault
+    if UIDevice.current.hasNotch {
+      constant +=  -UIDevice.minimumBottomSpaceInNotchDevice
+    }
+    
+    guard contactShopButtonBottomConstraint.constant != constant else { return }
+    contactShopButtonBottomConstraint.constant = constant
+    UIView.animate(withDuration: 0.4,
+                   delay: 0,
+                   usingSpringWithDamping: 1.0,
+                   initialSpringVelocity: 0.8,
+                   options: .curveEaseOut) {
+      self.view.layoutIfNeeded()
+    }
+  }
+  
+  private func hideContactShopButton() {
+    guard contactShopButtonBottomConstraint.constant != Metric.contactShopButtonBottomSpaceHidden else { return }
+    contactShopButtonBottomConstraint.constant = Metric.contactShopButtonBottomSpaceHidden
+    UIView.animate(withDuration: 0.5,
+                   delay: 0,
+                   usingSpringWithDamping: 1.0,
+                   initialSpringVelocity: 0.8,
+                   options: .curveEaseOut) {
+      self.view.layoutIfNeeded()
+    }
+  }
+  
+  private func configureContactShopButton() {
+    contactShopButton = UIButton(type: .system)
+    contactShopButton.backgroundColor = Colors.pointB
+    contactShopButton.setTitle("가게 연결하기", for: .normal)
+    contactShopButton.setTitleColor(Colors.white, for: .normal)
+    contactShopButton.titleLabel?.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
+    contactShopButton.round(cornerRadius: 8.0)
+    view.addSubview(contactShopButton)
+    contactShopButton.constraints(topAnchor: nil,
+                                  leadingAnchor: view.leadingAnchor,
+                                  bottomAnchor: nil,
+                                  trailingAnchor: view.trailingAnchor,
+                                  padding: .init(top: 0, left: 16, bottom: 0, right: 16),
+                                  width: 0, height: 56)
+    configureContactShopButtonBottomConstraint()
+  }
+  
+  private func configureContactShopButtonBottomConstraint() {
+    var constant = Self.Metric.contactShopButtonBottomSpaceDefault
+    if UIDevice.current.hasNotch {
+      constant +=  -UIDevice.minimumBottomSpaceInNotchDevice
+    }
+    contactShopButtonBottomConstraint = contactShopButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+                                                                                  constant: constant)
+    contactShopButtonBottomConstraint.isActive = true
   }
   
   private func configureCakeDesignCollectionView() {
@@ -204,6 +284,5 @@ extension ShopDetailViewController {
     bottomInfoShopInfoView.isHidden = true
     updateBottomInfoButton(cakeDesignButton)
     resetBottomInfoButton(shopInfoButton)
-    contactShopButton.round(cornerRadius: 8.0)
   }
 }
