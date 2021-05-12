@@ -178,6 +178,8 @@ extension ShopDetailViewController {
   }
 }
 
+// MARK: - UIGestureRecognizerDelegate
+
 extension ShopDetailViewController: UIGestureRecognizerDelegate {
   func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                          shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
@@ -205,7 +207,6 @@ extension ShopDetailViewController {
   @objc private func handlePanGesture(_ sender : UIPanGestureRecognizer) {
     let velocity = sender.velocity(in: scrollView)
     guard abs(velocity.y) > abs(velocity.x) else { return }
-    print(velocity.y)
     let velocityYUpThreshold: CGFloat = 180
     let velocityYDownThreshold: CGFloat = -40
     if velocity.y > velocityYUpThreshold {
