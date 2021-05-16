@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,21 +15,175 @@
         <scene sceneID="Ln6-Kz-PHm">
             <objects>
                 <viewController storyboardIdentifier="SavedItemMainViewController" id="hBK-pl-woR" customClass="SavedItemMainViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5JF-i2-Uxr">
+                    <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JF-i2-Uxr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQz-vn-yJ9">
+                                <rect key="frame" x="0.0" y="158" width="414" height="704"/>
+                            </scrollView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTf-NS-Rhd" customClass="ButtonBarView" customModule="XLPagerTabStrip">
+                                <rect key="frame" x="0.0" y="94" width="414" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="7uz-Nv-ISD"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aMH-VC-Wca">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜한 아이템" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whu-n4-2kb" userLabel="Title Label">
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <color key="backgroundColor" name="white"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="eBR-yG-kIQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="D4l-97-aVz"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="D4l-97-aVz" firstAttribute="trailing" secondItem="iQz-vn-yJ9" secondAttribute="trailing" id="0fF-mP-2Pm"/>
+                            <constraint firstItem="whu-n4-2kb" firstAttribute="leading" secondItem="D4l-97-aVz" secondAttribute="leading" id="0tG-1Y-hhF"/>
+                            <constraint firstItem="iQz-vn-yJ9" firstAttribute="top" secondItem="GTf-NS-Rhd" secondAttribute="bottom" id="25M-za-Mqr"/>
+                            <constraint firstItem="D4l-97-aVz" firstAttribute="trailing" secondItem="GTf-NS-Rhd" secondAttribute="trailing" id="37L-VT-EF8"/>
+                            <constraint firstItem="whu-n4-2kb" firstAttribute="top" secondItem="D4l-97-aVz" secondAttribute="top" id="4eb-EN-Soj"/>
+                            <constraint firstItem="GTf-NS-Rhd" firstAttribute="top" secondItem="whu-n4-2kb" secondAttribute="bottom" id="7Yz-4X-YFh"/>
+                            <constraint firstItem="D4l-97-aVz" firstAttribute="trailing" secondItem="whu-n4-2kb" secondAttribute="trailing" id="IpQ-bP-jyi"/>
+                            <constraint firstItem="GTf-NS-Rhd" firstAttribute="leading" secondItem="D4l-97-aVz" secondAttribute="leading" id="aW6-f1-5ct"/>
+                            <constraint firstItem="iQz-vn-yJ9" firstAttribute="leading" secondItem="D4l-97-aVz" secondAttribute="leading" id="r1A-J5-nF2"/>
+                            <constraint firstItem="D4l-97-aVz" firstAttribute="bottom" secondItem="iQz-vn-yJ9" secondAttribute="bottom" id="sdc-V0-biG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonBarView" destination="GTf-NS-Rhd" id="gJp-Hu-Ckb"/>
+                        <outlet property="containerView" destination="iQz-vn-yJ9" id="roP-dG-4vs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSQ-aD-aSN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2" y="92"/>
         </scene>
+        <!--Cake List Sub View Controller-->
+        <scene sceneID="7YG-3Q-z63">
+            <objects>
+                <viewController storyboardIdentifier="CakeListSubViewController" id="eqT-n0-MsY" customClass="CakeListSubViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KGH-XF-gY8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qk5-E6-L8o">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="eLl-li-HBG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CakeImageCell" id="PN7-Sk-Dxh" customClass="CakeImageCell" customModule="cake_it" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Tjq-Hr-pyj">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ava-N8-7gm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ava-N8-7gm" firstAttribute="top" secondItem="Tjq-Hr-pyj" secondAttribute="top" id="2yd-VC-tAI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ava-N8-7gm" secondAttribute="bottom" id="eRm-bd-Lw3"/>
+                                                <constraint firstItem="Ava-N8-7gm" firstAttribute="leading" secondItem="Tjq-Hr-pyj" secondAttribute="leading" id="ffP-0I-9fc"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ava-N8-7gm" secondAttribute="trailing" id="gDv-zh-dTh"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="cakeImageView" destination="Ava-N8-7gm" id="Ssa-My-e9m"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6ZP-ad-X0m"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qk5-E6-L8o" firstAttribute="top" secondItem="6ZP-ad-X0m" secondAttribute="top" id="BpX-RY-RX9"/>
+                            <constraint firstItem="qk5-E6-L8o" firstAttribute="leading" secondItem="6ZP-ad-X0m" secondAttribute="leading" id="bpw-v6-m6h"/>
+                            <constraint firstItem="6ZP-ad-X0m" firstAttribute="bottom" secondItem="qk5-E6-L8o" secondAttribute="bottom" id="bzt-Ck-i1g"/>
+                            <constraint firstAttribute="trailing" secondItem="qk5-E6-L8o" secondAttribute="trailing" id="hMM-sN-qW0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cakeImageCollectionView" destination="qk5-E6-L8o" id="rOV-0w-0Jv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edq-3F-FFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663.768115942029" y="91.741071428571431"/>
+        </scene>
+        <!--Shop List Sub View Controller-->
+        <scene sceneID="6T1-7z-gLv">
+            <objects>
+                <viewController storyboardIdentifier="ShopListSubViewController" id="Crp-8Q-jIg" customClass="ShopListSubViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ezi-ZM-fYc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VtZ-kX-Ymf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sD3-Af-rJZ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Lms-oa-QBw">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wrB-G7-GqJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PFW-1r-WMW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PFW-1r-WMW" firstAttribute="trailing" secondItem="VtZ-kX-Ymf" secondAttribute="trailing" id="0FM-4G-qLg"/>
+                            <constraint firstItem="VtZ-kX-Ymf" firstAttribute="leading" secondItem="PFW-1r-WMW" secondAttribute="leading" id="YtW-zj-vxB"/>
+                            <constraint firstItem="PFW-1r-WMW" firstAttribute="bottom" secondItem="VtZ-kX-Ymf" secondAttribute="bottom" id="yEq-xv-H0j"/>
+                            <constraint firstItem="VtZ-kX-Ymf" firstAttribute="top" secondItem="PFW-1r-WMW" secondAttribute="top" id="zg5-di-Jki"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cakeShopCollectionView" destination="VtZ-kX-Ymf" id="8wp-yC-syc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="axT-5x-R3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1298.5507246376812" y="91.741071428571431"/>
+        </scene>
     </scenes>
     <resources>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
