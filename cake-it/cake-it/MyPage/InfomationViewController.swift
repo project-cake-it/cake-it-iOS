@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfomationViewController: BaseViewController {
+final class InfomationViewController: BaseViewController {
   
   @IBOutlet weak var viewTitleLabel: UILabel!
   @IBOutlet weak var infomationTextLabel: UILabel!

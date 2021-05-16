@@ -8,6 +8,7 @@
 import UIKit
 
 extension MyPageMainViewController: UITableViewDelegate {
+  
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
     return 1
   }

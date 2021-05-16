@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NoticeViewController: BaseViewController {
+final class NoticeViewController: BaseViewController {
   
   @IBOutlet weak var noticeViewTitleLabel: UILabel!
   @IBOutlet weak var titleLabel: UILabel!

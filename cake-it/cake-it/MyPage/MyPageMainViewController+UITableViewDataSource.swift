@@ -8,6 +8,7 @@
 import UIKit
 
 extension MyPageMainViewController: UITableViewDataSource {
+  
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
   }
@@ -15,22 +16,23 @@ extension MyPageMainViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     switch section {
     case 0:
-      return firstSection.count
+      return firstSections.count
     case 1:
-      return secondSection.count
+      return secondSections.count
     default:
       return 0
     }
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! MyPageCell
+    let identifier = String(describing: MyPageCell.self)
+    let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MyPageCell
     
     switch indexPath.section {
     case 0:
-      cell.cellTitle.text = firstSection[indexPath.row]
+      cell.titleLabel.text = firstSections[indexPath.row]
     case 1:
-      cell.cellTitle.text = secondSection[indexPath.row]
+      cell.titleLabel.text = secondSections[indexPath.row]
     default:
       break
     }

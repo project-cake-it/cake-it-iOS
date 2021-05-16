@@ -8,6 +8,6 @@
 import UIKit
 
 final class MyPageCell: UITableViewCell {
-  @IBOutlet weak var cellTitle: UILabel!
   
+  @IBOutlet weak var titleLabel: UILabel!
 }

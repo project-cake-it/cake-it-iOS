@@ -7,7 +7,8 @@
 
 import UIKit
 
-class ListBoardCell: UITableViewCell {
+final class ListBoardCell: UITableViewCell {
+  
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var dateLabel: UILabel!
   

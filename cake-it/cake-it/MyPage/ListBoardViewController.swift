@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ListBoardViewController: BaseViewController {
+final class ListBoardViewController: BaseViewController {
+  
+  enum Metric {
+    static let listHeight: CGFloat = 67.0
+  }
   
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var listTableView: UITableView!
@@ -31,7 +35,7 @@ class ListBoardViewController: BaseViewController {
     for _ in 0..<20 {
       notices.append("공지사항")
     }
-    listTableView.reloadData();
+    listTableView.reloadData()
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
