@@ -21,6 +21,4 @@ extension ShopListSubViewController: UICollectionViewDataSource {
     cell.update(with: cakeShop)
     return cell
   }
-  
-  
 }
