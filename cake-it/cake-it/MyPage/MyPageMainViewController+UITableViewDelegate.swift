@@ -13,7 +13,7 @@ extension MyPageMainViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.row == 1 {
+    if indexPath.section == 0 && indexPath.row == 1 {
       let noticeListViewController = ListBoardViewController.instantiate(from: "MyPage")
       let navigationController = UINavigationController(rootViewController: noticeListViewController)
       navigationController.modalPresentationStyle = .overFullScreen

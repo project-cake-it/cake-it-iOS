@@ -77,7 +77,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amH-KJ-N1l">
-                                                    <rect key="frame" x="30" y="15.5" width="36" height="17"/>
+                                                    <rect key="frame" x="20" y="15.5" width="36" height="17"/>
                                                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                     <color key="textColor" name="grayscale05"/>
                                                     <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="amH-KJ-N1l" firstAttribute="centerY" secondItem="Lww-sC-WTb" secondAttribute="centerY" id="H6O-f3-T7F"/>
-                                                <constraint firstItem="amH-KJ-N1l" firstAttribute="leading" secondItem="Lww-sC-WTb" secondAttribute="leadingMargin" constant="10" id="Rh8-sD-nBg"/>
+                                                <constraint firstItem="amH-KJ-N1l" firstAttribute="leading" secondItem="Lww-sC-WTb" secondAttribute="leadingMargin" id="Rh8-sD-nBg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
