@@ -17,6 +17,6 @@ class InfomationViewController: BaseViewController {
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
-    self.dismiss(animated: false, completion: nil)
+    dismiss(animated: false, completion: nil)
   }
 }

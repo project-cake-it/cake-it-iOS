@@ -9,7 +9,6 @@ import UIKit
 
 class ListBoardViewController: BaseViewController {
   
-  @IBOutlet weak var backButton: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var listTableView: UITableView!
   
@@ -20,10 +19,11 @@ class ListBoardViewController: BaseViewController {
     
     configureTavleView()
     fetchNotices()
+    navigationController?.navigationBar.isHidden = true
   }
   
   private func configureTavleView() {
-    //listTableView.delegate = self
+    listTableView.delegate = self
     listTableView.dataSource = self
   }
   
@@ -32,5 +32,9 @@ class ListBoardViewController: BaseViewController {
       notices.append("공지사항")
     }
     listTableView.reloadData();
+  }
+  
+  @IBAction func backButtonDidTap(_ sender: Any) {
+    dismiss(animated: false, completion: nil)
   }
 }
