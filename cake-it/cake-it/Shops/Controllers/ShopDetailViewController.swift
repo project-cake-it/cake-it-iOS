@@ -180,6 +180,8 @@ extension ShopDetailViewController {
   }
 }
 
+// MARK: - UIScrollViewDelegate
+
 extension ShopDetailViewController: UIScrollViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let canContactShopButtonMoveThreshold: CGFloat = 156
