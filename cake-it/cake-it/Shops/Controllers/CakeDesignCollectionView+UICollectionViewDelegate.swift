@@ -1,21 +1,13 @@
 //
-//  ShopsMainViewController+UICollectionViewFlowLayoutDelegate.swift
+//  CakeDesignCollectionView+UICollectionViewDelegate.swift
 //  cake-it
 //
-//  Created by Cory on 2021/04/07.
+//  Created by Cory on 2021/05/10.
 //
 
 import UIKit
 
-extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let identifier = String(describing: ShopDetailViewController.self)
-    let storyboard = UIStoryboard(name: "Shops", bundle: nil)
-    let detailVC = storyboard.instantiateViewController(identifier: identifier) as! ShopDetailViewController
-    detailVC.modalPresentationStyle = .fullScreen
-    present(detailVC, animated: false, completion: nil)
-  }
-  
+extension ShopDetailViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -25,19 +17,23 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-    let width = UIScreen.main.bounds.width
-    return CGSize(width: width, height: Metric.cakeShopCellHeight)
+    let numberOfColumns: CGFloat = 2
+    let sidePaddingsAndInterSpaces = Metric.cakeDesignsCollectionViewSidePadding * 2
+      + Metric.cakeDesignCellInterItemHorizontalSpace * (numberOfColumns - 1)
+    let side: CGFloat = (UIScreen.main.bounds.width - sidePaddingsAndInterSpaces) / numberOfColumns
+    let roundedSide = side.rounded(.down)
+    return CGSize(width: roundedSide, height: roundedSide)
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return Metric.cakeShopCellInterItemVerticalSpace
+    return Metric.cakeDesignCellInterItemVerticalSpace
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return 0.0
+    return 0
   }
 }
