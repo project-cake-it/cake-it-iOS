@@ -42,7 +42,7 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var bottomInfoCakeDesignView: UIView!
   @IBOutlet weak var bottomInfoShopInfoView: UIView!
   @IBOutlet weak var locationInfoContainerView: UIView!
-  private var contactShopButton: UIButton!
+  private var contactShopButton: CakeDesignDetailContactButton!
   private var contactShopButtonBottomConstraint: NSLayoutConstraint!
   
   private var bottomInfoState: BottomInfoState = .cakeDesign {
@@ -54,6 +54,8 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   private(set) var cakeDesigns: [CakeDesign] = []
+  private var canContactShopButtonMove = false
+  private var isScrollDirectionDown = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -178,6 +180,16 @@ extension ShopDetailViewController {
   }
 }
 
+extension ShopDetailViewController: UIScrollViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let canContactShopButtonMoveThreshold: CGFloat = 156
+    canContactShopButtonMove = scrollView.contentOffset.y >= canContactShopButtonMoveThreshold
+    if canContactShopButtonMove && isScrollDirectionDown {
+      hideContactShopButton()
+    }
+  }
+}
+
 // MARK: - UIGestureRecognizerDelegate
 
 extension ShopDetailViewController: UIGestureRecognizerDelegate {
@@ -195,6 +207,7 @@ extension ShopDetailViewController {
     configureCakeDesignCollectionView()
     configureContactShopButton()
     configurePanGesture()
+    scrollView.delegate = self
   }
   
   private func configurePanGesture() {
@@ -207,22 +220,27 @@ extension ShopDetailViewController {
   @objc private func handlePanGesture(_ sender : UIPanGestureRecognizer) {
     let velocity = sender.velocity(in: scrollView)
     guard abs(velocity.y) > abs(velocity.x) else { return }
-    let velocityYUpThreshold: CGFloat = 180
-    let velocityYDownThreshold: CGFloat = -40
-    if velocity.y > velocityYUpThreshold {
+    updateIsScrollDirectionDown(velocityY: velocity.y)
+    updateContactShopButton(velocityY: velocity.y)
+  }
+  
+  private func updateIsScrollDirectionDown(velocityY: CGFloat) {
+    isScrollDirectionDown = velocityY < 0
+  }
+  
+  private func updateContactShopButton(velocityY: CGFloat) {
+    let velocityYUpThreshold: CGFloat = 240
+    let velocityYDownThreshold: CGFloat = -120
+    if velocityY > velocityYUpThreshold {
       showContactShopButton()
-    } else if velocity.y < velocityYDownThreshold {
+    } else if velocityY < velocityYDownThreshold {
       hideContactShopButton()
     }
   }
   
   private func showContactShopButton() {
-    var constant = Self.Metric.contactShopButtonBottomSpaceDefault
-    if UIDevice.current.hasNotch {
-      constant +=  -UIDevice.minimumBottomSpaceInNotchDevice
-    }
-    
-    guard contactShopButtonBottomConstraint.constant != constant else { return }
+    let constant = floatingContactShopButtonBottomConstant()
+    guard contactShopButton.displayState != .floating else { return }
     contactShopButtonBottomConstraint.constant = constant
     UIView.animate(withDuration: 0.4,
                    delay: 0,
@@ -230,11 +248,13 @@ extension ShopDetailViewController {
                    initialSpringVelocity: 0.8,
                    options: .curveEaseOut) {
       self.view.layoutIfNeeded()
+    } completion: { _ in
+      self.contactShopButton.displayState = .floating
     }
   }
   
   private func hideContactShopButton() {
-    guard contactShopButtonBottomConstraint.constant != Metric.contactShopButtonBottomSpaceHidden else { return }
+    guard canContactShopButtonMove, contactShopButton.displayState != .hidden else { return }
     contactShopButtonBottomConstraint.constant = Metric.contactShopButtonBottomSpaceHidden
     UIView.animate(withDuration: 0.5,
                    delay: 0,
@@ -242,11 +262,13 @@ extension ShopDetailViewController {
                    initialSpringVelocity: 0.8,
                    options: .curveEaseOut) {
       self.view.layoutIfNeeded()
+    } completion: { _ in
+      self.contactShopButton.displayState = .hidden
     }
   }
   
   private func configureContactShopButton() {
-    contactShopButton = UIButton(type: .system)
+    contactShopButton = CakeDesignDetailContactButton(type: .system)
     contactShopButton.backgroundColor = Colors.pointB
     contactShopButton.setTitle("가게 연결하기", for: .normal)
     contactShopButton.setTitleColor(Colors.white, for: .normal)
@@ -263,13 +285,18 @@ extension ShopDetailViewController {
   }
   
   private func configureContactShopButtonBottomConstraint() {
+    let constant = floatingContactShopButtonBottomConstant()
+    contactShopButtonBottomConstraint = contactShopButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
+                                                                                  constant: constant)
+    contactShopButtonBottomConstraint.isActive = true
+  }
+  
+  private func floatingContactShopButtonBottomConstant() -> CGFloat {
     var constant = Self.Metric.contactShopButtonBottomSpaceDefault
     if UIDevice.current.hasNotch {
       constant +=  -UIDevice.minimumBottomSpaceInNotchDevice
     }
-    contactShopButtonBottomConstraint = contactShopButton.bottomAnchor.constraint(equalTo: view.bottomAnchor,
-                                                                                  constant: constant)
-    contactShopButtonBottomConstraint.isActive = true
+    return constant
   }
   
   private func configureCakeDesignCollectionView() {

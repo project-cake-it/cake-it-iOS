@@ -49,6 +49,7 @@
 		8B93B2E82610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E32610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf */; };
 		8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */; };
 		8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2ED2610CF5D0060ACAC /* Fonts.swift */; };
+		8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */; };
 		8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F2C260CC05200743512 /* CakeDesign.swift */; };
 		8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */; };
 		8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F40260CD36000743512 /* CakeDesignCell.swift */; };
@@ -161,6 +162,7 @@
 		8B93B2E32610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
 		8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
 		8B93B2ED2610CF5D0060ACAC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignDetailContactButton.swift; sourceTree = "<group>"; };
 		8BEA0F2C260CC05200743512 /* CakeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesign.swift; sourceTree = "<group>"; };
 		8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8BEA0F40260CD36000743512 /* CakeDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignCell.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */,
 				8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */,
 				8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */,
+				8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1028,6 +1031,7 @@
 				F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
+				8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
