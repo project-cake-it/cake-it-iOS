@@ -55,6 +55,15 @@
 		8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEA0F41260CD36000743512 /* CakeDesignCell.xib */; };
 		8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */; };
 		8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */; };
+		AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */; };
+		AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD92645B413009016A9 /* MyPageCell.swift */; };
+		AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */; };
+		AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */; };
+		AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */; };
+		AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE126466778009016A9 /* InfomationViewController.swift */; };
+		AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */; };
+		AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */; };
+		AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */; };
 		AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		AC0B8FD426458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */; };
 		AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD526458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift */; };
@@ -176,6 +185,15 @@
 		8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MoneyFormat.swift; sourceTree = "<group>"; };
 		9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyPageMainViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		AC0B8FD92645B413009016A9 /* MyPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCell.swift; sourceTree = "<group>"; };
+		AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyPageMainViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoardViewController.swift; sourceTree = "<group>"; };
+		AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		AC0B8FE126466778009016A9 /* InfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
+		AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoardCell.swift; sourceTree = "<group>"; };
+		AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBoardViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBoardViewController+UITableViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC0B8FD526458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
@@ -507,6 +525,15 @@
 			children = (
 				8B875D2E25DAE836003D9CFA /* MyPage.storyboard */,
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
+				AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */,
+				AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */,
+				AC0B8FD92645B413009016A9 /* MyPageCell.swift */,
+				AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */,
+				AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */,
+				AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */,
+				AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */,
+				AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */,
+				AC0B8FE126466778009016A9 /* InfomationViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -1004,11 +1031,14 @@
 				8B1DFDE626484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
+				AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */,
 				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
 				8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */,
+				AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
 				F73B6D1C2635AEC50043CF89 /* FilterDetailView.swift in Sources */,
+				AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */,
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
@@ -1033,6 +1063,7 @@
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
 				AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
+				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,
 				8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
@@ -1044,6 +1075,7 @@
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
+				AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
@@ -1051,7 +1083,11 @@
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
 				AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */,
 				F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */,
+				AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */,
+				AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */,
+				AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */,
 				F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */,
+				AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
