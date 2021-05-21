@@ -22,4 +22,12 @@ extension DesignListViewController: UICollectionViewDataSource {
     cell.update(with: cakeDesign)
     return cell
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let id = String(describing: DesignDetailViewController.self)
+    if let desingDetailVC = storyboard?.instantiateViewController(identifier: id) {
+      desingDetailVC.modalPresentationStyle = .fullScreen
+      present(desingDetailVC, animated: true, completion: nil)
+    }
+  }
 }
