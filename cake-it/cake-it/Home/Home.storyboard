@@ -256,7 +256,6 @@
                                         <color key="tintColor" name="black"/>
                                         <state key="normal" image="arrowLeft"/>
                                         <connections>
-                                            <action selector="backButtonDidTap:" destination="bDm-9X-dQ3" eventType="touchUpInside" id="jjA-nS-lqa"/>
                                             <action selector="naviBackButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="nt4-Cq-PKN"/>
                                         </connections>
                                     </button>

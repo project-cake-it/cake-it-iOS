@@ -82,6 +82,7 @@ final class DesignDetailViewController: BaseViewController {
   }
   
   @IBAction func naviBackButtonDidTap(_ sender: Any) {
+    self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func naviZzimButtonDidTap(_ sender: Any) {
