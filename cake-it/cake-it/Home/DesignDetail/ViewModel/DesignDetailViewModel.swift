@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DesignDetailViewModel {
+final class DesignDetailViewModel {
   var designDetailModel: DesignDetailModel?
   
   init(storeName: String,
