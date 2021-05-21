@@ -13,6 +13,11 @@ extension UIView {
     case top, bottom, leading, trailing
   }
   
+  func addBorder(borderColor: UIColor, borderWidth: CGFloat) {
+    self.layer.borderColor = borderColor.cgColor
+    self.layer.borderWidth = borderWidth
+  }
+  
   func addBorder(side: Direction, borderColor: UIColor, borderWidth: CGFloat) {
     let border = CALayer()
     border.backgroundColor = borderColor.cgColor

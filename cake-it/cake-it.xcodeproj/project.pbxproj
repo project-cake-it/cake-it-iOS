@@ -18,10 +18,15 @@
 		5F91075BAD00C39D152FAD82 /* Pods_cake_it.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */; };
 		8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DDA50260CE120003923D9 /* UIView+AutoLayout.swift */; };
 		8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */; };
+		8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */; };
+		8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE126484A960076E14C /* UIDevice+hasNotch.swift */; };
+		8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */; };
+		8B1DFDE626484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE526484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift */; };
+		8B1DFDE826484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE726484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift */; };
 		8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7540261C9812007757E5 /* CakeShop.swift */; };
 		8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */; };
 		8B2A7548261C9AF5007757E5 /* CakeShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */; };
-		8B3AE24A261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AE249261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift */; };
+		8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */; };
 		8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B3AF14525DAE16A00B9F48D /* Home.storyboard */; };
 		8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B62C3132600FE10005F599A /* DesignListViewController.swift */; };
@@ -44,16 +49,33 @@
 		8B93B2E82610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E32610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf */; };
 		8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */; };
 		8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2ED2610CF5D0060ACAC /* Fonts.swift */; };
+		8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */; };
 		8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F2C260CC05200743512 /* CakeDesign.swift */; };
 		8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */; };
 		8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F40260CD36000743512 /* CakeDesignCell.swift */; };
 		8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEA0F41260CD36000743512 /* CakeDesignCell.xib */; };
 		8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */; };
 		8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */; };
+		AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */; };
+		AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD92645B413009016A9 /* MyPageCell.swift */; };
+		AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */; };
+		AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */; };
+		AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */; };
+		AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE126466778009016A9 /* InfomationViewController.swift */; };
+		AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */; };
+		AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */; };
+		AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */; };
+		AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */; };
+		AC0B8FD426458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */; };
+		AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD526458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift */; };
 		AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDC83260756DF0026F5FA /* LoginModel.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
+		AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */; };
+		AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C2263F0C9100A44862 /* ShopListSubViewController.swift */; };
+		AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */; };
+		AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */; };
 		ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC16E70262334950094D6D2 /* LoginSocialType.swift */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */; };
@@ -128,10 +150,15 @@
 		45B2B377B3AB9CD829F6B911 /* Pods-cake-itTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-itTests.release.xcconfig"; path = "Target Support Files/Pods-cake-itTests/Pods-cake-itTests.release.xcconfig"; sourceTree = "<group>"; };
 		8B0DDA50260CE120003923D9 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorner.swift"; sourceTree = "<group>"; };
+		8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
+		8B1DFDE126484A960076E14C /* UIDevice+hasNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+hasNotch.swift"; sourceTree = "<group>"; };
+		8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignSquareImageCell.swift; sourceTree = "<group>"; };
+		8B1DFDE526484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeDesignCollectionView+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		8B1DFDE726484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeDesignCollectionView+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8B2A7540261C9812007757E5 /* CakeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShop.swift; sourceTree = "<group>"; };
 		8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShopCell.swift; sourceTree = "<group>"; };
 		8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeShopCell.xib; sourceTree = "<group>"; };
-		8B3AE249261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+CollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		8B3AF14525DAE16A00B9F48D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		8B62C3132600FE10005F599A /* DesignListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +181,7 @@
 		8B93B2E32610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
 		8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
 		8B93B2ED2610CF5D0060ACAC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignDetailContactButton.swift; sourceTree = "<group>"; };
 		8BEA0F2C260CC05200743512 /* CakeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesign.swift; sourceTree = "<group>"; };
 		8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8BEA0F40260CD36000743512 /* CakeDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignCell.swift; sourceTree = "<group>"; };
@@ -162,10 +190,26 @@
 		8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MoneyFormat.swift; sourceTree = "<group>"; };
 		9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyPageMainViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		AC0B8FD92645B413009016A9 /* MyPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCell.swift; sourceTree = "<group>"; };
+		AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MyPageMainViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoardViewController.swift; sourceTree = "<group>"; };
+		AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		AC0B8FE126466778009016A9 /* InfomationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationViewController.swift; sourceTree = "<group>"; };
+		AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoardCell.swift; sourceTree = "<group>"; };
+		AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBoardViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBoardViewController+UITableViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		AC0B8FD526458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		AC1BDC83260756DF0026F5FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeListSubViewController.swift; sourceTree = "<group>"; };
+		AC9FD4C2263F0C9100A44862 /* ShopListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListSubViewController.swift; sourceTree = "<group>"; };
+		AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeImageCell.swift; sourceTree = "<group>"; };
 		ACC16E70262334950094D6D2 /* LoginSocialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSocialType.swift; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AEDF9B83790700EB68FD0211 /* Pods-cake-it.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.debug.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.debug.xcconfig"; sourceTree = "<group>"; };
@@ -343,6 +387,14 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		8B1DFDE026484A800076E14C /* UIDevice */ = {
+			isa = PBXGroup;
+			children = (
+				8B1DFDE126484A960076E14C /* UIDevice+hasNotch.swift */,
+			);
+			path = UIDevice;
+			sourceTree = "<group>";
+		};
 		8B2A7539261C9716007757E5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,8 +407,11 @@
 			isa = PBXGroup;
 			children = (
 				8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */,
-				8B3AE249261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift */,
+				8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */,
 				8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */,
+				8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */,
+				8B1DFDE526484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift */,
+				8B1DFDE726484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -374,6 +429,8 @@
 			children = (
 				8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */,
 				8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */,
+				8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */,
+				8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,6 +478,7 @@
 		8B62C3282601005D005F599A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B1DFDE026484A800076E14C /* UIDevice */,
 				8B0DDA4F260CE10B003923D9 /* UIView */,
 				8B62C31F26010033005F599A /* UIViewController */,
 				8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */,
@@ -461,6 +519,13 @@
 			children = (
 				8B875D1A25DAE747003D9CFA /* SavedItem.storyboard */,
 				8B875D2525DAE7B3003D9CFA /* SavedItemMainViewController.swift */,
+				AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */,
+				AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */,
+				AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */,
+				AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */,
+				AC9FD4C2263F0C9100A44862 /* ShopListSubViewController.swift */,
+				AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */,
+				AC0B8FD526458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift */,
 			);
 			path = Saved;
 			sourceTree = "<group>";
@@ -470,6 +535,15 @@
 			children = (
 				8B875D2E25DAE836003D9CFA /* MyPage.storyboard */,
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
+				AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */,
+				AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */,
+				AC0B8FD92645B413009016A9 /* MyPageCell.swift */,
+				AC0B8FDD264634A9009016A9 /* ListBoardViewController.swift */,
+				AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */,
+				AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */,
+				AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */,
+				AC0B8FDF2646675D009016A9 /* NoticeViewController.swift */,
+				AC0B8FE126466778009016A9 /* InfomationViewController.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -998,19 +1072,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
+				8B1DFDE626484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
+				AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */,
 				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
 				8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */,
+				AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				F7A2DA26263EA95200C160A5 /* DesignDetailViewController.swift in Sources */,
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
 				F73B6D1C2635AEC50043CF89 /* FilterDetailView.swift in Sources */,
+				AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */,
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
+				AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */,
 				38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */,
 				8B875D2625DAE7B3003D9CFA /* SavedItemMainViewController.swift in Sources */,
@@ -1018,8 +1097,9 @@
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
+				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
-				8B3AE24A261DEBF300770839 /* ShopsMainViewController+CollectionViewDataSource.swift in Sources */,
+				8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
 				8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */,
 				F7A2DA1D263EA73600C160A5 /* DesignDetailModel.swift in Sources */,
@@ -1027,26 +1107,42 @@
 				F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
+				AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
+				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,
+				8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
 				8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */,
 				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,
+				8B1DFDE826484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift in Sources */,
 				F73B6D142635AEC50043CF89 /* FilterButton.swift in Sources */,
+				AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */,
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
+				AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */,
 				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
+				AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F73B6D182635AEC50043CF89 /* DescriptionFilterItemView.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
+				AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */,
 				F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */,
+				AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */,
+				AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */,
+				AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */,
 				F73B6D122635AEC50043CF89 /* FilterTitleView.swift in Sources */,
+				AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
+				8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
+				AC0B8FD426458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
 				8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */,
+				AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */,
 				8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */,
 				F73B6D1A2635AEC50043CF89 /* BaseFilterItemView.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
@@ -1230,14 +1326,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 265H8P3B42;
+				DEVELOPMENT_TEAM = N2GAL8582Q;
 				INFOPLIST_FILE = "cake-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "next.cake-it";
+				PRODUCT_BUNDLE_IDENTIFIER = "next.cake-it.dj";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

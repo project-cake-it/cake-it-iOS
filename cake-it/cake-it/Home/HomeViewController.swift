@@ -15,7 +15,7 @@ final class HomeViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    checkLogin()
+//    checkLogin()
   }
   
   @IBAction func toDesignListButtonDidTap(_ sender: Any) {

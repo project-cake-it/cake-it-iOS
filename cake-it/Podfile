@@ -1,0 +1,35 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'cake-it' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for cake-it
+
+  target 'cake-itTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'cake-itUITests' do
+    # Pods for testing
+  end
+
+  pod 'Alamofire', '~> 5.2'
+
+  # Kakao Talk SDK
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKAuth'
+  pod 'KakaoSDKUser'
+
+  # Naver ID SDK
+  pod 'naveridlogin-sdk-ios'
+
+  # KeychainWrapper
+  pod 'SwiftKeychainWrapper'
+
+  # XLPagerTabStrip
+  pod 'XLPagerTabStrip', '~> 9.0'
+
+end
