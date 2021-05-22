@@ -22,10 +22,15 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var filterViewArea: UIView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
   
+  @IBOutlet weak var filterTitleCollectionView: UICollectionView!
   private var filterDetailView = FilterDetailView()
   private(set) var cakeDesigns: [CakeDesign] = []
   
   var selectedFilterDic: Dictionary<String, [String]> = [:]
+  
+  // testing...
+  let cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
+  // testing...
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -65,14 +70,23 @@ extension DesignListViewController {
   }
   
   private func configureFilterTitleView() {
-    let cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
-    let filterView = FilterTitleView(frame: CGRect(x: 0,
-                                                   y: 0,
-                                                   width: filterViewArea.frame.width,
-                                                   height: filterViewArea.frame.height))
-    filterView.delegate = self
-    filterView.filterList = cakeFilterList
-    filterViewArea.addSubview(filterView)
+//    let filterView = FilterTitleView(frame: CGRect(x: 0,
+//                                                   y: 0,
+//                                                   width: filterViewArea.frame.width,
+//                                                   height: filterViewArea.frame.height))
+//    filterView.delegate = self
+//    filterView.filterList = cakeFilterList
+//    filterViewArea.addSubview(filterView)
+    
+    // new code
+    let identifier = String(describing: FilterTitleCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    filterTitleCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    filterTitleCollectionView.delegate = self
+    filterTitleCollectionView.dataSource = self
+    let flowLayout = UICollectionViewFlowLayout()
+    flowLayout.scrollDirection = .horizontal
+    filterTitleCollectionView.collectionViewLayout = flowLayout
   }
   
   private func configureNavigationBarTapGesture() {
