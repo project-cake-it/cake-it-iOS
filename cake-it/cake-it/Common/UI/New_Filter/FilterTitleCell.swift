@@ -17,8 +17,10 @@ class FilterTitleCell: UICollectionViewCell {
     super.prepareForReuse()
   }
   
-  func update(title: String) {
-    titleLabel.text = title
+  func update(type: FilterCommon.FilterType) {
+    titleLabel.text = type.korTitle
+    arrowImageView.image = type.icon
+    arrowImageView.highlightedImage = type.highLightIcon
     cellButton.clipsToBounds = false
     cellButton.layer.borderWidth = 1
     cellButton.layer.borderColor = Colors.pointB.cgColor

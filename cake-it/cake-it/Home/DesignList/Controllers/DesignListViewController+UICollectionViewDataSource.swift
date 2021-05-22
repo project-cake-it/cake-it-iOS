@@ -36,7 +36,7 @@ extension DesignListViewController: UICollectionViewDataSource {
       let identifier = String(describing: FilterTitleCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! FilterTitleCell
-      cell.update(title: cakeFilterList[indexPath.row].korTitle)
+      cell.update(type: cakeFilterList[indexPath.row])
       return cell
       
     default:

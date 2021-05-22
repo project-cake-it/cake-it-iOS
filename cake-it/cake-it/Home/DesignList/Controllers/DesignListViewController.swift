@@ -27,10 +27,7 @@ final class DesignListViewController: BaseViewController {
   private(set) var cakeDesigns: [CakeDesign] = []
   
   var selectedFilterDic: Dictionary<String, [String]> = [:]
-  
-  // testing...
-  let cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
-  // testing...
+  private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -69,31 +66,27 @@ extension DesignListViewController {
     configureNavigationBarTapGesture()
   }
   
+  // MARK:- configure filter title collectionView
   private func configureFilterTitleView() {
-//    let filterView = FilterTitleView(frame: CGRect(x: 0,
-//                                                   y: 0,
-//                                                   width: filterViewArea.frame.width,
-//                                                   height: filterViewArea.frame.height))
-//    filterView.delegate = self
-//    filterView.filterList = cakeFilterList
-//    filterViewArea.addSubview(filterView)
-    
-    // new code
-    let identifier = String(describing: FilterTitleCell.self)
-    let nib = UINib(nibName: identifier, bundle: nil)
-    filterTitleCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
-    filterTitleCollectionView.delegate = self
-    filterTitleCollectionView.dataSource = self
+    configureFilterTitleCollectionView()
+    registerFilterTitleCollectionView()
+  }
+  
+  private func configureFilterTitleCollectionView() {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
     filterTitleCollectionView.collectionViewLayout = flowLayout
+    filterTitleCollectionView.delegate = self
+    filterTitleCollectionView.dataSource = self
   }
   
-  private func configureNavigationBarTapGesture() {
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigationTitleDidTap))
-    navigationBarTitleTapGestureView.addGestureRecognizer(tapGesture)
+  private func registerFilterTitleCollectionView() {
+    let identifier = String(describing: FilterTitleCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    filterTitleCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }
   
+  // MARK:- configure cake design collectionView
   private func configureCollectionView() {
     configureCollectionViewProtocols()
     registerCollectionViewCell()
@@ -108,6 +101,12 @@ extension DesignListViewController {
   private func configureCollectionViewProtocols() {
     designsCollectionView.dataSource = self
     designsCollectionView.delegate = self
+  }
+
+  // MARK:- configure navigation bar
+  private func configureNavigationBarTapGesture() {
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigationTitleDidTap))
+    navigationBarTitleTapGestureView.addGestureRecognizer(tapGesture)
   }
 }
 

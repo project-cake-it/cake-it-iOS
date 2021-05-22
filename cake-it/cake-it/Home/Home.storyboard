@@ -179,7 +179,7 @@
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="leading" secondItem="Vep-8G-tgO" secondAttribute="leading" constant="-2" id="zDJ-Ss-H7k"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rqE-aU-fdF">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rqE-aU-fdF">
                                 <rect key="frame" x="0.0" y="94" width="414" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>

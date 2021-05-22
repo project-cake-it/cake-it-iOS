@@ -31,6 +31,20 @@ final class FilterCommon {
       case .category: return "카테고리"
       }
     }
+    
+    var icon: UIImage {
+      switch self {
+      case .reset:  return UIImage(named: "icReset")!
+      default:      return UIImage(named: "chevronCompactDown")!
+      }
+    }
+    
+    var highLightIcon: UIImage {
+      switch self {
+      case .reset:  return UIImage(named: "icReset")!
+      default:      return UIImage(named: "icChevronCompactUp")!
+      }
+    }
   }
   
   enum FilterBasic: String, CaseIterable {
