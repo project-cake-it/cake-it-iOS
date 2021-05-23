@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterDetailView" customModule="cake_it" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundView" destination="cSh-wK-QP6" id="q7W-gN-4Ez"/>
                 <outlet property="filterTableView" destination="BN6-d7-fVs" id="NV6-YF-PAL"/>
             </connections>
         </placeholder>

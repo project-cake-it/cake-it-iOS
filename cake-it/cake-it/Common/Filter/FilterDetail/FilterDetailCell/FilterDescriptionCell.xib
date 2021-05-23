@@ -37,16 +37,26 @@
                         <color key="textColor" name="grayscale04"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheck" translatesAutoresizingMaskIntoConstraints="NO" id="Mtr-6v-uCF">
+                        <rect key="frame" x="219.5" y="8" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="IXw-qr-gfU"/>
+                            <constraint firstAttribute="width" constant="20" id="Ls5-FF-YxL"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hU0-sN-zmX" firstAttribute="centerX" secondItem="2Y3-h0-8yl" secondAttribute="centerX" id="9Yu-mq-AKp"/>
                     <constraint firstItem="hU0-sN-zmX" firstAttribute="top" secondItem="2Y3-h0-8yl" secondAttribute="top" constant="8" id="9yI-Yj-Gn3"/>
+                    <constraint firstItem="Mtr-6v-uCF" firstAttribute="centerY" secondItem="hU0-sN-zmX" secondAttribute="centerY" id="Cjr-Kk-CIj"/>
+                    <constraint firstItem="Mtr-6v-uCF" firstAttribute="leading" secondItem="hU0-sN-zmX" secondAttribute="trailing" id="bWy-RO-K0V"/>
                     <constraint firstItem="e3q-93-WOz" firstAttribute="centerX" secondItem="2Y3-h0-8yl" secondAttribute="centerX" id="prY-7I-eUq"/>
                     <constraint firstAttribute="bottom" secondItem="e3q-93-WOz" secondAttribute="bottom" constant="8" id="rrP-3N-Hwp"/>
                     <constraint firstItem="e3q-93-WOz" firstAttribute="top" secondItem="hU0-sN-zmX" secondAttribute="bottom" constant="4" id="zRd-aD-11r"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="checkImageView" destination="Mtr-6v-uCF" id="BTA-Ar-GJ9"/>
                 <outlet property="descriptionLabel" destination="e3q-93-WOz" id="cKz-D9-V6N"/>
                 <outlet property="titleLabel" destination="hU0-sN-zmX" id="wb1-5G-hSG"/>
             </connections>
@@ -54,6 +64,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="icCheck" width="20" height="20"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

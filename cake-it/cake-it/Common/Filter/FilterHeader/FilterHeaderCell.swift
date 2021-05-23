@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FilterHeaderCellDelegate {
+protocol FilterHeaderCellDelegate: class {
   func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool)
 }
 
@@ -15,14 +15,12 @@ final class FilterHeaderCell: UICollectionViewCell {
   
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var arrowImageView: UIImageView!
-  @IBOutlet weak var cellButton: UIButton!
-  var testVal: String = ""
   
-  var delegate: FilterHeaderCellDelegate?
+  weak var delegate: FilterHeaderCellDelegate?
   private var flterType: FilterCommon.FilterType = .reset
-  var filterHightlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
+  var isFilterHightlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
     didSet {
-      if filterHightlighted == true {
+      if isFilterHightlighted == true {
         titleLabel.textColor = Colors.pointB
         arrowImageView.tintColor = Colors.pointB
         self.layer.borderColor = Colors.pointB.cgColor
@@ -31,16 +29,16 @@ final class FilterHeaderCell: UICollectionViewCell {
         arrowImageView.tintColor = Colors.black
         self.layer.borderColor = Colors.grayscale03.cgColor
       }
-      arrowImageView.isHighlighted = filterHightlighted
+      arrowImageView.isHighlighted = isFilterHightlighted
       
       if isSelected == true {
-        delegate?.filterHeaderCellDidTap(type: flterType, isHighlighted: filterHightlighted)
+        delegate?.filterHeaderCellDidTap(type: flterType, isHighlighted: isFilterHightlighted)
       }
     }
   }
-  var filterSelected: Bool = false {     // 필터 옵션이 지정된 상태
+  var isFilterSelected: Bool = false {     // 필터 옵션이 지정된 상태
     didSet {
-      if filterSelected == true {
+      if isFilterSelected == true {
         titleLabel.textColor = Colors.white
         arrowImageView.tintColor = Colors.white
         self.backgroundColor = Colors.pointB
@@ -56,8 +54,10 @@ final class FilterHeaderCell: UICollectionViewCell {
     super.prepareForReuse()
   }
   
-  func update(type: FilterCommon.FilterType) {
+  func update(type: FilterCommon.FilterType, isSelected: Bool) {
     flterType = type
+    isFilterSelected = isSelected
+    
     titleLabel.text = type.korTitle
     arrowImageView.image = FilterCommon.titleIcon(type: type)
     arrowImageView.highlightedImage = FilterCommon.highlightedTitleIcon(type: type)
@@ -65,9 +65,5 @@ final class FilterHeaderCell: UICollectionViewCell {
     self.layer.borderWidth = 1
     self.layer.borderColor = Colors.grayscale03.cgColor
     self.layer.cornerRadius = self.frame.height/2
-  }
-  
-  @IBAction func cellDidTap(_ sender: Any) {
-    filterHightlighted = !filterHightlighted
   }
 }

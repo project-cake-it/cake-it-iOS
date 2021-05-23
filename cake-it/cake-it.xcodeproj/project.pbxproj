@@ -83,6 +83,7 @@
 		F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */; };
 		F73B6D1A2635AEC50043CF89 /* BaseFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */; };
 		F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */; };
+		F766FDBF265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */; };
 		F768D201265801A50092E3CE /* FilterHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F768D200265801A50092E3CE /* FilterHeaderCell.swift */; };
 		F768D209265801AF0092E3CE /* FilterHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F768D208265801AF0092E3CE /* FilterHeaderCell.xib */; };
 		F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */; };
@@ -223,6 +224,7 @@
 		F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleFilterItemView.swift; sourceTree = "<group>"; };
 		F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFilterItemView.swift; sourceTree = "<group>"; };
 		F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFilterItemView.swift; sourceTree = "<group>"; };
+		F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
 		F768D200265801A50092E3CE /* FilterHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderCell.swift; sourceTree = "<group>"; };
 		F768D208265801AF0092E3CE /* FilterHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterHeaderCell.xib; sourceTree = "<group>"; };
 		F774B91D25E0E0BF006EE0EC /* NicknameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				8B62C3132600FE10005F599A /* DesignListViewController.swift */,
 				8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */,
 				8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */,
+				F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -805,10 +808,10 @@
 		F7A88724265A477800930932 /* FilterDetailCell */ = {
 			isa = PBXGroup;
 			children = (
+				F7A88751265A486B00930932 /* BaseFilterCell.swift */,
 				F7A88742265A482800930932 /* FilterBasicCell.xib */,
 				F7A88747265A483200930932 /* FilterColorCell.xib */,
 				F7A8874C265A483B00930932 /* FilterDescriptionCell.xib */,
-				F7A88751265A486B00930932 /* BaseFilterCell.swift */,
 				F7A887C2265A4C4800930932 /* FilterBasicCell.swift */,
 				F7A887C7265A4C5600930932 /* FilterColorCell.swift */,
 				F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */,
@@ -1110,6 +1113,7 @@
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
 				F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
+				F766FDBF265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift in Sources */,
 				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
 				AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */,

@@ -10,17 +10,28 @@ import UIKit
 class FilterBasicCell: UITableViewCell {
 
   @IBOutlet weak var titleLabel: UILabel!
+  @IBOutlet weak var checkImageView: UIImageView!
+  
+  var isCellSelected: Bool = false {
+    didSet {
+      checkImageView.isHidden = !isCellSelected
+    }
+  }
   
   override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    super.awakeFromNib()
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+  }
+  
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    if isSelected == true {
+      isCellSelected = !isCellSelected
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+  }
   
   func update(title: String) {
     titleLabel.text = title

@@ -40,29 +40,18 @@
                             <constraint firstAttribute="width" constant="20" id="WlD-RF-xjH"/>
                         </constraints>
                     </imageView>
-                    <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5x-Qo-c22">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
-                        <connections>
-                            <action selector="cellDidTap:" destination="wBT-hl-pIE" eventType="touchUpInside" id="bO9-yI-r4p"/>
-                        </connections>
-                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="u5x-Qo-c22" secondAttribute="bottom" id="0N3-oW-aKA"/>
-                    <constraint firstAttribute="trailing" secondItem="u5x-Qo-c22" secondAttribute="trailing" id="1j9-lo-dxc"/>
                     <constraint firstItem="qiQ-em-dwP" firstAttribute="centerY" secondItem="Xcg-ze-R80" secondAttribute="centerY" id="36m-Yh-adF"/>
                     <constraint firstItem="Xcg-ze-R80" firstAttribute="leading" secondItem="2ej-ud-UgR" secondAttribute="leading" constant="16" id="3Mi-8v-2Ug"/>
                     <constraint firstItem="Xcg-ze-R80" firstAttribute="centerY" secondItem="2ej-ud-UgR" secondAttribute="centerY" id="8Zq-pb-EFo"/>
-                    <constraint firstItem="u5x-Qo-c22" firstAttribute="leading" secondItem="2ej-ud-UgR" secondAttribute="leading" id="9yl-Ke-mCq"/>
                     <constraint firstItem="qiQ-em-dwP" firstAttribute="leading" secondItem="Xcg-ze-R80" secondAttribute="trailing" id="Dhy-mF-qxF"/>
-                    <constraint firstItem="u5x-Qo-c22" firstAttribute="top" secondItem="2ej-ud-UgR" secondAttribute="top" id="OqW-Po-SK0"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="166" height="62"/>
             <connections>
                 <outlet property="arrowImageView" destination="qiQ-em-dwP" id="yVK-XU-uAp"/>
-                <outlet property="cellButton" destination="u5x-Qo-c22" id="0nc-yi-v4s"/>
                 <outlet property="titleLabel" destination="Xcg-ze-R80" id="Uqk-2R-Shv"/>
             </connections>
             <point key="canvasLocation" x="224.63768115942031" y="-82.700892857142847"/>

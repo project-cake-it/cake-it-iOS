@@ -25,10 +25,9 @@ final class DesignListViewController: BaseViewController {
   
   private(set) var cakeDesigns: [CakeDesign] = []
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
-  private var filterDetailView: FilterDetailView?
-  private var selectedFilterDic: Dictionary<String, [String]> = [:]
+  var filterDetailView: FilterDetailView?
+  var selectedFilterDic: Dictionary<String, [String]> = [:]
   
-
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -108,49 +107,4 @@ extension DesignListViewController {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigationTitleDidTap))
     navigationBarTitleTapGestureView.addGestureRecognizer(tapGesture)
   }
-}
-
-
-// FilterHeaderCell delegate
-extension DesignListViewController: FilterHeaderCellDelegate {
-  func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool) {
-    if type == .reset {
-      selectedFilterDic.removeAll()
-      return
-    }
-
-    if isHighlighted == true { // Filter Title 선택
-      let isShowFilterDetailView = ((filterDetailView?.subviews.count ?? 0) == 0 ) ? false : true
-      if isShowFilterDetailView {
-        filterDetailView?.filterType = type
-        filterDetailView?.filterTableView.reloadData()
-      } else {
-        showFilterDetailView(type: type)
-      }
-    } else { // Filter Title 선택 해제
-      removeFilterDetailView()
-    }
-  }
-  
-  private func showFilterDetailView(type: FilterCommon.FilterType) {
-    filterDetailView = FilterDetailView()
-    if let detailView = filterDetailView {
-      detailView.filterType = type
-      self.view.addSubview(detailView)
-      detailView.constraints(topAnchor: filterHeaderCollectionView.bottomAnchor,
-                             leadingAnchor: self.view.leadingAnchor,
-                             bottomAnchor: self.view.bottomAnchor,
-                             trailingAnchor: self.view.trailingAnchor,
-                             padding: UIEdgeInsets(top: 7, left: 0, bottom: 0, right: 0))
-    }
-  }
-  
-  private func removeFilterDetailView() {
-    if let detailView = filterDetailView {
-      for subView in detailView.subviews {
-        subView.removeFromSuperview()
-      }
-    }
-  }
-  
 }

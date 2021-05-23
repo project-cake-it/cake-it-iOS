@@ -11,16 +11,28 @@ class FilterColorCell: UITableViewCell {
 
   @IBOutlet weak var colorLabel: UILabel!
   @IBOutlet weak var colorView: UIView!
+  @IBOutlet weak var checkImageView: UIImageView!
+  
+  var isCellSelected: Bool = false {
+    didSet {
+      checkImageView.isHidden = !isCellSelected
+    }
+  }
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
+    initUI()
+  }
+  
+  private func initUI() {
+    colorView.layer.cornerRadius = colorView.frame.width/2
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
+    if isSelected == true {
+      isCellSelected = !isCellSelected
+    }
   }
   
   func update(title: String, color: UIColor) {

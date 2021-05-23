@@ -7,10 +7,17 @@
 
 import UIKit
 
+protocol FilterDetailViewDelegate: class {
+  func filterDetailCellDidTap(key: FilterCommon.FilterType, value: String)
+}
+
 final class FilterDetailView: UIView {
 
+  @IBOutlet weak var backgroundView: UIView!
   @IBOutlet weak var filterTableView: UITableView!
   
+  weak var delegate: FilterDetailViewDelegate?
+  var selectedFilterDic: [String: [String]] = [:]
   var filterType: FilterCommon.FilterType = .reset {
     didSet {
       registerTableViewCell()
@@ -42,6 +49,9 @@ final class FilterDetailView: UIView {
   private func configureView() {
     filterTableView.delegate = self
     filterTableView.dataSource = self
+    
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapGesture))
+    backgroundView.addGestureRecognizer(tapGesture)
   }
   
   private func registerTableViewCell() {
@@ -61,6 +71,10 @@ final class FilterDetailView: UIView {
       filterTableView.register(nib, forCellReuseIdentifier: identifier)
     }
   }
+  
+  @objc private func didTapGesture() {
+    self.removeFromSuperview()
+  }
 }
 
 extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
@@ -75,6 +89,15 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterBasic.allCases[indexPath.row]
         cell.update(title: filterInfo.title)
+        cell.selectionStyle = .none
+        
+        // selected 테스트
+        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
+          cell.isCellSelected = true
+        } else {
+          cell.isCellSelected = false
+        }
+        // selected 테스트
         return cell
       }
     case .region:
@@ -82,6 +105,15 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterRegion.allCases[indexPath.row]
         cell.update(title: filterInfo.title)
+        cell.selectionStyle = .none
+        
+        // selected 테스트
+        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
+          cell.isCellSelected = true
+        } else {
+          cell.isCellSelected = false
+        }
+        // selected 테스트
         return cell
       }
     case .category:
@@ -89,13 +121,32 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterCategory.allCases[indexPath.row]
         cell.update(title: filterInfo.title)
+        cell.selectionStyle = .none
+        
+        // selected 테스트
+        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
+          cell.isCellSelected = true
+        } else {
+          cell.isCellSelected = false
+        }
+        // selected 테스트
         return cell
       }
     case .size:
       let identifier = String(describing: FilterDescriptionCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterDescriptionCell {
-        let filterInfo = FilterCommon.FilterSize.allCases[indexPath.row]
+        let filterInfo = FilterCommon.FilterSize.allCases[indexPath.row] 
         cell.update(title: filterInfo.title, description: filterInfo.description)
+        cell.selectionStyle = .none
+        
+        // selected 테스트
+        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
+          cell.isCellSelected = true
+        } else {
+          cell.isCellSelected = false
+        }
+        // selected 테스트
+        
         return cell
       }
     case .color:
@@ -103,6 +154,16 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterColorCell {
         let filterInfo = FilterCommon.FilterColor.allCases[indexPath.row]
         cell.update(title: filterInfo.title, color: filterInfo.color)
+        cell.selectionStyle = .none
+        
+        // selected 테스트
+        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
+          cell.isCellSelected = true
+        } else {
+          cell.isCellSelected = false
+        }
+        // selected 테스트
+        
         return cell
       }
     default:
@@ -112,6 +173,23 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    print(indexPath.row)
+    
+    var value: String = ""
+    switch filterType {
+    case .basic:
+      value = FilterCommon.FilterBasic.allCases[indexPath.row].title
+    case .region:
+      value = FilterCommon.FilterRegion.allCases[indexPath.row].title
+    case .size:
+      value = FilterCommon.FilterSize.allCases[indexPath.row].title
+    case .color:
+      value = FilterCommon.FilterColor.allCases[indexPath.row].title
+    case .category:
+      value = FilterCommon.FilterCategory.allCases[indexPath.row].title
+    case .reset:
+      break
+    }
+    
+    delegate?.filterDetailCellDidTap(key: filterType, value: value)
   }
 }

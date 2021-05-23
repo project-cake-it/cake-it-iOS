@@ -35,8 +35,14 @@ extension DesignListViewController: UICollectionViewDataSource {
       let identifier = String(describing: FilterHeaderCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! FilterHeaderCell
+      let filterType = cakeFilterList[indexPath.row]
+      var isSelected = false
+      if selectedFilterDic.keys.contains(filterType.title)
+          && selectedFilterDic[filterType.title]?.count ?? 0 > 0 {
+        isSelected = true
+      }
       cell.delegate = self
-      cell.update(type: cakeFilterList[indexPath.row])
+      cell.update(type: filterType, isSelected: isSelected)
       return cell
     }
     else {
@@ -57,7 +63,7 @@ extension DesignListViewController: UICollectionViewDataSource {
     }
     else if collectionView == filterHeaderCollectionView {
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
-        cell.filterHightlighted = !cell.filterHightlighted
+        cell.isFilterHightlighted = !cell.isFilterHightlighted
       }
     }
   }
@@ -65,7 +71,7 @@ extension DesignListViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
     if collectionView == filterHeaderCollectionView {
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
-        cell.filterHightlighted = false
+        cell.isFilterHightlighted = false
       }
     }
   }
