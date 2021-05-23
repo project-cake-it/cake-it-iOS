@@ -13,7 +13,7 @@ extension DesignListViewController: UICollectionViewDataSource {
     switch collectionView {
     case designsCollectionView:
       return cakeDesigns.count
-    case filterTitleCollectionView:
+    case filterHeaderCollectionView:
       return cakeFilterList.count
     default:
       return 0
@@ -31,10 +31,10 @@ extension DesignListViewController: UICollectionViewDataSource {
       cell.update(with: cakeDesign)
       return cell
     }
-    else if collectionView == filterTitleCollectionView {
-      let identifier = String(describing: FilterTitleCell.self)
+    else if collectionView == filterHeaderCollectionView {
+      let identifier = String(describing: FilterHeaderCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
-                                                    for: indexPath) as! FilterTitleCell
+                                                    for: indexPath) as! FilterHeaderCell
       cell.delegate = self
       cell.update(type: cakeFilterList[indexPath.row])
       return cell
@@ -55,16 +55,16 @@ extension DesignListViewController: UICollectionViewDataSource {
         present(desingDetailVC, animated: true, completion: nil)
       }
     }
-    else if collectionView == filterTitleCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterTitleCell {
+    else if collectionView == filterHeaderCollectionView {
+      if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
         cell.filterHightlighted = !cell.filterHightlighted
       }
     }
   }
   
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    if collectionView == filterTitleCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterTitleCell {
+    if collectionView == filterHeaderCollectionView {
+      if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
         cell.filterHightlighted = false
       }
     }

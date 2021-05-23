@@ -1,5 +1,5 @@
 //
-//  FilterTitleCell.swift
+//  FilterHeaderCell.swift
 //  cake-it
 //
 //  Created by seungbong on 2021/05/21.
@@ -7,18 +7,18 @@
 
 import UIKit
 
-protocol FilterTitleCellDelegate {
-  func filterTitleCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool)
+protocol FilterHeaderCellDelegate {
+  func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool)
 }
 
-final class FilterTitleCell: UICollectionViewCell {
+final class FilterHeaderCell: UICollectionViewCell {
   
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var arrowImageView: UIImageView!
   @IBOutlet weak var cellButton: UIButton!
   var testVal: String = ""
   
-  var delegate: FilterTitleCellDelegate?
+  var delegate: FilterHeaderCellDelegate?
   private var flterType: FilterCommon.FilterType = .reset
   var filterHightlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
     didSet {
@@ -34,7 +34,7 @@ final class FilterTitleCell: UICollectionViewCell {
       arrowImageView.isHighlighted = filterHightlighted
       
       if isSelected == true {
-        delegate?.filterTitleCellDidTap(type: flterType, isHighlighted: filterHightlighted)
+        delegate?.filterHeaderCellDidTap(type: flterType, isHighlighted: filterHightlighted)
       }
     }
   }
@@ -59,8 +59,8 @@ final class FilterTitleCell: UICollectionViewCell {
   func update(type: FilterCommon.FilterType) {
     flterType = type
     titleLabel.text = type.korTitle
-    arrowImageView.image = type.icon
-    arrowImageView.highlightedImage = type.highLightIcon
+    arrowImageView.image = FilterCommon.titleIcon(type: type)
+    arrowImageView.highlightedImage = FilterCommon.highlightedTitleIcon(type: type)
     self.clipsToBounds = false
     self.layer.borderWidth = 1
     self.layer.borderColor = Colors.grayscale03.cgColor
@@ -69,6 +69,5 @@ final class FilterTitleCell: UICollectionViewCell {
   
   @IBAction func cellDidTap(_ sender: Any) {
     filterHightlighted = !filterHightlighted
-    
   }
 }

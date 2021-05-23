@@ -7,8 +7,37 @@
 
 import UIKit
 
+// FilterManager의 역할이쥬?
 final class FilterCommon {
   
+  static func numberOfMemebers(type: FilterCommon.FilterType) -> Int {
+    switch type {
+    case .reset:    return 0
+    case .basic:    return FilterBasic.allCases.count
+    case .region:   return FilterRegion.allCases.count
+    case .size:     return FilterSize.allCases.count
+    case .color:    return FilterColor.allCases.count
+    case .category: return FilterCategory.allCases.count
+    }
+  }
+  
+  static func titleIcon(type: FilterType) -> UIImage {
+    switch type {
+    case .reset:  return UIImage(named: "icReset")!
+    default:      return UIImage(named: "chevronCompactDown")!
+    }
+  }
+  
+  static func highlightedTitleIcon(type: FilterType) -> UIImage {
+    switch type {
+    case .reset:  return UIImage(named: "icReset")!
+    default:      return UIImage(named: "icChevronCompactUp")!
+    }
+  }
+}
+
+// enum
+extension FilterCommon {
   enum FilterType: String, CaseIterable {
     case reset    = "reset"   // 초기화
     case basic    = "basic"   // 기본순
@@ -29,20 +58,6 @@ final class FilterCommon {
       case .size:     return "크기"
       case .color:    return "색깔"
       case .category: return "카테고리"
-      }
-    }
-    
-    var icon: UIImage {
-      switch self {
-      case .reset:  return UIImage(named: "icReset")!
-      default:      return UIImage(named: "chevronCompactDown")!
-      }
-    }
-    
-    var highLightIcon: UIImage {
-      switch self {
-      case .reset:  return UIImage(named: "icReset")!
-      default:      return UIImage(named: "icChevronCompactUp")!
       }
     }
   }

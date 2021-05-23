@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FilterColorCell" id="PNk-FS-ouX" customClass="FilterColorCell" customModule="cake_it" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNk-FS-ouX" id="2Wz-hp-PmW">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="38"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핑크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pek-9y-lUB">
+                        <rect key="frame" x="195" y="10.5" width="24.5" height="17"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kA-hq-EIH">
+                        <rect key="frame" x="171" y="12.5" width="13" height="13"/>
+                        <color key="backgroundColor" name="design_pink"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="HCj-Gs-78Y"/>
+                            <constraint firstAttribute="width" constant="13" id="avY-Et-QFh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Pek-9y-lUB" firstAttribute="leading" secondItem="5kA-hq-EIH" secondAttribute="trailing" constant="11" id="4Jn-rM-P3l"/>
+                    <constraint firstItem="5kA-hq-EIH" firstAttribute="centerY" secondItem="Pek-9y-lUB" secondAttribute="centerY" id="DV6-Bn-v2u"/>
+                    <constraint firstItem="Pek-9y-lUB" firstAttribute="centerY" secondItem="2Wz-hp-PmW" secondAttribute="centerY" id="dMJ-fF-EZc"/>
+                    <constraint firstItem="Pek-9y-lUB" firstAttribute="centerX" secondItem="2Wz-hp-PmW" secondAttribute="centerX" id="z7v-Lc-kY2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="colorLabel" destination="Pek-9y-lUB" id="vR9-bh-5XX"/>
+                <outlet property="colorView" destination="5kA-hq-EIH" id="j3g-Ax-jKn"/>
+            </connections>
+            <point key="canvasLocation" x="313" y="-281"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="design_pink">
+            <color red="0.98431372549019602" green="0.19215686274509805" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

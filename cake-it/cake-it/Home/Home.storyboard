@@ -180,7 +180,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rqE-aU-fdF">
-                                <rect key="frame" x="0.0" y="94" width="414" height="35"/>
+                                <rect key="frame" x="0.0" y="106" width="414" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="71L-7i-1U2"/>
@@ -203,15 +203,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5T6-5t-X6O" userLabel="FiltersView">
-                                <rect key="frame" x="0.0" y="94" width="414" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1xW-6V-pf8"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BOB-Bu-wpc">
-                                <rect key="frame" x="0.0" y="144" width="414" height="752"/>
+                                <rect key="frame" x="0.0" y="157" width="414" height="739"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="orl-5M-WJD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -236,23 +229,19 @@
                         <constraints>
                             <constraint firstItem="IcL-iK-duW" firstAttribute="trailing" secondItem="WG7-fn-5Ws" secondAttribute="trailing" id="3BE-n3-rbE"/>
                             <constraint firstItem="WG7-fn-5Ws" firstAttribute="trailing" secondItem="BOB-Bu-wpc" secondAttribute="trailing" id="57W-4V-FwQ"/>
-                            <constraint firstItem="WG7-fn-5Ws" firstAttribute="trailing" secondItem="5T6-5t-X6O" secondAttribute="trailing" id="9UC-qW-dxa"/>
-                            <constraint firstItem="BOB-Bu-wpc" firstAttribute="top" secondItem="5T6-5t-X6O" secondAttribute="bottom" id="AtZ-WV-ObC"/>
-                            <constraint firstItem="5T6-5t-X6O" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="BMj-Tc-48H"/>
                             <constraint firstAttribute="bottom" secondItem="BOB-Bu-wpc" secondAttribute="bottom" id="Cqf-Eq-1Mr"/>
+                            <constraint firstItem="BOB-Bu-wpc" firstAttribute="top" secondItem="rqE-aU-fdF" secondAttribute="bottom" constant="16" id="HVQ-ZW-MUe"/>
                             <constraint firstItem="rqE-aU-fdF" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="SzQ-cJ-yQb"/>
-                            <constraint firstItem="rqE-aU-fdF" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="bottom" id="XIv-VT-Thr"/>
+                            <constraint firstItem="rqE-aU-fdF" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="bottom" constant="12" id="XIv-VT-Thr"/>
                             <constraint firstItem="IcL-iK-duW" firstAttribute="top" secondItem="WG7-fn-5Ws" secondAttribute="top" id="XTe-1D-MyG"/>
                             <constraint firstItem="WG7-fn-5Ws" firstAttribute="trailing" secondItem="rqE-aU-fdF" secondAttribute="trailing" id="azz-nJ-OE1"/>
                             <constraint firstItem="BOB-Bu-wpc" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="bHi-zA-rqW"/>
-                            <constraint firstItem="5T6-5t-X6O" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="bottom" id="equ-BQ-e1h"/>
                             <constraint firstItem="IcL-iK-duW" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="obl-qs-Dos"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="designsCollectionView" destination="BOB-Bu-wpc" id="Ihi-OE-LQC"/>
-                        <outlet property="filterTitleCollectionView" destination="rqE-aU-fdF" id="ldg-75-Lut"/>
-                        <outlet property="filterViewArea" destination="5T6-5t-X6O" id="uJd-GB-TdP"/>
+                        <outlet property="filterHeaderCollectionView" destination="rqE-aU-fdF" id="ldg-75-Lut"/>
                         <outlet property="navigationBarTitleArrowIcon" destination="xdY-bA-and" id="qY9-1W-ddp"/>
                         <outlet property="navigationBarTitleLabel" destination="Vep-8G-tgO" id="ZiA-tj-ZUG"/>
                         <outlet property="navigationBarTitleTapGestureView" destination="jv3-QA-chs" id="39O-xG-eOQ"/>

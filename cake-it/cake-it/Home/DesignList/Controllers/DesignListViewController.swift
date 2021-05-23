@@ -19,15 +19,15 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var navigationBarTitleLabel: UILabel!
   @IBOutlet weak var navigationBarTitleTapGestureView: UIView!
   @IBOutlet weak var navigationBarTitleArrowIcon: UIImageView!
-  @IBOutlet weak var filterViewArea: UIView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
+  @IBOutlet weak var filterHeaderCollectionView: UICollectionView!
   
-  @IBOutlet weak var filterTitleCollectionView: UICollectionView!
-  private var filterDetailView = FilterDetailView()
+  
   private(set) var cakeDesigns: [CakeDesign] = []
-  
-  var selectedFilterDic: Dictionary<String, [String]> = [:]
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
+  private var filterDetailView: FilterDetailView?
+  private var selectedFilterDic: Dictionary<String, [String]> = [:]
+  
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,29 +61,29 @@ final class DesignListViewController: BaseViewController {
 
 extension DesignListViewController {
   private func configure() {
-    configureFilterTitleView()
+    configureFilterHeaderView()
     configureCollectionView()
     configureNavigationBarTapGesture()
   }
   
   // MARK:- configure filter title collectionView
-  private func configureFilterTitleView() {
-    configureFilterTitleCollectionView()
-    registerFilterTitleCollectionView()
+  private func configureFilterHeaderView() {
+    configureFilterHeaderCollectionView()
+    registerFilterHeaderCollectionView()
   }
   
-  private func configureFilterTitleCollectionView() {
+  private func configureFilterHeaderCollectionView() {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
-    filterTitleCollectionView.collectionViewLayout = flowLayout
-    filterTitleCollectionView.delegate = self
-    filterTitleCollectionView.dataSource = self
+    filterHeaderCollectionView.collectionViewLayout = flowLayout
+    filterHeaderCollectionView.delegate = self
+    filterHeaderCollectionView.dataSource = self
   }
   
-  private func registerFilterTitleCollectionView() {
-    let identifier = String(describing: FilterTitleCell.self)
+  private func registerFilterHeaderCollectionView() {
+    let identifier = String(describing: FilterHeaderCell.self)
     let nib = UINib(nibName: identifier, bundle: nil)
-    filterTitleCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    filterHeaderCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }
   
   // MARK:- configure cake design collectionView
@@ -110,64 +110,47 @@ extension DesignListViewController {
   }
 }
 
-extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDelegate {
-  
-  // filter 타이틀 클릭
-  func filterTitleButtonDidTap(type: FilterCommon.FilterType) {
-    removeFiterDetailView()
-    
+
+// FilterHeaderCell delegate
+extension DesignListViewController: FilterHeaderCellDelegate {
+  func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool) {
     if type == .reset {
       selectedFilterDic.removeAll()
       return
     }
-    
+
+    if isHighlighted == true { // Filter Title 선택
+      let isShowFilterDetailView = ((filterDetailView?.subviews.count ?? 0) == 0 ) ? false : true
+      if isShowFilterDetailView {
+        filterDetailView?.filterType = type
+        filterDetailView?.filterTableView.reloadData()
+      } else {
+        showFilterDetailView(type: type)
+      }
+    } else { // Filter Title 선택 해제
+      removeFilterDetailView()
+    }
+  }
+  
+  private func showFilterDetailView(type: FilterCommon.FilterType) {
     filterDetailView = FilterDetailView()
-    filterDetailView.filterType = type
-    filterDetailView.delegate = self
-    self.view.addSubview(filterDetailView)
-    filterDetailView.constraints(topAnchor: filterViewArea.bottomAnchor,
-                                 leadingAnchor: view.leadingAnchor,
-                                 bottomAnchor: view.bottomAnchor,
-                                 trailingAnchor: view.trailingAnchor)
-  }
-  
-  // filter detail view 클릭
-  func filterDetailViewDidTap(key: FilterCommon.FilterType, value: String) {
-    var savedValues = selectedFilterDic[key.title] ?? []
-    if selectedFilterDic.keys.contains(key.title) == true, savedValues.contains(value) {
-      let index = savedValues.firstIndex(of: value)!
-      savedValues.remove(at: index)  // 이미 선택된 경우 선택 취소
-    } else {
-      savedValues.append(value) // 없는 경우 추가
-    }
-    selectedFilterDic[key.title] = savedValues
-    print(selectedFilterDic) // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
-  }
-  
-  private func removeFiterDetailView() {
-    for view in filterDetailView.subviews {
-      view.removeFromSuperview()
-    }
-    filterDetailView.removeFromSuperview()
-  }
-  
-}
-
-
-// FilterTitleCell delegate
-extension DesignListViewController: FilterTitleCellDelegate {
-  func filterTitleCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool) {
-    if type == .reset {
-      selectedFilterDic.removeAll()
-      return
-    }
-    
-    if isHighlighted == true {
-      print("선택됨 >> \(type.korTitle)")
-    } else {
-      print("선택해제 >> \(type.korTitle)")
+    if let detailView = filterDetailView {
+      detailView.filterType = type
+      self.view.addSubview(detailView)
+      detailView.constraints(topAnchor: filterHeaderCollectionView.bottomAnchor,
+                             leadingAnchor: self.view.leadingAnchor,
+                             bottomAnchor: self.view.bottomAnchor,
+                             trailingAnchor: self.view.trailingAnchor,
+                             padding: UIEdgeInsets(top: 7, left: 0, bottom: 0, right: 0))
     }
   }
   
+  private func removeFilterDetailView() {
+    if let detailView = filterDetailView {
+      for subView in detailView.subviews {
+        subView.removeFromSuperview()
+      }
+    }
+  }
   
 }
