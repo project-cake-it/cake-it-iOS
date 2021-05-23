@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SpoqaHanSansNeo-Regular.otf">
-            <string>SpoqaHanSansNeo-Regular</string>
+        <array key="SpoqaHanSansNeo-Medium.otf">
+            <string>SpoqaHanSansNeo-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -19,10 +19,19 @@
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FilterTitleCell" id="wBT-hl-pIE" customClass="FilterTitleCell" customModule="cake_it" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2ej-ud-UgR" customClass="FilterTitleCell" customModule="cake_it" customModuleProvider="target">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2ej-ud-UgR" customClass="FilterTitleCell" customModule="cake_it" customModuleProvider="target">
                 <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcg-ze-R80">
+                        <rect key="frame" x="16" y="8" width="24" height="19"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="19" id="8UR-qn-hcM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevronCompactDown" highlightedImage="icChevronCompactUp" translatesAutoresizingMaskIntoConstraints="NO" id="qiQ-em-dwP">
                         <rect key="frame" x="40" y="7.5" width="20" height="20"/>
                         <color key="tintColor" name="black"/>
@@ -31,38 +40,29 @@
                             <constraint firstAttribute="width" constant="20" id="WlD-RF-xjH"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzN-fH-YEO">
+                    <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5x-Qo-c22">
                         <rect key="frame" x="0.0" y="0.0" width="70" height="35"/>
                         <connections>
-                            <action selector="cellDidTap:" destination="wBT-hl-pIE" eventType="touchUpInside" id="uk3-rh-ZAB"/>
+                            <action selector="cellDidTap:" destination="wBT-hl-pIE" eventType="touchUpInside" id="bO9-yI-r4p"/>
                         </connections>
                     </button>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcg-ze-R80">
-                        <rect key="frame" x="16" y="8" width="24" height="19"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="19" id="8UR-qn-hcM"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="u5x-Qo-c22" secondAttribute="bottom" id="0N3-oW-aKA"/>
+                    <constraint firstAttribute="trailing" secondItem="u5x-Qo-c22" secondAttribute="trailing" id="1j9-lo-dxc"/>
                     <constraint firstItem="qiQ-em-dwP" firstAttribute="centerY" secondItem="Xcg-ze-R80" secondAttribute="centerY" id="36m-Yh-adF"/>
                     <constraint firstItem="Xcg-ze-R80" firstAttribute="leading" secondItem="2ej-ud-UgR" secondAttribute="leading" constant="16" id="3Mi-8v-2Ug"/>
                     <constraint firstItem="Xcg-ze-R80" firstAttribute="centerY" secondItem="2ej-ud-UgR" secondAttribute="centerY" id="8Zq-pb-EFo"/>
+                    <constraint firstItem="u5x-Qo-c22" firstAttribute="leading" secondItem="2ej-ud-UgR" secondAttribute="leading" id="9yl-Ke-mCq"/>
                     <constraint firstItem="qiQ-em-dwP" firstAttribute="leading" secondItem="Xcg-ze-R80" secondAttribute="trailing" id="Dhy-mF-qxF"/>
-                    <constraint firstItem="qzN-fH-YEO" firstAttribute="leading" secondItem="2ej-ud-UgR" secondAttribute="leading" id="EBg-AV-7Xe"/>
-                    <constraint firstAttribute="bottom" secondItem="qzN-fH-YEO" secondAttribute="bottom" id="JZy-0z-4SZ"/>
-                    <constraint firstItem="qzN-fH-YEO" firstAttribute="top" secondItem="2ej-ud-UgR" secondAttribute="top" id="LJb-eE-9cU"/>
-                    <constraint firstAttribute="trailing" secondItem="qzN-fH-YEO" secondAttribute="trailing" id="xdd-To-DuV"/>
+                    <constraint firstItem="u5x-Qo-c22" firstAttribute="top" secondItem="2ej-ud-UgR" secondAttribute="top" id="OqW-Po-SK0"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="166" height="62"/>
             <connections>
                 <outlet property="arrowImageView" destination="qiQ-em-dwP" id="yVK-XU-uAp"/>
-                <outlet property="cellButton" destination="qzN-fH-YEO" id="3yr-c8-1WC"/>
+                <outlet property="cellButton" destination="u5x-Qo-c22" id="0nc-yi-v4s"/>
                 <outlet property="titleLabel" destination="Xcg-ze-R80" id="Uqk-2R-Shv"/>
             </connections>
             <point key="canvasLocation" x="224.63768115942031" y="-82.700892857142847"/>

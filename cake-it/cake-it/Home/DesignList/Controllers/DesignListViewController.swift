@@ -152,3 +152,22 @@ extension DesignListViewController: FilterTitleViewDelegate, FilterDetailViewDel
   }
   
 }
+
+
+// FilterTitleCell delegate
+extension DesignListViewController: FilterTitleCellDelegate {
+  func filterTitleCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool) {
+    if type == .reset {
+      selectedFilterDic.removeAll()
+      return
+    }
+    
+    if isHighlighted == true {
+      print("선택됨 >> \(type.korTitle)")
+    } else {
+      print("선택해제 >> \(type.korTitle)")
+    }
+  }
+  
+  
+}
