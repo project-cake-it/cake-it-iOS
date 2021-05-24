@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		38D8C6FA25BC622500C1F10D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C6F925BC622500C1F10D /* AppDelegate.swift */; };
-		38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C6FB25BC622500C1F10D /* SceneDelegate.swift */; };
 		38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C6FD25BC622500C1F10D /* HomeViewController.swift */; };
 		38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */; };
 		38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C70225BC622700C1F10D /* Assets.xcassets */; };
@@ -135,7 +134,6 @@
 /* Begin PBXFileReference section */
 		38D8C6F625BC622500C1F10D /* cake-it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cake-it.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D8C6F925BC622500C1F10D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38D8C6FB25BC622500C1F10D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		38D8C6FD25BC622500C1F10D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		38D8C70025BC622500C1F10D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tabbar.storyboard; sourceTree = "<group>"; };
 		38D8C70225BC622700C1F10D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -442,7 +440,6 @@
 				38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */,
 				38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */,
 				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
-				38D8C6FB25BC622500C1F10D /* SceneDelegate.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1122,7 +1119,6 @@
 				8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
 				AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */,
-				38D8C6FC25BC622500C1F10D /* SceneDelegate.swift in Sources */,
 				AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F73B6D182635AEC50043CF89 /* DescriptionFilterItemView.swift in Sources */,
@@ -1328,7 +1324,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 265H8P3B42;
 				INFOPLIST_FILE = "cake-it/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1349,7 +1345,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 265H8P3B42;
 				INFOPLIST_FILE = "cake-it/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

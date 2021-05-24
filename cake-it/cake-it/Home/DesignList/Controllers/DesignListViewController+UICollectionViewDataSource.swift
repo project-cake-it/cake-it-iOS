@@ -25,9 +25,9 @@ extension DesignListViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let id = String(describing: DesignDetailViewController.self)
-    if let desingDetailVC = storyboard?.instantiateViewController(identifier: id) {
-      desingDetailVC.modalPresentationStyle = .fullScreen
-      present(desingDetailVC, animated: true, completion: nil)
+    if let designDetailVC = storyboard?.instantiateViewController(withIdentifier: id) {
+        designDetailVC.modalPresentationStyle = .fullScreen
+        present(designDetailVC, animated: true, completion: nil)
     }
   }
 }
