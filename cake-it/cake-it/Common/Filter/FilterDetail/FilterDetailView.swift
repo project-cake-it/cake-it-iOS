@@ -88,82 +88,50 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterBasic.allCases[indexPath.row]
+        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
         cell.update(title: filterInfo.title)
+        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
-        
-        // selected 테스트
-        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
-          cell.isCellSelected = true
-        } else {
-          cell.isCellSelected = false
-        }
-        // selected 테스트
         return cell
       }
     case .region:
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterRegion.allCases[indexPath.row]
+        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
         cell.update(title: filterInfo.title)
+        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
-        
-        // selected 테스트
-        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
-          cell.isCellSelected = true
-        } else {
-          cell.isCellSelected = false
-        }
-        // selected 테스트
         return cell
       }
     case .category:
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterCategory.allCases[indexPath.row]
+        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
         cell.update(title: filterInfo.title)
+        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
-        
-        // selected 테스트
-        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
-          cell.isCellSelected = true
-        } else {
-          cell.isCellSelected = false
-        }
-        // selected 테스트
         return cell
       }
     case .size:
       let identifier = String(describing: FilterDescriptionCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterDescriptionCell {
-        let filterInfo = FilterCommon.FilterSize.allCases[indexPath.row] 
+        let filterInfo = FilterCommon.FilterSize.allCases[indexPath.row]
+        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
         cell.update(title: filterInfo.title, description: filterInfo.description)
+        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
-        
-        // selected 테스트
-        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
-          cell.isCellSelected = true
-        } else {
-          cell.isCellSelected = false
-        }
-        // selected 테스트
-        
         return cell
       }
     case .color:
       let identifier = String(describing: FilterColorCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterColorCell {
         let filterInfo = FilterCommon.FilterColor.allCases[indexPath.row]
+        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
         cell.update(title: filterInfo.title, color: filterInfo.color)
+        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
-        
-        // selected 테스트
-        if (selectedFilterDic[filterType.title]?.contains(filterInfo.title)) != nil {
-          cell.isCellSelected = true
-        } else {
-          cell.isCellSelected = false
-        }
-        // selected 테스트
-        
         return cell
       }
     default:

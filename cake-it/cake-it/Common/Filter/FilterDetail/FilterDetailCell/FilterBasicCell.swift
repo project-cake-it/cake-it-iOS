@@ -24,6 +24,7 @@ class FilterBasicCell: UITableViewCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
+    isCellSelected = false
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {

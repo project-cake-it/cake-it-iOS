@@ -14,15 +14,13 @@ extension DesignListViewController: FilterHeaderCellDelegate {
       return
     }
 
-    if isHighlighted == true { // Filter Title 선택
-      let isShowFilterDetailView = ((filterDetailView?.subviews.count ?? 0) == 0 ) ? false : true
-      if isShowFilterDetailView {
-        filterDetailView?.filterType = type
-        filterDetailView?.filterTableView.reloadData()
+    if isHighlighted { // Filter Title 선택
+      if isShowDetailView() {
+        updateFilterDetailView(type: type)
       } else {
         showFilterDetailView(type: type)
       }
-    } else { // Filter Title 선택 해제
+    } else {  // Filter Title 선택 해제
       removeFilterDetailView()
     }
   }
@@ -30,7 +28,9 @@ extension DesignListViewController: FilterHeaderCellDelegate {
   private func resetFilter() {
     selectedFilterDic.removeAll()
     filterHeaderCollectionView.reloadData()
-    filterDetailView?.filterTableView.reloadData()
+    if isShowDetailView() {
+      filterDetailView?.filterTableView.reloadData()
+    }
   }
   
   private func showFilterDetailView(type: FilterCommon.FilterType) {
@@ -48,12 +48,23 @@ extension DesignListViewController: FilterHeaderCellDelegate {
     }
   }
   
+  private func updateFilterDetailView(type: FilterCommon.FilterType) {
+    if let detailView = filterDetailView {
+      detailView.filterType = type
+      detailView.filterTableView.reloadData()
+    }
+  }
+  
   private func removeFilterDetailView() {
     if let detailView = filterDetailView {
       for subView in detailView.subviews {
         subView.removeFromSuperview()
       }
     }
+  }
+  
+  private func isShowDetailView() -> Bool {
+    return filterDetailView != nil && filterDetailView?.subviews.count ?? 0 > 0
   }
 }
 

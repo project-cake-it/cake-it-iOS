@@ -24,12 +24,17 @@ class FilterDescriptionCell: UITableViewCell {
     // Initialization code
   }
   
+  override func prepareForReuse() {
+    isCellSelected = false
+  }
+  
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
     if isSelected == true {
       isCellSelected = !isCellSelected
     }
   }
+  
 
   func update(title: String, description: String) {
     titleLabel.text = title
