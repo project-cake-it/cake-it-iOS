@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class LoginModel: BaseModel {
+struct LoginModel: Encodable {
   
   let accessToken: String
   let socialType: String
