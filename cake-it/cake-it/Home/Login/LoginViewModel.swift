@@ -45,6 +45,7 @@ final class LoginViewModel: BaseViewModel {
     
     UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
       self.processKakaoLoginRespone(oauthToken: oauthToken, error: error)
+      return
     }
   }
   
@@ -81,19 +82,9 @@ final class LoginViewModel: BaseViewModel {
     
     NetworkManager.shared.requestPost(api: .login,
                                       type: LoginModel.Response.self,
-                                      param: model) { (response) in
+                                      param: model) { (result) in
       
-      //TODO: 무조건 성공 login success test
-      guard LoginManager.shared.saveAccessToken(accessToken: "~~~~~~~testToken~~~~~~`") else {
-        self.completionHandler?(false)
-        return
-      }
-      
-      self.completionHandler?(true)
-      return
-      // login success test
-      
-      switch response {
+      switch result {
       case .success(let result):
         let token = result.accessToken
         

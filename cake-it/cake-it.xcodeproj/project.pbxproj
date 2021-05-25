@@ -67,6 +67,7 @@
 		AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */; };
 		AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */; };
 		AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */; };
+		AC0B8FF3265C07F4009016A9 /* LoginTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FF2265C07F4009016A9 /* LoginTestModel.swift */; };
 		AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDC83260756DF0026F5FA /* LoginModel.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
@@ -96,7 +97,6 @@
 		F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */; };
 		F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F774B92225E0E0BF006EE0EC /* Nickname.storyboard */; };
 		F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92525E0E0BF006EE0EC /* LoginTestViewModel.swift */; };
-		F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92725E0E0BF006EE0EC /* LoginTestModel.swift */; };
 		F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92925E0E0BF006EE0EC /* LoginTestViewController.swift */; };
 		F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F774B92A25E0E0BF006EE0EC /* LoginTest.storyboard */; };
 		F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B92C25E0E0BF006EE0EC /* NetworkManager.swift */; };
@@ -200,6 +200,7 @@
 		AC0B8FE3264669A2009016A9 /* ListBoardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListBoardCell.swift; sourceTree = "<group>"; };
 		AC0B8FE526467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBoardViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBoardViewController+UITableViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
+		AC0B8FF2265C07F4009016A9 /* LoginTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestModel.swift; sourceTree = "<group>"; };
 		AC1BDC83260756DF0026F5FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -233,7 +234,6 @@
 		F774B92125E0E0BF006EE0EC /* NicknameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
 		F774B92225E0E0BF006EE0EC /* Nickname.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Nickname.storyboard; sourceTree = "<group>"; };
 		F774B92525E0E0BF006EE0EC /* LoginTestViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestViewModel.swift; sourceTree = "<group>"; };
-		F774B92725E0E0BF006EE0EC /* LoginTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestModel.swift; sourceTree = "<group>"; };
 		F774B92925E0E0BF006EE0EC /* LoginTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestViewController.swift; sourceTree = "<group>"; };
 		F774B92A25E0E0BF006EE0EC /* LoginTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LoginTest.storyboard; sourceTree = "<group>"; };
 		F774B92C25E0E0BF006EE0EC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -710,7 +710,7 @@
 		F774B92625E0E0BF006EE0EC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F774B92725E0E0BF006EE0EC /* LoginTestModel.swift */,
+				AC0B8FF2265C07F4009016A9 /* LoginTestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1071,9 +1071,9 @@
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
 				8B1DFDE626484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
+				AC0B8FF3265C07F4009016A9 /* LoginTestModel.swift in Sources */,
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
 				AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */,
-				F774B93325E0E0BF006EE0EC /* LoginTestModel.swift in Sources */,
 				8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */,
 				AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,

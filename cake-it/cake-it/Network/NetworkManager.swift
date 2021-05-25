@@ -33,17 +33,16 @@ final class NetworkManager {
     self.request(request: request, type: T.self, completion: completion)
   }
   
-  func requestPost<T: Decodable>(api: NetworkCommon.API,
+  func requestPost<T: Decodable, U: Encodable>(api: NetworkCommon.API,
                                  type: T.Type,
-                                 param: BaseModel? = nil,
+                                 param: U? = nil,
                                  completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: api.urlString) else { return }
-    let headers: HTTPHeaders = ["Content-Type":"application/json", "Accept":"application/json"]
+    
     let request = AF.request(url,
                              method: .post,
                              parameters: param,
-                             encoder: JSONParameterEncoder.default,
-                             headers: headers)
+                             encoder: JSONParameterEncoder.default)
     self.request(request: request, type: T.self, completion: completion)
   }
   

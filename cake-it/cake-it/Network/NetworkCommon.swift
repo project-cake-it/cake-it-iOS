@@ -20,7 +20,7 @@ class NetworkCommon {
   enum API: String {
     case login = "login"
     case randomNikname = "/nickname"
-    case uploadPhoto = "/test/post"
+    case uploadPhoto = "test/post"
     
     var urlString: String {
       return BASE_URL + self.rawValue
