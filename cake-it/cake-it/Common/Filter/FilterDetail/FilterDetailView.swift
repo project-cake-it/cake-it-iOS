@@ -8,17 +8,22 @@
 import UIKit
 
 protocol FilterDetailViewDelegate: class {
-  func filterDetailCellDidTap(key: FilterCommon.FilterType, value: String)
+  func filterDetailCellDidTap(key: FilterCommon.FilterType, values: [String])
   func resetFilterView()
 }
 
 final class FilterDetailView: UIView {
 
+  enum Metric {
+    static let headerCellHeight: CGFloat = 38.0
+    static let footerCellHeight: CGFloat = 22.0
+  }
+  
   @IBOutlet weak var backgroundView: UIView!
   @IBOutlet weak var filterTableView: UITableView!
   
   weak var delegate: FilterDetailViewDelegate?
-  var selectedFilterDic: [String: [String]] = [:]
+  var selectedList: [String] = [] // 해당 filterType에 선택된 필터 리스트
   var filterType: FilterCommon.FilterType = .reset {
     didSet {
       registerTableViewCell()
@@ -50,8 +55,10 @@ final class FilterDetailView: UIView {
   private func configureView() {
     filterTableView.delegate = self
     filterTableView.dataSource = self
+    filterTableView.round(cornerRadius: 10,
+                          maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
     
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapGesture))
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTap))
     backgroundView.addGestureRecognizer(tapGesture)
   }
   
@@ -73,15 +80,58 @@ final class FilterDetailView: UIView {
     }
   }
   
-  @objc private func didTapGesture() {
+  @objc private func backgroundDidTap() {
     delegate?.resetFilterView()
     self.removeFromSuperview()
+  }
+  
+  private func updateSelectedList(selectedIndex: Int = 0,
+                                  isAllSelected: Bool = false,
+                                  isAllDeselected: Bool = false) {
+    if isAllSelected {
+      selectedList.removeAll()
+      let allValues = FilterCommon.allValuesOfCase(type: filterType)
+      for value in allValues {
+        selectedList.append(value)
+      }
+    } else if isAllDeselected {
+      selectedList.removeAll()
+    } else {
+      let value = selectedFilterTitle(index: selectedIndex)
+      if selectedList.contains(value) {
+        // 이미 존재하는 값일 경우에는 선택 취소
+        let index = selectedList.firstIndex(of: value)!
+        selectedList.remove(at: index)
+      } else {
+        // 단일선택인 경우 기존 리스트 값 제거 후 해당 필터만 추가
+        if filterType.enableMuliSelection == false {
+          selectedList.removeAll()
+        }
+        selectedList.append(value)
+      }
+    }
+    
+    delegate?.filterDetailCellDidTap(key: filterType, values: selectedList)
+    
+    filterTableView.reloadData()
+  }
+  
+  private func selectedFilterTitle( index: Int) -> String {
+    switch filterType {
+    case .basic:    return FilterCommon.FilterBasic.allCases[index].title
+    case .region:   return FilterCommon.FilterRegion.allCases[index].title
+    case .size:     return FilterCommon.FilterSize.allCases[index].title
+    case .color:    return FilterCommon.FilterColor.allCases[index].title
+    case .category: return FilterCommon.FilterCategory.allCases[index].title
+    case .reset:    return ""
+    }
   }
 }
 
 extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
+
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return FilterCommon.numberOfMemebers(type: filterType)
+    return FilterCommon.numberOfCase(type: filterType)
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,9 +140,8 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterBasic.allCases[indexPath.row]
-        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
+        cell.isCellSelected = selectedList.contains(filterInfo.title)
         cell.update(title: filterInfo.title)
-        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
         return cell
       }
@@ -100,9 +149,8 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterRegion.allCases[indexPath.row]
-        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
+        cell.isCellSelected = selectedList.contains(filterInfo.title)
         cell.update(title: filterInfo.title)
-        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
         return cell
       }
@@ -110,9 +158,8 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterCategory.allCases[indexPath.row]
-        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
+        cell.isCellSelected = selectedList.contains(filterInfo.title)
         cell.update(title: filterInfo.title)
-        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
         return cell
       }
@@ -120,9 +167,8 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       let identifier = String(describing: FilterDescriptionCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterDescriptionCell {
         let filterInfo = FilterCommon.FilterSize.allCases[indexPath.row]
-        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
+        cell.isCellSelected = selectedList.contains(filterInfo.title)
         cell.update(title: filterInfo.title, description: filterInfo.description)
-        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
         return cell
       }
@@ -130,36 +176,59 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
       let identifier = String(describing: FilterColorCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterColorCell {
         let filterInfo = FilterCommon.FilterColor.allCases[indexPath.row]
-        let isCellSelected = selectedFilterDic[filterType.title]?.contains(filterInfo.title) ?? false
+        cell.isCellSelected = selectedList.contains(filterInfo.title)
         cell.update(title: filterInfo.title, color: filterInfo.color)
-        cell.isCellSelected = isCellSelected
         cell.selectionStyle = .none
         return cell
       }
     default:
       break
     }
-    return FilterBasicCell()
+    
+    return UITableViewCell()
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-    var value: String = ""
-    switch filterType {
-    case .basic:
-      value = FilterCommon.FilterBasic.allCases[indexPath.row].title
-    case .region:
-      value = FilterCommon.FilterRegion.allCases[indexPath.row].title
-    case .size:
-      value = FilterCommon.FilterSize.allCases[indexPath.row].title
-    case .color:
-      value = FilterCommon.FilterColor.allCases[indexPath.row].title
-    case .category:
-      value = FilterCommon.FilterCategory.allCases[indexPath.row].title
-    case .reset:
-      break
+    updateSelectedList(selectedIndex: indexPath.row)
+  }
+  
+  func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    if filterType.enableMuliSelection == true {
+      let headerCell = FilterDetailViewHeaderCell()
+      if selectedList.count == FilterCommon.numberOfCase(type: filterType) {
+        headerCell.isCellSelected = true
+      }
+      headerCell.delegate = self
+      return headerCell
     }
-    
-    delegate?.filterDetailCellDidTap(key: filterType, value: value)
+    return nil
+  }
+  
+  func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    let footerView = UIView()
+    footerView.backgroundColor = Colors.grayscale01
+    return footerView
+  }
+  
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    if filterType.enableMuliSelection == true {
+      return Metric.headerCellHeight
+    }
+    return 0
+  }
+  
+  func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    return Metric.footerCellHeight
+  }
+}
+
+extension FilterDetailView: FilterDetailViewHeaderCellDelegate {
+  // 전체 선택 처리
+  func headerCellDidTap(isSelected: Bool) {
+    if isSelected {
+      updateSelectedList(isAllSelected: true)
+    } else {
+      updateSelectedList(isAllDeselected: true)
+    }
   }
 }

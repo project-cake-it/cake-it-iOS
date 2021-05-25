@@ -10,7 +10,7 @@ import UIKit
 // FilterManager의 역할이쥬?
 final class FilterCommon {
   
-  static func numberOfMemebers(type: FilterCommon.FilterType) -> Int {
+  static func numberOfCase(type: FilterCommon.FilterType) -> Int {
     switch type {
     case .reset:    return 0
     case .basic:    return FilterBasic.allCases.count
@@ -18,6 +18,17 @@ final class FilterCommon {
     case .size:     return FilterSize.allCases.count
     case .color:    return FilterColor.allCases.count
     case .category: return FilterCategory.allCases.count
+    }
+  }
+  
+  static func allValuesOfCase(type: FilterCommon.FilterType) -> [String] {
+    switch type {
+    case .reset:    return []
+    case .basic:    return FilterBasic.allCases.map { $0.rawValue }
+    case .region:   return FilterRegion.allCases.map { $0.rawValue }
+    case .size:     return FilterSize.allCases.map { $0.rawValue }
+    case .color:    return FilterColor.allCases.map { $0.rawValue }
+    case .category: return FilterCategory.allCases.map { $0.rawValue }
     }
   }
 }
@@ -44,6 +55,17 @@ extension FilterCommon {
       case .size:     return "크기"
       case .color:    return "색깔"
       case .category: return "카테고리"
+      }
+    }
+    
+    var enableMuliSelection: Bool {
+      switch self {
+      case .reset:    return false
+      case .basic:    return false
+      case .region:   return true
+      case .size:     return true
+      case .color:    return true
+      case .category: return true
       }
     }
   }

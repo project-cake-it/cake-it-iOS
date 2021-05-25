@@ -50,10 +50,7 @@ extension DesignListViewController: UICollectionViewDataSource {
       return cell
     }
     else {
-      let identifier = "EmptyCell"
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
-                                                    for: indexPath)
-      return cell
+      return UICollectionViewCell()
     }
   }
   

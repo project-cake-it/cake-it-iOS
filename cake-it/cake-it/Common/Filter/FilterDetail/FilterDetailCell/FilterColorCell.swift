@@ -7,29 +7,27 @@
 
 import UIKit
 
-class FilterColorCell: UITableViewCell {
+class FilterColorCell: BaseFilterCell {
 
   @IBOutlet weak var colorLabel: UILabel!
   @IBOutlet weak var colorView: UIView!
   @IBOutlet weak var checkImageView: UIImageView!
   
-  var isCellSelected: Bool = false {
+  override var isCellSelected: Bool {
     didSet {
       checkImageView.isHidden = !isCellSelected
     }
   }
   
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    initUI()
-  }
-  
-  private func initUI() {
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    
     colorView.layer.cornerRadius = colorView.frame.width/2
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
+    
     if isSelected == true {
       isCellSelected = !isCellSelected
     }
