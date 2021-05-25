@@ -15,7 +15,7 @@ protocol FilterDetailViewDelegate: class {
 final class FilterDetailView: UIView {
 
   enum Metric {
-    static let tagbleViewDefaultHeight: CGFloat = 300.0
+    static let tagbleViewDefaultHeight: CGFloat = 400.0
     static let headerCellHeight: CGFloat = 38.0
     static let footerCellHeight: CGFloat = 22.0
     static let defaultTableCellHight: CGFloat = 38.0
@@ -252,7 +252,7 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    if type(of: tableView.cellForRow(at: indexPath)) == FilterDescriptionCell.self {
+    if filterType == .size {
       return Metric.largeTableCellHight
     } else {
       return Metric.defaultTableCellHight

@@ -7,7 +7,6 @@
 
 import UIKit
 
-// FilterManager의 역할이쥬?
 final class FilterCommon {
   
   static func numberOfCase(type: FilterCommon.FilterType) -> Int {
