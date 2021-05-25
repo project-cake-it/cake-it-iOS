@@ -37,9 +37,10 @@ extension DesignListViewController: FilterDetailViewDelegate {
     filterHeaderCollectionView.reloadData()
     print("🏃🏻‍♂️ seledted: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
-  
-  func resetFilterView() {
-    resetFilter()
+
+  func backgroundViewDidTap() {
+    hightlightedFilterType = .reset
+    filterHeaderCollectionView.reloadData()
   }
 }
 

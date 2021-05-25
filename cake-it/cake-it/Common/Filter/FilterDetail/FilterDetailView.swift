@@ -9,7 +9,7 @@ import UIKit
 
 protocol FilterDetailViewDelegate: class {
   func filterDetailCellDidTap(key: FilterCommon.FilterType, values: [String])
-  func resetFilterView()
+  func backgroundViewDidTap()
 }
 
 final class FilterDetailView: UIView {
@@ -58,7 +58,7 @@ final class FilterDetailView: UIView {
     filterTableView.round(cornerRadius: 10,
                           maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
     
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundDidTap))
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
     backgroundView.addGestureRecognizer(tapGesture)
   }
   
@@ -80,8 +80,12 @@ final class FilterDetailView: UIView {
     }
   }
   
-  @objc private func backgroundDidTap() {
-    delegate?.resetFilterView()
+  @objc private func backgroundViewDidTap() {
+    delegate?.backgroundViewDidTap()
+    
+    for subView in self.subviews {
+      subView.removeFromSuperview()
+    }
     self.removeFromSuperview()
   }
   
