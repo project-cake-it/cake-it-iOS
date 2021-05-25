@@ -20,20 +20,6 @@ final class FilterCommon {
     case .category: return FilterCategory.allCases.count
     }
   }
-  
-  static func headerIcon(type: FilterType) -> UIImage {
-    switch type {
-    case .reset:  return UIImage(named: "icReset")!
-    default:      return UIImage(named: "chevronCompactDown")!
-    }
-  }
-  
-  static func highlightedHeaderIcon(type: FilterType) -> UIImage {
-    switch type {
-    case .reset:  return UIImage(named: "icReset")!
-    default:      return UIImage(named: "icChevronCompactUp")!
-    }
-  }
 }
 
 // enum

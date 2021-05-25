@@ -20,7 +20,7 @@ final class FilterHeaderCell: UICollectionViewCell {
   private(set) var filterType: FilterCommon.FilterType = .reset
   var isFilterHightlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
     didSet {
-      changeViewColor()
+      updateColorAndImage()
       
       if isSelected == true {
         delegate?.filterHeaderCellDidTap(type: filterType, isHighlightedCell: isFilterHightlighted)
@@ -29,7 +29,7 @@ final class FilterHeaderCell: UICollectionViewCell {
   }
   var isFilterSelected: Bool = false {     // 필터 옵션이 지정된 상태
     didSet {
-      changeViewColor()
+      updateColorAndImage()
     }
   }
   
@@ -46,35 +46,42 @@ final class FilterHeaderCell: UICollectionViewCell {
     isFilterSelected = isSelected
     
     titleLabel.text = type.korTitle
-    arrowImageView.image = FilterCommon.headerIcon(type: type)
     self.clipsToBounds = false
     self.layer.borderWidth = 1
     self.layer.cornerRadius = self.frame.height/2
     
-    changeViewColor()
+    updateColorAndImage()
   }
   
-  private func changeViewColor() {
-    if isFilterHightlighted == true && isFilterSelected == true { // (T,T)
-      self.backgroundColor = Colors.pointB
-      self.layer.borderColor = Colors.pointB.cgColor
-      titleLabel.textColor = Colors.white
-      arrowImageView.image = UIImage(named: "chevronCompactUpWhite")
-    } else if isFilterHightlighted == true && isFilterSelected == false {  // (T,F)
-      self.backgroundColor = Colors.white
-      self.layer.borderColor = Colors.pointB.cgColor
-      titleLabel.textColor = Colors.pointB
-      arrowImageView.image = UIImage(named: "chevronCompactUp")
-    } else if isFilterHightlighted == false && isFilterSelected == true {  // (F,T)
-      self.backgroundColor = Colors.pointB
-      self.layer.borderColor = Colors.pointB.cgColor
-      titleLabel.textColor = Colors.white
-      arrowImageView.image = UIImage(named: "chevronCompactDownWhite")
-    } else { // (F,F)
+  private func updateColorAndImage() {
+    if filterType == .reset {
       self.backgroundColor = Colors.white
       self.layer.borderColor = Colors.grayscale03.cgColor
       titleLabel.textColor = Colors.black
+      arrowImageView.image = UIImage(named: "icReset")
+      return
+    }
+    
+    if isFilterHightlighted == true && isFilterSelected == true { // (T,T)
+      arrowImageView.image = UIImage(named: "chevronCompactUpWhite")
+      titleLabel.textColor = Colors.white
+      self.layer.borderColor = Colors.pointB.cgColor
+      self.backgroundColor = Colors.pointB
+    } else if isFilterHightlighted == true && isFilterSelected == false {  // (T,F)
+      arrowImageView.image = UIImage(named: "chevronCompactUp")
+      titleLabel.textColor = Colors.pointB
+      self.layer.borderColor = Colors.pointB.cgColor
+      self.backgroundColor = Colors.white
+    } else if isFilterHightlighted == false && isFilterSelected == true {  // (F,T)
+      arrowImageView.image = UIImage(named: "chevronCompactDownWhite")
+      titleLabel.textColor = Colors.white
+      self.layer.borderColor = Colors.pointB.cgColor
+      self.backgroundColor = Colors.pointB
+    } else { // (F,F)
       arrowImageView.image = UIImage(named: "chevronCompactDown")
+      titleLabel.textColor = Colors.black
+      self.layer.borderColor = Colors.grayscale03.cgColor
+      self.backgroundColor = Colors.white
     }
   }
 }
