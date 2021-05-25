@@ -21,14 +21,14 @@ final class FilterCommon {
     }
   }
   
-  static func titleIcon(type: FilterType) -> UIImage {
+  static func headerIcon(type: FilterType) -> UIImage {
     switch type {
     case .reset:  return UIImage(named: "icReset")!
     default:      return UIImage(named: "chevronCompactDown")!
     }
   }
   
-  static func highlightedTitleIcon(type: FilterType) -> UIImage {
+  static func highlightedHeaderIcon(type: FilterType) -> UIImage {
     switch type {
     case .reset:  return UIImage(named: "icReset")!
     default:      return UIImage(named: "icChevronCompactUp")!

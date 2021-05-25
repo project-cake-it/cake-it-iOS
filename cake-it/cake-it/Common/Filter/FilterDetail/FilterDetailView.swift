@@ -9,6 +9,7 @@ import UIKit
 
 protocol FilterDetailViewDelegate: class {
   func filterDetailCellDidTap(key: FilterCommon.FilterType, value: String)
+  func resetFilterView()
 }
 
 final class FilterDetailView: UIView {
@@ -73,6 +74,7 @@ final class FilterDetailView: UIView {
   }
   
   @objc private func didTapGesture() {
+    delegate?.resetFilterView()
     self.removeFromSuperview()
   }
 }

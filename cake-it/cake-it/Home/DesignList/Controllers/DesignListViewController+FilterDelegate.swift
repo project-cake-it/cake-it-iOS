@@ -7,16 +7,18 @@
 
 import UIKit
 
+// MARK:- FilterHeaderCell Delegate Method
 extension DesignListViewController: FilterHeaderCellDelegate {
-  func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlighted: Bool) {
+  
+  func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
       return
     }
-
-    if isHighlighted { // Filter Title 선택
+    
+    if isHighlightedCell { // Filter Title 선택
       if isShowDetailView() {
-        updateFilterDetailView(type: type)
+        updateFilter(type: type)
       } else {
         showFilterDetailView(type: type)
       }
@@ -24,12 +26,60 @@ extension DesignListViewController: FilterHeaderCellDelegate {
       removeFilterDetailView()
     }
   }
+}
+
+// MARK:- FilterDetailView Delegate Method
+extension DesignListViewController: FilterDetailViewDelegate {
+  
+  func filterDetailCellDidTap(key: FilterCommon.FilterType, value: String) {
+    var savedValues = selectedFilterDic[key.title] ?? []
+    // 이미 선택된 경우는 선택 취소
+    if selectedFilterDic.keys.contains(key.title) == true && savedValues.contains(value) {
+      let index = savedValues.firstIndex(of: value)!
+      savedValues.remove(at: index)
+    }
+    else { // 없는 경우는 추가
+      savedValues.append(value)
+    }
+    hightlightedFilterType = key      // 포커스 된 셀 타입 저장
+    selectedFilterDic[key.title] = savedValues
+    
+    print("highlighted: \(key.korTitle)")    // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+    print("seledted: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+    filterHeaderCollectionView.reloadData()
+  }
+  
+  func resetFilterView() {
+    resetFilter()
+  }
+}
+
+// MARK:- Private Method
+extension DesignListViewController {
   
   private func resetFilter() {
+    hightlightedFilterType = .reset
     selectedFilterDic.removeAll()
     filterHeaderCollectionView.reloadData()
+    
     if isShowDetailView() {
-      filterDetailView?.filterTableView.reloadData()
+      removeFilterDetailView()
+    }
+  }
+  
+  private func updateFilter(type: FilterCommon.FilterType) {
+    updateFilterHeaderView(type: type)
+    updateFilterDetailView(type: type)
+  }
+  
+  private func updateFilterHeaderView(type: FilterCommon.FilterType) {
+    filterHeaderCollectionView.reloadData()
+  }
+  
+  private func updateFilterDetailView(type: FilterCommon.FilterType) {
+    if let detailView = filterDetailView {
+      detailView.filterType = type
+      detailView.filterTableView.reloadData()
     }
   }
   
@@ -48,13 +98,6 @@ extension DesignListViewController: FilterHeaderCellDelegate {
     }
   }
   
-  private func updateFilterDetailView(type: FilterCommon.FilterType) {
-    if let detailView = filterDetailView {
-      detailView.filterType = type
-      detailView.filterTableView.reloadData()
-    }
-  }
-  
   private func removeFilterDetailView() {
     if let detailView = filterDetailView {
       for subView in detailView.subviews {
@@ -65,23 +108,5 @@ extension DesignListViewController: FilterHeaderCellDelegate {
   
   private func isShowDetailView() -> Bool {
     return filterDetailView != nil && filterDetailView?.subviews.count ?? 0 > 0
-  }
-}
-
-extension DesignListViewController: FilterDetailViewDelegate {
-  func filterDetailCellDidTap(key: FilterCommon.FilterType, value: String) {
-    var savedValues = selectedFilterDic[key.title] ?? []
-    // 이미 선택된 경우는 선택 취소
-    if selectedFilterDic.keys.contains(key.title) == true && savedValues.contains(value) {
-      let index = savedValues.firstIndex(of: value)!
-      savedValues.remove(at: index)
-    }
-    else { // 없는 경우는 추가
-      savedValues.append(value)
-    }
-    selectedFilterDic[key.title] = savedValues
-    print(selectedFilterDic) // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
-    
-    filterHeaderCollectionView.reloadData()
   }
 }

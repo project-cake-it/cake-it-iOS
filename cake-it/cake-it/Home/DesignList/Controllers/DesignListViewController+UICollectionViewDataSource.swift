@@ -41,8 +41,12 @@ extension DesignListViewController: UICollectionViewDataSource {
           && selectedFilterDic[filterType.title]?.count ?? 0 > 0 {
         isSelected = true
       }
+      var isHighlighted = false
+      if hightlightedFilterType == filterType && hightlightedFilterType != .reset {
+        isHighlighted = true
+      }
       cell.delegate = self
-      cell.update(type: filterType, isSelected: isSelected)
+      cell.update(type: filterType,isHighlighted: isHighlighted, isSelected: isSelected)
       return cell
     }
     else {
@@ -64,6 +68,7 @@ extension DesignListViewController: UICollectionViewDataSource {
     else if collectionView == filterHeaderCollectionView {
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
         cell.isFilterHightlighted = !cell.isFilterHightlighted
+        hightlightedFilterType = cell.filterType
       }
     }
   }
@@ -72,6 +77,7 @@ extension DesignListViewController: UICollectionViewDataSource {
     if collectionView == filterHeaderCollectionView {
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
         cell.isFilterHightlighted = false
+        hightlightedFilterType = .reset
       }
     }
   }

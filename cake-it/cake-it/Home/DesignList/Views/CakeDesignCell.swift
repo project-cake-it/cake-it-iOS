@@ -25,7 +25,6 @@ final class CakeDesignCell: UICollectionViewCell {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    
   }
   
   func update(with cakeDesign: CakeDesign) {
