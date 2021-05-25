@@ -80,9 +80,6 @@
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */; };
 		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
-		F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */; };
-		F73B6D1A2635AEC50043CF89 /* BaseFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */; };
-		F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */; };
 		F766FDBF265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */; };
 		F768D201265801A50092E3CE /* FilterHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F768D200265801A50092E3CE /* FilterHeaderCell.swift */; };
 		F768D209265801AF0092E3CE /* FilterHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F768D208265801AF0092E3CE /* FilterHeaderCell.xib */; };
@@ -99,6 +96,10 @@
 		F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94625E0E0FE006EE0EC /* BaseViewController.swift */; };
 		F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94725E0E0FE006EE0EC /* BaseViewModel.swift */; };
 		F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774B94825E0E0FE006EE0EC /* BaseModel.swift */; };
+		F7865944265D6D4B0020AFAC /* TableHeaderTestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7865943265D6D4B0020AFAC /* TableHeaderTestCell.xib */; };
+		F7865949265D6D920020AFAC /* TableHeaderTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7865948265D6D920020AFAC /* TableHeaderTestCell.swift */; };
+		F7865951265D6F100020AFAC /* FilterTableHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7865950265D6F100020AFAC /* FilterTableHeaderCell.xib */; };
+		F7865959265D6F200020AFAC /* FilterTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7865958265D6F200020AFAC /* FilterTableHeaderCell.swift */; };
 		F7A2DA1D263EA73600C160A5 /* DesignDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A2DA1C263EA73600C160A5 /* DesignDetailModel.swift */; };
 		F7A2DA26263EA95200C160A5 /* DesignDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A2DA25263EA95200C160A5 /* DesignDetailViewController.swift */; };
 		F7A2DA2B263EA95F00C160A5 /* DesignDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A2DA2A263EA95F00C160A5 /* DesignDetailViewModel.swift */; };
@@ -221,9 +222,6 @@
 		E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it_cake_itUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E670015E1C84D024CD034B18 /* Pods-cake-it-cake-itUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.debug.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
-		F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleFilterItemView.swift; sourceTree = "<group>"; };
-		F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseFilterItemView.swift; sourceTree = "<group>"; };
-		F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorFilterItemView.swift; sourceTree = "<group>"; };
 		F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
 		F768D200265801A50092E3CE /* FilterHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterHeaderCell.swift; sourceTree = "<group>"; };
 		F768D208265801AF0092E3CE /* FilterHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterHeaderCell.xib; sourceTree = "<group>"; };
@@ -240,6 +238,10 @@
 		F774B94625E0E0FE006EE0EC /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F774B94725E0E0FE006EE0EC /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		F774B94825E0E0FE006EE0EC /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		F7865943265D6D4B0020AFAC /* TableHeaderTestCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderTestCell.xib; sourceTree = "<group>"; };
+		F7865948265D6D920020AFAC /* TableHeaderTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderTestCell.swift; sourceTree = "<group>"; };
+		F7865950265D6F100020AFAC /* FilterTableHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterTableHeaderCell.xib; sourceTree = "<group>"; };
+		F7865958265D6F200020AFAC /* FilterTableHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterTableHeaderCell.swift; sourceTree = "<group>"; };
 		F7A2DA1C263EA73600C160A5 /* DesignDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignDetailModel.swift; sourceTree = "<group>"; };
 		F7A2DA25263EA95200C160A5 /* DesignDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignDetailViewController.swift; sourceTree = "<group>"; };
 		F7A2DA2A263EA95F00C160A5 /* DesignDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignDetailViewModel.swift; sourceTree = "<group>"; };
@@ -616,16 +618,6 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		F729E9CD265A51FB000FD7BE /* reference */ = {
-			isa = PBXGroup;
-			children = (
-				F73B6D0D2635AEC50043CF89 /* BaseFilterItemView.swift */,
-				F73B6D0C2635AEC50043CF89 /* TitleFilterItemView.swift */,
-				F73B6D0E2635AEC50043CF89 /* ColorFilterItemView.swift */,
-			);
-			path = reference;
-			sourceTree = "<group>";
-		};
 		F73B6D502635B1000043CF89 /* DesignDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,7 +631,6 @@
 		F768D1FF265801940092E3CE /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				F729E9CD265A51FB000FD7BE /* reference */,
 				F73B6D052635AEC50043CF89 /* FilterCommon.swift */,
 				F7A887A1265A49D900930932 /* FilterHeader */,
 				F7A887A2265A49DE00930932 /* FilterDetail */,
@@ -808,6 +799,8 @@
 		F7A88724265A477800930932 /* FilterDetailCell */ = {
 			isa = PBXGroup;
 			children = (
+				F7865950265D6F100020AFAC /* FilterTableHeaderCell.xib */,
+				F7865958265D6F200020AFAC /* FilterTableHeaderCell.swift */,
 				F7A88751265A486B00930932 /* BaseFilterCell.swift */,
 				F7A88742265A482800930932 /* FilterBasicCell.xib */,
 				F7A88747265A483200930932 /* FilterColorCell.xib */,
@@ -822,6 +815,8 @@
 		F7A887A1265A49D900930932 /* FilterHeader */ = {
 			isa = PBXGroup;
 			children = (
+				F7865943265D6D4B0020AFAC /* TableHeaderTestCell.xib */,
+				F7865948265D6D920020AFAC /* TableHeaderTestCell.swift */,
 				F768D200265801A50092E3CE /* FilterHeaderCell.swift */,
 				F768D208265801AF0092E3CE /* FilterHeaderCell.xib */,
 			);
@@ -958,6 +953,7 @@
 				F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */,
 				8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */,
 				8B93B2E52610C9E90060ACAC /* SpoqaHanSansNeo-Bold.otf in Resources */,
+				F7865951265D6F100020AFAC /* FilterTableHeaderCell.xib in Resources */,
 				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
 				F768D209265801AF0092E3CE /* FilterHeaderCell.xib in Resources */,
 				F7A8874D265A483B00930932 /* FilterDescriptionCell.xib in Resources */,
@@ -965,6 +961,7 @@
 				8B875D1B25DAE747003D9CFA /* SavedItem.storyboard in Resources */,
 				8B93B2E72610C9E90060ACAC /* SpoqaHanSansNeo-Thin.otf in Resources */,
 				8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */,
+				F7865944265D6D4B0020AFAC /* TableHeaderTestCell.xib in Resources */,
 				8B93B2E82610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf in Resources */,
 				F7A886E6265A428B00930932 /* FilterDetailView.xib in Resources */,
 				8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */,
@@ -1097,6 +1094,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
+				F7865959265D6F200020AFAC /* FilterTableHeaderCell.swift in Sources */,
 				8B1DFDE626484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
@@ -1130,7 +1128,6 @@
 				8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */,
 				F7A2DA1D263EA73600C160A5 /* DesignDetailModel.swift in Sources */,
 				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
-				F73B6D192635AEC50043CF89 /* TitleFilterItemView.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
 				AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */,
@@ -1153,13 +1150,13 @@
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
 				AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */,
-				F73B6D1B2635AEC50043CF89 /* ColorFilterItemView.swift in Sources */,
 				AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */,
 				AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */,
 				AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */,
 				AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
+				F7865949265D6D920020AFAC /* TableHeaderTestCell.swift in Sources */,
 				F7A88752265A486B00930932 /* BaseFilterCell.swift in Sources */,
 				8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
@@ -1172,7 +1169,6 @@
 				F7A887C3265A4C4800930932 /* FilterBasicCell.swift in Sources */,
 				AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */,
 				8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */,
-				F73B6D1A2635AEC50043CF89 /* BaseFilterItemView.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
 				AC86FA0D262C430D002DED4F /* Constants.swift in Sources */,

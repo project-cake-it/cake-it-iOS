@@ -15,21 +15,25 @@ protocol FilterDetailViewDelegate: class {
 final class FilterDetailView: UIView {
 
   enum Metric {
+    static let tagbleViewDefaultHeight: CGFloat = 300.0
     static let headerCellHeight: CGFloat = 38.0
     static let footerCellHeight: CGFloat = 22.0
+    static let defaultTableCellHight: CGFloat = 38.0
+    static let largeTableCellHight: CGFloat = 59.0
+    static let tableViewRadius: CGFloat = 10.0
   }
   
   @IBOutlet weak var backgroundView: UIView!
   @IBOutlet weak var filterTableView: UITableView!
   
   weak var delegate: FilterDetailViewDelegate?
-  var selectedList: [String] = [] // 해당 filterType에 선택된 필터 리스트
   var filterType: FilterCommon.FilterType = .reset {
     didSet {
-      registerTableViewCell()
+      registerCell()
     }
   }
-  
+  var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     commonInit()
@@ -55,14 +59,41 @@ final class FilterDetailView: UIView {
   private func configureView() {
     filterTableView.delegate = self
     filterTableView.dataSource = self
-    filterTableView.round(cornerRadius: 10,
+    filterTableView.separatorStyle = .none
+    filterTableView.round(cornerRadius: Metric.tableViewRadius,
                           maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
-    
+      
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
     backgroundView.addGestureRecognizer(tapGesture)
+    
+    settingConstraint()
   }
   
-  private func registerTableViewCell() {
+  private func settingConstraint() {
+    backgroundView.constraints(topAnchor: self.topAnchor,
+                               leadingAnchor: self.leadingAnchor,
+                               bottomAnchor: self.bottomAnchor,
+                               trailingAnchor: self.trailingAnchor)
+    filterTableView.constraints(topAnchor: backgroundView.topAnchor,
+                                leadingAnchor: backgroundView.leadingAnchor,
+                                bottomAnchor: nil,
+                                trailingAnchor: backgroundView.trailingAnchor,
+                                size: CGSize(width: Constants.SCREEN_WIDTH,
+                                             height: Metric.tagbleViewDefaultHeight))
+  }
+  
+  private func registerCell() {
+    registerHeaderCell()
+    registerTableCell()
+  }
+  
+  private func registerHeaderCell() {
+    let identifier = String(describing: FilterTableHeaderCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    filterTableView.register(nib, forCellReuseIdentifier: identifier)
+  }
+  
+  private func registerTableCell() {
     var identifier: String = ""
     switch filterType {
     case .basic, .category, .region:
@@ -198,20 +229,34 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     if filterType.enableMuliSelection == true {
-      let headerCell = FilterDetailViewHeaderCell()
-      if selectedList.count == FilterCommon.numberOfCase(type: filterType) {
-        headerCell.isCellSelected = true
+      let id = String(describing: FilterTableHeaderCell.self)
+      if let headerCell = tableView.dequeueReusableCell(withIdentifier: id) as? FilterTableHeaderCell {
+        headerCell.delegate = self
+        if selectedList.count == FilterCommon.numberOfCase(type: filterType) {
+          headerCell.isCellSelected = true
+        }
+        return headerCell
       }
-      headerCell.delegate = self
-      return headerCell
     }
     return nil
   }
   
   func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     let footerView = UIView()
+    let testLabel = UILabel()
+    testLabel.text = "Table Footer 입니다."
+    testLabel.sizeToFit()
+    footerView.addSubview(testLabel)
     footerView.backgroundColor = Colors.grayscale01
     return footerView
+  }
+  
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    if type(of: tableView.cellForRow(at: indexPath)) == FilterDescriptionCell.self {
+      return Metric.largeTableCellHight
+    } else {
+      return Metric.defaultTableCellHight
+    }
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -226,7 +271,7 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
   }
 }
 
-extension FilterDetailView: FilterDetailViewHeaderCellDelegate {
+extension FilterDetailView: FilterTableHeaderCellDelegate {
   // 전체 선택 처리
   func headerCellDidTap(isSelected: Bool) {
     if isSelected {

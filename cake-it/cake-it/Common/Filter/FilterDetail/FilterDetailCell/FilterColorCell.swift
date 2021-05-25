@@ -19,10 +19,13 @@ class FilterColorCell: BaseFilterCell {
     }
   }
   
+  override func awakeFromNib() {
+    colorView.layer.cornerRadius = colorView.frame.width/2
+
+  }
+  
   override func prepareForReuse() {
     super.prepareForReuse()
-    
-    colorView.layer.cornerRadius = colorView.frame.width/2
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
