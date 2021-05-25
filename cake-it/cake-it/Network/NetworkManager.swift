@@ -33,9 +33,9 @@ final class NetworkManager {
     self.request(request: request, type: T.self, completion: completion)
   }
   
-  func requestPost<T: Decodable, Parameters: Encodable>(api: NetworkCommon.API,
+  func requestPost<T: Decodable, U: Encodable>(api: NetworkCommon.API,
                                  type: T.Type,
-                                 param: Parameters? = nil,
+                                 param: U? = nil,
                                  completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: api.urlString) else { return }
     
