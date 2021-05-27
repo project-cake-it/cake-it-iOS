@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FilterColorCell: BaseFilterCell {
+final class FilterColorCell: BaseFilterCell {
 
-  @IBOutlet weak var colorLabel: UILabel!
+  @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var colorView: UIView!
   @IBOutlet weak var checkImageView: UIImageView!
   
@@ -21,11 +21,12 @@ class FilterColorCell: BaseFilterCell {
   
   override func awakeFromNib() {
     colorView.layer.cornerRadius = colorView.frame.width/2
-
   }
   
   override func prepareForReuse() {
     super.prepareForReuse()
+
+    isCellSelected = false
   }
   
   override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,7 +38,7 @@ class FilterColorCell: BaseFilterCell {
   }
   
   func update(title: String, color: UIColor) {
-    colorLabel.text = title
+    titleLabel.text = title
     colorView.backgroundColor = color
   }
 }

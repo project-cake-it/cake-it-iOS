@@ -15,7 +15,7 @@ protocol FilterDetailViewDelegate: class {
 final class FilterDetailView: UIView {
 
   enum Metric {
-    static let tagbleViewDefaultHeight: CGFloat = 400.0
+    static let tableViewDefaultHeight: CGFloat = 400.0
     static let headerCellHeight: CGFloat = 38.0
     static let footerCellHeight: CGFloat = 22.0
     static let defaultTableCellHight: CGFloat = 38.0
@@ -79,7 +79,7 @@ final class FilterDetailView: UIView {
                                 bottomAnchor: nil,
                                 trailingAnchor: backgroundView.trailingAnchor,
                                 size: CGSize(width: Constants.SCREEN_WIDTH,
-                                             height: Metric.tagbleViewDefaultHeight))
+                                             height: Metric.tableViewDefaultHeight))
   }
   
   private func registerCell() {
@@ -94,7 +94,7 @@ final class FilterDetailView: UIView {
   }
   
   private func registerTableCell() {
-    var identifier: String = ""
+    var identifier: String?
     switch filterType {
     case .basic, .category, .region:
       identifier = String(describing: FilterBasicCell.self)
@@ -105,9 +105,9 @@ final class FilterDetailView: UIView {
     default: break
     }
     
-    if identifier.isEmpty == false {
-      let nib = UINib(nibName: identifier, bundle: nil)
-      filterTableView.register(nib, forCellReuseIdentifier: identifier)
+    if let id = identifier {
+      let nib = UINib(nibName: id, bundle: nil)
+      filterTableView.register(nib, forCellReuseIdentifier: id)
     }
   }
   
@@ -139,7 +139,7 @@ final class FilterDetailView: UIView {
         selectedList.remove(at: index)
       } else {
         // 단일선택인 경우 기존 리스트 값 제거 후 해당 필터만 추가
-        if filterType.enableMuliSelection == false {
+        if filterType.isMultiSelectionEnabled == false {
           selectedList.removeAll()
         }
         selectedList.append(value)
@@ -228,7 +228,7 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    if filterType.enableMuliSelection == true {
+    if filterType.isMultiSelectionEnabled == true {
       let id = String(describing: FilterTableHeaderCell.self)
       if let headerCell = tableView.dequeueReusableCell(withIdentifier: id) as? FilterTableHeaderCell {
         headerCell.delegate = self
@@ -260,7 +260,7 @@ extension FilterDetailView: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    if filterType.enableMuliSelection == true {
+    if filterType.isMultiSelectionEnabled == true {
       return Metric.headerCellHeight
     }
     return 0

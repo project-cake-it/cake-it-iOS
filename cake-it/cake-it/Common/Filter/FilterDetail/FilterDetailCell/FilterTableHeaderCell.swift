@@ -11,7 +11,7 @@ protocol FilterTableHeaderCellDelegate: class {
   func headerCellDidTap(isSelected: Bool)
 }
 
-class FilterTableHeaderCell: UITableViewCell {
+final class FilterTableHeaderCell: UITableViewCell {
   
   @IBOutlet weak var checkImageView: UIImageView!
   

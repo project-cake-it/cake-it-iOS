@@ -33,10 +33,8 @@ class FilterDescriptionCell: BaseFilterCell {
     }
   }
   
-
   func update(title: String, description: String) {
     titleLabel.text = title
     descriptionLabel.text = description
   }
 }
-

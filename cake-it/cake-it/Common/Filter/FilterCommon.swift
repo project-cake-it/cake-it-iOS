@@ -57,7 +57,7 @@ extension FilterCommon {
       }
     }
     
-    var enableMuliSelection: Bool {
+    var isMultiSelectionEnabled: Bool {
       switch self {
       case .reset:    return false
       case .basic:    return false

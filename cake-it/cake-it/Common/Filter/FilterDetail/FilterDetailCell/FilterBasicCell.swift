@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilterBasicCell: BaseFilterCell {
+final class FilterBasicCell: BaseFilterCell {
 
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var checkImageView: UIImageView!
@@ -20,7 +20,7 @@ class FilterBasicCell: BaseFilterCell {
   
   override func prepareForReuse() {
     super.prepareForReuse()
-    
+
     isCellSelected = false
   }
   
