@@ -1,5 +1,5 @@
 //
-//  FilterHeaderCell.swift
+//  FilterCategoryCell.swift
 //  cake-it
 //
 //  Created by seungbong on 2021/05/21.
@@ -7,23 +7,23 @@
 
 import UIKit
 
-protocol FilterHeaderCellDelegate: class {
-  func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool)
+protocol FilterCategoryCellDelegate: class {
+  func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool)
 }
 
-final class FilterHeaderCell: UICollectionViewCell {
+final class FilterCategoryCell: UICollectionViewCell {
   
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var arrowImageView: UIImageView!
   
-  weak var delegate: FilterHeaderCellDelegate?
+  weak var delegate: FilterCategoryCellDelegate?
   private(set) var filterType: FilterCommon.FilterType = .reset
   var isFilterHightlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
     didSet {
       updateColorAndImage()
       
       if isSelected == true {
-        delegate?.filterHeaderCellDidTap(type: filterType, isHighlightedCell: isFilterHightlighted)
+        delegate?.filterCategoryCellDidTap(type: filterType, isHighlightedCell: isFilterHightlighted)
       }
     }
   }

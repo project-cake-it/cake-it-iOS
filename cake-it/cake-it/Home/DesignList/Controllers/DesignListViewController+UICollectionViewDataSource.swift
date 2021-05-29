@@ -13,7 +13,7 @@ extension DesignListViewController: UICollectionViewDataSource {
     switch collectionView {
     case designsCollectionView:
       return cakeDesigns.count
-    case filterHeaderCollectionView:
+    case filterCategoryCollectionView:
       return cakeFilterList.count
     default:
       return 0
@@ -31,10 +31,10 @@ extension DesignListViewController: UICollectionViewDataSource {
       cell.update(with: cakeDesign)
       return cell
     }
-    else if collectionView == filterHeaderCollectionView {
-      let identifier = String(describing: FilterHeaderCell.self)
+    else if collectionView == filterCategoryCollectionView {
+      let identifier = String(describing: FilterCategoryCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
-                                                    for: indexPath) as! FilterHeaderCell
+                                                    for: indexPath) as! FilterCategoryCell
       let filterType = cakeFilterList[indexPath.row]
       var isSelected = false
       if selectedFilterDic.keys.contains(filterType.title)
@@ -62,8 +62,8 @@ extension DesignListViewController: UICollectionViewDataSource {
         present(desingDetailVC, animated: true, completion: nil)
       }
     }
-    else if collectionView == filterHeaderCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
+    else if collectionView == filterCategoryCollectionView {
+      if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
         cell.isFilterHightlighted = !cell.isFilterHightlighted
         hightlightedFilterType = cell.filterType
       }
@@ -71,8 +71,8 @@ extension DesignListViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    if collectionView == filterHeaderCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterHeaderCell {
+    if collectionView == filterCategoryCollectionView {
+      if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
         cell.isFilterHightlighted = false
         hightlightedFilterType = .reset
       }

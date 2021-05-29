@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilterDescriptionCell: BaseFilterCell {
+final class FilterDescriptionCell: BaseFilterCell {
 
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!

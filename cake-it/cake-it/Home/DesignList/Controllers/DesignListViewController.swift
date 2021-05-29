@@ -20,7 +20,7 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var navigationBarTitleTapGestureView: UIView!
   @IBOutlet weak var navigationBarTitleArrowIcon: UIImageView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
-  @IBOutlet weak var filterHeaderCollectionView: UICollectionView!
+  @IBOutlet weak var filterCategoryCollectionView: UICollectionView!
   
   
   private(set) var cakeDesigns: [CakeDesign] = []
@@ -61,29 +61,29 @@ final class DesignListViewController: BaseViewController {
 
 extension DesignListViewController {
   private func configure() {
-    configureFilterHeaderView()
+    configureFilterCategoryView()
     configureCollectionView()
     configureNavigationBarTapGesture()
   }
   
   // MARK:- configure filter title collectionView
-  private func configureFilterHeaderView() {
-    configureFilterHeaderCollectionView()
-    registerFilterHeaderCollectionView()
+  private func configureFilterCategoryView() {
+    configureFilterCategoryCollectionView()
+    registerFilterCategoryCollectionView()
   }
   
-  private func configureFilterHeaderCollectionView() {
+  private func configureFilterCategoryCollectionView() {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
-    filterHeaderCollectionView.collectionViewLayout = flowLayout
-    filterHeaderCollectionView.delegate = self
-    filterHeaderCollectionView.dataSource = self
+    filterCategoryCollectionView.collectionViewLayout = flowLayout
+    filterCategoryCollectionView.delegate = self
+    filterCategoryCollectionView.dataSource = self
   }
   
-  private func registerFilterHeaderCollectionView() {
-    let identifier = String(describing: FilterHeaderCell.self)
+  private func registerFilterCategoryCollectionView() {
+    let identifier = String(describing: FilterCategoryCell.self)
     let nib = UINib(nibName: identifier, bundle: nil)
-    filterHeaderCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    filterCategoryCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }
   
   // MARK:- configure cake design collectionView

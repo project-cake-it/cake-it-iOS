@@ -9,31 +9,6 @@ import UIKit
 
 final class FilterCommon {
   
-  static func numberOfCase(type: FilterCommon.FilterType) -> Int {
-    switch type {
-    case .reset:    return 0
-    case .basic:    return FilterBasic.allCases.count
-    case .region:   return FilterRegion.allCases.count
-    case .size:     return FilterSize.allCases.count
-    case .color:    return FilterColor.allCases.count
-    case .category: return FilterCategory.allCases.count
-    }
-  }
-  
-  static func allValuesOfCase(type: FilterCommon.FilterType) -> [String] {
-    switch type {
-    case .reset:    return []
-    case .basic:    return FilterBasic.allCases.map { $0.rawValue }
-    case .region:   return FilterRegion.allCases.map { $0.rawValue }
-    case .size:     return FilterSize.allCases.map { $0.rawValue }
-    case .color:    return FilterColor.allCases.map { $0.rawValue }
-    case .category: return FilterCategory.allCases.map { $0.rawValue }
-    }
-  }
-}
-
-// enum
-extension FilterCommon {
   enum FilterType: String, CaseIterable {
     case reset    = "reset"   // 초기화
     case basic    = "basic"   // 기본순
@@ -56,24 +31,13 @@ extension FilterCommon {
       case .category: return "카테고리"
       }
     }
-    
-    var isMultiSelectionEnabled: Bool {
-      switch self {
-      case .reset:    return false
-      case .basic:    return false
-      case .region:   return true
-      case .size:     return true
-      case .color:    return true
-      case .category: return true
-      }
-    }
   }
   
-  enum FilterBasic: String, CaseIterable {
-    case basic = "기본순"
-    case zzim = "찜 순"
-    case priceHight = "가격 높은 순"
-    case priceLow = "가격 낮은 순"
+  enum FilterSorting: String, CaseIterable {
+    case byDefault = "기본순"
+    case bySaved = "찜 순"
+    case byPriceHigh = "가격 높은 순"
+    case byPriceLow = "가격 낮은 순"
     
     var title: String {
       return self.rawValue

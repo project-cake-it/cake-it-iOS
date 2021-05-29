@@ -7,10 +7,10 @@
 
 import UIKit
 
-// MARK:- FilterHeaderCell Delegate Method
-extension DesignListViewController: FilterHeaderCellDelegate {
+// MARK:- FilterCategoryCell Delegate Method
+extension DesignListViewController: FilterCategoryCellDelegate {
   
-  func filterHeaderCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
+  func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
       return
@@ -34,13 +34,13 @@ extension DesignListViewController: FilterDetailViewDelegate {
   func filterDetailCellDidTap(key: FilterCommon.FilterType, values: [String]) {
     hightlightedFilterType = key      // 포커스 된 셀 타입 저장
     selectedFilterDic[key.title] = values
-    filterHeaderCollectionView.reloadData()
+    filterCategoryCollectionView.reloadData()
     print("🏃🏻‍♂️ seledted: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
 
   func backgroundViewDidTap() {
     hightlightedFilterType = .reset
-    filterHeaderCollectionView.reloadData()
+    filterCategoryCollectionView.reloadData()
   }
 }
 
@@ -50,7 +50,7 @@ extension DesignListViewController {
   private func resetFilter() {
     hightlightedFilterType = .reset
     selectedFilterDic.removeAll()
-    filterHeaderCollectionView.reloadData()
+    filterCategoryCollectionView.reloadData()
     
     if isShowDetailView() {
       removeFilterDetailView()
@@ -58,12 +58,12 @@ extension DesignListViewController {
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {
-    updateFilterHeaderView(type: type)
+    updateFilterCategoryView(type: type)
     updateFilterDetailView(type: type)
   }
   
-  private func updateFilterHeaderView(type: FilterCommon.FilterType) {
-    filterHeaderCollectionView.reloadData()
+  private func updateFilterCategoryView(type: FilterCommon.FilterType) {
+    filterCategoryCollectionView.reloadData()
   }
   
   private func updateFilterDetailView(type: FilterCommon.FilterType) {
@@ -81,7 +81,7 @@ extension DesignListViewController {
       detailView.selectedList = selectedFilterDic[type.title] ?? []
       detailView.delegate = self
       self.view.addSubview(detailView)
-      detailView.constraints(topAnchor: filterHeaderCollectionView.bottomAnchor,
+      detailView.constraints(topAnchor: filterCategoryCollectionView.bottomAnchor,
                              leadingAnchor: self.view.leadingAnchor,
                              bottomAnchor: self.view.bottomAnchor,
                              trailingAnchor: self.view.trailingAnchor,

@@ -27,7 +27,7 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
       let roundedSide = side.rounded(.down)
       return CGSize(width: roundedSide, height: roundedSide + 120)
       
-    case filterHeaderCollectionView:
+    case filterCategoryCollectionView:
       let titleLabelLeftInset = 16
       let titleLabelRightInset = 30
       let cellHeight = 35
@@ -54,7 +54,7 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
     switch collectionView {
     case designsCollectionView:
       return 0.0
-    case filterHeaderCollectionView:
+    case filterCategoryCollectionView:
       return 8.0
     default:
       return 0.0
