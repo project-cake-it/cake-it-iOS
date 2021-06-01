@@ -75,9 +75,11 @@ extension DesignListViewController {
   private func configureFilterCategoryCollectionView() {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
+    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
     filterCategoryCollectionView.collectionViewLayout = flowLayout
     filterCategoryCollectionView.delegate = self
     filterCategoryCollectionView.dataSource = self
+    filterCategoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
   }
   
   private func registerFilterCategoryCollectionView() {

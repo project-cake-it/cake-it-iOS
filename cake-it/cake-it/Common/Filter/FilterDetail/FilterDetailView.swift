@@ -13,7 +13,7 @@ protocol FilterDetailViewDelegate: class {
 }
 
 final class FilterDetailView: UIView {
-
+  
   enum Metric {
     static let tableViewDefaultHeight: CGFloat = 400.0
     static let headerCellHeight: CGFloat = 38.0
@@ -25,6 +25,7 @@ final class FilterDetailView: UIView {
   
   @IBOutlet weak var backgroundView: UIView!
   @IBOutlet weak var filterTableView: UITableView!
+  var filterTableViewHeightConstraint: NSLayoutConstraint?
   
   weak var delegate: FilterDetailViewDelegate?
   var filterType: FilterCommon.FilterType = .reset {
@@ -33,12 +34,13 @@ final class FilterDetailView: UIView {
     }
   }
   var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
-
+  var tableViewHeight: CGFloat = 0.0
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     commonInit()
   }
-
+  
   required init?(coder: NSCoder) {
     super.init(coder: coder)
     commonInit()
@@ -62,11 +64,11 @@ final class FilterDetailView: UIView {
     filterTableView.separatorStyle = .none
     filterTableView.round(cornerRadius: Metric.tableViewRadius,
                           maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
-      
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
-    backgroundView.addGestureRecognizer(tapGesture)
     
     settingConstraint()
+
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
+    backgroundView.addGestureRecognizer(tapGesture)
   }
   
   private func settingConstraint() {
@@ -74,12 +76,12 @@ final class FilterDetailView: UIView {
                                leadingAnchor: self.leadingAnchor,
                                bottomAnchor: self.bottomAnchor,
                                trailingAnchor: self.trailingAnchor)
-    filterTableView.constraints(topAnchor: backgroundView.topAnchor,
-                                leadingAnchor: backgroundView.leadingAnchor,
-                                bottomAnchor: nil,
-                                trailingAnchor: backgroundView.trailingAnchor,
-                                size: CGSize(width: Constants.SCREEN_WIDTH,
-                                             height: Metric.tableViewDefaultHeight))
+
+    filterTableView.constraints(topAnchor: self.topAnchor,
+                                leadingAnchor: self.leadingAnchor,
+                                trailingAnchor: self.trailingAnchor)
+    filterTableViewHeightConstraint = filterTableView.heightAnchor.constraint(equalToConstant: Metric.tableViewDefaultHeight)
+    filterTableViewHeightConstraint?.isActive = true
   }
   
   private func registerCell() {
@@ -109,6 +111,10 @@ final class FilterDetailView: UIView {
       let nib = UINib(nibName: id, bundle: nil)
       filterTableView.register(nib, forCellReuseIdentifier: id)
     }
+  }
+  
+  func resetData() {
+    tableViewHeight = 0.0
   }
   
   @objc private func backgroundViewDidTap() {

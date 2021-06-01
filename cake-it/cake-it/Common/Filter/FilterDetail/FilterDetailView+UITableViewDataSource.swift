@@ -8,8 +8,17 @@
 import UIKit
 
 extension FilterDetailView: UITableViewDataSource {
-
+  
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return FilterManager.shared.numberOfCase(type: filterType)
+  }
+  
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    print("[index: \(indexPath.row)]")
+    if indexPath.row == 0 {
+      resetData()
+    }
+    
     switch filterType {
     case .basic:
       let identifier = String(describing: FilterBasicCell.self)

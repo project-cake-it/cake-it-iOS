@@ -818,8 +818,8 @@
 		F7A887A1265A49D900930932 /* FilterCategory */ = {
 			isa = PBXGroup;
 			children = (
-				F768D200265801A50092E3CE /* FilterCategoryCell.swift */,
 				F768D208265801AF0092E3CE /* FilterCategoryCell.xib */,
+				F768D200265801A50092E3CE /* FilterCategoryCell.swift */,
 			);
 			path = FilterCategory;
 			sourceTree = "<group>";

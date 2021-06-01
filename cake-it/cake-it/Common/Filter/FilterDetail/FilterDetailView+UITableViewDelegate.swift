@@ -8,11 +8,7 @@
 import UIKit
 
 extension FilterDetailView: UITableViewDelegate {
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return FilterManager.shared.numberOfCase(type: filterType)
-  }
-
+  
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     updateSelectedList(selectedIndex: indexPath.row)
   }
@@ -33,11 +29,7 @@ extension FilterDetailView: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     let footerView = UIView()
-    let testLabel = UILabel()
-    testLabel.text = "Table Footer 입니다."
-    testLabel.sizeToFit()
-    footerView.addSubview(testLabel)
-    footerView.backgroundColor = Colors.grayscale01
+    footerView.backgroundColor = .clear
     return footerView
   }
   
@@ -58,5 +50,24 @@ extension FilterDetailView: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
     return Metric.footerCellHeight
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    tableViewHeight += cell.frame.height
+    filterTableViewHeightConstraint?.constant = tableViewHeight
+    print("cell: \(cell.frame.height)")
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    tableViewHeight += view.frame.height
+    filterTableViewHeightConstraint?.constant = tableViewHeight
+    print("header: \(view.frame.height)")
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+    tableViewHeight += view.frame.height
+    filterTableViewHeightConstraint?.constant = tableViewHeight
+    print("footer: \(view.frame.height)")
+
   }
 }
