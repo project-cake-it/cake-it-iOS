@@ -26,6 +26,9 @@ target 'cake-it' do
   # Naver ID SDK
   pod 'naveridlogin-sdk-ios'
 
+  # Google Login
+  pod 'GoogleSignIn'
+
   # KeychainWrapper
   pod 'SwiftKeychainWrapper'
 

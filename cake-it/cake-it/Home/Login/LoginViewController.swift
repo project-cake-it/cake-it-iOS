@@ -16,7 +16,7 @@ final class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    viewModel = LoginViewModel()
+    viewModel = LoginViewModel(viewController: self)
   }
   
   //MARK: - Private method
@@ -43,13 +43,19 @@ final class LoginViewController: UIViewController {
   }
   
   @IBAction func signInWithKakaoButtonDidTap(_ sender: Any) {
-    viewModel?.loginByProvider(socialType:.KAKAO, completion: { (success) in
+    viewModel?.login(by: .KAKAO, viewController: self, completion: { (success) in
       self.finishLogin(success: success)
     })
   }
   
   @IBAction func signInWithNaverButtonDidTap(_ sender: Any) {
-    viewModel?.loginByProvider(socialType:.NAVER, completion: { (success) in
+    viewModel?.login(by: .NAVER, viewController: self, completion: { (success) in
+      self.finishLogin(success: success)
+    })
+  }
+  
+  @IBAction func signInWithGoogleButtonDidTap(_ sender: Any) {
+    viewModel?.login(by: .GOOGLE, viewController: self, completion: { (success) in
       self.finishLogin(success: success)
     })
   }

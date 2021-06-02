@@ -8,9 +8,10 @@
 import Foundation
 
 enum LoginSocialType: String {
-  case KAKAO = "KAKAO"
-  case NAVER = "NAVER"
-  case APPLE = "APPLE"
+  case KAKAO  = "KAKAO"
+  case NAVER  = "NAVER"
+  case APPLE  = "APPLE"
+  case GOOGLE = "GOOGLE"
   
   var string: String {
     return self.rawValue
