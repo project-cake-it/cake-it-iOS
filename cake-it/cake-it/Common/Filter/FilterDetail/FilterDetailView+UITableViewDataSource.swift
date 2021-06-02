@@ -14,7 +14,6 @@ extension FilterDetailView: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    print("[index: \(indexPath.row)]")
     if indexPath.row == 0 {
       resetData()
     }

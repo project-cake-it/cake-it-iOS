@@ -20,7 +20,7 @@ final class FilterDetailView: UIView {
     static let footerCellHeight: CGFloat = 22.0
     static let defaultTableCellHight: CGFloat = 38.0
     static let largeTableCellHight: CGFloat = 59.0
-    static let tableViewRadius: CGFloat = 10.0
+    static let tableViewRadius: CGFloat = 16.0
   }
   
   @IBOutlet weak var backgroundView: UIView!
