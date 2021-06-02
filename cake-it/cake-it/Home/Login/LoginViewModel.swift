@@ -74,7 +74,7 @@ final class LoginViewModel: BaseViewModel {
         return
       }
       
-      self.login(accessToken: accessToken, refreshToken: refreshToken)
+      self.requestLogin(accessToken: accessToken, refreshToken: refreshToken)
     }
   }
   
@@ -87,7 +87,7 @@ final class LoginViewModel: BaseViewModel {
     self.naverLoginSDK?.requestThirdPartyLogin()
   }
   
-  private func login(accessToken: String, refreshToken:String) {
+  private func requestLogin(accessToken: String, refreshToken:String) {
     guard let socialType = socialType?.string else {
       loginCompletion?(false)
       return
@@ -98,7 +98,6 @@ final class LoginViewModel: BaseViewModel {
     NetworkManager.shared.requestPost(api: .login,
                                       type: LoginModel.Response.self,
                                       param: model) { (result) in
-      
       switch result {
       case .success(let result):
         let token = result.accessToken
@@ -131,7 +130,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
       return
     }
     
-    self.login(accessToken: access, refreshToken: refresh)
+    self.requestLogin(accessToken: access, refreshToken: refresh)
   }
 
   func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
@@ -154,6 +153,6 @@ extension LoginViewModel: GIDSignInDelegate {
       return
     }
     
-    login(accessToken: user.authentication.accessToken, refreshToken: user.authentication.refreshToken)
+    requestLogin(accessToken: user.authentication.accessToken, refreshToken: user.authentication.refreshToken)
   }
 }
