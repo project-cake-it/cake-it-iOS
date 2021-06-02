@@ -33,11 +33,11 @@ final class FilterCommon {
     }
   }
   
-  enum FilterBasic: String, CaseIterable {
-    case basic = "기본순"
-    case zzim = "찜 순"
-    case priceHight = "가격 높은 순"
-    case priceLow = "가격 낮은 순"
+  enum FilterSorting: String, CaseIterable {
+    case byDefault = "기본순"
+    case bySaved = "찜 순"
+    case byPriceHigh = "가격 높은 순"
+    case byPriceLow = "가격 낮은 순"
     
     var title: String {
       return self.rawValue
