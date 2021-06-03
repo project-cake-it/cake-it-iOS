@@ -70,17 +70,17 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   private func fetchCakeDesigns() {
-    let tempImageURL = "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966"
-    for _ in 0..<5 {
-      cakeDesigns.append(CakeDesign(image: tempImageURL,
-                                    location: "강남구",
-                                    size: "1호 13cm",
-                                    name: "화중이맛 케이크",
-                                    price: 35000))
-    }
-    cakeDesignCollectionView.reloadData()
-    view.layoutIfNeeded()
-    cakeDesignCollectionViewHeight.constant = cakeDesignCollectionView.contentSize.height
+//    let tempImageURL = "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966"
+//    for _ in 0..<5 {
+//      cakeDesigns.append(CakeDesign(image: tempImageURL,
+//                                    location: "강남구",
+//                                    size: "1호 13cm",
+//                                    name: "화중이맛 케이크",
+//                                    price: 35000))
+//    }
+//    cakeDesignCollectionView.reloadData()
+//    view.layoutIfNeeded()
+//    cakeDesignCollectionViewHeight.constant = cakeDesignCollectionView.contentSize.height
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
