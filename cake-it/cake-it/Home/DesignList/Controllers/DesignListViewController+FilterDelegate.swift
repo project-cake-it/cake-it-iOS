@@ -35,7 +35,7 @@ extension DesignListViewController: FilterDetailViewDelegate {
     hightlightedFilterType = key      // 포커스 된 셀 타입 저장
     selectedFilterDic[key.title] = values
     filterCategoryCollectionView.reloadData()
-    print("🏃🏻‍♂️ seledted: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+    print("🏃🏻‍♂️ selected: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
 
   func backgroundViewDidTap() {

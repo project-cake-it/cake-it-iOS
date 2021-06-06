@@ -28,15 +28,19 @@ final class CakeDesignCell: UICollectionViewCell {
   }
   
   func update(with cakeDesign: CakeDesign) {
-    let cakeDesignImageURL = URL(string: cakeDesign.image)
-    DispatchQueue.global().async {
-      let data = try? Data(contentsOf: cakeDesignImageURL!)
-      DispatchQueue.main.async {
-        self.cakeDesignImageView.image = UIImage(data: data!)
-      }
+    if let sizeInfo = cakeDesign.sizes.first {
+      let removedBracketSizeName = sizeInfo.name.removeBracketInSizeInfo()
+      locationAndCakeSizeLabel.text = "\(cakeDesign.shopAddress) | \(removedBracketSizeName)"
+      nameLabel.text = cakeDesign.name
+      priceLabel.text = String(sizeInfo.price).moneyFormat.won
     }
-    locationAndCakeSizeLabel.text = "\(cakeDesign.location) | \(cakeDesign.size)"
-    nameLabel.text = cakeDesign.name
-    priceLabel.text = String(cakeDesign.price).moneyFormat.won
+    
+    guard let imageInfo = cakeDesign.designImages.first,
+          let cakeDesignImageURL = URL(string: imageInfo.designImageUrl),
+          let imageData = try? Data(contentsOf: cakeDesignImageURL) else { return }
+    
+    DispatchQueue.main.async {
+      self.cakeDesignImageView.image = UIImage(data: imageData)
+    }
   }
 }

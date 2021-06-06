@@ -116,6 +116,7 @@
 		F7A887C3265A4C4800930932 /* FilterBasicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C2265A4C4800930932 /* FilterBasicCell.swift */; };
 		F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C7265A4C5600930932 /* FilterColorCell.swift */; };
 		F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */; };
+		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
 		FAAB2F89308B59A58AD30653 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +259,7 @@
 		F7A887C2265A4C4800930932 /* FilterBasicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterBasicCell.swift; sourceTree = "<group>"; };
 		F7A887C7265A4C5600930932 /* FilterColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorCell.swift; sourceTree = "<group>"; };
 		F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionCell.swift; sourceTree = "<group>"; };
+		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -490,6 +492,7 @@
 				8B0DDA4F260CE10B003923D9 /* UIView */,
 				8B62C31F26010033005F599A /* UIViewController */,
 				8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */,
+				F7CD313A266CCB7900C9A211 /* String+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1124,6 +1127,7 @@
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
 				8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */,
+				F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
 				8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */,
 				F7A2DA1D263EA73600C160A5 /* DesignDetailModel.swift in Sources */,
