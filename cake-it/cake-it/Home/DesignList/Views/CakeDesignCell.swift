@@ -36,11 +36,15 @@ final class CakeDesignCell: UICollectionViewCell {
     }
     
     guard let imageInfo = cakeDesign.designImages.first,
-          let cakeDesignImageURL = URL(string: imageInfo.designImageUrl),
-          let imageData = try? Data(contentsOf: cakeDesignImageURL) else { return }
-    
-    DispatchQueue.main.async {
-      self.cakeDesignImageView.image = UIImage(data: imageData)
+          let cakeDesignImageURL = URL(string: imageInfo.designImageUrl) else {
+      return
+    }
+    DispatchQueue.global().async {
+      if let imageData = try? Data(contentsOf: cakeDesignImageURL) {
+        DispatchQueue.main.async {
+          self.cakeDesignImageView.image = UIImage(data: imageData)
+        }
+      }
     }
   }
 }

@@ -20,9 +20,6 @@
         <array key="SpoqaHanSansNeo-Regular.otf">
             <string>SpoqaHanSansNeo-Regular</string>
         </array>
-        <array key="SpoqaHanSansNeo-Thin.otf">
-            <string>SpoqaHanSansNeo-Thin</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Home View Controller-->
@@ -288,6 +285,7 @@
                                             <constraint firstAttribute="width" constant="38" id="P9e-uJ-Ivn"/>
                                             <constraint firstAttribute="height" constant="38" id="cCe-xt-4YN"/>
                                         </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button" image="icHeart"/>
                                         <state key="selected" image="icHeartFilled"/>
                                         <state key="highlighted" image="icHeartFilled"/>
@@ -309,7 +307,7 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0K-j5-tBj">
-                                <rect key="frame" x="0.0" y="94" width="414" height="897"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="900"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8q-Fj-oa9" userLabel="Cake Images View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
@@ -320,6 +318,8 @@
                                             </scrollView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="H1Q-qH-fwz">
                                                 <rect key="frame" x="330" y="390" width="64" height="4"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" name="pointB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="64" id="gLK-ax-yYH"/>
                                                     <constraint firstAttribute="height" constant="4" id="xA5-QL-U6F"/>
@@ -337,14 +337,17 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDf-sC-d2H">
                                         <rect key="frame" x="0.0" y="414" width="414" height="157"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="케이크 디자인 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlQ-zh-oHo">
-                                                <rect key="frame" x="20" y="20" width="135" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크 디자인 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlQ-zh-oHo">
+                                                <rect key="frame" x="20" y="20" width="135" height="27"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="27" id="sJ0-f1-W9W"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82m-JW-oM3">
-                                                <rect key="frame" x="16" y="96" width="382" height="48"/>
+                                                <rect key="frame" x="16" y="89" width="382" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="9Tm-5r-Rqq"/>
                                                 </constraints>
@@ -353,9 +356,12 @@
                                                     <color key="titleColor" name="pointB"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="서울특별시 마포구 연남동 123-45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvo-u4-haG">
-                                                <rect key="frame" x="20" y="43.5" width="189.5" height="17"/>
-                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Thin" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 마포구 연남동 123-45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvo-u4-haG">
+                                                <rect key="frame" x="20" y="49" width="189.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="rD5-xa-S9V"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                 <color key="textColor" name="grayscale04"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -364,13 +370,13 @@
                                         <constraints>
                                             <constraint firstItem="RlQ-zh-oHo" firstAttribute="leading" secondItem="EDf-sC-d2H" secondAttribute="leading" constant="20" symbolic="YES" id="AII-Gi-Ejp"/>
                                             <constraint firstAttribute="height" constant="157" id="EjE-pm-Pla"/>
-                                            <constraint firstItem="mvo-u4-haG" firstAttribute="top" secondItem="RlQ-zh-oHo" secondAttribute="bottom" constant="1.5" id="I9g-uj-QCP"/>
-                                            <constraint firstItem="82m-JW-oM3" firstAttribute="top" secondItem="mvo-u4-haG" secondAttribute="bottom" constant="35.5" id="Ugf-t5-PKc"/>
+                                            <constraint firstItem="mvo-u4-haG" firstAttribute="top" secondItem="RlQ-zh-oHo" secondAttribute="bottom" constant="2" id="I9g-uj-QCP"/>
+                                            <constraint firstAttribute="bottom" secondItem="82m-JW-oM3" secondAttribute="bottom" constant="20" id="IIw-aX-ucV"/>
                                             <constraint firstItem="RlQ-zh-oHo" firstAttribute="top" secondItem="EDf-sC-d2H" secondAttribute="top" constant="20" symbolic="YES" id="VCB-ZV-A7Z"/>
                                             <constraint firstItem="82m-JW-oM3" firstAttribute="leading" secondItem="EDf-sC-d2H" secondAttribute="leading" constant="16" id="XpP-gv-imm"/>
                                             <constraint firstAttribute="trailing" secondItem="82m-JW-oM3" secondAttribute="trailing" constant="16" id="cxR-EM-C7n"/>
+                                            <constraint firstItem="82m-JW-oM3" firstAttribute="top" secondItem="mvo-u4-haG" secondAttribute="bottom" constant="20" id="hM1-vy-wCf"/>
                                             <constraint firstItem="mvo-u4-haG" firstAttribute="leading" secondItem="RlQ-zh-oHo" secondAttribute="leading" id="j7f-ee-WqG"/>
-                                            <constraint firstAttribute="bottom" secondItem="82m-JW-oM3" secondAttribute="bottom" constant="13" id="kIy-QP-o8g"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLj-Ch-yqX" userLabel="Line View">
@@ -505,7 +511,7 @@
                                     <constraint firstItem="T8q-Fj-oa9" firstAttribute="leading" secondItem="EDf-sC-d2H" secondAttribute="leading" id="CYE-o0-VCr"/>
                                     <constraint firstItem="T8q-Fj-oa9" firstAttribute="leading" secondItem="V0K-j5-tBj" secondAttribute="leading" id="HBv-SI-YKH"/>
                                     <constraint firstAttribute="trailing" secondItem="T8q-Fj-oa9" secondAttribute="trailing" id="HcC-cP-xq3"/>
-                                    <constraint firstAttribute="height" constant="897" id="PVm-OG-8Bh"/>
+                                    <constraint firstAttribute="height" constant="900" id="PVm-OG-8Bh"/>
                                     <constraint firstItem="SLj-Ch-yqX" firstAttribute="top" secondItem="EDf-sC-d2H" secondAttribute="bottom" id="qed-Cp-Ind"/>
                                     <constraint firstItem="EDf-sC-d2H" firstAttribute="trailing" secondItem="SLj-Ch-yqX" secondAttribute="trailing" id="xuj-Sw-qaY"/>
                                     <constraint firstItem="SLj-Ch-yqX" firstAttribute="trailing" secondItem="ejS-p9-uTm" secondAttribute="trailing" id="yCE-rV-yfV"/>
@@ -543,6 +549,7 @@
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="1000"/>
                     <size key="freeformSize" width="414" height="1050"/>
                     <connections>
+                        <outlet property="NavigationBarView" destination="HJH-3s-3iJ" id="irF-Eq-kwk"/>
                         <outlet property="addressLabel" destination="mvo-u4-haG" id="C1J-Ie-Ie2"/>
                         <outlet property="availableOrderDay" destination="82m-JW-oM3" id="Cp9-kO-bg3"/>
                         <outlet property="cakeDesignLabel" destination="RlQ-zh-oHo" id="4aH-XL-gX1"/>
@@ -556,10 +563,10 @@
                         <outlet property="naviZzimButton" destination="Cay-Bm-flT" id="kIB-An-0xe"/>
                         <outlet property="progressBar" destination="H1Q-qH-fwz" id="KuG-hg-Jc7"/>
                         <outlet property="scrollView" destination="V0K-j5-tBj" id="jXN-KF-kUs"/>
-                        <outletCollection property="cakePriceBySizeLabel" destination="fz5-Q7-O6M" collectionClass="NSMutableArray" id="Hwd-oY-NkY"/>
-                        <outletCollection property="cakePriceBySizeLabel" destination="KXP-ei-PfL" collectionClass="NSMutableArray" id="d4h-0t-DeH"/>
-                        <outletCollection property="cakePriceBySizeLabel" destination="W46-m5-OJi" collectionClass="NSMutableArray" id="UMW-f7-WSf"/>
-                        <outletCollection property="cakePriceBySizeLabel" destination="gom-nP-IRt" collectionClass="NSMutableArray" id="OwX-5L-BZF"/>
+                        <outletCollection property="cakePriceBySizeLabels" destination="fz5-Q7-O6M" collectionClass="NSMutableArray" id="Hwd-oY-NkY"/>
+                        <outletCollection property="cakePriceBySizeLabels" destination="KXP-ei-PfL" collectionClass="NSMutableArray" id="d4h-0t-DeH"/>
+                        <outletCollection property="cakePriceBySizeLabels" destination="W46-m5-OJi" collectionClass="NSMutableArray" id="UMW-f7-WSf"/>
+                        <outletCollection property="cakePriceBySizeLabels" destination="gom-nP-IRt" collectionClass="NSMutableArray" id="OwX-5L-BZF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3P-QE-Oc1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -569,9 +576,9 @@
     </scenes>
     <resources>
         <image name="arrowLeft" width="38" height="38"/>
-        <image name="chevronCompactDown" width="20" height="20"/>
+        <image name="chevronCompactDown" width="20" height="19"/>
         <image name="icHeart" width="38" height="38"/>
-        <image name="icHeartFilled" width="24" height="24"/>
+        <image name="icHeartFilled" width="38" height="38"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

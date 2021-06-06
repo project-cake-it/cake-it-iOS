@@ -9,6 +9,7 @@ import UIKit
 
 final class DesignDetailViewController: BaseViewController {
   
+  @IBOutlet weak var NavigationBarView: UIView!
   @IBOutlet weak var naviStoreNameLabel: UILabel!
   @IBOutlet weak var naviZzimButton: UIButton!
   
@@ -23,62 +24,94 @@ final class DesignDetailViewController: BaseViewController {
   
   @IBOutlet weak var cakeInformationView: UIView!
   @IBOutlet weak var cakeThemeLabel: UILabel!     // 케이크 테마
-  @IBOutlet var cakePriceBySizeLabel: [UILabel]!  // 케이크 크기별 가격
+  @IBOutlet var cakePriceBySizeLabels: [UILabel]! // 케이크 크기별 가격
   @IBOutlet weak var kindOfCreamsLabel: UILabel!  // 케이크 크림 종류
   @IBOutlet weak var kindOfSheetsLabel: UILabel!  // 케이크 시트 종류
     
-  let colorList: [UIColor] = [.red, .blue, .green, .yellow, .cyan]
-
+  var cakeDesign: CakeDesign?
+  var imageTotalCount: Int = 0
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    fetchCakeImages()
     configureView()
   }
   
+  private func fetchCakeImages() {
+    guard let cakeImageInfoList = cakeDesign?.designImages else { return }
+
+    for i in 0..<cakeImageInfoList.count {
+      let cakeImageUrlString = cakeImageInfoList[i].designImageUrl
+      guard let cakeImageUrl = URL(string: cakeImageUrlString) else { return }
+      
+      DispatchQueue.global().async {
+        if let imageData = try? Data(contentsOf: cakeImageUrl) {
+          DispatchQueue.main.async {
+            let cakeImageView = UIImageView(image: UIImage(data: imageData))
+            cakeImageView.frame = CGRect(x: Constants.SCREEN_WIDTH * CGFloat(i),
+                                         y: 0,
+                                         width: Constants.SCREEN_WIDTH,
+                                         height: Constants.SCREEN_WIDTH)
+            cakeImageView.contentMode = .scaleAspectFit
+            self.imageScrollView.addSubview(cakeImageView)
+          }
+        }
+      }
+    }
+  }
+  
   private func configureView() {
+    configureNavigationBar()
     configureImageView()
-    configureCakeSimpleView()
     configureCakeInformationView()
   }
   
+  private func configureNavigationBar() {
+    naviStoreNameLabel.text = cakeDesign?.shopName
+  }
+  
   private func configureImageView() {
+    
     configureImageScrollView()
     configureProgressView()
   }
  
   private func configureImageScrollView() {
-    for i in 0..<colorList.count {
-      let subView = UIView()
-      subView.frame = CGRect(x: Constants.SCREEN_WIDTH * CGFloat(i),
-                             y: 0,
-                             width: Constants.SCREEN_WIDTH,
-                             height: Constants.SCREEN_WIDTH)
-      subView.backgroundColor = colorList[i]
-      imageScrollView.addSubview(subView)
-    }
-    
+    guard let cakeImageInfoList = cakeDesign?.designImages else { return }
+    imageTotalCount = cakeImageInfoList.count
     imageScrollView.delegate = self
-    imageScrollView.contentSize = CGSize(width: Constants.SCREEN_WIDTH * CGFloat(colorList.count),
-                                         height: Constants.SCREEN_WIDTH)
     imageScrollView.isPagingEnabled = true
     imageScrollView.alwaysBounceVertical = false
     imageScrollView.alwaysBounceHorizontal = true
+    imageScrollView.contentSize = CGSize(width: Constants.SCREEN_WIDTH * CGFloat(imageTotalCount),
+                                         height: Constants.SCREEN_WIDTH)
   }
   
   private func configureProgressView() {
-    progressBar.backgroundColor = .black
-    progressBar.tintColor = .white
+    if imageTotalCount == 0 {
+      progressBar.isHidden = true
+      return
+    }
+    progressBar.backgroundColor = Colors.white
+    progressBar.tintColor = Colors.pointB
     progressBar.progressViewStyle = .bar
-    progressBar.progress = 1.0 / Float(colorList.count)
-  }
-  
-  
-  private func configureCakeSimpleView() {
-    availableOrderDay.layer.borderWidth = 1
-    availableOrderDay.layer.borderColor = Colors.pointB.cgColor
+    progressBar.progress = 1.0 / Float(imageTotalCount)
   }
 
   private func configureCakeInformationView() {
+    cakeDesignLabel.text = cakeDesign?.name
+    addressLabel.text = cakeDesign?.shopPullAddress
+    cakeThemeLabel.text = cakeDesign?.themeNames
+    for i in 0..<cakePriceBySizeLabels.count {
+      guard let sizeInfo = cakeDesign?.sizes[i] else { break }
+      cakePriceBySizeLabels[i].text = "\(sizeInfo.name) / \(String(sizeInfo.price).moneyFormat)"
+    }
+    kindOfCreamsLabel.text = cakeDesign?.creamNames
+    kindOfSheetsLabel.text = cakeDesign?.sheetNames
+
+    availableOrderDay.layer.borderWidth = 1
+    availableOrderDay.layer.borderColor = Colors.pointB.cgColor
   }
   
   @IBAction func naviBackButtonDidTap(_ sender: Any) {
@@ -94,7 +127,7 @@ extension DesignDetailViewController: UIScrollViewDelegate {
 
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let currentPageIndex = Int(floor(scrollView.contentOffset.x / Constants.SCREEN_WIDTH))
-    let properties = Float(currentPageIndex + 1) / Float(colorList.count)
+    let properties = Float(currentPageIndex + 1) / Float(imageTotalCount)
     progressBar.progress = properties
   }
 }
