@@ -7,12 +7,10 @@
 
 import UIKit
 
-// kakao login
 import KakaoSDKCommon
 import KakaoSDKAuth
-
-// naver Login
 import NaverThirdPartyLogin
+import GoogleSignIn
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,34 +20,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   let KAKAO_APP_KEY = "336e5fa0e2a8c916ffda94b2b64f5c8d"
   let NAVER_CONSUMER_SECRET = "PFv_FX3EsN"
   let NAVER_CONSUMER_KEY = "N2SMwopXbdrTDABqVn1m"
+  let GOOGLE_CLIENT_ID = "911891330500-qis1f628hh0oqdbnoj597cfgkgqnk9r4.apps.googleusercontent.com"
   let APP_NAME = "cakeit"
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    
-    naverSDKInit()
-    kakaoSDKInit()
+  
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    configureNaverSDK()
+    configureKakaoSDK()
+    configureGoogleSignInSDK()
     
     return true
   }
   
-  func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+  func application(_ application: UIApplication,
+                   open url: URL,
+                   options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
     if (AuthApi.isKakaoTalkLoginUrl(url)) {
-        return AuthController.handleOpenUrl(url: url)
+      return AuthController.handleOpenUrl(url: url)
     }
     
-    guard let naverConnection = NaverThirdPartyLoginConnection.getSharedInstance() else {
-      return false
-    }
-    
+    guard let naverConnection = NaverThirdPartyLoginConnection.getSharedInstance() else { return false }
     if (naverConnection.isNaverThirdPartyLoginAppschemeURL(url)) {
       return naverConnection.application(application, open: url, options: options)
     }
     
+    guard let scheme = url.scheme else { return false }
+    if scheme.contains("com.googleusercontent.apps") {
+      return GIDSignIn.sharedInstance().handle(url)
+    }
+    
     return false
   }
-
+  
   // MARK: - private method
-  func naverSDKInit() {
+  private func configureNaverSDK() {
     let naverLogin = NaverThirdPartyLoginConnection.getSharedInstance()
     naverLogin?.isNaverAppOauthEnable = true
     naverLogin?.isInAppOauthEnable = true
@@ -60,8 +64,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     naverLogin?.appName = APP_NAME
   }
   
-  func kakaoSDKInit() {
+  private func configureKakaoSDK() {
     KakaoSDKCommon.initSDK(appKey: KAKAO_APP_KEY)
+  }
+  
+  private func configureGoogleSignInSDK() {
+    GIDSignIn.sharedInstance().clientID = GOOGLE_CLIENT_ID
   }
 }
 

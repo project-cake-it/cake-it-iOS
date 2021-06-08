@@ -7,12 +7,13 @@
 
 import Foundation
 
-enum LoginSocialType: String {
-  case KAKAO = "KAKAO"
-  case NAVER = "NAVER"
-  case APPLE = "APPLE"
-  
-  var string: String {
+enum LoginSocialType: String, CustomStringConvertible{
+  var description: String {
     return self.rawValue
   }
+  
+  case KAKAO  = "KAKAO"
+  case NAVER  = "NAVER"
+  case APPLE  = "APPLE"
+  case GOOGLE = "GOOGLE"
 }

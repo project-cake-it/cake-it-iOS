@@ -9,33 +9,43 @@ import Foundation
 import KakaoSDKUser
 import KakaoSDKAuth
 import NaverThirdPartyLogin
-
+import GoogleSignIn
 
 final class LoginViewModel: BaseViewModel {
   
-  typealias CommonCompletionHandler = (Bool) -> Void
+  typealias CommonCompletion = (Bool) -> Void
   
   private var model: LoginModel?
   private var socialType: LoginSocialType?
-  private var completionHandler: CommonCompletionHandler?
+  private var loginCompletion: CommonCompletion?
   private let naverLoginSDK = NaverThirdPartyLoginConnection.getSharedInstance()
+  private let viewController: UIViewController
   
-  func loginByProvider(socialType: LoginSocialType, completion: @escaping CommonCompletionHandler) {
-    completionHandler = completion
+  init(viewController: UIViewController) {
+    self.viewController = viewController
+    super.init()
     naverLoginSDK?.delegate = self
+    GIDSignIn.sharedInstance().delegate = self
+  }
+  
+  func login(by socialType: LoginSocialType,
+             completion: @escaping CommonCompletion) {
+    loginCompletion = completion
     self.socialType = socialType
     
     switch socialType {
     case .KAKAO:
-      signInWithKakaoWithCompletion()
+      signInKakao()
     case .NAVER:
-      signInWithNaverWithCompletionHandler()
+      signInNaver()
+    case .GOOGLE:
+      signInGoogle(viewController: viewController)
     default:
-      completion(false)
+      loginCompletion?(false)
     }
   }
   
-  func signInWithKakaoWithCompletion() {
+  private func signInKakao() {
     if (UserApi.isKakaoTalkLoginAvailable()) {
       UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
         self.processKakaoLoginRespone(oauthToken: oauthToken, error: error)
@@ -52,51 +62,54 @@ final class LoginViewModel: BaseViewModel {
   private func processKakaoLoginRespone(oauthToken: OAuthToken?, error: Error?) {
     if let error = error {
       print(error)
-      self.completionHandler?(false)
+      loginCompletion?(false)
     } else {
       guard let accessToken = oauthToken?.accessToken else {
-        self.completionHandler?(false)
+        loginCompletion?(false)
         return
       }
       guard let refreshToken = oauthToken?.accessToken else {
-        self.completionHandler?(false)
+        loginCompletion?(false)
         return
       }
       
-      self.login(accessToken: accessToken, refreshToken: refreshToken)
+      self.requestLogin(accessToken: accessToken, refreshToken: refreshToken)
     }
   }
   
-  func signInWithNaverWithCompletionHandler() {
-    self.naverLoginSDK?.delegate = self
+  private func signInGoogle(viewController: UIViewController) {
+    GIDSignIn.sharedInstance().presentingViewController = viewController
+    GIDSignIn.sharedInstance().signIn()
+  }
+  
+  private func signInNaver() {
     self.naverLoginSDK?.requestThirdPartyLogin()
   }
   
-  func login(accessToken: String, refreshToken:String) {
-    guard let socialType = socialType?.string else {
-      self.completionHandler?(false)
+  private func requestLogin(accessToken: String, refreshToken:String) {
+    guard let socialType = socialType else {
+      loginCompletion!(false)
       return
     }
     
-    model = LoginModel(accessToken: accessToken, type:socialType)
+    let socialTypeString = String(describing: socialType.rawValue)
+    model = LoginModel(accessToken: accessToken, type:socialTypeString)
     
     NetworkManager.shared.requestPost(api: .login,
                                       type: LoginModel.Response.self,
                                       param: model) { (result) in
-      
       switch result {
       case .success(let result):
         let token = result.accessToken
         
         guard LoginManager.shared.saveAccessToken(accessToken: token) else {
-          self.completionHandler!(false)
+          self.loginCompletion!(false)
           return
         }
         
-        self.completionHandler!(true)
+        self.loginCompletion!(true)
       case .failure(let error):
-        print(error)
-        self.completionHandler!(false)
+        self.loginCompletion!(false)
         break
       }
     }
@@ -107,35 +120,21 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
   func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
     guard (naverLoginSDK?.isValidAccessTokenExpireTimeNow()) != nil else { return }
 
-    // 서버통신
     guard let access = naverLoginSDK?.accessToken else {
-      self.completionHandler?(false)
+      loginCompletion?(false)
       return
     }
     
     guard let refresh = naverLoginSDK?.refreshToken else {
-      self.completionHandler?(false)
+      loginCompletion?(false)
       return
     }
     
-    self.login(accessToken: access, refreshToken: refresh)
+    self.requestLogin(accessToken: access, refreshToken: refresh)
   }
 
   func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-    guard (naverLoginSDK?.isValidAccessTokenExpireTimeNow()) != nil else { return }
-
-    // 서버통신
-    guard let access = naverLoginSDK?.accessToken else {
-      self.completionHandler?(false)
-      return
-    }
-    
-    guard let refresh = naverLoginSDK?.refreshToken else {
-      self.completionHandler?(false)
-      return
-    }
-    
-    self.login(accessToken: access, refreshToken: refresh)
+    //TODO: refreshToken 구현
   }
 
   func oauth20ConnectionDidFinishDeleteToken() {
@@ -144,5 +143,16 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
 
   func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
     //TODO: logout 기능구현
+  }
+}
+
+extension LoginViewModel: GIDSignInDelegate {
+  func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    if error != nil {
+      loginCompletion?(false)
+      return
+    }
+    
+    requestLogin(accessToken: user.authentication.accessToken, refreshToken: user.authentication.refreshToken)
   }
 }
