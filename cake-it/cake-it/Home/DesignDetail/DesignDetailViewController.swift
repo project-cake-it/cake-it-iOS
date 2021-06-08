@@ -72,23 +72,27 @@ final class DesignDetailViewController: BaseViewController {
   
   private func configureView() {
     configureNavigationBar()
+    configureScrollView()
     configureImageView()
     configureCakeInformationView()
-    
-    contentViewHeightConstraint.constant = Metric.imageScrollViewHeight
-      + cakeSimpleView.frame.height
-      + lineView.frame.height + cakeInformationView.frame.height
-      + connectStoreButton.frame.height
-      + Metric.bottomInset
   }
   
   private func configureNavigationBar() {
     naviStoreNameLabel.text = cakeDesign?.shopName
   }
   
+  private func configureScrollView() {
+    let totalHeight = Metric.imageScrollViewHeight
+      + cakeSimpleView.frame.height
+      + lineView.frame.height + cakeInformationView.frame.height
+      + connectStoreButton.frame.height
+      + Metric.bottomInset
+    contentViewHeightConstraint.constant = totalHeight
+  }
+  
   private func configureImageView() {
     configureImageScrollView()
-    configureProgressView()
+    configureProgressBar()
   }
  
   private func configureImageScrollView() {
@@ -102,7 +106,7 @@ final class DesignDetailViewController: BaseViewController {
                                          height: Constants.SCREEN_WIDTH)
   }
   
-  private func configureProgressView() {
+  private func configureProgressBar() {
     if imageTotalCount == 0 {
       progressBar.isHidden = true
       return
