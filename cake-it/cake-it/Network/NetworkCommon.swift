@@ -19,7 +19,8 @@ class NetworkCommon {
   
   enum API: String {
     case login = "login"
-    case randomNikname = "/nickname"
+    case designs = "designs"
+    case randomNikname = "nickname"
     case uploadPhoto = "test/post"
     
     var urlString: String {

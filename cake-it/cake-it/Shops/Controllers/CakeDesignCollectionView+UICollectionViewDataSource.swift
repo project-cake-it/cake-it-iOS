@@ -17,8 +17,11 @@ extension ShopDetailViewController: UICollectionViewDataSource {
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let identifier = String(describing: CakeDesignSquareImageCell.self)
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CakeDesignSquareImageCell
-    let url = cakeDesigns[indexPath.row].image
-    cell.updateCell(imageURL: url)
+    if let imageInfo = cakeDesigns[indexPath.row].designImages.first {
+       let url = imageInfo.designImageUrl
+       cell.updateCell(imageURL: url)
+    }
+    
     return cell
   }
 }
