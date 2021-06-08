@@ -29,7 +29,6 @@ final class LoginViewModel: BaseViewModel {
   }
   
   func login(by socialType: LoginSocialType,
-             viewController: UIViewController,
              completion: @escaping CommonCompletion) {
     loginCompletion = completion
     self.socialType = socialType
@@ -88,12 +87,13 @@ final class LoginViewModel: BaseViewModel {
   }
   
   private func requestLogin(accessToken: String, refreshToken:String) {
-    guard let socialType = socialType?.string else {
-      loginCompletion?(false)
+    guard let socialType = socialType else {
+      loginCompletion!(false)
       return
     }
     
-    model = LoginModel(accessToken: accessToken, type:socialType)
+    let socialTypeString = String(describing: socialType.rawValue)
+    model = LoginModel(accessToken: accessToken, type:socialTypeString)
     
     NetworkManager.shared.requestPost(api: .login,
                                       type: LoginModel.Response.self,

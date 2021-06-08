@@ -43,19 +43,19 @@ final class LoginViewController: UIViewController {
   }
   
   @IBAction func signInWithKakaoButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .KAKAO, viewController: self, completion: { (success) in
+    viewModel?.login(by: .KAKAO, completion: { (success) in
       self.finishLogin(success: success)
     })
   }
   
   @IBAction func signInWithNaverButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .NAVER, viewController: self, completion: { (success) in
+    viewModel?.login(by: .NAVER, completion: { (success) in
       self.finishLogin(success: success)
     })
   }
   
   @IBAction func signInWithGoogleButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .GOOGLE, viewController: self, completion: { (success) in
+    viewModel?.login(by: .GOOGLE, completion: { (success) in
       self.finishLogin(success: success)
     })
   }

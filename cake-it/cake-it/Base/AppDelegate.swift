@@ -25,9 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    naverSDKInit()
-    kakaoSDKInit()
-    googleSignInSDKInit();
+    configureNaverSDK()
+    configureKakaoSDK()
+    configureGoogleSignInSDK()
     
     return true
   }
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   // MARK: - private method
-  private func naverSDKInit() {
+  private func configureNaverSDK() {
     let naverLogin = NaverThirdPartyLoginConnection.getSharedInstance()
     naverLogin?.isNaverAppOauthEnable = true
     naverLogin?.isInAppOauthEnable = true
@@ -64,11 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     naverLogin?.appName = APP_NAME
   }
   
-  private func kakaoSDKInit() {
+  private func configureKakaoSDK() {
     KakaoSDKCommon.initSDK(appKey: KAKAO_APP_KEY)
   }
   
-  private func googleSignInSDKInit() {
+  private func configureGoogleSignInSDK() {
     GIDSignIn.sharedInstance().clientID = GOOGLE_CLIENT_ID
   }
 }
