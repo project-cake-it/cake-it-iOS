@@ -29,8 +29,8 @@ final class CakeDesignCell: UICollectionViewCell {
   
   func update(with cakeDesign: CakeDesign) {
     if let sizeInfo = cakeDesign.sizes.first {
-      let removedBracketSizeName = sizeInfo.name.removeBracketInSizeInfo()
-      locationAndCakeSizeLabel.text = "\(cakeDesign.shopAddress) | \(removedBracketSizeName)"
+      let sizeWithoutParentheses = sizeInfo.name.withoutParentheses()
+      locationAndCakeSizeLabel.text = "\(cakeDesign.shopAddress) | \(sizeWithoutParentheses)"
       nameLabel.text = cakeDesign.name
       priceLabel.text = String(sizeInfo.price).moneyFormat.won
     }
