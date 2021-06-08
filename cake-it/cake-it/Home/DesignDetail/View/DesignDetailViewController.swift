@@ -9,7 +9,12 @@ import UIKit
 
 final class DesignDetailViewController: BaseViewController {
   
-  @IBOutlet weak var NavigationBarView: UIView!
+  enum Metric {
+    static let imageScrollViewHeight: CGFloat = Constants.SCREEN_WIDTH
+    static let bottomInset: CGFloat = 30.0
+  }
+  
+  @IBOutlet weak var navigationBarView: UIView!
   @IBOutlet weak var naviStoreNameLabel: UILabel!
   @IBOutlet weak var naviZzimButton: UIButton!
   
@@ -21,13 +26,17 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet weak var cakeDesignLabel: UILabel!    // 케이크 디자인 이름
   @IBOutlet weak var addressLabel: UILabel!       // 가게 주소
   @IBOutlet weak var availableOrderDay: UIButton! // 주문 가능 날짜 확인 버튼
+  @IBOutlet weak var lineView: UIView!
   
   @IBOutlet weak var cakeInformationView: UIView!
   @IBOutlet weak var cakeThemeLabel: UILabel!     // 케이크 테마
   @IBOutlet var cakePriceBySizeLabels: [UILabel]! // 케이크 크기별 가격
   @IBOutlet weak var kindOfCreamsLabel: UILabel!  // 케이크 크림 종류
   @IBOutlet weak var kindOfSheetsLabel: UILabel!  // 케이크 시트 종류
-    
+  @IBOutlet weak var connectStoreButton: UIButton! // 가게 연결하기 버튼
+  
+  @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
+
   var cakeDesign: CakeDesign?
   var imageTotalCount: Int = 0
   
@@ -53,7 +62,7 @@ final class DesignDetailViewController: BaseViewController {
                                          y: 0,
                                          width: Constants.SCREEN_WIDTH,
                                          height: Constants.SCREEN_WIDTH)
-            cakeImageView.contentMode = .scaleAspectFit
+            cakeImageView.contentMode = .scaleAspectFill
             self.imageScrollView.addSubview(cakeImageView)
           }
         }
@@ -65,6 +74,12 @@ final class DesignDetailViewController: BaseViewController {
     configureNavigationBar()
     configureImageView()
     configureCakeInformationView()
+    
+    contentViewHeightConstraint.constant = Metric.imageScrollViewHeight
+      + cakeSimpleView.frame.height
+      + lineView.frame.height + cakeInformationView.frame.height
+      + connectStoreButton.frame.height
+      + Metric.bottomInset
   }
   
   private func configureNavigationBar() {
@@ -72,7 +87,6 @@ final class DesignDetailViewController: BaseViewController {
   }
   
   private func configureImageView() {
-    
     configureImageScrollView()
     configureProgressView()
   }
@@ -112,6 +126,7 @@ final class DesignDetailViewController: BaseViewController {
 
     availableOrderDay.layer.borderWidth = 1
     availableOrderDay.layer.borderColor = Colors.pointB.cgColor
+    connectStoreButton.round(cornerRadius: 8.0)
   }
   
   @IBAction func naviBackButtonDidTap(_ sender: Any) {
