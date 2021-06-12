@@ -158,11 +158,11 @@ final class FilterDetailView: UIView {
   
   private func selectedFilterTitle( index: Int) -> String {
     switch filterType {
-    case .basic:    return FilterCommon.FilterSorting.allCases[index].title
-    case .region:   return FilterCommon.FilterRegion.allCases[index].title
-    case .size:     return FilterCommon.FilterSize.allCases[index].title
-    case .color:    return FilterCommon.FilterColor.allCases[index].title
-    case .category: return FilterCommon.FilterCategory.allCases[index].title
+    case .basic:    return FilterCommon.FilterSorting.allCases[index].value
+    case .region:   return FilterCommon.FilterRegion.allCases[index].value
+    case .size:     return FilterCommon.FilterSize.allCases[index].value
+    case .color:    return FilterCommon.FilterColor.allCases[index].value
+    case .category: return FilterCommon.FilterCategory.allCases[index].value
     case .reset:    return ""
     }
   }

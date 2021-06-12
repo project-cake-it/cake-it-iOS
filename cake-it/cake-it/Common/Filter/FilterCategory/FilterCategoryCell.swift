@@ -45,7 +45,7 @@ final class FilterCategoryCell: UICollectionViewCell {
     isFilterHightlighted = isHighlighted
     isFilterSelected = isSelected
     
-    titleLabel.text = type.korTitle
+    titleLabel.text = type.title
     self.clipsToBounds = false
     self.layer.borderWidth = 1
     self.layer.cornerRadius = self.frame.height/2
