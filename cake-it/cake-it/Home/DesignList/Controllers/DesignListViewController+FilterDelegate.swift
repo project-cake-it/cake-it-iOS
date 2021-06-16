@@ -33,9 +33,9 @@ extension DesignListViewController: FilterDetailViewDelegate {
     
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
     hightlightedFilterType = type      // 포커스 된 셀 타입 저장
-    selectedFilterDic[type.key] = values
+    selectedFilter[type.key] = values
     requestDesignWithFilter()
-    print("🏃🏻‍♂️ selected: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+    print("🏃🏻‍♂️ selected: \(selectedFilter)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
 
   func backgroundViewDidTap() {
@@ -48,7 +48,7 @@ extension DesignListViewController: FilterDetailViewDelegate {
 extension DesignListViewController {
   
   private func requestDesignWithFilter() {
-    let parameter = selectedFilterDic.queryString()
+    let parameter = selectedFilter.queryString()
     NetworkManager.shared.requestGet(api: .designs,
                                      type: [CakeDesign].self,
                                      param: parameter) { (respons) in
@@ -70,7 +70,7 @@ extension DesignListViewController {
 
     hightlightedFilterType = .reset
     filterCategoryCollectionView.reloadData()
-    selectedFilterDic.removeAll()
+    selectedFilter.removeAll()
     requestDesignWithFilter()
   }
   
@@ -86,7 +86,7 @@ extension DesignListViewController {
   private func updateFilterDetailView(type: FilterCommon.FilterType) {
     if let detailView = filterDetailView {
       detailView.filterType = type
-      detailView.selectedList = selectedFilterDic[type.key] ?? []
+      detailView.selectedList = selectedFilter[type.key] ?? []
       detailView.filterTableView.reloadData()
     }
   }
@@ -95,7 +95,7 @@ extension DesignListViewController {
     filterDetailView = FilterDetailView()
     if let detailView = filterDetailView {
       detailView.filterType = type
-      detailView.selectedList = selectedFilterDic[type.key] ?? []
+      detailView.selectedList = selectedFilter[type.key] ?? []
       detailView.delegate = self
       self.view.addSubview(detailView)
       detailView.constraints(topAnchor: filterCategoryCollectionView.bottomAnchor,

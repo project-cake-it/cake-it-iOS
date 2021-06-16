@@ -26,7 +26,7 @@ final class DesignListViewController: BaseViewController {
   var cakeDesigns: [CakeDesign] = []
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .size, .color, .category]
   var filterDetailView: FilterDetailView?
-  var selectedFilterDic: Dictionary<String, [String]> = [:]
+  var selectedFilter: Dictionary<String, [String]> = [:]
   var hightlightedFilterType: FilterCommon.FilterType = .reset
   
   override func viewDidLoad() {

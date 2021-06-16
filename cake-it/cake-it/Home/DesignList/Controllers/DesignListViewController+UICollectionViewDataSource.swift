@@ -37,8 +37,8 @@ extension DesignListViewController: UICollectionViewDataSource {
                                                     for: indexPath) as! FilterCategoryCell
       let filterType = cakeFilterList[indexPath.row]
       var isSelected = false
-      if selectedFilterDic.keys.contains(filterType.key)
-          && selectedFilterDic[filterType.key]?.count ?? 0 > 0 {
+      if selectedFilter.keys.contains(filterType.key)
+          && selectedFilter[filterType.key]?.count ?? 0 > 0 {
         isSelected = true
       }
       var isHighlighted = false
