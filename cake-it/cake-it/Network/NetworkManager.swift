@@ -27,8 +27,10 @@ final class NetworkManager {
   
   func requestGet<T: Decodable>(api: NetworkCommon.API,
                                 type: T.Type,
+                                param: String = "",
                                 completion: @escaping (Result<T, APIError>) -> Void) {
-    guard let url = URL(string: api.urlString) else { return }
+    let urlString = api.urlString + param
+    guard let url = URL(string: urlString) else { return }
     let request = AF.request(url)
     self.request(request: request, type: T.self, completion: completion)
   }
@@ -65,7 +67,7 @@ final class NetworkManager {
                                                           options: .prettyPrinted)
           let decodedResponse = try JSONDecoder().decode(NetworkCommon.Response<T>.self,
                                                          from: serializedData)
-          print(decodedResponse)
+//          print(decodedResponse)
           if decodedResponse.status == 200 || decodedResponse.status == 201 {
             completion(.success(decodedResponse.data))
           } else {

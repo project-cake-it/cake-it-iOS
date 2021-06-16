@@ -31,11 +31,11 @@ extension DesignListViewController: FilterCategoryCellDelegate {
 // MARK:- FilterDetailView Delegate Method
 extension DesignListViewController: FilterDetailViewDelegate {
     
-  func filterDetailCellDidTap(key: FilterCommon.FilterType, values: [String]) {
-    hightlightedFilterType = key      // 포커스 된 셀 타입 저장
-    selectedFilterDic[key.title] = values
-    filterCategoryCollectionView.reloadData()
-    print("🏃🏻‍♂️ selected: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+  func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
+    hightlightedFilterType = type      // 포커스 된 셀 타입 저장
+    selectedFilter[type.key] = values
+    requestDesignWithFilter()
+    print("🏃🏻‍♂️ selected: \(selectedFilter)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
 
   func backgroundViewDidTap() {
@@ -47,14 +47,31 @@ extension DesignListViewController: FilterDetailViewDelegate {
 // MARK:- Private Method
 extension DesignListViewController {
   
+  private func requestDesignWithFilter() {
+    let parameter = selectedFilter.queryString()
+    NetworkManager.shared.requestGet(api: .designs,
+                                     type: [CakeDesign].self,
+                                     param: parameter) { (respons) in
+      switch respons {
+      case .success(let designs):
+        self.cakeDesigns = designs
+        self.designsCollectionView.reloadData()
+        
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+  
   private func resetFilter() {
-    hightlightedFilterType = .reset
-    selectedFilterDic.removeAll()
-    filterCategoryCollectionView.reloadData()
-    
     if isShowDetailView() {
       removeFilterDetailView()
     }
+
+    hightlightedFilterType = .reset
+    filterCategoryCollectionView.reloadData()
+    selectedFilter.removeAll()
+    requestDesignWithFilter()
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {
@@ -69,7 +86,7 @@ extension DesignListViewController {
   private func updateFilterDetailView(type: FilterCommon.FilterType) {
     if let detailView = filterDetailView {
       detailView.filterType = type
-      detailView.selectedList = selectedFilterDic[type.title] ?? []
+      detailView.selectedList = selectedFilter[type.key] ?? []
       detailView.filterTableView.reloadData()
     }
   }
@@ -78,7 +95,7 @@ extension DesignListViewController {
     filterDetailView = FilterDetailView()
     if let detailView = filterDetailView {
       detailView.filterType = type
-      detailView.selectedList = selectedFilterDic[type.title] ?? []
+      detailView.selectedList = selectedFilter[type.key] ?? []
       detailView.delegate = self
       self.view.addSubview(detailView)
       detailView.constraints(topAnchor: filterCategoryCollectionView.bottomAnchor,

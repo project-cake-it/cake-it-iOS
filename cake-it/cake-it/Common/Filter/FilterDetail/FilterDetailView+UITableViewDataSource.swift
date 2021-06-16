@@ -19,11 +19,11 @@ extension FilterDetailView: UITableViewDataSource {
     }
     
     switch filterType {
-    case .basic:
+    case .order:
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterSorting.allCases[indexPath.row]
-        cell.isCellSelected = selectedList.contains(filterInfo.title)
+        cell.isCellSelected = selectedList.contains(filterInfo.value)
         cell.update(title: filterInfo.title)
         cell.selectionStyle = .none
         return cell
@@ -32,7 +32,7 @@ extension FilterDetailView: UITableViewDataSource {
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterRegion.allCases[indexPath.row]
-        cell.isCellSelected = selectedList.contains(filterInfo.title)
+        cell.isCellSelected = selectedList.contains(filterInfo.value)
         cell.update(title: filterInfo.title)
         cell.selectionStyle = .none
         return cell
@@ -41,7 +41,7 @@ extension FilterDetailView: UITableViewDataSource {
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterCategory.allCases[indexPath.row]
-        cell.isCellSelected = selectedList.contains(filterInfo.title)
+        cell.isCellSelected = selectedList.contains(filterInfo.value)
         cell.update(title: filterInfo.title)
         cell.selectionStyle = .none
         return cell
@@ -50,7 +50,7 @@ extension FilterDetailView: UITableViewDataSource {
       let identifier = String(describing: FilterDescriptionCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterDescriptionCell {
         let filterInfo = FilterCommon.FilterSize.allCases[indexPath.row]
-        cell.isCellSelected = selectedList.contains(filterInfo.title)
+        cell.isCellSelected = selectedList.contains(filterInfo.value)
         cell.update(title: filterInfo.title, description: filterInfo.description)
         cell.selectionStyle = .none
         return cell
@@ -59,7 +59,7 @@ extension FilterDetailView: UITableViewDataSource {
       let identifier = String(describing: FilterColorCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterColorCell {
         let filterInfo = FilterCommon.FilterColor.allCases[indexPath.row]
-        cell.isCellSelected = selectedList.contains(filterInfo.title)
+        cell.isCellSelected = selectedList.contains(filterInfo.value)
         cell.update(title: filterInfo.title, color: filterInfo.color)
         cell.selectionStyle = .none
         return cell

@@ -23,10 +23,10 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var filterCategoryCollectionView: UICollectionView!
   
   
-  private(set) var cakeDesigns: [CakeDesign] = []
-  private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .basic, .region, .size, .color, .category]
+  var cakeDesigns: [CakeDesign] = []
+  private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .size, .color, .category]
   var filterDetailView: FilterDetailView?
-  var selectedFilterDic: Dictionary<String, [String]> = [:]
+  var selectedFilter: Dictionary<String, [String]> = [:]
   var hightlightedFilterType: FilterCommon.FilterType = .reset
   
   override func viewDidLoad() {
