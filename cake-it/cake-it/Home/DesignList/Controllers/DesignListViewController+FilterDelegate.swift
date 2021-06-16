@@ -31,9 +31,9 @@ extension DesignListViewController: FilterCategoryCellDelegate {
 // MARK:- FilterDetailView Delegate Method
 extension DesignListViewController: FilterDetailViewDelegate {
     
-  func filterDetailCellDidTap(key: FilterCommon.FilterType, values: [String]) {
-    hightlightedFilterType = key      // 포커스 된 셀 타입 저장
-    selectedFilterDic[key.value] = values
+  func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
+    hightlightedFilterType = type      // 포커스 된 셀 타입 저장
+    selectedFilterDic[type.key] = values
     requestDesignWithFilter()
     print("🏃🏻‍♂️ selected: \(selectedFilterDic)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
@@ -86,7 +86,7 @@ extension DesignListViewController {
   private func updateFilterDetailView(type: FilterCommon.FilterType) {
     if let detailView = filterDetailView {
       detailView.filterType = type
-      detailView.selectedList = selectedFilterDic[type.value] ?? []
+      detailView.selectedList = selectedFilterDic[type.key] ?? []
       detailView.filterTableView.reloadData()
     }
   }
@@ -95,7 +95,7 @@ extension DesignListViewController {
     filterDetailView = FilterDetailView()
     if let detailView = filterDetailView {
       detailView.filterType = type
-      detailView.selectedList = selectedFilterDic[type.value] ?? []
+      detailView.selectedList = selectedFilterDic[type.key] ?? []
       detailView.delegate = self
       self.view.addSubview(detailView)
       detailView.constraints(topAnchor: filterCategoryCollectionView.bottomAnchor,

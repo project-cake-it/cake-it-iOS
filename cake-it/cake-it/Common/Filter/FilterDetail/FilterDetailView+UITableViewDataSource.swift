@@ -19,7 +19,7 @@ extension FilterDetailView: UITableViewDataSource {
     }
     
     switch filterType {
-    case .basic:
+    case .order:
       let identifier = String(describing: FilterBasicCell.self)
       if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? FilterBasicCell {
         let filterInfo = FilterCommon.FilterSorting.allCases[indexPath.row]

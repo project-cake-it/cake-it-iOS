@@ -9,22 +9,31 @@ import UIKit
 
 final class FilterCommon {
   
-  enum FilterType: String, CaseIterable {
-    case reset    = "reset"
-    case basic    = "order"
-    case region   = "location"
-    case size     = "size"
-    case color    = "color"
-    case category = "category"
+  enum FilterType: CaseIterable {
+    case reset
+    case order
+    case region
+    case size
+    case color
+    case category
     
-    var value: String {
-      return self.rawValue
+    // 서버 api key
+    var key: String {
+      switch self {
+      case .reset:    return "reset"
+      case .order:    return "order"
+      case .region:   return "location"
+      case .size:     return "size"
+      case .color:    return "color"
+      case .category: return "category"
+      }
     }
     
+    // 필터 버튼 타이틀
     var title: String {
       switch self {
       case .reset:    return "초기화"
-      case .basic:    return "기본순"
+      case .order:    return "기본순"
       case .region:   return "지역"
       case .size:     return "크기"
       case .color:    return "색깔"
@@ -33,16 +42,23 @@ final class FilterCommon {
     }
   }
   
-  enum FilterSorting: String, CaseIterable {
-    case byDefault    = "DEFAULT"
-    case bySaved      = "ZZIM"
-    case byPriceHigh  = "HIGH_PRICE"
-    case byPriceLow   = "LOW_PRICE"
+  enum FilterSorting: CaseIterable {
+    case byDefault
+    case bySaved
+    case byPriceHigh
+    case byPriceLow
 
+    // 서버 api value
     var value: String {
-      return self.rawValue
+      switch self {
+      case .byDefault:    return "DEFAULT"
+      case .bySaved:      return "ZZIM"
+      case .byPriceHigh:  return "HIGH_PRICE"
+      case .byPriceLow:   return "LOW_PRICE"
+      }
     }
     
+    // 필터 셀 텍스트
     var title: String {
       switch self {
       case .byDefault:    return "기본순"
@@ -53,18 +69,27 @@ final class FilterCommon {
     }
   }
   
-  enum FilterRegion: String, CaseIterable {
-    case gangnam   = "강남구"
-    case gwangjin  = "광진구"
-    case gwanak    = "관악구"
-    case mapo      = "마포구"
-    case seodeamun = "서대문구"
-    case songpa    = "송파구"
+  enum FilterRegion: CaseIterable {
+    case gangnam
+    case gwangjin
+    case gwanak
+    case mapo
+    case seodeamun
+    case songpa
     
+    // 서버 api value
     var value: String {
-      return self.rawValue
+      switch self {
+      case .gangnam:    return "강남구"
+      case .gwangjin:   return "광진구"
+      case .gwanak:     return "관악구"
+      case .mapo:       return "마포구"
+      case .seodeamun:  return "서대문구"
+      case .songpa:     return "송파구"
+      }
     }
     
+    // 필터 셀 텍스트
     var title: String {
       switch self {
       case .gangnam:    return "강남구"
@@ -77,18 +102,15 @@ final class FilterCommon {
     }
   }
   
-  enum FilterSize: String, CaseIterable {
-    case miniSize       = "미니"
-    case levelOneSize   = "1호"
-    case levelTwoSize   = "2호"
-    case levelThreeSize = "3호"
-    case twoTier        = "2단"
+  enum FilterSize: CaseIterable {
+    case miniSize
+    case levelOneSize
+    case levelTwoSize
+    case levelThreeSize
+    case twoTier
     
+    // 서버 api value
     var value: String {
-      return self.rawValue
-    }
-    
-    var title: String {
       switch self {
       case .miniSize:       return "미니"
       case .levelOneSize:   return "1호"
@@ -98,6 +120,17 @@ final class FilterCommon {
       }
     }
     
+    // 필터 셀 텍스트
+    var title: String {
+      switch self {
+      case .miniSize:       return "미니"
+      case .levelOneSize:   return "1호"
+      case .levelTwoSize:   return "2호"
+      case .levelThreeSize: return "3호"
+      case .twoTier:        return "2단"
+      }
+    }
+    // 필터 셀 하단 텍스트
     var description: String {
       switch self {
       case .miniSize:       return "10-11cm, 1-2인용"
@@ -109,19 +142,29 @@ final class FilterCommon {
     }
   }
   
-  enum FilterColor: String, CaseIterable {
-    case white  = "WHITE"
-    case pink   = "PINK"
-    case yellow = "YELLOW"
-    case red    = "RED"
-    case blue   = "BLUE"
-    case purple = "PURPLE"
-    case other  = "OTHER"
+  enum FilterColor: CaseIterable {
+    case white
+    case pink
+    case yellow
+    case red
+    case blue
+    case purple
+    case other
     
+    // 서버 api value
     var value: String {
-      return self.rawValue
+      switch self {
+      case .white:  return "WHITE"
+      case .pink:   return "PINK"
+      case .yellow: return "YELLOW"
+      case .red:    return "RED"
+      case .blue:   return "BLUE"
+      case .purple: return "PURPLE"
+      case .other:  return "OTHER"
+      }
     }
     
+    // 필터 셀 텍스트
     var title: String {
       switch self {
       case .white:  return "화이트"
@@ -133,7 +176,7 @@ final class FilterCommon {
       case .other:  return "기타"
       }
     }
-    
+    // 필터 셀 컬러
     var color: UIColor {
       switch self {
       case .white:  return UIColor(named: "design_white")!
@@ -147,16 +190,23 @@ final class FilterCommon {
     }
   }
   
-  enum FilterCategory: String, CaseIterable {
-    case lettering      = "WORDING"
-    case image          = "IMAGE"
-    case character      = "CHARACTERS"
-    case individuality  = "INDIVIDUALITY"
+  enum FilterCategory: CaseIterable {
+    case lettering
+    case image
+    case character
+    case individuality
     
+    // 서버 api value
     var value: String {
-      return self.rawValue
+      switch self {
+      case .lettering:     return "WORDING"
+      case .image:         return "IMAGE"
+      case .character:     return "CHARACTERS"
+      case .individuality: return "INDIVIDUALITY"
+      }
     }
     
+    // 필터 셀 텍스트
     var title: String {
       switch self {
       case .lettering:     return "문구"

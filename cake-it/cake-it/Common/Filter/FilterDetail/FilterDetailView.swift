@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FilterDetailViewDelegate: class {
-  func filterDetailCellDidTap(key: FilterCommon.FilterType, values: [String])
+  func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String])
   func backgroundViewDidTap()
 }
 
@@ -98,7 +98,7 @@ final class FilterDetailView: UIView {
   private func registerTableCell() {
     var identifier: String?
     switch filterType {
-    case .basic, .category, .region:
+    case .order, .category, .region:
       identifier = String(describing: FilterBasicCell.self)
     case .color:
       identifier = String(describing: FilterColorCell.self)
@@ -152,13 +152,13 @@ final class FilterDetailView: UIView {
       }
     }
     
-    delegate?.filterDetailCellDidTap(key: filterType, values: selectedList)
+    delegate?.filterDetailCellDidTap(type: filterType, values: selectedList)
     filterTableView.reloadData()
   }
   
   private func selectedFilterTitle( index: Int) -> String {
     switch filterType {
-    case .basic:    return FilterCommon.FilterSorting.allCases[index].value
+    case .order:    return FilterCommon.FilterSorting.allCases[index].value
     case .region:   return FilterCommon.FilterRegion.allCases[index].value
     case .size:     return FilterCommon.FilterSize.allCases[index].value
     case .color:    return FilterCommon.FilterColor.allCases[index].value
