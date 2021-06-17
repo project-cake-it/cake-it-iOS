@@ -14,7 +14,7 @@ final class FilterManager {
   func numberOfCase(type: FilterCommon.FilterType) -> Int {
     switch type {
     case .reset:    return 0
-    case .basic:    return FilterCommon.FilterSorting.allCases.count
+    case .order:    return FilterCommon.FilterSorting.allCases.count
     case .region:   return FilterCommon.FilterRegion.allCases.count
     case .size:     return FilterCommon.FilterSize.allCases.count
     case .color:    return FilterCommon.FilterColor.allCases.count
@@ -25,18 +25,18 @@ final class FilterManager {
   func allValuesOfCase(type: FilterCommon.FilterType) -> [String] {
     switch type {
     case .reset:    return []
-    case .basic:    return FilterCommon.FilterSorting.allCases.map { $0.rawValue }
-    case .region:   return FilterCommon.FilterRegion.allCases.map { $0.rawValue }
-    case .size:     return FilterCommon.FilterSize.allCases.map { $0.rawValue }
-    case .color:    return FilterCommon.FilterColor.allCases.map { $0.rawValue }
-    case .category: return FilterCommon.FilterCategory.allCases.map { $0.rawValue }
+    case .order:    return FilterCommon.FilterSorting.allCases.map { $0.title }
+    case .region:   return FilterCommon.FilterRegion.allCases.map { $0.title }
+    case .size:     return FilterCommon.FilterSize.allCases.map { $0.title }
+    case .color:    return FilterCommon.FilterColor.allCases.map { $0.title }
+    case .category: return FilterCommon.FilterCategory.allCases.map { $0.title }
     }
   }
   
   func isMultiSelectionEnabled(type: FilterCommon.FilterType) -> Bool {
     switch type {
     case .reset:    return false
-    case .basic:    return false
+    case .order:    return false
     case .region:   return true
     case .size:     return true
     case .color:    return true

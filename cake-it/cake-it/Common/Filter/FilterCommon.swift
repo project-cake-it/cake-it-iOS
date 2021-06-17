@@ -9,22 +9,31 @@ import UIKit
 
 final class FilterCommon {
   
-  enum FilterType: String, CaseIterable {
-    case reset    = "reset"   // 초기화
-    case basic    = "basic"   // 기본순
-    case region   = "region"  // 지역
-    case size     = "size"    // 크기
-    case color    = "color"   // 색깔
-    case category = "category"// 카테고리
+  enum FilterType: CaseIterable {
+    case reset
+    case order
+    case region
+    case size
+    case color
+    case category
     
-    var title: String {
-      return self.rawValue
+    // 서버 api key
+    var key: String {
+      switch self {
+      case .reset:    return "reset"
+      case .order:    return "order"
+      case .region:   return "location"
+      case .size:     return "size"
+      case .color:    return "color"
+      case .category: return "category"
+      }
     }
     
-    var korTitle: String {
+    // 필터 버튼 타이틀
+    var title: String {
       switch self {
       case .reset:    return "초기화"
-      case .basic:    return "기본순"
+      case .order:    return "기본순"
       case .region:   return "지역"
       case .size:     return "크기"
       case .color:    return "색깔"
@@ -33,41 +42,95 @@ final class FilterCommon {
     }
   }
   
-  enum FilterSorting: String, CaseIterable {
-    case byDefault = "기본순"
-    case bySaved = "찜 순"
-    case byPriceHigh = "가격 높은 순"
-    case byPriceLow = "가격 낮은 순"
+  enum FilterSorting: CaseIterable {
+    case byDefault
+    case bySaved
+    case byPriceHigh
+    case byPriceLow
+
+    // 서버 api value
+    var value: String {
+      switch self {
+      case .byDefault:    return "DEFAULT"
+      case .bySaved:      return "ZZIM"
+      case .byPriceHigh:  return "HIGH_PRICE"
+      case .byPriceLow:   return "LOW_PRICE"
+      }
+    }
     
+    // 필터 셀 텍스트
     var title: String {
-      return self.rawValue
+      switch self {
+      case .byDefault:    return "기본순"
+      case .bySaved:      return "찜 순"
+      case .byPriceHigh:  return "가격 높은 순"
+      case .byPriceLow:   return "가격 낮은 순"
+      }
     }
   }
   
-  enum FilterRegion: String, CaseIterable {
-    case gangnam = "강남구"
-    case gwangjin = "광진구"
-    case gwanak = "관악구"
-    case mapo = "마포구"
-    case seodeamun = "서대문구"
-    case songpa = "송파구"
+  enum FilterRegion: CaseIterable {
+    case gangnam
+    case gwangjin
+    case gwanak
+    case mapo
+    case seodeamun
+    case songpa
     
+    // 서버 api value
+    var value: String {
+      switch self {
+      case .gangnam:    return "강남구"
+      case .gwangjin:   return "광진구"
+      case .gwanak:     return "관악구"
+      case .mapo:       return "마포구"
+      case .seodeamun:  return "서대문구"
+      case .songpa:     return "송파구"
+      }
+    }
+    
+    // 필터 셀 텍스트
     var title: String {
-      return self.rawValue
+      switch self {
+      case .gangnam:    return "강남구"
+      case .gwangjin:   return "광진구"
+      case .gwanak:     return "관악구"
+      case .mapo:       return "마포구"
+      case .seodeamun:  return "서대문구"
+      case .songpa:     return "송파구"
+      }
     }
   }
   
-  enum FilterSize: String, CaseIterable {
-    case miniSize = "미니"
-    case levelOneSize = "1호"
-    case levelTwoSize = "2호"
-    case levelThreeSize = "3호"
-    case twoTier = "2단"
+  enum FilterSize: CaseIterable {
+    case miniSize
+    case levelOneSize
+    case levelTwoSize
+    case levelThreeSize
+    case twoTier
     
-    var title: String {
-      return self.rawValue
+    // 서버 api value
+    var value: String {
+      switch self {
+      case .miniSize:       return "미니"
+      case .levelOneSize:   return "1호"
+      case .levelTwoSize:   return "2호"
+      case .levelThreeSize: return "3호"
+      case .twoTier:        return "2단"
+      }
     }
     
+    // 필터 셀 텍스트
+    var title: String {
+      switch self {
+      case .miniSize:       return "미니"
+      case .levelOneSize:   return "1호"
+      case .levelTwoSize:   return "2호"
+      case .levelThreeSize: return "3호"
+      case .twoTier:        return "2단"
+      }
+    }
+    // 필터 셀 하단 텍스트
     var description: String {
       switch self {
       case .miniSize:       return "10-11cm, 1-2인용"
@@ -79,19 +142,41 @@ final class FilterCommon {
     }
   }
   
-  enum FilterColor: String, CaseIterable {
-    case white = "화이트"
-    case pink = "핑크"
-    case yellow = "옐로우"
-    case red = "레드"
-    case blue = "블루"
-    case purple = "퍼플"
-    case other = "기타"
+  enum FilterColor: CaseIterable {
+    case white
+    case pink
+    case yellow
+    case red
+    case blue
+    case purple
+    case other
     
-    var title: String {
-      return self.rawValue
+    // 서버 api value
+    var value: String {
+      switch self {
+      case .white:  return "WHITE"
+      case .pink:   return "PINK"
+      case .yellow: return "YELLOW"
+      case .red:    return "RED"
+      case .blue:   return "BLUE"
+      case .purple: return "PURPLE"
+      case .other:  return "OTHER"
+      }
     }
     
+    // 필터 셀 텍스트
+    var title: String {
+      switch self {
+      case .white:  return "화이트"
+      case .pink:   return "핑크"
+      case .yellow: return "옐로우"
+      case .red:    return "레드"
+      case .blue:   return "블루"
+      case .purple: return "퍼플"
+      case .other:  return "기타"
+      }
+    }
+    // 필터 셀 컬러
     var color: UIColor {
       switch self {
       case .white:  return UIColor(named: "design_white")!
@@ -105,14 +190,30 @@ final class FilterCommon {
     }
   }
   
-  enum FilterCategory: String, CaseIterable {
-    case lettering = "문구"
-    case image = "이미지"
-    case character = "캐릭터"
-    case individuality = "개성"
+  enum FilterCategory: CaseIterable {
+    case lettering
+    case image
+    case character
+    case individuality
     
+    // 서버 api value
+    var value: String {
+      switch self {
+      case .lettering:     return "WORDING"
+      case .image:         return "IMAGE"
+      case .character:     return "CHARACTERS"
+      case .individuality: return "INDIVIDUALITY"
+      }
+    }
+    
+    // 필터 셀 텍스트
     var title: String {
-      return self.rawValue
+      switch self {
+      case .lettering:     return "문구"
+      case .image:         return "이미지"
+      case .character:     return "캐릭터"
+      case .individuality: return "개성"
+      }
     }
   }
 }

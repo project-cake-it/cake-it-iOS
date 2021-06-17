@@ -32,7 +32,7 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
       let titleLabelRightInset = 30
       let cellHeight = 35
       let label = UILabel()
-      label.text = cakeFilterList[indexPath.row].korTitle
+      label.text = cakeFilterList[indexPath.row].title
       label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)
       label.sizeToFit()
       return CGSize(width: Int(label.frame.width) + titleLabelLeftInset + titleLabelRightInset,
