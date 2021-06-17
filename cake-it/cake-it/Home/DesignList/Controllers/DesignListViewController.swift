@@ -28,12 +28,15 @@ final class DesignListViewController: BaseViewController {
   var filterDetailView: FilterDetailView?
   var selectedFilterDic: Dictionary<String, [String]> = [:]
   var hightlightedFilterType: FilterCommon.FilterType = .reset
+  var cakeTheme: CakeDesignTheme = .birthDay
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     configure()
     fetchCakeDesigns()
+    
+    navigationBarTitleLabel.text = cakeTheme.rawValue
   }
   
   private func fetchCakeDesigns() {

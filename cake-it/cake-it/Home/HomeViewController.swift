@@ -8,12 +8,35 @@
 import UIKit
 
 final class HomeViewController: UIViewController {
-  //MARK: - Life cycle
-  @IBOutlet weak var slideView: UIScrollView!
   
+  @IBOutlet weak var slideView: UIScrollView!
+  @IBOutlet weak var themeCollectionView: UICollectionView!
+  @IBOutlet weak var themeHideButton: UIButton!
+  @IBOutlet weak var themeCollectionViewHeightConstraint: NSLayoutConstraint!
+  
+  let cakeDesignThemes: [CakeDesignTheme] = [.birthDay, .anniversary, .wedding, .promotion, .resignation, .discharge, .society, .etc]
+  let themeCollecionViewHeightExpane: CGFloat = 228
+  let themeCollecionViewHeightNomal: CGFloat = 108
+  let themeListMinSize = 4
+  
+  var isThemeViewExpand: Bool = false {
+    willSet {
+      if (newValue) {
+        themeHideButton.isHidden = false
+        themeCollectionViewHeightConstraint.constant = themeCollecionViewHeightExpane
+      } else {
+        themeHideButton.isHidden = true
+        themeCollectionViewHeightConstraint.constant = themeCollecionViewHeightNomal
+      }
+      themeCollectionView.reloadData()
+    }
+  }
+  
+  //MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    configSlideView()
+    configueSlideView()
+    configueThemeCollectionView()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -21,33 +44,46 @@ final class HomeViewController: UIViewController {
 //    checkLogin()
   }
   
-  func configSlideView() {
-    let tempImageURL = "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966"
+  func configueSlideView() {
+    //TODO: 테스트용 이미지
+    let tempImageURL = "https://user-images.githubusercontent.com/24218456/122076633-01e0d600-ce36-11eb-9575-55305d4431aa.jpeg"
     let cakeImageURL = URL(string: tempImageURL)!
     let data = try? Data(contentsOf: cakeImageURL)
+    let imageCount = 3
     
-    for i in 0..<3 {
+    for i in 0..<imageCount {
       let imageView = UIImageView()
       let xPos = self.view.frame.width * CGFloat(i)
-      imageView.frame = CGRect(x: xPos, y: 0, width: self.view.frame.width, height: self.view.frame.width)
+      imageView.frame = CGRect(x: xPos,
+                               y: 0,
+                               width: self.view.frame.width,
+                               height: self.view.frame.width)
       imageView.contentMode = .scaleAspectFill
       DispatchQueue.main.async {
         imageView.image = UIImage(data: data!)
       }
       slideView.addSubview(imageView)
     }
-    slideView.contentSize.width = self.view.frame.width * CGFloat(3)
+    
+    slideView.contentSize.width = self.view.frame.width * CGFloat(imageCount)
     slideView.contentSize.height = self.view.frame.width
+    slideView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
   }
   
-  
-  @IBAction func toDesignListButtonDidTap(_ sender: Any) {
-    let viewController = DesignListViewController.instantiate(from: "Home")
-    viewController.modalPresentationStyle = .fullScreen
-    present(viewController, animated: true)
+  func configueThemeCollectionView() {
+    themeCollectionView.delegate = self
+    themeCollectionView.dataSource = self
+    
+    let identifier = String(describing: ThemeCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    themeCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }
   
   //MARK: - IBActions
+  @IBAction func themeHideButtonDidTap(_ sender: Any) {
+    isThemeViewExpand = false
+  }
+  
   @IBAction func testLogoutButtonDidTap(_ sender: Any) {
     LoginManager.shared.resetAccessToken()
     checkLogin()
