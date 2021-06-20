@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FilterTableHeaderCellDelegate: class {
+protocol FilterTableHeaderCellDelegate: AnyObject {
   func headerCellDidTap(isSelected: Bool)
 }
 

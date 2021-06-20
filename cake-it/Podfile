@@ -16,7 +16,7 @@ target 'cake-it' do
     # Pods for testing
   end
 
-  pod 'Alamofire', '~> 5.2'
+  pod 'Alamofire'
 
   # Kakao Talk SDK
   pod 'KakaoSDKCommon'
