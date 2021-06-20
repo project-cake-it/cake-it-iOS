@@ -28,15 +28,15 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
       return CGSize(width: roundedSide, height: roundedSide + 120)
       
     case filterCategoryCollectionView:
-      let titleLabelLeftInset = 16
-      let titleLabelRightInset = 30
-      let cellHeight = 35
       let label = UILabel()
       label.text = cakeFilterList[indexPath.row].title
       label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)
       label.sizeToFit()
-      return CGSize(width: Int(label.frame.width) + titleLabelLeftInset + titleLabelRightInset,
-                    height: cellHeight)
+      let cellWidth = label.frame.width
+        + FilterCommon.Metric.categoryCellLeftInset
+        + FilterCommon.Metric.categoryCellRightInset
+      return CGSize(width: cellWidth, height: FilterCommon.Metric.categoryCellHeight)
+      
     default:
       return CGSize(width: 0, height: 0)
     }

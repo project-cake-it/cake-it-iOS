@@ -1,21 +1,19 @@
 //
-//  DesignListViewController+FilterDelegate.swift
+//  ShopsMainViewController+FilterDelegate.swift
 //  cake-it
 //
-//  Created by seungbong on 2021/05/24.
+//  Created by seungbong on 2021/06/20.
 //
 
 import UIKit
 
-// MARK:- FilterCategoryCell Delegate Method
-extension DesignListViewController: FilterCategoryCellDelegate {
-  
+extension ShopsMainViewController: FilterCategoryCellDelegate {
   func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
       return
     }
-    
+
     if isHighlightedCell { // Filter Title 선택
       if isShowDetailView() {
         updateFilter(type: type)
@@ -28,39 +26,38 @@ extension DesignListViewController: FilterCategoryCellDelegate {
   }
 }
 
-// MARK:- FilterDetailView Delegate Method
-extension DesignListViewController: FilterDetailViewDelegate {
-    
+extension ShopsMainViewController: FilterDetailViewDelegate {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
     hightlightedFilterType = type      // 포커스 된 셀 타입 저장
     selectedFilter[type.key] = values
-    requestDesignListWithFilter()
+    requestStoreListWithFilter()
     print("🏃🏻‍♂️ selected: \(selectedFilter)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
-
+  
   func backgroundViewDidTap() {
     hightlightedFilterType = .reset
-    filterCategoryCollectionView.reloadData()
+    filterCollectionView.reloadData()
   }
 }
 
 // MARK:- Private Method
-extension DesignListViewController {
+extension ShopsMainViewController {
   
-  private func requestDesignListWithFilter() {
-    let parameter = selectedFilter.queryString()
-    NetworkManager.shared.requestGet(api: .designs,
-                                     type: [CakeDesign].self,
-                                     param: parameter) { (respons) in
-      switch respons {
-      case .success(let designs):
-        self.cakeDesigns = designs
-        self.designsCollectionView.reloadData()
-        
-      case .failure(let error):
-        print(error.localizedDescription)
-      }
-    }
+  // TODO: 가게리스트 요청 코드 구현 필요
+  private func requestStoreListWithFilter() {
+//    let parameter = selectedFilter.queryString()
+//    NetworkManager.shared.requestGet(api: .shops,
+//                                     type: [CakeDesign].self,
+//                                     param: parameter) { (respons) in
+//      switch respons {
+//      case .success(let designs):
+//        self.cakeDesigns = designs
+        self.filterCollectionView.reloadData()
+//
+//      case .failure(let error):
+//        print(error.localizedDescription)
+//      }
+//    }
   }
   
   private func resetFilter() {
@@ -69,9 +66,9 @@ extension DesignListViewController {
     }
 
     hightlightedFilterType = .reset
-    filterCategoryCollectionView.reloadData()
+    filterCollectionView.reloadData()
     selectedFilter.removeAll()
-    requestDesignListWithFilter()
+    requestStoreListWithFilter()
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {
@@ -80,7 +77,7 @@ extension DesignListViewController {
   }
   
   private func updateFilterCategoryView(type: FilterCommon.FilterType) {
-    filterCategoryCollectionView.reloadData()
+    filterCollectionView.reloadData()
   }
   
   private func updateFilterDetailView(type: FilterCommon.FilterType) {
@@ -98,7 +95,7 @@ extension DesignListViewController {
       detailView.selectedList = selectedFilter[type.key] ?? []
       detailView.delegate = self
       self.view.addSubview(detailView)
-      detailView.constraints(topAnchor: filterCategoryCollectionView.bottomAnchor,
+      detailView.constraints(topAnchor: filterCollectionView.bottomAnchor,
                              leadingAnchor: self.view.leadingAnchor,
                              bottomAnchor: self.view.bottomAnchor,
                              trailingAnchor: self.view.trailingAnchor,
