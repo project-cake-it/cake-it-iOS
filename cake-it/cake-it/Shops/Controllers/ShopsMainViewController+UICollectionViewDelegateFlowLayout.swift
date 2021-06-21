@@ -16,7 +16,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
         hightlightedFilterType = cell.filterType
       }
     }
-    else if collectionView == storeCollectionView {
+    else if collectionView == shopCollectionView {
       let identifier = String(describing: ShopDetailViewController.self)
       let storyboard = UIStoryboard(name: "Shops", bundle: nil)
       let detailVC = storyboard.instantiateViewController(withIdentifier: identifier) as! ShopDetailViewController
@@ -38,7 +38,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
     
     case filterCollectionView:
       let label = UILabel()
-      label.text = storeFilterList[indexPath.row].title
+      label.text = shopFilterList[indexPath.row].title
       label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)
       label.sizeToFit()
       let cellWidth = label.frame.width
@@ -46,7 +46,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
         + FilterCommon.Metric.categoryCellRightInset
       return CGSize(width: cellWidth, height: FilterCommon.Metric.categoryCellHeight)
       
-    case storeCollectionView:
+    case shopCollectionView:
       let width = UIScreen.main.bounds.width
       return CGSize(width: width, height: Metric.cakeShopCellHeight)
       
@@ -67,7 +67,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
     switch collectionView {
     case filterCollectionView:
       return 8.0
-    case storeCollectionView:
+    case shopCollectionView:
       return 0.0
     default:
       return 0.0

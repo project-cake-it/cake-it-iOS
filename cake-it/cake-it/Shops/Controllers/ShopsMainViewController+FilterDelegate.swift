@@ -30,7 +30,7 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
     hightlightedFilterType = type      // 포커스 된 셀 타입 저장
     selectedFilter[type.key] = values
-    requestStoreListWithFilter()
+    requestShopListWithFilter()
     print("🏃🏻‍♂️ selected: \(selectedFilter)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
   
@@ -44,7 +44,7 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
 extension ShopsMainViewController {
   
   // TODO: 가게리스트 요청 코드 구현 필요
-  private func requestStoreListWithFilter() {
+  private func requestShopListWithFilter() {
 //    let parameter = selectedFilter.queryString()
 //    NetworkManager.shared.requestGet(api: .shops,
 //                                     type: [CakeDesign].self,
@@ -68,7 +68,7 @@ extension ShopsMainViewController {
     hightlightedFilterType = .reset
     filterCollectionView.reloadData()
     selectedFilter.removeAll()
-    requestStoreListWithFilter()
+    requestShopListWithFilter()
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {

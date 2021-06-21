@@ -12,8 +12,8 @@ extension ShopsMainViewController: UICollectionViewDataSource {
                       numberOfItemsInSection section: Int) -> Int {
     switch collectionView {
     case filterCollectionView:
-      return storeFilterList.count
-    case storeCollectionView:
+      return shopFilterList.count
+    case shopCollectionView:
       return cakeShops.count
     default:
       return 0
@@ -26,7 +26,7 @@ extension ShopsMainViewController: UICollectionViewDataSource {
       let identifier = String(describing: FilterCategoryCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! FilterCategoryCell
-      let filterType = storeFilterList[indexPath.row]
+      let filterType = shopFilterList[indexPath.row]
       var isSelected = false
       if selectedFilter.keys.contains(filterType.key)
           && selectedFilter[filterType.key]?.count ?? 0 > 0 {
@@ -40,7 +40,7 @@ extension ShopsMainViewController: UICollectionViewDataSource {
       cell.update(type: filterType,isHighlighted: isHighlighted, isSelected: isSelected)
       return cell
     }
-    else if collectionView == storeCollectionView {
+    else if collectionView == shopCollectionView {
       let identifier = String(describing: CakeShopCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! CakeShopCell
