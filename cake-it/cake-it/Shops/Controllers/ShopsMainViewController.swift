@@ -14,10 +14,15 @@ final class ShopsMainViewController: BaseViewController {
     static let cakeShopCellHeight: CGFloat = 124.0
   }
   
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var filterCollectionView: UICollectionView!
+  @IBOutlet weak var shopCollectionView: UICollectionView!
   
   private(set) var cakeShops: [CakeShop] = []
-  
+  private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
+  var filterDetailView: FilterDetailView?
+  var selectedFilter: Dictionary<String, [String]> = [:]
+  var hightlightedFilterType: FilterCommon.FilterType = .reset
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -29,13 +34,38 @@ final class ShopsMainViewController: BaseViewController {
     for _ in 0..<20 {
       cakeShops.append(CakeShop(image: "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966", name: "케이크 가게 이름", address: "허리도 가늘군", tags: ["파티", "개미"], saved: true, miniSizeCakePrice: 18000, levelOneSizeCakePrice: 32000))
     }
-    collectionView.reloadData()
+    shopCollectionView.reloadData()
   }
 }
 
 extension ShopsMainViewController {
   private func configure() {
+    configureFilterCategoryView()
     configureCollectionView()
+  }
+  
+  private func configureFilterCategoryView() {
+    configureFilterCategoryCollectionView()
+    registerFilterCategoryCollectionView()
+  }
+  
+  private func configureFilterCategoryCollectionView() {
+    let flowLayout = UICollectionViewFlowLayout()
+    flowLayout.scrollDirection = .horizontal
+    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+    filterCollectionView.collectionViewLayout = flowLayout
+    filterCollectionView.delegate = self
+    filterCollectionView.dataSource = self
+    filterCollectionView.contentInset = UIEdgeInsets(top: 0,
+                                                     left: FilterCommon.Metric.categoryCellLeftMargin,
+                                                     bottom: 0,
+                                                     right: 0)
+  }
+
+  private func registerFilterCategoryCollectionView() {
+    let identifier = String(describing: FilterCategoryCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    filterCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }
   
   private func configureCollectionView() {
@@ -46,11 +76,11 @@ extension ShopsMainViewController {
   private func registerCollectionViewCell() {
     let identifier = String(describing: CakeShopCell.self)
     let nib = UINib(nibName: identifier, bundle: nil)
-    collectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    shopCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }
   
   private func configureCollectionViewProtocols() {
-    collectionView.dataSource = self
-    collectionView.delegate = self
+    shopCollectionView.dataSource = self
+    shopCollectionView.delegate = self
   }
 }

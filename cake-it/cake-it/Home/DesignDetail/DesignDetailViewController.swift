@@ -15,7 +15,7 @@ final class DesignDetailViewController: BaseViewController {
   }
   
   @IBOutlet weak var navigationBarView: UIView!
-  @IBOutlet weak var naviStoreNameLabel: UILabel!
+  @IBOutlet weak var naviShopNameLabel: UILabel!
   @IBOutlet weak var naviZzimButton: UIButton!
   
   @IBOutlet weak var scrollView: UIScrollView!
@@ -33,7 +33,7 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet var cakePriceBySizeLabels: [UILabel]! // 케이크 크기별 가격
   @IBOutlet weak var kindOfCreamsLabel: UILabel!  // 케이크 크림 종류
   @IBOutlet weak var kindOfSheetsLabel: UILabel!  // 케이크 시트 종류
-  @IBOutlet weak var connectStoreButton: UIButton! // 가게 연결하기 버튼
+  @IBOutlet weak var connectShopButton: UIButton! // 가게 연결하기 버튼
   
   @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
 
@@ -78,14 +78,14 @@ final class DesignDetailViewController: BaseViewController {
   }
   
   private func configureNavigationBar() {
-    naviStoreNameLabel.text = cakeDesign?.shopName
+    naviShopNameLabel.text = cakeDesign?.shopName
   }
   
   private func configureScrollView() {
     let totalHeight = Metric.imageScrollViewHeight
       + cakeSimpleView.frame.height
       + lineView.frame.height + cakeInformationView.frame.height
-      + connectStoreButton.frame.height
+      + connectShopButton.frame.height
       + Metric.bottomInset
     contentViewHeightConstraint.constant = totalHeight
   }
@@ -130,7 +130,7 @@ final class DesignDetailViewController: BaseViewController {
 
     availableOrderDay.layer.borderWidth = 1
     availableOrderDay.layer.borderColor = Colors.pointB.cgColor
-    connectStoreButton.round(cornerRadius: 8.0)
+    connectShopButton.round(cornerRadius: 8.0)
   }
   
   @IBAction func naviBackButtonDidTap(_ sender: Any) {

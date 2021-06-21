@@ -8,7 +8,15 @@
 import UIKit
 
 final class FilterCommon {
-
+  
+  enum Metric {
+    static let categoryCellLeftMargin: CGFloat = 16.0
+    static let categoryCellLeftInset: CGFloat = 16.0
+    static let categoryCellRightInset: CGFloat = 30.0
+    static let categoryCellHeight: CGFloat = 35.0
+    static let detailViewTopMargin: CGFloat = 7.0
+  }
+  
   enum FilterType: CaseIterable {
     case reset
     case order
@@ -16,28 +24,31 @@ final class FilterCommon {
     case size
     case color
     case category
+    case pickupDate
     
     // 서버 api key
     var key: String {
       switch self {
-      case .reset:    return "reset"
-      case .order:    return "order"
-      case .region:   return "location"
-      case .size:     return "size"
-      case .color:    return "color"
-      case .category: return "category"
+      case .reset:      return "reset"
+      case .order:      return "order"
+      case .region:     return "location"
+      case .size:       return "size"
+      case .color:      return "color"
+      case .category:   return "category"
+      case .pickupDate: return "pickup"
       }
     }
     
     // 필터 버튼 타이틀
     var title: String {
       switch self {
-      case .reset:    return "초기화"
-      case .order:    return "기본순"
-      case .region:   return "지역"
-      case .size:     return "크기"
-      case .color:    return "색깔"
-      case .category: return "카테고리"
+      case .reset:      return "초기화"
+      case .order:      return "기본순"
+      case .region:     return "지역"
+      case .size:       return "크기"
+      case .color:      return "색깔"
+      case .category:   return "카테고리"
+      case .pickupDate: return "픽업 가능 날짜"
       }
     }
   }
@@ -214,6 +225,19 @@ final class FilterCommon {
       case .character:     return "캐릭터"
       case .individuality: return "개성"
       }
+    }
+  }
+  
+  // TODO: 픽업 가능날짜 enum 구현 필요
+  enum FilterPickUpDate: CaseIterable {
+    // 서버 api value
+    var value: String {
+      return "00.00.00"
+    }
+    
+    // 필터 셀 텍스트
+    var title: String {
+      return "0"
     }
   }
 }

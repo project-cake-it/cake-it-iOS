@@ -103,7 +103,10 @@ extension DesignListViewController {
     filterCategoryCollectionView.collectionViewLayout = flowLayout
     filterCategoryCollectionView.delegate = self
     filterCategoryCollectionView.dataSource = self
-    filterCategoryCollectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0)
+    filterCategoryCollectionView.contentInset = UIEdgeInsets(top: 0,
+                                                             left: FilterCommon.Metric.categoryCellLeftMargin,
+                                                             bottom: 0,
+                                                             right: 0)
   }
   
   private func registerFilterCategoryCollectionView() {

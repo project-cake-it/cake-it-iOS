@@ -85,6 +85,8 @@
 		F71F33182662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F33172662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift */; };
 		F71F331D266290DC00E2E19E /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F331C266290DC00E2E19E /* FilterManager.swift */; };
 		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
+		F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */; };
+		F750DD7D267F6BDF008D0F9A /* FilterDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */; };
 		F750DDD8267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750DDD7267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift */; };
 		F7590736267F85C8000ECBD7 /* ThemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7590730267F85C8000ECBD7 /* ThemeDetailView.swift */; };
 		F7590737267F85C8000ECBD7 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7590731267F85C8000ECBD7 /* ThemeCell.swift */; };
@@ -237,6 +239,8 @@
 		F71F33172662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailView+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		F71F331C266290DC00E2E19E /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
+		F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
+		F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterDateView.xib; sourceTree = "<group>"; };
 		F750DDD7267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+ThemeDelegate.swift"; sourceTree = "<group>"; };
 		F7590730267F85C8000ECBD7 /* ThemeDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeDetailView.swift; sourceTree = "<group>"; };
 		F7590731267F85C8000ECBD7 /* ThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
@@ -424,6 +428,7 @@
 				8B875D0E25DAE6C4003D9CFA /* ShopsMainViewController.swift */,
 				8B3AE249261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift */,
 				8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */,
+				F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */,
 				8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */,
 				8B1DFDE526484CD40076E14C /* CakeDesignCollectionView+UICollectionViewDataSource.swift */,
 				8B1DFDE726484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift */,
@@ -816,15 +821,16 @@
 		F7A88724265A477800930932 /* FilterDetailCell */ = {
 			isa = PBXGroup;
 			children = (
-				F7865950265D6F100020AFAC /* FilterTableHeaderCell.xib */,
-				F7865958265D6F200020AFAC /* FilterTableHeaderCell.swift */,
 				F7A88751265A486B00930932 /* BaseFilterCell.swift */,
-				F7A88742265A482800930932 /* FilterBasicCell.xib */,
-				F7A88747265A483200930932 /* FilterColorCell.xib */,
-				F7A8874C265A483B00930932 /* FilterDescriptionCell.xib */,
 				F7A887C2265A4C4800930932 /* FilterBasicCell.swift */,
+				F7A88742265A482800930932 /* FilterBasicCell.xib */,
 				F7A887C7265A4C5600930932 /* FilterColorCell.swift */,
+				F7A88747265A483200930932 /* FilterColorCell.xib */,
 				F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */,
+				F7A8874C265A483B00930932 /* FilterDescriptionCell.xib */,
+				F7865958265D6F200020AFAC /* FilterTableHeaderCell.swift */,
+				F7865950265D6F100020AFAC /* FilterTableHeaderCell.xib */,
+				F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */,
 			);
 			path = FilterDetailCell;
 			sourceTree = "<group>";
@@ -973,6 +979,7 @@
 				8B93B2E62610C9E90060ACAC /* SpoqaHanSansNeo-Regular.otf in Resources */,
 				F774B93125E0E0BF006EE0EC /* Nickname.storyboard in Resources */,
 				8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */,
+				F750DD7D267F6BDF008D0F9A /* FilterDateView.xib in Resources */,
 				8B93B2E52610C9E90060ACAC /* SpoqaHanSansNeo-Bold.otf in Resources */,
 				F7865951265D6F100020AFAC /* FilterTableHeaderCell.xib in Resources */,
 				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
@@ -1193,6 +1200,7 @@
 				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,
 				8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
+				F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
 				8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */,
 				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,

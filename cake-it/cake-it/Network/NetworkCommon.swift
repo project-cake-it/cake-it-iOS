@@ -20,6 +20,7 @@ class NetworkCommon {
   enum API: String {
     case login = "login"
     case designs = "designs"
+    case shops = "shops"
     case randomNikname = "nickname"
     case uploadPhoto = "test/post"
     

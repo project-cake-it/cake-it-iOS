@@ -163,6 +163,8 @@ final class FilterDetailView: UIView {
     case .size:     return FilterCommon.FilterSize.allCases[index].value
     case .color:    return FilterCommon.FilterColor.allCases[index].value
     case .category: return FilterCommon.FilterCategory.allCases[index].value
+    // TODO: 선택한 날짜 Value 리턴 구현 필요 (현재 서버 미구현)
+    case .pickupDate: return ""
     case .reset:    return ""
     }
   }

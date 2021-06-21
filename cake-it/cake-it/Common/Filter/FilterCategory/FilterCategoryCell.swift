@@ -7,7 +7,10 @@
 
 import UIKit
 
-protocol FilterCategoryCellDelegate: AnyObject {
+protocol FilterCategoryCellDelegate: class {
+  var selectedFilter: [String: [String]] { get set }
+  var hightlightedFilterType: FilterCommon.FilterType { get set }
+
   func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool)
 }
 

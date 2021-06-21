@@ -10,16 +10,55 @@ import UIKit
 extension ShopsMainViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    return cakeShops.count
+    switch collectionView {
+    case filterCollectionView:
+      return shopFilterList.count
+    case shopCollectionView:
+      return cakeShops.count
+    default:
+      return 0
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let identifier = String(describing: CakeShopCell.self)
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
-                                                  for: indexPath) as! CakeShopCell
-    let cakeShop = cakeShops[indexPath.row]
-    cell.update(with: cakeShop)
-    return cell
+    if collectionView == filterCollectionView {
+      let identifier = String(describing: FilterCategoryCell.self)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
+                                                    for: indexPath) as! FilterCategoryCell
+      let filterType = shopFilterList[indexPath.row]
+      var isSelected = false
+      if selectedFilter.keys.contains(filterType.key)
+          && selectedFilter[filterType.key]?.count ?? 0 > 0 {
+        isSelected = true
+      }
+      var isHighlighted = false
+      if hightlightedFilterType == filterType && hightlightedFilterType != .reset {
+        isHighlighted = true
+      }
+      cell.delegate = self
+      cell.update(type: filterType,isHighlighted: isHighlighted, isSelected: isSelected)
+      return cell
+    }
+    else if collectionView == shopCollectionView {
+      let identifier = String(describing: CakeShopCell.self)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
+                                                    for: indexPath) as! CakeShopCell
+      let cakeShop = cakeShops[indexPath.row]
+      cell.update(with: cakeShop)
+      return cell
+    }
+    else {
+      return UICollectionViewCell()
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+    if collectionView == filterCollectionView {
+      if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
+        cell.isFilterHightlighted = false
+        hightlightedFilterType = .reset
+      }
+    }
   }
 }
