@@ -14,7 +14,8 @@
 		38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */; };
 		38D8C71125BC622700C1F10D /* cake_itTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C71025BC622700C1F10D /* cake_itTests.swift */; };
 		38D8C71C25BC622700C1F10D /* cake_itUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D8C71B25BC622700C1F10D /* cake_itUITests.swift */; };
-		5F91075BAD00C39D152FAD82 /* Pods_cake_it.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */; };
+		3B91C6F717C5382DC45E3478 /* Pods_cake_it.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5022DF3EA60A32BD809BE8C1 /* Pods_cake_it.framework */; };
+		51ECEB9053D1ACF70CFA413B /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79958D426757C842190D5DBA /* Pods_cake_itTests.framework */; };
 		8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DDA50260CE120003923D9 /* UIView+AutoLayout.swift */; };
 		8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */; };
 		8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */; };
@@ -86,6 +87,13 @@
 		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
 		F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */; };
 		F750DD7D267F6BDF008D0F9A /* FilterDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */; };
+		F750DDD8267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750DDD7267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift */; };
+		F7590736267F85C8000ECBD7 /* ThemeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7590730267F85C8000ECBD7 /* ThemeDetailView.swift */; };
+		F7590737267F85C8000ECBD7 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7590731267F85C8000ECBD7 /* ThemeCell.swift */; };
+		F7590738267F85C8000ECBD7 /* ThemeDetailView+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7590732267F85C8000ECBD7 /* ThemeDetailView+UITableViewDataSource.swift */; };
+		F7590739267F85C8000ECBD7 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7590733267F85C8000ECBD7 /* ThemeCell.xib */; };
+		F759073A267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7590734267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift */; };
+		F759073B267F85C8000ECBD7 /* ThemeDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7590735267F85C8000ECBD7 /* ThemeDetailView.xib */; };
 		F766FDBF265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */; };
 		F768D201265801A50092E3CE /* FilterCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F768D200265801A50092E3CE /* FilterCategoryCell.swift */; };
 		F768D209265801AF0092E3CE /* FilterCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F768D208265801AF0092E3CE /* FilterCategoryCell.xib */; };
@@ -118,7 +126,6 @@
 		F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C7265A4C5600930932 /* FilterColorCell.swift */; };
 		F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */; };
 		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
-		FAAB2F89308B59A58AD30653 /* Pods_cake_itTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +146,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1970B88188EA478C9472C297 /* Pods-cake-it.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.release.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.release.xcconfig"; sourceTree = "<group>"; };
 		38D8C6F625BC622500C1F10D /* cake-it.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cake-it.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D8C6F925BC622500C1F10D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38D8C6FD25BC622500C1F10D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -152,7 +160,11 @@
 		38D8C71725BC622700C1F10D /* cake-itUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "cake-itUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D8C71B25BC622700C1F10D /* cake_itUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cake_itUITests.swift; sourceTree = "<group>"; };
 		38D8C71D25BC622700C1F10D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		45B2B377B3AB9CD829F6B911 /* Pods-cake-itTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-itTests.release.xcconfig"; path = "Target Support Files/Pods-cake-itTests/Pods-cake-itTests.release.xcconfig"; sourceTree = "<group>"; };
+		3FEA4BC697EF00199C51EB59 /* Pods-cake-itTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-itTests.release.xcconfig"; path = "Target Support Files/Pods-cake-itTests/Pods-cake-itTests.release.xcconfig"; sourceTree = "<group>"; };
+		5022DF3EA60A32BD809BE8C1 /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		582058E54D42FE508046D37D /* Pods-cake-it.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it.debug.xcconfig"; path = "Target Support Files/Pods-cake-it/Pods-cake-it.debug.xcconfig"; sourceTree = "<group>"; };
+		62F7578D93838C86F4C187BE /* Pods-cake-it-cake-itUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.debug.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		79958D426757C842190D5DBA /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B0DDA50260CE120003923D9 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundCorner.swift"; sourceTree = "<group>"; };
 		8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
@@ -193,8 +205,7 @@
 		8BEA0F41260CD36000743512 /* CakeDesignCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeDesignCell.xib; sourceTree = "<group>"; };
 		8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MoneyFormat.swift; sourceTree = "<group>"; };
-		9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_itTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cake-it-cake-itUITests.release.xcconfig"; path = "Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8FD838ED07F97AFAABDAAA67 /* Pods_cake_it_cake_itUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it_cake_itUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC0B8FD526458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
@@ -230,6 +241,13 @@
 		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
 		F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
 		F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterDateView.xib; sourceTree = "<group>"; };
+		F750DDD7267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+ThemeDelegate.swift"; sourceTree = "<group>"; };
+		F7590730267F85C8000ECBD7 /* ThemeDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeDetailView.swift; sourceTree = "<group>"; };
+		F7590731267F85C8000ECBD7 /* ThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		F7590732267F85C8000ECBD7 /* ThemeDetailView+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeDetailView+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		F7590733267F85C8000ECBD7 /* ThemeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
+		F7590734267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeDetailView+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		F7590735267F85C8000ECBD7 /* ThemeDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeDetailView.xib; sourceTree = "<group>"; };
 		F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
 		F768D200265801A50092E3CE /* FilterCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryCell.swift; sourceTree = "<group>"; };
 		F768D208265801AF0092E3CE /* FilterCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryCell.xib; sourceTree = "<group>"; };
@@ -262,7 +280,6 @@
 		F7A887C7265A4C5600930932 /* FilterColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorCell.swift; sourceTree = "<group>"; };
 		F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionCell.swift; sourceTree = "<group>"; };
 		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
-		FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,7 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F91075BAD00C39D152FAD82 /* Pods_cake_it.framework in Frameworks */,
+				3B91C6F717C5382DC45E3478 /* Pods_cake_it.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,7 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAAB2F89308B59A58AD30653 /* Pods_cake_itTests.framework in Frameworks */,
+				51ECEB9053D1ACF70CFA413B /* Pods_cake_itTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5B40BA9BF3D2F417C02AA8E /* Pods_cake_it_cake_itUITests.framework in Frameworks */,
+				BC75E2A7F283969B4CF58E5F /* Pods_cake_it_cake_itUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +318,7 @@
 				38D8C71A25BC622700C1F10D /* cake-itUITests */,
 				38D8C6F725BC622500C1F10D /* Products */,
 				7B22ACBD250EDDB54E8B2D09 /* Pods */,
-				7F7F4D3025A68B04066E66C8 /* Frameworks */,
+				A2F72F0A453EC4B83C0964C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -368,24 +385,14 @@
 		7B22ACBD250EDDB54E8B2D09 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AEDF9B83790700EB68FD0211 /* Pods-cake-it.debug.xcconfig */,
-				D792EB0BE229648F5A5C7460 /* Pods-cake-it.release.xcconfig */,
-				E670015E1C84D024CD034B18 /* Pods-cake-it-cake-itUITests.debug.xcconfig */,
-				A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */,
-				C9D389A843537311BA9F1FA4 /* Pods-cake-itTests.debug.xcconfig */,
-				45B2B377B3AB9CD829F6B911 /* Pods-cake-itTests.release.xcconfig */,
+				582058E54D42FE508046D37D /* Pods-cake-it.debug.xcconfig */,
+				1970B88188EA478C9472C297 /* Pods-cake-it.release.xcconfig */,
+				62F7578D93838C86F4C187BE /* Pods-cake-it-cake-itUITests.debug.xcconfig */,
+				DBCCA074DB12C00320C10262 /* Pods-cake-it-cake-itUITests.release.xcconfig */,
+				B02BAAEAB47591739A8F9F7D /* Pods-cake-itTests.debug.xcconfig */,
+				3FEA4BC697EF00199C51EB59 /* Pods-cake-itTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		7F7F4D3025A68B04066E66C8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FF5F29C259DB378D1D82855A /* Pods_cake_it.framework */,
-				E316F0C33BA6B7DC1C01BE3F /* Pods_cake_it_cake_itUITests.framework */,
-				9017D2F3E20F476C4AC92D4E /* Pods_cake_itTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8B0DDA4F260CE10B003923D9 /* UIView */ = {
@@ -476,6 +483,7 @@
 				8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */,
 				8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */,
 				F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */,
+				F750DDD7267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -614,6 +622,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A2F72F0A453EC4B83C0964C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5022DF3EA60A32BD809BE8C1 /* Pods_cake_it.framework */,
+				8FD838ED07F97AFAABDAAA67 /* Pods_cake_it_cake_itUITests.framework */,
+				79958D426757C842190D5DBA /* Pods_cake_itTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACC16E6F262334240094D6D2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -632,6 +650,28 @@
 			path = DesignDetail;
 			sourceTree = "<group>";
 		};
+		F759072F267F85C8000ECBD7 /* ThemeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F759073F267F85D7000ECBD7 /* ThemeDetailCell */,
+				F7590730267F85C8000ECBD7 /* ThemeDetailView.swift */,
+				F7590732267F85C8000ECBD7 /* ThemeDetailView+UITableViewDataSource.swift */,
+				F7590734267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift */,
+				F7590735267F85C8000ECBD7 /* ThemeDetailView.xib */,
+			);
+			name = ThemeDetail;
+			path = FilterDetail/ThemeDetail;
+			sourceTree = "<group>";
+		};
+		F759073F267F85D7000ECBD7 /* ThemeDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				F7590733267F85C8000ECBD7 /* ThemeCell.xib */,
+				F7590731267F85C8000ECBD7 /* ThemeCell.swift */,
+			);
+			path = ThemeDetailCell;
+			sourceTree = "<group>";
+		};
 		F768D1FF265801940092E3CE /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -639,6 +679,7 @@
 				F71F331C266290DC00E2E19E /* FilterManager.swift */,
 				F7A887A1265A49D900930932 /* FilterCategory */,
 				F7A887A2265A49DE00930932 /* FilterDetail */,
+				F759072F267F85C8000ECBD7 /* ThemeDetail */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -822,12 +863,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38D8C72025BC622700C1F10D /* Build configuration list for PBXNativeTarget "cake-it" */;
 			buildPhases = (
-				489B5E5D4C198B95BAC07448 /* [CP] Check Pods Manifest.lock */,
+				C2AA86E531D0B8B182C6A856 /* [CP] Check Pods Manifest.lock */,
 				38D8C6F225BC622500C1F10D /* Sources */,
 				38D8C6F325BC622500C1F10D /* Frameworks */,
 				38D8C6F425BC622500C1F10D /* Resources */,
-				8DD46BF6148E86C7A5159682 /* [CP] Embed Pods Frameworks */,
-				E0AFD66CC6CE706409AAE9AE /* [CP] Copy Pods Resources */,
+				2CA15449D1575865BF9683DF /* [CP] Embed Pods Frameworks */,
+				2A65ED3CBE012AED77F438FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -842,7 +883,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38D8C72325BC622700C1F10D /* Build configuration list for PBXNativeTarget "cake-itTests" */;
 			buildPhases = (
-				218EBFB0B29160DD3D544FEB /* [CP] Check Pods Manifest.lock */,
+				288605DAF8F1883F7B71300C /* [CP] Check Pods Manifest.lock */,
 				38D8C70825BC622700C1F10D /* Sources */,
 				38D8C70925BC622700C1F10D /* Frameworks */,
 				38D8C70A25BC622700C1F10D /* Resources */,
@@ -861,12 +902,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38D8C72625BC622700C1F10D /* Build configuration list for PBXNativeTarget "cake-itUITests" */;
 			buildPhases = (
-				40CC4F1C21C3C8C0AEE5291D /* [CP] Check Pods Manifest.lock */,
+				5359ADEE197E05665C1ED25A /* [CP] Check Pods Manifest.lock */,
 				38D8C71325BC622700C1F10D /* Sources */,
 				38D8C71425BC622700C1F10D /* Frameworks */,
 				38D8C71525BC622700C1F10D /* Resources */,
-				B5473535F85EBE9DEF8D07AC /* [CP] Embed Pods Frameworks */,
-				8B72B524E2B0E78892B2DC98 /* [CP] Copy Pods Resources */,
+				8FC9D34C24338BA0A0B8E9C6 /* [CP] Embed Pods Frameworks */,
+				49D8EA04523D407A8CD71139 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -928,7 +969,9 @@
 				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
 				F7A88748265A483200930932 /* FilterColorCell.xib in Resources */,
 				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
+				F7590739267F85C8000ECBD7 /* ThemeCell.xib in Resources */,
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
+				F759073B267F85C8000ECBD7 /* ThemeDetailView.xib in Resources */,
 				F7A88743265A482800930932 /* FilterBasicCell.xib in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
@@ -970,7 +1013,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		218EBFB0B29160DD3D544FEB /* [CP] Check Pods Manifest.lock */ = {
+		288605DAF8F1883F7B71300C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -992,7 +1035,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		40CC4F1C21C3C8C0AEE5291D /* [CP] Check Pods Manifest.lock */ = {
+		2A65ED3CBE012AED77F438FA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CA15449D1575865BF9683DF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		49D8EA04523D407A8CD71139 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5359ADEE197E05665C1ED25A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1014,7 +1108,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		489B5E5D4C198B95BAC07448 /* [CP] Check Pods Manifest.lock */ = {
+		8FC9D34C24338BA0A0B8E9C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2AA86E531D0B8B182C6A856 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1034,74 +1145,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B72B524E2B0E78892B2DC98 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8DD46BF6148E86C7A5159682 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B5473535F85EBE9DEF8D07AC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E0AFD66CC6CE706409AAE9AE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1143,6 +1186,7 @@
 				F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */,
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
+				F7590736267F85C8000ECBD7 /* ThemeDetailView.swift in Sources */,
 				8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */,
 				F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
@@ -1151,6 +1195,7 @@
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
 				AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */,
+				F7590737267F85C8000ECBD7 /* ThemeCell.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,
 				8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */,
@@ -1162,6 +1207,7 @@
 				8B1DFDE826484CF30076E14C /* CakeDesignCollectionView+UICollectionViewDelegate.swift in Sources */,
 				AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */,
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				F750DDD8267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift in Sources */,
 				8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */,
 				F768D201265801A50092E3CE /* FilterCategoryCell.swift in Sources */,
 				F71F330D26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift in Sources */,
@@ -1179,6 +1225,7 @@
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				F7A88752265A486B00930932 /* BaseFilterCell.swift in Sources */,
 				8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */,
+				F7590738267F85C8000ECBD7 /* ThemeDetailView+UITableViewDataSource.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
@@ -1188,6 +1235,7 @@
 				8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */,
 				F7A887C3265A4C4800930932 /* FilterBasicCell.swift in Sources */,
 				F71F331D266290DC00E2E19E /* FilterManager.swift in Sources */,
+				F759073A267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift in Sources */,
 				AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */,
 				8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
@@ -1365,12 +1413,12 @@
 		};
 		38D8C72125BC622700C1F10D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AEDF9B83790700EB68FD0211 /* Pods-cake-it.debug.xcconfig */;
+			baseConfigurationReference = 582058E54D42FE508046D37D /* Pods-cake-it.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QKG65XDLX8;
+				DEVELOPMENT_TEAM = Y85GKLJ8B2;
 				INFOPLIST_FILE = "cake-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1386,12 +1434,12 @@
 		};
 		38D8C72225BC622700C1F10D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D792EB0BE229648F5A5C7460 /* Pods-cake-it.release.xcconfig */;
+			baseConfigurationReference = 1970B88188EA478C9472C297 /* Pods-cake-it.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QKG65XDLX8;
+				DEVELOPMENT_TEAM = Y85GKLJ8B2;
 				INFOPLIST_FILE = "cake-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1407,7 +1455,7 @@
 		};
 		38D8C72425BC622700C1F10D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9D389A843537311BA9F1FA4 /* Pods-cake-itTests.debug.xcconfig */;
+			baseConfigurationReference = B02BAAEAB47591739A8F9F7D /* Pods-cake-itTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1429,7 +1477,7 @@
 		};
 		38D8C72525BC622700C1F10D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45B2B377B3AB9CD829F6B911 /* Pods-cake-itTests.release.xcconfig */;
+			baseConfigurationReference = 3FEA4BC697EF00199C51EB59 /* Pods-cake-itTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1451,7 +1499,7 @@
 		};
 		38D8C72725BC622700C1F10D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E670015E1C84D024CD034B18 /* Pods-cake-it-cake-itUITests.debug.xcconfig */;
+			baseConfigurationReference = 62F7578D93838C86F4C187BE /* Pods-cake-it-cake-itUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1471,7 +1519,7 @@
 		};
 		38D8C72825BC622700C1F10D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3B6B7267103FC2A193A7BCA /* Pods-cake-it-cake-itUITests.release.xcconfig */;
+			baseConfigurationReference = DBCCA074DB12C00320C10262 /* Pods-cake-it-cake-itUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

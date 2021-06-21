@@ -241,3 +241,63 @@ final class FilterCommon {
     }
   }
 }
+
+// 디자인 리스트 테마
+extension FilterCommon {
+  
+  enum FilterTheme: CaseIterable {
+    case none
+    case birthday
+    case anniversary
+    case wedding
+    case emplyment
+    case advancement
+    case leave
+    case discharge
+    case graduated
+    case christmas
+    case halloween
+    case newYear
+    
+    // 서버 api value
+    static var key: String {
+      return "theme"
+    }
+    
+    // 서버 api value
+    var value: String {
+      switch self {
+      case .none:         return "NONE"
+      case .birthday:     return "BIRTHDAY"
+      case .anniversary:  return "ANNIVERSARY"
+      case .wedding:      return "WEDDING"
+      case .emplyment:    return "EMPLOYMENT"
+      case .advancement:  return "ADVANCEMENT"
+      case .leave:        return "LEAVE"
+      case .discharge:    return "DISCHARGE"
+      case .graduated:    return "GRADUATED"
+      case .christmas:    return "CHRISTMAS"
+      case .halloween:    return "HALLOWEEN"
+      case .newYear:      return "NEW_YEAR"
+      }
+    }
+    
+    // 필터 셀 텍스트
+    var title: String {
+      switch self {
+      case .none:         return "없음"
+      case .birthday:     return "생일"
+      case .anniversary:  return "기념일"
+      case .wedding:      return "웨딩"
+      case .emplyment:    return "입사"
+      case .advancement:  return "승진"
+      case .leave:        return "퇴사"
+      case .discharge:    return "전역"
+      case .graduated:    return "졸업"
+      case .christmas:    return "크리스마스"
+      case .halloween:    return "할로윈"
+      case .newYear:      return "새해"
+      }
+    }
+  }
+}
