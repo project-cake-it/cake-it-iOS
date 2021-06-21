@@ -17,7 +17,7 @@ extension DesignListViewController: FilterCategoryCellDelegate {
     }
     
     if isHighlightedCell { // Filter Title 선택
-      if isShowDetailView() {
+      if isShowFilterDetailView() {
         updateFilter(type: type)
       } else {
         showFilterDetailView(type: type)
@@ -64,7 +64,7 @@ extension DesignListViewController {
   }
   
   private func resetFilter() {
-    if isShowDetailView() {
+    if isShowFilterDetailView() {
       removeFilterDetailView()
     }
 
@@ -114,7 +114,7 @@ extension DesignListViewController {
     }
   }
   
-  private func isShowDetailView() -> Bool {
+  private func isShowFilterDetailView() -> Bool {
     return filterDetailView != nil && filterDetailView?.subviews.count ?? 0 > 0
   }
 }

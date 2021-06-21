@@ -25,9 +25,15 @@ final class DesignListViewController: BaseViewController {
   
   var cakeDesigns: [CakeDesign] = []
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .size, .color, .category]
-  var filterDetailView: FilterDetailView?
-  var selectedFilter: Dictionary<String, [String]> = [:]
-  var hightlightedFilterType: FilterCommon.FilterType = .reset
+  var filterDetailView: FilterDetailView?    // 필터 디테일 리스트
+  var themeDetailView: ThemeDetailView?     // 테마 디테일 리스트
+  var selectedThemeType: FilterCommon.FilterTheme = .none  {     // 선택된 디자인 테마
+    didSet {
+      navigationBarTitleLabel.text = selectedThemeType.title
+    }
+  }
+  var selectedFilter: Dictionary<String, [String]> = [:]    // 선택된 필터 리스트
+  var hightlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,9 +42,10 @@ final class DesignListViewController: BaseViewController {
     fetchCakeDesigns()
   }
   
-  private func fetchCakeDesigns() {
+  func fetchCakeDesigns(parameter: String = "") {
     NetworkManager.shared.requestGet(api: .designs,
-                                     type: [CakeDesign].self) { (respons) in
+                                     type: [CakeDesign].self,
+                                     param: parameter) { (respons) in
       switch respons {
       case .success(let designs):
         self.cakeDesigns = designs
@@ -47,6 +54,14 @@ final class DesignListViewController: BaseViewController {
       case .failure(let error):
         print(error.localizedDescription)
       }
+    }
+  }
+  
+  @IBAction func themeButtonDidTap(_ sender: Any) {
+    if isShowThemeDetailView() {
+      hideThemeList()
+    } else {
+      showThemeList()
     }
   }
   
@@ -65,7 +80,14 @@ extension DesignListViewController {
   private func configure() {
     configureFilterCategoryView()
     configureCollectionView()
-    configureNavigationBarTapGesture()
+    configureNavigationBarView()
+  }
+  
+  // MARK:- configure navigation bar
+  private func configureNavigationBarView() {
+    navigationBarTitleLabel.text = selectedThemeType.title
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigationTitleDidTap))
+    navigationBarTitleTapGestureView.addGestureRecognizer(tapGesture)
   }
   
   // MARK:- configure filter title collectionView
@@ -105,11 +127,5 @@ extension DesignListViewController {
   private func configureCollectionViewProtocols() {
     designsCollectionView.dataSource = self
     designsCollectionView.delegate = self
-  }
-
-  // MARK:- configure navigation bar
-  private func configureNavigationBarTapGesture() {
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigationTitleDidTap))
-    navigationBarTitleTapGestureView.addGestureRecognizer(tapGesture)
   }
 }

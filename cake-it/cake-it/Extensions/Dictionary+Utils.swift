@@ -14,10 +14,15 @@ extension Dictionary {
   func queryString() -> String {
     var queryString = "?"
     for (key, value) in self {
+      // key값이 배열로 들어오는 경우
       if let values = value as? [String] {
         for value in values {
           queryString += "\(key)=\(value)&"
         }
+      }
+      // key 값이 String 으로 들어오는 경우
+      else {
+        queryString += "\(key)=\(value)&"
       }
     }
     queryString.removeLast()
