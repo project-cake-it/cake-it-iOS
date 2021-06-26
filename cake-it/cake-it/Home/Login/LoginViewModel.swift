@@ -10,6 +10,7 @@ import KakaoSDKUser
 import KakaoSDKAuth
 import NaverThirdPartyLogin
 import GoogleSignIn
+import AuthenticationServices
 
 final class LoginViewModel: BaseViewModel {
   
@@ -40,8 +41,8 @@ final class LoginViewModel: BaseViewModel {
       signInNaver()
     case .GOOGLE:
       signInGoogle(viewController: viewController)
-    default:
-      loginCompletion?(false)
+    case . APPLE:
+      signInApple()
     }
   }
   
@@ -84,6 +85,16 @@ final class LoginViewModel: BaseViewModel {
   
   private func signInNaver() {
     self.naverLoginSDK?.requestThirdPartyLogin()
+  }
+  
+  private func signInApple() {
+    let request = ASAuthorizationAppleIDProvider().createRequest()
+    request.requestedScopes = [.fullName, .email]
+    
+    let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+    authorizationController.delegate = self
+    authorizationController.presentationContextProvider = self
+    authorizationController.performRequests()
   }
   
   private func requestLogin(accessToken: String, refreshToken:String) {
@@ -154,5 +165,25 @@ extension LoginViewModel: GIDSignInDelegate {
     }
     
     requestLogin(accessToken: user.authentication.accessToken, refreshToken: user.authentication.refreshToken)
+  }
+}
+
+extension LoginViewModel: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+  func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+    return viewController.view.window!
+  }
+  
+  func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+    // do something
+    switch authorization.credential {
+    case let appleIdCredential as ASAuthorizationAppleIDCredential:
+    break
+    default:
+      loginCompletion?(false)
+    }
+  }
+  
+  func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+    loginCompletion?(false)
   }
 }
