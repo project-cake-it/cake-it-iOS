@@ -8,22 +8,23 @@
 import UIKit
 
 extension HomeViewController: UICollectionViewDataSource {
+  
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int) -> Int {
-    if (collectionView == rankCollectionView) {
+    if collectionView == rankCollectionView {
       return cakeDesigns.count
     }
     
-    if (isThemeViewExpand) {
+    if isThemeViewExpanded {
       return cakeDesignThemes.count
     } else {
-      return themeListMinSize
+      return themesMinCount
     }
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    if (collectionView == rankCollectionView) {
+    if collectionView == rankCollectionView {
       //TODO: 서버 연동 후 수정
       let identifider = String(describing: CakeDesignCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifider,
@@ -37,11 +38,10 @@ extension HomeViewController: UICollectionViewDataSource {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifider,
                                                   for: indexPath) as! ThemeCell
     
-    if (isThemeViewExpand == false && indexPath.row == 3) {
-      //TODO: 서버 연동 후 수정
-      cell.updateCell(isThemeCell: false, titleString: "더보기")
+    if isThemeViewExpanded == false && indexPath.row == moreButtonIndex {
+      cell.updateCell(isMoreButton: true, title: "더보기")
     } else {
-      cell.updateCell(isThemeCell: true, titleString: cakeDesignThemes[indexPath.row].description)
+      cell.updateCell(title: cakeDesignThemes[indexPath.row].description)
     }
     
     return cell

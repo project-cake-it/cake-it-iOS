@@ -17,14 +17,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ThemeCell" id="ZaD-1d-oEZ" customClass="ThemeCell" customModule="cake_it" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="323" height="191"/>
+            <rect key="frame" x="0.0" y="0.0" width="188" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="EgF-l4-Z88">
-                <rect key="frame" x="0.0" y="0.0" width="323" height="191"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EgF-l4-Z88">
+                <rect key="frame" x="0.0" y="0.0" width="188" height="48"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSS-P5-f6S">
-                        <rect key="frame" x="0.0" y="0.0" width="161" height="48"/>
+                        <rect key="frame" x="0.0" y="0.0" width="188" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHf-tH-nD5">
                                 <rect key="frame" x="12" y="15" width="28" height="18"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icChevronCompactRight-blue" translatesAutoresizingMaskIntoConstraints="NO" id="eWx-tb-JNp">
-                                <rect key="frame" x="129" y="14" width="20" height="20"/>
+                                <rect key="frame" x="156" y="14" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="Ei0-Np-jJa"/>
                                     <constraint firstAttribute="height" constant="20" id="hak-My-zO3"/>
@@ -44,9 +44,7 @@
                         <constraints>
                             <constraint firstItem="iHf-tH-nD5" firstAttribute="leading" secondItem="MSS-P5-f6S" secondAttribute="leading" constant="12" id="1wv-S2-Q5L"/>
                             <constraint firstAttribute="trailing" secondItem="eWx-tb-JNp" secondAttribute="trailing" constant="12" id="El0-lq-8aI"/>
-                            <constraint firstAttribute="height" constant="48" id="Hmg-Lq-yGb"/>
                             <constraint firstItem="iHf-tH-nD5" firstAttribute="centerY" secondItem="MSS-P5-f6S" secondAttribute="centerY" id="R3A-nX-obC"/>
-                            <constraint firstAttribute="width" constant="161" id="aLi-BP-k8P"/>
                             <constraint firstItem="eWx-tb-JNp" firstAttribute="centerY" secondItem="MSS-P5-f6S" secondAttribute="centerY" id="tY2-GK-KTq"/>
                         </constraints>
                     </view>

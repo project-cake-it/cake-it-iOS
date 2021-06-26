@@ -13,7 +13,7 @@ final class HomeViewController: UIViewController {
     static let rankCollectionViewSidePadding: CGFloat = 0
     static let cakeDesignCellInterItemHorizontalSpace: CGFloat = 1.0
     static let cakeDesignCellInterItemVerticalSpace: CGFloat = 4.0
-    static let themeCellWidth: CGFloat = 161
+    static let cakeDesignCellInfoAreaHeight: CGFloat = 120
     static let themeCellHeight: CGFloat = 48
     static let themeCollectionViewInterItemVerticalSpace: CGFloat = 12
   }
@@ -32,11 +32,13 @@ final class HomeViewController: UIViewController {
   let cakeDesignThemes: [CakeDesignTheme] = [.birthDay, .anniversary, .wedding, .promotion, .resignation, .discharge, .society, .etc]
   let themeCollecionViewExpandHeight: CGFloat = 228
   let themeCollecionViewNomalHeight: CGFloat = 108
-  let themeListMinSize = 4
+  let themesMinCount = 4
   
-  var isThemeViewExpand: Bool = false {
+  let moreButtonIndex = 3
+  
+  var isThemeViewExpanded: Bool = false {
     willSet {
-      if (newValue) {
+      if newValue {
         themeHideButton.isHidden = false
         themeCollectionViewHeightConstraint.constant = themeCollecionViewExpandHeight
       } else {
@@ -44,15 +46,6 @@ final class HomeViewController: UIViewController {
         themeCollectionViewHeightConstraint.constant = themeCollecionViewNomalHeight
       }
       themeCollectionView.reloadData()
-    }
-  }
-  
-  var rankCollectionViewCellHeight: CGFloat = 0.0 {
-    willSet {
-      let row = cakeDesigns.count % 2 > 0 ? cakeDesigns.count/2 + 1 : cakeDesigns.count/2
-      
-      rankCollecionViewHeightConstraint.constant = newValue * CGFloat(row)
-      view.layoutIfNeeded()
     }
   }
   
@@ -124,6 +117,7 @@ final class HomeViewController: UIViewController {
     
     rankCollectionView.reloadData()
     view.layoutIfNeeded()
+    rankCollecionViewHeightConstraint.constant = rankCollectionView.contentSize.height
   }
   
   private func configueThemeCollectionView() {
@@ -137,7 +131,7 @@ final class HomeViewController: UIViewController {
   
   //MARK: - IBActions
   @IBAction func themeHideButtonDidTap(_ sender: Any) {
-    isThemeViewExpand = false
+    isThemeViewExpanded = false
   }
 }
 

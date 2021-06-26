@@ -8,7 +8,6 @@
 import UIKit
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-  
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -26,10 +25,12 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         + Metric.cakeDesignCellInterItemHorizontalSpace * (CGFloat(numberOfColumns - 1))
       let side: CGFloat = (UIScreen.main.bounds.width - sidePaddingsAndInterSpaces) / CGFloat(numberOfColumns)
       let roundedSide = side.rounded(.down)
-      self.rankCollectionViewCellHeight = roundedSide + 120
-      return CGSize(width: roundedSide, height: roundedSide + 120)
+      return CGSize(width: roundedSide, height: roundedSide + Metric.cakeDesignCellInfoAreaHeight)
     case themeCollectionView:
-      return CGSize(width: Metric.themeCellWidth, height: Metric.themeCellHeight)
+      let numberOfColumns: CGFloat = 2
+      let themeCellWidth = (themeCollectionView.frame.width
+                              - Metric.themeCollectionViewInterItemVerticalSpace) / numberOfColumns
+      return CGSize(width: themeCellWidth, height: Metric.themeCellHeight)
     default:
       return CGSize(width: 0, height: 0)
     }
@@ -59,22 +60,23 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     }
   }
   
-  
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-    if (collectionView == rankCollectionView) {
-      return
+    switch collectionView {
+    case rankCollectionView:
+      // DesignDetallVeiw Controller 이동
+      break
+    case themeCollectionView:
+      if isThemeViewExpanded == false && indexPath.row == moreButtonIndex {
+        isThemeViewExpanded = true
+        return
+      }
+      let viewController = DesignListViewController.instantiate(from: "Home")
+      viewController.modalPresentationStyle = .overFullScreen
+      viewController.cakeTheme = cakeDesignThemes[indexPath.row]
+      present(viewController, animated: true)
+      break
+    default:
+      break
     }
-    
-    if (isThemeViewExpand == false && indexPath.row == 3) {
-      // 더보기 cell 터치
-      isThemeViewExpand = true
-      return
-    }
-    
-    let viewController = DesignListViewController.instantiate(from: "Home")
-    viewController.modalPresentationStyle = .overFullScreen
-    viewController.cakeTheme = cakeDesignThemes[indexPath.row]
-    present(viewController, animated: true)
   }
 }

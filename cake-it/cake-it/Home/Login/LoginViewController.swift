@@ -25,7 +25,7 @@ final class LoginViewController: UIViewController {
   }
   
   private func finishLogin(success: Bool) {
-    if (success) {
+    if success {
       self.closeLoginViewController()
     } else {
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
