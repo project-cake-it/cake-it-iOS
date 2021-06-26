@@ -18,6 +18,9 @@ target 'cake-it' do
 
   pod 'Alamofire'
 
+  # Kingfisher
+  pod 'Kingfisher'
+
   # Kakao Talk SDK
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'

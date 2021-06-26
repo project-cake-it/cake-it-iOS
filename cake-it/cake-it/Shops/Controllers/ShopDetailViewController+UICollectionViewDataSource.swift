@@ -1,5 +1,5 @@
 //
-//  CakeDesignCollectionView+UICollectionViewDataSource.swift
+//  ShopDetailViewController+UICollectionViewDataSource.swift
 //  cake-it
 //
 //  Created by Cory on 2021/05/10.
