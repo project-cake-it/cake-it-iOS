@@ -46,7 +46,7 @@ final class LoginViewModel: BaseViewModel {
   }
   
   private func signInKakao() {
-    if (UserApi.isKakaoTalkLoginAvailable()) {
+    if UserApi.isKakaoTalkLoginAvailable() {
       UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
         self.processKakaoLoginRespone(oauthToken: oauthToken, error: error)
         return
