@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ThemeCell: UITableViewCell {
+final class CakeDesignThemeCell: UITableViewCell {
   
   @IBOutlet weak var themeLabel: UILabel!
   
