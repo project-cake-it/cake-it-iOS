@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol ThemeDetailViewDelegate: class {
+protocol ThemeDetailViewDelegate: AnyObject {
   func themeDetailCellDidTap(type: FilterCommon.FilterTheme)
-  func backgroundViewDidTap()
+  func themeBackgroundViewDidTap()
 }
 
 final class ThemeDetailView: UIView {
@@ -86,7 +86,7 @@ final class ThemeDetailView: UIView {
   }
   
   @objc private func backgroundViewDidTap() {
-    delegate?.backgroundViewDidTap()
+    delegate?.themeBackgroundViewDidTap()
     
     for subView in self.subviews {
       subView.removeFromSuperview()
@@ -97,5 +97,4 @@ final class ThemeDetailView: UIView {
   func resetData() {
     tableViewHeight = 0.0
   }
-
 }

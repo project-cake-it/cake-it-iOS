@@ -11,6 +11,7 @@ extension ShopsMainViewController: FilterCategoryCellDelegate {
   func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
+      requestShopListWithFilter()
       return
     }
 
@@ -34,7 +35,7 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
     print("🏃🏻‍♂️ selected: \(selectedFilter)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
   
-  func backgroundViewDidTap() {
+  func filterBackgroundViewDidTap() {
     hightlightedFilterType = .reset
     filterCollectionView.reloadData()
   }
@@ -68,7 +69,6 @@ extension ShopsMainViewController {
     hightlightedFilterType = .reset
     filterCollectionView.reloadData()
     selectedFilter.removeAll()
-    requestShopListWithFilter()
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {
