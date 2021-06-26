@@ -16,11 +16,17 @@ extension DesignListViewController: ThemeDetailViewDelegate {
     }
     hideThemeDetailView()
   }
+  
+  func themeBackgroundViewDidTap() {
+    rotateThemeArrowImageView(arrowDirection: .down)
+  }
 }
 
 // Theme 관련 Private Method
 extension DesignListViewController {
   func showThemeDetailView() {
+    removeFilterDetailView()
+    
     themeDetailView = ThemeDetailView()
     if let detailView = themeDetailView {
       detailView.selectedTheme = selectedThemeType

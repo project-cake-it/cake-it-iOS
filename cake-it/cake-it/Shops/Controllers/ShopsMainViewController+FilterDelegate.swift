@@ -35,7 +35,7 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
     print("🏃🏻‍♂️ selected: \(selectedFilter)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
   }
   
-  func backgroundViewDidTap() {
+  func filterBackgroundViewDidTap() {
     hightlightedFilterType = .reset
     filterCollectionView.reloadData()
   }

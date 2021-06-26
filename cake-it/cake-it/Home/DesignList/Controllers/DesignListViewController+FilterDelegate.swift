@@ -35,10 +35,11 @@ extension DesignListViewController: FilterDetailViewDelegate {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
     hightlightedFilterType = type      // 포커스 된 셀 타입 저장
     selectedFilter[type.key] = values
+    updateFilterCategoryView()
     fetchCakeDesigns()
   }
 
-  func backgroundViewDidTap() {
+  func filterBackgroundViewDidTap() {
     hightlightedFilterType = .reset
     filterCategoryCollectionView.reloadData()
   }
@@ -58,11 +59,11 @@ extension DesignListViewController {
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {
-    updateFilterCategoryView(type: type)
+    updateFilterCategoryView()
     updateFilterDetailView(type: type)
   }
   
-  private func updateFilterCategoryView(type: FilterCommon.FilterType) {
+  private func updateFilterCategoryView() {
     filterCategoryCollectionView.reloadData()
   }
   
@@ -92,7 +93,7 @@ extension DesignListViewController {
     }
   }
   
-  private func removeFilterDetailView() {
+  func removeFilterDetailView() {
     if let detailView = filterDetailView {
       for subView in detailView.subviews {
         subView.removeFromSuperview()

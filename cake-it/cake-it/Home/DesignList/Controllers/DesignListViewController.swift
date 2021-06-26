@@ -75,12 +75,10 @@ final class DesignListViewController: BaseViewController {
   }
   
   @objc private func navigationTitleDidTap() {
-    UIView.animate(withDuration: 0.2) {
-      if self.isShowThemeDetailView() {
-        self.hideThemeDetailView()
-      } else {
-        self.showThemeDetailView()
-      }
+    if self.isShowThemeDetailView() {
+      self.hideThemeDetailView()
+    } else {
+      self.showThemeDetailView()
     }
   }
 }
