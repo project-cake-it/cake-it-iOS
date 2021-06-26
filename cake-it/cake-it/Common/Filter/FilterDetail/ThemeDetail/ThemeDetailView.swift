@@ -80,7 +80,7 @@ final class ThemeDetailView: UIView {
   }
   
   private func registerCell() {
-    let identifier = String(describing: ThemeCell.self)
+    let identifier = String(describing: CakeDesignThemeCell.self)
     let nib = UINib(nibName: identifier, bundle: nil)
     themeTableView.register(nib, forCellReuseIdentifier: identifier)
   }

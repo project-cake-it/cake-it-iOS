@@ -17,8 +17,8 @@ extension ThemeDetailView: UITableViewDataSource {
       resetData()
     }
     
-    let identifier = String(describing: ThemeCell.self)
-    if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? ThemeCell {
+    let identifier = String(describing: CakeDesignThemeCell.self)
+    if let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? CakeDesignThemeCell {
       let themeType = FilterCommon.FilterTheme.allCases[indexPath.row]
       cell.themeLabel.text = themeType.title
       if selectedTheme == themeType {
