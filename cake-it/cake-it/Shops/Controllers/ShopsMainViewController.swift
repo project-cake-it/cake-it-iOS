@@ -33,7 +33,8 @@ final class ShopsMainViewController: BaseViewController {
   private func fetchCakeShops() {
     NetworkManager.shared.requestGet(api: .shops,
                                      type: [CakeShop].self,
-                                     param: "") { result in
+                                     param: selectedFilter.queryString()
+    ) { result in
       switch result {
       case .success(let cakeShops):
         self.cakeShops = cakeShops
