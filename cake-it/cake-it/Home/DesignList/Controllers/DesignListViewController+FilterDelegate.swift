@@ -13,6 +13,7 @@ extension DesignListViewController: FilterCategoryCellDelegate {
   func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
+      fetchCakeDesigns()
       return
     }
     
@@ -34,8 +35,7 @@ extension DesignListViewController: FilterDetailViewDelegate {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
     hightlightedFilterType = type      // 포커스 된 셀 타입 저장
     selectedFilter[type.key] = values
-    requestDesignListWithFilter()
-    print("🏃🏻‍♂️ selected: \(selectedFilter)") // dictionary 내용 확인을 위해 주석 (개발 후 제거 필요)
+    fetchCakeDesigns()
   }
 
   func backgroundViewDidTap() {
@@ -47,23 +47,7 @@ extension DesignListViewController: FilterDetailViewDelegate {
 // MARK:- Private Method
 extension DesignListViewController {
   
-  private func requestDesignListWithFilter() {
-    let parameter = selectedFilter.queryString()
-    NetworkManager.shared.requestGet(api: .designs,
-                                     type: [CakeDesign].self,
-                                     param: parameter) { (respons) in
-      switch respons {
-      case .success(let designs):
-        self.cakeDesigns = designs
-        self.designsCollectionView.reloadData()
-        
-      case .failure(let error):
-        print(error.localizedDescription)
-      }
-    }
-  }
-  
-  private func resetFilter() {
+  func resetFilter() {
     if isShowFilterDetailView() {
       removeFilterDetailView()
     }
@@ -71,7 +55,6 @@ extension DesignListViewController {
     hightlightedFilterType = .reset
     filterCategoryCollectionView.reloadData()
     selectedFilter.removeAll()
-    requestDesignListWithFilter()
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {

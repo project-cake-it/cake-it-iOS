@@ -11,6 +11,7 @@ extension ShopsMainViewController: FilterCategoryCellDelegate {
   func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
+      requestShopListWithFilter()
       return
     }
 
@@ -68,7 +69,6 @@ extension ShopsMainViewController {
     hightlightedFilterType = .reset
     filterCollectionView.reloadData()
     selectedFilter.removeAll()
-    requestShopListWithFilter()
   }
   
   private func updateFilter(type: FilterCommon.FilterType) {
