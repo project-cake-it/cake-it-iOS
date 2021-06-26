@@ -9,19 +9,20 @@ import UIKit
 
 extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    
-    if collectionView == filterCollectionView {
+    switch collectionView {
+    case filterCollectionView:
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
         cell.isFilterHightlighted = !cell.isFilterHightlighted
         hightlightedFilterType = cell.filterType
       }
-    }
-    else if collectionView == shopCollectionView {
+    case shopCollectionView:
       let identifier = String(describing: ShopDetailViewController.self)
       let storyboard = UIStoryboard(name: "Shops", bundle: nil)
       let detailVC = storyboard.instantiateViewController(withIdentifier: identifier) as! ShopDetailViewController
       detailVC.modalPresentationStyle = .fullScreen
       present(detailVC, animated: false, completion: nil)
+    default:
+      break
     }
   }
   
