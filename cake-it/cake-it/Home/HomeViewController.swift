@@ -124,7 +124,7 @@ final class HomeViewController: UIViewController {
     themeCollectionView.delegate = self
     themeCollectionView.dataSource = self
     
-    let identifier = String(describing: ThemeCell.self)
+    let identifier = String(describing: HomeThemeCell.self)
     let nib = UINib(nibName: identifier, bundle: nil)
     themeCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }

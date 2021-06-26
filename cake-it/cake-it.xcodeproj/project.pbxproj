@@ -72,8 +72,8 @@
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
-		AC9FA082267909370050F9F0 /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA080267909370050F9F0 /* ThemeCell.swift */; };
-		AC9FA083267909370050F9F0 /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9FA081267909370050F9F0 /* ThemeCell.xib */; };
+		AC9FA082267909370050F9F0 /* HomeThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA080267909370050F9F0 /* HomeThemeCell.swift */; };
+		AC9FA083267909370050F9F0 /* HomeThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9FA081267909370050F9F0 /* HomeThemeCell.xib */; };
 		AC9FA08526790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */; };
 		AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */; };
 		AC9FA089267BA9A30050F9F0 /* CakeDesignTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */; };
@@ -215,8 +215,8 @@
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
-		AC9FA080267909370050F9F0 /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
-		AC9FA081267909370050F9F0 /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
+		AC9FA080267909370050F9F0 /* HomeThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeThemeCell.swift; sourceTree = "<group>"; };
+		AC9FA081267909370050F9F0 /* HomeThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeThemeCell.xib; sourceTree = "<group>"; };
 		AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignTheme.swift; sourceTree = "<group>"; };
@@ -366,8 +366,8 @@
 				F73B6D502635B1000043CF89 /* DesignDetail */,
 				8B62C3112600F670005F599A /* DesignList */,
 				8B3AF14525DAE16A00B9F48D /* Home.storyboard */,
-				AC9FA080267909370050F9F0 /* ThemeCell.swift */,
-				AC9FA081267909370050F9F0 /* ThemeCell.xib */,
+				AC9FA080267909370050F9F0 /* HomeThemeCell.swift */,
+				AC9FA081267909370050F9F0 /* HomeThemeCell.xib */,
 				38D8C6FD25BC622500C1F10D /* HomeViewController.swift */,
 				AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */,
 				AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */,
@@ -937,7 +937,7 @@
 				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
 				F7A88748265A483200930932 /* FilterColorCell.xib in Resources */,
 				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
-				AC9FA083267909370050F9F0 /* ThemeCell.xib in Resources */,
+				AC9FA083267909370050F9F0 /* HomeThemeCell.xib in Resources */,
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
 				F7A88743265A482800930932 /* FilterBasicCell.xib in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
@@ -1173,7 +1173,7 @@
 				AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */,
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */,
-				AC9FA082267909370050F9F0 /* ThemeCell.swift in Sources */,
+				AC9FA082267909370050F9F0 /* HomeThemeCell.swift in Sources */,
 				F768D201265801A50092E3CE /* FilterCategoryCell.swift in Sources */,
 				F71F330D26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,

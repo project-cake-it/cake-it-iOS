@@ -34,9 +34,9 @@ extension HomeViewController: UICollectionViewDataSource {
       return cell
     }
     
-    let identifider = String(describing: ThemeCell.self)
+    let identifider = String(describing: HomeThemeCell.self)
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifider,
-                                                  for: indexPath) as! ThemeCell
+                                                  for: indexPath) as! HomeThemeCell
     
     if isThemeViewExpanded == false && indexPath.row == moreButtonIndex {
       cell.updateCell(isMoreButton: true, title: "더보기")

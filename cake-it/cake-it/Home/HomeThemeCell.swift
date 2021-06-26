@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ThemeCell: UICollectionViewCell {
+final class HomeThemeCell: UICollectionViewCell {
   
   @IBOutlet weak var backView: UIView!
   @IBOutlet weak var titleLabel: UILabel!
