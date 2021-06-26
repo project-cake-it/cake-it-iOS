@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CakeShopCell: UICollectionViewCell {
   
@@ -16,6 +17,12 @@ final class CakeShopCell: UICollectionViewCell {
   @IBOutlet weak var miniSizeCakePriceLabel: UILabel!
   @IBOutlet weak var levelOneSizeCakePriceLabel: UILabel!
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    configure()
+  }
+  
   override func prepareForReuse() {
     super.prepareForReuse()
     
@@ -24,18 +31,33 @@ final class CakeShopCell: UICollectionViewCell {
   }
   
   func update(with cakeShop: CakeShop) {
-    let cakeShopImageURL = URL(string: cakeShop.image)
-    DispatchQueue.global().async {
-      let data = try? Data(contentsOf: cakeShopImageURL!)
-      DispatchQueue.main.async {
-        self.shopImageView.image = UIImage(data: data!)
-      }
-    }
+    updateShopImage(imageURL: cakeShop.shopImages.first?.shopImageURL)
     nameLabel.text = cakeShop.name
     addressLabel.text = cakeShop.address
-    miniSizeCakePriceLabel.text = String(cakeShop.miniSizeCakePrice).moneyFormat.won
-    levelOneSizeCakePriceLabel.text = String(cakeShop.levelOneSizeCakePrice).moneyFormat.won
-    updateTagStackView(tags: cakeShop.tags)
+    updateCakePrice(by: cakeShop.sizes)
+    updateTagStackView(tags: cakeShop.hashtags.map { $0.name })
+  }
+  
+  private func updateShopImage(imageURL: String?) {
+    if let imageURL = imageURL {
+      let cakeShopImageURL = URL(string: imageURL)
+      shopImageView.kf.setImage(with: cakeShopImageURL)
+    } else {
+      
+    }
+  }
+  
+  private func updateCakePrice(by sizes: [CakeShopCakeSize]) {
+    sizes.forEach {
+      switch $0.name {
+      case "미니":
+        miniSizeCakePriceLabel.text = String($0.price).moneyFormat.won
+      case "1호":
+        levelOneSizeCakePriceLabel.text = String($0.price).moneyFormat.won
+      default:
+        break
+      }
+    }
   }
   
   private func updateTagStackView(tags: [String]) {
@@ -43,12 +65,24 @@ final class CakeShopCell: UICollectionViewCell {
       let tagLabel = PaddingLabel()
       tagLabel.layer.borderColor = Colors.grayscale02.cgColor
       tagLabel.layer.borderWidth = 1.0
-      tagLabel.text = "#" + $0
+      tagLabel.text = $0
       tagLabel.textColor = Colors.grayscale04
       tagLabel.font = Fonts.spoqaHanSans(weight: .Regular, size: 11.0)
       tagLabel.backgroundColor = .clear
       tagLabel.insets = .init(top: 0, left: 4, bottom: 0, right: 4)
       tagStackView.addArrangedSubview(tagLabel)
     }
+  }
+}
+
+// MARK: - Configuration
+
+extension CakeShopCell {
+  private func configure() {
+    configureImageView()
+  }
+  
+  private func configureImageView() {
+    shopImageView.backgroundColor = Colors.grayscale04
   }
 }
