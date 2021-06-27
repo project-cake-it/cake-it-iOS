@@ -19,6 +19,8 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
       let identifier = String(describing: ShopDetailViewController.self)
       let storyboard = UIStoryboard(name: "Shops", bundle: nil)
       let detailVC = storyboard.instantiateViewController(withIdentifier: identifier) as! ShopDetailViewController
+      let cakeShop = cakeShops[indexPath.row]
+      detailVC.fetchDetail(id: cakeShop.id)
       detailVC.modalPresentationStyle = .fullScreen
       present(detailVC, animated: false, completion: nil)
     default:

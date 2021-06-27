@@ -61,26 +61,22 @@ final class ShopDetailViewController: BaseViewController {
     super.viewDidLoad()
     
     configure()
-    fetchDetailInfo()
-    fetchCakeDesigns()
   }
   
-  private func fetchDetailInfo() {
-    updateCakeInfoSectionView()
-  }
-  
-  private func fetchCakeDesigns() {
-    let tempImageURL = "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966"
-    for _ in 0..<5 {
-//      cakeDesigns.append(CakeDesign(image: tempImageURL,
-//                                    location: "강남구",
-//                                    size: "1호 13cm",
-//                                    name: "화중이맛 케이크",
-//                                    price: 35000))
+  func fetchDetail(id: Int) {
+    NetworkManager.shared.requestGet(api: .shops,
+                                     type: CakeShopDetailResponse.self,
+                                     param: "/\(id)") { result in
+      switch result {
+      case .success(let response):
+        DispatchQueue.main.async {
+          self.updateDetail(cakeShop: response.cakeShop)
+        }
+      case .failure(_):
+        // TODO: 에러 핸들링
+        break
+      }
     }
-    cakeDesignCollectionView.reloadData()
-    view.layoutIfNeeded()
-    cakeDesignCollectionViewHeight.constant = cakeDesignCollectionView.contentSize.height
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
