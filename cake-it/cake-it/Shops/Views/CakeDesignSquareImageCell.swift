@@ -11,13 +11,32 @@ final class CakeDesignSquareImageCell: UICollectionViewCell {
   
   @IBOutlet weak var cakeDesignImageView: UIImageView!
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    configure()
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    
+    cakeDesignImageView.image = nil
+  }
+  
   func updateCell(imageURL: String) {
     guard let cakeDesignImageURL = URL(string: imageURL) else { return }
-    DispatchQueue.global().async {
-      let data = try? Data(contentsOf: cakeDesignImageURL)
-      DispatchQueue.main.async {
-        self.cakeDesignImageView.image = UIImage(data: data!)
-      }
-    }
+    cakeDesignImageView.kf.setImage(with: cakeDesignImageURL)
+  }
+}
+
+// MARK: - Configuration
+
+extension CakeDesignSquareImageCell {
+  private func configure() {
+    configureImageView()
+  }
+  
+  private func configureImageView() {
+    cakeDesignImageView.backgroundColor = Colors.grayscale04
   }
 }
