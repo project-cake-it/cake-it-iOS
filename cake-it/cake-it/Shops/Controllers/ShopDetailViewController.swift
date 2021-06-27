@@ -140,7 +140,11 @@ extension ShopDetailViewController {
   private func updatePriceInfoBySizeStackView(by sizes: [CakeShopCakeSize]) {
     sizes.forEach {
       let priceLabel = UILabel()
-      priceLabel.text = "\($0.name)(\($0.size)) / \(String($0.price).moneyFormat.won)"
+      if $0.size == "" {
+        priceLabel.text = "\($0.name) / \(String($0.price).moneyFormat.won)"
+      } else {
+        priceLabel.text = "\($0.name)(\($0.size)) / \(String($0.price).moneyFormat.won)"
+      }
       priceLabel.font = Fonts.spoqaHanSans(weight: .Regular, size: 14)
       priceLabel.textColor = Colors.grayscale05
       priceLabel.translatesAutoresizingMaskIntoConstraints = false
