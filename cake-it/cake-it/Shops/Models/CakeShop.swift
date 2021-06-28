@@ -7,19 +7,27 @@
 
 import Foundation
 
+struct CakeShopDetailResponse: Decodable {
+  let cakeShop: CakeShop
+  
+  enum CodingKeys: String, CodingKey {
+    case cakeShop = "shop"
+  }
+}
+
 struct CakeShop: Decodable {
   let id: Int
-  let name, address, pullAddress, information: String
+  let name, address, pullAddress, information, holiday: String
   let operationTime, pickupTime, telephone, kakaoMap: String
   let shopChannel: String
   let shopImages: [CakeShopImage]
-  let themeNames: CakeShopTheme
+  let themeNames: String
   let hashtags: [CakeShopHashtag]
   let sizes: [CakeShopCakeSize]
   let creamNames, sheetNames: String
+  let zzim: Bool
   let zzimCount: Int
   let designs: [CakeShopCakeDesign]
-  let zzim: Bool
 }
 
 struct CakeShopCakeDesign: Codable {
@@ -57,8 +65,4 @@ struct CakeShopCakeSize: Codable {
   let id: Int
   let name, size: String
   let price: Int
-}
-
-enum CakeShopTheme: String, Codable {
-  case 화이트 = "#화이트"
 }
