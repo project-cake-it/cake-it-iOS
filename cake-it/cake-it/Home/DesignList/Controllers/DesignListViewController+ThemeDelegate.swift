@@ -9,17 +9,24 @@ import UIKit
 
 extension DesignListViewController: ThemeDetailViewDelegate {
   func themeDetailCellDidTap(type: FilterCommon.FilterTheme) {
-    selectedThemeType = type
-    let selectedTheme: [String: String] = [FilterCommon.FilterTheme.key: type.value]
-    let parameter = selectedTheme.queryString()
-    fetchCakeDesigns(parameter: parameter)
-    hideThemeList()
+    if selectedThemeType != type {
+      selectedThemeType = type
+      resetFilter()
+      fetchCakeDesigns()
+    }
+    hideThemeDetailView()
+  }
+  
+  func themeBackgroundViewDidTap() {
+    rotateThemeArrowImageView(arrowDirection: .down)
   }
 }
 
 // Theme 관련 Private Method
 extension DesignListViewController {
-  func showThemeList() {
+  func showThemeDetailView() {
+    removeFilterDetailView()
+    
     themeDetailView = ThemeDetailView()
     if let detailView = themeDetailView {
       detailView.selectedTheme = selectedThemeType
@@ -31,15 +38,27 @@ extension DesignListViewController {
                              trailingAnchor: self.view.trailingAnchor,
                              padding: UIEdgeInsets(top: 7, left: 0, bottom: 0, right: 0))
     }
+    rotateThemeArrowImageView(arrowDirection: .up)
   }
   
-  func hideThemeList() {
+  func hideThemeDetailView() {
     if let detailView = themeDetailView {
       for subView in detailView.subviews {
         subView.removeFromSuperview()
       }
     }
     themeDetailView?.removeFromSuperview()
+    rotateThemeArrowImageView(arrowDirection: .down)
+  }
+  
+  private func rotateThemeArrowImageView(arrowDirection: NaviArrowDirection) {
+    UIView.animate(withDuration: 0.2) {
+      if arrowDirection == .up {
+        self.navigationBarTitleArrowIcon.transform = CGAffineTransform(rotationAngle: .pi)
+      } else {
+        self.navigationBarTitleArrowIcon.transform = CGAffineTransform(rotationAngle: 0)
+      }
+    }
   }
   
   func isShowThemeDetailView() -> Bool {

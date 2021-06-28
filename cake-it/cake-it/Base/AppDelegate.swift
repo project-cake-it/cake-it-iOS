@@ -35,12 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(_ application: UIApplication,
                    open url: URL,
                    options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-    if (AuthApi.isKakaoTalkLoginUrl(url)) {
+    if AuthApi.isKakaoTalkLoginUrl(url) {
       return AuthController.handleOpenUrl(url: url)
     }
     
     guard let naverConnection = NaverThirdPartyLoginConnection.getSharedInstance() else { return false }
-    if (naverConnection.isNaverThirdPartyLoginAppschemeURL(url)) {
+    if naverConnection.isNaverThirdPartyLoginAppschemeURL(url) {
       return naverConnection.application(application, open: url, options: options)
     }
     

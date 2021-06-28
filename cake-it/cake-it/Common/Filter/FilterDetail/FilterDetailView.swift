@@ -7,9 +7,9 @@
 
 import UIKit
 
-protocol FilterDetailViewDelegate: class {
+protocol FilterDetailViewDelegate: AnyObject {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String])
-  func backgroundViewDidTap()
+  func filterBackgroundViewDidTap()
 }
 
 final class FilterDetailView: UIView {
@@ -118,7 +118,7 @@ final class FilterDetailView: UIView {
   }
   
   @objc private func backgroundViewDidTap() {
-    delegate?.backgroundViewDidTap()
+    delegate?.filterBackgroundViewDidTap()
     
     for subView in self.subviews {
       subView.removeFromSuperview()
