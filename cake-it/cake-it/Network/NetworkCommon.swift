@@ -21,6 +21,9 @@ class NetworkCommon {
     case login = "login"
     case designs = "designs"
     case shops = "shops"
+    case savedDesigns = "zzim/designs"
+    case savedShops = "zzim/shops"
+
     case randomNikname = "nickname"
     case uploadPhoto = "test/post"
     

@@ -67,6 +67,7 @@ final class ShopDetailViewController: BaseViewController {
       cakeDesignCollectionViewHeight.constant = cakeDesignCollectionView.contentSize.height
     }
   }
+  private var cakeShop: CakeShop?
   private var canContactShopButtonMove = false
   private var isScrollDirectionDown = false
   
@@ -82,8 +83,9 @@ final class ShopDetailViewController: BaseViewController {
                                      param: "/\(id)") { result in
       switch result {
       case .success(let response):
+        self.cakeShop = response.cakeShop
         DispatchQueue.main.async {
-          self.updateDetail(cakeShop: response.cakeShop)
+          self.updateDetail()
         }
       case .failure(_):
         // TODO: 에러 핸들링
@@ -92,8 +94,49 @@ final class ShopDetailViewController: BaseViewController {
     }
   }
   
+  private func saveShop() {
+    guard let shopId = cakeShop?.id else { return }
+    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(shopId)"
+    NetworkManager.shared.requestPost(urlString: urlString,
+                                      type: String.self,
+                                      param: "") { (response) in
+      switch response {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+  
+  private func cancelSavedShop() {
+    guard let shopId = cakeShop?.id else { return }
+    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(shopId)"
+    NetworkManager.shared.requestDelete(urlString: urlString,
+                                      type: String.self,
+                                      param: "") { (response) in
+      switch response {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+  
+  
   @IBAction func backButtonDidTap(_ sender: Any) {
     dismiss(animated: false, completion: nil)
+  }
+  
+  @IBAction func saveButtonDidTap(_ sender: Any) {
+    savedButton.isSelected = !savedButton.isSelected
+    
+    if savedButton.isSelected == true {
+      saveShop()
+    } else {
+      cancelSavedShop()
+    }
   }
   
   @IBAction func cakeDesignButtonDidTap(_ sender: Any) {
@@ -115,13 +158,14 @@ final class ShopDetailViewController: BaseViewController {
 
 extension ShopDetailViewController {
   
-  private func updateDetail(cakeShop: CakeShop) {
+  private func updateDetail() {
+    guard let cakeShop = self.cakeShop else { return }
+    
     shopNameLabel.text = cakeShop.name
     addressLabel.text = cakeShop.pullAddress
     
+    savedButton.isSelected = cakeShop.zzim
     savedCountLabel.text = String(cakeShop.zzimCount)
-    let savedButtonImage = cakeShop.zzim ? UIImage(named: "icHeartFilled") : UIImage(named: "icHeart")
-    savedButton.setImage(savedButtonImage, for: .normal)
     
     themeLabel.text = cakeShop.themeNames
     updatePriceInfoBySizeStackView(by: cakeShop.sizes)

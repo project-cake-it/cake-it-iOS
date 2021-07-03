@@ -20,7 +20,7 @@ final class DesignDetailViewController: BaseViewController {
   
   @IBOutlet weak var navigationBarView: UIView!
   @IBOutlet weak var naviShopNameLabel: UILabel!
-  @IBOutlet weak var naviZzimButton: UIButton!
+  @IBOutlet weak var naviSaveButton: UIButton!
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var imageScrollView: UIScrollView!
@@ -46,14 +46,29 @@ final class DesignDetailViewController: BaseViewController {
   private var canContactShopButtonMove = false
   private var isScrollDirectionDown = false
 
+  var designId: Int = 0
   var cakeDesign: CakeDesign?
   var imageTotalCount: Int = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    fetchCakeImages()
-    configureView()
+    fetchCakeDetail()
+  }
+  
+  private func fetchCakeDetail() {
+    NetworkManager.shared.requestGet(api: .designs,
+                                     type: CakeDesign.Response.self,
+                                     param: "/\(designId)") { (response) in
+      switch response {
+      case .success(let result):
+        self.cakeDesign = result.design
+        self.configureView()
+        self.fetchCakeImages()
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
   
   private func fetchCakeImages() {
@@ -131,7 +146,9 @@ extension DesignDetailViewController {
   }
   
   private func configureNavigationBar() {
-    naviShopNameLabel.text = cakeDesign?.shopName
+    guard let cakeDesign = cakeDesign else { return }
+    naviSaveButton.isSelected = cakeDesign.zzim
+    naviShopNameLabel.text = cakeDesign.shopName
   }
   
   private func configureScrollView() {
@@ -177,6 +194,7 @@ extension DesignDetailViewController {
     addressLabel.text = cakeDesign?.shopPullAddress
     cakeThemeLabel.text = cakeDesign?.themeNames
     for i in 0..<cakePriceBySizeLabels.count {
+      if cakeDesign?.sizes.count ?? 0 <= i { break }
       guard let sizeInfo = cakeDesign?.sizes[i] else { break }
       cakePriceBySizeLabels[i].text = "\(sizeInfo.name) / \(String(sizeInfo.price).moneyFormat)"
     }
@@ -188,12 +206,51 @@ extension DesignDetailViewController {
     connectShopButton.isHidden = true
   }
   
+  /// 케이크 디자인 찜하기
+  private func saveDesign() {
+    guard let designId = cakeDesign?.id else { return }
+    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(designId)"
+    NetworkManager.shared.requestPost(urlString: urlString,
+                                      type: String.self,
+                                      param: "") { (response) in
+      switch response {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+  
+  /// 케이크 디자인 찜하기 취소
+  private func cancelSavedDesign() {
+    guard let designId = cakeDesign?.id else { return }
+    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(designId)"
+    NetworkManager.shared.requestDelete(urlString: urlString,
+                                      type: String.self,
+                                      param: "") { (response) in
+      switch response {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+
+  
   @IBAction func naviBackButtonDidTap(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
   }
   
-  @IBAction func naviZzimButtonDidTap(_ sender: Any) {
-    naviZzimButton.isSelected = !naviZzimButton.isSelected
+  @IBAction func naviSaveButtonDidTap(_ sender: Any) {
+    naviSaveButton.isSelected = !naviSaveButton.isSelected
+    
+    if naviSaveButton.isSelected == true {
+      saveDesign()
+    } else {
+      cancelSavedDesign()
+    }
   }
   
   private func configurePanGesture() {

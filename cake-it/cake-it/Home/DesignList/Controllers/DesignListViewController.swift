@@ -47,7 +47,6 @@ final class DesignListViewController: BaseViewController {
 
     configure()
     fetchCakeDesigns()
-
   }
 
   func fetchCakeDesigns() {

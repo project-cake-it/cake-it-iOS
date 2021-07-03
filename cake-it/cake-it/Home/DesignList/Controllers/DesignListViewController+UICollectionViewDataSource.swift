@@ -59,7 +59,7 @@ extension DesignListViewController: UICollectionViewDataSource {
       let id = String(describing: DesignDetailViewController.self)
       let storyboard = UIStoryboard(name: "Home", bundle: nil)
       if let designDetailVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignDetailViewController {
-        designDetailVC.cakeDesign = cakeDesigns[indexPath.row]
+        designDetailVC.designId = cakeDesigns[indexPath.row].id
         designDetailVC.modalPresentationStyle = .fullScreen
         present(designDetailVC, animated: true, completion: nil)
       }
