@@ -9,7 +9,7 @@ import UIKit
 
 extension ShopListSubViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return cakeShops.count
+    return savedCakeShops.count
   }
   
   func collectionView(_ collectionView: UICollectionView,
@@ -17,8 +17,8 @@ extension ShopListSubViewController: UICollectionViewDataSource {
     let identifier = String(describing: CakeShopCell.self)
     let cell = cakeShopCollectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                           for: indexPath) as! CakeShopCell
-    let cakeShop = cakeShops[indexPath.row]
-    cell.update(with: cakeShop)
+    let savedShop = savedCakeShops[indexPath.row]
+    cell.update(with: savedShop)
     return cell
   }
 }

@@ -139,6 +139,7 @@ final class DesignDetailViewController: BaseViewController {
     addressLabel.text = cakeDesign?.shopPullAddress
     cakeThemeLabel.text = cakeDesign?.themeNames
     for i in 0..<cakePriceBySizeLabels.count {
+      if cakeDesign?.sizes.count ?? 0 <= i { break }
       guard let sizeInfo = cakeDesign?.sizes[i] else { break }
       cakePriceBySizeLabels[i].text = "\(sizeInfo.name) / \(String(sizeInfo.price).moneyFormat)"
     }
