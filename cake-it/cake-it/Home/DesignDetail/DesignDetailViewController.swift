@@ -35,7 +35,7 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet var cakePriceBySizeLabels: [UILabel]! // 케이크 크기별 가격
   @IBOutlet weak var kindOfCreamsLabel: UILabel!  // 케이크 크림 종류
   @IBOutlet weak var kindOfSheetsLabel: UILabel!  // 케이크 시트 종류
-  @IBOutlet weak var connectShopButton: UIButton! // 가게 연결하기 버튼
+  @IBOutlet weak var connectShopButton: UIButton! // 가게 연결하기 버튼, 실제로 사용하지 않고 높이만 잡아주는 버튼
   
   @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
   
