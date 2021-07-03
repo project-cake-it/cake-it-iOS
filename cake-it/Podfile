@@ -25,6 +25,7 @@ target 'cake-it' do
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
+  pod 'KakaoSDKTalk'
 
   # Naver ID SDK
   pod 'naveridlogin-sdk-ios'
