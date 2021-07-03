@@ -133,6 +133,7 @@ extension DesignDetailViewController {
       + Metric.bottomInset
     contentViewHeightConstraint.constant = totalHeight
     scrollView.delegate = self
+    scrollView.bounces = true
   }
   
   private func configureImageView() {
