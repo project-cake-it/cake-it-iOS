@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KakaoSDKTalk
 
 final class DesignDetailViewController: BaseViewController {
   
@@ -74,6 +75,19 @@ final class DesignDetailViewController: BaseViewController {
           }
         }
       }
+    }
+  }
+  
+  @objc private func contactShopButtonDidTap() {
+    guard let shopChannel = cakeDesign?.shopChannel,
+          let shopIdentifier = shopChannel.split(separator: "/").last,
+          let url = TalkApi.shared.makeUrlForChannelChat(channelPublicId: String(shopIdentifier)) else {
+      return
+    }
+    if UIApplication.shared.canOpenURL(url) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    } else {
+      // TODO: 에러 처리
     }
   }
 }
@@ -246,6 +260,7 @@ extension DesignDetailViewController {
   
   private func configureContactShopButton() {
     contactShopButton = CakeDesignDetailContactButton(type: .system)
+    contactShopButton.addTarget(self, action: #selector(contactShopButtonDidTap), for: .touchUpInside)
     contactShopButton.backgroundColor = Colors.pointB
     contactShopButton.setTitle("가게 연결하기", for: .normal)
     contactShopButton.setTitleColor(Colors.white, for: .normal)
