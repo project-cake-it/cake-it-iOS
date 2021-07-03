@@ -25,6 +25,7 @@ final class NetworkManager {
   
   init() { }
   
+  /// GET Request
   func requestGet<T: Decodable>(api: NetworkCommon.API,
                                 type: T.Type,
                                 param: String = "",
@@ -35,6 +36,7 @@ final class NetworkManager {
     self.request(request: request, type: T.self, completion: completion)
   }
   
+  /// POST Request - API enum type을 파라미터로 사용
   func requestPost<T: Decodable, U: Encodable>(api: NetworkCommon.API,
                                  type: T.Type,
                                  param: U? = nil,
@@ -48,6 +50,45 @@ final class NetworkManager {
     self.request(request: request, type: T.self, completion: completion)
   }
   
+  /// POST Request - urlString을 파라미터로 사용
+  func requestPost<T: Decodable, U: Encodable>(urlString: String,
+                                               type: T.Type,
+                                               param: U? = nil,
+                                               completion: @escaping (Result<T, APIError>) -> Void) {
+    guard let url = URL(string: urlString) else { return }
+    let request = AF.request(url,
+                             method: .post,
+                             parameters: param,
+                             encoder: JSONParameterEncoder.default)
+    self.request(request: request, type: T.self, completion: completion)
+  }
+  
+  /// DELETE Request - API enum type을 파라미터로 사용
+  func requestDelete<T: Decodable, U: Encodable>(api: NetworkCommon.API,
+                                                 type: T.Type,
+                                                 param: U? = nil,
+                                                 completion: @escaping (Result<T, APIError>) -> Void) {
+    guard let url = URL(string: api.urlString) else { return }
+    let request = AF.request(url,
+                             method: .delete,
+                             parameters: param,
+                             encoder: JSONParameterEncoder.default)
+    self.request(request: request, type: T.self, completion: completion)
+  }
+  
+  /// DELETE Request - urlString을 파라미터로 사용
+  func requestDelete<T: Decodable, U: Encodable>(urlString: String,
+                                                 type: T.Type,
+                                                 param: U? = nil,
+                                                 completion: @escaping (Result<T, APIError>) -> Void) {
+    guard let url = URL(string: urlString) else { return }
+    let request = AF.request(url,
+                             method: .delete,
+                             parameters: param,
+                             encoder: JSONParameterEncoder.default)
+    self.request(request: request, type: T.self, completion: completion)
+  }
+
   
   func request<T: Decodable>(request: DataRequest,
                              type: T.Type,

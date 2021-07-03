@@ -16,7 +16,7 @@ final class DesignDetailViewController: BaseViewController {
   
   @IBOutlet weak var navigationBarView: UIView!
   @IBOutlet weak var naviShopNameLabel: UILabel!
-  @IBOutlet weak var naviZzimButton: UIButton!
+  @IBOutlet weak var naviSaveButton: UIButton!
   
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var imageScrollView: UIScrollView!
@@ -44,6 +44,7 @@ final class DesignDetailViewController: BaseViewController {
     super.viewDidLoad()
     
     fetchCakeImages()
+    fetchSavedInfo()
     configureView()
   }
   
@@ -70,6 +71,20 @@ final class DesignDetailViewController: BaseViewController {
     }
   }
   
+  private func fetchSavedInfo() {
+    NetworkManager.shared.requestGet(api: .savedDesigns,
+                                     type: String.self,
+                                     param: "") { (response) in
+      switch response {
+      case .success(let result):
+        print(result)
+      // TODO: 찜 리스트 중 현재 아이디와 동일한 id 가 있다면 찜 표시 (서버 데이터 등록 후 구현)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+
   private func configureView() {
     configureNavigationBar()
     configureScrollView()
@@ -133,12 +148,51 @@ final class DesignDetailViewController: BaseViewController {
     connectShopButton.round(cornerRadius: 8.0)
   }
   
+  /// 케이크 디자인 찜하기
+  private func saveDesign() {
+    guard let designId = cakeDesign?.id else { return }
+    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(designId)"
+    NetworkManager.shared.requestPost(urlString: urlString,
+                                      type: String.self,
+                                      param: "") { (response) in
+      switch response {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+  
+  /// 케이크 디자인 찜하기 취소
+  private func cancelSavedDesign() {
+    guard let designId = cakeDesign?.id else { return }
+    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(designId)"
+    NetworkManager.shared.requestDelete(urlString: urlString,
+                                      type: String.self,
+                                      param: "") { (response) in
+      switch response {
+      case .success(let result):
+        print(result)
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+
+  
   @IBAction func naviBackButtonDidTap(_ sender: Any) {
     self.dismiss(animated: true, completion: nil)
   }
   
   @IBAction func naviZzimButtonDidTap(_ sender: Any) {
-    naviZzimButton.isSelected = !naviZzimButton.isSelected
+    naviSaveButton.isSelected = !naviSaveButton.isSelected
+    
+    if naviSaveButton.isSelected == true {
+      saveDesign()
+    } else {
+      cancelSavedDesign()
+    }
   }
 }
 
