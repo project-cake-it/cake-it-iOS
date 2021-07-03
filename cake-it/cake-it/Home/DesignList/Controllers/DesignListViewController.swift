@@ -33,10 +33,10 @@ final class DesignListViewController: BaseViewController {
   var selectedThemeType: FilterCommon.FilterTheme = .none  {     // 선택된 디자인 테마
     didSet {
       selectedTheme = [FilterCommon.FilterTheme.key: selectedThemeType.value]
-      navigationBarTitleLabel.text = selectedThemeType.title
+      navigationBarTitleLabel?.text = selectedThemeType.title
     }
   }
-  var selectedTheme: [String: String] = [:]     // 선택된 테마 리스트
+  fileprivate var selectedTheme: [String: String] = [:]     // 선택된 테마 리스트
   var selectedFilter: [String: [String]] = [:]  // 선택된 필터 리스트
   var hightlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
   var filterDetailView: FilterDetailView?     // 필터 디테일 리스트
@@ -71,7 +71,7 @@ final class DesignListViewController: BaseViewController {
   }
 
   @IBAction func backButtonDidTap(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
+    navigationController?.popViewController(animated: true)
   }
 
   @objc private func navigationTitleDidTap() {

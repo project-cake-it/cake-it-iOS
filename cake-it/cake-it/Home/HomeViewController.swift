@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class HomeViewController: UIViewController {
   
@@ -16,6 +17,7 @@ final class HomeViewController: UIViewController {
     static let cakeDesignCellInfoAreaHeight: CGFloat = 120
     static let themeCellHeight: CGFloat = 48
     static let themeCollectionViewInterItemVerticalSpace: CGFloat = 12
+    static let themeCollectionViewInterItemHorizontalSpace: CGFloat = 13
   }
   
   @IBOutlet weak var slideView: UIScrollView!
@@ -28,9 +30,9 @@ final class HomeViewController: UIViewController {
   @IBOutlet weak var rankCollecionViewHeightConstraint: NSLayoutConstraint!
   
   private(set) var cakeDesigns: [CakeDesignForTest] = []
+  private let viewModel: HomeViewModel = HomeViewModel()
   
-  let cakeDesignThemes: [CakeDesignTheme] = [.birthDay, .anniversary, .wedding, .promotion, .resignation, .discharge, .society, .etc]
-  let themeCollecionViewExpandHeight: CGFloat = 228
+  let cakeDesignThemes: [FilterCommon.FilterTheme] = [.birthday, .anniversary, .wedding, .emplyment, .advancement, .leave, .discharge, .graduated, .christmas, .halloween, .newYear]
   let themeCollecionViewNomalHeight: CGFloat = 108
   let themesMinCount = 4
   
@@ -39,8 +41,15 @@ final class HomeViewController: UIViewController {
   var isThemeViewExpanded: Bool = false {
     willSet {
       if newValue {
+        let height: CGFloat
+        if cakeDesignThemes.count % 2 > 0 {
+          height = (Metric.themeCellHeight + Metric.themeCollectionViewInterItemVerticalSpace) * CGFloat(cakeDesignThemes.count/2 + 1) - Metric.themeCollectionViewInterItemVerticalSpace
+        } else {
+          height = (Metric.themeCellHeight + Metric.themeCollectionViewInterItemVerticalSpace) * CGFloat(cakeDesignThemes.count/2) - Metric.themeCollectionViewInterItemVerticalSpace
+        }
+        
         themeHideButton.isHidden = false
-        themeCollectionViewHeightConstraint.constant = themeCollecionViewExpandHeight
+        themeCollectionViewHeightConstraint.constant = height
       } else {
         themeHideButton.isHidden = true
         themeCollectionViewHeightConstraint.constant = themeCollecionViewNomalHeight
@@ -53,7 +62,8 @@ final class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configueSlideView()
-    fetchSlideImages()
+    configureNavigationController()
+    fetchPromotionImages()
     
     configureRankCollecionView()
     fetchRankCakeDesign()
@@ -68,32 +78,34 @@ final class HomeViewController: UIViewController {
   
   //MARK: - Private Func
   private func configueSlideView() {
-    //TODO: 테스트용 이미지
-    let tempImageURL = "https://user-images.githubusercontent.com/24218456/122076633-01e0d600-ce36-11eb-9575-55305d4431aa.jpeg"
-    let cakeImageURL = URL(string: tempImageURL)!
-    let data = try? Data(contentsOf: cakeImageURL)
-    let imageCount = 3
-    
-    for i in 0..<imageCount {
-      let imageView = UIImageView()
-      let xPos = self.view.frame.width * CGFloat(i)
-      imageView.frame = CGRect(x: xPos,
-                               y: 0,
-                               width: self.view.frame.width,
-                               height: self.view.frame.width)
-      imageView.contentMode = .scaleAspectFill
-      DispatchQueue.main.async {
-        imageView.image = UIImage(data: data!)
-      }
-      slideView.addSubview(imageView)
-    }
-    
-    slideView.contentSize.width = self.view.frame.width * CGFloat(imageCount)
     slideView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
   }
   
-  private func fetchSlideImages() {
-    // 서버통신
+  private func configureNavigationController() {
+    navigationController?.navigationBar.isHidden = true
+  }
+  
+  private func fetchPromotionImages() {
+    viewModel.requestPromotionImage { success, result, error in
+      if success {
+        guard let result = result else { return }
+        
+        self.slideView.contentSize.width = self.view.frame.width * CGFloat(result.count)
+        for i in 0..<result.count {
+          let imageView = UIImageView()
+          let xPos = self.view.frame.width * CGFloat(i)
+          imageView.frame = CGRect(x: xPos,
+                                   y: 0,
+                                   width: self.view.frame.width,
+                                   height: self.view.frame.width)
+          imageView.contentMode = .scaleAspectFill
+          imageView.kf.setImage(with: URL(string: result[i].imageUrl))
+          self.slideView.addSubview(imageView)
+        }
+      } else {
+        // set placeholder image
+      }
+    }
   }
   
   private func configureRankCollecionView() {

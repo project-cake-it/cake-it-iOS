@@ -240,7 +240,7 @@ extension DesignDetailViewController {
 
   
   @IBAction func naviBackButtonDidTap(_ sender: Any) {
-    self.dismiss(animated: true, completion: nil)
+    navigationController?.popViewController(animated: true)
   }
   
   @IBAction func naviSaveButtonDidTap(_ sender: Any) {

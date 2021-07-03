@@ -26,6 +26,7 @@ class NetworkCommon {
 
     case randomNikname = "nickname"
     case uploadPhoto = "test/post"
+    case promotionImage = "promotions"
     
     var urlString: String {
       return BASE_URL + self.rawValue

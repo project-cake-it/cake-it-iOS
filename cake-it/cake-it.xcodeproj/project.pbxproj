@@ -71,6 +71,8 @@
 		AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */; };
 		AC0B8FF3265C07F4009016A9 /* LoginTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FF2265C07F4009016A9 /* LoginTestModel.swift */; };
 		AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDC83260756DF0026F5FA /* LoginModel.swift */; };
+		AC52DE6526902C2700718332 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6426902C2700718332 /* HomeViewModel.swift */; };
+		AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6626902D8400718332 /* PromotionModel.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
@@ -78,7 +80,6 @@
 		AC9FA083267909370050F9F0 /* HomeThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9FA081267909370050F9F0 /* HomeThemeCell.xib */; };
 		AC9FA08526790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */; };
 		AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */; };
-		AC9FA089267BA9A30050F9F0 /* CakeDesignTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */; };
 		AC9FA08B267F73530050F9F0 /* CakeDesignForTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08A267F73530050F9F0 /* CakeDesignForTest.swift */; };
 		AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */; };
 		AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C2263F0C9100A44862 /* ShopListSubViewController.swift */; };
@@ -230,6 +231,8 @@
 		AC0B8FE7264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBoardViewController+UITableViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		AC0B8FF2265C07F4009016A9 /* LoginTestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTestModel.swift; sourceTree = "<group>"; };
 		AC1BDC83260756DF0026F5FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		AC52DE6426902C2700718332 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		AC52DE6626902D8400718332 /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -237,7 +240,6 @@
 		AC9FA081267909370050F9F0 /* HomeThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeThemeCell.xib; sourceTree = "<group>"; };
 		AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignTheme.swift; sourceTree = "<group>"; };
 		AC9FA08A267F73530050F9F0 /* CakeDesignForTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignForTest.swift; sourceTree = "<group>"; };
 		AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeListSubViewController.swift; sourceTree = "<group>"; };
 		AC9FD4C2263F0C9100A44862 /* ShopListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListSubViewController.swift; sourceTree = "<group>"; };
@@ -393,6 +395,8 @@
 				38D8C6FD25BC622500C1F10D /* HomeViewController.swift */,
 				AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */,
 				AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */,
+				AC52DE6426902C2700718332 /* HomeViewModel.swift */,
+				AC52DE6626902D8400718332 /* PromotionModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -597,7 +601,6 @@
 				AC86FA0C262C430D002DED4F /* Constants.swift */,
 				8B93B2D82610C3160060ACAC /* Colors.swift */,
 				8B93B2ED2610CF5D0060ACAC /* Fonts.swift */,
-				AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1203,6 +1206,7 @@
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
 				F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
+				AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */,
 				F766FDBF265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift in Sources */,
 				F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */,
 				AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
@@ -1218,7 +1222,6 @@
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
 				F7590736267F85C8000ECBD7 /* ThemeDetailView.swift in Sources */,
-				AC9FA089267BA9A30050F9F0 /* CakeDesignTheme.swift in Sources */,
 				8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */,
 				F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,
@@ -1273,6 +1276,7 @@
 				8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
 				8B875D0F25DAE6C4003D9CFA /* ShopsMainViewController.swift in Sources */,
+				AC52DE6526902C2700718332 /* HomeViewModel.swift in Sources */,
 				AC86FA0D262C430D002DED4F /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
