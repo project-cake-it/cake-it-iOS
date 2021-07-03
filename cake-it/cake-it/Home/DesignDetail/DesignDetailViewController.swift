@@ -37,15 +37,29 @@ final class DesignDetailViewController: BaseViewController {
   
   @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
 
+  var designId: Int = 0
   var cakeDesign: CakeDesign?
   var imageTotalCount: Int = 0
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    fetchCakeImages()
-    fetchSavedInfo()
-    configureView()
+    fetchCakeDetail()
+  }
+  
+  private func fetchCakeDetail() {
+    NetworkManager.shared.requestGet(api: .designs,
+                                     type: CakeDesign.Response.self,
+                                     param: "/\(designId)") { (response) in
+      switch response {
+      case .success(let result):
+        self.cakeDesign = result.design
+        self.configureView()
+        self.fetchCakeImages()
+      case .failure(let error):
+        print(error)
+      }
+    }
   }
   
   private func fetchCakeImages() {
@@ -71,20 +85,6 @@ final class DesignDetailViewController: BaseViewController {
     }
   }
   
-  private func fetchSavedInfo() {
-    NetworkManager.shared.requestGet(api: .savedDesigns,
-                                     type: String.self,
-                                     param: "") { (response) in
-      switch response {
-      case .success(let result):
-        print(result)
-      // TODO: 찜 리스트 중 현재 아이디와 동일한 id 가 있다면 찜 표시 (서버 데이터 등록 후 구현)
-      case .failure(let error):
-        print(error.localizedDescription)
-      }
-    }
-  }
-
   private func configureView() {
     configureNavigationBar()
     configureScrollView()
@@ -93,7 +93,9 @@ final class DesignDetailViewController: BaseViewController {
   }
   
   private func configureNavigationBar() {
-    naviShopNameLabel.text = cakeDesign?.shopName
+    guard let cakeDesign = cakeDesign else { return }
+    naviSaveButton.isSelected = cakeDesign.zzim
+    naviShopNameLabel.text = cakeDesign.shopName
   }
   
   private func configureScrollView() {
@@ -185,7 +187,7 @@ final class DesignDetailViewController: BaseViewController {
     self.dismiss(animated: true, completion: nil)
   }
   
-  @IBAction func naviZzimButtonDidTap(_ sender: Any) {
+  @IBAction func naviSaveButtonDidTap(_ sender: Any) {
     naviSaveButton.isSelected = !naviSaveButton.isSelected
     
     if naviSaveButton.isSelected == true {

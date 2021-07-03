@@ -35,4 +35,9 @@ struct CakeDesign: Codable {
     var name: String
     let price: Int
   }
+  
+  // Response
+  struct Response: Decodable {
+    let design: CakeDesign
+  }
 }
