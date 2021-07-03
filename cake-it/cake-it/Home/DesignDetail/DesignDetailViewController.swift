@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKTalk
+import Kingfisher
 
 final class DesignDetailViewController: BaseViewController {
   
@@ -61,20 +62,14 @@ final class DesignDetailViewController: BaseViewController {
     for i in 0..<cakeImageInfoList.count {
       let cakeImageUrlString = cakeImageInfoList[i].designImageUrl
       guard let cakeImageUrl = URL(string: cakeImageUrlString) else { return }
-      
-      DispatchQueue.global().async {
-        if let imageData = try? Data(contentsOf: cakeImageUrl) {
-          DispatchQueue.main.async {
-            let cakeImageView = UIImageView(image: UIImage(data: imageData))
-            cakeImageView.frame = CGRect(x: Constants.SCREEN_WIDTH * CGFloat(i),
-                                         y: 0,
-                                         width: Constants.SCREEN_WIDTH,
-                                         height: Constants.SCREEN_WIDTH)
-            cakeImageView.contentMode = .scaleAspectFill
-            self.imageScrollView.addSubview(cakeImageView)
-          }
-        }
-      }
+      let cakeImageView = UIImageView()
+      cakeImageView.kf.setImage(with: cakeImageUrl)
+      cakeImageView.frame = CGRect(x: Constants.SCREEN_WIDTH * CGFloat(i),
+                                   y: 0,
+                                   width: Constants.SCREEN_WIDTH,
+                                   height: Constants.SCREEN_WIDTH)
+      cakeImageView.contentMode = .scaleAspectFill
+      self.imageScrollView.addSubview(cakeImageView)
     }
   }
   

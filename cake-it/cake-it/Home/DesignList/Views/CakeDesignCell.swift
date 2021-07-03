@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CakeDesignCell: UICollectionViewCell {
   
@@ -18,13 +19,6 @@ final class CakeDesignCell: UICollectionViewCell {
     super.prepareForReuse()
     
     cakeDesignImageView.image = nil
-    locationAndCakeSizeLabel.text = nil
-    nameLabel.text = nil
-    priceLabel.text = nil
-  }
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
   }
   
   func update(with cakeDesign: CakeDesign) {
@@ -39,12 +33,8 @@ final class CakeDesignCell: UICollectionViewCell {
           let cakeDesignImageURL = URL(string: imageInfo.designImageUrl) else {
       return
     }
-    DispatchQueue.global().async {
-      if let imageData = try? Data(contentsOf: cakeDesignImageURL) {
-        DispatchQueue.main.async {
-          self.cakeDesignImageView.image = UIImage(data: imageData)
-        }
-      }
+    DispatchQueue.main.async {
+      self.cakeDesignImageView.kf.setImage(with: cakeDesignImageURL)
     }
   }
 }
