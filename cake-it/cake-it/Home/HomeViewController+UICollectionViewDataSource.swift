@@ -41,7 +41,7 @@ extension HomeViewController: UICollectionViewDataSource {
     if isThemeViewExpanded == false && indexPath.row == moreButtonIndex {
       cell.updateCell(isMoreButton: true, title: "더보기")
     } else {
-      cell.updateCell(title: cakeDesignThemes[indexPath.row].description)
+      cell.updateCell(title: cakeDesignThemes[indexPath.row].title)
     }
     
     return cell

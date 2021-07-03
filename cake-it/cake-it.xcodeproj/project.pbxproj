@@ -79,7 +79,6 @@
 		AC9FA083267909370050F9F0 /* HomeThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC9FA081267909370050F9F0 /* HomeThemeCell.xib */; };
 		AC9FA08526790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */; };
 		AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */; };
-		AC9FA089267BA9A30050F9F0 /* CakeDesignTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */; };
 		AC9FA08B267F73530050F9F0 /* CakeDesignForTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FA08A267F73530050F9F0 /* CakeDesignForTest.swift */; };
 		AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */; };
 		AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C2263F0C9100A44862 /* ShopListSubViewController.swift */; };
@@ -239,7 +238,6 @@
 		AC9FA081267909370050F9F0 /* HomeThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeThemeCell.xib; sourceTree = "<group>"; };
 		AC9FA08426790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC9FA08626790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
-		AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignTheme.swift; sourceTree = "<group>"; };
 		AC9FA08A267F73530050F9F0 /* CakeDesignForTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignForTest.swift; sourceTree = "<group>"; };
 		AC9FD4C0263F085F00A44862 /* CakeListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeListSubViewController.swift; sourceTree = "<group>"; };
 		AC9FD4C2263F0C9100A44862 /* ShopListSubViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListSubViewController.swift; sourceTree = "<group>"; };
@@ -600,7 +598,6 @@
 				AC86FA0C262C430D002DED4F /* Constants.swift */,
 				8B93B2D82610C3160060ACAC /* Colors.swift */,
 				8B93B2ED2610CF5D0060ACAC /* Fonts.swift */,
-				AC9FA088267BA9A30050F9F0 /* CakeDesignTheme.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1213,7 +1210,6 @@
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
 				F7590736267F85C8000ECBD7 /* ThemeDetailView.swift in Sources */,
-				AC9FA089267BA9A30050F9F0 /* CakeDesignTheme.swift in Sources */,
 				8B3AE24A261DEBF300770839 /* ShopsMainViewController+UICollectionViewDataSource.swift in Sources */,
 				F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */,
 				F774B93425E0E0BF006EE0EC /* LoginTestViewController.swift in Sources */,

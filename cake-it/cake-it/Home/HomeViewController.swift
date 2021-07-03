@@ -32,8 +32,7 @@ final class HomeViewController: UIViewController {
   private(set) var cakeDesigns: [CakeDesignForTest] = []
   private let viewModel: HomeViewModel = HomeViewModel()
   
-  let cakeDesignThemes: [CakeDesignTheme] = [.birthDay, .anniversary, .wedding, .promotion, .resignation, .discharge, .society, .etc]
-  let themeCollecionViewExpandHeight: CGFloat = 228
+  let cakeDesignThemes: [FilterCommon.FilterTheme] = [.birthday, .anniversary, .wedding, .emplyment, .advancement, .leave, .discharge, .graduated, .christmas, .halloween, .newYear]
   let themeCollecionViewNomalHeight: CGFloat = 108
   let themesMinCount = 4
   
@@ -42,8 +41,15 @@ final class HomeViewController: UIViewController {
   var isThemeViewExpanded: Bool = false {
     willSet {
       if newValue {
+        let height: CGFloat
+        if cakeDesignThemes.count % 2 > 0 {
+          height = (Metric.themeCellHeight + Metric.themeCollectionViewInterItemVerticalSpace) * CGFloat(cakeDesignThemes.count/2 + 1) - Metric.themeCollectionViewInterItemVerticalSpace
+        } else {
+          height = (Metric.themeCellHeight + Metric.themeCollectionViewInterItemVerticalSpace) * CGFloat(cakeDesignThemes.count/2) - Metric.themeCollectionViewInterItemVerticalSpace
+        }
+        
         themeHideButton.isHidden = false
-        themeCollectionViewHeightConstraint.constant = themeCollecionViewExpandHeight
+        themeCollectionViewHeightConstraint.constant = height
       } else {
         themeHideButton.isHidden = true
         themeCollectionViewHeightConstraint.constant = themeCollecionViewNomalHeight
@@ -56,6 +62,7 @@ final class HomeViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configueSlideView()
+    configureNavigationController()
     fetchPromotionImages()
     
     configureRankCollecionView()
@@ -72,6 +79,10 @@ final class HomeViewController: UIViewController {
   //MARK: - Private Func
   private func configueSlideView() {
     slideView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
+  }
+  
+  private func configureNavigationController() {
+    navigationController?.navigationBar.isHidden = true
   }
   
   private func fetchPromotionImages() {

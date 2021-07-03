@@ -191,13 +191,13 @@
             </objects>
             <point key="canvasLocation" x="790" y="-138"/>
         </scene>
-        <!--HomeViewController-->
+        <!--HomeNavigationController-->
         <scene sceneID="PIH-cV-QVU">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeViewController" id="MHd-f0-wYo" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeNavigationController" id="MHd-f0-wYo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPW-9d-1RE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="-139"/>
+            <point key="canvasLocation" x="1356" y="-152"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rAC-uc-4ku">

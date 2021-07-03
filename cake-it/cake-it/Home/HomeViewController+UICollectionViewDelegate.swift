@@ -71,8 +71,8 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return
       }
       let viewController = DesignListViewController.instantiate(from: "Home")
-      viewController.modalPresentationStyle = .overFullScreen
-      present(viewController, animated: true)
+      navigationController?.pushViewController(viewController, animated: true)
+      viewController.selectedThemeType = cakeDesignThemes[indexPath.row]
       break
     default:
       break

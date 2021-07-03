@@ -60,8 +60,7 @@ extension DesignListViewController: UICollectionViewDataSource {
       let storyboard = UIStoryboard(name: "Home", bundle: nil)
       if let designDetailVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignDetailViewController {
         designDetailVC.cakeDesign = cakeDesigns[indexPath.row]
-        designDetailVC.modalPresentationStyle = .fullScreen
-        present(designDetailVC, animated: true, completion: nil)
+        navigationController?.pushViewController(designDetailVC, animated: true)
       }
     }
     else if collectionView == filterCategoryCollectionView {
