@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension CakeListSubViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -24,14 +25,7 @@ extension CakeListSubViewController: UICollectionViewDataSource {
 
     if let imageInfo = savedCakeDesigns[indexPath.row].designImages.first,
        let imageUrl = URL(string: imageInfo.designImageUrl) {
-      DispatchQueue.global().async {
-        if let imageData = try? Data(contentsOf: imageUrl),
-           let designImage = UIImage(data: imageData) {
-          DispatchQueue.main.async {
-            cakeImageCell.cakeImageView.image = designImage
-          }
-        }
-      }
+      cakeImageCell.cakeImageView.kf.setImage(with: imageUrl)
     }
     
     return cakeImageCell
