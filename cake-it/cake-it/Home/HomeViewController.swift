@@ -17,6 +17,7 @@ final class HomeViewController: UIViewController {
     static let cakeDesignCellInfoAreaHeight: CGFloat = 120
     static let themeCellHeight: CGFloat = 48
     static let themeCollectionViewInterItemVerticalSpace: CGFloat = 12
+    static let themeCollectionViewInterItemHorizontalSpace: CGFloat = 13
   }
   
   @IBOutlet weak var slideView: UIScrollView!

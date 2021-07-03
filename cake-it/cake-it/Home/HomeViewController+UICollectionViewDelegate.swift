@@ -28,9 +28,9 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
       return CGSize(width: roundedSide, height: roundedSide + Metric.cakeDesignCellInfoAreaHeight)
     case themeCollectionView:
       let numberOfColumns: CGFloat = 2
-      let themeCellWidth = (themeCollectionView.frame.width
+      let themeCellWidth = (collectionView.frame.width
                               - Metric.themeCollectionViewInterItemVerticalSpace) / numberOfColumns
-      return CGSize(width: themeCellWidth, height: Metric.themeCellHeight)
+      return CGSize(width: themeCellWidth.rounded(.down), height: Metric.themeCellHeight)
     default:
       return CGSize(width: 0, height: 0)
     }
@@ -54,7 +54,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
                       minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     switch collectionView {
     case themeCollectionView:
-      return Metric.themeCollectionViewInterItemVerticalSpace
+      return Metric.themeCollectionViewInterItemHorizontalSpace
     default:
       return 0
     }
