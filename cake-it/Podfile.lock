@@ -22,6 +22,11 @@ PODS:
   - KakaoSDKCommon/Network (2.5.3):
     - Alamofire (~> 5.1)
     - KakaoSDKCommon/Common (= 2.5.3)
+  - KakaoSDKTalk (2.5.3):
+    - KakaoSDKTemplate (= 2.5.3)
+    - KakaoSDKUser (= 2.5.3)
+  - KakaoSDKTemplate (2.5.3):
+    - KakaoSDKCommon/Common (= 2.5.3)
   - KakaoSDKUser (2.5.3):
     - KakaoSDKAuth (= 2.5.3)
   - Kingfisher (6.3.0)
@@ -34,6 +39,7 @@ DEPENDENCIES:
   - GoogleSignIn
   - KakaoSDKAuth
   - KakaoSDKCommon
+  - KakaoSDKTalk
   - KakaoSDKUser
   - Kingfisher
   - naveridlogin-sdk-ios
@@ -49,6 +55,8 @@ SPEC REPOS:
     - GTMSessionFetcher
     - KakaoSDKAuth
     - KakaoSDKCommon
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
     - KakaoSDKUser
     - Kingfisher
     - naveridlogin-sdk-ios
@@ -63,12 +71,14 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
   KakaoSDKAuth: b1a0b9a84c21c967c4139d221edce83a7f15cdfe
   KakaoSDKCommon: 08548932f6f570215ea038241a98157c0b3f7a8b
+  KakaoSDKTalk: 58cf9c530cc8024ae2ed3839d40acd992ecaf909
+  KakaoSDKTemplate: 5939681de6c24fd81e93bf824982e979e794f87e
   KakaoSDKUser: 5d2de71fe070455bbaaad6a37af3eb500fbc8972
   Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
   naveridlogin-sdk-ios: b9d7c20677981177ed994ecb1c8c2b49f223277d
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 6bd7d60b0416e658e181c36e0a27e9dde96d1fd5
+PODFILE CHECKSUM: 63151764887f7dcce9ceb24a4583f68ea0cd8dfa
 
 COCOAPODS: 1.10.1

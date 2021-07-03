@@ -418,7 +418,7 @@
                                         <state key="selected" image="icHeartFilled"/>
                                         <state key="highlighted" image="icHeartFilled"/>
                                         <connections>
-                                            <action selector="naviZzimButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="6dI-Dt-QEK"/>
+                                            <action selector="naviSaveButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="6dI-Dt-QEK"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -704,8 +704,8 @@
                         <outlet property="kindOfCreamsLabel" destination="bfH-WY-3dT" id="YH6-AH-fQQ"/>
                         <outlet property="kindOfSheetsLabel" destination="Ey9-Pb-d3r" id="vDK-e8-clr"/>
                         <outlet property="lineView" destination="SLj-Ch-yqX" id="6mL-O5-rGw"/>
+                        <outlet property="naviSaveButton" destination="Cay-Bm-flT" id="aGA-Wt-O0B"/>
                         <outlet property="naviShopNameLabel" destination="3k5-yU-0ch" id="2CK-gE-j4C"/>
-                        <outlet property="naviZzimButton" destination="Cay-Bm-flT" id="kIB-An-0xe"/>
                         <outlet property="navigationBarView" destination="HJH-3s-3iJ" id="irF-Eq-kwk"/>
                         <outlet property="progressBar" destination="H1Q-qH-fwz" id="KuG-hg-Jc7"/>
                         <outlet property="scrollView" destination="V0K-j5-tBj" id="jXN-KF-kUs"/>
