@@ -175,7 +175,7 @@ extension DesignDetailViewController {
 
     availableOrderDay.layer.borderWidth = 1
     availableOrderDay.layer.borderColor = Colors.pointB.cgColor
-    connectShopButton.round(cornerRadius: 8.0)
+    connectShopButton.isHidden = true
   }
   
   @IBAction func naviBackButtonDidTap(_ sender: Any) {
