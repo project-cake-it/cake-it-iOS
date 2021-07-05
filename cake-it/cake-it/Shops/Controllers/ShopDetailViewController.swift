@@ -162,7 +162,7 @@ extension ShopDetailViewController {
     guard let cakeShop = self.cakeShop else { return }
     
     shopNameLabel.text = cakeShop.name
-    addressLabel.text = cakeShop.pullAddress
+    addressLabel.text = cakeShop.fullAddress
     
     savedButton.isSelected = cakeShop.zzim
     savedCountLabel.text = String(cakeShop.zzimCount)

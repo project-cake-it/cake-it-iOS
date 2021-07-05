@@ -17,7 +17,7 @@ struct CakeShopDetailResponse: Decodable {
 
 struct CakeShop: Decodable {
   let id: Int
-  let name, address, pullAddress, information, holiday: String
+  let name, address, fullAddress, information, holiday: String
   let operationTime, pickupTime, telephone, kakaoMap: String
   let shopChannel: String
   let shopImages: [CakeShopImage]

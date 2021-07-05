@@ -18,7 +18,7 @@ struct CakeDesign: Codable {
   let shopId: Int
   let shopName: String
   let shopAddress: String
-  let shopPullAddress: String
+  let shopFullAddress: String
   let sizes: [DesignSizeInfo]
   let creamNames: String
   let sheetNames: String
