@@ -191,7 +191,7 @@ extension DesignDetailViewController {
 
   private func configureCakeInformationView() {
     cakeDesignLabel.text = cakeDesign?.name
-    addressLabel.text = cakeDesign?.shopPullAddress
+    addressLabel.text = cakeDesign?.shopFullAddress
     cakeThemeLabel.text = cakeDesign?.themeNames
     for i in 0..<cakePriceBySizeLabels.count {
       if cakeDesign?.sizes.count ?? 0 <= i { break }
