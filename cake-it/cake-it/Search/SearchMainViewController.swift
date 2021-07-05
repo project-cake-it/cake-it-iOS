@@ -9,21 +9,44 @@ import UIKit
 
 final class SearchMainViewController: UIViewController {
   
+  @IBOutlet weak var searchTextField: UITextField!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
+    configureView()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    searchTextField.text = ""
+    searchTextField.becomeFirstResponder()
+  }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  private func configureView() {
+    navigationController?.navigationBar.isHidden = true
+    let tapGesture = UITapGestureRecognizer(target: self,
+                                            action: #selector(backgroundDidTap))
+    view.addGestureRecognizer(tapGesture)
+    searchTextField.delegate = self
+    searchTextField.tintColor = Colors.pointB
+  }
   
+  private func search(text: String) {
+    print("검색요: \(text)")
+    let resultVC = SearchResultViewController.instantiate(from: "Search")
+    resultVC.searcingText = text
+    self.navigationController?.pushViewController(resultVC, animated: true)
+  }
+  
+  @objc private func backgroundDidTap() {
+    searchTextField.resignFirstResponder()
+  }
+}
+
+extension SearchMainViewController: UITextFieldDelegate {
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    searchTextField.resignFirstResponder()
+    search(text: textField.text ?? "")
+    return true
+  }
 }
