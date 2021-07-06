@@ -20,10 +20,11 @@ final class SearchResultViewController: UIViewController {
   @IBOutlet weak var shopTitleView: UIView!
   @IBOutlet weak var designTitleLabel: UILabel!
   @IBOutlet weak var shopTitleLabel: UILabel!
-  
   @IBOutlet weak var seperateView: UIView!
-  
-  @IBOutlet weak var testView: UIView!
+
+  @IBOutlet weak var designContainerView: UIView!
+  @IBOutlet weak var shopContainerView: UIView!
+  @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
   
   @IBOutlet weak var seperateViewLeadingConstraint: NSLayoutConstraint!
   
@@ -33,9 +34,7 @@ final class SearchResultViewController: UIViewController {
   var searcingText: String = ""
   var tapState: ResultTapState = .design {
     didSet {
-      moveSeperateView(complition: {
-        self.updateTapLabel()
-      })
+      moveView()
     }
   }
   
@@ -45,34 +44,42 @@ final class SearchResultViewController: UIViewController {
     configureView()
   }
   
+  // MARK:- configure View
   private func configureView() {
+    configureNavigationView()
+    configureDesignListView()
+    configureShopListView()
+  }
+  
+  private func configureNavigationView() {
     searchingTitle?.text = searcingText
-    
-    let designVC = DesignListViewController.instantiate(from: "Home")
-    testView.addSubview(designVC.view)
   }
   
-  private func moveSeperateView(complition: @escaping ()->Void) {
-    
-  }
-  
-  private func updateTapLabel() {
-    if tapState == .design {
-      designTitleLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
-      designTitleLabel.textColor = Colors.pointB
-      shopTitleLabel.font = Fonts.spoqaHanSans(weight: .Medium, size: 15)
-      shopTitleLabel.textColor = Colors.black
-    } else {
-      designTitleLabel.font = Fonts.spoqaHanSans(weight: .Medium, size: 15)
-      designTitleLabel.textColor = Colors.black
-      shopTitleLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
-      shopTitleLabel.textColor = Colors.pointB
+  private func configureDesignListView() {
+    let id = String(describing: DesignListViewController.self)
+    let storyboard = UIStoryboard(name: "Home", bundle: nil)
+    if let designVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignListViewController {
+      designVC.view.frame = designContainerView.frame
+      designContainerView.addSubview(designVC.view)
+      self.addChild(designVC)
     }
   }
   
+  private func configureShopListView() {
+    let id = String(describing: ShopsMainViewController.self)
+    let storyboard = UIStoryboard(name: "Shops", bundle: nil)
+    if let shopVC = storyboard.instantiateViewController(withIdentifier: id) as? ShopsMainViewController {
+      shopVC.view.frame = shopContainerView.frame
+      shopContainerView.addSubview(shopVC.view)
+      self.addChild(shopVC)
+    }
+  }
+    
+  // MARK:- click event
   @IBAction func backButtonDidTap(_ sender: Any) {
     navigationController?.popViewController(animated: true)
   }
+  
   @IBAction func TapTitleViewDidTap(_ sender: UIButton) {
     switch sender.tag {
     case DESIGN_TITLE_BUTTON_TAG:
@@ -81,5 +88,33 @@ final class SearchResultViewController: UIViewController {
       tapState = .shop
     default: break
     }
+  }
+}
+
+
+// MARK:- private func
+extension SearchResultViewController {
+  
+  private func moveView() {
+    switch tapState {
+    case .design:
+      containerViewLeadingConstraint.constant = 0.0
+      seperateViewLeadingConstraint.constant = 0.0
+      designTitleLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
+      designTitleLabel.textColor = Colors.pointB
+      shopTitleLabel.font = Fonts.spoqaHanSans(weight: .Medium, size: 15)
+      shopTitleLabel.textColor = Colors.black
+    case .shop:
+      containerViewLeadingConstraint.constant = -Constants.SCREEN_WIDTH
+      seperateViewLeadingConstraint.constant = designTitleView.frame.width
+      designTitleLabel.font = Fonts.spoqaHanSans(weight: .Medium, size: 15)
+      designTitleLabel.textColor = Colors.black
+      shopTitleLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
+      shopTitleLabel.textColor = Colors.pointB
+    }
+    
+    UIView.animate(withDuration: 0.5, animations: {
+      self.view.layoutIfNeeded()
+    })
   }
 }
