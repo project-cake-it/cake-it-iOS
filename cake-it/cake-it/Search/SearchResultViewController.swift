@@ -24,9 +24,8 @@ final class SearchResultViewController: UIViewController {
 
   @IBOutlet weak var designContainerView: UIView!
   @IBOutlet weak var shopContainerView: UIView!
-  @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
-  
   @IBOutlet weak var seperateViewLeadingConstraint: NSLayoutConstraint!
+  @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
   
   let DESIGN_TITLE_BUTTON_TAG = 100
   let SHOP_TITLE_BUTTON_TAG = 200
@@ -40,7 +39,6 @@ final class SearchResultViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     configureView()
   }
   
@@ -60,6 +58,8 @@ final class SearchResultViewController: UIViewController {
     let storyboard = UIStoryboard(name: "Home", bundle: nil)
     if let designVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignListViewController {
       designVC.view.frame = designContainerView.frame
+      designVC.navigationBarView.isHidden = true
+      designVC.navigationBarHeightConstraint.constant = 0.0
       designContainerView.addSubview(designVC.view)
       self.addChild(designVC)
     }

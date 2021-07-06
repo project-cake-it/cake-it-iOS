@@ -27,7 +27,8 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var designsCollectionView: UICollectionView!
   @IBOutlet weak var filterCategoryCollectionView: UICollectionView!
 
-
+  @IBOutlet weak var navigationBarHeightConstraint: NSLayoutConstraint!
+  
   var cakeDesigns: [CakeDesign] = []
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .size, .color, .category]
   var selectedThemeType: FilterCommon.FilterTheme = .none  {     // 선택된 디자인 테마
