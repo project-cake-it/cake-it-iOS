@@ -29,7 +29,7 @@ final class HomeViewController: UIViewController {
   @IBOutlet weak var rankCollectionView: UICollectionView!
   @IBOutlet weak var rankCollecionViewHeightConstraint: NSLayoutConstraint!
   
-  private(set) var cakeDesigns: [CakeDesignForTest] = []
+  private(set) var cakeDesigns: [CakeDesign] = []
   private let viewModel: HomeViewModel = HomeViewModel()
   
   let cakeDesignThemes: [FilterCommon.FilterTheme] = [.birthday, .anniversary, .wedding, .emplyment, .advancement, .leave, .discharge, .graduated, .christmas, .halloween, .newYear]
@@ -63,12 +63,13 @@ final class HomeViewController: UIViewController {
     super.viewDidLoad()
     configueSlideView()
     configureNavigationController()
-    fetchPromotionImages()
-    
     configureRankCollecionView()
-    fetchRankCakeDesign()
-    
     configueThemeCollectionView()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    fetchPromotionImages()
+    fetchRankCakeDesign()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -118,18 +119,16 @@ final class HomeViewController: UIViewController {
   }
   
   private func fetchRankCakeDesign() {
-    let tempImageURL = "https://postfiles.pstatic.net/MjAyMTAzMjVfMjUw/MDAxNjE2Njg0MTc2OTc5.uKjj9xmaLrbGIbhnwiF7qhOroinNd60gbl8Jr6rMH18g.R7eRAZeHfGBv-wb8VZwo-r9IRqSLS-8Phocr7oiQ-g8g.PNG.cory_kim/Screen_Shot_2021-03-25_at_11.51.45_PM.png?type=w966"
-    for _ in 0..<5 {
-      cakeDesigns.append(CakeDesignForTest(image: tempImageURL,
-                                           location: "강남구",
-                                           size: "1호 13cm",
-                                           name: "화중이맛 케이크",
-                                           price: 35000))
+    viewModel.requestBestCakeDesigns { success, result, error in
+      if success {
+        guard let result = result else { return }
+        
+        self.cakeDesigns = result
+        self.rankCollectionView.reloadData()
+        self.view.layoutIfNeeded()
+        self.rankCollecionViewHeightConstraint.constant = self.rankCollectionView.contentSize.height
+      }
     }
-    
-    rankCollectionView.reloadData()
-    view.layoutIfNeeded()
-    rankCollecionViewHeightConstraint.constant = rankCollectionView.contentSize.height
   }
   
   private func configueThemeCollectionView() {
