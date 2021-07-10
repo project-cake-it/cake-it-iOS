@@ -73,6 +73,8 @@
 		AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BDC83260756DF0026F5FA /* LoginModel.swift */; };
 		AC52DE6526902C2700718332 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6426902C2700718332 /* HomeViewModel.swift */; };
 		AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6626902D8400718332 /* PromotionModel.swift */; };
+		AC52DE692699E70400718332 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE682699E70400718332 /* MyPageViewModel.swift */; };
+		AC52DE6C2699E7E200718332 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6B2699E7E200718332 /* Notice.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
@@ -233,6 +235,8 @@
 		AC1BDC83260756DF0026F5FA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		AC52DE6426902C2700718332 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC52DE6626902D8400718332 /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
+		AC52DE682699E70400718332 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		AC52DE6B2699E7E200718332 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -575,7 +579,9 @@
 		8B875D2D25DAE7CD003D9CFA /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				AC52DE6A2699E7AF00718332 /* Models */,
 				8B875D2E25DAE836003D9CFA /* MyPage.storyboard */,
+				AC52DE682699E70400718332 /* MyPageViewModel.swift */,
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
 				AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */,
 				AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */,
@@ -659,6 +665,14 @@
 				79958D426757C842190D5DBA /* Pods_cake_itTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AC52DE6A2699E7AF00718332 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC52DE6B2699E7E200718332 /* Notice.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ACC16E6F262334240094D6D2 /* Login */ = {
@@ -1193,6 +1207,7 @@
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
 				AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */,
 				8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */,
+				AC52DE6C2699E7E200718332 /* Notice.swift in Sources */,
 				AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */,
@@ -1256,6 +1271,7 @@
 				AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */,
 				AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */,
 				AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */,
+				AC52DE692699E70400718332 /* MyPageViewModel.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				F7A88752265A486B00930932 /* BaseFilterCell.swift in Sources */,

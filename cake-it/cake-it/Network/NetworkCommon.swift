@@ -30,6 +30,8 @@ class NetworkCommon {
     case bestDesigns = "designs?order=best"
     case promotionImage = "promotions"
     
+    case notices = "notices"
+    
     var urlString: String {
       return BASE_URL + self.rawValue
     }

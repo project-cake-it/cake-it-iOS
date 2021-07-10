@@ -16,8 +16,10 @@ extension ListBoardViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let identifier = String(describing: ListBoardCell.self)
     let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ListBoardCell
-    cell.titleLabel.text = notices[indexPath.row]
-    cell.dateLabel.text = "2021.5.11"
+    
+    let notice = notices[indexPath.row]
+    cell.titleLabel.text = notice.title
+    cell.dateLabel.text = notice.createdAt
     return cell
   }
 }

@@ -11,6 +11,7 @@ extension ListBoardViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let noticeViewController = NoticeViewController.instantiate(from: "MyPage")
+    noticeViewController.notice = notices[indexPath.row]
     navigationController?.pushViewController(noticeViewController, animated: true)
   }
   

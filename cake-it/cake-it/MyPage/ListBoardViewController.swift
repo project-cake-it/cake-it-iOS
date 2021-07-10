@@ -16,7 +16,8 @@ final class ListBoardViewController: BaseViewController {
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var listTableView: UITableView!
   
-  private(set) var notices: [String] = []
+  private(set) var notices: [Notice] = []
+  private let viewModel: MyPageViewModel = MyPageViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,8 +33,14 @@ final class ListBoardViewController: BaseViewController {
   }
   
   private func fetchNotices() {
-    for _ in 0..<20 {
-      notices.append("공지사항")
+    viewModel.requestNotices { success, result, error in
+      if success {
+        guard let result = result else { return }
+        self.notices = result
+        self.listTableView.reloadData()
+      } else {
+        // TODO: error 처리
+      }
     }
     listTableView.reloadData()
   }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MyPageMainViewController: UIViewController {
+final class MyPageMainViewController: BaseViewController {
   
   @IBOutlet weak var myPageMessageLabel: UILabel!
   @IBOutlet weak var myPageTableView: UITableView!
