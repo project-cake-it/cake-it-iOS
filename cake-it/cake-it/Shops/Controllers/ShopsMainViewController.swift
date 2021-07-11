@@ -14,6 +14,8 @@ final class ShopsMainViewController: BaseViewController {
     static let cakeShopCellHeight: CGFloat = 124.0
   }
   
+  @IBOutlet weak var titleView: UIView!
+  @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var filterCollectionView: UICollectionView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
   
@@ -91,5 +93,10 @@ extension ShopsMainViewController {
   private func configureCollectionViewProtocols() {
     shopCollectionView.dataSource = self
     shopCollectionView.delegate = self
+  }
+  
+  func hiddenTitleView() {
+    titleView.isHidden = true
+    titleViewHeightConstraint.constant = 0.0
   }
 }

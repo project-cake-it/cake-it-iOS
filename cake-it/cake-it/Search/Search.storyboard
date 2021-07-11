@@ -122,7 +122,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-W7-0rD">
-                                                <rect key="frame" x="83" y="18.5" width="41.5" height="18"/>
+                                                <rect key="frame" x="84" y="19" width="39" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                 <color key="textColor" name="pointB"/>
                                                 <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                                         <rect key="frame" x="207" y="0.0" width="207" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-1O-hEZ">
-                                                <rect key="frame" x="89.5" y="18.5" width="28" height="18"/>
+                                                <rect key="frame" x="90.5" y="19" width="26" height="17.5"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                 <color key="textColor" name="black"/>
                                                 <nil key="highlightedColor"/>
@@ -187,26 +187,28 @@
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMb-3m-bSs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
+                                        <color key="backgroundColor" red="0.90394756870000004" green="0.90807002780000001" blue="0.70580180370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P8I-MD-VBc">
-                                        <rect key="frame" x="414" y="0.0" width="414" height="713"/>
+                                    <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-Al-f2T">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
+                                        <color key="backgroundColor" red="0.90394756870000004" green="0.90807002780000001" blue="0.70580180370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="white"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wMb-3m-bSs" secondAttribute="trailing" id="A5B-dP-KHy"/>
-                                    <constraint firstItem="P8I-MD-VBc" firstAttribute="top" secondItem="0v6-yU-bEA" secondAttribute="top" id="HH6-UO-XWR"/>
-                                    <constraint firstItem="P8I-MD-VBc" firstAttribute="height" secondItem="wMb-3m-bSs" secondAttribute="height" id="Jfl-D1-MBh"/>
+                                    <constraint firstItem="jFJ-Al-f2T" firstAttribute="top" secondItem="0v6-yU-bEA" secondAttribute="top" id="BZl-hg-xU1"/>
+                                    <constraint firstAttribute="bottom" secondItem="jFJ-Al-f2T" secondAttribute="bottom" id="P6J-W0-tba"/>
                                     <constraint firstItem="wMb-3m-bSs" firstAttribute="top" secondItem="0v6-yU-bEA" secondAttribute="top" id="caQ-JV-1sj"/>
+                                    <constraint firstAttribute="trailing" secondItem="jFJ-Al-f2T" secondAttribute="trailing" id="ct6-53-S8g"/>
                                     <constraint firstAttribute="bottom" secondItem="wMb-3m-bSs" secondAttribute="bottom" id="hT1-6D-JJf"/>
-                                    <constraint firstItem="P8I-MD-VBc" firstAttribute="width" secondItem="wMb-3m-bSs" secondAttribute="width" id="lKv-PT-GIQ"/>
-                                    <constraint firstItem="P8I-MD-VBc" firstAttribute="leading" secondItem="wMb-3m-bSs" secondAttribute="trailing" id="tsV-5e-RWY"/>
+                                    <constraint firstItem="jFJ-Al-f2T" firstAttribute="leading" secondItem="0v6-yU-bEA" secondAttribute="leading" id="qJy-Be-JLk"/>
                                     <constraint firstItem="wMb-3m-bSs" firstAttribute="leading" secondItem="0v6-yU-bEA" secondAttribute="leading" id="vT1-Ob-3qP"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qlG-OE-Cwi"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jn9-vI-Nln" firstAttribute="top" secondItem="qlG-OE-Cwi" secondAttribute="top" id="5Ly-Ht-5sp"/>
                             <constraint firstItem="I7o-3O-wAf" firstAttribute="width" secondItem="JP8-me-Igm" secondAttribute="width" multiplier="0.5" id="7vN-2S-wtR"/>
@@ -228,10 +230,10 @@
                         <outlet property="designContainerView" destination="wMb-3m-bSs" id="fFk-ey-5hc"/>
                         <outlet property="designTitleLabel" destination="0lc-W7-0rD" id="Pt7-dl-wWF"/>
                         <outlet property="designTitleView" destination="fVs-aJ-rzx" id="nss-MA-Lt6"/>
-                        <outlet property="searchingTitle" destination="geG-6l-koJ" id="Hdn-wm-RiH"/>
+                        <outlet property="searchingWordLabel" destination="geG-6l-koJ" id="Hdn-wm-RiH"/>
                         <outlet property="seperateView" destination="I7o-3O-wAf" id="xl2-cG-hE6"/>
                         <outlet property="seperateViewLeadingConstraint" destination="szy-NG-1vK" id="mAW-S1-lY5"/>
-                        <outlet property="shopContainerView" destination="P8I-MD-VBc" id="2dq-jj-HdV"/>
+                        <outlet property="shopContainerView" destination="jFJ-Al-f2T" id="RVW-Z2-ODl"/>
                         <outlet property="shopTitleLabel" destination="Y4E-1O-hEZ" id="HSH-Jx-j6v"/>
                         <outlet property="shopTitleView" destination="RnV-it-ufD" id="QcQ-Dt-OlC"/>
                     </connections>

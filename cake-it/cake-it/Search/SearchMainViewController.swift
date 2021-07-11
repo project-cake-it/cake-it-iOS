@@ -32,7 +32,6 @@ final class SearchMainViewController: UIViewController {
   }
   
   private func search(text: String) {
-    print("검색요: \(text)")
     let resultVC = SearchResultViewController.instantiate(from: "Search")
     resultVC.searcingText = text
     self.navigationController?.pushViewController(resultVC, animated: true)
