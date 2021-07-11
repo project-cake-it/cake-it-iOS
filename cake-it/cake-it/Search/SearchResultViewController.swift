@@ -42,7 +42,7 @@ final class SearchResultViewController: UIViewController {
     configureView()
   }
   
-  // MARK:- configure View
+  // MARK:- configuration
   private func configureView() {
     configureNavigationView()
     configureDesignListView()
@@ -80,7 +80,7 @@ final class SearchResultViewController: UIViewController {
     navigationController?.popViewController(animated: true)
   }
   
-  @IBAction func TapTitleViewDidTap(_ sender: UIButton) {
+  @IBAction func titleViewDidTap(_ sender: UIButton) {
     switch sender.tag {
     case DESIGN_TITLE_BUTTON_TAG:
       tappedTitleState = .design

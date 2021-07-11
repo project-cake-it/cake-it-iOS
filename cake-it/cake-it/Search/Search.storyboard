@@ -130,7 +130,7 @@
                                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIj-0L-DbB">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
                                                 <connections>
-                                                    <action selector="TapTitleViewDidTap:" destination="yAp-Sy-v5z" eventType="touchUpInside" id="wu6-71-zFl"/>
+                                                    <action selector="titleViewDidTap:" destination="yAp-Sy-v5z" eventType="touchUpInside" id="wu6-71-zFl"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -156,7 +156,7 @@
                                             <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FE-Lc-J4g">
                                                 <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
                                                 <connections>
-                                                    <action selector="TapTitleViewDidTap:" destination="yAp-Sy-v5z" eventType="touchUpInside" id="cmK-ke-6cm"/>
+                                                    <action selector="titleViewDidTap:" destination="yAp-Sy-v5z" eventType="touchUpInside" id="cmK-ke-6cm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
