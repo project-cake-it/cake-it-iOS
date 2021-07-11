@@ -32,6 +32,7 @@ final class SearchMainViewController: UIViewController {
   }
   
   private func search(text: String) {
+    // TODO: 서버 검색 api 개발 후 검색기능 구현 필요
     let resultVC = SearchResultViewController.instantiate(from: "Search")
     resultVC.searcingText = text
     self.navigationController?.pushViewController(resultVC, animated: true)
