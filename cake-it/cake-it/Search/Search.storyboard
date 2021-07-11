@@ -246,7 +246,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="containerViewLeadingConstraint" destination="MZB-4j-gIA" id="U6G-7g-WPZ"/>
                         <outlet property="designContainerView" destination="wMb-3m-bSs" id="fFk-ey-5hc"/>
                         <outlet property="designTitleLabel" destination="0lc-W7-0rD" id="Pt7-dl-wWF"/>
                         <outlet property="designTitleView" destination="fVs-aJ-rzx" id="nss-MA-Lt6"/>
