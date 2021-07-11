@@ -59,8 +59,8 @@ final class DesignListViewController: BaseViewController {
     print("[TEST] request queryString : \(NetworkCommon.API.designs.urlString)\(parameter)")
     NetworkManager.shared.requestGet(api: .designs,
                                      type: [CakeDesign].self,
-                                     param: parameter) { (respons) in
-      switch respons {
+                                     param: parameter) { (response) in
+      switch response {
       case .success(let designs):
         self.cakeDesigns = designs
         self.designsCollectionView.reloadData()
