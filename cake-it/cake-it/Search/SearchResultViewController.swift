@@ -24,6 +24,7 @@ final class SearchResultViewController: UIViewController {
   @IBOutlet weak var seperateViewLeadingConstraint: NSLayoutConstraint!
   @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
 
+  @IBOutlet weak var emptyResultView: UIView!
   @IBOutlet weak var designContainerView: UIView!
   @IBOutlet weak var shopContainerView: UIView!
   

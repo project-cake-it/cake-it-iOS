@@ -122,7 +122,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-W7-0rD">
-                                                <rect key="frame" x="84" y="19" width="39" height="17.5"/>
+                                                <rect key="frame" x="83" y="18.5" width="41.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                 <color key="textColor" name="pointB"/>
                                                 <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                                         <rect key="frame" x="207" y="0.0" width="207" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-1O-hEZ">
-                                                <rect key="frame" x="90.5" y="19" width="26" height="17.5"/>
+                                                <rect key="frame" x="89.5" y="18.5" width="28" height="18"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                 <color key="textColor" name="black"/>
                                                 <nil key="highlightedColor"/>
@@ -187,22 +187,42 @@
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMb-3m-bSs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
-                                        <color key="backgroundColor" red="0.90394756870000004" green="0.90807002780000001" blue="0.70580180370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="white"/>
                                     </containerView>
                                     <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-Al-f2T">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
-                                        <color key="backgroundColor" red="0.90394756870000004" green="0.90807002780000001" blue="0.70580180370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" name="white"/>
                                     </containerView>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5c-tn-xDj">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과가 없어요 다른 키워드로 검색해보세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4i-F4-rAN">
+                                                <rect key="frame" x="124.5" y="339.5" width="165" height="34"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="j4i-F4-rAN" firstAttribute="centerY" secondItem="A5c-tn-xDj" secondAttribute="centerY" id="NrT-b9-ER1"/>
+                                            <constraint firstItem="j4i-F4-rAN" firstAttribute="centerX" secondItem="A5c-tn-xDj" secondAttribute="centerX" id="tqj-EN-NsF"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" name="white"/>
                                 <constraints>
+                                    <constraint firstItem="A5c-tn-xDj" firstAttribute="leading" secondItem="0v6-yU-bEA" secondAttribute="leading" id="6pM-F2-D4i"/>
                                     <constraint firstAttribute="trailing" secondItem="wMb-3m-bSs" secondAttribute="trailing" id="A5B-dP-KHy"/>
                                     <constraint firstItem="jFJ-Al-f2T" firstAttribute="top" secondItem="0v6-yU-bEA" secondAttribute="top" id="BZl-hg-xU1"/>
                                     <constraint firstAttribute="bottom" secondItem="jFJ-Al-f2T" secondAttribute="bottom" id="P6J-W0-tba"/>
+                                    <constraint firstAttribute="trailing" secondItem="A5c-tn-xDj" secondAttribute="trailing" id="R4O-w9-A3K"/>
                                     <constraint firstItem="wMb-3m-bSs" firstAttribute="top" secondItem="0v6-yU-bEA" secondAttribute="top" id="caQ-JV-1sj"/>
                                     <constraint firstAttribute="trailing" secondItem="jFJ-Al-f2T" secondAttribute="trailing" id="ct6-53-S8g"/>
                                     <constraint firstAttribute="bottom" secondItem="wMb-3m-bSs" secondAttribute="bottom" id="hT1-6D-JJf"/>
                                     <constraint firstItem="jFJ-Al-f2T" firstAttribute="leading" secondItem="0v6-yU-bEA" secondAttribute="leading" id="qJy-Be-JLk"/>
+                                    <constraint firstItem="A5c-tn-xDj" firstAttribute="top" secondItem="0v6-yU-bEA" secondAttribute="top" id="r9I-pR-A5O"/>
+                                    <constraint firstAttribute="bottom" secondItem="A5c-tn-xDj" secondAttribute="bottom" id="vE9-dF-8ny"/>
                                     <constraint firstItem="wMb-3m-bSs" firstAttribute="leading" secondItem="0v6-yU-bEA" secondAttribute="leading" id="vT1-Ob-3qP"/>
                                 </constraints>
                             </view>
@@ -230,6 +250,7 @@
                         <outlet property="designContainerView" destination="wMb-3m-bSs" id="fFk-ey-5hc"/>
                         <outlet property="designTitleLabel" destination="0lc-W7-0rD" id="Pt7-dl-wWF"/>
                         <outlet property="designTitleView" destination="fVs-aJ-rzx" id="nss-MA-Lt6"/>
+                        <outlet property="emptyResultView" destination="A5c-tn-xDj" id="ePl-dg-aBK"/>
                         <outlet property="searchingWordLabel" destination="geG-6l-koJ" id="Hdn-wm-RiH"/>
                         <outlet property="seperateView" destination="I7o-3O-wAf" id="xl2-cG-hE6"/>
                         <outlet property="seperateViewLeadingConstraint" destination="szy-NG-1vK" id="mAW-S1-lY5"/>
