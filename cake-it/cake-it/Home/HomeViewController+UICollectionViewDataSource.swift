@@ -25,12 +25,11 @@ extension HomeViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if collectionView == rankCollectionView {
-      //TODO: 서버 연동 후 수정
       let identifider = String(describing: CakeDesignCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifider,
                                                     for: indexPath) as! CakeDesignCell
       let cakeDesign = cakeDesigns[indexPath.row]
-      cell.nameLabel.text = cakeDesign.name
+      cell.update(with: cakeDesign)
       return cell
     }
     

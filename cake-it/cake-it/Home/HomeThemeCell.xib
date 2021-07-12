@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="188" height="48"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHf-tH-nD5">
-                                <rect key="frame" x="12" y="15" width="26" height="18"/>
+                                <rect key="frame" x="12" y="15" width="28" height="18"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="15"/>
                                 <color key="textColor" name="pointB"/>
                                 <nil key="highlightedColor"/>

@@ -26,6 +26,8 @@ class NetworkCommon {
 
     case randomNikname = "nickname"
     case uploadPhoto = "test/post"
+    
+    case bestDesigns = "designs?order=best"
     case promotionImage = "promotions"
     
     var urlString: String {
