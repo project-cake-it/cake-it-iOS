@@ -46,6 +46,6 @@ final class ListBoardViewController: BaseViewController {
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
-    dismiss(animated: false, completion: nil)
+    navigationController?.popViewController(animated: true)
   }
 }

@@ -20,9 +20,8 @@ extension MyPageMainViewController: UITableViewDelegate {
       switch indexPath.row {
       case 0:
         let noticeListViewController = ListBoardViewController.instantiate(from: "MyPage")
-        let navigationController = UINavigationController(rootViewController: noticeListViewController)
-        navigationController.modalPresentationStyle = .overFullScreen
-        present(navigationController, animated: false, completion: nil)
+        navigationController?.modalPresentationStyle = .overFullScreen
+        navigationController?.pushViewController(noticeListViewController, animated: true)
         return
       case 1:
         //TODO: 카카오톡 플러스 연결
@@ -40,13 +39,13 @@ extension MyPageMainViewController: UITableViewDelegate {
         let localFile = Bundle.main.path(forResource: "terms", ofType: "html")
         let url = URL(fileURLWithPath: localFile!)
         infomationViewController.url = url
-        present(infomationViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(infomationViewController, animated: true)
         return
       case 1:
         let localFile = Bundle.main.path(forResource: "personalinfomation", ofType: "html")
         let url = URL(fileURLWithPath: localFile!)
         infomationViewController.url = url
-        present(infomationViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(infomationViewController, animated: true)
         return
       case 2:
         return

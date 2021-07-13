@@ -26,6 +26,6 @@ final class InfomationViewController: BaseViewController {
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
-    dismiss(animated: true, completion: nil)
+    navigationController?.popViewController(animated: true)
   }
 }
