@@ -88,6 +88,8 @@
 		AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */; };
 		AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */; };
 		ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC16E70262334950094D6D2 /* LoginSocialType.swift */; };
+		ACDD76ED269CA97300C62F24 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = ACDD76EB269CA97300C62F24 /* terms.html */; };
+		ACDD76EE269CA97300C62F24 /* personalinfomation.html in Resources */ = {isa = PBXBuildFile; fileRef = ACDD76EC269CA97300C62F24 /* personalinfomation.html */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		D7C14743F527AA676B781599 /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD838ED07F97AFAABDAAA67 /* Pods_cake_it_cake_itUITests.framework */; };
 		F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71419632674B75400C6E5EE /* Dictionary+Utils.swift */; };
@@ -250,6 +252,8 @@
 		AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeImageCell.swift; sourceTree = "<group>"; };
 		ACC16E70262334950094D6D2 /* LoginSocialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSocialType.swift; sourceTree = "<group>"; };
+		ACDD76EB269CA97300C62F24 /* terms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
+		ACDD76EC269CA97300C62F24 /* personalinfomation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = personalinfomation.html; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F71419632674B75400C6E5EE /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
 		F71F330C26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailView+UITableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -484,6 +488,8 @@
 				F774B94525E0E0FE006EE0EC /* BaseModels */,
 				38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */,
 				38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */,
+				ACDD76EC269CA97300C62F24 /* personalinfomation.html */,
+				ACDD76EB269CA97300C62F24 /* terms.html */,
 				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
 			);
 			path = Base;
@@ -1011,7 +1017,9 @@
 			files = (
 				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
 				F7A88748265A483200930932 /* FilterColorCell.xib in Resources */,
+				ACDD76ED269CA97300C62F24 /* terms.html in Resources */,
 				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
+				ACDD76EE269CA97300C62F24 /* personalinfomation.html in Resources */,
 				F7590739267F85C8000ECBD7 /* CakeDesignThemeCell.xib in Resources */,
 				AC9FA083267909370050F9F0 /* HomeThemeCell.xib in Resources */,
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,

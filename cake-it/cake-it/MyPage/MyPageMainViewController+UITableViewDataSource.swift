@@ -9,6 +9,25 @@ import UIKit
 
 extension MyPageMainViewController: UITableViewDataSource {
   
+  func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 44
+  }
+  
+  func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    switch section {
+    case 0:
+      return Constants.MY_PAGE_SECTION_1_TITLE
+    case 1:
+      return Constants.MY_PAGE_SECTION_2_TITLE
+    default:
+      return ""
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    view.tintColor = .white
+  }
+  
   func numberOfSections(in tableView: UITableView) -> Int {
     return 2
   }

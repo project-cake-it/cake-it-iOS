@@ -6,17 +6,26 @@
 //
 
 import UIKit
+import WebKit
 
 final class InfomationViewController: BaseViewController {
   
-  @IBOutlet weak var viewTitleLabel: UILabel!
-  @IBOutlet weak var infomationTextLabel: UILabel!
+  @IBOutlet private weak var viewTitleLabel: UILabel!
+  @IBOutlet weak var webView: WKWebView!
+  
+  var url: URL?
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    guard let targetUrl = url else { return }
+    
+    let request = URLRequest(url: targetUrl)
+    webView.scrollView.bounces = false
+    webView.load(request);
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
-    dismiss(animated: false, completion: nil)
+    dismiss(animated: true, completion: nil)
   }
 }

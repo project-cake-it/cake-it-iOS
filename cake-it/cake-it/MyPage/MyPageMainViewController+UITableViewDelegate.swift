@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 extension MyPageMainViewController: UITableViewDelegate {
   
@@ -14,16 +15,46 @@ extension MyPageMainViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    if indexPath.section == 0 && indexPath.row == 1 {
-      let noticeListViewController = ListBoardViewController.instantiate(from: "MyPage")
-      let navigationController = UINavigationController(rootViewController: noticeListViewController)
-      navigationController.modalPresentationStyle = .overFullScreen
-      present(navigationController, animated: false, completion: nil)
-      return
+    
+    if indexPath.section == 0 {
+      switch indexPath.row {
+      case 0:
+        let noticeListViewController = ListBoardViewController.instantiate(from: "MyPage")
+        let navigationController = UINavigationController(rootViewController: noticeListViewController)
+        navigationController.modalPresentationStyle = .overFullScreen
+        present(navigationController, animated: false, completion: nil)
+        return
+      case 1:
+        //TODO: 카카오톡 플러스 연결
+        return
+      default:
+        return
+      }
     }
     
     let infomationViewController = InfomationViewController.instantiate(from: "MyPage")
-    infomationViewController.modalPresentationStyle = .overFullScreen
-    present(infomationViewController, animated: false, completion: nil)
+
+    if indexPath.section == 1 {
+      switch indexPath.row {
+      case 0:
+        let localFile = Bundle.main.path(forResource: "terms", ofType: "html")
+        let url = URL(fileURLWithPath: localFile!)
+        infomationViewController.url = url
+        present(infomationViewController, animated: true, completion: nil)
+        return
+      case 1:
+        let localFile = Bundle.main.path(forResource: "personalinfomation", ofType: "html")
+        let url = URL(fileURLWithPath: localFile!)
+        infomationViewController.url = url
+        present(infomationViewController, animated: true, completion: nil)
+        return
+      case 2:
+        return
+      case 3:
+        return
+      default:
+        return
+      }
+    }
   }
 }
