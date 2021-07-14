@@ -7,6 +7,8 @@
 
 import UIKit
 import WebKit
+import KakaoSDKTalk
+import SafariServices
 
 extension MyPageMainViewController: UITableViewDelegate {
   
@@ -24,7 +26,12 @@ extension MyPageMainViewController: UITableViewDelegate {
         navigationController?.pushViewController(noticeListViewController, animated: true)
         return
       case 1:
-        //TODO: 카카오톡 플러스 연결
+        guard let channelURL = TalkApi.shared.makeUrlForChannelChat(channelPublicId: channelPublicId) else {
+          return
+        }
+        
+        safariViewController = SFSafariViewController(url: channelURL)
+        self.present(safariViewController!, animated: true, completion: nil)
         return
       default:
         return
