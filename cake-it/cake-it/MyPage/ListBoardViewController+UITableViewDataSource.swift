@@ -18,8 +18,7 @@ extension ListBoardViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! ListBoardCell
     
     let notice = notices[indexPath.row]
-    cell.titleLabel.text = notice.title
-    cell.dateLabel.text = notice.createdAt
+    cell.updateCell(notice)
     return cell
   }
 }

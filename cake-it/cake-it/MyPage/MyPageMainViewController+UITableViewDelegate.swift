@@ -45,13 +45,13 @@ extension MyPageMainViewController: UITableViewDelegate {
       case 0:
         let localFile = Bundle.main.path(forResource: "terms", ofType: "html")
         let url = URL(fileURLWithPath: localFile!)
-        infomationViewController.url = url
+        infomationViewController.configureViewController(url: url, title: self.secondSections[indexPath.row])
         navigationController?.pushViewController(infomationViewController, animated: true)
         return
       case 1:
         let localFile = Bundle.main.path(forResource: "personalinfomation", ofType: "html")
         let url = URL(fileURLWithPath: localFile!)
-        infomationViewController.url = url
+        infomationViewController.configureViewController(url: url, title: self.secondSections[indexPath.row])
         navigationController?.pushViewController(infomationViewController, animated: true)
         return
       case 2:

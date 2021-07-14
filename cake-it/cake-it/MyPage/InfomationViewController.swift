@@ -13,7 +13,8 @@ final class InfomationViewController: BaseViewController {
   @IBOutlet private weak var viewTitleLabel: UILabel!
   @IBOutlet weak var webView: WKWebView!
   
-  var url: URL?
+  private var url: URL?
+  private var titleText: String?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,6 +24,14 @@ final class InfomationViewController: BaseViewController {
     let request = URLRequest(url: targetUrl)
     webView.scrollView.bounces = false
     webView.load(request);
+    
+    guard let titleText = titleText else { return }
+    viewTitleLabel.text = titleText
+  }
+  
+  func configureViewController(url: URL, title: String) {
+    self.url = url
+    titleText = title
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
