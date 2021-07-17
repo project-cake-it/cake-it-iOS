@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class SearchResultViewController: UIViewController {
+final class SearchResultViewController: BaseViewController {
   
-  enum TappedTitleState {
+  enum TappedTitleType {
     case design
     case shop
   }
   
-  @IBOutlet weak var searchingWordLabel: UILabel!
+  @IBOutlet weak var keywordLabel: UILabel!
   
   @IBOutlet weak var designTitleView: UIView!
   @IBOutlet weak var designTitleLabel: UILabel!
@@ -23,15 +23,16 @@ final class SearchResultViewController: UIViewController {
   @IBOutlet weak var seperateView: UIView!
   @IBOutlet weak var seperateViewLeadingConstraint: NSLayoutConstraint!
 
-  @IBOutlet weak var emptyResultView: UIView!
   @IBOutlet weak var designContainerView: UIView!
   @IBOutlet weak var shopContainerView: UIView!
+  @IBOutlet weak var emptyResultView: UIView!
   
   let DESIGN_TITLE_BUTTON_TAG = 100
   let SHOP_TITLE_BUTTON_TAG = 200
   
-  var searcingText: String = ""
-  var tappedTitleState: TappedTitleState = .design {
+  var keyword: String = ""
+  var searchResult: SearchResult?
+  var currentTappedType: TappedTitleType = .design {
     didSet {
       updateView()
     }
@@ -45,12 +46,25 @@ final class SearchResultViewController: UIViewController {
   // MARK:- configuration
   private func configureView() {
     configureNavigationView()
-    configureDesignListView()
-    configureShopListView()
+    configureContentView()
   }
  
   private func configureNavigationView() {
-    searchingWordLabel?.text = searcingText
+    keywordLabel?.text = keyword
+  }
+  
+  private func configureContentView() {
+    configureDesignListView()
+    configureShopListView()
+    
+    // 최초 뷰 Configure 시 design 결과값이 없다면 shop 탭으로 이동
+    if isEmptyResult(type: .design) {
+      if isEmptyResult(type: .shop) {
+        emptyResultView.isHidden = false
+      } else {
+        currentTappedType = .shop
+      }
+    }
   }
   
   private func configureDesignListView() {
@@ -58,7 +72,8 @@ final class SearchResultViewController: UIViewController {
     let storyboard = UIStoryboard(name: "Home", bundle: nil)
     if let designVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignListViewController {
       designVC.view.frame = designContainerView.frame
-      designVC.hiddenNavigationView()
+      designVC.hideNavigationView()
+      designVC.cakeDesigns = searchResult?.designs ?? []
       designContainerView.addSubview(designVC.view)
       self.addChild(designVC)
     }
@@ -69,7 +84,8 @@ final class SearchResultViewController: UIViewController {
     let storyboard = UIStoryboard(name: "Shops", bundle: nil)
     if let shopVC = storyboard.instantiateViewController(withIdentifier: id) as? ShopsMainViewController {
       shopVC.view.frame = shopContainerView.frame
-      shopVC.hiddenTitleView()
+      shopVC.hideTitleView()
+      shopVC.cakeShops = searchResult?.shops ?? []
       shopContainerView.addSubview(shopVC.view)
       self.addChild(shopVC)
     }
@@ -83,17 +99,29 @@ final class SearchResultViewController: UIViewController {
   @IBAction func titleViewDidTap(_ sender: UIButton) {
     switch sender.tag {
     case DESIGN_TITLE_BUTTON_TAG:
-      tappedTitleState = .design
+      currentTappedType = .design
     case SHOP_TITLE_BUTTON_TAG:
-      tappedTitleState = .shop
+      currentTappedType = .shop
     default: break
     }
   }
 }
 
 
-// MARK:- private func
+// MARK:- private function
 extension SearchResultViewController {
+  private func isEmptyResult(type: TappedTitleType) -> Bool {
+    guard let result = searchResult else {
+      return true
+    }
+    
+    switch type {
+    case .design:
+      return result.designs.isEmpty
+    case .shop:
+      return result.shops.isEmpty
+    }
+  }
   
   private func updateView() {
     updateTitleView()
@@ -101,7 +129,7 @@ extension SearchResultViewController {
   }
   
   private func updateTitleView() {
-    switch tappedTitleState {
+    switch currentTappedType {
     case .design:
       seperateViewLeadingConstraint.constant = 0.0
       designTitleLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
@@ -123,7 +151,13 @@ extension SearchResultViewController {
   }
   
   private func updateContainerView() {
-    switch tappedTitleState {
+    emptyResultView.isHidden = true
+    if isEmptyResult(type: currentTappedType) {
+      emptyResultView.isHidden = false
+      return
+    }
+    
+    switch currentTappedType {
     case .design:
       designContainerView.alpha = 1.0
       shopContainerView.alpha = 0.0

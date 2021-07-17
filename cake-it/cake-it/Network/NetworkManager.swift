@@ -31,7 +31,8 @@ final class NetworkManager {
                                 param: String = "",
                                 completion: @escaping (Result<T, APIError>) -> Void) {
     let urlString = api.urlString + param
-    guard let url = URL(string: urlString) else { return }
+    let encodedUrlString = urlString.encodedString() ?? ""
+    guard let url = URL(string: encodedUrlString) else { return }
     let request = AF.request(url)
     self.request(request: request, type: T.self, completion: completion)
   }

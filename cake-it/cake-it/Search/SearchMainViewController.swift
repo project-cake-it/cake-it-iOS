@@ -7,9 +7,11 @@
 
 import UIKit
 
-final class SearchMainViewController: UIViewController {
+final class SearchMainViewController: BaseViewController {
   
   @IBOutlet weak var searchTextField: UITextField!
+  
+  var searchResult: SearchResult?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,18 +33,45 @@ final class SearchMainViewController: UIViewController {
     searchTextField.tintColor = Colors.pointB
   }
   
-  private func search(text: String) {
-    // TODO: 서버 검색 api 개발 후 검색기능 구현 필요
-    let resultVC = SearchResultViewController.instantiate(from: "Search")
-    resultVC.searcingText = text
-    self.navigationController?.pushViewController(resultVC, animated: true)
-  }
-  
   @objc private func backgroundDidTap() {
     searchTextField.resignFirstResponder()
   }
 }
 
+// MARK:- Private Fuction
+extension SearchMainViewController {
+  private func search(text: String) {
+    requestSearch(searchText: text, complition: { (isSuccess, result) in
+      if isSuccess == true {
+        let resultVC = SearchResultViewController.instantiate(from: "Search")
+        resultVC.keyword = text
+        resultVC.searchResult = self.searchResult
+        self.navigationController?.pushViewController(resultVC, animated: true)
+      }
+    })
+  }
+  
+  private func requestSearch(searchText: String,
+                             complition: @escaping (Bool, SearchResult?)->Void) {
+    let parameter = ["keyword": searchText].queryString()
+    NetworkManager.shared.requestGet(api: .search,
+                                     type: SearchResult.self,
+                                     param: parameter) { (response) in
+      switch response {
+      case .success(let result) :
+        self.searchResult = result
+        complition(true, result)
+      case .failure(let error) :
+        // TODO: Error Handeling
+        print(error.localizedDescription)
+        complition(false, nil)
+      }
+    }
+  }
+}
+
+
+// MARK:- TextField Delegate
 extension SearchMainViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
     searchTextField.resignFirstResponder()

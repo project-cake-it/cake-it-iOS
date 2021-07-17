@@ -47,7 +47,10 @@ final class DesignListViewController: BaseViewController {
     super.viewDidLoad()
 
     configure()
-    fetchCakeDesigns()
+    
+    if cakeDesigns.isEmpty {
+      fetchCakeDesigns()
+    }
   }
 
   func fetchCakeDesigns() {

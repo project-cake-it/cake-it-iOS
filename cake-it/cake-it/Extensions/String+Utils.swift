@@ -15,4 +15,14 @@ extension String {
     
     return convertedString
   }
+  
+  func encodedString() -> String? {
+    return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+  }
+  
+  mutating func dropFirst() {
+    if self.count > 0 {
+      self.remove(at: self.startIndex)
+    }
+  }
 }

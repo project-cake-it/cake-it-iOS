@@ -19,7 +19,7 @@ final class ShopsMainViewController: BaseViewController {
   @IBOutlet weak var filterCollectionView: UICollectionView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
   
-  private(set) var cakeShops: [CakeShop] = []
+  var cakeShops: [CakeShop] = []
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailView: FilterDetailView?
   var selectedFilter: Dictionary<String, [String]> = [:]
@@ -29,7 +29,9 @@ final class ShopsMainViewController: BaseViewController {
     super.viewDidLoad()
     
     configure()
-    fetchCakeShops()
+    if cakeShops.isEmpty {
+      fetchCakeShops()
+    }
   }
   
   private func fetchCakeShops() {

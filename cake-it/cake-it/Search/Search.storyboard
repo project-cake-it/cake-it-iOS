@@ -250,7 +250,7 @@
                         <outlet property="designTitleLabel" destination="0lc-W7-0rD" id="Pt7-dl-wWF"/>
                         <outlet property="designTitleView" destination="fVs-aJ-rzx" id="nss-MA-Lt6"/>
                         <outlet property="emptyResultView" destination="A5c-tn-xDj" id="ePl-dg-aBK"/>
-                        <outlet property="searchingWordLabel" destination="geG-6l-koJ" id="Hdn-wm-RiH"/>
+                        <outlet property="keywordLabel" destination="geG-6l-koJ" id="Hdn-wm-RiH"/>
                         <outlet property="seperateView" destination="I7o-3O-wAf" id="xl2-cG-hE6"/>
                         <outlet property="seperateViewLeadingConstraint" destination="szy-NG-1vK" id="mAW-S1-lY5"/>
                         <outlet property="shopContainerView" destination="jFJ-Al-f2T" id="RVW-Z2-ODl"/>

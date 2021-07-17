@@ -134,6 +134,7 @@
 		F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C7265A4C5600930932 /* FilterColorCell.swift */; };
 		F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */; };
 		F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */; };
+		F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF345B269C5AD2006CE344 /* SearchResult.swift */; };
 		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -294,6 +295,7 @@
 		F7A887C7265A4C5600930932 /* FilterColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorCell.swift; sourceTree = "<group>"; };
 		F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionCell.swift; sourceTree = "<group>"; };
 		F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeDesignThemeCell.swift; sourceTree = "<group>"; };
+		F7BF345B269C5AD2006CE344 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -541,6 +543,7 @@
 		8B875CF425DAE602003D9CFA /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F7BF345A269C5AD2006CE344 /* Model */,
 				8B875CF525DAE61D003D9CFA /* Search.storyboard */,
 				8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */,
 				F75C2A47269345610006D1B0 /* SearchResultViewController.swift */,
@@ -886,6 +889,14 @@
 				F71F33172662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift */,
 			);
 			path = FilterDetail;
+			sourceTree = "<group>";
+		};
+		F7BF345A269C5AD2006CE344 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7BF345B269C5AD2006CE344 /* SearchResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1239,6 +1250,7 @@
 				F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */,
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
+				F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
 				F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */,
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
@@ -1477,7 +1489,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QKG65XDLX8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "cake-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1519,7 +1531,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QKG65XDLX8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "cake-itTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1542,7 +1554,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QKG65XDLX8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "cake-itTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1564,7 +1576,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QKG65XDLX8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "cake-itUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1585,7 +1597,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QKG65XDLX8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "cake-itUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SearchResult: Codable {
-//  var designList: [CakeDesign]
-//  var shopList: [CakeShop]
+final class SearchResult: Decodable {
+  var designs: [CakeDesign]
+  var shops: [CakeShop]
 } 
