@@ -20,10 +20,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iQz-vn-yJ9">
-                                <rect key="frame" x="0.0" y="158" width="414" height="704"/>
+                                <rect key="frame" x="0.0" y="202" width="414" height="660"/>
                             </scrollView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GTf-NS-Rhd" customClass="ButtonBarView" customModule="XLPagerTabStrip">
-                                <rect key="frame" x="0.0" y="94" width="414" height="64"/>
+                                <rect key="frame" x="0.0" y="138" width="414" height="64"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="7uz-Nv-ISD"/>
@@ -37,7 +37,7 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜한 아이템" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whu-n4-2kb" userLabel="Title Label">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <color key="backgroundColor" name="white"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="eBR-yG-kIQ"/>
@@ -62,6 +62,7 @@
                             <constraint firstItem="D4l-97-aVz" firstAttribute="bottom" secondItem="iQz-vn-yJ9" secondAttribute="bottom" id="sdc-V0-biG"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8F4-Ga-q4c"/>
                     <connections>
                         <outlet property="buttonBarView" destination="GTf-NS-Rhd" id="gJp-Hu-Ckb"/>
                         <outlet property="containerView" destination="iQz-vn-yJ9" id="roP-dG-4vs"/>
@@ -69,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSQ-aD-aSN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2" y="92"/>
+            <point key="canvasLocation" x="907.24637681159425" y="91.741071428571431"/>
         </scene>
         <!--Cake List Sub View Controller-->
         <scene sceneID="7YG-3Q-z63">
@@ -129,7 +130,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edq-3F-FFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="663.768115942029" y="91.741071428571431"/>
+            <point key="canvasLocation" x="1573.913043478261" y="91.741071428571431"/>
         </scene>
         <!--Shop List Sub View Controller-->
         <scene sceneID="6T1-7z-gLv">
@@ -175,7 +176,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axT-5x-R3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298.5507246376812" y="91.741071428571431"/>
+            <point key="canvasLocation" x="2208.695652173913" y="91.741071428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xln-zV-cBe">
+            <objects>
+                <navigationController storyboardIdentifier="SavedItemNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="TV8-sy-c3g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ITF-MF-a7g">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hBK-pl-woR" kind="relationship" relationship="rootViewController" id="m3h-S9-zwU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tcp-Kb-XPP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.8985507246376816" y="91.741071428571431"/>
         </scene>
     </scenes>
     <resources>
