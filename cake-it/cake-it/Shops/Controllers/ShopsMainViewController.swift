@@ -95,7 +95,7 @@ extension ShopsMainViewController {
     shopCollectionView.delegate = self
   }
   
-  func hiddenTitleView() {
+  func hideTitleView() {
     titleView.isHidden = true
     titleViewHeightConstraint.constant = 0.0
   }

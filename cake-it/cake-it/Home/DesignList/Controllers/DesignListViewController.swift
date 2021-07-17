@@ -140,7 +140,7 @@ extension DesignListViewController {
     designsCollectionView.delegate = self
   }
   
-  func hiddenNavigationView() {
+  func hideNavigationView() {
     navigationBarView?.isHidden = true
     navigationBarHeightConstraint?.constant = 0.0
   }
