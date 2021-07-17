@@ -41,7 +41,7 @@ final class SearchMainViewController: BaseViewController {
 // MARK:- Private Fuction
 extension SearchMainViewController {
   private func search(text: String) {
-    requestSearch(searchText: text, complition: { (isSuccess, result) in
+    requestSearch(searchText: text, complition: { (isSuccess) in
       if isSuccess == true {
         let resultVC = SearchResultViewController.instantiate(from: "Search")
         resultVC.keyword = text
@@ -52,7 +52,7 @@ extension SearchMainViewController {
   }
   
   private func requestSearch(searchText: String,
-                             complition: @escaping (Bool, SearchResult?)->Void) {
+                             complition: @escaping (Bool)->Void) {
     let parameter = ["keyword": searchText].queryString()
     NetworkManager.shared.requestGet(api: .search,
                                      type: SearchResult.self,
@@ -60,11 +60,11 @@ extension SearchMainViewController {
       switch response {
       case .success(let result) :
         self.searchResult = result
-        complition(true, result)
+        complition(true)
       case .failure(let error) :
         // TODO: Error Handeling
         print(error.localizedDescription)
-        complition(false, nil)
+        complition(false)
       }
     }
   }
