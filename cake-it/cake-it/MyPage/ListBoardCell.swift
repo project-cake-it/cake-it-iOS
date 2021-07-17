@@ -20,7 +20,7 @@ final class ListBoardCell: UITableViewCell {
     super.setSelected(selected, animated: animated)
   }
 
-  func updateCell(_ notice:Notice) {
+  func updateCell(_ notice: Notice) {
     titleLabel.text = notice.title
     dateLabel.text = notice.createdAt
   }

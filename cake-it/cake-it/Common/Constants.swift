@@ -23,8 +23,4 @@ final class Constants {
   //MARK: - Saved view controller strings
   static let CAKE_LIST_SUB_VIEW_TITLE = "케이크"
   static let STORE_LIST_SUB_VIEW_TITLE = "가게"
-  
-  //MARK: - MyPage
-  static let MY_PAGE_SECTION_1_TITLE = "고객센터"
-  static let MY_PAGE_SECTION_2_TITLE = "정보"
 }

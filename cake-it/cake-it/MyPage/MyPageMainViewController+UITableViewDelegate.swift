@@ -17,7 +17,6 @@ extension MyPageMainViewController: UITableViewDelegate {
   }
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
     if indexPath.section == 0 {
       switch indexPath.row {
       case 0:
@@ -43,20 +42,24 @@ extension MyPageMainViewController: UITableViewDelegate {
     if indexPath.section == 1 {
       switch indexPath.row {
       case 0:
-        let localFile = Bundle.main.path(forResource: "terms", ofType: "html")
-        let url = URL(fileURLWithPath: localFile!)
-        infomationViewController.configureViewController(url: url, title: self.secondSections[indexPath.row])
+        guard let localFile = Bundle.main.path(forResource: "terms", ofType: "html") else { return }
+        let url = URL(fileURLWithPath: localFile)
+        infomationViewController.configureViewController(url: url,
+                                                         title: self.cellTitles[indexPath.section][indexPath.row])
         navigationController?.pushViewController(infomationViewController, animated: true)
         return
       case 1:
-        let localFile = Bundle.main.path(forResource: "personalinfomation", ofType: "html")
-        let url = URL(fileURLWithPath: localFile!)
-        infomationViewController.configureViewController(url: url, title: self.secondSections[indexPath.row])
+        guard let localFile = Bundle.main.path(forResource: "personalinfomation", ofType: "html") else { return }
+        let url = URL(fileURLWithPath: localFile)
+        infomationViewController.configureViewController(url: url,
+                                                         title: self.cellTitles[indexPath.section][indexPath.row])
         navigationController?.pushViewController(infomationViewController, animated: true)
         return
       case 2:
+        // TODO: 오픈소스 라이센스
         return
       case 3:
+        // TODO: 버전정보
         return
       default:
         return
