@@ -7,7 +7,6 @@
 
 import UIKit
 import KakaoSDKTalk
-
 final class ShopDetailViewController: BaseViewController {
   
   enum BottomInfoState {
@@ -50,8 +49,10 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var bottomInfoCakeDesignView: UIView!
   @IBOutlet weak var bottomInfoShopInfoView: UIView!
   @IBOutlet weak var locationInfoContainerView: UIView!
+  @IBOutlet var mapContainerView: UIView!
   private var contactShopButton: CakeDesignDetailContactButton!
   private var contactShopButtonBottomConstraint: NSLayoutConstraint!
+  private var mapView: MTMapView?
   
   private var bottomInfoState: BottomInfoState = .cakeDesign {
     didSet {
@@ -72,12 +73,17 @@ final class ShopDetailViewController: BaseViewController {
   private var canContactShopButtonMove = false
   private var isScrollDirectionDown = false
   
+  private let MAP_ZOOM_LEVEL_DEFAULT: Int32 = 0
+  private let MAP_CONNECT_URL_STRING = "kakaomap://place?id="
+  
+  //MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
     configure()
   }
   
+  //MARK: - Public Method
   func fetchDetail(id: Int) {
     NetworkManager.shared.requestGet(api: .shops,
                                      type: CakeShopDetailResponse.self,
@@ -95,6 +101,7 @@ final class ShopDetailViewController: BaseViewController {
     }
   }
   
+  //MARK: - Private Method
   private func saveShop() {
     guard let shopID = cakeShop?.id else { return }
     let urlString = NetworkCommon.API.savedShops.urlString + "/\(shopID)"
@@ -125,7 +132,6 @@ final class ShopDetailViewController: BaseViewController {
     }
   }
   
-  
   @IBAction func backButtonDidTap(_ sender: Any) {
     navigationController?.popViewController(animated: true)
   }
@@ -149,9 +155,19 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   @IBAction func copyAddressButtonDidTap(_ sender: Any) {
+    UIPasteboard.general.string = cakeShop?.fullAddress
+    //TODO: Toast 띄우기
   }
   
   @IBAction func showMapButtonDidTap(_ sender: Any) {
+    let placeID = "117301298"
+    if let url = URL.init(string: MAP_CONNECT_URL_STRING.appending(placeID)) {
+      if UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      } else {
+        // TODO: 에러 처리
+      }
+    }
   }
   
   @objc private func contactShopButtonDidTap() {
@@ -163,7 +179,7 @@ final class ShopDetailViewController: BaseViewController {
     if UIApplication.shared.canOpenURL(url) {
       UIApplication.shared.open(url, options: [:], completionHandler: nil)
     } else {
-      // TODO: 에러 처리
+//       TODO: 에러 처리
     }
   }
 }
@@ -282,10 +298,32 @@ extension ShopDetailViewController: UIGestureRecognizerDelegate {
 extension ShopDetailViewController {
   private func configure() {
     configureViews()
+    configureMapView()
     configureCakeDesignCollectionView()
     configureContactShopButton()
     configurePanGesture()
     scrollView.delegate = self
+  }
+  
+  private func configureMapView() {
+    mapView = MTMapView(frame: self.mapContainerView.bounds)
+    
+    if let mapView = mapView {
+      // TODO: 서버에서 좌표값 가져오는 것으로 수정
+      mapView.delegate = self
+      let mapPoint = MTMapPoint.init(geoCoord: .init(latitude: 37.5168612, longitude: 127.0387432))
+      mapView.baseMapType = .standard
+      mapView.setMapCenter(mapPoint,
+                           zoomLevel:MAP_ZOOM_LEVEL_DEFAULT,
+                           animated: true)
+      
+      let pinItem = MTMapPOIItem()
+      pinItem.mapPoint = mapPoint
+      pinItem.markerType = .redPin
+      pinItem.itemName = cakeShop?.name
+      mapView.add(pinItem)
+      self.mapContainerView.addSubview(mapView)
+    }
   }
   
   private func configurePanGesture() {
