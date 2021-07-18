@@ -13,8 +13,7 @@ extension ShopListSubViewController: UICollectionViewDelegateFlowLayout {
     let storyboard = UIStoryboard(name: "Shops", bundle: nil)
     if let shopDetailVC = storyboard.instantiateViewController(withIdentifier: id) as? ShopDetailViewController {
       shopDetailVC.fetchDetail(id: savedCakeShops[indexPath.row].id)
-      shopDetailVC.modalPresentationStyle = .fullScreen
-      present(shopDetailVC, animated: false, completion: nil)
+      navigationController?.pushViewController(shopDetailVC, animated: true)
     }
   }
   

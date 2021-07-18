@@ -183,7 +183,7 @@
             <objects>
                 <navigationController storyboardIdentifier="SavedItemNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="TV8-sy-c3g" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ITF-MF-a7g">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" id="ITF-MF-a7g">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -96,14 +96,14 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   private func saveShop() {
-    guard let shopId = cakeShop?.id else { return }
-    let urlString = NetworkCommon.API.savedShops.urlString + "/\(shopId)"
+    guard let shopID = cakeShop?.id else { return }
+    let urlString = NetworkCommon.API.savedShops.urlString + "/\(shopID)"
     NetworkManager.shared.requestPost(urlString: urlString,
                                       type: String.self,
                                       param: "") { (response) in
       switch response {
       case .success(_):
-        self.fetchDetail(id: shopId)
+        self.fetchDetail(id: shopID)
       case .failure(let error):
         print(error.localizedDescription)
       }
@@ -127,7 +127,7 @@ final class ShopDetailViewController: BaseViewController {
   
   
   @IBAction func backButtonDidTap(_ sender: Any) {
-    dismiss(animated: false, completion: nil)
+    navigationController?.popViewController(animated: true)
   }
   
   @IBAction func saveButtonDidTap(_ sender: Any) {
