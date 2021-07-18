@@ -1,14 +1,13 @@
 //
-//  FilterDetailView+UITableViewDataSource.swift
+//  FilterDetailViewController+UITableViewDataSource.swift
 //  cake-it
 //
-//  Created by seungbong on 2021/05/30.
+//  Created by seungbong on 2021/07/18.
 //
 
 import UIKit
 
-extension FilterDetailView: UITableViewDataSource {
-  
+extension FilterDetailViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return FilterManager.shared.numberOfCase(type: filterType)
   }

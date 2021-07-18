@@ -15,11 +15,12 @@ final class ShopsMainViewController: BaseViewController {
   }
   
   @IBOutlet weak var filterCollectionView: UICollectionView!
+  @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
   
   private(set) var cakeShops: [CakeShop] = []
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
-  var filterDetailView: FilterDetailView?
+  var filterDetailVC: FilterDetailViewController?
   var selectedFilter: Dictionary<String, [String]> = [:]
   var hightlightedFilterType: FilterCommon.FilterType = .reset
 
@@ -30,7 +31,7 @@ final class ShopsMainViewController: BaseViewController {
     fetchCakeShops()
   }
   
-  private func fetchCakeShops() {
+  func fetchCakeShops() {
     NetworkManager.shared.requestGet(api: .shops,
                                      type: [CakeShop].self,
                                      param: selectedFilter.queryString()
@@ -49,10 +50,24 @@ final class ShopsMainViewController: BaseViewController {
 
 extension ShopsMainViewController {
   private func configure() {
-    configureFilterCategoryView()
+    configureFilterView()
     configureCollectionView()
   }
   
+  private func configureFilterView() {
+    configureFilterCategoryView()
+    configureFilterDetailView()
+  }
+  
+  private func configureFilterDetailView() {
+    let id = String(describing: FilterDetailViewController.self)
+    filterDetailVC = FilterDetailViewController(nibName: id, bundle: nil)
+    guard let detailVC = filterDetailVC else { return }
+    detailVC.delegate = self
+    filterDetailContainerView.addSubview(detailVC.view)
+    addChild(detailVC)
+  }
+
   private func configureFilterCategoryView() {
     configureFilterCategoryCollectionView()
     registerFilterCategoryCollectionView()

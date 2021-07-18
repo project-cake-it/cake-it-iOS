@@ -1,14 +1,13 @@
 //
-//  FilterDetailView+TableViewDelegate.swift
+//  FilterDetailViewController+UITableViewDelegate.swift
 //  cake-it
 //
-//  Created by seungbong on 2021/05/29.
+//  Created by seungbong on 2021/07/18.
 //
 
 import UIKit
 
-extension FilterDetailView: UITableViewDelegate {
-  
+extension FilterDetailViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     updateSelectedList(selectedIndex: indexPath.row)
   }
@@ -54,16 +53,16 @@ extension FilterDetailView: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     tableViewHeight += cell.frame.height
-    filterTableViewHeightConstraint?.constant = tableViewHeight
+    tableViewHeightConstraint?.constant = tableViewHeight
   }
   
   func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
     tableViewHeight += view.frame.height
-    filterTableViewHeightConstraint?.constant = tableViewHeight
+    tableViewHeightConstraint?.constant = tableViewHeight
   }
   
   func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
     tableViewHeight += view.frame.height
-    filterTableViewHeightConstraint?.constant = tableViewHeight
+    tableViewHeightConstraint?.constant = tableViewHeight
   }
 }
