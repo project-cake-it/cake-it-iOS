@@ -25,16 +25,16 @@ extension HomeViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if collectionView == rankCollectionView {
-      let identifider = String(describing: CakeDesignCell.self)
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifider,
+      let identifier = String(describing: CakeDesignCell.self)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! CakeDesignCell
       let cakeDesign = cakeDesigns[indexPath.row]
       cell.update(with: cakeDesign)
       return cell
     }
     
-    let identifider = String(describing: HomeThemeCell.self)
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifider,
+    let identifier = String(describing: HomeThemeCell.self)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                   for: indexPath) as! HomeThemeCell
     
     if isThemeViewExpanded == false && indexPath.row == moreButtonIndex {
