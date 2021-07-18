@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="1846" y="642"/>
         </scene>
-        <!--SavedItemMainViewController-->
+        <!--SavedItemNavigationController-->
         <scene sceneID="xre-2r-NRV">
             <objects>
-                <viewControllerPlaceholder storyboardName="SavedItem" referencedIdentifier="SavedItemMainViewController" id="Ync-Ye-QL5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SavedItem" referencedIdentifier="SavedItemNavigationController" id="Ync-Ye-QL5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilJ-Tv-ZRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2480" y="642"/>
@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="1845" y="-139"/>
         </scene>
-        <!--ShopsMainViewController-->
+        <!--ShopsNavigationController-->
         <scene sceneID="MaF-AX-OXD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Shops" referencedIdentifier="ShopsMainViewController" id="grc-zr-pu5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Shops" referencedIdentifier="ShopsNavigationController" id="grc-zr-pu5" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sF7-zu-ndo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2462" y="-139"/>

@@ -14,6 +14,11 @@ final class SavedItemMainViewController: ButtonBarPagerTabStripViewController {
     initXLPagerTabStripUI()
     
     super.viewDidLoad()
+    configureView()
+  }
+  
+  private func configureView() {
+    navigationController?.navigationBar.isHidden = true
   }
   
   //MARK: - XLPagerTabStrip setting

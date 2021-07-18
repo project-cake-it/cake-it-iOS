@@ -8,6 +8,19 @@
 import UIKit
 
 extension CakeListSubViewController: UICollectionViewDelegateFlowLayout {
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    guard let cakeDesign = savedCakeDesigns?[indexPath.row] else { return }
+    let designID = cakeDesign.id
+    
+    let id = String(describing: DesignDetailViewController.self)
+    let storyboard = UIStoryboard(name: "Home", bundle: nil)
+    if let designDetailVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignDetailViewController {
+      designDetailVC.designID = designID
+      navigationController?.pushViewController(designDetailVC, animated: true)
+    }
+  }
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let width = collectionView.frame.width
     let cellWidth = width/2
