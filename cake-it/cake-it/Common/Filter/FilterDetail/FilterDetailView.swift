@@ -25,8 +25,8 @@ final class FilterDetailView: UIView {
   
   @IBOutlet weak var backgroundView: UIView!
   @IBOutlet weak var filterTableView: UITableView!
-  var filterTableViewHeightConstraint: NSLayoutConstraint?
-  
+  @IBOutlet weak var filterTableViewHeightConstraint: NSLayoutConstraint!
+    
   weak var delegate: FilterDetailViewDelegate?
   var filterType: FilterCommon.FilterType = .reset {
     didSet {
@@ -80,8 +80,7 @@ final class FilterDetailView: UIView {
     filterTableView.constraints(topAnchor: self.topAnchor,
                                 leadingAnchor: self.leadingAnchor,
                                 trailingAnchor: self.trailingAnchor)
-    filterTableViewHeightConstraint = filterTableView.heightAnchor.constraint(equalToConstant: Metric.tableViewDefaultHeight)
-    filterTableViewHeightConstraint?.isActive = true
+    filterTableViewHeightConstraint.constant = Metric.tableViewDefaultHeight
   }
   
   private func registerCell() {
