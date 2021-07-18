@@ -50,12 +50,7 @@ final class DesignListViewController: BaseViewController {
   }
 
   func fetchCakeDesigns() {
-    let filterParam = selectedFilter.queryString()
-    let themeParam = selectedTheme.queryString()
-    let parameter = filterParam + themeParam
-
-    // 요청 url 확인 주석 -> 개발 완료 후 제거 예정
-    print("[TEST] request queryString : \(NetworkCommon.API.designs.urlString)\(parameter)")
+    let parameter = mergedQueryStringFromThemeAndFilter()
     NetworkManager.shared.requestGet(api: .designs,
                                      type: [CakeDesign].self,
                                      param: parameter) { (respons) in
@@ -68,6 +63,17 @@ final class DesignListViewController: BaseViewController {
         print(error.localizedDescription)
       }
     }
+  }
+  
+  private func mergedQueryStringFromThemeAndFilter() -> String {
+    var mergedFilterDic: [String: [String]] = selectedFilter
+    if let themeKey = selectedTheme.keys.first,
+       let themeValue = selectedTheme.values.first {
+      mergedFilterDic[themeKey] = [themeValue]
+    }
+    let parameter = mergedFilterDic.queryString()
+    print(mergedFilterDic)
+    return parameter
   }
 
   @IBAction func backButtonDidTap(_ sender: Any) {
