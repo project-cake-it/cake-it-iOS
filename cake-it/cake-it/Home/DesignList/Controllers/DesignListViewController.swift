@@ -72,7 +72,6 @@ final class DesignListViewController: BaseViewController {
       mergedFilterDic[themeKey] = [themeValue]
     }
     let parameter = mergedFilterDic.queryString()
-    print(mergedFilterDic)
     return parameter
   }
 
