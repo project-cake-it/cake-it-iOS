@@ -97,13 +97,13 @@ final class ShopDetailViewController: BaseViewController {
   
   private func saveShop() {
     guard let shopId = cakeShop?.id else { return }
-    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(shopId)"
+    let urlString = NetworkCommon.API.savedShops.urlString + "/\(shopId)"
     NetworkManager.shared.requestPost(urlString: urlString,
                                       type: String.self,
                                       param: "") { (response) in
       switch response {
-      case .success(let result):
-        print(result)
+      case .success(_):
+        self.fetchDetail(id: shopId)
       case .failure(let error):
         print(error.localizedDescription)
       }
@@ -112,13 +112,13 @@ final class ShopDetailViewController: BaseViewController {
   
   private func cancelSavedShop() {
     guard let shopId = cakeShop?.id else { return }
-    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(shopId)"
+    let urlString = NetworkCommon.API.savedShops.urlString + "/\(shopId)"
     NetworkManager.shared.requestDelete(urlString: urlString,
                                       type: String.self,
                                       param: "") { (response) in
       switch response {
-      case .success(let result):
-        print(result)
+      case .success(_):
+        self.fetchDetail(id: shopId)
       case .failure(let error):
         print(error.localizedDescription)
       }
