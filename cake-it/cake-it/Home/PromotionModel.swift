@@ -11,6 +11,6 @@ struct PromotionModel: Encodable {
   struct Response: Codable {
     let id: Int
     let imageUrl: String
-    let link: String
+    let designId: Int
   }
 }
