@@ -21,6 +21,7 @@ final class HomeViewController: UIViewController {
   }
   
   @IBOutlet weak var promotionSlideView: UIScrollView!
+  @IBOutlet weak var slideViewIndexLabel: UILabel!
   @IBOutlet weak var themeCollectionView: UICollectionView!
   @IBOutlet weak var themeHideButton: UIButton!
   @IBOutlet weak var themeCollectionViewHeightConstraint: NSLayoutConstraint!
@@ -39,6 +40,7 @@ final class HomeViewController: UIViewController {
   let themeCollecionViewNomalHeight: CGFloat = 108
   let themesMinCount = 4
   let moreButtonIndex = 3
+  let indexLabelFomatString = "%d/%d"
   
   var isThemeViewExpanded: Bool = false {
     willSet {
@@ -82,6 +84,7 @@ final class HomeViewController: UIViewController {
   //MARK: - Private Func
   private func configueSlideView() {
     promotionSlideView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
+    promotionSlideView.delegate = self
   }
   
   private func configureNavigationController() {
@@ -147,6 +150,11 @@ final class HomeViewController: UIViewController {
       imageView.kf.setImage(with: URL(string: promotions[i].imageUrl))
       self.promotionSlideView.addSubview(imageView)
     }
+    self.slideViewIndexLabel.text = String(format: indexLabelFomatString, 1, promotions.count)
+  }
+  
+  private func updatePromotionIndexView(_ index:Int) {
+      self.slideViewIndexLabel.text = String(format: indexLabelFomatString, index, promotions.count)
   }
   
   @objc private func promotionImageViewDidTap(_ sender: UITapGestureRecognizer) {
@@ -177,6 +185,21 @@ extension HomeViewController {
         loginViewController.modalPresentationStyle = .overFullScreen
         present(loginViewController, animated: false, completion: nil)
       }
+    }
+  }
+}
+
+//MARK: - scrollview delegate
+extension HomeViewController: UIScrollViewDelegate {
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    switch scrollView {
+    case promotionSlideView:
+      let currentPromotionIndex = Int(floor(scrollView.contentOffset.x / Constants.SCREEN_WIDTH)) + 1
+      self.slideViewIndexLabel.text = String(format: indexLabelFomatString,
+                                             currentPromotionIndex,
+                                             promotions.count)
+    default:
+      return
     }
   }
 }
