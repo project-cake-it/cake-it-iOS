@@ -83,7 +83,7 @@ final class HomeViewController: UIViewController {
   
   //MARK: - Private Func
   private func configueSlideView() {
-    promotionSlideView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
+    promotionSlideView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
     promotionSlideView.delegate = self
   }
   
@@ -134,27 +134,27 @@ final class HomeViewController: UIViewController {
   }
   
   private func updatePromotionSlideView() {
-    self.promotionSlideView.contentSize.width = self.view.frame.width * CGFloat(promotions.count)
+    promotionSlideView.contentSize.width = view.frame.width * CGFloat(promotions.count)
     for i in 0..<promotions.count {
       let imageView = UIImageView()
       imageView.tag = i
-      let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.promotionImageViewDidTap(_:)))
+      let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(promotionImageViewDidTap(_:)))
       imageView.addGestureRecognizer(tapGestureRecognizer)
       imageView.isUserInteractionEnabled = true
-      let xPos = self.view.frame.width * CGFloat(i)
+      let xPos = view.frame.width * CGFloat(i)
       imageView.frame = CGRect(x: xPos,
                                y: 0,
-                               width: self.view.frame.width,
-                               height: self.view.frame.width)
+                               width: view.frame.width,
+                               height: view.frame.width)
       imageView.contentMode = .scaleAspectFill
       imageView.kf.setImage(with: URL(string: promotions[i].imageUrl))
-      self.promotionSlideView.addSubview(imageView)
+      promotionSlideView.addSubview(imageView)
     }
-    self.slideViewIndexLabel.text = String(format: indexLabelFomatString, 1, promotions.count)
+    slideViewIndexLabel.text = String(format: indexLabelFomatString, 1, promotions.count)
   }
   
   private func updatePromotionIndexView(_ index:Int) {
-      self.slideViewIndexLabel.text = String(format: indexLabelFomatString, index, promotions.count)
+      slideViewIndexLabel.text = String(format: indexLabelFomatString, index, promotions.count)
   }
   
   @objc private func promotionImageViewDidTap(_ sender: UITapGestureRecognizer) {
@@ -166,7 +166,7 @@ final class HomeViewController: UIViewController {
     let storyboard = UIStoryboard(name: "Home", bundle: nil)
     if let designDetailVC = storyboard.instantiateViewController(withIdentifier: identifier)
         as? DesignDetailViewController {
-      designDetailVC.designID = promotions[index].designId
+      designDetailVC.designID = promotions[index].designID
       navigationController?.pushViewController(designDetailVC, animated: true)
     }
   }

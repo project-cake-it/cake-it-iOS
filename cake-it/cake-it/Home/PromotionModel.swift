@@ -7,10 +7,16 @@
 
 import Foundation
 
-struct PromotionModel: Encodable {
+struct PromotionModel: Codable {
   struct Response: Codable {
     let id: Int
     let imageUrl: String
-    let designId: Int
+    let designID: Int
+    
+    enum CodingKeys: String, CodingKey {
+      case id
+      case imageUrl
+      case designID = "designId"
+    }
   }
 }
