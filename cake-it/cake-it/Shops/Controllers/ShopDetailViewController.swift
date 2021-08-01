@@ -146,6 +146,12 @@ final class ShopDetailViewController: BaseViewController {
     }
   }
   
+  @IBAction func availableDateButtonDidTap(_ sender: Any) {
+    let dateViewController = ShopDetailAvailableDateViewController()
+    dateViewController.modalPresentationStyle = .overFullScreen
+    present(dateViewController, animated: false)
+  }
+  
   @IBAction func cakeDesignButtonDidTap(_ sender: Any) {
     bottomInfoState = .cakeDesign
   }
