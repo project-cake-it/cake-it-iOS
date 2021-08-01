@@ -138,6 +138,8 @@
 		AC422A5326A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */; };
 		AC52DE6526902C2700718332 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6426902C2700718332 /* HomeViewModel.swift */; };
 		AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6626902D8400718332 /* PromotionModel.swift */; };
+		AC52DE692699E70400718332 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE682699E70400718332 /* MyPageViewModel.swift */; };
+		AC52DE6C2699E7E200718332 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6B2699E7E200718332 /* Notice.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
@@ -151,6 +153,8 @@
 		AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */; };
 		AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */; };
 		ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC16E70262334950094D6D2 /* LoginSocialType.swift */; };
+		ACDD76ED269CA97300C62F24 /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = ACDD76EB269CA97300C62F24 /* terms.html */; };
+		ACDD76EE269CA97300C62F24 /* personalinfomation.html in Resources */ = {isa = PBXBuildFile; fileRef = ACDD76EC269CA97300C62F24 /* personalinfomation.html */; };
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		D7C14743F527AA676B781599 /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD838ED07F97AFAABDAAA67 /* Pods_cake_it_cake_itUITests.framework */; };
 		F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71419632674B75400C6E5EE /* Dictionary+Utils.swift */; };
@@ -343,6 +347,8 @@
 		AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopDetailViewController+MTMapViewDelegate.swift"; sourceTree = "<group>"; };
 		AC52DE6426902C2700718332 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC52DE6626902D8400718332 /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
+		AC52DE682699E70400718332 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		AC52DE6B2699E7E200718332 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -356,6 +362,8 @@
 		AC9FD4C42642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		AC9FD4C82642BEC600A44862 /* CakeImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeImageCell.swift; sourceTree = "<group>"; };
 		ACC16E70262334950094D6D2 /* LoginSocialType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSocialType.swift; sourceTree = "<group>"; };
+		ACDD76EB269CA97300C62F24 /* terms.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = terms.html; sourceTree = "<group>"; };
+		ACDD76EC269CA97300C62F24 /* personalinfomation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = personalinfomation.html; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F71419632674B75400C6E5EE /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
 		F71F330C26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailView+UITableViewDelegate.swift"; sourceTree = "<group>"; };
@@ -600,6 +608,8 @@
 				F774B94525E0E0FE006EE0EC /* BaseModels */,
 				38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */,
 				38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */,
+				ACDD76EC269CA97300C62F24 /* personalinfomation.html */,
+				ACDD76EB269CA97300C62F24 /* terms.html */,
 				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
 			);
 			path = Base;
@@ -695,7 +705,9 @@
 		8B875D2D25DAE7CD003D9CFA /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				AC52DE6A2699E7AF00718332 /* Models */,
 				8B875D2E25DAE836003D9CFA /* MyPage.storyboard */,
+				AC52DE682699E70400718332 /* MyPageViewModel.swift */,
 				8B875D3325DAE843003D9CFA /* MyPageMainViewController.swift */,
 				AC0B8FD72645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift */,
 				AC0B8FDB2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift */,
@@ -847,6 +859,14 @@
 				AC422A0B26A08920006ACC20 /* MTMapCircle.h */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		AC52DE6A2699E7AF00718332 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AC52DE6B2699E7E200718332 /* Notice.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		ACC16E6F262334240094D6D2 /* Login */ = {
@@ -1085,7 +1105,6 @@
 				38D8C6F325BC622500C1F10D /* Frameworks */,
 				38D8C6F425BC622500C1F10D /* Resources */,
 				2CA15449D1575865BF9683DF /* [CP] Embed Pods Frameworks */,
-				2A65ED3CBE012AED77F438FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1124,7 +1143,6 @@
 				38D8C71425BC622700C1F10D /* Frameworks */,
 				38D8C71525BC622700C1F10D /* Resources */,
 				8FC9D34C24338BA0A0B8E9C6 /* [CP] Embed Pods Frameworks */,
-				49D8EA04523D407A8CD71139 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1189,7 +1207,9 @@
 				AC422A4326A08920006ACC20 /* map_pin.png in Resources */,
 				F774B93525E0E0BF006EE0EC /* LoginTest.storyboard in Resources */,
 				F7A88748265A483200930932 /* FilterColorCell.xib in Resources */,
+				ACDD76ED269CA97300C62F24 /* terms.html in Resources */,
 				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
+				ACDD76EE269CA97300C62F24 /* personalinfomation.html in Resources */,
 				F7590739267F85C8000ECBD7 /* CakeDesignThemeCell.xib in Resources */,
 				AC422A3926A08920006ACC20 /* point_sprite.png in Resources */,
 				AC9FA083267909370050F9F0 /* HomeThemeCell.xib in Resources */,
@@ -1307,23 +1327,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2A65ED3CBE012AED77F438FA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		2CA15449D1575865BF9683DF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1339,23 +1342,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		49D8EA04523D407A8CD71139 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5359ADEE197E05665C1ED25A /* [CP] Check Pods Manifest.lock */ = {
@@ -1435,6 +1421,7 @@
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
 				AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */,
 				8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */,
+				AC52DE6C2699E7E200718332 /* Notice.swift in Sources */,
 				AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */,
@@ -1499,6 +1486,7 @@
 				AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */,
 				AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */,
 				AC0B8FE02646675D009016A9 /* NoticeViewController.swift in Sources */,
+				AC52DE692699E70400718332 /* MyPageViewModel.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				F7A88752265A486B00930932 /* BaseFilterCell.swift in Sources */,
