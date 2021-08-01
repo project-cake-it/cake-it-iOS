@@ -23,7 +23,8 @@ final class CakeDesignSquareImageCell: UICollectionViewCell {
     cakeDesignImageView.image = nil
   }
   
-  func updateCell(imageURL: String) {
+  func updateCell(imageURL: String?) {
+    guard let imageURL = imageURL else { return }
     guard let cakeDesignImageURL = URL(string: imageURL) else { return }
     cakeDesignImageView.kf.setImage(with: cakeDesignImageURL)
   }

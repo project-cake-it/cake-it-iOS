@@ -18,7 +18,7 @@ struct CakeShopDetailResponse: Decodable {
 struct CakeShop: Decodable {
   let id: Int
   let name, address, fullAddress, information, holiday: String
-  let operationTime, pickupTime, telephone, kakaoMap: String
+  let operationTime, pickupTime, telephone: String
   let shopChannel: String
   let shopImages: [CakeShopImage]
   let themeNames: String
@@ -33,7 +33,7 @@ struct CakeShop: Decodable {
 struct CakeShopCakeDesign: Codable {
   let id: Int
   let name: String
-  let designImage: CakeShopCakeDesignImage
+  let designImage: CakeShopCakeDesignImage?
 }
 
 struct CakeShopCakeDesignImage: Codable {
