@@ -29,7 +29,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     case themeCollectionView:
       let numberOfColumns: CGFloat = 2
       let themeCellWidth = (collectionView.frame.width
-                              - Metric.themeCollectionViewInterItemVerticalSpace) / numberOfColumns
+                              - Metric.themeCollectionViewInterItemHorizontalSpace) / numberOfColumns
       return CGSize(width: themeCellWidth.rounded(.down), height: Metric.themeCellHeight)
     default:
       return CGSize(width: 0, height: 0)
@@ -63,7 +63,13 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     switch collectionView {
     case rankCollectionView:
-      // DesignDetallVeiw Controller 이동
+      let identifier = String(describing: DesignDetailViewController.self)
+      let storyboard = UIStoryboard(name: "Home", bundle: nil)
+      if let designDetailVC = storyboard.instantiateViewController(withIdentifier: identifier)
+          as? DesignDetailViewController {
+        designDetailVC.designID = cakeDesigns[indexPath.row].id
+        navigationController?.pushViewController(designDetailVC, animated: true)
+      }
       break
     case themeCollectionView:
       if isThemeViewExpanded == false && indexPath.row == moreButtonIndex {

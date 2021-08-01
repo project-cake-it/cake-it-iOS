@@ -46,7 +46,7 @@ final class DesignDetailViewController: BaseViewController {
   private var canContactShopButtonMove = false
   private var isScrollDirectionDown = false
 
-  var designId: Int = 0
+  var designID: Int = 0
   var cakeDesign: CakeDesign?
   var imageTotalCount: Int = 0
   
@@ -59,7 +59,7 @@ final class DesignDetailViewController: BaseViewController {
   private func fetchCakeDetail() {
     NetworkManager.shared.requestGet(api: .designs,
                                      type: CakeDesign.Response.self,
-                                     param: "/\(designId)") { (response) in
+                                     param: "/\(designID)") { (response) in
       switch response {
       case .success(let result):
         self.cakeDesign = result.design
@@ -196,7 +196,7 @@ extension DesignDetailViewController {
     for i in 0..<cakePriceBySizeLabels.count {
       if cakeDesign?.sizes.count ?? 0 <= i { break }
       guard let sizeInfo = cakeDesign?.sizes[i] else { break }
-      cakePriceBySizeLabels[i].text = "\(sizeInfo.name) / \(String(sizeInfo.price).moneyFormat)"
+      cakePriceBySizeLabels[i].text = "\(sizeInfo.name) / \(String(sizeInfo.price).moneyFormat.won)"
     }
     kindOfCreamsLabel.text = cakeDesign?.creamNames
     kindOfSheetsLabel.text = cakeDesign?.sheetNames

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -25,9 +23,10 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>kakaomap</string>
 				<string>kakao</string>
 				<string>336e5fa0e2a8c916ffda94b2b64f5c8d</string>
-        <string>com.googleusercontent.apps.911891330500-qis1f628hh0oqdbnoj597cfgkgqnk9r4</string>
+				<string>com.googleusercontent.apps.911891330500-qis1f628hh0oqdbnoj597cfgkgqnk9r4</string>
 			</array>
 		</dict>
 		<dict>
@@ -45,6 +44,8 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>KAKAO_APP_KEY</key>
+	<string>336e5fa0e2a8c916ffda94b2b64f5c8d</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaokompassauth</string>
@@ -85,5 +86,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

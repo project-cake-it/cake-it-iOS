@@ -8,6 +8,15 @@
 import UIKit
 
 extension ShopListSubViewController: UICollectionViewDelegateFlowLayout {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let id = String(describing: ShopDetailViewController.self)
+    let storyboard = UIStoryboard(name: "Shops", bundle: nil)
+    if let shopDetailVC = storyboard.instantiateViewController(withIdentifier: id) as? ShopDetailViewController {
+      shopDetailVC.fetchDetail(id: savedCakeShops[indexPath.row].id)
+      navigationController?.pushViewController(shopDetailVC, animated: true)
+    }
+  }
+  
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
