@@ -30,7 +30,11 @@ final class FilterDetailViewController: UIViewController {
   weak var delegate: FilterDetailViewDelegate?
   var filterType: FilterCommon.FilterType = .reset
   var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
-  var tableViewHeight: CGFloat = 0.0
+  var tableViewHeight: CGFloat = 0.0 {
+    didSet {
+      tableViewHeightConstraint?.constant = tableViewHeight
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
