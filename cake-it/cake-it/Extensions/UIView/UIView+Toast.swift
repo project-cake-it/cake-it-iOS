@@ -8,13 +8,13 @@
 import UIKit
 
 extension UIView {
-  func showToastMessage(message: String,
+  func showToast(message: String,
                         durationTime: Double = 0.7,
-                        delayTime: Double = 3.0,
+                        delayTime: Double = 1.0,
                         completion: (()->Void)? = nil) {
     
     let alpahValue: CGFloat = 0.8
-    let toastView = initToastView(message: message)
+    let toastView = makeToastView(message: message)
     
     UIView.animate(withDuration: durationTime, animations: {
       toastView.alpha = alpahValue
@@ -30,7 +30,7 @@ extension UIView {
     })
   }
   
-  private func initToastView(message: String) -> UIView {
+  private func makeToastView(message: String) -> UIView {
     let toastView = UIView()
     toastView.backgroundColor = .black
     toastView.alpha = 0.7
@@ -53,16 +53,25 @@ extension UIView {
     let verticalPadding: CGFloat = 15.0
 
     label.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      label.bottomAnchor.constraint(equalTo: self.bottomAnchor,
-                                    constant: -bottomMargin),
-      label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-      label.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor,
-                                     constant: horizentalPadding),
-      label.trailingAnchor.constraint(greaterThanOrEqualTo: self.trailingAnchor,
-                                      constant: -horizentalPadding)
-    ])
-
+    if label.frame.width < Constants.SCREEN_WIDTH - horizentalPadding * 2 {
+      NSLayoutConstraint.activate([
+        label.bottomAnchor.constraint(equalTo: self.bottomAnchor,
+                                      constant: -bottomMargin),
+        label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+        label.widthAnchor.constraint(equalToConstant: label.frame.width)
+      ])
+    } else {
+      NSLayoutConstraint.activate([
+        label.bottomAnchor.constraint(equalTo: self.bottomAnchor,
+                                      constant: -bottomMargin),
+        label.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+        label.leadingAnchor.constraint(greaterThanOrEqualTo: self.leadingAnchor,
+                                       constant: horizentalPadding),
+        label.trailingAnchor.constraint(greaterThanOrEqualTo: self.trailingAnchor,
+                                        constant: -horizentalPadding)
+      ])
+    }
+    
     toastView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       toastView.centerXAnchor.constraint(equalTo: label.centerXAnchor),
