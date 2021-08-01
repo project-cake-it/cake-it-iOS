@@ -202,6 +202,7 @@
 		F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C7265A4C5600930932 /* FilterColorCell.swift */; };
 		F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */; };
 		F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */; };
+		F7B76D0A26B695510024674C /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B76D0926B695510024674C /* UIView+Toast.swift */; };
 		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -410,6 +411,7 @@
 		F7A887C7265A4C5600930932 /* FilterColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorCell.swift; sourceTree = "<group>"; };
 		F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionCell.swift; sourceTree = "<group>"; };
 		F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeDesignThemeCell.swift; sourceTree = "<group>"; };
+		F7B76D0926B695510024674C /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -548,6 +550,7 @@
 				8B0DDA5E260CE4F4003923D9 /* UIView+RoundCorner.swift */,
 				8B647B1A262C4D0C003FA732 /* UIView+Border.swift */,
 				8B647B25262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift */,
+				F7B76D0926B695510024674C /* UIView+Toast.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1402,23 +1405,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it-cake-itUITests/Pods-cake-it-cake-itUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B2AAE0040EE9EF881BC31013 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C2AA86E531D0B8B182C6A856 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1515,6 +1501,7 @@
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,
 				8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */,
+				F7B76D0A26B695510024674C /* UIView+Toast.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
