@@ -14,6 +14,25 @@ final class SearchResultViewController: BaseViewController {
     case shop
   }
   
+  enum TitleFontType {
+    case normal
+    case highlighted
+
+    var font: UIFont {
+      switch self {
+      case .normal:       return Fonts.spoqaHanSans(weight: .Bold, size: 15)
+      case .highlighted:  return Fonts.spoqaHanSans(weight: .Medium, size: 15)
+      }
+    }
+    
+    var textColor: UIColor {
+      switch self {
+      case .normal:       return Colors.black
+      case .highlighted:  return Colors.pointB
+      }
+    }
+  }
+
   @IBOutlet weak var keywordLabel: UILabel!
   
   @IBOutlet weak var designTitleView: UIView!
@@ -27,12 +46,12 @@ final class SearchResultViewController: BaseViewController {
   @IBOutlet weak var shopContainerView: UIView!
   @IBOutlet weak var emptyResultView: UIView!
   
-  let DESIGN_TITLE_BUTTON_TAG = 100
-  let SHOP_TITLE_BUTTON_TAG = 200
+  private let DESIGN_TITLE_BUTTON_TAG = 100
+  private let SHOP_TITLE_BUTTON_TAG = 200
   
   var keyword: String = ""
   var searchResult: SearchResult?
-  var currentTappedType: TappedTitleType = .design {
+  private var currentTappedType: TappedTitleType = .design {
     didSet {
       updateView()
     }
@@ -132,17 +151,17 @@ extension SearchResultViewController {
     switch currentTappedType {
     case .design:
       seperateViewLeadingConstraint.constant = 0.0
-      designTitleLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
-      designTitleLabel.textColor = Colors.pointB
-      shopTitleLabel.font = Fonts.spoqaHanSans(weight: .Medium, size: 15)
-      shopTitleLabel.textColor = Colors.black
+      designTitleLabel.font       = TitleFontType.highlighted.font
+      designTitleLabel.textColor  = TitleFontType.highlighted.textColor
+      shopTitleLabel.font         = TitleFontType.normal.font
+      shopTitleLabel.textColor    = TitleFontType.normal.textColor
       
     case .shop:
       seperateViewLeadingConstraint.constant = designTitleView.frame.width
-      designTitleLabel.font = Fonts.spoqaHanSans(weight: .Medium, size: 15)
-      designTitleLabel.textColor = Colors.black
-      shopTitleLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
-      shopTitleLabel.textColor = Colors.pointB
+      designTitleLabel.font       = TitleFontType.normal.font
+      designTitleLabel.textColor  = TitleFontType.normal.textColor
+      shopTitleLabel.font         = TitleFontType.highlighted.font
+      shopTitleLabel.textColor    = TitleFontType.highlighted.textColor
     }
     
     UIView.animate(withDuration: 0.3, animations: {
@@ -161,7 +180,7 @@ extension SearchResultViewController {
     case .design:
       designContainerView.alpha = 1.0
       shopContainerView.alpha = 0.0
-      if let childVC = findChildViewController(type: ShopsMainViewController.self) {
+      if let childVC = childViewController(type: ShopsMainViewController.self) {
         let shopListVC = childVC as! ShopsMainViewController
         shopListVC.removeFilterDetailView()
       }
@@ -169,14 +188,14 @@ extension SearchResultViewController {
     case .shop:
       designContainerView.alpha = 0.0
       shopContainerView.alpha = 1.0
-      if let childVC = findChildViewController(type: DesignListViewController.self) {
+      if let childVC = childViewController(type: DesignListViewController.self) {
         let designListVC = childVC as! DesignListViewController
         designListVC.removeFilterDetailView()
       }
     }
   }
   
-  private func findChildViewController(type: AnyClass) -> UIViewController? {
+  private func childViewController(type: AnyClass) -> UIViewController? {
     for child in children {
       if child.isKind(of: type) {
         return child
