@@ -35,4 +35,9 @@ final class MyPageMainViewController: BaseViewController {
   private func configureUI() {
     myPageMessageLabel.text = String.init(format: Constants.MY_PAGE_MESSAGE, "사용자 닉네임")
   }
+  
+  @IBAction func logoutButtonDidTap(_ sender: Any) {
+    //TODO: Test용 로그아웃 버튼
+    LoginManager.shared.resetAccessToken();
+  }
 }

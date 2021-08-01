@@ -10,6 +10,7 @@ import KakaoSDKUser
 import KakaoSDKAuth
 import NaverThirdPartyLogin
 import GoogleSignIn
+import AuthenticationServices
 
 final class LoginViewModel: BaseViewModel {
   
@@ -36,27 +37,41 @@ final class LoginViewModel: BaseViewModel {
     switch socialType {
     case .KAKAO:
       signInKakao()
+      break
     case .NAVER:
       signInNaver()
+      break
     case .GOOGLE:
       signInGoogle(viewController: viewController)
-    default:
-      loginCompletion?(false)
+      break
+    case .APPLE:
+      signInApple()
+      break
     }
   }
   
+  private func signInApple() {
+    let request = ASAuthorizationAppleIDProvider().createRequest()
+    request.requestedScopes = [.fullName, .email]
+    
+    let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+    authorizationController.delegate = self
+    authorizationController.presentationContextProvider = self
+    authorizationController.performRequests()
+  }
+
   private func signInKakao() {
     if UserApi.isKakaoTalkLoginAvailable() {
       UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
         self.processKakaoLoginRespone(oauthToken: oauthToken, error: error)
-        return
       }
+      return
     }
     
     UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
       self.processKakaoLoginRespone(oauthToken: oauthToken, error: error)
-      return
     }
+    return
   }
   
   private func processKakaoLoginRespone(oauthToken: OAuthToken?, error: Error?) {
@@ -68,12 +83,8 @@ final class LoginViewModel: BaseViewModel {
         loginCompletion?(false)
         return
       }
-      guard let refreshToken = oauthToken?.accessToken else {
-        loginCompletion?(false)
-        return
-      }
       
-      self.requestLogin(accessToken: accessToken, refreshToken: refreshToken)
+      self.requestLogin(accessToken: accessToken)
     }
   }
   
@@ -86,8 +97,8 @@ final class LoginViewModel: BaseViewModel {
     self.naverLoginSDK?.requestThirdPartyLogin()
   }
   
-  private func requestLogin(accessToken: String, refreshToken:String) {
-    guard let socialType = socialType else {
+  private func requestLogin(accessToken: String) {
+    guard let socialType = self.socialType else {
       loginCompletion!(false)
       return
     }
@@ -108,7 +119,7 @@ final class LoginViewModel: BaseViewModel {
         }
         
         self.loginCompletion!(true)
-      case .failure(let error):
+      case .failure(_):
         self.loginCompletion!(false)
         break
       }
@@ -125,12 +136,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
       return
     }
     
-    guard let refresh = naverLoginSDK?.refreshToken else {
-      loginCompletion?(false)
-      return
-    }
-    
-    self.requestLogin(accessToken: access, refreshToken: refresh)
+    self.requestLogin(accessToken: access)
   }
 
   func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
@@ -153,6 +159,40 @@ extension LoginViewModel: GIDSignInDelegate {
       return
     }
     
-    requestLogin(accessToken: user.authentication.accessToken, refreshToken: user.authentication.refreshToken)
+    requestLogin(accessToken: user.authentication.accessToken)
   }
 }
+
+extension LoginViewModel: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+  func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+    return viewController.view.window!
+  }
+  
+  func authorizationController(controller: ASAuthorizationController,
+                               didCompleteWithAuthorization authorization: ASAuthorization) {
+    // do something
+    switch authorization.credential {
+    case let appleIdCredential as ASAuthorizationAppleIDCredential:
+      guard let jwtToken = appleIdCredential.identityToken else {
+        loginCompletion?(false)
+        return
+      }
+      
+      guard let tokenString = String(data:jwtToken, encoding: .utf8) else {
+        loginCompletion?(false)
+        return
+      }
+      
+      self.requestLogin(accessToken: tokenString)
+    break
+    default:
+      loginCompletion?(false)
+    }
+  }
+  
+  func authorizationController(controller: ASAuthorizationController,
+                               didCompleteWithError error: Error) {
+    loginCompletion?(false)
+  }
+}
+

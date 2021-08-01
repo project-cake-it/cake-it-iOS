@@ -345,6 +345,7 @@
 		AC422A1726A08920006ACC20 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		AC422A1826A08920006ACC20 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
 		AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopDetailViewController+MTMapViewDelegate.swift"; sourceTree = "<group>"; };
+		AC422A5426AD594A006ACC20 /* cake-it.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cake-it.entitlements"; sourceTree = "<group>"; };
 		AC52DE6426902C2700718332 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC52DE6626902D8400718332 /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
 		AC52DE682699E70400718332 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
@@ -475,6 +476,7 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
+				AC422A5426AD594A006ACC20 /* cake-it.entitlements */,
 				F774B91A25E0E0BF006EE0EC /* Test */,
 				8B3AF14425DADFD700B9F48D /* Base */,
 				F774B92B25E0E0BF006EE0EC /* Network */,
@@ -1740,6 +1742,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = "cake-it/cake-it.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y85GKLJ8B2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1748,12 +1751,12 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = "cake-it/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cake-it";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.cake-it";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./cake-it/SupportFiles/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1768,6 +1771,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = "cake-it/cake-it.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y85GKLJ8B2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1776,12 +1780,12 @@
 					"$(PROJECT_DIR)/DaumMap.embeddedframework",
 				);
 				INFOPLIST_FILE = "cake-it/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cake-it";
+				PRODUCT_BUNDLE_IDENTIFIER = "kr.cake-it";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "./cake-it/SupportFiles/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
