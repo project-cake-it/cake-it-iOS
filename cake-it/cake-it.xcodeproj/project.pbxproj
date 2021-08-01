@@ -170,6 +170,7 @@
 		F7590739267F85C8000ECBD7 /* CakeDesignThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7590733267F85C8000ECBD7 /* CakeDesignThemeCell.xib */; };
 		F759073A267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7590734267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift */; };
 		F759073B267F85C8000ECBD7 /* ThemeDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7590735267F85C8000ECBD7 /* ThemeDetailView.xib */; };
+		F75C2A49269345610006D1B0 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C2A47269345610006D1B0 /* SearchResultViewController.swift */; };
 		F766FDBF265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */; };
 		F768D201265801A50092E3CE /* FilterCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F768D200265801A50092E3CE /* FilterCategoryCell.swift */; };
 		F768D209265801AF0092E3CE /* FilterCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F768D208265801AF0092E3CE /* FilterCategoryCell.xib */; };
@@ -202,6 +203,7 @@
 		F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C7265A4C5600930932 /* FilterColorCell.swift */; };
 		F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */; };
 		F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */; };
+		F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF345B269C5AD2006CE344 /* SearchResult.swift */; };
 		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
 /* End PBXBuildFile section */
 
@@ -378,6 +380,7 @@
 		F7590733267F85C8000ECBD7 /* CakeDesignThemeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CakeDesignThemeCell.xib; sourceTree = "<group>"; };
 		F7590734267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeDetailView+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		F7590735267F85C8000ECBD7 /* ThemeDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThemeDetailView.xib; sourceTree = "<group>"; };
+		F75C2A47269345610006D1B0 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		F766FDBE265AA9C20078FE0D /* DesignListViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
 		F768D200265801A50092E3CE /* FilterCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCategoryCell.swift; sourceTree = "<group>"; };
 		F768D208265801AF0092E3CE /* FilterCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCategoryCell.xib; sourceTree = "<group>"; };
@@ -410,6 +413,7 @@
 		F7A887C7265A4C5600930932 /* FilterColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorCell.swift; sourceTree = "<group>"; };
 		F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionCell.swift; sourceTree = "<group>"; };
 		F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeDesignThemeCell.swift; sourceTree = "<group>"; };
+		F7BF345B269C5AD2006CE344 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -669,8 +673,10 @@
 		8B875CF425DAE602003D9CFA /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				F7BF345A269C5AD2006CE344 /* Model */,
 				8B875CF525DAE61D003D9CFA /* Search.storyboard */,
 				8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */,
+				F75C2A47269345610006D1B0 /* SearchResultViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -1093,6 +1099,14 @@
 			path = FilterDetail;
 			sourceTree = "<group>";
 		};
+		F7BF345A269C5AD2006CE344 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7BF345B269C5AD2006CE344 /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1483,6 +1497,7 @@
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
 				F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */,
 				AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */,
+				F75C2A49269345610006D1B0 /* SearchResultViewController.swift in Sources */,
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */,
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
@@ -1499,6 +1514,7 @@
 				F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */,
 				F774B92F25E0E0BF006EE0EC /* NicknameModel.swift in Sources */,
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
+				F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
 				F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */,
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
@@ -1849,6 +1865,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "cake-itUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1869,6 +1886,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "cake-itUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

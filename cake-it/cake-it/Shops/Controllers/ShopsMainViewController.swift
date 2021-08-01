@@ -14,10 +14,12 @@ final class ShopsMainViewController: BaseViewController {
     static let cakeShopCellHeight: CGFloat = 124.0
   }
   
+  @IBOutlet weak var titleView: UIView!
+  @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var filterCollectionView: UICollectionView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
   
-  private(set) var cakeShops: [CakeShop] = []
+  var cakeShops: [CakeShop] = []
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailView: FilterDetailView?
   var selectedFilter: Dictionary<String, [String]> = [:]
@@ -27,7 +29,9 @@ final class ShopsMainViewController: BaseViewController {
     super.viewDidLoad()
     
     configure()
-    fetchCakeShops()
+    if cakeShops.isEmpty {
+      fetchCakeShops()
+    }
   }
   
   private func fetchCakeShops() {
@@ -91,5 +95,10 @@ extension ShopsMainViewController {
   private func configureCollectionViewProtocols() {
     shopCollectionView.dataSource = self
     shopCollectionView.delegate = self
+  }
+  
+  func hideTitleView() {
+    titleView.isHidden = true
+    titleViewHeightConstraint.constant = 0.0
   }
 }
