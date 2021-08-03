@@ -137,8 +137,12 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   @IBAction func saveButtonDidTap(_ sender: Any) {
-    savedButton.isSelected = !savedButton.isSelected
+    if LoginManager.shared.verifyAccessToken() == false {
+      showLoginAlert()
+      return
+    }
     
+    savedButton.isSelected = !savedButton.isSelected
     if savedButton.isSelected == true {
       saveShop()
     } else {
@@ -429,5 +433,24 @@ extension ShopDetailViewController {
     bottomInfoShopInfoView.isHidden = true
     updateBottomInfoButton(cakeDesignButton)
     resetBottomInfoButton(shopInfoButton)
+  }
+  
+  private func showLoginAlert() {
+    let alertController = UIAlertController(title: "",
+                                            message: Constants.SAVED_ITEM_MESSAGE,
+                                            preferredStyle: .alert)
+    let confirmAction = UIAlertAction(title: Constants.COMMON_ALERT_OK,
+                                      style: .default) { _ in
+      self.moveToLoginPage()
+    }
+    alertController.addAction(confirmAction)
+    self.present(alertController, animated: false, completion: nil)
+  }
+  
+  private func moveToLoginPage() {
+    if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) {
+      loginViewController.modalPresentationStyle = .overFullScreen
+      present(loginViewController, animated: true, completion: nil)
+    }
   }
 }

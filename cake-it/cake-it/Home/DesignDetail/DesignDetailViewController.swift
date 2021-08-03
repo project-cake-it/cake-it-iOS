@@ -244,8 +244,12 @@ extension DesignDetailViewController {
   }
   
   @IBAction func naviSaveButtonDidTap(_ sender: Any) {
-    naviSaveButton.isSelected = !naviSaveButton.isSelected
+    if LoginManager.shared.verifyAccessToken() == false {
+      showLoginAlert()
+      return
+    }
     
+    naviSaveButton.isSelected = !naviSaveButton.isSelected
     if naviSaveButton.isSelected == true {
       saveDesign()
     } else {
@@ -341,5 +345,24 @@ extension DesignDetailViewController {
       constant +=  -UIDevice.minimumBottomSpaceInNotchDevice
     }
     return constant
+  }
+  
+  private func showLoginAlert() {
+    let alertController = UIAlertController(title: "",
+                                            message: Constants.SAVED_ITEM_MESSAGE,
+                                            preferredStyle: .alert)
+    let confirmAction = UIAlertAction(title: Constants.COMMON_ALERT_OK,
+                                      style: .default) { _ in
+      self.moveToLoginPage()
+    }
+    alertController.addAction(confirmAction)
+    self.present(alertController, animated: false, completion: nil)
+  }
+  
+  private func moveToLoginPage() {
+    if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) {
+      loginViewController.modalPresentationStyle = .overFullScreen
+      present(loginViewController, animated: true, completion: nil)
+    }
   }
 }
