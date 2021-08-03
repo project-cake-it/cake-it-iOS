@@ -9,15 +9,13 @@ import UIKit
 
 extension UIView {
   func showToast(message: String,
-                        durationTime: Double = 0.7,
-                        delayTime: Double = 1.0,
-                        completion: (()->Void)? = nil) {
+                 durationTime: Double = 0.5,
+                 delayTime: Double = 1.0,
+                 completion: (()->Void)? = nil) {
     
-    let alpahValue: CGFloat = 0.8
     let toastView = makeToastView(message: message)
-    
-    UIView.animate(withDuration: durationTime, animations: {
-      toastView.alpha = alpahValue
+        UIView.animate(withDuration: durationTime, animations: {
+      toastView.alpha = 0.8
     }, completion: { _ in
       UIView.animate(withDuration: durationTime, delay: delayTime, animations: {
         toastView.alpha = 0.0
@@ -33,7 +31,7 @@ extension UIView {
   private func makeToastView(message: String) -> UIView {
     let toastView = UIView()
     toastView.backgroundColor = .black
-    toastView.alpha = 0.7
+    toastView.alpha = 0.0
     toastView.clipsToBounds = false
     toastView.layer.cornerRadius = 15
     self.addSubview(toastView)
