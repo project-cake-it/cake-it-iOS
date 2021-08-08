@@ -38,6 +38,6 @@ final class MyPageMainViewController: BaseViewController {
   
   @IBAction func logoutButtonDidTap(_ sender: Any) {
     //TODO: Test용 로그아웃 버튼
-    LoginManager.shared.resetAccessToken();
+    LoginManager.shared.resetAccessToken()
   }
 }
