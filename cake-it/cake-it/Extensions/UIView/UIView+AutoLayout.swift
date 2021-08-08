@@ -49,6 +49,8 @@ extension UIView {
                    leadingAnchor: NSLayoutXAxisAnchor? = nil,
                    bottomAnchor: NSLayoutYAxisAnchor? = nil,
                    trailingAnchor: NSLayoutXAxisAnchor? = nil,
+                   centerXAnchor: NSLayoutXAxisAnchor? = nil,
+                   centerYAnchor: NSLayoutYAxisAnchor? = nil,
                    padding: UIEdgeInsets = .zero,
                    width: CGFloat? = .zero,
                    height: CGFloat? = .zero) {
@@ -65,6 +67,12 @@ extension UIView {
     }
     if let trailingAnchor = trailingAnchor {
       self.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -padding.right).isActive = true
+    }
+    if let centerXAnchor = centerXAnchor {
+      self.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+    }
+    if let centerYAnchor = centerYAnchor {
+      self.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     if let width = width, width != 0 {
       self.widthAnchor.constraint(equalToConstant: width).isActive = true
