@@ -13,7 +13,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
     case filterCollectionView:
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
         cell.isFilterHightlighted = !cell.isFilterHightlighted
-        hightlightedFilterType = cell.filterType
+        highlightedFilterType = cell.filterType
       }
     case shopCollectionView:
       let identifier = String(describing: ShopDetailViewController.self)

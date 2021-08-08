@@ -33,7 +33,7 @@ extension ShopsMainViewController: UICollectionViewDataSource {
         isSelected = true
       }
       var isHighlighted = false
-      if hightlightedFilterType == filterType && hightlightedFilterType != .reset {
+      if highlightedFilterType == filterType && highlightedFilterType != .reset {
         isHighlighted = true
       }
       cell.delegate = self
@@ -57,7 +57,7 @@ extension ShopsMainViewController: UICollectionViewDataSource {
     if collectionView == filterCollectionView {
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
         cell.isFilterHightlighted = false
-        hightlightedFilterType = .reset
+        highlightedFilterType = .reset
       }
     }
   }
