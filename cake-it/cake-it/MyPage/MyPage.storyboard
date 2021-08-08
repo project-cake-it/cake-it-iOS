@@ -21,6 +21,7 @@
         <!--My Page Main View Controller-->
         <scene sceneID="tcA-cW-kmP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10f-8L-7Y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MyPageMainViewController" id="Yxa-9b-Zyd" customClass="MyPageMainViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YM1-tj-5st">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -95,10 +96,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iAv-et-PuK">
+                                <rect key="frame" x="344" y="792" width="50" height="50"/>
+                                <color key="backgroundColor" name="design_blue"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="OjW-zc-fZP"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="nTC-fK-ecD"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="logoutButtonDidTap:" destination="Yxa-9b-Zyd" eventType="touchUpInside" id="Z8i-r7-dEu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KMw-FY-mXL"/>
                         <color key="backgroundColor" name="white"/>
                         <constraints>
+                            <constraint firstItem="KMw-FY-mXL" firstAttribute="bottom" secondItem="iAv-et-PuK" secondAttribute="bottom" constant="20" id="0tx-w0-ORc"/>
                             <constraint firstItem="KMw-FY-mXL" firstAttribute="trailing" secondItem="xz8-xj-131" secondAttribute="trailing" id="57R-Yj-lGa"/>
                             <constraint firstItem="ZtK-TB-IXk" firstAttribute="leading" secondItem="KMw-FY-mXL" secondAttribute="leading" id="5K9-kE-blT"/>
                             <constraint firstItem="xz8-xj-131" firstAttribute="top" secondItem="KMw-FY-mXL" secondAttribute="top" id="64I-gc-o7x"/>
@@ -111,6 +124,7 @@
                             <constraint firstItem="xz8-xj-131" firstAttribute="leading" secondItem="KMw-FY-mXL" secondAttribute="leading" id="V42-hj-od8"/>
                             <constraint firstItem="KMw-FY-mXL" firstAttribute="bottom" secondItem="xz8-xj-131" secondAttribute="bottom" id="iMv-qA-E8c"/>
                             <constraint firstItem="RNM-yk-QhI" firstAttribute="leading" secondItem="KMw-FY-mXL" secondAttribute="leading" id="mgA-CE-rWx"/>
+                            <constraint firstItem="KMw-FY-mXL" firstAttribute="trailing" secondItem="iAv-et-PuK" secondAttribute="trailing" constant="20" id="rom-B8-IFf"/>
                             <constraint firstItem="KMw-FY-mXL" firstAttribute="trailing" secondItem="RNM-yk-QhI" secondAttribute="trailing" id="vdL-dZ-pCU"/>
                             <constraint firstItem="KMw-FY-mXL" firstAttribute="trailing" secondItem="YPu-lm-kOd" secondAttribute="trailing" id="zON-oL-Peh"/>
                         </constraints>
@@ -121,7 +135,6 @@
                         <outlet property="myPageTableView" destination="YPu-lm-kOd" id="s8H-NH-jLS"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10f-8L-7Y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101.449275362319" y="61.607142857142854"/>
         </scene>
@@ -481,6 +494,9 @@
         <image name="icChevronCompactRight" width="20" height="20"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="design_blue">
+            <color red="0.19215686274509805" green="0.38039215686274508" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="grayscale01">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

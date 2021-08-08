@@ -78,7 +78,7 @@ final class HomeViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    //  checkLogin()
+    checkLogin()
   }
   
   //MARK: - Private Func

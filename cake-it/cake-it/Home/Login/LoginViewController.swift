@@ -59,4 +59,10 @@ final class LoginViewController: UIViewController {
       self.finishLogin(success: success)
     })
   }
+  
+  @IBAction func signInWithAppleButtonDidTap(_ sender: Any) {
+    viewModel?.login(by: .APPLE, completion: { success in
+      self.finishLogin(success: success)
+    })
+  }
 }
