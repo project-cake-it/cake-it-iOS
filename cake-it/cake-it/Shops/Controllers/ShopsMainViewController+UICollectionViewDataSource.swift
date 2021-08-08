@@ -56,7 +56,7 @@ extension ShopsMainViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
     if collectionView == filterCollectionView {
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
-        cell.isFilterHightlighted = false
+        cell.isFilterHighlighted = false
         highlightedFilterType = .reset
       }
     }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FilterCategoryCellDelegate: class {
+protocol FilterCategoryCellDelegate: AnyObject {
   var selectedFilter: [String: [String]] { get set }
   var highlightedFilterType: FilterCommon.FilterType { get set }
 
@@ -21,12 +21,12 @@ final class FilterCategoryCell: UICollectionViewCell {
   
   weak var delegate: FilterCategoryCellDelegate?
   private(set) var filterType: FilterCommon.FilterType = .reset
-  var isFilterHightlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
+  var isFilterHighlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
     didSet {
       updateColorAndImage()
       
       if isSelected == true {
-        delegate?.filterCategoryCellDidTap(type: filterType, isHighlightedCell: isFilterHightlighted)
+        delegate?.filterCategoryCellDidTap(type: filterType, isHighlightedCell: isFilterHighlighted)
       }
     }
   }
@@ -39,13 +39,13 @@ final class FilterCategoryCell: UICollectionViewCell {
   override func prepareForReuse() {
     super.prepareForReuse()
     
-    isFilterHightlighted = false
+    isFilterHighlighted = false
     isFilterSelected = false
   }
   
   func update(type: FilterCommon.FilterType, isHighlighted: Bool, isSelected: Bool) {
     filterType = type
-    isFilterHightlighted = isHighlighted
+    isFilterHighlighted = isHighlighted
     isFilterSelected = isSelected
     
     titleLabel.text = type.title
@@ -65,17 +65,17 @@ final class FilterCategoryCell: UICollectionViewCell {
       return
     }
     
-    if isFilterHightlighted == true && isFilterSelected == true { // (T,T)
+    if isFilterHighlighted == true && isFilterSelected == true { // (T,T)
       arrowImageView.image = UIImage(named: "chevronCompactUpWhite")
       titleLabel.textColor = Colors.white
       self.layer.borderColor = Colors.pointB.cgColor
       self.backgroundColor = Colors.pointB
-    } else if isFilterHightlighted == true && isFilterSelected == false {  // (T,F)
+    } else if isFilterHighlighted == true && isFilterSelected == false {  // (T,F)
       arrowImageView.image = UIImage(named: "chevronCompactUp")
       titleLabel.textColor = Colors.pointB
       self.layer.borderColor = Colors.pointB.cgColor
       self.backgroundColor = Colors.white
-    } else if isFilterHightlighted == false && isFilterSelected == true {  // (F,T)
+    } else if isFilterHighlighted == false && isFilterSelected == true {  // (F,T)
       arrowImageView.image = UIImage(named: "chevronCompactDownWhite")
       titleLabel.textColor = Colors.white
       self.layer.borderColor = Colors.pointB.cgColor
