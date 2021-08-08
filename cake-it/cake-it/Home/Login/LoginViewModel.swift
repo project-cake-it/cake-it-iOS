@@ -178,7 +178,7 @@ extension LoginViewModel: ASAuthorizationControllerDelegate, ASAuthorizationCont
         return
       }
       
-      guard let tokenString = String(data:jwtToken, encoding: .utf8) else {
+      guard let tokenString = String(data: jwtToken, encoding: .utf8) else {
         loginCompletion?(false)
         return
       }
@@ -195,4 +195,3 @@ extension LoginViewModel: ASAuthorizationControllerDelegate, ASAuthorizationCont
     loginCompletion?(false)
   }
 }
-
