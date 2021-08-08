@@ -25,7 +25,7 @@ extension DesignListViewController: ThemeDetailViewDelegate {
 // Theme 관련 Private Method
 extension DesignListViewController {
   func showThemeDetailView() {
-    hideFilterDetailView()
+    removeFilterDetailView()
     
     themeDetailView = ThemeDetailView()
     if let detailView = themeDetailView {
