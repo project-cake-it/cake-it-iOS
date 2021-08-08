@@ -42,7 +42,7 @@
 		8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B647B1A262C4D0C003FA732 /* UIView+Border.swift */; };
 		8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B647B20262C52B1003FA732 /* PaddingLabel.swift */; };
 		8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B647B25262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift */; };
-		8B725BF626B6457D00E1CE1B /* ShopDetailAvailableDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B725BF526B6457D00E1CE1B /* ShopDetailAvailableDateViewController.swift */; };
+		8B725BF626B6457D00E1CE1B /* CakeOrderAvailableDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B725BF526B6457D00E1CE1B /* CakeOrderAvailableDateViewController.swift */; };
 		8B725BF826B64A6200E1CE1B /* UIView+AnimateCurveEaseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B725BF726B64A6200E1CE1B /* UIView+AnimateCurveEaseOut.swift */; };
 		8B875CF625DAE61D003D9CFA /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B875CF525DAE61D003D9CFA /* Search.storyboard */; };
 		8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */; };
@@ -283,7 +283,7 @@
 		8B647B1A262C4D0C003FA732 /* UIView+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Border.swift"; sourceTree = "<group>"; };
 		8B647B20262C52B1003FA732 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		8B647B25262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+RemoveAllArrangedSubviews.swift"; sourceTree = "<group>"; };
-		8B725BF526B6457D00E1CE1B /* ShopDetailAvailableDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailAvailableDateViewController.swift; sourceTree = "<group>"; };
+		8B725BF526B6457D00E1CE1B /* CakeOrderAvailableDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeOrderAvailableDateViewController.swift; sourceTree = "<group>"; };
 		8B725BF726B64A6200E1CE1B /* UIView+AnimateCurveEaseOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+AnimateCurveEaseOut.swift"; sourceTree = "<group>"; };
 		8B875CF525DAE61D003D9CFA /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		8B875CFD25DAE630003D9CFA /* SearchMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMainViewController.swift; sourceTree = "<group>"; };
@@ -623,7 +623,7 @@
 				AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */,
 				8B1DFDE526484CD40076E14C /* ShopDetailViewController+UICollectionViewDataSource.swift */,
 				8B1DFDE726484CF30076E14C /* ShopDetailViewController+UICollectionViewDelegate.swift */,
-				8B725BF526B6457D00E1CE1B /* ShopDetailAvailableDateViewController.swift */,
+				8B725BF526B6457D00E1CE1B /* CakeOrderAvailableDateViewController.swift */,
 				8B1E00B226BFCA3500377E22 /* ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift */,
 				8B1E00B426BFCA4E00377E22 /* ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift */,
 			);
@@ -1575,7 +1575,7 @@
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,
 				8B1DFDDF26459C2B0076E14C /* ShopDetailViewController.swift in Sources */,
-				8B725BF626B6457D00E1CE1B /* ShopDetailAvailableDateViewController.swift in Sources */,
+				8B725BF626B6457D00E1CE1B /* CakeOrderAvailableDateViewController.swift in Sources */,
 				F7B76D0A26B695510024674C /* UIView+Toast.swift in Sources */,
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */,

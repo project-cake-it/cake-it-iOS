@@ -1,5 +1,5 @@
 //
-//  ShopDetailAvailableDateViewController+UICollectionViewDelegate.swift
+//  CakeOrderAvailableDateViewController+UICollectionViewDelegate.swift
 //  cake-it
 //
 //  Created by Cory on 2021/08/08.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ShopDetailAvailableDateViewController: UICollectionViewDelegateFlowLayout {
+extension CakeOrderAvailableDateViewController: UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,

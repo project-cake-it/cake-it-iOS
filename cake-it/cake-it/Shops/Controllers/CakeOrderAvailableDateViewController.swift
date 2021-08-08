@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ShopDetailAvailableDateViewController: UIViewController {
+final class CakeOrderAvailableDateViewController: UIViewController {
   
   private enum Metric {
     static let sidePadding: CGFloat = 16.0
@@ -81,7 +81,7 @@ final class ShopDetailAvailableDateViewController: UIViewController {
     for offset in 0...maxMonthOffset {
       let monthUpdatedDate = minDate.after(monthOffset: offset)
       var datesByMonth = CakeOrderAvailableDates()
-      for day in 1...ShopDetailAvailableDateViewController.numberOfDaysByMonth[monthUpdatedDate.month] {
+      for day in 1...CakeOrderAvailableDateViewController.numberOfDaysByMonth[monthUpdatedDate.month] {
         var dayDate = CakeOrderAvailableDate(
           year: monthUpdatedDate.year,
           month: monthUpdatedDate.month,
@@ -170,7 +170,7 @@ final class ShopDetailAvailableDateViewController: UIViewController {
 
 // MARK: - Configuration
 
-extension ShopDetailAvailableDateViewController {
+extension CakeOrderAvailableDateViewController {
   
   private func configure() {
     configureView()

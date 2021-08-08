@@ -1,5 +1,5 @@
 //
-//  ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift
+//  CakeOrderAvailableDateViewController+UICollectionViewDataSource.swift
 //  cake-it
 //
 //  Created by Cory on 2021/08/08.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension ShopDetailAvailableDateViewController: UICollectionViewDataSource {
+extension CakeOrderAvailableDateViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView,
                       numberOfItemsInSection section: Int
   ) -> Int {

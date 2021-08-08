@@ -153,7 +153,7 @@ final class ShopDetailViewController: BaseViewController {
   
   @IBAction func orderAvailableDateButtonDidTap(_ sender: Any) {
     let availableDates = cakeShop?.orderAvailableDates ?? []
-    let dateViewController = ShopDetailAvailableDateViewController(availableDates: availableDates)
+    let dateViewController = CakeOrderAvailableDateViewController(availableDates: availableDates)
     dateViewController.modalPresentationStyle = .overFullScreen
     present(dateViewController, animated: false)
   }
