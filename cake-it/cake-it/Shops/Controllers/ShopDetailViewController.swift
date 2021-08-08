@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKTalk
+
 final class ShopDetailViewController: BaseViewController {
   
   enum BottomInfoState {
@@ -27,7 +28,7 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var savedButton: UIButton!
   @IBOutlet weak var savedCountLabel: UILabel!
-  @IBOutlet weak var showAvailableDateButton: UIButton!
+  @IBOutlet weak var orderAvailableDateButton: UIButton!
   
   @IBOutlet weak var themeLabel: UILabel!
   @IBOutlet weak var priceInfoBySizeStackView: UIStackView!
@@ -148,6 +149,13 @@ final class ShopDetailViewController: BaseViewController {
     } else {
       cancelSavedShop()
     }
+  }
+  
+  @IBAction func orderAvailableDateButtonDidTap(_ sender: Any) {
+    let availableDates = cakeShop?.orderAvailableDates ?? []
+    let dateViewController = CakeOrderAvailableDateViewController(availableDates: availableDates)
+    dateViewController.modalPresentationStyle = .overFullScreen
+    present(dateViewController, animated: false)
   }
   
   @IBAction func cakeDesignButtonDidTap(_ sender: Any) {
@@ -426,9 +434,9 @@ extension ShopDetailViewController {
   }
   
   private func configureViews() {
-    showAvailableDateButton.layer.borderWidth = 1.0
-    showAvailableDateButton.layer.borderColor = Colors.pointB.cgColor
-    showAvailableDateButton.round(cornerRadius: 4.0, clipsToBounds: true)
+    orderAvailableDateButton.layer.borderWidth = 1.0
+    orderAvailableDateButton.layer.borderColor = Colors.pointB.cgColor
+    orderAvailableDateButton.round(cornerRadius: 4.0, clipsToBounds: true)
     locationInfoContainerView.addBorder(borderColor: Colors.grayscale02, borderWidth: 1.0)
     bottomInfoShopInfoView.isHidden = true
     updateBottomInfoButton(cakeDesignButton)

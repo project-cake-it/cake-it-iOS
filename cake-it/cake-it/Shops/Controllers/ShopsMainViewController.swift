@@ -24,7 +24,7 @@ final class ShopsMainViewController: BaseViewController {
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailVC: FilterDetailViewController?
   var selectedFilter: Dictionary<String, [String]> = [:]
-  var hightlightedFilterType: FilterCommon.FilterType = .reset
+  var highlightedFilterType: FilterCommon.FilterType = .reset
 
   override func viewDidLoad() {
     super.viewDidLoad()

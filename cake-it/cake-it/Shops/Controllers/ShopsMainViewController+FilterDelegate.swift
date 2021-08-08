@@ -25,14 +25,14 @@ extension ShopsMainViewController: FilterCategoryCellDelegate {
 
 extension ShopsMainViewController: FilterDetailViewDelegate {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
-    hightlightedFilterType = type      // 포커스 된 셀 타입 저장
+    highlightedFilterType = type      // 포커스 된 셀 타입 저장
     selectedFilter[type.key] = values
     filterCollectionView.reloadData()
     fetchCakeShops()
   }
   
   func filterBackgroundViewDidTap() {
-    hightlightedFilterType = .reset
+    highlightedFilterType = .reset
     filterCollectionView.reloadData()
     hideFilterDetailView()
   }
@@ -41,7 +41,7 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
 // MARK:- Private Method
 extension ShopsMainViewController {
   func resetFilter() {
-    hightlightedFilterType = .reset
+    highlightedFilterType = .reset
     filterCollectionView.reloadData()
     selectedFilter.removeAll()
     hideFilterDetailView()

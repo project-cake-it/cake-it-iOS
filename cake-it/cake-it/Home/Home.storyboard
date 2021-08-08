@@ -538,6 +538,9 @@
                                                         <state key="normal" title="주문가능 날짜 보기">
                                                             <color key="titleColor" name="pointB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="orderAvailableDateButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="XCZ-wk-GMr"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -759,7 +762,6 @@
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="1000"/>
                     <connections>
                         <outlet property="addressLabel" destination="mvo-u4-haG" id="C1J-Ie-Ie2"/>
-                        <outlet property="availableOrderDay" destination="82m-JW-oM3" id="Cp9-kO-bg3"/>
                         <outlet property="cakeDesignLabel" destination="RlQ-zh-oHo" id="4aH-XL-gX1"/>
                         <outlet property="cakeInformationView" destination="ejS-p9-uTm" id="Grq-WB-Nhl"/>
                         <outlet property="cakeSimpleView" destination="EDf-sC-d2H" id="ham-M1-rCm"/>
@@ -773,6 +775,7 @@
                         <outlet property="naviSaveButton" destination="Cay-Bm-flT" id="aGA-Wt-O0B"/>
                         <outlet property="naviShopNameLabel" destination="3k5-yU-0ch" id="2CK-gE-j4C"/>
                         <outlet property="navigationBarView" destination="HJH-3s-3iJ" id="irF-Eq-kwk"/>
+                        <outlet property="orderAvailableDateButton" destination="82m-JW-oM3" id="Cp9-kO-bg3"/>
                         <outlet property="progressBar" destination="H1Q-qH-fwz" id="KuG-hg-Jc7"/>
                         <outlet property="scrollView" destination="V0K-j5-tBj" id="jXN-KF-kUs"/>
                         <outletCollection property="cakePriceBySizeLabels" destination="fz5-Q7-O6M" collectionClass="NSMutableArray" id="Hwd-oY-NkY"/>

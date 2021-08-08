@@ -12,8 +12,8 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
     switch collectionView {
     case filterCollectionView:
       if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
-        cell.isFilterHightlighted = !cell.isFilterHightlighted
-        hightlightedFilterType = cell.filterType
+        cell.isFilterHighlighted = !cell.isFilterHighlighted
+        highlightedFilterType = cell.filterType
       }
     case shopCollectionView:
       let identifier = String(describing: ShopDetailViewController.self)
@@ -26,18 +26,19 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
       break
     }
   }
-
+  
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
-                      insetForSectionAt section: Int) -> UIEdgeInsets {
+                      insetForSectionAt section: Int
+  ) -> UIEdgeInsets {
     return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
   }
-
+  
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
-                      sizeForItemAt indexPath: IndexPath) -> CGSize {
+                      sizeForItemAt indexPath: IndexPath
+  ) -> CGSize {
     switch collectionView {
-
     case filterCollectionView:
       let label = UILabel()
       label.text = shopFilterList[indexPath.row].title
@@ -47,25 +48,27 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
         + FilterCommon.Metric.categoryCellLeftInset
         + FilterCommon.Metric.categoryCellRightInset
       return CGSize(width: cellWidth, height: FilterCommon.Metric.categoryCellHeight)
-
+      
     case shopCollectionView:
       let width = UIScreen.main.bounds.width
       return CGSize(width: width, height: Metric.cakeShopCellHeight)
-
+      
     default:
       return CGSize(width: 0, height: 0)
     }
   }
-
+  
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
-                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+                      minimumLineSpacingForSectionAt section: Int
+  ) -> CGFloat {
     return Metric.cakeShopCellInterItemVerticalSpace
   }
-
+  
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
-                      minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+                      minimumInteritemSpacingForSectionAt section: Int
+  ) -> CGFloat {
     switch collectionView {
     case filterCollectionView:
       return 8.0

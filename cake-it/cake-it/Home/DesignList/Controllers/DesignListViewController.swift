@@ -41,7 +41,7 @@ final class DesignListViewController: BaseViewController {
   }
   fileprivate var selectedTheme: [String: String] = [:]     // 선택된 테마 리스트
   var selectedFilter: [String: [String]] = [:]  // 선택된 필터 리스트
-  var hightlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
+  var highlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
   var filterDetailVC: FilterDetailViewController?     // 필터 디테일 리스트
   var themeDetailView: ThemeDetailView?       // 테마 디테일 리스트
 
