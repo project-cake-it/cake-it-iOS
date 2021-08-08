@@ -14,8 +14,8 @@ extension UIView {
                  completion: (()->Void)? = nil) {
     
     let toastView = makeToastView(message: message)
-        UIView.animate(withDuration: durationTime, animations: {
-      toastView.alpha = 0.8
+    UIView.animate(withDuration: durationTime, animations: {
+      toastView.alpha = 1.0
     }, completion: { _ in
       UIView.animate(withDuration: durationTime, delay: delayTime, animations: {
         toastView.alpha = 0.0
@@ -30,10 +30,10 @@ extension UIView {
   
   private func makeToastView(message: String) -> UIView {
     let toastView = UIView()
-    toastView.backgroundColor = .black
+    toastView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
     toastView.alpha = 0.0
     toastView.clipsToBounds = false
-    toastView.layer.cornerRadius = 15
+    toastView.layer.cornerRadius = 8
     self.addSubview(toastView)
 
     let label = UILabel()
@@ -45,11 +45,11 @@ extension UIView {
     label.lineBreakMode = .byCharWrapping
     label.sizeToFit()
     toastView.addSubview(label)
-
+    
     let bottomMargin: CGFloat = 50.0
     let horizentalPadding: CGFloat = 30.0
     let verticalPadding: CGFloat = 15.0
-
+    
     label.translatesAutoresizingMaskIntoConstraints = false
     if label.frame.width < Constants.SCREEN_WIDTH - horizentalPadding * 2 {
       NSLayoutConstraint.activate([
@@ -75,9 +75,9 @@ extension UIView {
       toastView.centerXAnchor.constraint(equalTo: label.centerXAnchor),
       toastView.centerYAnchor.constraint(equalTo: label.centerYAnchor),
       toastView.widthAnchor.constraint(equalTo: label.widthAnchor,
-                                     constant: horizentalPadding),
+                                       constant: horizentalPadding),
       toastView.heightAnchor.constraint(greaterThanOrEqualTo: label.heightAnchor,
-                                      constant: verticalPadding)
+                                        constant: verticalPadding)
     ])
     
     return toastView
