@@ -106,13 +106,16 @@ extension ShopsMainViewController {
     }
   }
   
-  private func removeFilterDetailView() {
+  func removeFilterDetailView() {
     if let detailView = filterDetailView {
       for subView in detailView.subviews {
         subView.removeFromSuperview()
       }
     }
     filterDetailView?.removeFromSuperview()
+    
+    hightlightedFilterType = .reset
+    filterCollectionView.reloadData()
   }
   
   private func isShowDetailView() -> Bool {

@@ -386,6 +386,7 @@
                     <connections>
                         <outlet property="designsCollectionView" destination="BOB-Bu-wpc" id="Ihi-OE-LQC"/>
                         <outlet property="filterCategoryCollectionView" destination="rqE-aU-fdF" id="ldg-75-Lut"/>
+                        <outlet property="navigationBarHeightConstraint" destination="jMA-ei-QD2" id="JVZ-7M-Owu"/>
                         <outlet property="navigationBarTitleArrowIcon" destination="xdY-bA-and" id="qY9-1W-ddp"/>
                         <outlet property="navigationBarTitleLabel" destination="Vep-8G-tgO" id="ZiA-tj-ZUG"/>
                         <outlet property="navigationBarTitleTapGestureView" destination="jv3-QA-chs" id="39O-xG-eOQ"/>

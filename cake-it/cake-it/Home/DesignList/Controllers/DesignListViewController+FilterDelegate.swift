@@ -100,6 +100,9 @@ extension DesignListViewController {
       }
     }
     filterDetailView?.removeFromSuperview()
+    
+    hightlightedFilterType = .reset
+    filterCategoryCollectionView.reloadData()
   }
   
   private func isShowFilterDetailView() -> Bool {
