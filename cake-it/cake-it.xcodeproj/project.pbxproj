@@ -23,6 +23,14 @@
 		8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */; };
 		8B1DFDE626484CD40076E14C /* ShopDetailViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE526484CD40076E14C /* ShopDetailViewController+UICollectionViewDataSource.swift */; };
 		8B1DFDE826484CF30076E14C /* ShopDetailViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1DFDE726484CF30076E14C /* ShopDetailViewController+UICollectionViewDelegate.swift */; };
+		8B1E00A626BFB75D00377E22 /* CakeOrderAvailableDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E00A426BFB75D00377E22 /* CakeOrderAvailableDateCell.swift */; };
+		8B1E00A726BFB75D00377E22 /* CakeOrderAvailableDateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B1E00A526BFB75D00377E22 /* CakeOrderAvailableDateCell.xib */; };
+		8B1E00AB26BFBDCE00377E22 /* Date+Elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E00AA26BFBDCE00377E22 /* Date+Elements.swift */; };
+		8B1E00AD26BFBDF400377E22 /* DateFormatter+CakeOrderAvailableDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E00AC26BFBDF400377E22 /* DateFormatter+CakeOrderAvailableDateFormatter.swift */; };
+		8B1E00AF26BFC53700377E22 /* CakeOrderAvailableDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E00AE26BFC53700377E22 /* CakeOrderAvailableDate.swift */; };
+		8B1E00B126BFC55400377E22 /* CakeOrderAvailableDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E00B026BFC55400377E22 /* CakeOrderAvailableDates.swift */; };
+		8B1E00B326BFCA3500377E22 /* ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E00B226BFCA3500377E22 /* ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift */; };
+		8B1E00B526BFCA4E00377E22 /* ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B1E00B426BFCA4E00377E22 /* ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift */; };
 		8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7540261C9812007757E5 /* CakeShop.swift */; };
 		8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */; };
 		8B2A7548261C9AF5007757E5 /* CakeShopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */; };
@@ -249,6 +257,14 @@
 		8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignSquareImageCell.swift; sourceTree = "<group>"; };
 		8B1DFDE526484CD40076E14C /* ShopDetailViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopDetailViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8B1DFDE726484CF30076E14C /* ShopDetailViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopDetailViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
+		8B1E00A426BFB75D00377E22 /* CakeOrderAvailableDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeOrderAvailableDateCell.swift; sourceTree = "<group>"; };
+		8B1E00A526BFB75D00377E22 /* CakeOrderAvailableDateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeOrderAvailableDateCell.xib; sourceTree = "<group>"; };
+		8B1E00AA26BFBDCE00377E22 /* Date+Elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Elements.swift"; sourceTree = "<group>"; };
+		8B1E00AC26BFBDF400377E22 /* DateFormatter+CakeOrderAvailableDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+CakeOrderAvailableDateFormatter.swift"; sourceTree = "<group>"; };
+		8B1E00AE26BFC53700377E22 /* CakeOrderAvailableDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeOrderAvailableDate.swift; sourceTree = "<group>"; };
+		8B1E00B026BFC55400377E22 /* CakeOrderAvailableDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeOrderAvailableDates.swift; sourceTree = "<group>"; };
+		8B1E00B226BFCA3500377E22 /* ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		8B1E00B426BFCA4E00377E22 /* ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift"; sourceTree = "<group>"; };
 		8B2A7540261C9812007757E5 /* CakeShop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShop.swift; sourceTree = "<group>"; };
 		8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeShopCell.swift; sourceTree = "<group>"; };
 		8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeShopCell.xib; sourceTree = "<group>"; };
@@ -557,6 +573,22 @@
 			path = UIDevice;
 			sourceTree = "<group>";
 		};
+		8B1E00A826BFBD6600377E22 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				8B1E00AA26BFBDCE00377E22 /* Date+Elements.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		8B1E00A926BFBD7900377E22 /* DateFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				8B1E00AC26BFBDF400377E22 /* DateFormatter+CakeOrderAvailableDateFormatter.swift */,
+			);
+			path = DateFormatter;
+			sourceTree = "<group>";
+		};
 		8B2A7539261C9716007757E5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,6 +609,8 @@
 				8B1DFDE526484CD40076E14C /* ShopDetailViewController+UICollectionViewDataSource.swift */,
 				8B1DFDE726484CF30076E14C /* ShopDetailViewController+UICollectionViewDelegate.swift */,
 				8B725BF526B6457D00E1CE1B /* ShopDetailAvailableDateViewController.swift */,
+				8B1E00B226BFCA3500377E22 /* ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift */,
+				8B1E00B426BFCA4E00377E22 /* ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -585,6 +619,8 @@
 			isa = PBXGroup;
 			children = (
 				8B2A7540261C9812007757E5 /* CakeShop.swift */,
+				8B1E00AE26BFC53700377E22 /* CakeOrderAvailableDate.swift */,
+				8B1E00B026BFC55400377E22 /* CakeOrderAvailableDates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -596,6 +632,8 @@
 				8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */,
 				8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */,
 				8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */,
+				8B1E00A426BFB75D00377E22 /* CakeOrderAvailableDateCell.swift */,
+				8B1E00A526BFB75D00377E22 /* CakeOrderAvailableDateCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -644,6 +682,8 @@
 		8B62C3282601005D005F599A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B1E00A926BFBD7900377E22 /* DateFormatter */,
+				8B1E00A826BFBD6600377E22 /* Date */,
 				8B1DFDE026484A800076E14C /* UIDevice */,
 				8B0DDA4F260CE10B003923D9 /* UIView */,
 				8B62C31F26010033005F599A /* UIViewController */,
@@ -1235,6 +1275,7 @@
 				8B93B2E82610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf in Resources */,
 				F7A886E6265A428B00930932 /* FilterDetailView.xib in Resources */,
 				AC422A2126A08920006ACC20 /* detail_button.png in Resources */,
+				8B1E00A726BFB75D00377E22 /* CakeOrderAvailableDateCell.xib in Resources */,
 				AC422A2326A08920006ACC20 /* map_pin_custom@3x.png in Resources */,
 				AC422A4D26A08920006ACC20 /* map_pin_shadow.png in Resources */,
 				8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */,
@@ -1432,6 +1473,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1E00A626BFB75D00377E22 /* CakeOrderAvailableDateCell.swift in Sources */,
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
 				AC9FA08526790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift in Sources */,
 				F7865959265D6F200020AFAC /* FilterTableHeaderCell.swift in Sources */,
@@ -1452,6 +1494,7 @@
 				ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */,
 				AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */,
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
+				8B1E00B526BFCA4E00377E22 /* ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift in Sources */,
 				F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */,
@@ -1467,6 +1510,7 @@
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
 				F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */,
+				8B1E00AB26BFBDCE00377E22 /* Date+Elements.swift in Sources */,
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,
 				8B0DDA5F260CE4F4003923D9 /* UIView+RoundCorner.swift in Sources */,
 				F7590736267F85C8000ECBD7 /* ThemeDetailView.swift in Sources */,
@@ -1488,6 +1532,7 @@
 				AC422A5226A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift in Sources */,
 				8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */,
 				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,
+				8B1E00B126BFC55400377E22 /* CakeOrderAvailableDates.swift in Sources */,
 				8B1DFDE826484CF30076E14C /* ShopDetailViewController+UICollectionViewDelegate.swift in Sources */,
 				AC9FD4C1263F085F00A44862 /* CakeListSubViewController.swift in Sources */,
 				8B3AE24F261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift in Sources */,
@@ -1496,12 +1541,14 @@
 				AC9FA082267909370050F9F0 /* HomeThemeCell.swift in Sources */,
 				F768D201265801A50092E3CE /* FilterCategoryCell.swift in Sources */,
 				F71F330D26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift in Sources */,
+				8B1E00AD26BFBDF400377E22 /* DateFormatter+CakeOrderAvailableDateFormatter.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
 				AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */,
 				AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
 				F774B94925E0E0FE006EE0EC /* BaseViewController.swift in Sources */,
 				AC9FD4C52642BB6600A44862 /* CakeListSubViewController+UICollectionViewDataSource.swift in Sources */,
+				8B1E00AF26BFC53700377E22 /* CakeOrderAvailableDate.swift in Sources */,
 				AC0B8FD82645AB94009016A9 /* MyPageMainViewController+UITableViewDataSource.swift in Sources */,
 				AC0B8FE226466778009016A9 /* InfomationViewController.swift in Sources */,
 				AC0B8FDC2645BC3C009016A9 /* MyPageMainViewController+UITableViewDelegate.swift in Sources */,
@@ -1521,6 +1568,7 @@
 				8B62C32126010043005F599A /* UIViewController+instantiateFromStoryboard.swift in Sources */,
 				8B725BF826B64A6200E1CE1B /* UIView+AnimateCurveEaseOut.swift in Sources */,
 				F7A887C3265A4C4800930932 /* FilterBasicCell.swift in Sources */,
+				8B1E00B326BFCA3500377E22 /* ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift in Sources */,
 				F71F331D266290DC00E2E19E /* FilterManager.swift in Sources */,
 				F759073A267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift in Sources */,
 				AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */,

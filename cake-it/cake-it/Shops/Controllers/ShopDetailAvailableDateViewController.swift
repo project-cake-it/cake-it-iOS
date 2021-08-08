@@ -9,6 +9,10 @@ import UIKit
 
 final class ShopDetailAvailableDateViewController: UIViewController {
   
+  private enum Metric {
+    static let sidePadding: CGFloat = 16.0
+  }
+  
   private var containerView: UIView!
   private var titleLabel: UILabel!
   private var dismissButton: UIButton!
@@ -17,8 +21,22 @@ final class ShopDetailAvailableDateViewController: UIViewController {
   private var nextMonthButton: UIButton!
   private var weekdayTitleLabelStackView: UIStackView!
   private var collectionView: UICollectionView!
+  private var collectionViewHeightConstraint: NSLayoutConstraint!
   
   private var hasAppearingAnimated = false
+  
+  static let numberOfDaysByMonth: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+  /// 현재 달부터 최대 달
+  private var maxMonthOffset: Int = 1
+  
+  private(set) var totalOrderDates: [CakeOrderAvailableDates] = []
+  private(set) var currentMonthIndex: Int = 0 {
+    didSet {
+      collectionView.reloadData()
+      updateCollectionViewHeightToItsHeight()
+      updateCurrentYearMonthLabel()
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,6 +49,34 @@ final class ShopDetailAvailableDateViewController: UIViewController {
     guard hasAppearingAnimated == false else { return }
     
     showBackgroundView()
+  }
+  
+  private func configureDateDatas() {
+    let currentDate = CakeOrderAvailableDate(date: Date())
+//    let minDateDayOffset = currentDate.hour >= 18 ? 2 : 1
+    let minDateDayOffset = 1
+    let minDate = currentDate.after(dayOffset: minDateDayOffset)
+    let maxDate = currentDate.after(dayOffset: 30)
+    maxMonthOffset = maxDate.month - minDate.month
+    
+    for offset in 0...maxMonthOffset {
+      let monthUpdatedDate = minDate.after(monthOffset: offset)
+      var datesByMonth = CakeOrderAvailableDates()
+      for day in 1...ShopDetailAvailableDateViewController.numberOfDaysByMonth[monthUpdatedDate.month] {
+        var dayDate = CakeOrderAvailableDate(
+          year: monthUpdatedDate.year,
+          month: monthUpdatedDate.month,
+          day: day)
+        if dayDate < minDate || dayDate > maxDate {
+          dayDate.disabled()
+        }
+        datesByMonth.append(dayDate)
+      }
+      datesByMonth.configureFirstDayOffsetDates()
+      totalOrderDates.append(datesByMonth)
+    }
+    collectionView.reloadData()
+    updateCollectionViewHeightToItsHeight()
   }
   
   private func showBackgroundView() {
@@ -59,6 +105,22 @@ final class ShopDetailAvailableDateViewController: UIViewController {
   }
   
   @objc private func backgroundViewDidTap() {
+    dismiss()
+  }
+  
+  @objc private func dismissButtonDidTap() {
+    dismiss()
+  }
+  
+  @objc private func previousMonthButtonDidTap() {
+    currentMonthIndex = max(0, currentMonthIndex - 1)
+  }
+  
+  @objc private func nextMonthButtonDidTap() {
+    currentMonthIndex = min(maxMonthOffset, currentMonthIndex + 1)
+  }
+  
+  private func dismiss() {
     UIView.animateCurveEaseOut(withDuration: 0.15) {
       self.containerView.alpha = 0
       self.view.backgroundColor = UIColor(displayP3Red: 00, green: 0, blue: 0, alpha: 0)
@@ -66,6 +128,22 @@ final class ShopDetailAvailableDateViewController: UIViewController {
       self.dismiss(animated: false, completion: nil)
     }
   }
+  
+  private func updateCurrentYearMonthLabel() {
+    let currentDate = CakeOrderAvailableDate(date: Date())
+    let newDate = currentDate.after(monthOffset: currentMonthIndex)
+    currentYearMonthLabel.text = "\(newDate.year)년 \(newDate.month)월"
+  }
+  
+//
+//  private func updateChangeMonthButtonState() {
+//    previousMonthButton.isEnabled = currentMonthIndex != 0
+//    previousMonthButton.tintColor = previousMonthButton.isEnabled ?
+//      Colors.primaryColorLighter01 : Colors.primaryColorLighter04
+//    nextMonthButton.isEnabled = currentMonthIndex != maxMonthOffset
+//    nextMonthButton.tintColor = nextMonthButton.isEnabled ?
+//      Colors.primaryColorLighter01 : Colors.primaryColorLighter04
+//  }
 }
 
 // MARK: - Configuration
@@ -76,10 +154,14 @@ extension ShopDetailAvailableDateViewController {
     configureView()
     configureContainerView()
     configureTitleLabel()
+    configureDismissButton()
     configureCurrentYearMonthLabel()
     configureArrowButtons()
     configureWeekdayTitleLabelStackView()
     configureCollectionView()
+    registerCollectionViewCell()
+    configureDateDatas()
+    updateCurrentYearMonthLabel()
   }
   
   private func configureView() {
@@ -95,7 +177,11 @@ extension ShopDetailAvailableDateViewController {
     containerView.constraints(topAnchor: nil,
                               leadingAnchor: view.leadingAnchor,
                               bottomAnchor: nil,
-                              trailingAnchor: view.trailingAnchor)
+                              trailingAnchor: view.trailingAnchor,
+                              padding: .init(top: 0,
+                                             left: Metric.sidePadding,
+                                             bottom: 0,
+                                             right: Metric.sidePadding))
     containerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   }
   
@@ -113,6 +199,20 @@ extension ShopDetailAvailableDateViewController {
     titleLabel.centerXAnchor.constraint(equalTo: containerView.centerXAnchor).isActive = true
   }
   
+  private func configureDismissButton() {
+    dismissButton = UIButton(type: .system)
+    dismissButton.setImage(#imageLiteral(resourceName: "icDismiss"), for: .normal)
+    dismissButton.tintColor = Colors.black
+    containerView.addSubview(dismissButton)
+    dismissButton.constraints(topAnchor: containerView.topAnchor,
+                              leadingAnchor: nil,
+                              bottomAnchor: nil,
+                              trailingAnchor: containerView.trailingAnchor,
+                              padding: .init(top: 8, left: 0, bottom: 0, right: 12),
+                              size: .init(width: 38, height: 38))
+    dismissButton.addTarget(self, action: #selector(dismissButtonDidTap), for: .touchUpInside)
+  }
+  
   private func configureCurrentYearMonthLabel() {
     currentYearMonthLabel = UILabel()
     currentYearMonthLabel.text = "0000년 0월"
@@ -127,16 +227,36 @@ extension ShopDetailAvailableDateViewController {
   }
   
   private func configureArrowButtons() {
-    previousMonthButton = UIButton(type: .system)
-    previousMonthButton.setImage(#imageLiteral(resourceName: "icChevronCompactRight-blue"), for: .normal)
+    nextMonthButton = UIButton(type: .system)
+    nextMonthButton.setImage(#imageLiteral(resourceName: "icChevronCalendarRight"), for: .normal)
+    nextMonthButton.tintColor = Colors.pointB
+    containerView.addSubview(nextMonthButton)
+    nextMonthButton.constraints(topAnchor: dismissButton.bottomAnchor,
+                                leadingAnchor: nil,
+                                bottomAnchor: nil,
+                                trailingAnchor: containerView.trailingAnchor,
+                                padding: .init(top: 16, left: 0, bottom: 0, right: 12),
+                                size: .init(width: 33, height: 33))
+    nextMonthButton.addTarget(self, action: #selector(nextMonthButtonDidTap), for: .touchUpInside)
     
+    previousMonthButton = UIButton(type: .system)
+    previousMonthButton.setImage(#imageLiteral(resourceName: "icChevronCalendarLeft"), for: .normal)
+    previousMonthButton.tintColor = Colors.pointB
+    containerView.addSubview(previousMonthButton)
+    previousMonthButton.constraints(topAnchor: nextMonthButton.topAnchor,
+                                    leadingAnchor: nil,
+                                    bottomAnchor: nil,
+                                    trailingAnchor: nextMonthButton.leadingAnchor,
+                                    padding: .init(top: 0, left: 0, bottom: 0, right: 4),
+                                    size: .init(width: 33, height: 33))
+    previousMonthButton.addTarget(self, action: #selector(previousMonthButtonDidTap), for: .touchUpInside)
   }
   
   private func configureWeekdayTitleLabelStackView() {
     weekdayTitleLabelStackView = UIStackView()
     weekdayTitleLabelStackView.distribution = .fillEqually
     weekdayTitleLabelStackView.axis = .horizontal
-    let weekdayTitles = ["월", "화", "수", "목", "금", "토", "일"]
+    let weekdayTitles = ["일", "월", "화", "수", "목", "금", "토"]
     weekdayTitles.forEach {
       let label = UILabel()
       label.textAlignment = .center
@@ -156,13 +276,30 @@ extension ShopDetailAvailableDateViewController {
   
   private func configureCollectionView() {
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    collectionView.backgroundColor = .yellow
+    collectionView.backgroundColor = .clear
+    collectionView.dataSource = self
+    collectionView.delegate = self
     containerView.addSubview(collectionView)
     collectionView.constraints(topAnchor: weekdayTitleLabelStackView.bottomAnchor,
                                leadingAnchor: containerView.leadingAnchor,
                                bottomAnchor: containerView.bottomAnchor,
                                trailingAnchor: containerView.trailingAnchor,
-                               padding: .init(top: 12, left: 0, bottom: 32, right: 0),
-                               size: .init(width: 0, height: 260))
+                               padding: .init(top: 12, left: 0, bottom: 32, right: 0))
+    collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 260)
+    collectionViewHeightConstraint.isActive = true
+  }
+  
+  private func registerCollectionViewCell() {
+    let nibName = String(describing: CakeOrderAvailableDateCell.self)
+    let nib = UINib(nibName: nibName, bundle: nil)
+    collectionView.register(nib, forCellWithReuseIdentifier: nibName)
+  }
+  
+  private func updateCollectionViewHeightToItsHeight() {
+    view.layoutIfNeeded()
+    let contentHeight = collectionView.collectionViewLayout.collectionViewContentSize.height
+    collectionViewHeightConstraint.constant = contentHeight
+    collectionViewHeightConstraint.priority = .required
+    collectionViewHeightConstraint.isActive = true
   }
 }
