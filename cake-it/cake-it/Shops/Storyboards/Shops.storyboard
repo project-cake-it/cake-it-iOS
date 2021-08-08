@@ -116,7 +116,7 @@
                     <navigationItem key="navigationItem" id="Uzs-0C-tZu"/>
                     <connections>
                         <outlet property="filterCollectionView" destination="8bT-Q4-PmK" id="Ped-i0-phE"/>
-                        <outlet property="filterDetailContainerView" destination="tcO-Rn-Bpq" id="LJn-jP-VR9"/>
+                        <outlet property="filterDetailContainerView" destination="hNp-cu-CZ0" id="dOf-Az-e4R"/>
                         <outlet property="shopCollectionView" destination="tcO-Rn-Bpq" id="5ad-iO-TbH"/>
                         <outlet property="titleView" destination="mou-Gn-Jwo" id="VLi-wR-IZI"/>
                         <outlet property="titleViewHeightConstraint" destination="js2-yj-h8y" id="VmM-S8-dFK"/>
