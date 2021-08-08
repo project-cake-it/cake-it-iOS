@@ -13,8 +13,14 @@ protocol FilterTableHeaderCellDelegate: AnyObject {
 
 final class FilterTableHeaderCell: UITableViewCell {
   
+  @IBOutlet weak var checkImageView: UIImageView!
+  
   weak var delegate: FilterTableHeaderCellDelegate?
-  var isCellSelected: Bool = false
+  var isCellSelected: Bool = false {
+    didSet {
+      checkImageView.isHidden = !isCellSelected
+    }
+  }
   
   @IBAction func buttonDidTap(_ sender: Any) {
     isCellSelected = !isCellSelected

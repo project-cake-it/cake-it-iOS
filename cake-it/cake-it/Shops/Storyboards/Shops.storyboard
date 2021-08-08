@@ -90,9 +90,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pu1-fI-rmw">
-                                <rect key="frame" x="0.0" y="141" width="414" height="721"/>
-                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gNX-IU-ksp"/>
                         <color key="backgroundColor" name="white"/>
@@ -103,20 +100,15 @@
                             <constraint firstItem="mou-Gn-Jwo" firstAttribute="top" secondItem="gNX-IU-ksp" secondAttribute="top" id="Xs4-lA-E21"/>
                             <constraint firstItem="8bT-Q4-PmK" firstAttribute="top" secondItem="mou-Gn-Jwo" secondAttribute="bottom" constant="12" id="aVQ-ud-pVF"/>
                             <constraint firstItem="mou-Gn-Jwo" firstAttribute="leading" secondItem="gNX-IU-ksp" secondAttribute="leading" id="fS7-bn-osK"/>
-                            <constraint firstItem="gNX-IU-ksp" firstAttribute="leading" secondItem="pu1-fI-rmw" secondAttribute="leading" id="ilG-wU-6nW"/>
                             <constraint firstItem="gNX-IU-ksp" firstAttribute="trailing" secondItem="tcO-Rn-Bpq" secondAttribute="trailing" id="m6N-v6-ocx"/>
-                            <constraint firstItem="gNX-IU-ksp" firstAttribute="trailing" secondItem="pu1-fI-rmw" secondAttribute="trailing" id="mio-bK-c48"/>
                             <constraint firstItem="gNX-IU-ksp" firstAttribute="trailing" secondItem="8bT-Q4-PmK" secondAttribute="trailing" id="mpX-Bc-YCm"/>
                             <constraint firstItem="gNX-IU-ksp" firstAttribute="bottom" secondItem="tcO-Rn-Bpq" secondAttribute="bottom" id="oaW-Sx-oen"/>
-                            <constraint firstItem="pu1-fI-rmw" firstAttribute="top" secondItem="8bT-Q4-PmK" secondAttribute="bottom" id="vR2-Rl-2n6"/>
                             <constraint firstItem="8bT-Q4-PmK" firstAttribute="leading" secondItem="gNX-IU-ksp" secondAttribute="leading" id="wHh-Wb-78l"/>
-                            <constraint firstItem="gNX-IU-ksp" firstAttribute="bottom" secondItem="pu1-fI-rmw" secondAttribute="bottom" id="y2w-Wt-6c2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uzs-0C-tZu"/>
                     <connections>
                         <outlet property="filterCollectionView" destination="8bT-Q4-PmK" id="Ped-i0-phE"/>
-                        <outlet property="filterDetailContainerView" destination="pu1-fI-rmw" id="E1Z-69-nNu"/>
                         <outlet property="shopCollectionView" destination="tcO-Rn-Bpq" id="5ad-iO-TbH"/>
                         <outlet property="titleView" destination="mou-Gn-Jwo" id="VLi-wR-IZI"/>
                         <outlet property="titleViewHeightConstraint" destination="js2-yj-h8y" id="VmM-S8-dFK"/>

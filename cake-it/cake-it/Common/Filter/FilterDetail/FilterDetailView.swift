@@ -1,8 +1,8 @@
 //
-//  FilterDetailViewController.swift
+//  FilterDetailView.swift
 //  cake-it
 //
-//  Created by seungbong on 2021/07/18.
+//  Created by seungbong on 2021/05/23.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ protocol FilterDetailViewDelegate: AnyObject {
   func filterBackgroundViewDidTap()
 }
 
-final class FilterDetailViewController: UIViewController {
+final class FilterDetailView: UIView {
   
   enum Metric {
     static let tableViewDefaultHeight: CGFloat = 400.0
@@ -23,23 +23,39 @@ final class FilterDetailViewController: UIViewController {
     static let tableViewRadius: CGFloat = 16.0
   }
   
-  @IBOutlet weak var filterTableView: UITableView!
-  @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var backgroundView: UIView!
+  @IBOutlet weak var filterTableView: UITableView!
+  var filterTableViewHeightConstraint: NSLayoutConstraint?
   
   weak var delegate: FilterDetailViewDelegate?
-  var filterType: FilterCommon.FilterType = .reset
-  var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
-  var tableViewHeight: CGFloat = 0.0 {
+  var filterType: FilterCommon.FilterType = .reset {
     didSet {
-      tableViewHeightConstraint?.constant = tableViewHeight
+      registerCell()
     }
   }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
+  var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
+  var tableViewHeight: CGFloat = 0.0
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    commonInit()
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+    commonInit()
+  }
+  
+  private func commonInit() {
+    loadView()
     configureView()
+  }
+  
+  private func loadView() {
+    let view = Bundle.main.loadNibNamed(String(describing: FilterDetailView.self),
+                                        owner: self,
+                                        options: nil)?.first as! UIView
+    self.addSubview(view)
   }
   
   private func configureView() {
@@ -48,10 +64,24 @@ final class FilterDetailViewController: UIViewController {
     filterTableView.separatorStyle = .none
     filterTableView.round(cornerRadius: Metric.tableViewRadius,
                           maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
-    registerCell()
     
+    settingConstraint()
+
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
     backgroundView.addGestureRecognizer(tapGesture)
+  }
+  
+  private func settingConstraint() {
+    backgroundView.constraints(topAnchor: self.topAnchor,
+                               leadingAnchor: self.leadingAnchor,
+                               bottomAnchor: self.bottomAnchor,
+                               trailingAnchor: self.trailingAnchor)
+
+    filterTableView.constraints(topAnchor: self.topAnchor,
+                                leadingAnchor: self.leadingAnchor,
+                                trailingAnchor: self.trailingAnchor)
+    filterTableViewHeightConstraint = filterTableView.heightAnchor.constraint(equalToConstant: Metric.tableViewDefaultHeight)
+    filterTableViewHeightConstraint?.isActive = true
   }
   
   private func registerCell() {
@@ -66,12 +96,18 @@ final class FilterDetailViewController: UIViewController {
   }
   
   private func registerTableCell() {
-    var identifiers: [String] = []
-    identifiers.append(String(describing: FilterBasicCell.self))
-    identifiers.append(String(describing: FilterColorCell.self))
-    identifiers.append(String(describing: FilterDescriptionCell.self))
+    var identifier: String?
+    switch filterType {
+    case .order, .category, .region:
+      identifier = String(describing: FilterBasicCell.self)
+    case .color:
+      identifier = String(describing: FilterColorCell.self)
+    case .size:
+      identifier = String(describing: FilterDescriptionCell.self)
+    default: break
+    }
     
-    for id in identifiers {
+    if let id = identifier {
       let nib = UINib(nibName: id, bundle: nil)
       filterTableView.register(nib, forCellReuseIdentifier: id)
     }
@@ -83,11 +119,13 @@ final class FilterDetailViewController: UIViewController {
   
   @objc private func backgroundViewDidTap() {
     delegate?.filterBackgroundViewDidTap()
+    
+    for subView in self.subviews {
+      subView.removeFromSuperview()
+    }
+    self.removeFromSuperview()
   }
-}
-
-// MARK:- Private Method
-extension FilterDetailViewController {
+  
   func updateSelectedList(selectedIndex: Int = 0,
                           isAllSelected: Bool = false,
                           isAllDeselected: Bool = false) {
@@ -132,8 +170,8 @@ extension FilterDetailViewController {
   }
 }
 
-// MARK:- 테이블 헤더셀 전체선택 처리
-extension FilterDetailViewController: FilterTableHeaderCellDelegate {
+extension FilterDetailView: FilterTableHeaderCellDelegate {
+  // 전체 선택 처리
   func headerCellDidTap(isSelected: Bool) {
     if isSelected {
       updateSelectedList(isAllSelected: true)

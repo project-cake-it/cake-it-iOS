@@ -26,11 +26,11 @@ final class FilterManager {
   func allValuesOfCase(type: FilterCommon.FilterType) -> [String] {
     switch type {
     case .reset:    return []
-    case .order:    return FilterCommon.FilterSorting.allCases.map { $0.value }
-    case .region:   return FilterCommon.FilterRegion.allCases.map { $0.value }
-    case .size:     return FilterCommon.FilterSize.allCases.map { $0.value }
-    case .color:    return FilterCommon.FilterColor.allCases.map { $0.value }
-    case .category: return FilterCommon.FilterCategory.allCases.map { $0.value }
+    case .order:    return FilterCommon.FilterSorting.allCases.map { $0.title }
+    case .region:   return FilterCommon.FilterRegion.allCases.map { $0.title }
+    case .size:     return FilterCommon.FilterSize.allCases.map { $0.title }
+    case .color:    return FilterCommon.FilterColor.allCases.map { $0.title }
+    case .category: return FilterCommon.FilterCategory.allCases.map { $0.title }
     default:        return []
     }
   }

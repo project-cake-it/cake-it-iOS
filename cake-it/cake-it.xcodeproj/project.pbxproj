@@ -158,6 +158,8 @@
 		ACE7B36525E3EE6B0045E489 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */; };
 		D7C14743F527AA676B781599 /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD838ED07F97AFAABDAAA67 /* Pods_cake_it_cake_itUITests.framework */; };
 		F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71419632674B75400C6E5EE /* Dictionary+Utils.swift */; };
+		F71F330D26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F330C26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift */; };
+		F71F33182662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F33172662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift */; };
 		F71F331D266290DC00E2E19E /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F331C266290DC00E2E19E /* FilterManager.swift */; };
 		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
 		F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */; };
@@ -191,6 +193,8 @@
 		F7A30F5325F394210023CDD5 /* PhotoUploadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */; };
 		F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */; };
 		F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */; };
+		F7A886E6265A428B00930932 /* FilterDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A886E5265A428B00930932 /* FilterDetailView.xib */; };
+		F7A886EB265A429D00930932 /* FilterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A886EA265A429D00930932 /* FilterDetailView.swift */; };
 		F7A88743265A482800930932 /* FilterBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A88742265A482800930932 /* FilterBasicCell.xib */; };
 		F7A88748265A483200930932 /* FilterColorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A88747265A483200930932 /* FilterColorCell.xib */; };
 		F7A8874D265A483B00930932 /* FilterDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A8874C265A483B00930932 /* FilterDescriptionCell.xib */; };
@@ -199,13 +203,9 @@
 		F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C7265A4C5600930932 /* FilterColorCell.swift */; };
 		F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */; };
 		F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */; };
-		F7C46CD226A43AFB002E037F /* FilterDetailViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C46CD126A43AFB002E037F /* FilterDetailViewController+UITableViewDataSource.swift */; };
-		F7C46CD426A43B0D002E037F /* FilterDetailViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C46CD326A43B0D002E037F /* FilterDetailViewController+UITableViewDelegate.swift */; };
 		F7B76D0A26B695510024674C /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B76D0926B695510024674C /* UIView+Toast.swift */; };
 		F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF345B269C5AD2006CE344 /* SearchResult.swift */; };
 		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
-		F7FCF86526A46EFC0048E758 /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FCF86326A46EFC0048E758 /* FilterDetailViewController.swift */; };
-		F7FCF86626A46EFC0048E758 /* FilterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7FCF86426A46EFC0048E758 /* FilterDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -369,6 +369,8 @@
 		ACDD76EC269CA97300C62F24 /* personalinfomation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = personalinfomation.html; sourceTree = "<group>"; };
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F71419632674B75400C6E5EE /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
+		F71F330C26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailView+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		F71F33172662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailView+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		F71F331C266290DC00E2E19E /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
 		F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
@@ -402,6 +404,8 @@
 		F7A30F5225F394210023CDD5 /* PhotoUploadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewModel.swift; sourceTree = "<group>"; };
 		F7A30F5A25F394310023CDD5 /* PhotoUpload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoUpload.storyboard; sourceTree = "<group>"; };
 		F7A30F5F25F3943D0023CDD5 /* PhotoUploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoUploadViewController.swift; sourceTree = "<group>"; };
+		F7A886E5265A428B00930932 /* FilterDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterDetailView.xib; sourceTree = "<group>"; };
+		F7A886EA265A429D00930932 /* FilterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailView.swift; sourceTree = "<group>"; };
 		F7A88742265A482800930932 /* FilterBasicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterBasicCell.xib; sourceTree = "<group>"; };
 		F7A88747265A483200930932 /* FilterColorCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterColorCell.xib; sourceTree = "<group>"; };
 		F7A8874C265A483B00930932 /* FilterDescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterDescriptionCell.xib; sourceTree = "<group>"; };
@@ -410,13 +414,9 @@
 		F7A887C7265A4C5600930932 /* FilterColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorCell.swift; sourceTree = "<group>"; };
 		F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionCell.swift; sourceTree = "<group>"; };
 		F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeDesignThemeCell.swift; sourceTree = "<group>"; };
-		F7C46CD126A43AFB002E037F /* FilterDetailViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
-		F7C46CD326A43B0D002E037F /* FilterDetailViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		F7B76D0926B695510024674C /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		F7BF345B269C5AD2006CE344 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
-		F7FCF86326A46EFC0048E758 /* FilterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
-		F7FCF86426A46EFC0048E758 /* FilterDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1067,7 +1067,6 @@
 		F7A88724265A477800930932 /* FilterDetailCell */ = {
 			isa = PBXGroup;
 			children = (
-				F7C46CCC26A403CF002E037F /* FilterDetailHeader */,
 				F7A88751265A486B00930932 /* BaseFilterCell.swift */,
 				F7A887C2265A4C4800930932 /* FilterBasicCell.swift */,
 				F7A88742265A482800930932 /* FilterBasicCell.xib */,
@@ -1075,6 +1074,8 @@
 				F7A88747265A483200930932 /* FilterColorCell.xib */,
 				F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */,
 				F7A8874C265A483B00930932 /* FilterDescriptionCell.xib */,
+				F7865958265D6F200020AFAC /* FilterTableHeaderCell.swift */,
+				F7865950265D6F100020AFAC /* FilterTableHeaderCell.xib */,
 				F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */,
 			);
 			path = FilterDetailCell;
@@ -1093,21 +1094,14 @@
 			isa = PBXGroup;
 			children = (
 				F7A88724265A477800930932 /* FilterDetailCell */,
-				F7FCF86426A46EFC0048E758 /* FilterDetailViewController.xib */,
-				F7FCF86326A46EFC0048E758 /* FilterDetailViewController.swift */,
-				F7C46CD126A43AFB002E037F /* FilterDetailViewController+UITableViewDataSource.swift */,
-				F7C46CD326A43B0D002E037F /* FilterDetailViewController+UITableViewDelegate.swift */,
+				F7A886E5265A428B00930932 /* FilterDetailView.xib */,
+				F7A886EA265A429D00930932 /* FilterDetailView.swift */,
+				F71F330C26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift */,
+				F71F33172662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift */,
 			);
 			path = FilterDetail;
 			sourceTree = "<group>";
 		};
-		F7C46CCC26A403CF002E037F /* FilterDetailHeader */ = {
-			isa = PBXGroup;
-			children = (
-				F7865958265D6F200020AFAC /* FilterTableHeaderCell.swift */,
-				F7865950265D6F100020AFAC /* FilterTableHeaderCell.xib */,
-			);
-			path = FilterDetailHeader;
 		F7BF345A269C5AD2006CE344 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1263,7 +1257,6 @@
 				AC422A2726A08920006ACC20 /* map_pin_shadow@3x.png in Resources */,
 				AC422A2526A08920006ACC20 /* map_pinup@3x.png in Resources */,
 				38D8C70125BC622500C1F10D /* Tabbar.storyboard in Resources */,
-				F7FCF86626A46EFC0048E758 /* FilterDetailViewController.xib in Resources */,
 				AC422A1D26A08920006ACC20 /* shadow_balloon.png in Resources */,
 				F768D209265801AF0092E3CE /* FilterCategoryCell.xib in Resources */,
 				AC422A4926A08920006ACC20 /* map_present_background_update.png in Resources */,
@@ -1472,16 +1465,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7C46CD226A43AFB002E037F /* FilterDetailViewController+UITableViewDataSource.swift in Sources */,
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
 				AC9FA08526790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift in Sources */,
 				F7865959265D6F200020AFAC /* FilterTableHeaderCell.swift in Sources */,
 				8B1DFDE626484CD40076E14C /* ShopDetailViewController+UICollectionViewDataSource.swift in Sources */,
 				F774B93225E0E0BF006EE0EC /* LoginTestViewModel.swift in Sources */,
 				AC0B8FF3265C07F4009016A9 /* LoginTestModel.swift in Sources */,
-				F7C46CD426A43B0D002E037F /* FilterDetailViewController+UITableViewDelegate.swift in Sources */,
 				8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */,
-				F7FCF86526A46EFC0048E758 /* FilterDetailViewController.swift in Sources */,
 				AC0B8FE626467B85009016A9 /* ListBoardViewController+UITableViewDataSource.swift in Sources */,
 				8B2A7547261C9AF5007757E5 /* CakeShopCell.swift in Sources */,
 				AC52DE6C2699E7E200718332 /* Notice.swift in Sources */,
@@ -1489,6 +1479,7 @@
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
 				AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */,
 				F7A2DA26263EA95200C160A5 /* DesignDetailViewController.swift in Sources */,
+				F71F33182662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift in Sources */,
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
 				F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */,
 				AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */,
@@ -1540,6 +1531,7 @@
 				8B1DFDE226484A960076E14C /* UIDevice+hasNotch.swift in Sources */,
 				AC9FA082267909370050F9F0 /* HomeThemeCell.swift in Sources */,
 				F768D201265801A50092E3CE /* FilterCategoryCell.swift in Sources */,
+				F71F330D26628DB400E2E19E /* FilterDetailView+UITableViewDelegate.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
 				AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */,
 				AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */,
@@ -1559,6 +1551,7 @@
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */,
 				F774B93725E0E0BF006EE0EC /* NetworkCommon.swift in Sources */,
+				F7A886EB265A429D00930932 /* FilterDetailView.swift in Sources */,
 				AC0B8FD426458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift in Sources */,
 				F7A30F4B25F393E30023CDD5 /* PhotoUploadModel.swift in Sources */,
 				AC9FA08B267F73530050F9F0 /* CakeDesignForTest.swift in Sources */,
@@ -1751,6 +1744,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y85GKLJ8B2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/DaumMap.embeddedframework",
+				);
 				INFOPLIST_FILE = "cake-it/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
