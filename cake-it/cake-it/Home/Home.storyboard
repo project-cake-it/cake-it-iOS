@@ -496,10 +496,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDf-sC-d2H">
-                                                <rect key="frame" x="0.0" y="414" width="414" height="157"/>
+                                                <rect key="frame" x="0.0" y="414" width="414" height="154"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크 디자인 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlQ-zh-oHo">
-                                                        <rect key="frame" x="20" y="20" width="374" height="27"/>
+                                                        <rect key="frame" x="20" y="20" width="141" height="27"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="27" id="sJ0-f1-W9W"/>
                                                         </constraints>
@@ -507,8 +507,14 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 마포구 연남동 123-45" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvo-u4-haG">
+                                                        <rect key="frame" x="20" y="49" width="199" height="17"/>
+                                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                        <color key="textColor" name="grayscale04"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82m-JW-oM3">
-                                                        <rect key="frame" x="16" y="89" width="382" height="48"/>
+                                                        <rect key="frame" x="16" y="86" width="382" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="9Tm-5r-Rqq"/>
                                                         </constraints>
@@ -517,20 +523,11 @@
                                                             <color key="titleColor" name="pointB"/>
                                                         </state>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서울특별시 마포구 연남동 123-45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvo-u4-haG">
-                                                        <rect key="frame" x="20" y="49" width="199" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20" id="rD5-xa-S9V"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
-                                                        <color key="textColor" name="grayscale04"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mvo-u4-haG" secondAttribute="trailing" constant="20" id="7O8-1D-EDn"/>
                                                     <constraint firstItem="RlQ-zh-oHo" firstAttribute="leading" secondItem="EDf-sC-d2H" secondAttribute="leading" constant="20" symbolic="YES" id="AII-Gi-Ejp"/>
-                                                    <constraint firstAttribute="height" constant="157" id="EjE-pm-Pla"/>
                                                     <constraint firstItem="mvo-u4-haG" firstAttribute="top" secondItem="RlQ-zh-oHo" secondAttribute="bottom" constant="2" id="I9g-uj-QCP"/>
                                                     <constraint firstAttribute="bottom" secondItem="82m-JW-oM3" secondAttribute="bottom" constant="20" id="IIw-aX-ucV"/>
                                                     <constraint firstItem="RlQ-zh-oHo" firstAttribute="top" secondItem="EDf-sC-d2H" secondAttribute="top" constant="20" symbolic="YES" id="VCB-ZV-A7Z"/>
@@ -538,21 +535,21 @@
                                                     <constraint firstAttribute="trailing" secondItem="82m-JW-oM3" secondAttribute="trailing" constant="16" id="cxR-EM-C7n"/>
                                                     <constraint firstItem="82m-JW-oM3" firstAttribute="top" secondItem="mvo-u4-haG" secondAttribute="bottom" constant="20" id="hM1-vy-wCf"/>
                                                     <constraint firstItem="mvo-u4-haG" firstAttribute="leading" secondItem="RlQ-zh-oHo" secondAttribute="leading" id="j7f-ee-WqG"/>
-                                                    <constraint firstAttribute="trailing" secondItem="RlQ-zh-oHo" secondAttribute="trailing" constant="20" id="yWE-fH-Tak"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RlQ-zh-oHo" secondAttribute="trailing" constant="20" id="yWE-fH-Tak"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SLj-Ch-yqX" userLabel="Line View">
-                                                <rect key="frame" x="0.0" y="571" width="414" height="8"/>
+                                                <rect key="frame" x="0.0" y="568" width="414" height="8"/>
                                                 <color key="backgroundColor" name="grayscale01"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="8" id="n7W-91-F4u"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejS-p9-uTm">
-                                                <rect key="frame" x="0.0" y="579" width="414" height="300"/>
+                                                <rect key="frame" x="0.0" y="576" width="414" height="300"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49k-XR-ECU">
-                                                        <rect key="frame" x="20" y="20" width="374" height="18"/>
+                                                        <rect key="frame" x="20" y="20" width="72.5" height="18"/>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -679,7 +676,7 @@
                                                     <constraint firstItem="bfH-WY-3dT" firstAttribute="top" secondItem="CpX-ME-WV9" secondAttribute="bottom" constant="16" id="nAW-kc-QEf"/>
                                                     <constraint firstItem="vOL-Tc-4tg" firstAttribute="top" secondItem="Szg-Vd-v8C" secondAttribute="top" id="qFZ-sW-dcd"/>
                                                     <constraint firstItem="CpX-ME-WV9" firstAttribute="trailing" secondItem="vOL-Tc-4tg" secondAttribute="trailing" id="r8Z-uE-e0s"/>
-                                                    <constraint firstAttribute="trailing" secondItem="49k-XR-ECU" secondAttribute="trailing" constant="20" id="t2B-DY-d8t"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="49k-XR-ECU" secondAttribute="trailing" constant="20" id="t2B-DY-d8t"/>
                                                     <constraint firstItem="Ey9-Pb-d3r" firstAttribute="leading" secondItem="bfH-WY-3dT" secondAttribute="leading" id="u4z-Wi-iZX"/>
                                                     <constraint firstItem="oHf-pQ-uMm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Iym-ba-3Xk" secondAttribute="bottom" priority="750" constant="13" id="uPe-4Z-hKd"/>
                                                     <constraint firstItem="CpX-ME-WV9" firstAttribute="leading" secondItem="vOL-Tc-4tg" secondAttribute="leading" id="xPv-W5-eCx"/>
@@ -688,7 +685,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-fU-63o">
-                                                <rect key="frame" x="16" y="879" width="382" height="48"/>
+                                                <rect key="frame" x="16" y="876" width="382" height="48"/>
                                                 <color key="backgroundColor" name="pointB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Oy7-21-gxC"/>
