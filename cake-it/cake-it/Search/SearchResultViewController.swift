@@ -182,7 +182,7 @@ extension SearchResultViewController {
       shopContainerView.alpha = 0.0
       if let childVC = childViewController(type: ShopsMainViewController.self) {
         let shopListVC = childVC as! ShopsMainViewController
-        shopListVC.removeFilterDetailView()
+        shopListVC.hideFilterDetailView()
       }
       
     case .shop:
@@ -190,7 +190,7 @@ extension SearchResultViewController {
       shopContainerView.alpha = 1.0
       if let childVC = childViewController(type: DesignListViewController.self) {
         let designListVC = childVC as! DesignListViewController
-        designListVC.removeFilterDetailView()
+        designListVC.hideFilterDetailView()
       }
     }
   }
