@@ -24,9 +24,11 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var navigationBarTitleLabel: UILabel!
   @IBOutlet weak var navigationBarTitleTapGestureView: UIView!
   @IBOutlet weak var navigationBarTitleArrowIcon: UIImageView!
+  
   @IBOutlet weak var designsCollectionView: UICollectionView!
   @IBOutlet weak var filterCategoryCollectionView: UICollectionView!
 
+  @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var navigationBarHeightConstraint: NSLayoutConstraint!
   
   var cakeDesigns: [CakeDesign] = []
@@ -40,7 +42,7 @@ final class DesignListViewController: BaseViewController {
   fileprivate var selectedTheme: [String: String] = [:]     // 선택된 테마 리스트
   var selectedFilter: [String: [String]] = [:]  // 선택된 필터 리스트
   var hightlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
-  var filterDetailView: FilterDetailView?     // 필터 디테일 리스트
+  var filterDetailVC: FilterDetailViewController?     // 필터 디테일 리스트
   var themeDetailView: ThemeDetailView?       // 테마 디테일 리스트
 
   override func viewDidLoad() {
@@ -54,12 +56,7 @@ final class DesignListViewController: BaseViewController {
   }
 
   func fetchCakeDesigns() {
-    let filterParam = selectedFilter.queryString()
-    let themeParam = selectedTheme.queryString()
-    let parameter = filterParam + themeParam
-
-    // 요청 url 확인 주석 -> 개발 완료 후 제거 예정
-    print("[TEST] request queryString : \(NetworkCommon.API.designs.urlString)\(parameter)")
+    let parameter = mergedQueryStringFromThemeAndFilter()
     NetworkManager.shared.requestGet(api: .designs,
                                      type: [CakeDesign].self,
                                      param: parameter) { (response) in
@@ -74,11 +71,22 @@ final class DesignListViewController: BaseViewController {
     }
   }
 
+  private func mergedQueryStringFromThemeAndFilter() -> String {
+    var mergedFilterDic: [String: [String]] = selectedFilter
+    if let themeKey = selectedTheme.keys.first,
+       let themeValue = selectedTheme.values.first {
+      mergedFilterDic[themeKey] = [themeValue]
+    }
+    let parameter = mergedFilterDic.queryString()
+    return parameter
+  }
+
   @IBAction func backButtonDidTap(_ sender: Any) {
     navigationController?.popViewController(animated: true)
   }
 
   @objc private func navigationTitleDidTap() {
+    resetCategoryFilter()
     if self.isShowThemeDetailView() {
       self.hideThemeDetailView()
     } else {
@@ -89,9 +97,9 @@ final class DesignListViewController: BaseViewController {
 
 extension DesignListViewController {
   private func configure() {
-    configureFilterCategoryView()
-    configureCollectionView()
     configureNavigationBarView()
+    configureFilterView()
+    configureCollectionView()
   }
 
   // MARK:- configure navigation bar
@@ -102,6 +110,11 @@ extension DesignListViewController {
   }
 
   // MARK:- configure filter title collectionView
+  private func configureFilterView() {
+    configureFilterCategoryView()
+    configureFilterDetailView()
+  }
+
   private func configureFilterCategoryView() {
     configureFilterCategoryCollectionView()
     registerFilterCategoryCollectionView()
@@ -110,7 +123,9 @@ extension DesignListViewController {
   private func configureFilterCategoryCollectionView() {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
-    flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+    if #available(iOS 14, *) {
+      flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+    }
     filterCategoryCollectionView.collectionViewLayout = flowLayout
     filterCategoryCollectionView.delegate = self
     filterCategoryCollectionView.dataSource = self
@@ -118,6 +133,16 @@ extension DesignListViewController {
                                                              left: FilterCommon.Metric.categoryCellLeftMargin,
                                                              bottom: 0,
                                                              right: 0)
+  }
+  
+  private func configureFilterDetailView() {
+    let id = String(describing: FilterDetailViewController.self)
+    filterDetailVC = FilterDetailViewController(nibName: id, bundle: nil)
+    guard let detailVC = filterDetailVC else { return }
+    detailVC.delegate = self
+    filterDetailContainerView.addSubview(detailVC.view)
+    hideFilterDetailView()
+    addChild(detailVC)
   }
 
   private func registerFilterCategoryCollectionView() {

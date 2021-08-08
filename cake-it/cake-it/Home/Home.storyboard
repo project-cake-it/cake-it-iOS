@@ -323,6 +323,26 @@
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="leading" secondItem="Vep-8G-tgO" secondAttribute="leading" constant="-2" id="zDJ-Ss-H7k"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BOB-Bu-wpc">
+                                <rect key="frame" x="0.0" y="157" width="414" height="739"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="orl-5M-WJD">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gae-CB-wLf">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="t8B-XS-Xyt">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rqE-aU-fdF">
                                 <rect key="frame" x="0.0" y="106" width="414" height="35"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -347,26 +367,9 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BOB-Bu-wpc">
-                                <rect key="frame" x="0.0" y="157" width="414" height="739"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="orl-5M-WJD">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gae-CB-wLf">
-                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="t8B-XS-Xyt">
-                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lKy-nh-M4G">
+                                <rect key="frame" x="0.0" y="141" width="414" height="721"/>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WG7-fn-5Ws"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -374,18 +377,23 @@
                             <constraint firstItem="IcL-iK-duW" firstAttribute="trailing" secondItem="WG7-fn-5Ws" secondAttribute="trailing" id="3BE-n3-rbE"/>
                             <constraint firstItem="WG7-fn-5Ws" firstAttribute="trailing" secondItem="BOB-Bu-wpc" secondAttribute="trailing" id="57W-4V-FwQ"/>
                             <constraint firstAttribute="bottom" secondItem="BOB-Bu-wpc" secondAttribute="bottom" id="Cqf-Eq-1Mr"/>
+                            <constraint firstItem="lKy-nh-M4G" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="GY9-hc-gli"/>
                             <constraint firstItem="BOB-Bu-wpc" firstAttribute="top" secondItem="rqE-aU-fdF" secondAttribute="bottom" constant="16" id="HVQ-ZW-MUe"/>
+                            <constraint firstItem="WG7-fn-5Ws" firstAttribute="bottom" secondItem="lKy-nh-M4G" secondAttribute="bottom" id="JZL-G5-7WF"/>
                             <constraint firstItem="rqE-aU-fdF" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="SzQ-cJ-yQb"/>
                             <constraint firstItem="rqE-aU-fdF" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="bottom" constant="12" id="XIv-VT-Thr"/>
                             <constraint firstItem="IcL-iK-duW" firstAttribute="top" secondItem="WG7-fn-5Ws" secondAttribute="top" id="XTe-1D-MyG"/>
                             <constraint firstItem="WG7-fn-5Ws" firstAttribute="trailing" secondItem="rqE-aU-fdF" secondAttribute="trailing" id="azz-nJ-OE1"/>
                             <constraint firstItem="BOB-Bu-wpc" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="bHi-zA-rqW"/>
+                            <constraint firstItem="lKy-nh-M4G" firstAttribute="top" secondItem="rqE-aU-fdF" secondAttribute="bottom" id="byk-Wl-3W4"/>
+                            <constraint firstItem="WG7-fn-5Ws" firstAttribute="trailing" secondItem="lKy-nh-M4G" secondAttribute="trailing" id="e1Z-Dd-bWx"/>
                             <constraint firstItem="IcL-iK-duW" firstAttribute="leading" secondItem="WG7-fn-5Ws" secondAttribute="leading" id="obl-qs-Dos"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="designsCollectionView" destination="BOB-Bu-wpc" id="Ihi-OE-LQC"/>
                         <outlet property="filterCategoryCollectionView" destination="rqE-aU-fdF" id="ldg-75-Lut"/>
+                        <outlet property="filterDetailContainerView" destination="BOB-Bu-wpc" id="hYW-dU-Q0V"/>
                         <outlet property="navigationBarHeightConstraint" destination="jMA-ei-QD2" id="JVZ-7M-Owu"/>
                         <outlet property="navigationBarTitleArrowIcon" destination="xdY-bA-and" id="qY9-1W-ddp"/>
                         <outlet property="navigationBarTitleLabel" destination="Vep-8G-tgO" id="ZiA-tj-ZUG"/>
