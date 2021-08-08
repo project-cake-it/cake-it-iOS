@@ -21,6 +21,7 @@ final class CakeOrderAvailableDateCell: UICollectionViewCell {
   override func prepareForReuse() {
     super.prepareForReuse()
     
+    todayCircleView.isHidden = true
     dayLabel.textColor = Colors.grayscale03
   }
   
