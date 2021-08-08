@@ -24,19 +24,26 @@ struct CakeShop: Decodable {
   let themeNames: String
   let hashtags: [CakeShopHashtag]
   let sizes: [CakeShopCakeSize]
+  let displaySize: CakeShopCakeSize
+  let orderAvailableDates: [String]
   let creamNames, sheetNames: String
   let zzim: Bool
   let zzimCount: Int
   let designs: [CakeShopCakeDesign]
+  
+  enum CodingKeys: String, CodingKey {
+    case id, name, address, fullAddress, information, holiday, operationTime, pickupTime, telephone, shopChannel, shopImages, themeNames, hashtags, sizes, displaySize, creamNames, sheetNames, zzim, zzimCount, designs
+    case orderAvailableDates = "orderAvailabilityDates"
+  }
 }
 
-struct CakeShopCakeDesign: Codable {
+struct CakeShopCakeDesign: Decodable {
   let id: Int
   let name: String
   let designImage: CakeShopCakeDesignImage?
 }
 
-struct CakeShopCakeDesignImage: Codable {
+struct CakeShopCakeDesignImage: Decodable {
   let id: Int
   let designImageURL: String
   
@@ -46,12 +53,12 @@ struct CakeShopCakeDesignImage: Codable {
   }
 }
 
-struct CakeShopHashtag: Codable {
+struct CakeShopHashtag: Decodable {
   let id: Int
   let name: String
 }
 
-struct CakeShopImage: Codable {
+struct CakeShopImage: Decodable {
   let id: Int
   let shopImageURL: String
   
@@ -61,7 +68,7 @@ struct CakeShopImage: Codable {
   }
 }
 
-struct CakeShopCakeSize: Codable {
+struct CakeShopCakeSize: Decodable {
   let id: Int
   let name, size: String
   let price: Int
