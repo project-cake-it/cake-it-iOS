@@ -13,6 +13,7 @@ final class ShopDetailAvailableDateViewController: UIViewController {
     static let sidePadding: CGFloat = 16.0
   }
   
+  private var backgroundDismissTapView: UIView!
   private var containerView: UIView!
   private var titleLabel: UILabel!
   private var dismissButton: UIButton!
@@ -25,6 +26,8 @@ final class ShopDetailAvailableDateViewController: UIViewController {
   
   private var hasAppearingAnimated = false
   
+  private var availableDates: [CakeOrderAvailableDate] = []
+  
   static let numberOfDaysByMonth: [Int] = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
   /// 현재 달부터 최대 달
   private var maxMonthOffset: Int = 1
@@ -35,7 +38,23 @@ final class ShopDetailAvailableDateViewController: UIViewController {
       collectionView.reloadData()
       updateCollectionViewHeightToItsHeight()
       updateCurrentYearMonthLabel()
+      updateChangeMonthButtonState()
     }
+  }
+  
+  init(availableDates: [String]) {
+    super.init(nibName: nil, bundle: nil)
+    self.availableDates = availableDates.map {
+      DateFormatter.CakeOrderAvailableDateFormatter.date(from: $0)
+    }.compactMap { $0 }.filter {
+      $0 >= Date()
+    }.map {
+      CakeOrderAvailableDate(date: $0)
+    }
+  }
+  
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
   }
   
   override func viewDidLoad() {
@@ -67,8 +86,12 @@ final class ShopDetailAvailableDateViewController: UIViewController {
           year: monthUpdatedDate.year,
           month: monthUpdatedDate.month,
           day: day)
-        if dayDate < minDate || dayDate > maxDate {
-          dayDate.disabled()
+        if dayDate >= minDate && dayDate <= maxDate {
+          availableDates.forEach {
+            if dayDate == $0 {
+              dayDate.enabled()
+            }
+          }
         }
         datesByMonth.append(dayDate)
       }
@@ -101,7 +124,7 @@ final class ShopDetailAvailableDateViewController: UIViewController {
   
   private func configureBackgroundViewTapGesture() {
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
-    view.addGestureRecognizer(tapGesture)
+    backgroundDismissTapView.addGestureRecognizer(tapGesture)
   }
   
   @objc private func backgroundViewDidTap() {
@@ -135,15 +158,14 @@ final class ShopDetailAvailableDateViewController: UIViewController {
     currentYearMonthLabel.text = "\(newDate.year)년 \(newDate.month)월"
   }
   
-//
-//  private func updateChangeMonthButtonState() {
-//    previousMonthButton.isEnabled = currentMonthIndex != 0
-//    previousMonthButton.tintColor = previousMonthButton.isEnabled ?
-//      Colors.primaryColorLighter01 : Colors.primaryColorLighter04
-//    nextMonthButton.isEnabled = currentMonthIndex != maxMonthOffset
-//    nextMonthButton.tintColor = nextMonthButton.isEnabled ?
-//      Colors.primaryColorLighter01 : Colors.primaryColorLighter04
-//  }
+  private func updateChangeMonthButtonState() {
+    previousMonthButton.isEnabled = currentMonthIndex != 0
+    previousMonthButton.tintColor = previousMonthButton.isEnabled ?
+      Colors.pointB : Colors.grayscale03
+    nextMonthButton.isEnabled = currentMonthIndex != maxMonthOffset
+    nextMonthButton.tintColor = nextMonthButton.isEnabled ?
+      Colors.pointB : Colors.grayscale03
+  }
 }
 
 // MARK: - Configuration
@@ -152,6 +174,7 @@ extension ShopDetailAvailableDateViewController {
   
   private func configure() {
     configureView()
+    configureBackgroundDismissTapView()
     configureContainerView()
     configureTitleLabel()
     configureDismissButton()
@@ -166,6 +189,13 @@ extension ShopDetailAvailableDateViewController {
   
   private func configureView() {
     view.backgroundColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0)
+  }
+  
+  private func configureBackgroundDismissTapView() {
+    backgroundDismissTapView = UIView()
+    backgroundDismissTapView.backgroundColor = .clear
+    view.addSubview(backgroundDismissTapView)
+    backgroundDismissTapView.fillSuperView()
   }
   
   private func configureContainerView() {
@@ -241,7 +271,8 @@ extension ShopDetailAvailableDateViewController {
     
     previousMonthButton = UIButton(type: .system)
     previousMonthButton.setImage(#imageLiteral(resourceName: "icChevronCalendarLeft"), for: .normal)
-    previousMonthButton.tintColor = Colors.pointB
+    previousMonthButton.isEnabled = false
+    previousMonthButton.tintColor = Colors.grayscale03
     containerView.addSubview(previousMonthButton)
     previousMonthButton.constraints(topAnchor: nextMonthButton.topAnchor,
                                     leadingAnchor: nil,

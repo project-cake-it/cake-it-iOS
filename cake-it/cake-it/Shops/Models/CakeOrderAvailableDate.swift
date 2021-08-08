@@ -65,10 +65,6 @@ struct CakeOrderAvailableDate {
     isEnabled = true
   }
   
-  mutating func disabled() {
-    isEnabled = false
-  }
-  
   mutating func setEmpty() {
     isEmpty = true
     isEnabled = false

@@ -10,6 +10,13 @@ import UIKit
 final class CakeOrderAvailableDateCell: UICollectionViewCell {
   
   @IBOutlet var dayLabel: UILabel!
+  @IBOutlet var todayCircleView: UIView!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    todayCircleView.round(cornerRadius: 3)
+  }
   
   override func prepareForReuse() {
     super.prepareForReuse()
@@ -24,5 +31,6 @@ final class CakeOrderAvailableDateCell: UICollectionViewCell {
     }
     dayLabel.text = String(date.day)
     dayLabel.textColor = date.isEnabled ? UIColor.black : Colors.grayscale03
+    todayCircleView.isHidden = !((Date().day == date.day) && (Date().month == date.month))
   }
 }

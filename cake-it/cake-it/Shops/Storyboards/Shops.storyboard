@@ -156,7 +156,7 @@
                                                             <constraint firstAttribute="height" constant="48" id="6pi-Xn-rQc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
-                                                        <state key="normal" title="주문 가능 날짜 보기">
+                                                        <state key="normal" title="주문 가능 날짜">
                                                             <color key="titleColor" name="pointB"/>
                                                         </state>
                                                         <connections>

@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKTalk
+
 final class ShopDetailViewController: BaseViewController {
   
   enum BottomInfoState {
@@ -147,7 +148,8 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   @IBAction func availableDateButtonDidTap(_ sender: Any) {
-    let dateViewController = ShopDetailAvailableDateViewController()
+    let availableDates = cakeShop?.orderAvailableDates ?? []
+    let dateViewController = ShopDetailAvailableDateViewController(availableDates: availableDates)
     dateViewController.modalPresentationStyle = .overFullScreen
     present(dateViewController, animated: false)
   }
