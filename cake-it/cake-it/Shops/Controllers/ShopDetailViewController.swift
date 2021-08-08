@@ -157,23 +157,23 @@ final class ShopDetailViewController: BaseViewController {
   
   @IBAction func copyAddressButtonDidTap(_ sender: Any) {
     UIPasteboard.general.string = cakeShop?.fullAddress
-    //TODO: Toast 띄우기
+    view.showToast(message: Constants.SHOP_ADDRESS_COPY_COMPLETE)
   }
   
   @IBAction func showMapButtonDidTap(_ sender: Any) {
     guard let cakeShopFullAddress = cakeShop?.fullAddress else {
-      //TODO: Toast 띄우기
+      view.showToast(message: Constants.COMMON_NET_ERROR)
       return
     }
     
     GeoCoderManager.shared.getLocation(cakeShopFullAddress, completion: { success, location in
       if !success {
-        // TODO: Toast
+        self.view.showToast(message: Constants.COMMON_NET_ERROR)
         return
       }
       
       guard let location = location else {
-        // TODO: Toast
+        self.view.showToast(message: Constants.COMMON_NET_ERROR)
         return
       }
       
@@ -183,7 +183,7 @@ final class ShopDetailViewController: BaseViewController {
         if UIApplication.shared.canOpenURL(url) {
           UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
-          // TODO: 에러 처리
+          self.view.showToast(message: Constants.COMMON_NET_ERROR)
         }
       }
     })
