@@ -140,6 +140,7 @@
 		AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6626902D8400718332 /* PromotionModel.swift */; };
 		AC52DE692699E70400718332 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE682699E70400718332 /* MyPageViewModel.swift */; };
 		AC52DE6C2699E7E200718332 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6B2699E7E200718332 /* Notice.swift */; };
+		AC69EE9326BE9F5300CE0436 /* GeoCoderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC69EE9226BE9F5300CE0436 /* GeoCoderManager.swift */; };
 		AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA07262C34D2002DED4F /* LoginManager.swift */; };
 		AC86FA0D262C430D002DED4F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC86FA0C262C430D002DED4F /* Constants.swift */; };
 		AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC94D3872614D10F004063DC /* LoginViewModel.swift */; };
@@ -352,6 +353,7 @@
 		AC52DE6626902D8400718332 /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
 		AC52DE682699E70400718332 /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		AC52DE6B2699E7E200718332 /* Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notice.swift; sourceTree = "<group>"; };
+		AC69EE9226BE9F5300CE0436 /* GeoCoderManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCoderManager.swift; sourceTree = "<group>"; };
 		AC86FA07262C34D2002DED4F /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		AC86FA0C262C430D002DED4F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AC94D3872614D10F004063DC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -742,6 +744,7 @@
 				8B93B2D82610C3160060ACAC /* Colors.swift */,
 				8B93B2ED2610CF5D0060ACAC /* Fonts.swift */,
 				AC86FA0C262C430D002DED4F /* Constants.swift */,
+				AC69EE9226BE9F5300CE0436 /* GeoCoderManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1480,6 +1483,7 @@
 				AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */,
 				F7A2DA26263EA95200C160A5 /* DesignDetailViewController.swift in Sources */,
 				F71F33182662905100E2E19E /* FilterDetailView+UITableViewDataSource.swift in Sources */,
+				AC69EE9326BE9F5300CE0436 /* GeoCoderManager.swift in Sources */,
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
 				F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */,
 				AC0B8FDA2645B413009016A9 /* MyPageCell.swift in Sources */,

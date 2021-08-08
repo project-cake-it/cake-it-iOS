@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoSDKTalk
+
 final class ShopDetailViewController: BaseViewController {
   
   enum BottomInfoState {
@@ -74,7 +75,6 @@ final class ShopDetailViewController: BaseViewController {
   private var isScrollDirectionDown = false
   
   private let MAP_ZOOM_LEVEL_DEFAULT: Int32 = 0
-  private let MAP_CONNECT_URL_STRING = "kakaomap://place?id="
   
   //MARK: - Life Cycle
   override func viewDidLoad() {
@@ -93,6 +93,7 @@ final class ShopDetailViewController: BaseViewController {
         self.cakeShop = response.cakeShop
         DispatchQueue.main.async {
           self.updateDetail()
+          self.updateMapView()
         }
       case .failure(_):
         // TODO: 에러 핸들링
@@ -160,14 +161,32 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   @IBAction func showMapButtonDidTap(_ sender: Any) {
-    let placeID = "117301298"
-    if let url = URL.init(string: MAP_CONNECT_URL_STRING.appending(placeID)) {
-      if UIApplication.shared.canOpenURL(url) {
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-      } else {
-        // TODO: 에러 처리
-      }
+    guard let cakeShopFullAddress = cakeShop?.fullAddress else {
+      //TODO: Toast 띄우기
+      return
     }
+    
+    GeoCoderManager.shared.getLocation(cakeShopFullAddress, completion: { success, location in
+      if !success {
+        // TODO: Toast
+        return
+      }
+      
+      guard let location = location else {
+        // TODO: Toast
+        return
+      }
+      
+      let url = "kakaomap://look?p=\(location.coordinate.latitude),\(location.coordinate.longitude)"
+      
+      if let url = URL.init(string: url) {
+        if UIApplication.shared.canOpenURL(url) {
+          UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+          // TODO: 에러 처리
+        }
+      }
+    })
   }
   
   @objc private func contactShopButtonDidTap() {
@@ -298,31 +317,37 @@ extension ShopDetailViewController: UIGestureRecognizerDelegate {
 extension ShopDetailViewController {
   private func configure() {
     configureViews()
-    configureMapView()
     configureCakeDesignCollectionView()
     configureContactShopButton()
     configurePanGesture()
     scrollView.delegate = self
   }
   
-  private func configureMapView() {
+  private func updateMapView() {
     mapView = MTMapView(frame: self.mapContainerView.bounds)
     
-    if let mapView = mapView {
-      // TODO: 서버에서 좌표값 가져오는 것으로 수정
-      mapView.delegate = self
-      let mapPoint = MTMapPoint.init(geoCoord: .init(latitude: 37.5168612, longitude: 127.0387432))
-      mapView.baseMapType = .standard
-      mapView.setMapCenter(mapPoint,
-                           zoomLevel:MAP_ZOOM_LEVEL_DEFAULT,
-                           animated: true)
-      
-      let pinItem = MTMapPOIItem()
-      pinItem.mapPoint = mapPoint
-      pinItem.markerType = .redPin
-      pinItem.itemName = cakeShop?.name
-      mapView.add(pinItem)
-      self.mapContainerView.addSubview(mapView)
+    guard let mapView = mapView else { return }
+    guard let cakeShop = cakeShop else { return }
+    
+    GeoCoderManager.shared.getLocation(cakeShop.fullAddress) { success, location in
+      if success {
+        guard let locationCoordinate = location?.coordinate else {
+          return
+        }
+        mapView.delegate = self
+        let mapPoint = MTMapPoint.init(geoCoord: .init(latitude: locationCoordinate.latitude, longitude: locationCoordinate.longitude))
+        mapView.baseMapType = .standard
+        mapView.setMapCenter(mapPoint,
+                             zoomLevel: self.MAP_ZOOM_LEVEL_DEFAULT,
+                             animated: true)
+        
+        let pinItem = MTMapPOIItem()
+        pinItem.mapPoint = mapPoint
+        pinItem.markerType = .redPin
+        pinItem.itemName = cakeShop.name
+        mapView.add(pinItem)
+        self.mapContainerView.addSubview(mapView)
+      }
     }
   }
   

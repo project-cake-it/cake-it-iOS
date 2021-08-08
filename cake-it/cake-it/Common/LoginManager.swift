@@ -14,6 +14,8 @@ final class LoginManager {
   
   private let KEY_ACCESS_TOKEN = "accessToken"
   
+  private init() { }
+  
   func saveAccessToken(accessToken: String) -> Bool {
     return KeychainWrapper.standard.set(accessToken, forKey: KEY_ACCESS_TOKEN)
   }
