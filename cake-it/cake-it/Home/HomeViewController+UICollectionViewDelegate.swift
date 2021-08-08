@@ -67,7 +67,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
       let storyboard = UIStoryboard(name: "Home", bundle: nil)
       if let designDetailVC = storyboard.instantiateViewController(withIdentifier: identifier)
           as? DesignDetailViewController {
-        designDetailVC.designId = cakeDesigns[indexPath.row].id
+        designDetailVC.designID = cakeDesigns[indexPath.row].id
         navigationController?.pushViewController(designDetailVC, animated: true)
       }
       break

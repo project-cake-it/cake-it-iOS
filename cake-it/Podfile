@@ -31,7 +31,7 @@ target 'cake-it' do
   pod 'naveridlogin-sdk-ios'
 
   # Google Login
-  pod 'GoogleSignIn'
+  pod 'GoogleSignIn', '~> 5.0.2'
 
   # KeychainWrapper
   pod 'SwiftKeychainWrapper'

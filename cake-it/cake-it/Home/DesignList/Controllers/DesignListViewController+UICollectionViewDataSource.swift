@@ -59,7 +59,7 @@ extension DesignListViewController: UICollectionViewDataSource {
       let id = String(describing: DesignDetailViewController.self)
       let storyboard = UIStoryboard(name: "Home", bundle: nil)
       if let designDetailVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignDetailViewController {
-        designDetailVC.designId = cakeDesigns[indexPath.row].id
+        designDetailVC.designID = cakeDesigns[indexPath.row].id
         navigationController?.pushViewController(designDetailVC, animated: true)
       }
     }

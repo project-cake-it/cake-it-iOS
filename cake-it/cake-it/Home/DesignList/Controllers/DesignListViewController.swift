@@ -29,6 +29,7 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var filterCategoryCollectionView: UICollectionView!
 
   @IBOutlet weak var filterDetailContainerView: UIView!
+  @IBOutlet weak var navigationBarHeightConstraint: NSLayoutConstraint!
   
   var cakeDesigns: [CakeDesign] = []
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .size, .color, .category]
@@ -48,15 +49,18 @@ final class DesignListViewController: BaseViewController {
     super.viewDidLoad()
 
     configure()
-    fetchCakeDesigns()
+    
+    if cakeDesigns.isEmpty {
+      fetchCakeDesigns()
+    }
   }
 
   func fetchCakeDesigns() {
     let parameter = mergedQueryStringFromThemeAndFilter()
     NetworkManager.shared.requestGet(api: .designs,
                                      type: [CakeDesign].self,
-                                     param: parameter) { (respons) in
-      switch respons {
+                                     param: parameter) { (response) in
+      switch response {
       case .success(let designs):
         self.cakeDesigns = designs
         self.designsCollectionView.reloadData()
@@ -161,5 +165,10 @@ extension DesignListViewController {
   private func configureCollectionViewProtocols() {
     designsCollectionView.dataSource = self
     designsCollectionView.delegate = self
+  }
+  
+  func hideNavigationView() {
+    navigationBarView?.isHidden = true
+    navigationBarHeightConstraint?.constant = 0.0
   }
 }
