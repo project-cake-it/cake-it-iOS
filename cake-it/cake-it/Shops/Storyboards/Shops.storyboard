@@ -171,7 +171,7 @@
                                                             <color key="titleColor" name="pointB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="availableDateButtonDidTap:" destination="xun-sG-jRg" eventType="touchUpInside" id="mF3-Nz-Gua"/>
+                                                            <action selector="orderAvailableDateButtonDidTap:" destination="xun-sG-jRg" eventType="touchUpInside" id="mF3-Nz-Gua"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6P-1D-FYd">
@@ -737,6 +737,7 @@
                         <outlet property="locationInfoContainerView" destination="tMS-fr-wqt" id="cV3-II-xN2"/>
                         <outlet property="mapContainerView" destination="tkg-nN-nJV" id="KSq-45-SJQ"/>
                         <outlet property="openingTimeLabel" destination="4Ti-UX-sIr" id="8SK-L4-ewh"/>
+                        <outlet property="orderAvailableDateButton" destination="9bh-nF-zlS" id="TWA-PT-m4S"/>
                         <outlet property="phoneLabel" destination="48J-1w-ZPl" id="uib-dv-ES3"/>
                         <outlet property="pickUpAvailableTimeLabel" destination="e3D-O4-wox" id="ltQ-gd-bdV"/>
                         <outlet property="priceInfoBySizeStackView" destination="mUz-Jk-q6d" id="qCH-df-G4h"/>
@@ -747,7 +748,6 @@
                         <outlet property="shopInfoButton" destination="6TQ-Jo-rva" id="JCD-cN-XQ1"/>
                         <outlet property="shopInformationLabel" destination="pgX-3P-mYq" id="KLH-mS-32T"/>
                         <outlet property="shopNameLabel" destination="pMS-uQ-wUZ" id="k1T-zf-euB"/>
-                        <outlet property="showAvailableDateButton" destination="9bh-nF-zlS" id="TWA-PT-m4S"/>
                         <outlet property="themeLabel" destination="hvz-Yk-p0g" id="lAO-6J-6ZH"/>
                     </connections>
                 </viewController>

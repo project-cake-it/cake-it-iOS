@@ -29,7 +29,7 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet weak var cakeSimpleView: UIView!
   @IBOutlet weak var cakeDesignLabel: UILabel!    // 케이크 디자인 이름
   @IBOutlet weak var addressLabel: UILabel!       // 가게 주소
-  @IBOutlet weak var availableOrderDay: UIButton! // 주문 가능 날짜 확인 버튼
+  @IBOutlet weak var orderAvailableDateButton: UIButton! // 주문 가능 날짜 확인 버튼
   @IBOutlet weak var lineView: UIView!
   
   @IBOutlet weak var cakeInformationView: UIView!
@@ -86,6 +86,14 @@ final class DesignDetailViewController: BaseViewController {
       cakeImageView.contentMode = .scaleAspectFill
       self.imageScrollView.addSubview(cakeImageView)
     }
+  }
+  
+  @IBAction func orderAvailableDateButtonDidTap(_ sender: Any) {
+    // TODO: -> 케이크 디자인 리스트에서 주문 가능 날짜 배열로 변경
+    let availableDates: [String] = []
+    let dateViewController = ShopDetailAvailableDateViewController(availableDates: availableDates)
+    dateViewController.modalPresentationStyle = .overFullScreen
+    present(dateViewController, animated: false)
   }
   
   @objc private func contactShopButtonDidTap() {
@@ -201,8 +209,9 @@ extension DesignDetailViewController {
     kindOfCreamsLabel.text = cakeDesign?.creamNames
     kindOfSheetsLabel.text = cakeDesign?.sheetNames
 
-    availableOrderDay.layer.borderWidth = 1
-    availableOrderDay.layer.borderColor = Colors.pointB.cgColor
+    orderAvailableDateButton.layer.borderWidth = 1
+    orderAvailableDateButton.layer.borderColor = Colors.pointB.cgColor
+    orderAvailableDateButton.round(cornerRadius: 4)
     connectShopButton.isHidden = true
   }
   
