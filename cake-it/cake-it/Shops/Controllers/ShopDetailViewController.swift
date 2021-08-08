@@ -104,14 +104,14 @@ final class ShopDetailViewController: BaseViewController {
   
   //MARK: - Private Method
   private func saveShop() {
-    guard let shopId = cakeShop?.id else { return }
-    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(shopId)"
+    guard let shopID = cakeShop?.id else { return }
+    let urlString = NetworkCommon.API.savedShops.urlString + "/\(shopID)"
     NetworkManager.shared.requestPost(urlString: urlString,
                                       type: String.self,
                                       param: "") { (response) in
       switch response {
-      case .success(let result):
-        print(result)
+      case .success(_):
+        self.fetchDetail(id: shopID)
       case .failure(let error):
         print(error.localizedDescription)
       }
@@ -120,13 +120,13 @@ final class ShopDetailViewController: BaseViewController {
   
   private func cancelSavedShop() {
     guard let shopId = cakeShop?.id else { return }
-    let urlString = NetworkCommon.API.savedDesigns.urlString + "/\(shopId)"
+    let urlString = NetworkCommon.API.savedShops.urlString + "/\(shopId)"
     NetworkManager.shared.requestDelete(urlString: urlString,
                                       type: String.self,
                                       param: "") { (response) in
       switch response {
-      case .success(let result):
-        print(result)
+      case .success(_):
+        self.fetchDetail(id: shopId)
       case .failure(let error):
         print(error.localizedDescription)
       }
@@ -134,12 +134,16 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
-    dismiss(animated: false, completion: nil)
+    navigationController?.popViewController(animated: true)
   }
   
   @IBAction func saveButtonDidTap(_ sender: Any) {
-    savedButton.isSelected = !savedButton.isSelected
+    if LoginManager.shared.verifyAccessToken() == false {
+      showLoginAlert()
+      return
+    }
     
+    savedButton.isSelected = !savedButton.isSelected
     if savedButton.isSelected == true {
       saveShop()
     } else {
@@ -437,5 +441,24 @@ extension ShopDetailViewController {
     bottomInfoShopInfoView.isHidden = true
     updateBottomInfoButton(cakeDesignButton)
     resetBottomInfoButton(shopInfoButton)
+  }
+  
+  private func showLoginAlert() {
+    let alertController = UIAlertController(title: "",
+                                            message: Constants.SAVED_ITEM_MESSAGE,
+                                            preferredStyle: .alert)
+    let confirmAction = UIAlertAction(title: Constants.COMMON_ALERT_OK,
+                                      style: .default) { _ in
+      self.moveToLoginPage()
+    }
+    alertController.addAction(confirmAction)
+    self.present(alertController, animated: false, completion: nil)
+  }
+  
+  private func moveToLoginPage() {
+    if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) {
+      loginViewController.modalPresentationStyle = .overFullScreen
+      present(loginViewController, animated: true, completion: nil)
+    }
   }
 }

@@ -14,8 +14,17 @@ final class NoticeViewController: BaseViewController {
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var textLabel: UILabel!
   
+  var notice: Notice?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureNotice()
+  }
+  
+  private func configureNotice() {
+    titleLabel.text = notice?.title
+    textLabel.text = notice?.body
+    dateLabel.text = notice?.createdAt
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {

@@ -14,12 +14,15 @@ final class ShopsMainViewController: BaseViewController {
     static let cakeShopCellHeight: CGFloat = 124.0
   }
   
+  @IBOutlet weak var titleView: UIView!
+  @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var filterCollectionView: UICollectionView!
+  @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
   
-  private(set) var cakeShops: [CakeShop] = []
+  var cakeShops: [CakeShop] = []
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
-  var filterDetailView: FilterDetailView?
+  var filterDetailVC: FilterDetailViewController?
   var selectedFilter: Dictionary<String, [String]> = [:]
   var hightlightedFilterType: FilterCommon.FilterType = .reset
 
@@ -27,10 +30,12 @@ final class ShopsMainViewController: BaseViewController {
     super.viewDidLoad()
     
     configure()
-    fetchCakeShops()
+    if cakeShops.isEmpty {
+      fetchCakeShops()
+    }
   }
   
-  private func fetchCakeShops() {
+  func fetchCakeShops() {
     NetworkManager.shared.requestGet(api: .shops,
                                      type: [CakeShop].self,
                                      param: selectedFilter.queryString()
@@ -49,8 +54,13 @@ final class ShopsMainViewController: BaseViewController {
 
 extension ShopsMainViewController {
   private func configure() {
-    configureFilterCategoryView()
+    configureFilterView()
     configureCollectionView()
+  }
+  
+  private func configureFilterView() {
+    configureFilterCategoryView()
+    configureFilterDetailView()
   }
   
   private func configureFilterCategoryView() {
@@ -58,6 +68,16 @@ extension ShopsMainViewController {
     registerFilterCategoryCollectionView()
   }
   
+  private func configureFilterDetailView() {
+    let id = String(describing: FilterDetailViewController.self)
+    filterDetailVC = FilterDetailViewController(nibName: id, bundle: nil)
+    guard let detailVC = filterDetailVC else { return }
+    detailVC.delegate = self
+    filterDetailContainerView.addSubview(detailVC.view)
+    hideFilterDetailView()
+    addChild(detailVC)
+  }
+
   private func configureFilterCategoryCollectionView() {
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.scrollDirection = .horizontal
@@ -91,5 +111,10 @@ extension ShopsMainViewController {
   private func configureCollectionViewProtocols() {
     shopCollectionView.dataSource = self
     shopCollectionView.delegate = self
+  }
+  
+  func hideTitleView() {
+    titleView.isHidden = true
+    titleViewHeightConstraint.constant = 0.0
   }
 }

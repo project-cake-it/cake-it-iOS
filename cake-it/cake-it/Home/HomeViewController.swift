@@ -20,23 +20,27 @@ final class HomeViewController: UIViewController {
     static let themeCollectionViewInterItemHorizontalSpace: CGFloat = 13
   }
   
-  @IBOutlet weak var slideView: UIScrollView!
-  
+  @IBOutlet weak var promotionSlideView: UIScrollView!
+  @IBOutlet weak var slideViewIndexLabel: UILabel!
   @IBOutlet weak var themeCollectionView: UICollectionView!
   @IBOutlet weak var themeHideButton: UIButton!
   @IBOutlet weak var themeCollectionViewHeightConstraint: NSLayoutConstraint!
-  
   @IBOutlet weak var rankCollectionView: UICollectionView!
   @IBOutlet weak var rankCollecionViewHeightConstraint: NSLayoutConstraint!
   
   private(set) var cakeDesigns: [CakeDesign] = []
   private let viewModel: HomeViewModel = HomeViewModel()
+  private var promotions: [PromotionModel.Response] = [] {
+    didSet {
+      updatePromotionSlideView()
+    }
+  }
   
   let cakeDesignThemes: [FilterCommon.FilterTheme] = [.birthday, .anniversary, .wedding, .emplyment, .advancement, .leave, .discharge, .graduated, .christmas, .halloween, .newYear]
   let themeCollecionViewNomalHeight: CGFloat = 108
   let themesMinCount = 4
-  
   let moreButtonIndex = 3
+  let indexLabelFomatString = "%d/%d"
   
   var isThemeViewExpanded: Bool = false {
     willSet {
@@ -79,7 +83,8 @@ final class HomeViewController: UIViewController {
   
   //MARK: - Private Func
   private func configueSlideView() {
-    slideView.heightAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
+    promotionSlideView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
+    promotionSlideView.delegate = self
   }
   
   private func configureNavigationController() {
@@ -90,21 +95,9 @@ final class HomeViewController: UIViewController {
     viewModel.requestPromotionImage { success, result, error in
       if success {
         guard let result = result else { return }
-        
-        self.slideView.contentSize.width = self.view.frame.width * CGFloat(result.count)
-        for i in 0..<result.count {
-          let imageView = UIImageView()
-          let xPos = self.view.frame.width * CGFloat(i)
-          imageView.frame = CGRect(x: xPos,
-                                   y: 0,
-                                   width: self.view.frame.width,
-                                   height: self.view.frame.width)
-          imageView.contentMode = .scaleAspectFill
-          imageView.kf.setImage(with: URL(string: result[i].imageUrl))
-          self.slideView.addSubview(imageView)
-        }
+        self.promotions = result
       } else {
-        // set placeholder image
+        // TODO: set placeholder image
       }
     }
   }
@@ -140,6 +133,44 @@ final class HomeViewController: UIViewController {
     themeCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
   }
   
+  private func updatePromotionSlideView() {
+    promotionSlideView.contentSize.width = view.frame.width * CGFloat(promotions.count)
+    for i in 0..<promotions.count {
+      let imageView = UIImageView()
+      imageView.tag = i
+      let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(promotionImageViewDidTap(_:)))
+      imageView.addGestureRecognizer(tapGestureRecognizer)
+      imageView.isUserInteractionEnabled = true
+      let xPos = view.frame.width * CGFloat(i)
+      imageView.frame = CGRect(x: xPos,
+                               y: 0,
+                               width: view.frame.width,
+                               height: view.frame.width)
+      imageView.contentMode = .scaleAspectFill
+      imageView.kf.setImage(with: URL(string: promotions[i].imageUrl))
+      promotionSlideView.addSubview(imageView)
+    }
+    slideViewIndexLabel.text = String(format: indexLabelFomatString, 1, promotions.count)
+  }
+  
+  private func updatePromotionIndexView(_ index:Int) {
+      slideViewIndexLabel.text = String(format: indexLabelFomatString, index, promotions.count)
+  }
+  
+  @objc private func promotionImageViewDidTap(_ sender: UITapGestureRecognizer) {
+    guard let imageView = sender.view else { return }
+    
+    let index = imageView.tag
+    
+    let identifier = String(describing: DesignDetailViewController.self)
+    let storyboard = UIStoryboard(name: "Home", bundle: nil)
+    if let designDetailVC = storyboard.instantiateViewController(withIdentifier: identifier)
+        as? DesignDetailViewController {
+      designDetailVC.designID = promotions[index].designID
+      navigationController?.pushViewController(designDetailVC, animated: true)
+    }
+  }
+  
   //MARK: - IBActions
   @IBAction func themeHideButtonDidTap(_ sender: Any) {
     isThemeViewExpanded = false
@@ -154,6 +185,21 @@ extension HomeViewController {
         loginViewController.modalPresentationStyle = .overFullScreen
         present(loginViewController, animated: false, completion: nil)
       }
+    }
+  }
+}
+
+//MARK: - scrollview delegate
+extension HomeViewController: UIScrollViewDelegate {
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    switch scrollView {
+    case promotionSlideView:
+      let currentPromotionIndex = Int(floor(scrollView.contentOffset.x / Constants.SCREEN_WIDTH)) + 1
+      self.slideViewIndexLabel.text = String(format: indexLabelFomatString,
+                                             currentPromotionIndex,
+                                             promotions.count)
+    default:
+      return
     }
   }
 }
