@@ -30,9 +30,10 @@ struct CakeShop: Decodable {
   let zzim: Bool
   let zzimCount: Int
   let designs: [CakeShopCakeDesign]
+  let urlX, urlY: String
   
   enum CodingKeys: String, CodingKey {
-    case id, name, address, fullAddress, information, holiday, operationTime, pickupTime, telephone, shopChannel, shopImages, themeNames, hashtags, sizes, displaySize, creamNames, sheetNames, zzim, zzimCount, designs
+    case id, name, address, fullAddress, information, holiday, operationTime, pickupTime, telephone, shopChannel, shopImages, themeNames, hashtags, sizes, displaySize, creamNames, sheetNames, zzim, zzimCount, designs, urlX, urlY
     case orderAvailableDates = "orderAvailabilityDates"
   }
 }
