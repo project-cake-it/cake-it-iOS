@@ -20,8 +20,8 @@ final class SearchResultViewController: BaseViewController {
 
     var font: UIFont {
       switch self {
-      case .normal:       return Fonts.spoqaHanSans(weight: .Bold, size: 15)
-      case .highlighted:  return Fonts.spoqaHanSans(weight: .Medium, size: 15)
+      case .normal:       return Fonts.spoqaHanSans(weight: .Medium, size: 15)
+      case .highlighted:  return Fonts.spoqaHanSans(weight: .Bold, size: 15)
       }
     }
     
