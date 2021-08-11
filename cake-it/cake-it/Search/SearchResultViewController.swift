@@ -76,13 +76,9 @@ final class SearchResultViewController: BaseViewController {
     configureDesignListView()
     configureShopListView()
     
-    // 최초 뷰 Configure 시 design 결과값이 없다면 shop 탭으로 이동
-    if isEmptyResult(type: .design) {
-      if isEmptyResult(type: .shop) {
-        emptyResultView.isHidden = false
-      } else {
-        currentTappedType = .shop
-      }
+    currentTappedType = .design
+    if isEmptyResult(type: .design) == true && isEmptyResult(type: .shop) == false {
+      currentTappedType = .shop
     }
   }
   
@@ -90,11 +86,12 @@ final class SearchResultViewController: BaseViewController {
     let id = String(describing: DesignListViewController.self)
     let storyboard = UIStoryboard(name: "Home", bundle: nil)
     if let designVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignListViewController {
+      self.addChild(designVC)
+      designVC.cakeDesigns = searchResult?.designs ?? []
+      designVC.searchKeyword = [FilterCommon.Searching.key: keyword]
+      designContainerView.addSubview(designVC.view)
       designVC.view.frame = designContainerView.frame
       designVC.hideNavigationView()
-      designVC.cakeDesigns = searchResult?.designs ?? []
-      designContainerView.addSubview(designVC.view)
-      self.addChild(designVC)
     }
   }
   
@@ -102,11 +99,12 @@ final class SearchResultViewController: BaseViewController {
     let id = String(describing: ShopsMainViewController.self)
     let storyboard = UIStoryboard(name: "Shops", bundle: nil)
     if let shopVC = storyboard.instantiateViewController(withIdentifier: id) as? ShopsMainViewController {
+      self.addChild(shopVC)
+      shopVC.cakeShops = searchResult?.shops ?? []
+      shopVC.searchKeyword = [FilterCommon.Searching.key: keyword]
+      shopContainerView.addSubview(shopVC.view)
       shopVC.view.frame = shopContainerView.frame
       shopVC.hideTitleView()
-      shopVC.cakeShops = searchResult?.shops ?? []
-      shopContainerView.addSubview(shopVC.view)
-      self.addChild(shopVC)
     }
   }
     
@@ -170,28 +168,27 @@ extension SearchResultViewController {
   }
   
   private func updateContainerView() {
-    emptyResultView.isHidden = true
-    if isEmptyResult(type: currentTappedType) {
-      emptyResultView.isHidden = false
-      return
-    }
-    
     switch currentTappedType {
     case .design:
-      designContainerView.alpha = 1.0
-      shopContainerView.alpha = 0.0
+      designContainerView.isHidden = false
+      shopContainerView.isHidden = true
       if let childVC = childViewController(type: ShopsMainViewController.self) {
         let shopListVC = childVC as! ShopsMainViewController
-        shopListVC.hideFilterDetailView()
+        shopListVC.resetFilter()
       }
       
     case .shop:
-      designContainerView.alpha = 0.0
-      shopContainerView.alpha = 1.0
+      designContainerView.isHidden = true
+      shopContainerView.isHidden = false
       if let childVC = childViewController(type: DesignListViewController.self) {
         let designListVC = childVC as! DesignListViewController
-        designListVC.hideFilterDetailView()
+        designListVC.resetFilter()
       }
+    }
+    
+    emptyResultView.isHidden = true
+    if isEmptyResult(type: currentTappedType) {
+      emptyResultView.isHidden = false
     }
   }
   

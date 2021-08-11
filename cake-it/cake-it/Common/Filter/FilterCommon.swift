@@ -301,3 +301,13 @@ extension FilterCommon {
     }
   }
 }
+
+// 통합검색 키워드
+extension FilterCommon {
+  enum Searching: CaseIterable {
+    // 서버 api value
+    static var key: String {
+      return "keyword"
+    }
+  }
+}

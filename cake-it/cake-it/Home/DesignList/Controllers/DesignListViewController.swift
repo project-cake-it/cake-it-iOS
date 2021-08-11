@@ -41,6 +41,7 @@ final class DesignListViewController: BaseViewController {
   }
   fileprivate var selectedTheme: [String: String] = [:]     // 선택된 테마 리스트
   var selectedFilter: [String: [String]] = [:]  // 선택된 필터 리스트
+  var searchKeyword: [String: String] = [:]     // 검색 키워드
   var highlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
   var filterDetailVC: FilterDetailViewController?     // 필터 디테일 리스트
   var themeDetailView: ThemeDetailView?       // 테마 디테일 리스트
@@ -56,7 +57,15 @@ final class DesignListViewController: BaseViewController {
   }
 
   func fetchCakeDesigns() {
-    let parameter = mergedQueryStringFromThemeAndFilter()
+    if let _ = self.parent as? SearchResultViewController {
+      requestSearchingDesigns()
+    } else {
+      requestDesigns()
+    }
+  }
+  
+  private func requestDesigns() {
+    let parameter = mergedFilterQueryString(with: selectedTheme)
     NetworkManager.shared.requestGet(api: .designs,
                                      type: [CakeDesign].self,
                                      param: parameter) { (response) in
@@ -70,12 +79,28 @@ final class DesignListViewController: BaseViewController {
       }
     }
   }
+  
+  private func requestSearchingDesigns() {
+    let parameter = mergedFilterQueryString(with: searchKeyword)
+    NetworkManager.shared.requestGet(api: .search,
+                                     type: SearchResult.self,
+                                     param: parameter) { (response) in
+      switch response {
+      case .success(let searchResult):
+        self.cakeDesigns = searchResult.designs
+        self.designsCollectionView.reloadData()
 
-  private func mergedQueryStringFromThemeAndFilter() -> String {
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+
+  private func mergedFilterQueryString(with dic: [String: String]) -> String {
     var mergedFilterDic: [String: [String]] = selectedFilter
-    if let themeKey = selectedTheme.keys.first,
-       let themeValue = selectedTheme.values.first {
-      mergedFilterDic[themeKey] = [themeValue]
+    if let key = dic.keys.first,
+       let value = dic.values.first {
+      mergedFilterDic[key] = [value]
     }
     let parameter = mergedFilterDic.queryString()
     return parameter
