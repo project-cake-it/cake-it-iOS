@@ -267,7 +267,7 @@ extension FilterCommon {
     // 서버 api value
     var value: String {
       switch self {
-      case .none:         return "NONE"
+      case .none:         return ""
       case .birthday:     return "BIRTHDAY"
       case .anniversary:  return "ANNIVERSARY"
       case .wedding:      return "WEDDING"
