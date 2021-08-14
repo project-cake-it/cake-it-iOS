@@ -32,7 +32,7 @@ extension MyPageMainViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let identifier = String(describing: MyPageCell.self)
     let cell = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! MyPageCell
-    cell.titleLabel.text = cellTitles[indexPath.section][indexPath.row]
+    cell.updateCell(section: indexPath.section, index: indexPath.row)
     
     return cell
   }

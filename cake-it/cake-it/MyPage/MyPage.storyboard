@@ -21,7 +21,6 @@
         <!--My Page Main View Controller-->
         <scene sceneID="tcA-cW-kmP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10f-8L-7Y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MyPageMainViewController" id="Yxa-9b-Zyd" customClass="MyPageMainViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YM1-tj-5st">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -48,7 +47,7 @@
                                     <constraint firstItem="je5-7b-lCh" firstAttribute="centerX" secondItem="RNM-yk-QhI" secondAttribute="centerX" id="mIo-7n-0ih"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtK-TB-IXk">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtK-TB-IXk">
                                 <rect key="frame" x="0.0" y="95" width="414" height="64"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임님, 환영합니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHS-no-JmM">
@@ -84,14 +83,34 @@
                                                     <color key="textColor" name="grayscale05"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icChevronCompactRight" translatesAutoresizingMaskIntoConstraints="NO" id="RZc-ad-DX0">
+                                                    <rect key="frame" x="380" y="14" width="20" height="20"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="QPb-7M-Q7i"/>
+                                                        <constraint firstAttribute="height" constant="20" id="obc-9P-P4k"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYY-UF-6Cf">
+                                                    <rect key="frame" x="377.5" y="15.5" width="20.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                    <color key="textColor" name="grayscale04"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="bYY-UF-6Cf" secondAttribute="trailing" constant="16" id="C3v-OL-Nhe"/>
                                                 <constraint firstItem="amH-KJ-N1l" firstAttribute="centerY" secondItem="Lww-sC-WTb" secondAttribute="centerY" id="H6O-f3-T7F"/>
                                                 <constraint firstItem="amH-KJ-N1l" firstAttribute="leading" secondItem="Lww-sC-WTb" secondAttribute="leadingMargin" id="Rh8-sD-nBg"/>
+                                                <constraint firstItem="RZc-ad-DX0" firstAttribute="centerY" secondItem="Lww-sC-WTb" secondAttribute="centerY" id="aVE-lh-MvZ"/>
+                                                <constraint firstItem="bYY-UF-6Cf" firstAttribute="centerY" secondItem="Lww-sC-WTb" secondAttribute="centerY" id="eoE-Db-sar"/>
+                                                <constraint firstAttribute="trailing" secondItem="RZc-ad-DX0" secondAttribute="trailing" constant="14" id="l7i-X0-5wV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="rightIcon" destination="RZc-ad-DX0" id="8Ir-Nc-mHq"/>
                                             <outlet property="titleLabel" destination="amH-KJ-N1l" id="kT0-yE-tpf"/>
+                                            <outlet property="versionLabel" destination="bYY-UF-6Cf" id="Fen-ex-gh8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -132,9 +151,12 @@
                     <navigationItem key="navigationItem" id="xUD-5n-AA1"/>
                     <connections>
                         <outlet property="myPageMessageLabel" destination="jHS-no-JmM" id="qkg-HV-YQS"/>
+                        <outlet property="myPageMessageView" destination="ZtK-TB-IXk" id="Rky-Kw-Ysb"/>
+                        <outlet property="myPageMessageViewHeight" destination="9JC-Am-AbY" id="Kfc-Sn-L6C"/>
                         <outlet property="myPageTableView" destination="YPu-lm-kOd" id="s8H-NH-jLS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10f-8L-7Y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101.449275362319" y="61.607142857142854"/>
         </scene>
