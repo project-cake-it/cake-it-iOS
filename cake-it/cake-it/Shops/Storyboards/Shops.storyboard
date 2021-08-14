@@ -168,7 +168,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                         <state key="normal" title="주문 가능 날짜">
-                                                            <color key="titleColor" name="pointB"/>
+                                                            <color key="titleColor" name="primaryColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="orderAvailableDateButtonDidTap:" destination="xun-sG-jRg" eventType="touchUpInside" id="mF3-Nz-Gua"/>
@@ -639,7 +639,7 @@
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3SG-K8-SgK" userLabel="buttonIndexView">
                                                         <rect key="frame" x="0.0" y="54" width="207" height="2"/>
-                                                        <color key="backgroundColor" name="pointB"/>
+                                                        <color key="backgroundColor" name="primaryColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="2" id="8OH-wb-eK8"/>
                                                         </constraints>
@@ -793,8 +793,8 @@
         <namedColor name="grayscale05">
             <color red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="pointB">
-            <color red="0.34099999070167542" green="0.45100000500679016" blue="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="primaryColor">
+            <color red="0.87450980392156863" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

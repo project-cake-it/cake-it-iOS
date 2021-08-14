@@ -493,7 +493,7 @@
                                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="H1Q-qH-fwz">
                                                         <rect key="frame" x="330" y="390" width="64" height="4"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <color key="tintColor" name="pointB"/>
+                                                        <color key="tintColor" name="primaryColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="64" id="gLK-ax-yYH"/>
                                                             <constraint firstAttribute="height" constant="4" id="xA5-QL-U6F"/>
@@ -536,7 +536,7 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
                                                         <state key="normal" title="주문가능 날짜 보기">
-                                                            <color key="titleColor" name="pointB"/>
+                                                            <color key="titleColor" name="primaryColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="orderAvailableDateButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="XCZ-wk-GMr"/>
@@ -705,7 +705,7 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-fU-63o">
                                                 <rect key="frame" x="16" y="876" width="382" height="48"/>
-                                                <color key="backgroundColor" name="pointB"/>
+                                                <color key="backgroundColor" name="primaryColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Oy7-21-gxC"/>
                                                 </constraints>
@@ -826,8 +826,8 @@
         <namedColor name="grayscale05">
             <color red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="pointB">
-            <color red="0.34099999070167542" green="0.45100000500679016" blue="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="primaryColor">
+            <color red="0.87450980392156863" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
