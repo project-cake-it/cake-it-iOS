@@ -22,7 +22,7 @@ extension ThemeDetailView: UITableViewDataSource {
       let themeType = FilterCommon.FilterTheme.allCases[indexPath.row]
       cell.themeLabel.text = themeType.title
       if selectedTheme == themeType {
-        cell.themeLabel.textColor = Colors.pointB
+        cell.themeLabel.textColor = Colors.primaryColor
         cell.themeLabel.font = Fonts.spoqaHanSans(weight: .Bold, size: 14.0)
       }
       return cell

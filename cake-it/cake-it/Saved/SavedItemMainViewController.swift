@@ -25,7 +25,7 @@ final class SavedItemMainViewController: ButtonBarPagerTabStripViewController {
   func initXLPagerTabStripUI() {
     settings.style.buttonBarBackgroundColor = .white
     settings.style.buttonBarItemBackgroundColor = .white
-    settings.style.selectedBarBackgroundColor = Colors.pointB
+    settings.style.selectedBarBackgroundColor = Colors.primaryColor
     settings.style.selectedBarHeight = 2.0
     settings.style.buttonBarItemTitleColor = .black
   }

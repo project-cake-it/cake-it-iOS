@@ -4,12 +4,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--검색-->
         <scene sceneID="ql4-Pg-2gD">
             <objects>
                 <viewController id="O5M-zr-lcS" sceneMemberID="viewController">
@@ -33,7 +34,7 @@
                             <constraint firstItem="GyN-Yv-L6m" firstAttribute="trailing" secondItem="zkN-bN-vvM" secondAttribute="trailing" id="z9i-eC-xj3"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" selectedImage="magnifyingglass" catalog="system" id="yp4-3R-NYQ"/>
+                    <tabBarItem key="tabBarItem" title="검색" image="tab-search" selectedImage="tab-search-clicked" id="yp4-3R-NYQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LtM-ZT-6Yb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +72,7 @@
                             <constraint firstItem="mkP-4A-A6u" firstAttribute="bottom" secondItem="k6T-4O-4O7" secondAttribute="bottom" id="vuX-VH-gEP"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="찜" id="AeO-ne-BIp"/>
+                    <tabBarItem key="tabBarItem" title="찜" image="tab-mark" selectedImage="tab-mark-clicked" id="AeO-ne-BIp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4k8-Dc-9L4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,7 +110,7 @@
                             <constraint firstItem="DEd-C1-Em5" firstAttribute="top" secondItem="bZy-0h-bL4" secondAttribute="top" id="v3E-nr-zZI"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="마이페이지" id="KsB-tn-6VH"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="tab-mypage" selectedImage="tab-mypage-clicked" id="KsB-tn-6VH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IUL-kQ-cIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -147,7 +148,7 @@
                             <constraint firstItem="iPf-HD-Yqr" firstAttribute="top" secondItem="bIi-vi-H0L" secondAttribute="top" id="eFF-mW-TAf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="케이크 가게" selectedImage="paperclip" catalog="system" id="qsj-bp-d9c"/>
+                    <tabBarItem key="tabBarItem" title="케이크 가게" image="tab-store" selectedImage="tab-store-clicked" id="qsj-bp-d9c"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adz-bw-Z97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +162,7 @@
             </objects>
             <point key="canvasLocation" x="2462" y="-139"/>
         </scene>
-        <!--Home-->
+        <!--홈-->
         <scene sceneID="gXh-fy-oc9">
             <objects>
                 <viewController id="zyQ-N7-yuu" sceneMemberID="viewController">
@@ -185,7 +186,7 @@
                             <constraint firstItem="Ozi-yd-0Jw" firstAttribute="trailing" secondItem="ptt-x8-ODw" secondAttribute="trailing" id="bM3-FY-Srv"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house.fill" catalog="system" id="g7U-qh-QdN"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="tab-home" selectedImage="tab-home-clicked" id="g7U-qh-QdN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqn-Wl-5og" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,11 +203,12 @@
         <!--Tab Bar Controller-->
         <scene sceneID="rAC-uc-4ku">
             <objects>
-                <tabBarController id="ge5-eX-Qu4" sceneMemberID="viewController">
+                <tabBarController id="ge5-eX-Qu4" customClass="TabBarController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z7t-tp-A8D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="primaryColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="zyQ-N7-yuu" kind="relationship" relationship="viewControllers" id="U4O-ji-udy"/>
@@ -222,9 +224,19 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="paperclip" catalog="system" width="121" height="128"/>
+        <image name="tab-home" width="48" height="22"/>
+        <image name="tab-home-clicked" width="48" height="22"/>
+        <image name="tab-mark" width="48" height="22"/>
+        <image name="tab-mark-clicked" width="48" height="22"/>
+        <image name="tab-mypage" width="48" height="22"/>
+        <image name="tab-mypage-clicked" width="48" height="22"/>
+        <image name="tab-search" width="48" height="22"/>
+        <image name="tab-search-clicked" width="48" height="22"/>
+        <image name="tab-store" width="48" height="22"/>
+        <image name="tab-store-clicked" width="48" height="22"/>
+        <namedColor name="primaryColor">
+            <color red="0.87450980392156863" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -213,6 +213,7 @@
 		F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887C7265A4C5600930932 /* FilterColorCell.swift */; };
 		F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */; };
 		F7AC8DA02687258D00F74EBF /* CakeDesignThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */; };
+		F7AF927B26C557DC006497EA /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF927A26C557DC006497EA /* TabBarController.swift */; };
 		F7B76D0A26B695510024674C /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B76D0926B695510024674C /* UIView+Toast.swift */; };
 		F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF345B269C5AD2006CE344 /* SearchResult.swift */; };
 		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
@@ -435,6 +436,7 @@
 		F7A887C7265A4C5600930932 /* FilterColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterColorCell.swift; sourceTree = "<group>"; };
 		F7A887D2265A4C6700930932 /* FilterDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionCell.swift; sourceTree = "<group>"; };
 		F7AC8D9F2687258D00F74EBF /* CakeDesignThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CakeDesignThemeCell.swift; sourceTree = "<group>"; };
+		F7AF927A26C557DC006497EA /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F7B76D0926B695510024674C /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		F7BF345B269C5AD2006CE344 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
@@ -661,6 +663,7 @@
 				F774B94525E0E0FE006EE0EC /* BaseModels */,
 				38D8C70425BC622700C1F10D /* LaunchScreen.storyboard */,
 				38D8C6FF25BC622500C1F10D /* Tabbar.storyboard */,
+				F7AF927A26C557DC006497EA /* TabBarController.swift */,
 				ACDD76EC269CA97300C62F24 /* personalinfomation.html */,
 				ACDD76EB269CA97300C62F24 /* terms.html */,
 				38D8C6F925BC622500C1F10D /* AppDelegate.swift */,
@@ -1535,6 +1538,7 @@
 				AC52DE6C2699E7E200718332 /* Notice.swift in Sources */,
 				AC0B8FE8264680F6009016A9 /* ListBoardViewController+UITableViewDelegateFlowLayout.swift in Sources */,
 				F774B94A25E0E0FE006EE0EC /* BaseViewModel.swift in Sources */,
+				F7AF927B26C557DC006497EA /* TabBarController.swift in Sources */,
 				AC9FA08726790CCE0050F9F0 /* HomeViewController+UICollectionViewDelegate.swift in Sources */,
 				F7A2DA26263EA95200C160A5 /* DesignDetailViewController.swift in Sources */,
 				8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */,
@@ -1809,7 +1813,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_ENTITLEMENTS = "cake-it/cake-it.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QKG65XDLX8;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1838,7 +1842,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_ENTITLEMENTS = "cake-it/cake-it.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QKG65XDLX8;
 				FRAMEWORK_SEARCH_PATHS = (

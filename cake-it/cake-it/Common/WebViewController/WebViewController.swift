@@ -102,7 +102,7 @@ extension WebViewController {
   }
   
   private func configureActivityIndicatorView() {
-    activityIndicator.tintColor = Colors.pointB
+    activityIndicator.tintColor = Colors.primaryColor
     activityIndicator.startAnimating()
     view.addSubview(activityIndicator)
     activityIndicator.translatesAutoresizingMaskIntoConstraints = false

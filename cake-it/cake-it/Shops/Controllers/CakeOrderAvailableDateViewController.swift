@@ -161,10 +161,10 @@ final class CakeOrderAvailableDateViewController: UIViewController {
   private func updateChangeMonthButtonState() {
     previousMonthButton.isEnabled = currentMonthIndex != 0
     previousMonthButton.tintColor = previousMonthButton.isEnabled ?
-      Colors.pointB : Colors.grayscale03
+      Colors.primaryColor : Colors.grayscale03
     nextMonthButton.isEnabled = currentMonthIndex != maxMonthOffset
     nextMonthButton.tintColor = nextMonthButton.isEnabled ?
-      Colors.pointB : Colors.grayscale03
+      Colors.primaryColor : Colors.grayscale03
   }
 }
 
@@ -259,7 +259,7 @@ extension CakeOrderAvailableDateViewController {
   private func configureArrowButtons() {
     nextMonthButton = UIButton(type: .system)
     nextMonthButton.setImage(#imageLiteral(resourceName: "icChevronCalendarRight"), for: .normal)
-    nextMonthButton.tintColor = Colors.pointB
+    nextMonthButton.tintColor = Colors.primaryColor
     containerView.addSubview(nextMonthButton)
     nextMonthButton.constraints(topAnchor: dismissButton.bottomAnchor,
                                 leadingAnchor: nil,

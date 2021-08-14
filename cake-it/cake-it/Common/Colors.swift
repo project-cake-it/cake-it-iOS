@@ -8,6 +8,7 @@
 import UIKit
 
 enum Colors {
+  static let primaryColor = UIColor(named: "primaryColor")!
   static let white = UIColor(named: "white")!
   static let grayscale01 = UIColor(named: "grayscale01")!
   static let grayscale02 = UIColor(named: "grayscale02")!
@@ -15,5 +16,4 @@ enum Colors {
   static let grayscale04 = UIColor(named: "grayscale04")!
   static let grayscale05 = UIColor(named: "grayscale05")!
   static let black = UIColor(named: "black")!
-  static let pointB = UIColor(named: "pointB")!
 }

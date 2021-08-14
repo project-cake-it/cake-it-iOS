@@ -28,7 +28,7 @@ final class SearchResultViewController: BaseViewController {
     var textColor: UIColor {
       switch self {
       case .normal:       return Colors.black
-      case .highlighted:  return Colors.pointB
+      case .highlighted:  return Colors.primaryColor
       }
     }
   }
