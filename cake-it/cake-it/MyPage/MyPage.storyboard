@@ -21,7 +21,6 @@
         <!--My Page Main View Controller-->
         <scene sceneID="tcA-cW-kmP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10f-8L-7Y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MyPageMainViewController" id="Yxa-9b-Zyd" customClass="MyPageMainViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YM1-tj-5st">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -135,6 +134,7 @@
                         <outlet property="myPageTableView" destination="YPu-lm-kOd" id="s8H-NH-jLS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10f-8L-7Y1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1101.449275362319" y="61.607142857142854"/>
         </scene>
