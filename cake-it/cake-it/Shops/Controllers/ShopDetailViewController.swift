@@ -175,14 +175,14 @@ final class ShopDetailViewController: BaseViewController {
   @IBAction func showMapButtonDidTap(_ sender: Any) {
     guard let cakeShop = cakeShop else { return }
     
-    let urlString = "kakaomap://look?p=\(cakeShop.urlX),\(cakeShop.urlY)"
+    let urlString = "kakaomap://look?p=\(cakeShop.latitude),\(cakeShop.logitude)"
     
-    if let url = URL.init(string:urlString) {
-      if UIApplication.shared.canOpenURL(url) {
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-      } else {
-        self.view.showToast(message: Constants.COMMON_NET_ERROR)
-      }
+    guard let url = URL.init(string: urlString) else { return }
+    
+    if UIApplication.shared.canOpenURL(url) {
+      UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    } else {
+      view.showToast(message: Constants.COMMON_NET_ERROR)
     }
   }
   
@@ -288,11 +288,11 @@ extension ShopDetailViewController {
   
   private func updateMapView() {
     mapView = MTMapView(frame: self.mapContainerView.bounds)
-    guard let mapView = mapView  else { return }
+    guard let mapView = mapView else { return }
     guard let cakeShop = cakeShop else { return }
-    guard var latitude = Double(cakeShop.urlX), var longitude = Double(cakeShop.urlY) else { return }
+    guard let latitude = Double(cakeShop.latitude),
+          let longitude = Double(cakeShop.logitude) else { return }
 
-    mapView.delegate = self
     let mapPoint = MTMapPoint.init(geoCoord: .init(latitude: latitude, longitude: longitude))
     mapView.baseMapType = .standard
     mapView.setMapCenter(mapPoint,

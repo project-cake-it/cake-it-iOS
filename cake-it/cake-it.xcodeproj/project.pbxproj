@@ -144,8 +144,6 @@
 		AC422A4E26A08920006ACC20 /* map_pin_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = AC422A1726A08920006ACC20 /* map_pin_shadow.png */; };
 		AC422A4F26A08920006ACC20 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC422A1826A08920006ACC20 /* DaumMap.framework */; };
 		AC422A5026A08920006ACC20 /* DaumMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC422A1826A08920006ACC20 /* DaumMap.framework */; };
-		AC422A5226A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */; };
-		AC422A5326A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */; };
 		AC52DE6526902C2700718332 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6426902C2700718332 /* HomeViewModel.swift */; };
 		AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE6626902D8400718332 /* PromotionModel.swift */; };
 		AC52DE692699E70400718332 /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC52DE682699E70400718332 /* MyPageViewModel.swift */; };
@@ -367,7 +365,6 @@
 		AC422A1626A08920006ACC20 /* daum_th_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = daum_th_line.png; sourceTree = "<group>"; };
 		AC422A1726A08920006ACC20 /* map_pin_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map_pin_shadow.png; sourceTree = "<group>"; };
 		AC422A1826A08920006ACC20 /* DaumMap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DaumMap.framework; sourceTree = "<group>"; };
-		AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopDetailViewController+MTMapViewDelegate.swift"; sourceTree = "<group>"; };
 		AC422A5426AD594A006ACC20 /* cake-it.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cake-it.entitlements"; sourceTree = "<group>"; };
 		AC52DE6426902C2700718332 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		AC52DE6626902D8400718332 /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
@@ -622,7 +619,6 @@
 				8B3AE24E261DEC6800770839 /* ShopsMainViewController+UICollectionViewDelegateFlowLayout.swift */,
 				F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */,
 				8B1DFDDE26459C2B0076E14C /* ShopDetailViewController.swift */,
-				AC422A5126A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift */,
 				8B1DFDE526484CD40076E14C /* ShopDetailViewController+UICollectionViewDataSource.swift */,
 				8B1DFDE726484CF30076E14C /* ShopDetailViewController+UICollectionViewDelegate.swift */,
 				8B725BF526B6457D00E1CE1B /* CakeOrderAvailableDateViewController.swift */,
@@ -1582,7 +1578,6 @@
 				8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */,
 				F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */,
 				8B0DDA51260CE120003923D9 /* UIView+AutoLayout.swift in Sources */,
-				AC422A5226A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift in Sources */,
 				8B2A7541261C9812007757E5 /* CakeShop.swift in Sources */,
 				F7A30F6025F3943D0023CDD5 /* PhotoUploadViewController.swift in Sources */,
 				8B1E00B126BFC55400377E22 /* CakeOrderAvailableDates.swift in Sources */,
@@ -1639,7 +1634,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				38D8C71125BC622700C1F10D /* cake_itTests.swift in Sources */,
-				AC422A5326A08A65006ACC20 /* ShopDetailViewController+MTMapViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
