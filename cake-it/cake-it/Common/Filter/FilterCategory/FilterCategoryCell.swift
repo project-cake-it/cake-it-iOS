@@ -68,18 +68,18 @@ final class FilterCategoryCell: UICollectionViewCell {
     if isFilterHighlighted == true && isFilterSelected == true { // (T,T)
       arrowImageView.image = UIImage(named: "chevronCompactUpWhite")
       titleLabel.textColor = Colors.white
-      self.layer.borderColor = Colors.pointB.cgColor
-      self.backgroundColor = Colors.pointB
+      self.layer.borderColor = Colors.primaryColor.cgColor
+      self.backgroundColor = Colors.primaryColor
     } else if isFilterHighlighted == true && isFilterSelected == false {  // (T,F)
       arrowImageView.image = UIImage(named: "chevronCompactUp")
-      titleLabel.textColor = Colors.pointB
-      self.layer.borderColor = Colors.pointB.cgColor
+      titleLabel.textColor = Colors.primaryColor
+      self.layer.borderColor = Colors.primaryColor.cgColor
       self.backgroundColor = Colors.white
     } else if isFilterHighlighted == false && isFilterSelected == true {  // (F,T)
       arrowImageView.image = UIImage(named: "chevronCompactDownWhite")
       titleLabel.textColor = Colors.white
-      self.layer.borderColor = Colors.pointB.cgColor
-      self.backgroundColor = Colors.pointB
+      self.layer.borderColor = Colors.primaryColor.cgColor
+      self.backgroundColor = Colors.primaryColor
     } else { // (F,F)
       arrowImageView.image = UIImage(named: "chevronCompactDown")
       titleLabel.textColor = Colors.black

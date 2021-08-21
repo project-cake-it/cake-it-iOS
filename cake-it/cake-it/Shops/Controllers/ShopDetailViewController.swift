@@ -273,7 +273,7 @@ extension ShopDetailViewController {
   }
   
   private func updateBottomInfoButton(_ button: UIButton) {
-    button.setTitleColor(Colors.pointB, for: .normal)
+    button.setTitleColor(Colors.primaryColor, for: .normal)
     button.titleLabel?.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
   }
   
@@ -398,7 +398,7 @@ extension ShopDetailViewController {
   private func configureContactShopButton() {
     contactShopButton = CakeDesignDetailContactButton(type: .system)
     contactShopButton.addTarget(self, action: #selector(contactShopButtonDidTap), for: .touchUpInside)
-    contactShopButton.backgroundColor = Colors.pointB
+    contactShopButton.backgroundColor = Colors.primaryColor
     contactShopButton.setTitle("가게 연결하기", for: .normal)
     contactShopButton.setTitleColor(Colors.white, for: .normal)
     contactShopButton.titleLabel?.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
@@ -435,7 +435,7 @@ extension ShopDetailViewController {
   
   private func configureViews() {
     orderAvailableDateButton.layer.borderWidth = 1.0
-    orderAvailableDateButton.layer.borderColor = Colors.pointB.cgColor
+    orderAvailableDateButton.layer.borderColor = Colors.primaryColor.cgColor
     orderAvailableDateButton.round(cornerRadius: 4.0, clipsToBounds: true)
     locationInfoContainerView.addBorder(borderColor: Colors.grayscale02, borderWidth: 1.0)
     bottomInfoShopInfoView.isHidden = true

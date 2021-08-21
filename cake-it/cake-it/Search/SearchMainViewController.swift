@@ -30,7 +30,7 @@ final class SearchMainViewController: BaseViewController {
                                             action: #selector(backgroundDidTap))
     view.addGestureRecognizer(tapGesture)
     searchTextField.delegate = self
-    searchTextField.tintColor = Colors.pointB
+    searchTextField.tintColor = Colors.primaryColor
   }
   
   @objc private func backgroundDidTap() {

@@ -192,7 +192,7 @@ extension DesignDetailViewController {
       return
     }
     progressBar.backgroundColor = Colors.white
-    progressBar.tintColor = Colors.pointB
+    progressBar.tintColor = Colors.primaryColor
     progressBar.progressViewStyle = .bar
     progressBar.progress = 1.0 / Float(imageTotalCount)
   }
@@ -210,7 +210,7 @@ extension DesignDetailViewController {
     kindOfSheetsLabel.text = cakeDesign?.sheetNames
 
     orderAvailableDateButton.layer.borderWidth = 1
-    orderAvailableDateButton.layer.borderColor = Colors.pointB.cgColor
+    orderAvailableDateButton.layer.borderColor = Colors.primaryColor.cgColor
     orderAvailableDateButton.round(cornerRadius: 4)
     connectShopButton.isHidden = true
   }
@@ -326,7 +326,7 @@ extension DesignDetailViewController {
   private func configureContactShopButton() {
     contactShopButton = CakeDesignDetailContactButton(type: .system)
     contactShopButton.addTarget(self, action: #selector(contactShopButtonDidTap), for: .touchUpInside)
-    contactShopButton.backgroundColor = Colors.pointB
+    contactShopButton.backgroundColor = Colors.primaryColor
     contactShopButton.setTitle("가게 연결하기", for: .normal)
     contactShopButton.setTitleColor(Colors.white, for: .normal)
     contactShopButton.titleLabel?.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)

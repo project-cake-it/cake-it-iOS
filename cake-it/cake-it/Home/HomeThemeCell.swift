@@ -18,11 +18,11 @@ final class HomeThemeCell: UICollectionViewCell {
   
   func updateCell(isMoreButton:Bool = false, title:String) {
     if isMoreButton {
-      backView.backgroundColor = Colors.pointB
+      backView.backgroundColor = Colors.primaryColor
       titleLabel.textColor = Colors.white
     } else {
       backView.backgroundColor = Colors.grayscale02
-      titleLabel.textColor = Colors.pointB
+      titleLabel.textColor = Colors.primaryColor
     }
     
     titleLabel.text = title
