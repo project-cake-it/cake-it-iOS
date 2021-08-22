@@ -24,4 +24,10 @@ final class Constants {
   //MARK: - Saved view controller strings
   static let CAKE_LIST_SUB_VIEW_TITLE = "케이크"
   static let STORE_LIST_SUB_VIEW_TITLE = "가게"
+  
+  //MARK: - Shop Detail View
+  static let SHOP_ADDRESS_COPY_COMPLETE = "주소가 복사 되었습니다."
+  
+  //MARK: - ERROR
+  static let COMMON_NET_ERROR = "잠시후 다시 시도해주세요."
 }

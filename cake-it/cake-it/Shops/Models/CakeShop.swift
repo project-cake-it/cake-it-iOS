@@ -30,10 +30,13 @@ struct CakeShop: Decodable {
   let zzim: Bool
   let zzimCount: Int
   let designs: [CakeShopCakeDesign]
+  let latitude, logitude: String
   
   enum CodingKeys: String, CodingKey {
     case id, name, address, fullAddress, information, holiday, operationTime, pickupTime, telephone, shopChannel, shopImages, themeNames, hashtags, sizes, displaySize, creamNames, sheetNames, zzim, zzimCount, designs
     case orderAvailableDates = "orderAvailabilityDates"
+    case latitude = "urlX"
+    case logitude = "urlY"
   }
 }
 
