@@ -96,10 +96,10 @@ final class DesignListViewController: BaseViewController {
     }
   }
 
-  private func mergedFilterQueryString(with dic: [String: String]) -> String {
+  private func mergedFilterQueryString(with otherFilter: [String: String]) -> String {
     var mergedFilterDic: [String: [String]] = selectedFilter
-    if let key = dic.keys.first,
-       let value = dic.values.first {
+    if let key = otherFilter.keys.first,
+       let value = otherFilter.values.first {
       mergedFilterDic[key] = [value]
     }
     let parameter = mergedFilterDic.queryString()
