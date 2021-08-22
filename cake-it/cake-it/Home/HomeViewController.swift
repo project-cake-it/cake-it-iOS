@@ -35,6 +35,11 @@ final class HomeViewController: UIViewController {
       updatePromotionSlideView()
     }
   }
+  private var currentPromotionIndex: Int = 1 {
+    willSet(newValue) {
+      updatePromotionIndexView(newValue)
+    }
+  }
   
   let cakeDesignThemes: [FilterCommon.FilterTheme] = [.birthday, .anniversary, .wedding, .emplyment, .advancement, .leave, .discharge, .graduated, .rehabilitation]
   let themeCollecionViewNomalHeight: CGFloat = 108
@@ -69,16 +74,18 @@ final class HomeViewController: UIViewController {
     configureNavigationController()
     configureRankCollecionView()
     configueThemeCollectionView()
+    checkLogin()
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     fetchPromotionImages()
     fetchRankCakeDesign()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    checkLogin()
+    updatePromotionIndexView(currentPromotionIndex)
   }
   
   //MARK: - Private Func
@@ -194,10 +201,7 @@ extension HomeViewController: UIScrollViewDelegate {
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     switch scrollView {
     case promotionSlideView:
-      let currentPromotionIndex = Int(floor(scrollView.contentOffset.x / Constants.SCREEN_WIDTH)) + 1
-      self.slideViewIndexLabel.text = String(format: indexLabelFomatString,
-                                             currentPromotionIndex,
-                                             promotions.count)
+      currentPromotionIndex = Int(floor(scrollView.contentOffset.x / Constants.SCREEN_WIDTH)) + 1
     default:
       return
     }
