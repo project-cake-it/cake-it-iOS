@@ -127,10 +127,11 @@ final class LoginViewModel: BaseViewModel {
   }
 }
 
+//MARK: - Naver Login
 extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
   func oauth20ConnectionDidFinishRequestACTokenWithAuthCode() {
     guard (naverLoginSDK?.isValidAccessTokenExpireTimeNow()) != nil else { return }
-
+    
     guard let access = naverLoginSDK?.accessToken else {
       loginCompletion?(false)
       return
@@ -138,20 +139,28 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
     
     self.requestLogin(accessToken: access)
   }
-
+  
   func oauth20ConnectionDidFinishRequestACTokenWithRefreshToken() {
-    //TODO: refreshToken 구현
+    guard (naverLoginSDK?.isValidAccessTokenExpireTimeNow()) != nil else { return }
+    
+    guard let access = naverLoginSDK?.accessToken else {
+      loginCompletion?(false)
+      return
+    }
+    
+    self.requestLogin(accessToken: access)
   }
-
+  
   func oauth20ConnectionDidFinishDeleteToken() {
     //TODO: logout 기능구현
   }
-
+  
   func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-    //TODO: logout 기능구현
+    self.loginCompletion?(false)
   }
 }
 
+//MARK: - Google Login
 extension LoginViewModel: GIDSignInDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
     if error != nil {
@@ -163,14 +172,15 @@ extension LoginViewModel: GIDSignInDelegate {
   }
 }
 
-extension LoginViewModel: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
+//MARK: - Apple Login
+extension LoginViewModel: ASAuthorizationControllerDelegate,
+                          ASAuthorizationControllerPresentationContextProviding {
   func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
     return viewController.view.window!
   }
   
   func authorizationController(controller: ASAuthorizationController,
                                didCompleteWithAuthorization authorization: ASAuthorization) {
-    // do something
     switch authorization.credential {
     case let appleIdCredential as ASAuthorizationAppleIDCredential:
       guard let jwtToken = appleIdCredential.identityToken else {
@@ -184,7 +194,6 @@ extension LoginViewModel: ASAuthorizationControllerDelegate, ASAuthorizationCont
       }
       
       self.requestLogin(accessToken: tokenString)
-    break
     default:
       loginCompletion?(false)
     }
