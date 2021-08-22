@@ -39,4 +39,8 @@ final class LoginManager {
     //서버 로그아웃을 완료한경우 저장된 토큰을 삭제합니다.
     KeychainWrapper.standard.removeObject(forKey: KEY_ACCESS_TOKEN)
   }
+  
+  func isLogin() -> Bool {
+    return KeychainWrapper.standard.string(forKey: KEY_ACCESS_TOKEN) == nil ? false : true
+  }
 }
