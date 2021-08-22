@@ -26,7 +26,7 @@ final class ThemeDetailView: UIView {
   var themeTableViewHeightConstraint: NSLayoutConstraint?
 
   weak var delegate: ThemeDetailViewDelegate?
-  var selectedTheme: FilterCommon.FilterTheme = .none
+  var selectedTheme: FilterCommon.FilterTheme = .birthday
   var tableViewHeight: CGFloat = 0.0
 
   override init(frame: CGRect) {

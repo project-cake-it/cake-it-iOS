@@ -228,6 +228,7 @@ extension ShopDetailViewController {
   }
   
   private func updatePriceInfoBySizeStackView(by sizes: [CakeShopCakeSize]) {
+    priceInfoBySizeStackView.removeAllArrangedSubviews()
     sizes.forEach {
       let priceLabel = UILabel()
       if $0.size == "" {
