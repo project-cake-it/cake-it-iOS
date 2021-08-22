@@ -33,7 +33,7 @@ final class DesignListViewController: BaseViewController {
   
   var cakeDesigns: [CakeDesign] = []
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .size, .color, .category]
-  var selectedThemeType: FilterCommon.FilterTheme = .none  {     // 선택된 디자인 테마
+  var selectedThemeType: FilterCommon.FilterTheme = .birthday  {     // 선택된 디자인 테마
     didSet {
       selectedTheme = [FilterCommon.FilterTheme.key: selectedThemeType.value]
       navigationBarTitleLabel?.text = selectedThemeType.title

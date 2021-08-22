@@ -36,7 +36,7 @@ final class HomeViewController: UIViewController {
     }
   }
   
-  let cakeDesignThemes: [FilterCommon.FilterTheme] = [.birthday, .anniversary, .wedding, .emplyment, .advancement, .leave, .discharge, .graduated, .christmas, .halloween, .newYear]
+  let cakeDesignThemes: [FilterCommon.FilterTheme] = [.birthday, .anniversary, .wedding, .emplyment, .advancement, .leave, .discharge, .graduated, .rehabilitation]
   let themeCollecionViewNomalHeight: CGFloat = 108
   let themesMinCount = 4
   let moreButtonIndex = 3

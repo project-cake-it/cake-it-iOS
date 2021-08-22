@@ -62,10 +62,10 @@ final class FilterCommon {
     // 서버 api value
     var value: String {
       switch self {
-      case .byDefault:    return "DEFAULT"
-      case .bySaved:      return "ZZIM"
-      case .byPriceHigh:  return "HIGH_PRICE"
-      case .byPriceLow:   return "LOW_PRICE"
+      case .byDefault:    return ""
+      case .bySaved:      return "zzim"
+      case .byPriceHigh:  return "expensive"
+      case .byPriceLow:   return "cheap"
       }
     }
     
@@ -165,13 +165,13 @@ final class FilterCommon {
     // 서버 api value
     var value: String {
       switch self {
-      case .white:  return "WHITE"
-      case .pink:   return "PINK"
-      case .yellow: return "YELLOW"
-      case .red:    return "RED"
-      case .blue:   return "BLUE"
-      case .purple: return "PURPLE"
-      case .other:  return "OTHER"
+      case .white:  return "화이트"
+      case .pink:   return "핑크"
+      case .yellow: return "옐로우"
+      case .red:    return "레드"
+      case .blue:   return "블루"
+      case .purple: return "퍼플"
+      case .other:  return "기타"
       }
     }
     
@@ -210,10 +210,10 @@ final class FilterCommon {
     // 서버 api value
     var value: String {
       switch self {
-      case .lettering:     return "WORDING"
-      case .image:         return "IMAGE"
-      case .character:     return "CHARACTERS"
-      case .individuality: return "INDIVIDUALITY"
+      case .lettering:     return "문구"
+      case .image:         return "이미지"
+      case .character:     return "캐릭터"
+      case .individuality: return "개성"
       }
     }
     
@@ -246,7 +246,6 @@ final class FilterCommon {
 extension FilterCommon {
   
   enum FilterTheme: CaseIterable {
-    case none
     case birthday
     case anniversary
     case wedding
@@ -255,9 +254,7 @@ extension FilterCommon {
     case leave
     case discharge
     case graduated
-    case christmas
-    case halloween
-    case newYear
+    case rehabilitation
     
     // 서버 api value
     static var key: String {
@@ -267,36 +264,30 @@ extension FilterCommon {
     // 서버 api value
     var value: String {
       switch self {
-      case .none:         return ""
-      case .birthday:     return "BIRTHDAY"
-      case .anniversary:  return "ANNIVERSARY"
-      case .wedding:      return "WEDDING"
-      case .emplyment:    return "EMPLOYMENT"
-      case .advancement:  return "ADVANCEMENT"
-      case .leave:        return "LEAVE"
-      case .discharge:    return "DISCHARGE"
-      case .graduated:    return "GRADUATED"
-      case .christmas:    return "CHRISTMAS"
-      case .halloween:    return "HALLOWEEN"
-      case .newYear:      return "NEW_YEAR"
+      case .birthday:     	return "생일"
+      case .anniversary:  	return "기념일"
+      case .wedding:        return "결혼"
+      case .emplyment:      return "입사"
+      case .advancement:    return "승진"
+      case .leave:          return "퇴사"
+      case .discharge:      return "전역"
+      case .graduated:      return "졸업"
+      case .rehabilitation: return "복직"
       }
     }
     
     // 필터 셀 텍스트
     var title: String {
       switch self {
-      case .none:         return "없음"
-      case .birthday:     return "생일"
-      case .anniversary:  return "기념일"
-      case .wedding:      return "웨딩"
-      case .emplyment:    return "입사"
-      case .advancement:  return "승진"
-      case .leave:        return "퇴사"
-      case .discharge:    return "전역"
-      case .graduated:    return "졸업"
-      case .christmas:    return "크리스마스"
-      case .halloween:    return "할로윈"
-      case .newYear:      return "새해"
+      case .birthday:       return "생일"
+      case .anniversary:    return "기념일"
+      case .wedding:        return "결혼"
+      case .emplyment:      return "입사"
+      case .advancement:    return "승진"
+      case .leave:          return "퇴사"
+      case .discharge:      return "전역"
+      case .graduated:      return "졸업"
+      case .rehabilitation: return "복직"
       }
     }
   }
