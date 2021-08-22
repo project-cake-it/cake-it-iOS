@@ -456,9 +456,9 @@ extension ShopDetailViewController {
   }
   
   private func moveToLoginPage() {
-    if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) {
-      loginViewController.modalPresentationStyle = .overFullScreen
-      present(loginViewController, animated: true, completion: nil)
-    }
+    let storyboard = UIStoryboard(name: "Home", bundle: nil)
+    let loginViewController = storyboard.instantiateViewController(withIdentifier: LoginViewController.id)
+    loginViewController.modalPresentationStyle = .overFullScreen
+    present(loginViewController, animated: true, completion: nil)
   }
 }

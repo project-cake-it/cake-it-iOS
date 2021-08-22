@@ -11,6 +11,14 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
+    if collectionView.numberOfItems(inSection: section) == 1 {
+      let numberOfColumns = 2
+      let sidePaddingsAndInterSpaces = Metric.cakeDesignsCollectionViewSidePadding
+      + Metric.cakeDesignCellInterItemHorizontalSpace
+      let side: CGFloat = (UIScreen.main.bounds.width - sidePaddingsAndInterSpaces) / CGFloat(numberOfColumns)
+      let roundedSide = side.rounded(.down)
+      return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: roundedSide)
+    }
     return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
   }
   

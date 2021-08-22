@@ -24,31 +24,67 @@ final class ShopsMainViewController: BaseViewController {
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailVC: FilterDetailViewController?
   var selectedFilter: Dictionary<String, [String]> = [:]
+  var searchKeyword: [String: String] = [:]
   var highlightedFilterType: FilterCommon.FilterType = .reset
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
     configure()
+    
     if cakeShops.isEmpty {
       fetchCakeShops()
     }
   }
   
   func fetchCakeShops() {
+    if let _ = self.parent as? SearchResultViewController {
+      requestSearchingShops()
+    } else {
+      requestShops()
+    }
+  }
+  
+  private func requestShops() {
     NetworkManager.shared.requestGet(api: .shops,
                                      type: [CakeShop].self,
-                                     param: selectedFilter.queryString()
-    ) { result in
-      switch result {
+                                     param: selectedFilter.queryString()) { (response) in
+      switch response {
       case .success(let cakeShops):
         self.cakeShops = cakeShops
         self.shopCollectionView.reloadData()
+        
       case .failure(_):
         // TODO: 에러 핸들링
         break
       }
     }
+  }
+  
+  private func requestSearchingShops() {
+    let parameter = mergedFilterQueryString(with: searchKeyword)
+    NetworkManager.shared.requestGet(api: .search,
+                                     type: SearchResult.self,
+                                     param: parameter) { (response) in
+      switch response {
+      case .success(let searchResult):
+        self.cakeShops = searchResult.shops
+        self.shopCollectionView.reloadData()
+
+      case .failure(let error):
+        print(error.localizedDescription)
+      }
+    }
+  }
+
+  private func mergedFilterQueryString(with dic: [String: String]) -> String {
+    var mergedFilterDic: [String: [String]] = selectedFilter
+    if let key = dic.keys.first,
+       let value = dic.values.first {
+      mergedFilterDic[key] = [value]
+    }
+    let parameter = mergedFilterDic.queryString()
+    return parameter
   }
 }
 

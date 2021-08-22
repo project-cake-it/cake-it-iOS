@@ -185,13 +185,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-yU-bEA" userLabel="Container VIew">
                                 <rect key="frame" x="0.0" y="149" width="414" height="713"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMb-3m-bSs">
+                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMb-3m-bSs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
-                                        <color key="backgroundColor" name="white"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </containerView>
-                                    <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-Al-f2T">
+                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFJ-Al-f2T">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
-                                        <color key="backgroundColor" name="white"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </containerView>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5c-tn-xDj">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>

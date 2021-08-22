@@ -267,7 +267,7 @@ extension FilterCommon {
     // 서버 api value
     var value: String {
       switch self {
-      case .none:         return "NONE"
+      case .none:         return ""
       case .birthday:     return "BIRTHDAY"
       case .anniversary:  return "ANNIVERSARY"
       case .wedding:      return "WEDDING"
@@ -298,6 +298,16 @@ extension FilterCommon {
       case .halloween:    return "할로윈"
       case .newYear:      return "새해"
       }
+    }
+  }
+}
+
+// 통합검색 키워드
+extension FilterCommon {
+  enum Searching: CaseIterable {
+    // 서버 api value
+    static var key: String {
+      return "keyword"
     }
   }
 }

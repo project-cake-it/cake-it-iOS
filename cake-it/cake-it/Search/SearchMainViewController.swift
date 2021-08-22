@@ -70,12 +70,19 @@ extension SearchMainViewController {
   }
 }
 
-
 // MARK:- TextField Delegate
 extension SearchMainViewController: UITextFieldDelegate {
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    if let keyword = textField.text {
+      let keywordWithoutBlank = keyword.replacingOccurrences(of: " ", with: "")
+      if keywordWithoutBlank.count > 0 {
+        search(text: textField.text ?? "")
+      } else {
+        view.showToast(message: "검색어를 입력해주세요.")
+        searchTextField.text = ""
+      }
+    }
     searchTextField.resignFirstResponder()
-    search(text: textField.text ?? "")
     return true
   }
 }
