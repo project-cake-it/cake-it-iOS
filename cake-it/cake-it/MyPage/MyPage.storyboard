@@ -151,7 +151,6 @@
                     <navigationItem key="navigationItem" id="xUD-5n-AA1"/>
                     <connections>
                         <outlet property="myPageMessageLabel" destination="jHS-no-JmM" id="qkg-HV-YQS"/>
-                        <outlet property="myPageMessageView" destination="ZtK-TB-IXk" id="Rky-Kw-Ysb"/>
                         <outlet property="myPageMessageViewHeight" destination="9JC-Am-AbY" id="Kfc-Sn-L6C"/>
                         <outlet property="myPageTableView" destination="YPu-lm-kOd" id="s8H-NH-jLS"/>
                     </connections>
