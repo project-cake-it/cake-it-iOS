@@ -30,4 +30,7 @@ final class Constants {
   
   //MARK: - ERROR
   static let COMMON_NET_ERROR = "잠시후 다시 시도해주세요."
+  
+  //MARK: - Login
+  static let LOGIN_TITLE = "마음을 전하는 가장 달콤한 방법"
 }
