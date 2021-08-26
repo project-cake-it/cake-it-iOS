@@ -14,7 +14,7 @@ extension FilterDetailViewController: UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if indexPath.row == 0 {
-      resetData()
+      setTableViewHeight()
     }
     
     switch filterType {

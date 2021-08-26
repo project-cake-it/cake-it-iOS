@@ -16,7 +16,7 @@ final class FilterDetailViewController: UIViewController {
   
   enum Metric {
     static let tableViewDefaultHeight: CGFloat = 400.0
-    static let headerCellHeight: CGFloat = 38.0
+    static let headerCellHeight: CGFloat = 40.0
     static let footerCellHeight: CGFloat = 22.0
     static let defaultTableCellHight: CGFloat = 38.0
     static let largeTableCellHight: CGFloat = 59.0
@@ -84,9 +84,35 @@ final class FilterDetailViewController: UIViewController {
   @objc private func backgroundViewDidTap() {
     delegate?.filterBackgroundViewDidTap()
   }
+  
+  func setTableViewHeight() {
+    let numberOfCell = FilterManager.shared.numberOfCase(type: filterType)
+    let cellHeight = tableCellHeight(type: filterType)
+    let headerHeight = Metric.headerCellHeight
+    let footerHeight = Metric.footerCellHeight
+    let isExistHeader = FilterManager.shared.isMultiSelectionEnabled(type: filterType)
+
+    if filterType == .reset {
+      tableViewHeight = 0
+    } else {
+      if isExistHeader {
+        tableViewHeight = headerHeight + (CGFloat(numberOfCell) * cellHeight) + footerHeight
+      } else {
+        tableViewHeight = (CGFloat(numberOfCell) * cellHeight) + footerHeight
+      }
+    }
+  }
+  
+  func tableCellHeight(type: FilterCommon.FilterType) -> CGFloat {
+    if filterType == .size {
+      return Metric.largeTableCellHight
+    } else {
+      return Metric.defaultTableCellHight
+    }
+  }
 }
 
-// MARK:- Private Method
+// MARK:- Filter Method
 extension FilterDetailViewController {
   func updateSelectedList(selectedIndex: Int = 0,
                           isAllSelected: Bool = false,
