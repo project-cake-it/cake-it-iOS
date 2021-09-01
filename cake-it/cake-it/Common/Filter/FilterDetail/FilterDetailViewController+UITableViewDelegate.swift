@@ -50,16 +50,4 @@ extension FilterDetailViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
     return Metric.footerCellHeight
   }
-  
-  func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-    tableViewHeight += cell.frame.height
-  }
-  
-  func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-    tableViewHeight += view.frame.height
-  }
-  
-  func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-    tableViewHeight += view.frame.height
-  }
 }

@@ -56,7 +56,6 @@ final class FilterCommon {
   enum FilterSorting: CaseIterable {
     case byDefault
     case bySaved
-    case byPriceHigh
     case byPriceLow
 
     // 서버 api value
@@ -64,7 +63,6 @@ final class FilterCommon {
       switch self {
       case .byDefault:    return ""
       case .bySaved:      return "zzim"
-      case .byPriceHigh:  return "expensive"
       case .byPriceLow:   return "cheap"
       }
     }
@@ -74,7 +72,6 @@ final class FilterCommon {
       switch self {
       case .byDefault:    return "기본순"
       case .bySaved:      return "찜 순"
-      case .byPriceHigh:  return "가격 높은 순"
       case .byPriceLow:   return "가격 낮은 순"
       }
     }

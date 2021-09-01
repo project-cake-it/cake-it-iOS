@@ -114,7 +114,7 @@ final class DesignDetailViewController: BaseViewController {
 extension DesignDetailViewController: UIScrollViewDelegate {
 
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    switch imageScrollView {
+    switch scrollView {
     case self.scrollView:
       let canContactShopButtonMoveThreshold: CGFloat = 156
       canContactShopButtonMove = scrollView.contentOffset.y >= canContactShopButtonMoveThreshold
