@@ -340,6 +340,7 @@ extension ShopDetailViewController {
     configureContactShopButton()
     configurePanGesture()
     scrollView.delegate = self
+    configureShopInfoLabel()
   }
   
   private func configurePanGesture() {
@@ -464,5 +465,14 @@ extension ShopDetailViewController {
     let loginViewController = storyboard.instantiateViewController(withIdentifier: LoginViewController.id)
     loginViewController.modalPresentationStyle = .overFullScreen
     present(loginViewController, animated: true, completion: nil)
+  }
+  
+  private func configureShopInfoLabel() {
+    let lineSpacing: CGFloat = 4.4
+    let attributedString = NSMutableAttributedString(string: shopInformationLabel.text ?? "")
+    let paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineSpacing = lineSpacing
+    attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
+    shopInformationLabel.attributedText = attributedString
   }
 }
