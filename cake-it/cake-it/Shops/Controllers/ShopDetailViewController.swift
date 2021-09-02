@@ -427,7 +427,7 @@ extension ShopDetailViewController {
   private func floatingContactShopButtonBottomConstant() -> CGFloat {
     var constant = Self.Metric.contactShopButtonBottomSpaceDefault
     if UIDevice.current.hasNotch {
-      constant +=  -UIDevice.minimumBottomSpaceInNotchDevice
+      constant += -UIDevice.minimumBottomSpaceInNotchDevice
     }
     return constant
   }
