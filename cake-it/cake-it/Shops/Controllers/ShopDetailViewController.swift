@@ -51,7 +51,7 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var bottomInfoShopInfoView: UIView!
   @IBOutlet weak var locationInfoContainerView: UIView!
   @IBOutlet var mapContainerView: UIView!
-  private var contactShopButton: CakeDesignDetailContactButton!
+  private var contactShopButton: ContactToShopButton!
   private var contactShopButtonBottomConstraint: NSLayoutConstraint!
   private var mapView: MTMapView?
   
@@ -401,13 +401,8 @@ extension ShopDetailViewController {
   }
   
   private func configureContactShopButton() {
-    contactShopButton = CakeDesignDetailContactButton(type: .system)
+    contactShopButton = ContactToShopButton()
     contactShopButton.addTarget(self, action: #selector(contactShopButtonDidTap), for: .touchUpInside)
-    contactShopButton.backgroundColor = Colors.primaryColor
-    contactShopButton.setTitle("가게 연결하기", for: .normal)
-    contactShopButton.setTitleColor(Colors.white, for: .normal)
-    contactShopButton.titleLabel?.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
-    contactShopButton.round(cornerRadius: 8.0)
     view.addSubview(contactShopButton)
     contactShopButton.constraints(topAnchor: nil,
                                   leadingAnchor: view.leadingAnchor,

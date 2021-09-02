@@ -60,8 +60,9 @@
 		8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */; };
 		8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2ED2610CF5D0060ACAC /* Fonts.swift */; };
 		8BCCDFA826903E0C00259EEE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCDFA726903E0C00259EEE /* WebViewController.swift */; };
-		8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */; };
+		8BD02724265507E300296261 /* ContactToShopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD02723265507E300296261 /* ContactToShopButton.swift */; };
 		8BE7FFCF26E1307F008F75E0 /* UILabel+LineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */; };
+		8BE7FFD226E132CA008F75E0 /* ContactToShopButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7FFD126E132CA008F75E0 /* ContactToShopButton.xib */; };
 		8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F2C260CC05200743512 /* CakeDesign.swift */; };
 		8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */; };
 		8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F40260CD36000743512 /* CakeDesignCell.swift */; };
@@ -301,8 +302,9 @@
 		8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
 		8B93B2ED2610CF5D0060ACAC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8BCCDFA726903E0C00259EEE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignDetailContactButton.swift; sourceTree = "<group>"; };
+		8BD02723265507E300296261 /* ContactToShopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactToShopButton.swift; sourceTree = "<group>"; };
 		8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LineSpacing.swift"; sourceTree = "<group>"; };
+		8BE7FFD126E132CA008F75E0 /* ContactToShopButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactToShopButton.xib; sourceTree = "<group>"; };
 		8BEA0F2C260CC05200743512 /* CakeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesign.swift; sourceTree = "<group>"; };
 		8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8BEA0F40260CD36000743512 /* CakeDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignCell.swift; sourceTree = "<group>"; };
@@ -646,7 +648,7 @@
 				8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */,
 				8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */,
 				8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */,
-				8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */,
+				8BD02723265507E300296261 /* ContactToShopButton.swift */,
 				8B1E00A426BFB75D00377E22 /* CakeOrderAvailableDateCell.swift */,
 				8B1E00A526BFB75D00377E22 /* CakeOrderAvailableDateCell.xib */,
 			);
@@ -782,6 +784,7 @@
 		8B93B2D72610C10C0060ACAC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8BE7FFD026E132B7008F75E0 /* Views */,
 				8BCCDFA626903DF700259EEE /* WebViewController */,
 				F768D1FF265801940092E3CE /* Filter */,
 				8B647B1F262C52A2003FA732 /* UILabel */,
@@ -808,6 +811,14 @@
 				8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		8BE7FFD026E132B7008F75E0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8BE7FFD126E132CA008F75E0 /* ContactToShopButton.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8BEA0F26260CBE4E00743512 /* SupportFiles */ = {
@@ -1332,6 +1343,7 @@
 				8B3AF14625DAE16A00B9F48D /* Home.storyboard in Resources */,
 				8B93B2E82610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf in Resources */,
 				AC422A2126A08920006ACC20 /* detail_button.png in Resources */,
+				8BE7FFD226E132CA008F75E0 /* ContactToShopButton.xib in Resources */,
 				8B1E00A726BFB75D00377E22 /* CakeOrderAvailableDateCell.xib in Resources */,
 				AC422A2326A08920006ACC20 /* map_pin_custom@3x.png in Resources */,
 				AC422A4D26A08920006ACC20 /* map_pin_shadow.png in Resources */,
@@ -1620,7 +1632,7 @@
 				F742608826C007BE00BBF2E7 /* FilterDetailViewController+UITableViewDataSource.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				F7A88752265A486B00930932 /* BaseFilterCell.swift in Sources */,
-				8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */,
+				8BD02724265507E300296261 /* ContactToShopButton.swift in Sources */,
 				F7590738267F85C8000ECBD7 /* ThemeDetailView+UITableViewDataSource.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
 				F7A887C8265A4C5600930932 /* FilterColorCell.swift in Sources */,
