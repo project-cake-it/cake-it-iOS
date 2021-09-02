@@ -54,6 +54,7 @@ final class ShopDetailViewController: BaseViewController {
   private var contactShopButton: ContactToShopButton!
   private var contactShopButtonBottomConstraint: NSLayoutConstraint!
   private var mapView: MTMapView?
+  private var loadingBlockView = UIView()
   
   private var bottomInfoState: BottomInfoState = .cakeDesign {
     didSet {
@@ -91,15 +92,31 @@ final class ShopDetailViewController: BaseViewController {
                                      param: "/\(id)") { result in
       switch result {
       case .success(let response):
+        self.dismissLoadingBlockView()
         self.cakeShop = response.cakeShop
         DispatchQueue.main.async {
           self.updateDetail()
           self.updateMapView()
         }
       case .failure(_):
-        // TODO: 에러 핸들링
-        break
+        self.dismissLoadingBlockView()
+        let alertController = UIAlertController(title: "네트워크 오류",
+                                                message: "현재 네트워크 오류로 인하여 정보를 불러올 수 없어요.\n잠시후 다시 시도해주세요.",
+                                                preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: "확인", style: .default) { _ in
+          self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(doneAction)
+        self.present(alertController, animated: true, completion: nil)
       }
+    }
+  }
+  
+  private func dismissLoadingBlockView() {
+    UIView.animateCurveEaseOut(withDuration: 0.25, delay: 0.5) {
+      self.loadingBlockView.alpha = 0
+    } completion: { [weak self] in
+      self?.loadingBlockView.removeFromSuperview()
     }
   }
   
@@ -341,6 +358,7 @@ extension ShopDetailViewController {
     configurePanGesture()
     scrollView.delegate = self
     configureLabelLineSpacing()
+    configureLoadingBlockView()
   }
   
   private func configurePanGesture() {
@@ -467,5 +485,19 @@ extension ShopDetailViewController {
      shopInformationLabel, openingTimeLabel, pickUpAvailableTimeLabel].forEach {
       $0?.setLineSpacing(4.4)
     }
+  }
+  
+  private func configureLoadingBlockView() {
+    loadingBlockView = UIView()
+    loadingBlockView.backgroundColor = Colors.white
+    loadingBlockView.alpha = 1
+    view.addSubview(loadingBlockView)
+    view.bringSubviewToFront(loadingBlockView)
+    loadingBlockView.fillSuperView()
+    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
+    activityIndicatorView.color = Colors.primaryColor02
+    loadingBlockView.addSubview(activityIndicatorView)
+    activityIndicatorView.startAnimating()
+    activityIndicatorView.centerInSuperView()
   }
 }
