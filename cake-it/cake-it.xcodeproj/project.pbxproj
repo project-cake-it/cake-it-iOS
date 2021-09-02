@@ -61,6 +61,7 @@
 		8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2ED2610CF5D0060ACAC /* Fonts.swift */; };
 		8BCCDFA826903E0C00259EEE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCDFA726903E0C00259EEE /* WebViewController.swift */; };
 		8BD02724265507E300296261 /* CakeDesignDetailContactButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */; };
+		8BE7FFCF26E1307F008F75E0 /* UILabel+LineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */; };
 		8BEA0F2D260CC05200743512 /* CakeDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F2C260CC05200743512 /* CakeDesign.swift */; };
 		8BEA0F35260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */; };
 		8BEA0F42260CD36000743512 /* CakeDesignCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F40260CD36000743512 /* CakeDesignCell.swift */; };
@@ -301,6 +302,7 @@
 		8B93B2ED2610CF5D0060ACAC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8BCCDFA726903E0C00259EEE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8BD02723265507E300296261 /* CakeDesignDetailContactButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignDetailContactButton.swift; sourceTree = "<group>"; };
+		8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LineSpacing.swift"; sourceTree = "<group>"; };
 		8BEA0F2C260CC05200743512 /* CakeDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesign.swift; sourceTree = "<group>"; };
 		8BEA0F34260CD2F800743512 /* DesignListViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
 		8BEA0F40260CD36000743512 /* CakeDesignCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeDesignCell.swift; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 				8B1DFDE026484A800076E14C /* UIDevice */,
 				8B0DDA4F260CE10B003923D9 /* UIView */,
 				8B62C31F26010033005F599A /* UIViewController */,
+				8BE7FFCD26E1306A008F75E0 /* UILabel */,
 				8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */,
 				F7CD313A266CCB7900C9A211 /* String+Utils.swift */,
 				F71419632674B75400C6E5EE /* Dictionary+Utils.swift */,
@@ -797,6 +800,14 @@
 				8BCCDFA726903E0C00259EEE /* WebViewController.swift */,
 			);
 			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		8BE7FFCD26E1306A008F75E0 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		8BEA0F26260CBE4E00743512 /* SupportFiles */ = {
@@ -1593,6 +1604,7 @@
 				8B1E00AD26BFBDF400377E22 /* DateFormatter+CakeOrderAvailableDateFormatter.swift in Sources */,
 				F742608926C007BE00BBF2E7 /* FilterDetailViewController.swift in Sources */,
 				F774B93625E0E0BF006EE0EC /* NetworkManager.swift in Sources */,
+				8BE7FFCF26E1307F008F75E0 /* UILabel+LineSpacing.swift in Sources */,
 				AC0B8FDE264634A9009016A9 /* ListBoardViewController.swift in Sources */,
 				AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */,
 				8B875D3425DAE843003D9CFA /* MyPageMainViewController.swift in Sources */,
