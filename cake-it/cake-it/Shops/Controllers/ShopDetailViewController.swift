@@ -28,7 +28,7 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var savedButton: UIButton!
   @IBOutlet weak var savedCountLabel: UILabel!
-  @IBOutlet weak var orderAvailableDateButton: UIButton!
+  @IBOutlet weak var orderAvailableDateButton: OrderAvailableDateButton!
   
   @IBOutlet weak var themeLabel: UILabel!
   @IBOutlet weak var priceInfoBySizeStackView: UIStackView!

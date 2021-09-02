@@ -29,7 +29,7 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet weak var cakeSimpleView: UIView!
   @IBOutlet weak var cakeDesignLabel: UILabel!    // 케이크 디자인 이름
   @IBOutlet weak var addressLabel: UILabel!       // 가게 주소
-  @IBOutlet weak var orderAvailableDateButton: UIButton! // 주문 가능 날짜 확인 버튼
+  @IBOutlet weak var orderAvailableDateButton: OrderAvailableDateButton! // 주문 가능 날짜 확인 버튼
   @IBOutlet weak var lineView: UIView!
   
   @IBOutlet weak var cakeInformationView: UIView!
