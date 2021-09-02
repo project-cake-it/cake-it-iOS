@@ -650,7 +650,6 @@
 				8B2A7545261C9AF5007757E5 /* CakeShopCell.swift */,
 				8B2A7546261C9AF5007757E5 /* CakeShopCell.xib */,
 				8B1DFDE326484C3C0076E14C /* CakeDesignSquareImageCell.swift */,
-				8BD02723265507E300296261 /* ContactToShopButton.swift */,
 				8B1E00A426BFB75D00377E22 /* CakeOrderAvailableDateCell.swift */,
 				8B1E00A526BFB75D00377E22 /* CakeOrderAvailableDateCell.xib */,
 			);
@@ -818,6 +817,7 @@
 		8BE7FFD026E132B7008F75E0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8BD02723265507E300296261 /* ContactToShopButton.swift */,
 				8BE7FFD126E132CA008F75E0 /* ContactToShopButton.xib */,
 				8BE7FFD326E1419B008F75E0 /* OrderAvailableDateButton.swift */,
 			);
