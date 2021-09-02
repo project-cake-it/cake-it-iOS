@@ -81,4 +81,16 @@ extension UIView {
       self.heightAnchor.constraint(equalToConstant: height).isActive = true
     }
   }
+  
+  /// superView 중앙에 바로 위치 시키는 함수입니다.
+  func centerInSuperView(constantX: CGFloat = 0, constantY: CGFloat = 0) {
+    guard let superView = self.superview else { return }
+    self.translatesAutoresizingMaskIntoConstraints = false
+    self.centerXAnchor.constraint(
+      equalTo: superView.centerXAnchor,
+      constant: constantX).isActive = true
+    self.centerYAnchor.constraint(
+      equalTo: superView.centerYAnchor,
+      constant: constantY).isActive = true
+  }
 }
