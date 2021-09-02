@@ -21,6 +21,12 @@ final class CakeDesignCell: UICollectionViewCell {
     cakeDesignImageView.image = nil
   }
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    configure()
+  }
+  
   func update(with cakeDesign: CakeDesign) {
     if let sizeInfo = cakeDesign.sizes.first {
       let sizeWithoutParentheses = sizeInfo.name.withoutParentheses()
@@ -34,7 +40,20 @@ final class CakeDesignCell: UICollectionViewCell {
       return
     }
     DispatchQueue.main.async {
-      self.cakeDesignImageView.kf.setImage(with: cakeDesignImageURL)
+      self.cakeDesignImageView.kf.setImage(with: cakeDesignImageURL,
+                                           options: [.transition(.fade(0.35)), .forceTransition])
     }
+  }
+}
+
+// MARK: - Configuration
+
+extension CakeDesignCell {
+  private func configure() {
+    configureImageView()
+  }
+  
+  private func configureImageView() {
+    cakeDesignImageView.backgroundColor = Colors.grayscale02
   }
 }

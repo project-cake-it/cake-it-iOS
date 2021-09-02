@@ -41,7 +41,8 @@ final class CakeShopCell: UICollectionViewCell {
   private func updateShopImage(imageURL: String?) {
     if let imageURL = imageURL {
       let cakeShopImageURL = URL(string: imageURL)
-      shopImageView.kf.setImage(with: cakeShopImageURL)
+      shopImageView.kf.setImage(with: cakeShopImageURL,
+                                options: [.transition(.fade(0.35)), .forceTransition])
     } else {
       
     }
@@ -83,6 +84,6 @@ extension CakeShopCell {
   }
   
   private func configureImageView() {
-    shopImageView.backgroundColor = Colors.grayscale04
+    shopImageView.backgroundColor = Colors.grayscale02
   }
 }
