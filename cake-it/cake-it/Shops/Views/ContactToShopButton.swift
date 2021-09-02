@@ -27,6 +27,12 @@ final class ContactToShopButton: UIButton {
     super.init(coder: coder)
     configure()
   }
+  
+  override var isHighlighted: Bool {
+    didSet {
+      contentView.backgroundColor = isHighlighted ? Colors.primaryColor02 : Colors.primaryColor01
+    }
+  }
 }
 
 // MARK: - Configuration
