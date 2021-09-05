@@ -100,10 +100,10 @@ final class ShopDetailViewController: BaseViewController {
           self.updateMapView()
         }
       case .failure(_):
-        let alertController = UIAlertController(title: "네트워크 오류",
-                                                message: "현재 네트워크 오류로 인하여 정보를 불러올 수 없어요.\n잠시후 다시 시도해주세요.",
+        let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
+                                                message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
                                                 preferredStyle: .alert)
-        let doneAction = UIAlertAction(title: "확인", style: .default) { _ in
+        let doneAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { _ in
           self.navigationController?.popViewController(animated: true)
         }
         alertController.addAction(doneAction)
