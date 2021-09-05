@@ -61,6 +61,7 @@
 		8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2ED2610CF5D0060ACAC /* Fonts.swift */; };
 		8BCCDFA826903E0C00259EEE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCDFA726903E0C00259EEE /* WebViewController.swift */; };
 		8BD02724265507E300296261 /* ContactToShopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD02723265507E300296261 /* ContactToShopButton.swift */; };
+		8BD18AAC26E4A0C40016DE24 /* LoadingBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD18AAB26E4A0C40016DE24 /* LoadingBlockView.swift */; };
 		8BE7FFCF26E1307F008F75E0 /* UILabel+LineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */; };
 		8BE7FFD226E132CA008F75E0 /* ContactToShopButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BE7FFD126E132CA008F75E0 /* ContactToShopButton.xib */; };
 		8BE7FFD426E1419B008F75E0 /* OrderAvailableDateButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE7FFD326E1419B008F75E0 /* OrderAvailableDateButton.swift */; };
@@ -304,6 +305,7 @@
 		8B93B2ED2610CF5D0060ACAC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		8BCCDFA726903E0C00259EEE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8BD02723265507E300296261 /* ContactToShopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactToShopButton.swift; sourceTree = "<group>"; };
+		8BD18AAB26E4A0C40016DE24 /* LoadingBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBlockView.swift; sourceTree = "<group>"; };
 		8BE7FFCE26E1307F008F75E0 /* UILabel+LineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+LineSpacing.swift"; sourceTree = "<group>"; };
 		8BE7FFD126E132CA008F75E0 /* ContactToShopButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactToShopButton.xib; sourceTree = "<group>"; };
 		8BE7FFD326E1419B008F75E0 /* OrderAvailableDateButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderAvailableDateButton.swift; sourceTree = "<group>"; };
@@ -820,6 +822,7 @@
 				8BD02723265507E300296261 /* ContactToShopButton.swift */,
 				8BE7FFD126E132CA008F75E0 /* ContactToShopButton.xib */,
 				8BE7FFD326E1419B008F75E0 /* OrderAvailableDateButton.swift */,
+				8BD18AAB26E4A0C40016DE24 /* LoadingBlockView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1598,6 +1601,7 @@
 				8B875CFE25DAE630003D9CFA /* SearchMainViewController.swift in Sources */,
 				F774B92E25E0E0BF006EE0EC /* NicknameViewModel.swift in Sources */,
 				AC1BDC84260756DF0026F5FA /* LoginModel.swift in Sources */,
+				8BD18AAC26E4A0C40016DE24 /* LoadingBlockView.swift in Sources */,
 				AC9FD4C92642BEC600A44862 /* CakeImageCell.swift in Sources */,
 				F774B93025E0E0BF006EE0EC /* NicknameViewController.swift in Sources */,
 				AC0B8FE4264669A2009016A9 /* ListBoardCell.swift in Sources */,

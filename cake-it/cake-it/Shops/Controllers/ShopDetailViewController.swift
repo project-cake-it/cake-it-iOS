@@ -54,7 +54,7 @@ final class ShopDetailViewController: BaseViewController {
   private var contactShopButton: ContactToShopButton!
   private var contactShopButtonBottomConstraint: NSLayoutConstraint!
   private var mapView: MTMapView?
-  private var loadingBlockView = UIView()
+  private var loadingBlockView = LoadingBlockView()
   
   private var bottomInfoState: BottomInfoState = .cakeDesign {
     didSet {
@@ -488,16 +488,8 @@ extension ShopDetailViewController {
   }
   
   private func configureLoadingBlockView() {
-    loadingBlockView = UIView()
-    loadingBlockView.backgroundColor = Colors.white
-    loadingBlockView.alpha = 1
     view.addSubview(loadingBlockView)
     view.bringSubviewToFront(loadingBlockView)
     loadingBlockView.fillSuperView()
-    let activityIndicatorView = UIActivityIndicatorView(style: .medium)
-    activityIndicatorView.color = Colors.primaryColor02
-    loadingBlockView.addSubview(activityIndicatorView)
-    activityIndicatorView.startAnimating()
-    activityIndicatorView.centerInSuperView()
   }
 }
