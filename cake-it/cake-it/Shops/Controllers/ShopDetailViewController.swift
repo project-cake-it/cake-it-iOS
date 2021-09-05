@@ -89,17 +89,17 @@ final class ShopDetailViewController: BaseViewController {
   func fetchDetail(id: Int) {
     NetworkManager.shared.requestGet(api: .shops,
                                      type: CakeShopDetailResponse.self,
-                                     param: "/\(id)") { result in
+                                     param: "/\(id)"
+    ) { result in
+      self.dismissLoadingBlockView()
       switch result {
       case .success(let response):
-        self.dismissLoadingBlockView()
         self.cakeShop = response.cakeShop
         DispatchQueue.main.async {
           self.updateDetail()
           self.updateMapView()
         }
       case .failure(_):
-        self.dismissLoadingBlockView()
         let alertController = UIAlertController(title: "네트워크 오류",
                                                 message: "현재 네트워크 오류로 인하여 정보를 불러올 수 없어요.\n잠시후 다시 시도해주세요.",
                                                 preferredStyle: .alert)
