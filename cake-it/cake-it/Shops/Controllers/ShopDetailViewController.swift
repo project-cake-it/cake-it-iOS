@@ -28,7 +28,7 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var savedButton: UIButton!
   @IBOutlet weak var savedCountLabel: UILabel!
-  @IBOutlet weak var orderAvailableDateButton: UIButton!
+  @IBOutlet weak var orderAvailableDateButton: OrderAvailableDateButton!
   
   @IBOutlet weak var themeLabel: UILabel!
   @IBOutlet weak var priceInfoBySizeStackView: UIStackView!
@@ -51,9 +51,10 @@ final class ShopDetailViewController: BaseViewController {
   @IBOutlet weak var bottomInfoShopInfoView: UIView!
   @IBOutlet weak var locationInfoContainerView: UIView!
   @IBOutlet var mapContainerView: UIView!
-  private var contactShopButton: CakeDesignDetailContactButton!
+  private var contactShopButton: ContactToShopButton!
   private var contactShopButtonBottomConstraint: NSLayoutConstraint!
   private var mapView: MTMapView?
+  private var loadingBlockView = LoadingBlockView()
   
   private var bottomInfoState: BottomInfoState = .cakeDesign {
     didSet {
@@ -88,7 +89,9 @@ final class ShopDetailViewController: BaseViewController {
   func fetchDetail(id: Int) {
     NetworkManager.shared.requestGet(api: .shops,
                                      type: CakeShopDetailResponse.self,
-                                     param: "/\(id)") { result in
+                                     param: "/\(id)"
+    ) { result in
+      self.dismissLoadingBlockView()
       switch result {
       case .success(let response):
         self.cakeShop = response.cakeShop
@@ -97,9 +100,23 @@ final class ShopDetailViewController: BaseViewController {
           self.updateMapView()
         }
       case .failure(_):
-        // TODO: 에러 핸들링
-        break
+        let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
+                                                message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
+                                                preferredStyle: .alert)
+        let doneAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { _ in
+          self.navigationController?.popViewController(animated: true)
+        }
+        alertController.addAction(doneAction)
+        self.present(alertController, animated: true, completion: nil)
       }
+    }
+  }
+  
+  private func dismissLoadingBlockView() {
+    UIView.animateCurveEaseOut(withDuration: 0.25, delay: 0.5) {
+      self.loadingBlockView.alpha = 0
+    } completion: { [weak self] in
+      self?.loadingBlockView.removeFromSuperview()
     }
   }
   
@@ -340,6 +357,8 @@ extension ShopDetailViewController {
     configureContactShopButton()
     configurePanGesture()
     scrollView.delegate = self
+    configureLabelLineSpacing()
+    configureLoadingBlockView()
   }
   
   private func configurePanGesture() {
@@ -400,13 +419,8 @@ extension ShopDetailViewController {
   }
   
   private func configureContactShopButton() {
-    contactShopButton = CakeDesignDetailContactButton(type: .system)
+    contactShopButton = ContactToShopButton()
     contactShopButton.addTarget(self, action: #selector(contactShopButtonDidTap), for: .touchUpInside)
-    contactShopButton.backgroundColor = Colors.primaryColor
-    contactShopButton.setTitle("가게 연결하기", for: .normal)
-    contactShopButton.setTitleColor(Colors.white, for: .normal)
-    contactShopButton.titleLabel?.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
-    contactShopButton.round(cornerRadius: 8.0)
     view.addSubview(contactShopButton)
     contactShopButton.constraints(topAnchor: nil,
                                   leadingAnchor: view.leadingAnchor,
@@ -427,7 +441,7 @@ extension ShopDetailViewController {
   private func floatingContactShopButtonBottomConstant() -> CGFloat {
     var constant = Self.Metric.contactShopButtonBottomSpaceDefault
     if UIDevice.current.hasNotch {
-      constant +=  -UIDevice.minimumBottomSpaceInNotchDevice
+      constant += -UIDevice.minimumBottomSpaceInNotchDevice
     }
     return constant
   }
@@ -464,5 +478,18 @@ extension ShopDetailViewController {
     let loginViewController = storyboard.instantiateViewController(withIdentifier: LoginViewController.id)
     loginViewController.modalPresentationStyle = .overFullScreen
     present(loginViewController, animated: true, completion: nil)
+  }
+  
+  private func configureLabelLineSpacing() {
+    [themeLabel, creamInfoLabel,sheetInfoLabel,
+     shopInformationLabel, openingTimeLabel, pickUpAvailableTimeLabel].forEach {
+      $0?.setLineSpacing(4.4)
+    }
+  }
+  
+  private func configureLoadingBlockView() {
+    view.addSubview(loadingBlockView)
+    view.bringSubviewToFront(loadingBlockView)
+    loadingBlockView.fillSuperView()
   }
 }

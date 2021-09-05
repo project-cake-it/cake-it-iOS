@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class CakeDesignSquareImageCell: UICollectionViewCell {
   
@@ -26,7 +27,8 @@ final class CakeDesignSquareImageCell: UICollectionViewCell {
   func updateCell(imageURL: String?) {
     guard let imageURL = imageURL else { return }
     guard let cakeDesignImageURL = URL(string: imageURL) else { return }
-    cakeDesignImageView.kf.setImage(with: cakeDesignImageURL)
+    cakeDesignImageView.kf.setImage(with: cakeDesignImageURL,
+                                    options: [.transition(.fade(0.35)), .forceTransition])
   }
 }
 
@@ -38,6 +40,6 @@ extension CakeDesignSquareImageCell {
   }
   
   private func configureImageView() {
-    cakeDesignImageView.backgroundColor = Colors.grayscale04
+    cakeDesignImageView.backgroundColor = Colors.grayscale02
   }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class Constants {
+enum Constants {
   
   //MARK: - Screen Size
   static let SCREEN_WIDTH = UIScreen.main.bounds.width
@@ -15,6 +15,8 @@ final class Constants {
   
   //MARK: - Alert Message
   static let COMMON_ALERT_OK = "확인"
+  static let ALERT_NETWORK_ERROR_TITLE = "네트워크 오류"
+  static let ALERT_NETWORK_ERROR_MESSAGE = "현재 네트워크 오류로 인하여 정보를 불러올 수 없어요.\n잠시후 다시 시도해주세요."
   
   static let LOGIN_ALERT_FAIL_TITLE = "로그인 실패"
   static let LOGIN_ALERT_FAIL_MESSAGE = "로그인에 실패하였습니다. 잠시후 다시 시도해주세요"

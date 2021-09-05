@@ -29,7 +29,7 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet weak var cakeSimpleView: UIView!
   @IBOutlet weak var cakeDesignLabel: UILabel!    // 케이크 디자인 이름
   @IBOutlet weak var addressLabel: UILabel!       // 가게 주소
-  @IBOutlet weak var orderAvailableDateButton: UIButton! // 주문 가능 날짜 확인 버튼
+  @IBOutlet weak var orderAvailableDateButton: OrderAvailableDateButton! // 주문 가능 날짜 확인 버튼
   @IBOutlet weak var lineView: UIView!
   
   @IBOutlet weak var cakeInformationView: UIView!
@@ -41,7 +41,7 @@ final class DesignDetailViewController: BaseViewController {
   
   @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
   
-  private var contactShopButton: CakeDesignDetailContactButton!
+  private var contactShopButton: ContactToShopButton!
   private var contactShopButtonBottomConstraint: NSLayoutConstraint!
   private var canContactShopButtonMove = false
   private var isScrollDirectionDown = false
@@ -324,13 +324,8 @@ extension DesignDetailViewController {
   }
   
   private func configureContactShopButton() {
-    contactShopButton = CakeDesignDetailContactButton(type: .system)
+    contactShopButton = ContactToShopButton()
     contactShopButton.addTarget(self, action: #selector(contactShopButtonDidTap), for: .touchUpInside)
-    contactShopButton.backgroundColor = Colors.primaryColor
-    contactShopButton.setTitle("가게 연결하기", for: .normal)
-    contactShopButton.setTitleColor(Colors.white, for: .normal)
-    contactShopButton.titleLabel?.font = Fonts.spoqaHanSans(weight: .Bold, size: 15)
-    contactShopButton.round(cornerRadius: 8.0)
     view.addSubview(contactShopButton)
     contactShopButton.constraints(topAnchor: nil,
                                   leadingAnchor: view.leadingAnchor,

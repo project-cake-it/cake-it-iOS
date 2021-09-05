@@ -36,4 +36,14 @@ extension ShopDetailViewController: UICollectionViewDelegateFlowLayout {
                       minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let identifier = String(describing: DesignDetailViewController.self)
+    let storyboard = UIStoryboard(name: "Home", bundle: nil)
+    if let designDetailVC = storyboard.instantiateViewController(withIdentifier: identifier)
+        as? DesignDetailViewController {
+      designDetailVC.designID = cakeDesigns[indexPath.row].id
+      navigationController?.pushViewController(designDetailVC, animated: true)
+    }
+  }
 }
