@@ -252,6 +252,17 @@ extension DesignDetailViewController {
     navigationController?.popViewController(animated: true)
   }
   
+  @IBAction func naviTtileButtonDidTap(_ sender: Any) {
+    guard let cakeDesign = cakeDesign else { return }
+    
+    let id = String(describing: ShopDetailViewController.self)
+    let storyboard = UIStoryboard(name: "Shops", bundle: nil)
+    if let detailVC = storyboard.instantiateViewController(identifier: id) as? ShopDetailViewController {
+      detailVC.fetchDetail(id: cakeDesign.shopId)
+      navigationController?.pushViewController(detailVC, animated: true)
+    }
+  }
+  
   @IBAction func naviSaveButtonDidTap(_ sender: Any) {
     if LoginManager.shared.verifyAccessToken() == false {
       showLoginAlert()
