@@ -47,4 +47,58 @@ final class FilterManager {
     default:          return false
     }
   }
+  
+  
+  /// Filter Value와 Filter Type이 주어졌을 때 Filter Title을 반환하는 함수
+  /// ex. "byPriceLow" -> "가격 낮은 순"
+  private func replaceToTitle(from filterValue: String,
+                              filterType: FilterCommon.FilterType) -> String? {
+    switch filterType {
+    case .reset:
+      return nil
+    case .order:
+      let sortingFilter = FilterCommon.FilterSorting(rawValue: filterValue)
+      return sortingFilter?.title
+    case .region:
+      let regionFilter = FilterCommon.FilterRegion(rawValue: filterValue)
+      return regionFilter?.title
+    case .size:
+      let sizeFilter = FilterCommon.FilterSize(rawValue: filterValue)
+      return sizeFilter?.title
+    case .color:
+      let colorFilter = FilterCommon.FilterColor(rawValue: filterValue)
+      return colorFilter?.title
+    case .category:
+      let categoryFilter = FilterCommon.FilterCategory(rawValue: filterValue)
+      return categoryFilter?.title
+    default:
+      return nil
+    }
+  }
+  
+  /// 필터 타이틀로 어떤 것을 보여줄지 결정하는 함수.
+  ///
+  /// - Parameters:
+  ///   - isSelected: 필터 선택 여부
+  ///   - filterType: 필터 타입
+  ///   - filterValues: 선택된 필터 값
+  /// - Returns: 화면에 보여줄 타이틀
+  func filterTitle(isSelected: Bool,
+                   filterType: FilterCommon.FilterType,
+                   filterValues: [String]) -> String? {
+    if isSelected == false {
+      return filterType.title
+    }
+    
+    if filterType == .order {
+      if let value = filterValues.first {
+        if let title = replaceToTitle(from: value,
+                                      filterType: filterType) {
+          return title
+        }
+      }
+    }
+    
+    return filterType.title
+  }
 }

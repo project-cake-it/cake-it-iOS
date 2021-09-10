@@ -40,8 +40,14 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
   ) -> CGSize {
     switch collectionView {
     case filterCollectionView:
+      let filterType = shopFilterList[indexPath.row]
+      let isSelected = selectedFilter[filterType.key]?.count ?? 0 > 0
+      let filterValues = selectedFilter[filterType.key] ?? []
+
       let label = UILabel()
-      label.text = shopFilterList[indexPath.row].title
+      label.text = FilterManager.shared.filterTitle(isSelected: isSelected,
+                                                    filterType: filterType,
+                                                    filterValues: filterValues)
       label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)
       label.sizeToFit()
       let cellWidth = label.frame.width

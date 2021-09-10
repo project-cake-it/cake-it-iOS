@@ -26,18 +26,10 @@ extension ShopsMainViewController: UICollectionViewDataSource {
       let identifier = String(describing: FilterCategoryCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! FilterCategoryCell
-      let filterType = shopFilterList[indexPath.row]
-      var isSelected = false
-      if selectedFilter.keys.contains(filterType.key)
-          && selectedFilter[filterType.key]?.count ?? 0 > 0 {
-        isSelected = true
-      }
-      var isHighlighted = false
-      if highlightedFilterType == filterType && highlightedFilterType != .reset {
-        isHighlighted = true
-      }
       cell.delegate = self
-      cell.update(type: filterType,isHighlighted: isHighlighted, isSelected: isSelected)
+      cell.update(type: shopFilterList[indexPath.row],
+                  highlightedFilterType: highlightedFilterType,
+                  selectedFilter: selectedFilter)
       return cell
     }
     else if collectionView == shopCollectionView {

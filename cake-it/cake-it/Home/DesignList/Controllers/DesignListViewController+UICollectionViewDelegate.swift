@@ -36,8 +36,14 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
       return CGSize(width: roundedSide, height: roundedSide + 120)
       
     case filterCategoryCollectionView:
+      let filterType = cakeFilterList[indexPath.row]
+      let isSelected = selectedFilter[filterType.key]?.count ?? 0 > 0
+      let filterValues = selectedFilter[filterType.key] ?? []
+      
       let label = UILabel()
-      label.text = cakeFilterList[indexPath.row].title
+      label.text = FilterManager.shared.filterTitle(isSelected: isSelected,
+                                                    filterType: filterType,
+                                                    filterValues: filterValues)
       label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)
       label.sizeToFit()
       let cellWidth = label.frame.width
