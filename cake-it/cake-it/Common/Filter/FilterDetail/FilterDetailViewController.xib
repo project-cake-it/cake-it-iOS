@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-Xu-Adz">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" name="black"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXj-Ar-oMC">
@@ -55,7 +55,7 @@
                 <constraint firstItem="nXj-Ar-oMC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ciJ-1K-hpb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m5w-Xu-Adz" secondAttribute="trailing" id="hjT-UV-5FF"/>
                 <constraint firstItem="nXj-Ar-oMC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nII-L4-5Wq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="m5w-Xu-Adz" secondAttribute="bottom" id="xDz-pH-7bc"/>
+                <constraint firstAttribute="bottom" secondItem="m5w-Xu-Adz" secondAttribute="bottom" id="xDz-pH-7bc"/>
             </constraints>
             <point key="canvasLocation" x="62" y="3"/>
         </view>

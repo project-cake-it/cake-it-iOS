@@ -141,14 +141,13 @@ extension FilterDetailViewController: FilterTableHeaderCellDelegate {
 extension FilterDetailViewController {
   private func configure() {
     configureView()
+    configureContainerView()
   }
   
   private func configureView() {
     filterTableView.delegate = self
     filterTableView.dataSource = self
     filterTableView.separatorStyle = .none
-    filterTableView.round(cornerRadius: Metric.tableViewRadius,
-                          maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
     registerCell()
     
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
@@ -176,5 +175,11 @@ extension FilterDetailViewController {
       let nib = UINib(nibName: id, bundle: nil)
       filterTableView.register(nib, forCellReuseIdentifier: id)
     }
+  }
+  
+  private func configureContainerView() {
+    containerView.round(cornerRadius: Metric.tableViewRadius,
+                        maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
+    containerView.clipsToBounds = true
   }
 }
