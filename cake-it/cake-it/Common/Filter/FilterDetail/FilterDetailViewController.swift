@@ -41,42 +41,7 @@ final class FilterDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    configureView()
-  }
-  
-  private func configureView() {
-    filterTableView.delegate = self
-    filterTableView.dataSource = self
-    filterTableView.separatorStyle = .none
-    filterTableView.round(cornerRadius: Metric.tableViewRadius,
-                          maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
-    registerCell()
-    
-    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
-    backgroundView.addGestureRecognizer(tapGesture)
-  }
-  
-  private func registerCell() {
-    registerHeaderCell()
-    registerTableCell()
-  }
-  
-  private func registerHeaderCell() {
-    let identifier = String(describing: FilterTableHeaderCell.self)
-    let nib = UINib(nibName: identifier, bundle: nil)
-    filterTableView.register(nib, forCellReuseIdentifier: identifier)
-  }
-  
-  private func registerTableCell() {
-    var identifiers: [String] = []
-    identifiers.append(String(describing: FilterBasicCell.self))
-    identifiers.append(String(describing: FilterColorCell.self))
-    identifiers.append(String(describing: FilterDescriptionCell.self))
-    
-    for id in identifiers {
-      let nib = UINib(nibName: id, bundle: nil)
-      filterTableView.register(nib, forCellReuseIdentifier: id)
-    }
+    configure()
   }
   
   func resetData() {
@@ -167,6 +132,49 @@ extension FilterDetailViewController: FilterTableHeaderCellDelegate {
       updateSelectedList(isAllSelected: true)
     } else {
       updateSelectedList(isAllDeselected: true)
+    }
+  }
+}
+
+// MARK: - Configuration
+
+extension FilterDetailViewController {
+  private func configure() {
+    configureView()
+  }
+  
+  private func configureView() {
+    filterTableView.delegate = self
+    filterTableView.dataSource = self
+    filterTableView.separatorStyle = .none
+    filterTableView.round(cornerRadius: Metric.tableViewRadius,
+                          maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
+    registerCell()
+    
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundViewDidTap))
+    backgroundView.addGestureRecognizer(tapGesture)
+  }
+  
+  private func registerCell() {
+    registerHeaderCell()
+    registerTableCell()
+  }
+  
+  private func registerHeaderCell() {
+    let identifier = String(describing: FilterTableHeaderCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    filterTableView.register(nib, forCellReuseIdentifier: identifier)
+  }
+  
+  private func registerTableCell() {
+    var identifiers: [String] = []
+    identifiers.append(String(describing: FilterBasicCell.self))
+    identifiers.append(String(describing: FilterColorCell.self))
+    identifiers.append(String(describing: FilterDescriptionCell.self))
+    
+    for id in identifiers {
+      let nib = UINib(nibName: id, bundle: nil)
+      filterTableView.register(nib, forCellReuseIdentifier: id)
     }
   }
 }
