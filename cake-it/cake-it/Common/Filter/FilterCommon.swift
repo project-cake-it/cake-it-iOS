@@ -53,18 +53,14 @@ final class FilterCommon {
     }
   }
   
-  enum FilterSorting: CaseIterable {
-    case byDefault
-    case bySaved
-    case byPriceLow
+  enum FilterSorting: String, CaseIterable {
+    case byDefault  = ""
+    case bySaved    = "zzim"
+    case byPriceLow = "cheap"
 
     // 서버 api value
     var value: String {
-      switch self {
-      case .byDefault:    return ""
-      case .bySaved:      return "zzim"
-      case .byPriceLow:   return "cheap"
-      }
+      return self.rawValue
     }
     
     // 필터 셀 텍스트
@@ -77,66 +73,40 @@ final class FilterCommon {
     }
   }
   
-  enum FilterRegion: CaseIterable {
-    case gangnam
-    case gwangjin
-    case gwanak
-    case mapo
-    case seodeamun
-    case songpa
+  enum FilterRegion: String, CaseIterable {
+    case gangnam    = "강남구"
+    case gwangjin   = "광진구"
+    case gwanak     = "관악구"
+    case mapo       = "마포구"
+    case seodeamun  = "서대문구"
+    case songpa     = "송파구"
     
     // 서버 api value
     var value: String {
-      switch self {
-      case .gangnam:    return "강남구"
-      case .gwangjin:   return "광진구"
-      case .gwanak:     return "관악구"
-      case .mapo:       return "마포구"
-      case .seodeamun:  return "서대문구"
-      case .songpa:     return "송파구"
-      }
+      return self.rawValue
     }
     
     // 필터 셀 텍스트
     var title: String {
-      switch self {
-      case .gangnam:    return "강남구"
-      case .gwangjin:   return "광진구"
-      case .gwanak:     return "관악구"
-      case .mapo:       return "마포구"
-      case .seodeamun:  return "서대문구"
-      case .songpa:     return "송파구"
-      }
+      return self.rawValue
     }
   }
   
-  enum FilterSize: CaseIterable {
-    case miniSize
-    case levelOneSize
-    case levelTwoSize
-    case levelThreeSize
-    case twoTier
+  enum FilterSize: String, CaseIterable {
+    case miniSize       = "미니"
+    case levelOneSize   = "1호"
+    case levelTwoSize   = "2호"
+    case levelThreeSize = "3호"
+    case twoTier        = "2단"
     
     // 서버 api value
     var value: String {
-      switch self {
-      case .miniSize:       return "미니"
-      case .levelOneSize:   return "1호"
-      case .levelTwoSize:   return "2호"
-      case .levelThreeSize: return "3호"
-      case .twoTier:        return "2단"
-      }
+      return self.rawValue
     }
     
     // 필터 셀 텍스트
     var title: String {
-      switch self {
-      case .miniSize:       return "미니"
-      case .levelOneSize:   return "1호"
-      case .levelTwoSize:   return "2호"
-      case .levelThreeSize: return "3호"
-      case .twoTier:        return "2단"
-      }
+      return self.rawValue
     }
     // 필터 셀 하단 텍스트
     var description: String {
@@ -150,39 +120,23 @@ final class FilterCommon {
     }
   }
   
-  enum FilterColor: CaseIterable {
-    case white
-    case pink
-    case yellow
-    case red
-    case blue
-    case purple
-    case other
+  enum FilterColor: String, CaseIterable {
+    case white  = "화이트"
+    case pink   = "핑크"
+    case yellow = "옐로우"
+    case red    = "레드"
+    case blue   = "블루"
+    case purple = "퍼플"
+    case other  = "기타"
     
     // 서버 api value
     var value: String {
-      switch self {
-      case .white:  return "화이트"
-      case .pink:   return "핑크"
-      case .yellow: return "옐로우"
-      case .red:    return "레드"
-      case .blue:   return "블루"
-      case .purple: return "퍼플"
-      case .other:  return "기타"
-      }
+      return self.rawValue
     }
     
     // 필터 셀 텍스트
     var title: String {
-      switch self {
-      case .white:  return "화이트"
-      case .pink:   return "핑크"
-      case .yellow: return "옐로우"
-      case .red:    return "레드"
-      case .blue:   return "블루"
-      case .purple: return "퍼플"
-      case .other:  return "기타"
-      }
+      return self.rawValue
     }
     // 필터 셀 컬러
     var color: UIColor {
@@ -198,30 +152,20 @@ final class FilterCommon {
     }
   }
   
-  enum FilterCategory: CaseIterable {
-    case lettering
-    case image
-    case character
-    case individuality
+  enum FilterCategory: String, CaseIterable {
+    case lettering      = "문구"
+    case image          = "이미지"
+    case character      = "캐릭터"
+    case individuality  = "개성"
     
     // 서버 api value
     var value: String {
-      switch self {
-      case .lettering:     return "문구"
-      case .image:         return "이미지"
-      case .character:     return "캐릭터"
-      case .individuality: return "개성"
-      }
+      return self.rawValue
     }
     
     // 필터 셀 텍스트
     var title: String {
-      switch self {
-      case .lettering:     return "문구"
-      case .image:         return "이미지"
-      case .character:     return "캐릭터"
-      case .individuality: return "개성"
-      }
+      return self.rawValue
     }
   }
   
@@ -241,17 +185,16 @@ final class FilterCommon {
 
 // 디자인 리스트 테마
 extension FilterCommon {
-  
-  enum FilterTheme: CaseIterable {
-    case birthday
-    case anniversary
-    case wedding
-    case emplyment
-    case advancement
-    case leave
-    case discharge
-    case graduated
-    case rehabilitation
+  enum FilterTheme: String, CaseIterable {
+    case birthday       = "생일"
+    case anniversary    = "기념일"
+    case wedding        = "결혼"
+    case emplyment      = "입사"
+    case advancement    = "승진"
+    case leave          = "퇴사"
+    case discharge      = "전역"
+    case graduated      = "졸업"
+    case rehabilitation = "복직"
     
     // 서버 api value
     static var key: String {
@@ -260,32 +203,12 @@ extension FilterCommon {
     
     // 서버 api value
     var value: String {
-      switch self {
-      case .birthday:     	return "생일"
-      case .anniversary:  	return "기념일"
-      case .wedding:        return "결혼"
-      case .emplyment:      return "입사"
-      case .advancement:    return "승진"
-      case .leave:          return "퇴사"
-      case .discharge:      return "전역"
-      case .graduated:      return "졸업"
-      case .rehabilitation: return "복직"
-      }
+      return self.rawValue
     }
     
     // 필터 셀 텍스트
     var title: String {
-      switch self {
-      case .birthday:       return "생일"
-      case .anniversary:    return "기념일"
-      case .wedding:        return "결혼"
-      case .emplyment:      return "입사"
-      case .advancement:    return "승진"
-      case .leave:          return "퇴사"
-      case .discharge:      return "전역"
-      case .graduated:      return "졸업"
-      case .rehabilitation: return "복직"
-      }
+      return self.rawValue
     }
   }
 }

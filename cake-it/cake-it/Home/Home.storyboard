@@ -497,13 +497,23 @@
                                             <action selector="naviSaveButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="6dI-Dt-QEK"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-ra-Uye" userLabel="Navi Title Button">
+                                        <rect key="frame" x="54" y="0.0" width="306" height="50"/>
+                                        <connections>
+                                            <action selector="naviTtileButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="y1j-cI-ryg"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="kyj-ra-Uye" secondAttribute="bottom" id="5KQ-cq-UW4"/>
                                     <constraint firstAttribute="height" constant="50" id="8T7-6O-lyF"/>
+                                    <constraint firstItem="kyj-ra-Uye" firstAttribute="top" secondItem="HJH-3s-3iJ" secondAttribute="top" id="BvC-4R-ySw"/>
                                     <constraint firstItem="AOV-in-YDj" firstAttribute="centerY" secondItem="HJH-3s-3iJ" secondAttribute="centerY" id="CcY-wH-erE"/>
                                     <constraint firstAttribute="trailing" secondItem="Cay-Bm-flT" secondAttribute="trailing" constant="16" id="R5r-V2-ZQp"/>
                                     <constraint firstItem="Cay-Bm-flT" firstAttribute="centerY" secondItem="3k5-yU-0ch" secondAttribute="centerY" id="b1q-lK-FsM"/>
+                                    <constraint firstItem="Cay-Bm-flT" firstAttribute="leading" secondItem="kyj-ra-Uye" secondAttribute="trailing" id="gRu-S2-24V"/>
+                                    <constraint firstItem="kyj-ra-Uye" firstAttribute="leading" secondItem="AOV-in-YDj" secondAttribute="trailing" id="gsI-bz-N6e"/>
                                     <constraint firstItem="AOV-in-YDj" firstAttribute="leading" secondItem="HJH-3s-3iJ" secondAttribute="leading" constant="16" id="k5C-C5-xQ3"/>
                                     <constraint firstItem="3k5-yU-0ch" firstAttribute="centerY" secondItem="HJH-3s-3iJ" secondAttribute="centerY" id="nHj-hv-ZSX"/>
                                     <constraint firstItem="Cay-Bm-flT" firstAttribute="leading" secondItem="3k5-yU-0ch" secondAttribute="trailing" id="r6L-a7-G4G"/>
@@ -561,6 +571,7 @@
                                                         <color key="textColor" name="grayscale04"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82m-JW-oM3" customClass="OrderAvailableDateButton" customModule="cake_it" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="85.5" width="382" height="48"/>
                                                         <constraints>

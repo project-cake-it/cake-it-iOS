@@ -21,8 +21,11 @@ final class FilterCategoryCell: UICollectionViewCell {
   
   weak var delegate: FilterCategoryCellDelegate?
   private(set) var filterType: FilterCommon.FilterType = .reset
+  var selectedFilterTitle: [String] = []
+  
   var isFilterHighlighted: Bool = false { // 필터에 현재 포커스가 가있는 상태
     didSet {
+      updateTitleLabel()
       updateColorAndImage()
       
       if isSelected == true {
@@ -43,17 +46,38 @@ final class FilterCategoryCell: UICollectionViewCell {
     isFilterSelected = false
   }
   
-  func update(type: FilterCommon.FilterType, isHighlighted: Bool, isSelected: Bool) {
+  func update(type: FilterCommon.FilterType,
+              highlightedFilterType: FilterCommon.FilterType,
+              selectedFilter: [String: [String]]) {
     filterType = type
-    isFilterHighlighted = isHighlighted
-    isFilterSelected = isSelected
     
-    titleLabel.text = type.title
+    if selectedFilter.keys.contains(type.key)
+        && selectedFilter[filterType.key]?.isEmpty == false {
+      isFilterSelected = true
+      selectedFilterTitle = selectedFilter[filterType.key] ?? []
+    } else {
+      isFilterSelected = false
+    }
+    
+    if highlightedFilterType == filterType
+        && highlightedFilterType != .reset {
+      isFilterHighlighted = true
+    } else {
+      isFilterHighlighted = false
+    }
+    
+    updateTitleLabel()
+    updateColorAndImage()
+    
     self.clipsToBounds = false
     self.layer.borderWidth = 1
     self.layer.cornerRadius = self.frame.height/2
-    
-    updateColorAndImage()
+  }
+  
+  private func updateTitleLabel() {
+    titleLabel.text = FilterManager.shared.filterTitle(isSelected: isFilterSelected,
+                                                       filterType: filterType,
+                                                       filterValues: selectedFilterTitle)
   }
   
   private func updateColorAndImage() {
