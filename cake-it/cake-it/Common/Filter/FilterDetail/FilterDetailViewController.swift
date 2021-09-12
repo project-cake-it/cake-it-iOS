@@ -23,16 +23,18 @@ final class FilterDetailViewController: UIViewController {
     static let tableViewRadius: CGFloat = 16.0
   }
   
+  @IBOutlet var containerView: UIView!
   @IBOutlet weak var filterTableView: UITableView!
-  @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var backgroundView: UIView!
+  private var pickUpAvailableDateSectionView: UIView!
   
   weak var delegate: FilterDetailViewDelegate?
   var filterType: FilterCommon.FilterType = .reset
   var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
-  var tableViewHeight: CGFloat = 0.0 {
+  var containerViewHeight: CGFloat = 0.0 {
     didSet {
-      tableViewHeightConstraint?.constant = tableViewHeight
+      containerViewHeightConstraint?.constant = containerViewHeight
     }
   }
 
@@ -78,7 +80,7 @@ final class FilterDetailViewController: UIViewController {
   }
   
   func resetData() {
-    tableViewHeight = 0.0
+    containerViewHeight = 0.0
   }
   
   @objc private func backgroundViewDidTap() {
@@ -93,12 +95,12 @@ final class FilterDetailViewController: UIViewController {
     let isExistHeader = FilterManager.shared.isMultiSelectionEnabled(type: filterType)
 
     if filterType == .reset {
-      tableViewHeight = 0
+      containerViewHeight = 0
     } else {
       if isExistHeader {
-        tableViewHeight = headerHeight + (CGFloat(numberOfCell) * cellHeight) + footerHeight
+        containerViewHeight = headerHeight + (CGFloat(numberOfCell) * cellHeight) + footerHeight
       } else {
-        tableViewHeight = (CGFloat(numberOfCell) * cellHeight) + footerHeight
+        containerViewHeight = (CGFloat(numberOfCell) * cellHeight) + footerHeight
       }
     }
   }
