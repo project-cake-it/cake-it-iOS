@@ -59,14 +59,17 @@ final class FilterDetailViewController: UIViewController {
     let footerHeight = Metric.footerCellHeight
     let isExistHeader = FilterManager.shared.isMultiSelectionEnabled(type: filterType)
 
-    if filterType == .reset {
-      containerViewHeight = 0
+    containerViewHeight = 0
+    view.layoutIfNeeded()
+    guard filterType != .reset else { return }
+    
+    if isExistHeader {
+      containerViewHeight = headerHeight + (CGFloat(numberOfCell) * cellHeight) + footerHeight
     } else {
-      if isExistHeader {
-        containerViewHeight = headerHeight + (CGFloat(numberOfCell) * cellHeight) + footerHeight
-      } else {
-        containerViewHeight = (CGFloat(numberOfCell) * cellHeight) + footerHeight
-      }
+      containerViewHeight = (CGFloat(numberOfCell) * cellHeight) + footerHeight
+    }
+    UIView.animateCurveEaseOut(withDuration: 0.25, delay: 0.05) { [weak self] in
+      self?.view.layoutIfNeeded()
     }
   }
   
