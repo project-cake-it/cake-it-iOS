@@ -14,7 +14,8 @@
             <connections>
                 <outlet property="backgroundView" destination="m5w-Xu-Adz" id="o8F-tk-ZNG"/>
                 <outlet property="containerView" destination="nXj-Ar-oMC" id="Eg8-5R-OYd"/>
-                <outlet property="containerViewHeightConstraint" destination="6rb-U4-u10" id="40h-dO-6f8"/>
+                <outlet property="containerViewHeightConstraint" destination="fVU-Ki-TM5" id="GGb-3c-qUZ"/>
+                <outlet property="containerViewHeightConstraintForPickUpDate" destination="6rb-U4-u10" id="40h-dO-6f8"/>
                 <outlet property="filterTableView" destination="fPI-mX-BrK" id="D7S-4s-Q7k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -38,11 +39,12 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="400" id="6rb-U4-u10"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6rb-U4-u10"/>
                         <constraint firstItem="fPI-mX-BrK" firstAttribute="top" secondItem="nXj-Ar-oMC" secondAttribute="top" id="Age-8Q-lYl"/>
                         <constraint firstItem="fPI-mX-BrK" firstAttribute="leading" secondItem="nXj-Ar-oMC" secondAttribute="leading" id="Ofn-3y-AXm"/>
                         <constraint firstAttribute="bottom" secondItem="fPI-mX-BrK" secondAttribute="bottom" id="Whr-DB-Xyw"/>
                         <constraint firstAttribute="trailing" secondItem="fPI-mX-BrK" secondAttribute="trailing" id="ajm-zq-oo8"/>
+                        <constraint firstAttribute="height" constant="400" id="fVU-Ki-TM5"/>
                     </constraints>
                 </view>
             </subviews>

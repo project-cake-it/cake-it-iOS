@@ -45,14 +45,23 @@ extension ShopsMainViewController {
     filterCollectionView.reloadData()
     selectedFilter.removeAll()
     hideFilterDetailView()
+    guard let detailVC = filterDetailVC else { return }
+    detailVC.hidePickUpDateSectionView()
   }
   
   private func showFilterDetailView(type: FilterCommon.FilterType) {
     guard let detailVC = filterDetailVC else { return }
     detailVC.filterType = type
     detailVC.selectedList = selectedFilter[type.key] ?? []
-    detailVC.filterTableView.reloadData()
     filterDetailContainerView.isHidden = false
+    switch type {
+    case .pickupDate:
+      detailVC.updateViewForPickUpDate()
+    default:
+      detailVC.filterTableView.reloadData()
+      detailVC.setTableViewHeight()
+      detailVC.hidePickUpDateSectionView()
+    }
   }
   
   func hideFilterDetailView() {

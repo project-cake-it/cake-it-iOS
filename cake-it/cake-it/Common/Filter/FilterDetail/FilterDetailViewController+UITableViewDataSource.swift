@@ -13,10 +13,6 @@ extension FilterDetailViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    if indexPath.row == 0 {
-      setTableViewHeight()
-    }
-    
     switch filterType {
     case .order:
       let identifier = String(describing: FilterBasicCell.self)
