@@ -16,6 +16,7 @@ final class ShopListSubViewController: BaseViewController, IndicatorInfoProvider
   }
   
   @IBOutlet weak var cakeShopCollectionView: UICollectionView!
+  @IBOutlet var savedShopEmptyView: UIView!
   
   private(set) var savedCakeShops: [CakeShop] = []
   
@@ -36,9 +37,19 @@ final class ShopListSubViewController: BaseViewController, IndicatorInfoProvider
       case .success(let result):
         self.savedCakeShops = result
         self.cakeShopCollectionView.reloadData()
+        self.checkEmptyView()
+        
       case .failure(let error):
         print(error.localizedDescription)
       }
+    }
+  }
+  
+  private func checkEmptyView() {
+    if self.savedCakeShops.isEmpty {
+      savedShopEmptyView.isHidden = false
+    } else {
+      savedShopEmptyView.isHidden = true
     }
   }
   

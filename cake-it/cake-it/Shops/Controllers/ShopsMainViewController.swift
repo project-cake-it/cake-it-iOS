@@ -17,6 +17,7 @@ final class ShopsMainViewController: BaseViewController {
   @IBOutlet weak var titleView: UIView!
   @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var filterCollectionView: UICollectionView!
+  @IBOutlet var shopEmptyView: UIView!
   @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
   
@@ -53,6 +54,7 @@ final class ShopsMainViewController: BaseViewController {
       case .success(let cakeShops):
         self.cakeShops = cakeShops
         self.shopCollectionView.reloadData()
+        self.checkEmptyView()
         
       case .failure(_):
         // TODO: 에러 핸들링
@@ -70,10 +72,19 @@ final class ShopsMainViewController: BaseViewController {
       case .success(let searchResult):
         self.cakeShops = searchResult.shops
         self.shopCollectionView.reloadData()
-
+        self.checkEmptyView()
+        
       case .failure(let error):
         print(error.localizedDescription)
       }
+    }
+  }
+
+  private func checkEmptyView() {
+    if self.cakeShops.isEmpty {
+      self.shopEmptyView.isHidden = false
+    } else {
+      self.shopEmptyView.isHidden = true
     }
   }
 
