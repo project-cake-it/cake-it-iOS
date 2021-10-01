@@ -26,12 +26,16 @@ final class CakeOrderAvailableDateCell: UICollectionViewCell {
   }
   
   func update(with date: CakeOrderAvailableDate) {
-    guard !date.isEmpty else {
+    guard date.isEmpty == false else {
       dayLabel.text = ""
       return
     }
     dayLabel.text = String(date.day)
     dayLabel.textColor = date.isEnabled ? UIColor.black : Colors.grayscale03
     todayCircleView.isHidden = !((Date().day == date.day) && (Date().month == date.month))
+  }
+  
+  func selected() {
+    
   }
 }

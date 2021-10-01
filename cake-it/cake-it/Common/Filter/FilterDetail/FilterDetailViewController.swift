@@ -33,7 +33,7 @@ final class FilterDetailViewController: UIViewController {
   private var previousMonthButton: UIButton!
   private var nextMonthButton: UIButton!
   private var weekdayTitleLabelStackView: UIStackView!
-  private var collectionView: UICollectionView!
+  private(set) var pickUpCalendarCollectionView: UICollectionView!
   private var collectionViewHeightConstraint: NSLayoutConstraint!
   
   weak var delegate: FilterDetailViewDelegate?
@@ -52,12 +52,13 @@ final class FilterDetailViewController: UIViewController {
   private(set) var totalPickUpAvailableDates: [CakeOrderAvailableDates] = []
   private(set) var currentMonthIndex: Int = 0 {
     didSet {
-      collectionView.reloadData()
+      pickUpCalendarCollectionView.reloadData()
       updateCollectionViewHeightToItsHeight()
       updateCurrentYearMonthLabel()
       updateChangeMonthButtonState()
     }
   }
+  var selectedPickUpDate: CakeOrderAvailableDate?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -89,7 +90,7 @@ final class FilterDetailViewController: UIViewController {
       datesByMonth.configureFirstDayOffsetDates()
       totalPickUpAvailableDates.append(datesByMonth)
     }
-    collectionView.reloadData()
+    pickUpCalendarCollectionView.reloadData()
   }
   
   func updateViewForPickUpDate() {
@@ -104,7 +105,7 @@ final class FilterDetailViewController: UIViewController {
     
     containerViewHeightConstraint.isActive = false
     containerViewHeightConstraintForPickUpDate.isActive = true
-    let contentHeight = collectionView.collectionViewLayout.collectionViewContentSize.height
+    let contentHeight = pickUpCalendarCollectionView.collectionViewLayout.collectionViewContentSize.height
     collectionViewHeightConstraint.constant = contentHeight
     UIView.animateCurveEaseOut(withDuration: 0.25, delay: 0.05) { [weak self] in
       self?.view.layoutIfNeeded()
@@ -359,29 +360,29 @@ extension FilterDetailViewController {
   }
   
   private func configureDateCollectionView() {
-    collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    collectionView.backgroundColor = .clear
-    collectionView.dataSource = self
-    collectionView.delegate = self
-    pickUpAvailableDateSectionView.addSubview(collectionView)
-    collectionView.constraints(topAnchor: weekdayTitleLabelStackView.bottomAnchor,
+    pickUpCalendarCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+    pickUpCalendarCollectionView.backgroundColor = .clear
+    pickUpCalendarCollectionView.dataSource = self
+    pickUpCalendarCollectionView.delegate = self
+    pickUpAvailableDateSectionView.addSubview(pickUpCalendarCollectionView)
+    pickUpCalendarCollectionView.constraints(topAnchor: weekdayTitleLabelStackView.bottomAnchor,
                                leadingAnchor: pickUpAvailableDateSectionView.leadingAnchor,
                                bottomAnchor: pickUpAvailableDateSectionView.bottomAnchor,
                                trailingAnchor: pickUpAvailableDateSectionView.trailingAnchor,
                                padding: .init(top: 12, left: 0, bottom: 16, right: 0))
-    collectionViewHeightConstraint = collectionView.heightAnchor.constraint(equalToConstant: 340)
+    collectionViewHeightConstraint = pickUpCalendarCollectionView.heightAnchor.constraint(equalToConstant: 340)
     collectionViewHeightConstraint.isActive = true
   }
   
   private func registerCollectionViewCell() {
     let nibName = String(describing: CakeOrderAvailableDateCell.self)
     let nib = UINib(nibName: nibName, bundle: nil)
-    collectionView.register(nib, forCellWithReuseIdentifier: nibName)
+    pickUpCalendarCollectionView.register(nib, forCellWithReuseIdentifier: nibName)
   }
   
   private func updateCollectionViewHeightToItsHeight() {
     view.layoutIfNeeded()
-    let contentHeight = collectionView.collectionViewLayout.collectionViewContentSize.height
+    let contentHeight = pickUpCalendarCollectionView.collectionViewLayout.collectionViewContentSize.height
     collectionViewHeightConstraint.constant = contentHeight
     collectionViewHeightConstraint.priority = .required
     collectionViewHeightConstraint.isActive = true
