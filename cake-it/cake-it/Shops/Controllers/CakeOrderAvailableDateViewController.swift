@@ -185,6 +185,7 @@ extension CakeOrderAvailableDateViewController {
     registerCollectionViewCell()
     configureDateDatas()
     updateCurrentYearMonthLabel()
+    updateChangeMonthButtonState()
   }
   
   private func configureView() {
