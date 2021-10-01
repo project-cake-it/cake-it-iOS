@@ -201,20 +201,28 @@ extension FilterDetailViewController {
       for value in allValues {
         selectedList.append(value)
       }
+      delegate?.filterDetailViewController(self, delay: 0)
     } else if isAllDeselected {
       selectedList.removeAll()
+      delegate?.filterDetailViewController(self, delay: 0)
     } else {
       let value = selectedFilterTitle(index: selectedIndex)
       if selectedList.contains(value) {
         // 이미 존재하는 값일 경우에는 선택 취소
         let index = selectedList.firstIndex(of: value)!
         selectedList.remove(at: index)
+        if !FilterManager.shared.isMultiSelectionEnabled(type: filterType) {
+          delegate?.filterDetailViewController(self, delay: 0)
+        }
       } else {
         // 단일선택인 경우 기존 리스트 값 제거 후 해당 필터만 추가
         if FilterManager.shared.isMultiSelectionEnabled(type: filterType) == false {
           selectedList.removeAll()
         }
         selectedList.append(value)
+        if !FilterManager.shared.isMultiSelectionEnabled(type: filterType) {
+          delegate?.filterDetailViewController(self, delay: 0)
+        }
       }
       if value == "resetPickUpDate" {
         selectedList.removeAll()
@@ -225,7 +233,7 @@ extension FilterDetailViewController {
     filterTableView.reloadData()
   }
   
-  private func selectedFilterTitle( index: Int) -> String {
+  private func selectedFilterTitle(index: Int) -> String {
     switch filterType {
     case .order:    return FilterCommon.FilterSorting.allCases[index].value
     case .region:   return FilterCommon.FilterRegion.allCases[index].value
