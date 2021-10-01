@@ -92,6 +92,8 @@ final class HomeViewController: UIViewController {
   private func configueSlideView() {
     promotionSlideView.heightAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
     promotionSlideView.delegate = self
+    slideViewIndexLabel.layer.cornerRadius = slideViewIndexLabel.frame.height / 2
+    slideViewIndexLabel.layer.masksToBounds = true
   }
   
   private func configureNavigationController() {
