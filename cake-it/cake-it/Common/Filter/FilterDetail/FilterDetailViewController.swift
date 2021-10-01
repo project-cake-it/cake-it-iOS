@@ -58,7 +58,11 @@ final class FilterDetailViewController: UIViewController {
       updateChangeMonthButtonState()
     }
   }
-  var selectedPickUpDate: CakeOrderAvailableDate?
+  var selectedPickUpDate: CakeOrderAvailableDate? {
+    didSet {
+      pickUpCalendarCollectionView.reloadData()
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()

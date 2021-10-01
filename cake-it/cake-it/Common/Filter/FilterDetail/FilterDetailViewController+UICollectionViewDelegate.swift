@@ -14,8 +14,6 @@ extension FilterDetailViewController: UICollectionViewDelegateFlowLayout {
       let dates = totalPickUpAvailableDates[currentMonthIndex]
       let date = dates[indexPath.row]
       self.selectedPickUpDate = date
-      let cell = collectionView.cellForItem(at: indexPath) as! CakeOrderAvailableDateCell
-      cell.selected()
     }
   }
   
