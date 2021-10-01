@@ -101,6 +101,7 @@ final class FilterDetailViewController: UIViewController {
     pickUpAvailableDateSectionView.isHidden = false
     configurePickUpAvailableDateData()
     updateCurrentYearMonthLabel()
+    updateChangeMonthButtonState()
     
     containerViewHeightConstraint.isActive = true
     containerViewHeightConstraintForPickUpDate.isActive = false
