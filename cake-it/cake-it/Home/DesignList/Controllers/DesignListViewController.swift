@@ -25,6 +25,7 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var navigationBarTitleTapGestureView: UIView!
   @IBOutlet weak var navigationBarTitleArrowIcon: UIImageView!
   
+  @IBOutlet var designEmptyView: UIView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
   @IBOutlet weak var filterCategoryCollectionView: UICollectionView!
 
@@ -73,7 +74,8 @@ final class DesignListViewController: BaseViewController {
       case .success(let designs):
         self.cakeDesigns = designs
         self.designsCollectionView.reloadData()
-
+        self.checkEmptyView()
+        
       case .failure(let error):
         print(error.localizedDescription)
       }
@@ -89,10 +91,19 @@ final class DesignListViewController: BaseViewController {
       case .success(let searchResult):
         self.cakeDesigns = searchResult.designs
         self.designsCollectionView.reloadData()
-
+        self.checkEmptyView()
+        
       case .failure(let error):
         print(error.localizedDescription)
       }
+    }
+  }
+  
+  private func checkEmptyView() {
+    if self.cakeDesigns.isEmpty {
+      self.designEmptyView.isHidden = false
+    } else {
+      self.designEmptyView.isHidden = true
     }
   }
 

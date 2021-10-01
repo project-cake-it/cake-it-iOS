@@ -15,7 +15,7 @@ class NetworkCommon {
     let data: T
   }
   
-  static let BASE_URL = "http://13.124.173.58:8080/api/v2/"
+  static let BASE_URL = "http://cake-it.ga:8080/api/v2/"
   
   enum API: String {
     case login            = "login"             // 로그인
