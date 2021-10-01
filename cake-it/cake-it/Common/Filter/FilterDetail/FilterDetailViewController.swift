@@ -70,33 +70,6 @@ final class FilterDetailViewController: UIViewController {
     configure()
   }
   
-  private func configurePickUpAvailableDateData() {
-    let currentDate = CakeOrderAvailableDate(date: Date())
-    let minDateDayOffset = currentDate.hour >= 18 ? 2 : 1
-    let minDate = currentDate.after(dayOffset: minDateDayOffset)
-    let maxDate = currentDate.after(dayOffset: 30)
-    maxMonthOffset = maxDate.month - minDate.month
-    
-    for offset in 0...maxMonthOffset {
-      let monthUpdatedDate = minDate.after(monthOffset: offset)
-      var datesByMonth = CakeOrderAvailableDates()
-      for day in 1...FilterDetailViewController.numberOfDaysByMonth[monthUpdatedDate.month] {
-        var dayDate = CakeOrderAvailableDate(
-          year: monthUpdatedDate.year,
-          month: monthUpdatedDate.month,
-          day: day)
-        dayDate.enabled()
-        if dayDate < minDate || dayDate > maxDate {
-          dayDate.disabled()
-        }
-        datesByMonth.append(dayDate)
-      }
-      datesByMonth.configureFirstDayOffsetDates()
-      totalPickUpAvailableDates.append(datesByMonth)
-    }
-    pickUpCalendarCollectionView.reloadData()
-  }
-  
   func updateViewForPickUpDate() {
     pickUpAvailableDateSectionView.isHidden = false
     configurePickUpAvailableDateData()
@@ -125,33 +98,6 @@ final class FilterDetailViewController: UIViewController {
     containerViewHeight = 0.0
   }
   
-  @objc private func backgroundViewDidTap() {
-    delegate?.filterBackgroundViewDidTap()
-  }
-  
-  @objc private func previousMonthButtonDidTap() {
-    currentMonthIndex = max(0, currentMonthIndex - 1)
-  }
-  
-  @objc private func nextMonthButtonDidTap() {
-    currentMonthIndex = min(maxMonthOffset, currentMonthIndex + 1)
-  }
-  
-  private func updateCurrentYearMonthLabel() {
-    let currentDate = CakeOrderAvailableDate(date: Date())
-    let newDate = currentDate.after(monthOffset: currentMonthIndex)
-    currentYearMonthLabel.text = "\(newDate.year)년 \(newDate.month)월"
-  }
-  
-  private func updateChangeMonthButtonState() {
-    previousMonthButton.isEnabled = currentMonthIndex != 0
-    previousMonthButton.tintColor = previousMonthButton.isEnabled ?
-      Colors.primaryColor : Colors.grayscale03
-    nextMonthButton.isEnabled = currentMonthIndex != maxMonthOffset
-    nextMonthButton.tintColor = nextMonthButton.isEnabled ?
-      Colors.primaryColor : Colors.grayscale03
-  }
-  
   func setTableViewHeight() {
     containerViewHeightConstraint.isActive = true
     containerViewHeightConstraintForPickUpDate.isActive = false
@@ -176,6 +122,10 @@ final class FilterDetailViewController: UIViewController {
     }
   }
   
+  @objc private func backgroundViewDidTap() {
+    delegate?.filterBackgroundViewDidTap()
+  }
+  
   func tableCellHeight(type: FilterCommon.FilterType) -> CGFloat {
     if filterType == .size {
       return Metric.largeTableCellHight
@@ -185,7 +135,62 @@ final class FilterDetailViewController: UIViewController {
   }
 }
 
+// MARK: - Pick Up Calendar
+
+extension FilterDetailViewController {
+  private func configurePickUpAvailableDateData() {
+    let currentDate = CakeOrderAvailableDate(date: Date())
+    let minDateDayOffset = currentDate.hour >= 18 ? 2 : 1
+    let minDate = currentDate.after(dayOffset: minDateDayOffset)
+    let maxDate = currentDate.after(dayOffset: 30)
+    maxMonthOffset = maxDate.month - minDate.month
+    
+    for offset in 0...maxMonthOffset {
+      let monthUpdatedDate = minDate.after(monthOffset: offset)
+      var datesByMonth = CakeOrderAvailableDates()
+      for day in 1...FilterDetailViewController.numberOfDaysByMonth[monthUpdatedDate.month] {
+        var dayDate = CakeOrderAvailableDate(
+          year: monthUpdatedDate.year,
+          month: monthUpdatedDate.month,
+          day: day)
+        dayDate.enabled()
+        if dayDate < minDate || dayDate > maxDate {
+          dayDate.disabled()
+        }
+        datesByMonth.append(dayDate)
+      }
+      datesByMonth.configureFirstDayOffsetDates()
+      totalPickUpAvailableDates.append(datesByMonth)
+    }
+    pickUpCalendarCollectionView.reloadData()
+  }
+  
+  private func updateCurrentYearMonthLabel() {
+    let currentDate = CakeOrderAvailableDate(date: Date())
+    let newDate = currentDate.after(monthOffset: currentMonthIndex)
+    currentYearMonthLabel.text = "\(newDate.year)년 \(newDate.month)월"
+  }
+  
+  private func updateChangeMonthButtonState() {
+    previousMonthButton.isEnabled = currentMonthIndex != 0
+    previousMonthButton.tintColor = previousMonthButton.isEnabled ?
+      Colors.primaryColor : Colors.grayscale03
+    nextMonthButton.isEnabled = currentMonthIndex != maxMonthOffset
+    nextMonthButton.tintColor = nextMonthButton.isEnabled ?
+      Colors.primaryColor : Colors.grayscale03
+  }
+  
+  @objc private func previousMonthButtonDidTap() {
+    currentMonthIndex = max(0, currentMonthIndex - 1)
+  }
+  
+  @objc private func nextMonthButtonDidTap() {
+    currentMonthIndex = min(maxMonthOffset, currentMonthIndex + 1)
+  }
+}
+
 // MARK:- Filter Method
+
 extension FilterDetailViewController {
   func updateSelectedList(selectedIndex: Int = 0,
                           isAllSelected: Bool = false,
