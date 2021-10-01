@@ -242,8 +242,8 @@ extension FilterDetailViewController {
     case .category: return FilterCommon.FilterCategory.allCases[index].value
     // TODO: 선택한 날짜 Value 리턴 구현 필요 (현재 서버 미구현)
     case .pickupDate:
-      guard let date = selectedPickUpDate else { return "resetPickUpDate" }
-      return "\(date.month)월 \(date.day)일"
+      guard let selectedPickUpDate = selectedPickUpDate else { return "resetPickUpDate" }
+      return DateFormatter.CakeOrderAvailableDateFormatter.string(from: selectedPickUpDate.date)
     case .reset:    return ""
     }
   }
