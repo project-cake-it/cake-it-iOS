@@ -85,6 +85,20 @@ final class ShopDetailViewController: BaseViewController {
     configure()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    if let tabbar = self.tabBarController as? TabBarController {
+      tabbar.hideTabbar()
+    }
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    if let tabbar = self.tabBarController as? TabBarController {
+      tabbar.showTabbar()
+    }
+  }
+  
   //MARK: - Public Method
   func fetchDetail(id: Int) {
     NetworkManager.shared.requestGet(api: .shops,

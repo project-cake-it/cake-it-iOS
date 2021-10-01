@@ -56,6 +56,22 @@ final class DesignDetailViewController: BaseViewController {
     fetchCakeDetail()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    if let tabbar = self.tabBarController as? TabBarController {
+      tabbar.hideTabbar()
+    }
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    if let tabbar = self.tabBarController as? TabBarController {
+      tabbar.showTabbar()
+    }
+  }
+  
   private func fetchCakeDetail() {
     NetworkManager.shared.requestGet(api: .designs,
                                      type: CakeDesign.Response.self,
