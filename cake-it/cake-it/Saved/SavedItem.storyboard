@@ -10,6 +10,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SpoqaHanSansNeo-Regular.otf">
+            <string>SpoqaHanSansNeo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Saved Item Main View Controller-->
         <scene sceneID="Ln6-Kz-PHm">
@@ -114,18 +119,50 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-Bi-gjo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="aBj-rn-DTh">
+                                        <rect key="frame" x="109" y="388.5" width="196.5" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜한 케이크가 없어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6SP-JM-MDL">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마음에 드는 케이크를 담아볼까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOD-Hw-hiI">
+                                                <rect key="frame" x="0.0" y="24" width="196.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="aBj-rn-DTh" firstAttribute="centerX" secondItem="Mei-Bi-gjo" secondAttribute="centerX" id="9yb-lq-t3h"/>
+                                    <constraint firstItem="aBj-rn-DTh" firstAttribute="centerY" secondItem="Mei-Bi-gjo" secondAttribute="centerY" id="pu3-Bk-4Jw"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6ZP-ad-X0m"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Mei-Bi-gjo" firstAttribute="bottom" secondItem="qk5-E6-L8o" secondAttribute="bottom" id="9k2-nq-iYW"/>
+                            <constraint firstItem="Mei-Bi-gjo" firstAttribute="trailing" secondItem="qk5-E6-L8o" secondAttribute="trailing" id="Ac4-Ee-ogO"/>
                             <constraint firstItem="qk5-E6-L8o" firstAttribute="top" secondItem="6ZP-ad-X0m" secondAttribute="top" id="BpX-RY-RX9"/>
+                            <constraint firstItem="Mei-Bi-gjo" firstAttribute="top" secondItem="qk5-E6-L8o" secondAttribute="top" id="CI8-q6-LIY"/>
                             <constraint firstItem="qk5-E6-L8o" firstAttribute="leading" secondItem="6ZP-ad-X0m" secondAttribute="leading" id="bpw-v6-m6h"/>
                             <constraint firstItem="6ZP-ad-X0m" firstAttribute="bottom" secondItem="qk5-E6-L8o" secondAttribute="bottom" id="bzt-Ck-i1g"/>
                             <constraint firstAttribute="trailing" secondItem="qk5-E6-L8o" secondAttribute="trailing" id="hMM-sN-qW0"/>
+                            <constraint firstItem="Mei-Bi-gjo" firstAttribute="leading" secondItem="qk5-E6-L8o" secondAttribute="leading" id="p0g-m3-T9e"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cakeImageCollectionView" destination="qk5-E6-L8o" id="rOV-0w-0Jv"/>
+                        <outlet property="savedDesignEmptyView" destination="Mei-Bi-gjo" id="OAd-yz-7hx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edq-3F-FFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -160,18 +197,50 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-uA-MC4" userLabel="Shop Design Empty View">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="WPB-fr-2uy">
+                                        <rect key="frame" x="115.5" y="388.5" width="183.5" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜한 가게가 없어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="StK-0s-EbO">
+                                                <rect key="frame" x="0.0" y="0.0" width="183.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마음에 드는 가게를 담아볼까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MuI-jH-8HO">
+                                                <rect key="frame" x="0.0" y="24" width="183.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="WPB-fr-2uy" firstAttribute="centerY" secondItem="wwA-uA-MC4" secondAttribute="centerY" id="VUo-ck-i0F"/>
+                                    <constraint firstItem="WPB-fr-2uy" firstAttribute="centerX" secondItem="wwA-uA-MC4" secondAttribute="centerX" id="tVS-n6-FGT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PFW-1r-WMW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PFW-1r-WMW" firstAttribute="trailing" secondItem="VtZ-kX-Ymf" secondAttribute="trailing" id="0FM-4G-qLg"/>
+                            <constraint firstItem="wwA-uA-MC4" firstAttribute="top" secondItem="VtZ-kX-Ymf" secondAttribute="top" id="16J-j8-Olg"/>
+                            <constraint firstItem="wwA-uA-MC4" firstAttribute="trailing" secondItem="VtZ-kX-Ymf" secondAttribute="trailing" id="Wpo-bi-yyO"/>
                             <constraint firstItem="VtZ-kX-Ymf" firstAttribute="leading" secondItem="PFW-1r-WMW" secondAttribute="leading" id="YtW-zj-vxB"/>
+                            <constraint firstItem="wwA-uA-MC4" firstAttribute="bottom" secondItem="VtZ-kX-Ymf" secondAttribute="bottom" id="jEa-oS-53V"/>
+                            <constraint firstItem="wwA-uA-MC4" firstAttribute="leading" secondItem="VtZ-kX-Ymf" secondAttribute="leading" id="ora-xy-Nuy"/>
                             <constraint firstItem="PFW-1r-WMW" firstAttribute="bottom" secondItem="VtZ-kX-Ymf" secondAttribute="bottom" id="yEq-xv-H0j"/>
                             <constraint firstItem="VtZ-kX-Ymf" firstAttribute="top" secondItem="PFW-1r-WMW" secondAttribute="top" id="zg5-di-Jki"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="cakeShopCollectionView" destination="VtZ-kX-Ymf" id="8wp-yC-syc"/>
+                        <outlet property="savedShopEmptyView" destination="wwA-uA-MC4" id="eM8-u6-1Xv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axT-5x-R3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

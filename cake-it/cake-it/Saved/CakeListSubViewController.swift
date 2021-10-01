@@ -11,6 +11,7 @@ import XLPagerTabStrip
 final class CakeListSubViewController: BaseViewController, IndicatorInfoProvider {
   
   @IBOutlet weak var cakeImageCollectionView: UICollectionView!
+  @IBOutlet var savedDesignEmptyView: UIView!
   
   var savedCakeDesigns: [CakeDesign]?
 
@@ -31,9 +32,20 @@ final class CakeListSubViewController: BaseViewController, IndicatorInfoProvider
       case .success(let result):
         self.savedCakeDesigns = result
         self.cakeImageCollectionView.reloadData()
+        self.checkEmptyView()
+        
       case .failure(let error):
         print(error.localizedDescription)
       }
+    }
+  }
+  
+  private func checkEmptyView() {
+    guard let savedCakeDesigns = self.savedCakeDesigns else { return }
+    if savedCakeDesigns.isEmpty  {
+      savedDesignEmptyView.isHidden = false
+    } else {
+      savedDesignEmptyView.isHidden = true
     }
   }
   
