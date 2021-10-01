@@ -44,6 +44,7 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
 extension ShopsMainViewController {
   func resetFilter() {
     highlightedFilterType = .reset
+    filterDetailVC?.resetSelectedPickUpDate()
     filterCollectionView.reloadData()
     selectedFilter.removeAll()
     hideFilterDetailView()

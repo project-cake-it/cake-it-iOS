@@ -90,6 +90,10 @@ final class FilterDetailViewController: UIViewController {
     }
   }
   
+  func resetSelectedPickUpDate() {
+    selectedPickUpDate = nil
+  }
+  
   func hidePickUpDateSectionView() {
     pickUpAvailableDateSectionView.isHidden = true
   }
