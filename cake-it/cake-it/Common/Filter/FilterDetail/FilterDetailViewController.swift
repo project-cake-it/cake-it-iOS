@@ -216,6 +216,9 @@ extension FilterDetailViewController {
         }
         selectedList.append(value)
       }
+      if value == "resetPickUpDate" {
+        selectedList.removeAll()
+      }
     }
     
     delegate?.filterDetailCellDidTap(type: filterType, values: selectedList)
@@ -230,7 +233,9 @@ extension FilterDetailViewController {
     case .color:    return FilterCommon.FilterColor.allCases[index].value
     case .category: return FilterCommon.FilterCategory.allCases[index].value
     // TODO: 선택한 날짜 Value 리턴 구현 필요 (현재 서버 미구현)
-    case .pickupDate: return ""
+    case .pickupDate:
+      guard let date = selectedPickUpDate else { return "resetPickUpDate" }
+      return "\(date.month)월 \(date.day)일"
     case .reset:    return ""
     }
   }
