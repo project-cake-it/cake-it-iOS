@@ -60,6 +60,8 @@ extension DesignListViewController {
     detailVC.filterType = type
     detailVC.selectedList = selectedFilter[type.key] ?? []
     detailVC.filterTableView.reloadData()
+    detailVC.setTableViewHeight()
+    detailVC.hidePickUpDateSectionView()
     filterDetailContainerView.isHidden = false
   }
   
