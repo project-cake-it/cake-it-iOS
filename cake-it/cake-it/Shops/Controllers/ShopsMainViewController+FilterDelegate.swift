@@ -31,10 +31,12 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
     fetchCakeShops()
   }
   
-  func filterBackgroundViewDidTap() {
-    highlightedFilterType = .reset
-    filterCollectionView.reloadData()
-    hideFilterDetailView()
+  func filterDetailViewController(_ dismissFilterDetailViewController: FilterDetailViewController, delay: TimeInterval) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) { [weak self] in
+      self?.highlightedFilterType = .reset
+      self?.filterCollectionView.reloadData()
+      self?.hideFilterDetailView()
+    }
   }
 }
 

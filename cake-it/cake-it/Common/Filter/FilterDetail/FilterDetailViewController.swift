@@ -9,7 +9,7 @@ import UIKit
 
 protocol FilterDetailViewDelegate: AnyObject {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String])
-  func filterBackgroundViewDidTap()
+  func filterDetailViewController(_ dismissFilterDetailViewController: FilterDetailViewController, delay: TimeInterval)
 }
 
 final class FilterDetailViewController: UIViewController {
@@ -123,7 +123,7 @@ final class FilterDetailViewController: UIViewController {
   }
   
   @objc private func backgroundViewDidTap() {
-    delegate?.filterBackgroundViewDidTap()
+    delegate?.filterDetailViewController(self, delay: 0)
   }
   
   func tableCellHeight(type: FilterCommon.FilterType) -> CGFloat {

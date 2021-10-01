@@ -20,6 +20,7 @@ extension FilterDetailViewController: UICollectionViewDelegateFlowLayout {
       }
       updateSelectedList()
     }
+    delegate?.filterDetailViewController(self, delay: 0.1)
   }
   
   func collectionView(_ collectionView: UICollectionView,
