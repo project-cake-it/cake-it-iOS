@@ -53,11 +53,21 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
         + FilterCommon.Metric.categoryCellLeftInset
         + FilterCommon.Metric.categoryCellRightInset
       return CGSize(width: cellWidth, height: FilterCommon.Metric.categoryCellHeight)
-      
+    case selectedFilterOptionCollectionView:
+      let label = UILabel()
+      let options = selectedFilterOptions()
+      let option = options[indexPath.row]
+      let title = option.title
+      label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)
+      label.text = title
+      label.sizeToFit()
+      let cellWidth = label.frame.width
+        + SelectedFilterOptionCell.Metric.leftInset
+        + SelectedFilterOptionCell.Metric.rightInset
+      return CGSize(width: cellWidth, height: SelectedFilterOptionCell.Metric.height)
     case shopCollectionView:
       let width = UIScreen.main.bounds.width
       return CGSize(width: width, height: Metric.cakeShopCellHeight)
-      
     default:
       return CGSize(width: 0, height: 0)
     }
@@ -67,7 +77,16 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
                       layout collectionViewLayout: UICollectionViewLayout,
                       minimumLineSpacingForSectionAt section: Int
   ) -> CGFloat {
-    return Metric.cakeShopCellInterItemVerticalSpace
+    switch collectionView {
+    case filterCollectionView:
+      return 8.0
+    case selectedFilterOptionCollectionView:
+      return SelectedFilterOptionCell.Metric.interItemSpace
+    case shopCollectionView:
+      return Metric.cakeShopCellInterItemVerticalSpace
+    default:
+      return 0.0
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView,
@@ -77,10 +96,12 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
     switch collectionView {
     case filterCollectionView:
       return 8.0
+    case selectedFilterOptionCollectionView:
+      return 0
     case shopCollectionView:
-      return 0.0
+      return 0
     default:
-      return 0.0
+      return 0
     }
   }
 }

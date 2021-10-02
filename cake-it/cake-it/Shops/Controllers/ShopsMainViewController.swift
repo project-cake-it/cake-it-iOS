@@ -27,11 +27,7 @@ final class ShopsMainViewController: BaseViewController {
   var cakeShops: [CakeShop] = []
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailVC: FilterDetailViewController?
-  var selectedFilter: Dictionary<String, [String]> = [:] {
-    didSet {
-      updateSelectedFilterOption()
-    }
-  }
+  var selectedFilter: Dictionary<String, [String]> = [:]
   var searchKeyword: [String: String] = [:]
   var highlightedFilterType: FilterCommon.FilterType = .reset
 
@@ -106,19 +102,42 @@ final class ShopsMainViewController: BaseViewController {
   }
 }
 
-// MARK: - UPDATE
+// MARK: - Selected Filter Option
 
 extension ShopsMainViewController {
-  private func updateSelectedFilterOption() {
-    var numberOfSelectedFilterOptions = 0
-    selectedFilter.forEach {
-      numberOfSelectedFilterOptions += $1.count
-    }
+  func updateSelectedFilterOption() {
+    let numberOfSelectedFilterOptions = numberOfSelectedFilterOptions()
     guard numberOfSelectedFilterOptions > 0 else {
       selectedFilterOptionCollectionViewHeightConstraint.constant = 0
       return
     }
     selectedFilterOptionCollectionViewHeightConstraint.constant = Metric.selectedFilterOptionCollectionViewHeight
+  }
+  
+  func numberOfSelectedFilterOptions() -> Int {
+    var numberOfSelectedFilterOptions = 0
+    selectedFilter.forEach {
+      numberOfSelectedFilterOptions += $1.count
+    }
+    return numberOfSelectedFilterOptions
+  }
+  
+  func selectedFilterOptions() -> [SelectedFilterOption] {
+    var options: [SelectedFilterOption] = []
+    selectedFilter.forEach { key, value in
+      value.forEach {
+        let option = SelectedFilterOption(title: $0)
+        options.append(option)
+      }
+    }
+    return options
+  }
+}
+
+extension ShopsMainViewController: SelectedFilterOptionCellDelegate {
+  func selectedFilterOptionCell(closeButtonDidTap fromCell: SelectedFilterOptionCell) {
+    guard let indexPath = selectedFilterOptionCollectionView.indexPath(for: fromCell) else { return }
+    print(indexPath.row)
   }
 }
 
@@ -193,5 +212,12 @@ extension ShopsMainViewController {
   
   private func configureSelectedFilterOptionCollectionView() {
     selectedFilterOptionCollectionViewHeightConstraint.constant = 0
+    selectedFilterOptionCollectionView.delegate = self
+    selectedFilterOptionCollectionView.dataSource = self
+    let identifier = String(describing: SelectedFilterOptionCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    selectedFilterOptionCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    selectedFilterOptionCollectionView.bounces = true
+    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 0)
   }
 }

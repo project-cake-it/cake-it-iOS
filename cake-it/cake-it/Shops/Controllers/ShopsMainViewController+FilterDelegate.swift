@@ -29,6 +29,10 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
     selectedFilter[type.key] = values
     filterCollectionView.reloadData()
     fetchCakeShops()
+    print("🧡🧡 넘어오는 필터 값 배열", values)
+    
+    updateSelectedFilterOption()
+    selectedFilterOptionCollectionView.reloadData()
   }
   
   func filterDetailViewController(_ dismissFilterDetailViewController: FilterDetailViewController, delay: TimeInterval) {

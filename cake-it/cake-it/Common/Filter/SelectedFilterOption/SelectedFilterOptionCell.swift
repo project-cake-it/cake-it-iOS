@@ -13,6 +13,13 @@ protocol SelectedFilterOptionCellDelegate: AnyObject {
 
 final class SelectedFilterOptionCell: UICollectionViewCell {
   
+  enum Metric {
+    static let leftInset: CGFloat = 12
+    static let rightInset: CGFloat = 30
+    static let height: CGFloat = 46
+    static let interItemSpace: CGFloat = 8
+  }
+  
   @IBOutlet var filterOptionContainerView: UIView!
   @IBOutlet var filterOptionTitleLabel: UILabel!
   
@@ -24,8 +31,8 @@ final class SelectedFilterOptionCell: UICollectionViewCell {
     configure()
   }
   
-  func update(with title: String?) {
-    filterOptionTitleLabel.text = title
+  func update(with filterOption: SelectedFilterOption) {
+    filterOptionTitleLabel.text = filterOption.title
   }
   
   @IBAction func closeButtonDidTap(_ sender: Any) {
