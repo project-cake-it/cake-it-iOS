@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,6 +23,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ij-wa-3Mp" userLabel="selectionCircleView">
+                        <rect key="frame" x="2" y="2" width="46" height="46"/>
+                        <color key="backgroundColor" name="primaryColor01"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="9ij-wa-3Mp" secondAttribute="height" multiplier="1:1" id="dfo-vq-llw"/>
+                        </constraints>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOQ-1W-5tJ">
                         <rect key="frame" x="20.5" y="15" width="9.5" height="20"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="17"/>
@@ -39,6 +47,9 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="9ij-wa-3Mp" secondAttribute="bottom" constant="2" id="7yw-Pu-ovP"/>
+                <constraint firstItem="9ij-wa-3Mp" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="2" id="9IF-YJ-Vqy"/>
+                <constraint firstItem="9ij-wa-3Mp" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="Nzc-br-Itp"/>
                 <constraint firstItem="L8B-LD-342" firstAttribute="top" secondItem="JOQ-1W-5tJ" secondAttribute="bottom" constant="2" id="RWw-H0-M3F"/>
                 <constraint firstItem="JOQ-1W-5tJ" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="RWz-6V-Aia"/>
                 <constraint firstItem="L8B-LD-342" firstAttribute="centerX" secondItem="JOQ-1W-5tJ" secondAttribute="centerX" id="gGF-9e-Qw0"/>
@@ -46,9 +57,15 @@
             </constraints>
             <connections>
                 <outlet property="dayLabel" destination="JOQ-1W-5tJ" id="LOt-ex-lkf"/>
+                <outlet property="selectionCircleView" destination="9ij-wa-3Mp" id="JMK-Ay-PEv"/>
                 <outlet property="todayCircleView" destination="L8B-LD-342" id="bVO-bj-C8O"/>
             </connections>
             <point key="canvasLocation" x="-146.37681159420291" y="-31.473214285714285"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="primaryColor01">
+            <color red="0.875" green="0.45100000500679016" blue="0.45100000500679016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -61,6 +61,10 @@ struct CakeOrderAvailableDate {
       day: afterDay.day)
   }
   
+  mutating func disabled() {
+    isEnabled = false
+  }
+  
   mutating func enabled() {
     isEnabled = true
   }

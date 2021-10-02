@@ -31,10 +31,12 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
     fetchCakeShops()
   }
   
-  func filterBackgroundViewDidTap() {
-    highlightedFilterType = .reset
-    filterCollectionView.reloadData()
-    hideFilterDetailView()
+  func filterDetailViewController(_ dismissFilterDetailViewController: FilterDetailViewController, delay: TimeInterval) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) { [weak self] in
+      self?.highlightedFilterType = .reset
+      self?.filterCollectionView.reloadData()
+      self?.hideFilterDetailView()
+    }
   }
 }
 
@@ -42,17 +44,27 @@ extension ShopsMainViewController: FilterDetailViewDelegate {
 extension ShopsMainViewController {
   func resetFilter() {
     highlightedFilterType = .reset
+    filterDetailVC?.resetSelectedPickUpDate()
     filterCollectionView.reloadData()
     selectedFilter.removeAll()
     hideFilterDetailView()
+    guard let detailVC = filterDetailVC else { return }
+    detailVC.hidePickUpDateSectionView()
   }
   
   private func showFilterDetailView(type: FilterCommon.FilterType) {
     guard let detailVC = filterDetailVC else { return }
     detailVC.filterType = type
     detailVC.selectedList = selectedFilter[type.key] ?? []
-    detailVC.filterTableView.reloadData()
     filterDetailContainerView.isHidden = false
+    switch type {
+    case .pickupDate:
+      detailVC.updateViewForPickUpDate()
+    default:
+      detailVC.filterTableView.reloadData()
+      detailVC.setTableViewHeight()
+      detailVC.hidePickUpDateSectionView()
+    }
   }
   
   func hideFilterDetailView() {

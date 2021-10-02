@@ -71,6 +71,8 @@
 		8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BEA0F41260CD36000743512 /* CakeDesignCell.xib */; };
 		8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */; };
 		8BEA0F4D260CD66600743512 /* String_MoneyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */; };
+		8BFE3CFC26EE788500DDA60D /* FilterDetailViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE3CFB26EE788500DDA60D /* FilterDetailViewController+UICollectionViewDataSource.swift */; };
+		8BFE3CFE26EE78AE00DDA60D /* FilterDetailViewController+UICollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFE3CFD26EE78AE00DDA60D /* FilterDetailViewController+UICollectionViewDelegate.swift */; };
 		AC0B8FD22645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */; };
 		AC0B8FD426458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */; };
 		AC0B8FD626458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0B8FD526458CA6009016A9 /* ShopListSubViewController+UICollecionViewDelegateFlowLayout.swift */; };
@@ -315,6 +317,8 @@
 		8BEA0F41260CD36000743512 /* CakeDesignCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeDesignCell.xib; sourceTree = "<group>"; };
 		8BEA0F47260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8BEA0F4C260CD66600743512 /* String_MoneyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String_MoneyFormat.swift; sourceTree = "<group>"; };
+		8BFE3CFB26EE788500DDA60D /* FilterDetailViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
+		8BFE3CFD26EE78AE00DDA60D /* FilterDetailViewController+UICollectionViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterDetailViewController+UICollectionViewDelegate.swift"; sourceTree = "<group>"; };
 		8FD838ED07F97AFAABDAAA67 /* Pods_cake_it_cake_itUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cake_it_cake_itUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0B8FD12645875B009016A9 /* CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CakeListSubViewController+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		AC0B8FD326458C57009016A9 /* ShopListSubViewController+UICollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListSubViewController+UICollectionViewDataSource.swift"; sourceTree = "<group>"; };
@@ -1179,6 +1183,8 @@
 				F742608426C007BE00BBF2E7 /* FilterDetailViewController+UITableViewDataSource.swift */,
 				F742608226C007BD00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift */,
 				F7A88724265A477800930932 /* FilterDetailCell */,
+				8BFE3CFB26EE788500DDA60D /* FilterDetailViewController+UICollectionViewDataSource.swift */,
+				8BFE3CFD26EE78AE00DDA60D /* FilterDetailViewController+UICollectionViewDelegate.swift */,
 			);
 			path = FilterDetail;
 			sourceTree = "<group>";
@@ -1548,6 +1554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BFE3CFC26EE788500DDA60D /* FilterDetailViewController+UICollectionViewDataSource.swift in Sources */,
 				8B1E00A626BFB75D00377E22 /* CakeOrderAvailableDateCell.swift in Sources */,
 				F774B94B25E0E0FE006EE0EC /* BaseModel.swift in Sources */,
 				AC9FA08526790BB10050F9F0 /* HomeViewController+UICollectionViewDataSource.swift in Sources */,
@@ -1640,6 +1647,7 @@
 				F742608826C007BE00BBF2E7 /* FilterDetailViewController+UITableViewDataSource.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				F7A88752265A486B00930932 /* BaseFilterCell.swift in Sources */,
+				8BFE3CFE26EE78AE00DDA60D /* FilterDetailViewController+UICollectionViewDelegate.swift in Sources */,
 				8BD02724265507E300296261 /* ContactToShopButton.swift in Sources */,
 				F7590738267F85C8000ECBD7 /* ThemeDetailView+UITableViewDataSource.swift in Sources */,
 				8BEA0F48260CD4EA00743512 /* DesignListViewController+UICollectionViewDelegate.swift in Sources */,
