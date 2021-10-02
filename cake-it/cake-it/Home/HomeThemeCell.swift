@@ -21,7 +21,7 @@ final class HomeThemeCell: UICollectionViewCell {
       backView.backgroundColor = Colors.primaryColor
       titleLabel.textColor = Colors.white
     } else {
-      backView.backgroundColor = Colors.grayscale02
+      backView.backgroundColor = Colors.primaryColor.withAlphaComponent(0.1)
       titleLabel.textColor = Colors.primaryColor
     }
     
