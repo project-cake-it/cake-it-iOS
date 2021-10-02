@@ -126,7 +126,7 @@ extension ShopsMainViewController {
     var options: [SelectedFilterOption] = []
     selectedFilter.forEach { key, value in
       value.forEach {
-        let option = SelectedFilterOption(title: $0)
+        let option = SelectedFilterOption(key: key, value: $0)
         options.append(option)
       }
     }
@@ -137,7 +137,26 @@ extension ShopsMainViewController {
 extension ShopsMainViewController: SelectedFilterOptionCellDelegate {
   func selectedFilterOptionCell(closeButtonDidTap fromCell: SelectedFilterOptionCell) {
     guard let indexPath = selectedFilterOptionCollectionView.indexPath(for: fromCell) else { return }
-    print(indexPath.row)
+    let options = selectedFilterOptions()
+    let option = options[indexPath.row]
+    let key = option.key
+    var values = selectedFilter[key]!
+    var selectedValueIndex = 0
+    values.enumerated().forEach { (index, value) in
+      if values.contains(value) {
+        selectedValueIndex = index
+      }
+    }
+    values.remove(at: selectedValueIndex)
+    selectedFilter[key] = values
+    
+    updateSelectedFilterOption()
+    filterCollectionView.reloadData()
+    selectedFilterOptionCollectionView.reloadData()
+    if key == "pickup" {
+      filterDetailVC?.selectedPickUpDate = nil
+    }
+    fetchCakeShops()
   }
 }
 
@@ -218,6 +237,6 @@ extension ShopsMainViewController {
     let nib = UINib(nibName: identifier, bundle: nil)
     selectedFilterOptionCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
     selectedFilterOptionCollectionView.bounces = true
-    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 0)
+    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 8)
   }
 }
