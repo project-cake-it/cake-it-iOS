@@ -32,7 +32,7 @@ final class SelectedFilterOptionCell: UICollectionViewCell {
   }
   
   func update(with filterOption: SelectedFilterOption) {
-    filterOptionTitleLabel.text = filterOption.title
+    filterOptionTitleLabel.text = filterOption.title()
   }
   
   @IBAction func closeButtonDidTap(_ sender: Any) {

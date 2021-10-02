@@ -57,7 +57,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
       let label = UILabel()
       let options = selectedFilterOptions()
       let option = options[indexPath.row]
-      let title = option.title
+      let title = option.title()
       label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)
       label.text = title
       label.sizeToFit()
