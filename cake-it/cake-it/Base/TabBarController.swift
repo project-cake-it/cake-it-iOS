@@ -57,14 +57,14 @@ class TabBarController: UITabBarController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-    configureTabbarItem()
+    configureTabBarItem()
   }
   
   private func initUI() {
     tabBar.tintColor = Colors.primaryColor
   }
   
-  func configureTabbarItem() {
+  func configureTabBarItem() {
     guard let tabbarItems  = self.tabBar.items else { return }
     
     for i in 0..<tabbarItems.count {
@@ -75,17 +75,17 @@ class TabBarController: UITabBarController {
     }
   }
   
-  func hideTabbar() {
+  func hideTabBar() {
     DispatchQueue.main.async {
-      UIView.animate(withDuration: 0.3, animations: {
+      UIView.animateCurveEaseOut(withDuration: 0.5, animation: {
         self.tabBar.frame.origin.y = Constants.SCREEN_HEIGHT
       })
     }
   }
   
-  func showTabbar() {
+  func showTabBar() {
     DispatchQueue.main.async {
-      UIView.animate(withDuration: 0.3, animations: {
+      UIView.animateCurveEaseOut(withDuration: 0.5, animation: {
         self.tabBar.frame.origin.y = Constants.SCREEN_HEIGHT - self.tabBar.frame.size.height
       })
     }

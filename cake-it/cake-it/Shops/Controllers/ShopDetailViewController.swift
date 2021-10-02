@@ -81,22 +81,17 @@ final class ShopDetailViewController: BaseViewController {
   //MARK: - Life Cycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     configure()
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    if let tabbar = self.tabBarController as? TabBarController {
-      tabbar.hideTabbar()
-    }
+    super.viewWillAppear(animated)
+    hideTabBar()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    
-    if let tabbar = self.tabBarController as? TabBarController {
-      tabbar.showTabbar()
-    }
+    showTabBar()
   }
   
   //MARK: - Public Method
@@ -163,6 +158,16 @@ final class ShopDetailViewController: BaseViewController {
         print(error.localizedDescription)
       }
     }
+  }
+  
+  private func hideTabBar() {
+    guard let tabbar = self.tabBarController as? TabBarController else { return }
+    tabbar.hideTabBar()
+  }
+  
+  private func showTabBar() {
+    guard let tabbar = self.tabBarController as? TabBarController else { return }
+    tabbar.showTabBar()
   }
   
   @IBAction func backButtonDidTap(_ sender: Any) {
