@@ -16,10 +16,13 @@ final class MyPageCell: UITableViewCell {
   func updateCell(title: String) {
     titleLabel.text = title
     
-    if title == "버전 정보" {
+    if title == Constants.CELL_TITLE_VERSION_INFO {
       versionLabel.isHidden = false
       rightIcon.isHidden = true
       versionLabel.text = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+    } else if (title == Constants.CELL_TITLE_LOGIN ||
+               title == Constants.CELL_TITLE_LOGINOUT) {
+      rightIcon.isHidden = true
     } else {
       versionLabel.isHidden = true
       rightIcon.isHidden = false

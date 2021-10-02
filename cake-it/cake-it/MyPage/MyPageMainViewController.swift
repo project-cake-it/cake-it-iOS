@@ -44,9 +44,9 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
   
   private func updateCellTitles() {
     if (LoginManager.shared.isLogin()) {
-      cellTitles[1][2] = "로그아웃"
+      cellTitles[1][2] = Constants.CELL_TITLE_LOGINOUT
     } else {
-      cellTitles[1][2] = "로그인"
+      cellTitles[1][2] = Constants.CELL_TITLE_LOGIN
     }
     myPageTableView.reloadData()
   }
@@ -63,7 +63,7 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
   func updateLogin() {
     if LoginManager.shared.isLogin() {
       LoginManager.shared.resetAccessToken()
-      view.showToast(message: "로그아웃 되었습니다")
+      view.showToast(message: Constants.TOAST_MESSAGE_LOGOUT)
       updateCellTitles()
     } else {
       let storyboard = UIStoryboard(name: "Home", bundle: nil)
@@ -79,7 +79,7 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
     if success {
       viewController.dismiss(animated: false) {
         self.updateCellTitles()
-        self.view.showToast(message: "로그인 되었습니다")
+        self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
       }
     }
   }
