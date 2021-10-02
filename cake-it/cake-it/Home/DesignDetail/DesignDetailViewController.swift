@@ -52,8 +52,17 @@ final class DesignDetailViewController: BaseViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     fetchCakeDetail()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    hideTabBar()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    showTabBar()
   }
   
   private func fetchCakeDetail() {
@@ -107,6 +116,16 @@ final class DesignDetailViewController: BaseViewController {
     } else {
       // TODO: 에러 처리
     }
+  }
+  
+  private func hideTabBar() {
+    guard let tabbar = self.tabBarController as? TabBarController else { return }
+    tabbar.hideTabBar()
+  }
+  
+  private func showTabBar() {
+    guard let tabbar = self.tabBarController as? TabBarController else { return }
+    tabbar.showTabBar()
   }
 }
 

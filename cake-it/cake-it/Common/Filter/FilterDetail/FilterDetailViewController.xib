@@ -13,8 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterDetailViewController" customModule="cake_it" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundView" destination="m5w-Xu-Adz" id="o8F-tk-ZNG"/>
+                <outlet property="containerView" destination="nXj-Ar-oMC" id="Eg8-5R-OYd"/>
+                <outlet property="containerViewHeightConstraint" destination="fVU-Ki-TM5" id="GGb-3c-qUZ"/>
+                <outlet property="containerViewHeightConstraintForPickUpDate" destination="6rb-U4-u10" id="40h-dO-6f8"/>
                 <outlet property="filterTableView" destination="fPI-mX-BrK" id="D7S-4s-Q7k"/>
-                <outlet property="tableViewHeightConstraint" destination="ggf-Dv-OYN" id="QWs-0g-zdK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,27 +26,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5w-Xu-Adz">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" name="black"/>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fPI-mX-BrK">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXj-Ar-oMC">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fPI-mX-BrK">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="400" id="ggf-Dv-OYN"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="6rb-U4-u10"/>
+                        <constraint firstItem="fPI-mX-BrK" firstAttribute="top" secondItem="nXj-Ar-oMC" secondAttribute="top" id="Age-8Q-lYl"/>
+                        <constraint firstItem="fPI-mX-BrK" firstAttribute="leading" secondItem="nXj-Ar-oMC" secondAttribute="leading" id="Ofn-3y-AXm"/>
+                        <constraint firstAttribute="bottom" secondItem="fPI-mX-BrK" secondAttribute="bottom" id="Whr-DB-Xyw"/>
+                        <constraint firstAttribute="trailing" secondItem="fPI-mX-BrK" secondAttribute="trailing" id="ajm-zq-oo8"/>
+                        <constraint firstAttribute="height" constant="400" id="fVU-Ki-TM5"/>
                     </constraints>
-                </tableView>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fPI-mX-BrK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="58b-zB-mZJ"/>
                 <constraint firstItem="m5w-Xu-Adz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5B3-Nk-9oY"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fPI-mX-BrK" secondAttribute="trailing" id="PoO-FQ-zJP"/>
+                <constraint firstItem="nXj-Ar-oMC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dw2-vJ-0lh"/>
                 <constraint firstItem="m5w-Xu-Adz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="QEG-7c-vFN"/>
-                <constraint firstItem="fPI-mX-BrK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="WBA-8b-8nr"/>
+                <constraint firstItem="nXj-Ar-oMC" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ciJ-1K-hpb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m5w-Xu-Adz" secondAttribute="trailing" id="hjT-UV-5FF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="m5w-Xu-Adz" secondAttribute="bottom" id="xDz-pH-7bc"/>
+                <constraint firstItem="nXj-Ar-oMC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nII-L4-5Wq"/>
+                <constraint firstAttribute="bottom" secondItem="m5w-Xu-Adz" secondAttribute="bottom" id="xDz-pH-7bc"/>
             </constraints>
             <point key="canvasLocation" x="62" y="3"/>
         </view>

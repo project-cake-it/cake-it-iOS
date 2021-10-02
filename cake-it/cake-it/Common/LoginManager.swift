@@ -43,4 +43,8 @@ final class LoginManager {
   func isLogin() -> Bool {
     return KeychainWrapper.standard.string(forKey: KEY_ACCESS_TOKEN) == nil ? false : true
   }
+  
+  func accessToken() -> String {
+    return KeychainWrapper.standard.string(forKey: KEY_ACCESS_TOKEN) ?? ""
+  }
 }

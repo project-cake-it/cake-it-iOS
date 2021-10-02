@@ -32,11 +32,13 @@ extension DesignListViewController: FilterDetailViewDelegate {
     selectedFilter[type.key] = values
     fetchCakeDesigns()
   }
-
-  func filterBackgroundViewDidTap() {
-    highlightedFilterType = .reset
-    filterCategoryCollectionView.reloadData()
-    hideFilterDetailView()
+  
+  func filterDetailViewController(_ dismissFilterDetailViewController: FilterDetailViewController, delay: TimeInterval) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) { [weak self] in
+      self?.highlightedFilterType = .reset
+      self?.filterCategoryCollectionView.reloadData()
+      self?.hideFilterDetailView()
+    }
   }
 }
 
@@ -58,6 +60,8 @@ extension DesignListViewController {
     detailVC.filterType = type
     detailVC.selectedList = selectedFilter[type.key] ?? []
     detailVC.filterTableView.reloadData()
+    detailVC.setTableViewHeight()
+    detailVC.hidePickUpDateSectionView()
     filterDetailContainerView.isHidden = false
   }
   
