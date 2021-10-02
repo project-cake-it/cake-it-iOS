@@ -7,6 +7,10 @@
 
 import UIKit
 
+@objc protocol LoginViewcontrollerDelegate {
+  @objc optional func loginDidFinnish(_ viewController: LoginViewController, _ success: Bool)
+}
+
 final class LoginViewController: UIViewController {
   
   static let id = "loginViewController"
@@ -19,6 +23,7 @@ final class LoginViewController: UIViewController {
   @IBOutlet var titleLabel: UILabel!
   
   private var viewModel: LoginViewModel?
+  var delegate: LoginViewcontrollerDelegate?
   
   //MARK: - Life cycle
   override func viewDidLoad() {
@@ -37,6 +42,8 @@ final class LoginViewController: UIViewController {
   private func finishLogin(success: Bool) {
     if success {
       self.closeLoginViewController()
+      
+      delegate?.loginDidFinnish?(self, true)
     } else {
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
                                     message: Constants.LOGIN_ALERT_FAIL_MESSAGE,

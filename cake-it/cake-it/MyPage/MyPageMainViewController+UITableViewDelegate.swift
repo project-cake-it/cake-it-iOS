@@ -56,10 +56,12 @@ extension MyPageMainViewController: UITableViewDelegate {
         navigationController?.pushViewController(infomationViewController, animated: true)
         return
       case 2:
-        // TODO: 오픈소스 라이센스
+        // 로그인 / 로그아웃
+        updateLogin()
         return
       case 3:
-        // TODO: 버전정보
+        // 버전정보
+        // 터치 반응없음
         return
       default:
         return

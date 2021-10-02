@@ -28,6 +28,8 @@ final class SavedItemMainViewController: ButtonBarPagerTabStripViewController {
     settings.style.selectedBarBackgroundColor = Colors.primaryColor
     settings.style.selectedBarHeight = 2.0
     settings.style.buttonBarItemTitleColor = .black
+    settings.style.buttonBarItemFont = Fonts.spoqaHanSans(weight: .Regular, size: 15)
+    
   }
   
   override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
