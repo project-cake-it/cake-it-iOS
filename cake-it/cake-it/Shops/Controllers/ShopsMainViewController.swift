@@ -12,11 +12,14 @@ final class ShopsMainViewController: BaseViewController {
   enum Metric {
     static let cakeShopCellInterItemVerticalSpace: CGFloat = 4.0
     static let cakeShopCellHeight: CGFloat = 124.0
+    static let selectedFilterOptionCollectionViewHeight: CGFloat = 46.0
   }
   
   @IBOutlet weak var titleView: UIView!
   @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var filterCollectionView: UICollectionView!
+  @IBOutlet var selectedFilterOptionCollectionView: UICollectionView!
+  @IBOutlet var selectedFilterOptionCollectionViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet var shopEmptyView: UIView!
   @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
@@ -24,7 +27,11 @@ final class ShopsMainViewController: BaseViewController {
   var cakeShops: [CakeShop] = []
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailVC: FilterDetailViewController?
-  var selectedFilter: Dictionary<String, [String]> = [:]
+  var selectedFilter: Dictionary<String, [String]> = [:] {
+    didSet {
+      updateSelectedFilterOption()
+    }
+  }
   var searchKeyword: [String: String] = [:]
   var highlightedFilterType: FilterCommon.FilterType = .reset
 
@@ -99,10 +106,29 @@ final class ShopsMainViewController: BaseViewController {
   }
 }
 
+// MARK: - UPDATE
+
+extension ShopsMainViewController {
+  private func updateSelectedFilterOption() {
+    var numberOfSelectedFilterOptions = 0
+    selectedFilter.forEach {
+      numberOfSelectedFilterOptions += $1.count
+    }
+    guard numberOfSelectedFilterOptions > 0 else {
+      selectedFilterOptionCollectionViewHeightConstraint.constant = 0
+      return
+    }
+    selectedFilterOptionCollectionViewHeightConstraint.constant = Metric.selectedFilterOptionCollectionViewHeight
+  }
+}
+
+// MARK: - Configuration
+
 extension ShopsMainViewController {
   private func configure() {
     configureFilterView()
     configureCollectionView()
+    configureSelectedFilterOptionCollectionView()
   }
   
   private func configureFilterView() {
@@ -163,5 +189,9 @@ extension ShopsMainViewController {
   func hideTitleView() {
     titleView.isHidden = true
     titleViewHeightConstraint.constant = 0.0
+  }
+  
+  private func configureSelectedFilterOptionCollectionView() {
+    selectedFilterOptionCollectionViewHeightConstraint.constant = 0
   }
 }
