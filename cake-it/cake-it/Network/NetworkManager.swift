@@ -33,7 +33,8 @@ final class NetworkManager {
     let urlString = api.urlString + param
     let encodedUrlString = urlString.encodedString() ?? ""
     guard let url = URL(string: encodedUrlString) else { return }
-    let request = AF.request(url)
+    let headers: HTTPHeaders = ["Authorization": LoginManager.shared.accessToken()]
+    let request = AF.request(url, headers: headers)
     self.request(request: request, type: T.self, completion: completion)
   }
   
@@ -43,11 +44,12 @@ final class NetworkManager {
                                  param: U? = nil,
                                  completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: api.urlString) else { return }
-    
+    let headers: HTTPHeaders = ["Authorization": LoginManager.shared.accessToken()]
     let request = AF.request(url,
                              method: .post,
                              parameters: param,
-                             encoder: JSONParameterEncoder.default)
+                             encoder: JSONParameterEncoder.default,
+                             headers: headers)
     self.request(request: request, type: T.self, completion: completion)
   }
   
@@ -57,10 +59,12 @@ final class NetworkManager {
                                                param: U? = nil,
                                                completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: urlString) else { return }
+    let headers: HTTPHeaders = ["Authorization": LoginManager.shared.accessToken()]
     let request = AF.request(url,
                              method: .post,
                              parameters: param,
-                             encoder: JSONParameterEncoder.default)
+                             encoder: JSONParameterEncoder.default,
+                             headers: headers)
     self.request(request: request, type: T.self, completion: completion)
   }
   
@@ -83,10 +87,12 @@ final class NetworkManager {
                                                  param: U? = nil,
                                                  completion: @escaping (Result<T, APIError>) -> Void) {
     guard let url = URL(string: urlString) else { return }
+    let headers: HTTPHeaders = ["Authorization": LoginManager.shared.accessToken()]
     let request = AF.request(url,
                              method: .delete,
                              parameters: param,
-                             encoder: JSONParameterEncoder.default)
+                             encoder: JSONParameterEncoder.default,
+                             headers: headers)
     self.request(request: request, type: T.self, completion: completion)
   }
 

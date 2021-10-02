@@ -1,221 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ge5-eX-Qu4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ge5-eX-Qu4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--검색-->
-        <scene sceneID="ql4-Pg-2gD">
-            <objects>
-                <viewController id="O5M-zr-lcS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZRP-xp-3i6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkN-bN-vvM">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <connections>
-                                    <segue destination="5GI-Vh-cs5" kind="embed" id="bpe-nH-1lH"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="GyN-Yv-L6m"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="zkN-bN-vvM" firstAttribute="leading" secondItem="GyN-Yv-L6m" secondAttribute="leading" id="Hlb-Yz-aAt"/>
-                            <constraint firstItem="GyN-Yv-L6m" firstAttribute="bottom" secondItem="zkN-bN-vvM" secondAttribute="bottom" id="lVR-Gn-H6T"/>
-                            <constraint firstItem="zkN-bN-vvM" firstAttribute="top" secondItem="GyN-Yv-L6m" secondAttribute="top" id="wlD-1k-9lp"/>
-                            <constraint firstItem="GyN-Yv-L6m" firstAttribute="trailing" secondItem="zkN-bN-vvM" secondAttribute="trailing" id="z9i-eC-xj3"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="검색" image="tab-search" selectedImage="tab-search-clicked" id="yp4-3R-NYQ"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LtM-ZT-6Yb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="790" y="642"/>
-        </scene>
         <!--SearchNavigationController-->
         <scene sceneID="WQR-gU-TmW">
             <objects>
-                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="SearchNavigationController" id="5GI-Vh-cs5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="SearchNavigationController" id="5GI-Vh-cs5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Who-qe-lXL"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPa-n5-4HN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="642"/>
-        </scene>
-        <!--찜-->
-        <scene sceneID="hpz-w3-z0I">
-            <objects>
-                <viewController id="KHP-6J-V3j" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="umY-w0-5ku">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6T-4O-4O7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <connections>
-                                    <segue destination="Ync-Ye-QL5" kind="embed" id="wZ2-do-7GI"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="mkP-4A-A6u"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="k6T-4O-4O7" firstAttribute="top" secondItem="mkP-4A-A6u" secondAttribute="top" id="Cu7-U7-rpg"/>
-                            <constraint firstItem="mkP-4A-A6u" firstAttribute="trailing" secondItem="k6T-4O-4O7" secondAttribute="trailing" id="QRz-rL-LeH"/>
-                            <constraint firstItem="k6T-4O-4O7" firstAttribute="leading" secondItem="mkP-4A-A6u" secondAttribute="leading" id="ha0-Zc-fVq"/>
-                            <constraint firstItem="mkP-4A-A6u" firstAttribute="bottom" secondItem="k6T-4O-4O7" secondAttribute="bottom" id="vuX-VH-gEP"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="찜" image="tab-mark" selectedImage="tab-mark-clicked" id="AeO-ne-BIp"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4k8-Dc-9L4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1846" y="642"/>
+            <point key="canvasLocation" x="-555" y="759"/>
         </scene>
         <!--SavedItemNavigationController-->
         <scene sceneID="xre-2r-NRV">
             <objects>
-                <viewControllerPlaceholder storyboardName="SavedItem" referencedIdentifier="SavedItemNavigationController" id="Ync-Ye-QL5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SavedItem" referencedIdentifier="SavedItemNavigationController" id="Ync-Ye-QL5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lVM-tv-lYt"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilJ-Tv-ZRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2480" y="642"/>
-        </scene>
-        <!--마이페이지-->
-        <scene sceneID="m0J-jq-6RE">
-            <objects>
-                <viewController id="mzX-q6-NPN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IfM-L3-KBm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DEd-C1-Em5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <connections>
-                                    <segue destination="ALo-LI-qKD" kind="embed" id="vhw-Jz-ZcB"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bZy-0h-bL4"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bZy-0h-bL4" firstAttribute="bottom" secondItem="DEd-C1-Em5" secondAttribute="bottom" id="8j9-1e-fnw"/>
-                            <constraint firstItem="DEd-C1-Em5" firstAttribute="leading" secondItem="bZy-0h-bL4" secondAttribute="leading" id="E13-aF-LFW"/>
-                            <constraint firstItem="bZy-0h-bL4" firstAttribute="trailing" secondItem="DEd-C1-Em5" secondAttribute="trailing" id="OAJ-gv-jve"/>
-                            <constraint firstItem="DEd-C1-Em5" firstAttribute="top" secondItem="bZy-0h-bL4" secondAttribute="top" id="v3E-nr-zZI"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="tab-mypage" selectedImage="tab-mypage-clicked" id="KsB-tn-6VH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IUL-kQ-cIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2855" y="232"/>
+            <point key="canvasLocation" x="155" y="759"/>
         </scene>
         <!--MyPageNavigationController-->
         <scene sceneID="G7M-qB-VIA">
             <objects>
-                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageNavigationController" id="ALo-LI-qKD" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="MyPage" referencedIdentifier="MyPageNavigationController" id="ALo-LI-qKD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XlQ-Xf-tyW"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D33-9G-6Tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3421" y="232"/>
-        </scene>
-        <!--케이크 가게-->
-        <scene sceneID="n99-aN-cq1">
-            <objects>
-                <viewController id="Edw-jY-KO9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KSc-nQ-ipS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iPf-HD-Yqr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
-                                <connections>
-                                    <segue destination="grc-zr-pu5" kind="embed" id="ACb-2J-wbp"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="bIi-vi-H0L"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="bIi-vi-H0L" firstAttribute="trailing" secondItem="iPf-HD-Yqr" secondAttribute="trailing" id="35A-aZ-VbO"/>
-                            <constraint firstItem="bIi-vi-H0L" firstAttribute="bottom" secondItem="iPf-HD-Yqr" secondAttribute="bottom" id="HAt-2f-Jd6"/>
-                            <constraint firstItem="iPf-HD-Yqr" firstAttribute="leading" secondItem="bIi-vi-H0L" secondAttribute="leading" id="LWM-ek-gEC"/>
-                            <constraint firstItem="iPf-HD-Yqr" firstAttribute="top" secondItem="bIi-vi-H0L" secondAttribute="top" id="eFF-mW-TAf"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="케이크 가게" image="tab-store" selectedImage="tab-store-clicked" id="qsj-bp-d9c"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Adz-bw-Z97" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1845" y="-139"/>
+            <point key="canvasLocation" x="546" y="759"/>
         </scene>
         <!--ShopsNavigationController-->
         <scene sceneID="MaF-AX-OXD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Shops" referencedIdentifier="ShopsNavigationController" id="grc-zr-pu5" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Shops" referencedIdentifier="ShopsNavigationController" id="grc-zr-pu5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="lIS-h8-x0v"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sF7-zu-ndo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2462" y="-139"/>
-        </scene>
-        <!--홈-->
-        <scene sceneID="gXh-fy-oc9">
-            <objects>
-                <viewController id="zyQ-N7-yuu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bIR-lW-bKY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ptt-x8-ODw">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
-                                <connections>
-                                    <segue destination="MHd-f0-wYo" kind="embed" id="LOc-Tc-QEv"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Ozi-yd-0Jw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Ozi-yd-0Jw" firstAttribute="bottom" secondItem="ptt-x8-ODw" secondAttribute="bottom" id="6wU-Rx-3Sp"/>
-                            <constraint firstItem="ptt-x8-ODw" firstAttribute="leading" secondItem="Ozi-yd-0Jw" secondAttribute="leading" id="F0P-L5-lWH"/>
-                            <constraint firstItem="ptt-x8-ODw" firstAttribute="top" secondItem="bIR-lW-bKY" secondAttribute="top" id="JJR-xV-la2"/>
-                            <constraint firstItem="Ozi-yd-0Jw" firstAttribute="trailing" secondItem="ptt-x8-ODw" secondAttribute="trailing" id="bM3-FY-Srv"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="tab-home" selectedImage="tab-home-clicked" id="g7U-qh-QdN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uqn-Wl-5og" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="790" y="-138"/>
+            <point key="canvasLocation" x="-216" y="759"/>
         </scene>
         <!--HomeNavigationController-->
         <scene sceneID="PIH-cV-QVU">
             <objects>
-                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeNavigationController" id="MHd-f0-wYo" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="HomeNavigationController" id="MHd-f0-wYo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1Ou-ha-clC"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oPW-9d-1RE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="-152"/>
+            <point key="canvasLocation" x="-880" y="759"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rAC-uc-4ku">
             <objects>
-                <tabBarController id="ge5-eX-Qu4" customClass="TabBarController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="ge5-eX-Qu4" customClass="TabBarController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z7t-tp-A8D">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" name="primaryColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="zyQ-N7-yuu" kind="relationship" relationship="viewControllers" id="U4O-ji-udy"/>
-                        <segue destination="O5M-zr-lcS" kind="relationship" relationship="viewControllers" id="iBe-do-7zq"/>
-                        <segue destination="Edw-jY-KO9" kind="relationship" relationship="viewControllers" id="rbf-q0-Qk7"/>
-                        <segue destination="KHP-6J-V3j" kind="relationship" relationship="viewControllers" id="8h9-5H-qeN"/>
-                        <segue destination="mzX-q6-NPN" kind="relationship" relationship="viewControllers" id="nvw-hH-i7B"/>
+                        <segue destination="MHd-f0-wYo" kind="relationship" relationship="viewControllers" id="jP6-Bm-56r"/>
+                        <segue destination="5GI-Vh-cs5" kind="relationship" relationship="viewControllers" id="tpr-lA-fUx"/>
+                        <segue destination="grc-zr-pu5" kind="relationship" relationship="viewControllers" id="JjB-ZV-6IC"/>
+                        <segue destination="Ync-Ye-QL5" kind="relationship" relationship="viewControllers" id="6g5-Zy-1bd"/>
+                        <segue destination="ALo-LI-qKD" kind="relationship" relationship="viewControllers" id="Brg-Zw-JgK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUW-3L-jj6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -224,21 +82,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="tab-home" width="48" height="22"/>
-        <image name="tab-home-clicked" width="48" height="22"/>
-        <image name="tab-mark" width="48" height="22"/>
-        <image name="tab-mark-clicked" width="48" height="22"/>
-        <image name="tab-mypage" width="48" height="22"/>
-        <image name="tab-mypage-clicked" width="48" height="22"/>
-        <image name="tab-search" width="48" height="22"/>
-        <image name="tab-search-clicked" width="48" height="22"/>
-        <image name="tab-store" width="48" height="22"/>
-        <image name="tab-store-clicked" width="48" height="22"/>
         <namedColor name="primaryColor">
             <color red="0.87450980392156863" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
