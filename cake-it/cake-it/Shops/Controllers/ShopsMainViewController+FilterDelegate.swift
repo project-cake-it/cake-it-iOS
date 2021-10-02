@@ -50,6 +50,8 @@ extension ShopsMainViewController {
     highlightedFilterType = .reset
     filterDetailVC?.resetSelectedPickUpDate()
     filterCollectionView.reloadData()
+    selectedFilterOptionCollectionView.reloadData()
+    selectedFilterOptionCollectionViewHeightConstraint.constant = 0
     selectedFilter.removeAll()
     hideFilterDetailView()
     guard let detailVC = filterDetailVC else { return }
