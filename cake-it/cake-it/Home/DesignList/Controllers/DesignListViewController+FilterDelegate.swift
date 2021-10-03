@@ -35,7 +35,12 @@ extension DesignListViewController: FilterDetailViewControllerDelegate {
   }
   
   func updateSelectedFilterOptions(type: FilterCommon.FilterType, values: [String]) {
-    guard let value = values.last else { return }
+    guard let value = values.last else {
+      selectedFilterOptions = selectedFilterOptions.filter { $0.key != type.key }
+      updateSelectedFilterOptionCollectionViewLayout()
+      selectedFilterOptionCollectionView.reloadData()
+      return
+    }
     // 다중 선택이 불가능하면, 하나의 필터 옵션 값만 나오도록 처리
     if FilterManager.shared.isMultiSelectionEnabled(type: type) == false {
       selectedFilterOptions = selectedFilterOptions.filter { $0.key != type.key }
