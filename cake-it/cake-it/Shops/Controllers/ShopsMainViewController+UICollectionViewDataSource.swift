@@ -54,13 +54,4 @@ extension ShopsMainViewController: UICollectionViewDataSource {
       return UICollectionViewCell()
     }
   }
-  
-  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    if collectionView == filterCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
-        cell.isFilterHighlighted = false
-        highlightedFilterType = .reset
-      }
-    }
-  }
 }
