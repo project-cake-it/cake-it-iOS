@@ -7,8 +7,8 @@
 
 import UIKit
 
-@objc protocol LoginViewcontrollerDelegate {
-  @objc optional func loginDidFinnish(_ viewController: LoginViewController, _ success: Bool)
+protocol LoginViewcontrollerDelegate : AnyObject {
+  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool)
 }
 
 final class LoginViewController: UIViewController {
@@ -23,7 +23,7 @@ final class LoginViewController: UIViewController {
   @IBOutlet var titleLabel: UILabel!
   
   private var viewModel: LoginViewModel?
-  var delegate: LoginViewcontrollerDelegate?
+  weak var delegate: LoginViewcontrollerDelegate?
   
   //MARK: - Life cycle
   override func viewDidLoad() {
@@ -43,7 +43,7 @@ final class LoginViewController: UIViewController {
     if success {
       self.closeLoginViewController()
       
-      delegate?.loginDidFinnish?(self, true)
+      delegate?.loginDidFinish(self, true)
     } else {
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
                                     message: Constants.LOGIN_ALERT_FAIL_MESSAGE,

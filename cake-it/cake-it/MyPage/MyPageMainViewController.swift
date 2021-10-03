@@ -75,7 +75,7 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
   }
   
   // MARK: - delegate
-  func loginDidFinnish(_ viewController: LoginViewController, _ success: Bool) {
+  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
     if success {
       viewController.dismiss(animated: false) {
         self.updateCellTitles()
