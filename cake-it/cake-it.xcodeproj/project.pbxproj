@@ -1213,7 +1213,7 @@
 				38D8C6F425BC622500C1F10D /* Resources */,
 				2CA15449D1575865BF9683DF /* [CP] Embed Pods Frameworks */,
 				F32A983E5043E8DE1C321768 /* [CP] Copy Pods Resources */,
-				F744C6332707415500D2689A /* ShellScript */,
+				F744C6332707415500D2689A /* Firebase Crashlytics Run Script */,
 			);
 			buildRules = (
 			);
@@ -1552,7 +1552,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F744C6332707415500D2689A /* ShellScript */ = {
+		F744C6332707415500D2689A /* Firebase Crashlytics Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1562,13 +1562,14 @@
 			inputPaths = (
 				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/$cake-it",
 			);
+			name = "Firebase Crashlytics Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/FirebaseCrashlytics/run\n";
+			shellScript = "# relsease 때에만 dSYM 업로드\nif [ \"${CONFIGURATION}\" != \"Debug\" ]; then\n    \"${PODS_ROOT}/FirebaseCrashlytics/run\"\n    \"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist -p ios ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
