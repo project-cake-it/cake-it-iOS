@@ -51,11 +51,12 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meH-Ng-WTq">
-                                        <rect key="frame" x="79" y="9" width="12" height="12"/>
+                                        <rect key="frame" x="75" y="5" width="20" height="20"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="12" id="7E3-XO-7VS"/>
-                                            <constraint firstAttribute="width" constant="12" id="fN9-MZ-n6Z"/>
+                                            <constraint firstAttribute="height" constant="20" id="7E3-XO-7VS"/>
+                                            <constraint firstAttribute="width" constant="20" id="fN9-MZ-n6Z"/>
                                         </constraints>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                                         <state key="normal" image="iconsDeleteTag"/>
                                         <connections>
                                             <action selector="closeButtonDidTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6R4-7d-NDk"/>
@@ -64,8 +65,8 @@
                                 </subviews>
                                 <color key="backgroundColor" name="primaryColor05"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="meH-Ng-WTq" secondAttribute="trailing" constant="12" id="6qt-Bt-azB"/>
-                                    <constraint firstItem="meH-Ng-WTq" firstAttribute="leading" secondItem="ID2-fK-dvp" secondAttribute="trailing" constant="6" id="DAy-Fz-RRe"/>
+                                    <constraint firstAttribute="trailing" secondItem="meH-Ng-WTq" secondAttribute="trailing" constant="8" id="6qt-Bt-azB"/>
+                                    <constraint firstItem="meH-Ng-WTq" firstAttribute="leading" secondItem="ID2-fK-dvp" secondAttribute="trailing" constant="2" id="DAy-Fz-RRe"/>
                                     <constraint firstAttribute="height" constant="30" id="LMb-F1-atj"/>
                                     <constraint firstItem="meH-Ng-WTq" firstAttribute="centerY" secondItem="KKE-pj-eLA" secondAttribute="centerY" id="PrB-ki-wpX"/>
                                     <constraint firstItem="ID2-fK-dvp" firstAttribute="leading" secondItem="KKE-pj-eLA" secondAttribute="leading" constant="12" id="hlM-Mj-x4r"/>
