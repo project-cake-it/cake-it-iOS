@@ -31,7 +31,7 @@ final class ShopsMainViewController: BaseViewController {
   var selectedFilterOptions: [SelectedFilterOption] = []
   var searchKeyword: [String: String] = [:]
   var highlightedFilterType: FilterCommon.FilterType = .reset
-  var isFetching = false
+  var isFetchingCakes = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,7 +44,7 @@ final class ShopsMainViewController: BaseViewController {
   }
   
   func fetchCakeShops() {
-    isFetching = true
+    isFetchingCakes = true
     if let _ = self.parent as? SearchResultViewController {
       requestSearchingShops()
     } else {
@@ -61,10 +61,10 @@ final class ShopsMainViewController: BaseViewController {
         self.cakeShops = cakeShops
         self.shopCollectionView.reloadData()
         self.checkEmptyView()
-        self.isFetching = false
+        self.isFetchingCakes = false
       case .failure(_):
         // TODO: 에러 핸들링
-        self.isFetching = false
+        self.isFetchingCakes = false
       }
     }
   }
@@ -79,10 +79,10 @@ final class ShopsMainViewController: BaseViewController {
         self.cakeShops = searchResult.shops
         self.shopCollectionView.reloadData()
         self.checkEmptyView()
-        self.isFetching = false
+        self.isFetchingCakes = false
       case .failure(let error):
         print(error.localizedDescription)
-        self.isFetching = false
+        self.isFetchingCakes = false
       }
     }
   }
@@ -120,7 +120,7 @@ extension ShopsMainViewController {
 
 extension ShopsMainViewController: SelectedFilterOptionCellDelegate {
   func selectedFilterOptionCell(closeButtonDidTap fromCell: SelectedFilterOptionCell) {
-    guard isFetching == false else { return }
+    guard isFetchingCakes == false else { return }
     guard let indexPath = selectedFilterOptionCollectionView.indexPath(for: fromCell) else { return }
     let options = selectedFilterOptions
     let option = options[indexPath.row]

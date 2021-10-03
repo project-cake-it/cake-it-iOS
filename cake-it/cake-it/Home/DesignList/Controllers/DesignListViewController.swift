@@ -50,7 +50,7 @@ final class DesignListViewController: BaseViewController {
   var highlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
   var filterDetailVC: FilterDetailViewController?     // 필터 디테일 리스트
   var themeDetailView: ThemeDetailView?       // 테마 디테일 리스트
-  var isFetching = false
+  var isFetchingDesigns = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -71,6 +71,7 @@ final class DesignListViewController: BaseViewController {
   }
   
   private func requestDesigns() {
+    self.isFetchingDesigns = true
     let parameter = mergedFilterQueryString(with: selectedTheme)
     NetworkManager.shared.requestGet(api: .designs,
                                      type: [CakeDesign].self,
@@ -80,14 +81,17 @@ final class DesignListViewController: BaseViewController {
         self.cakeDesigns = designs
         self.designsCollectionView.reloadData()
         self.checkEmptyView()
+        self.isFetchingDesigns = false
         
       case .failure(let error):
+        self.isFetchingDesigns = false
         print(error.localizedDescription)
       }
     }
   }
   
   private func requestSearchingDesigns() {
+    self.isFetchingDesigns = true
     let parameter = mergedFilterQueryString(with: searchKeyword)
     NetworkManager.shared.requestGet(api: .search,
                                      type: SearchResult.self,
@@ -97,9 +101,10 @@ final class DesignListViewController: BaseViewController {
         self.cakeDesigns = searchResult.designs
         self.designsCollectionView.reloadData()
         self.checkEmptyView()
-        
+        self.isFetchingDesigns = false
       case .failure(let error):
         print(error.localizedDescription)
+        self.isFetchingDesigns = false
       }
     }
   }
@@ -150,7 +155,7 @@ extension DesignListViewController {
 
 extension DesignListViewController: SelectedFilterOptionCellDelegate {
   func selectedFilterOptionCell(closeButtonDidTap fromCell: SelectedFilterOptionCell) {
-    guard isFetching == false else { return }
+    guard isFetchingDesigns == false else { return }
     guard let indexPath = selectedFilterOptionCollectionView.indexPath(for: fromCell) else { return }
     let options = selectedFilterOptions
     let option = options[indexPath.row]
