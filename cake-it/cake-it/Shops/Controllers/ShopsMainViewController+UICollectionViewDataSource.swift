@@ -14,8 +14,7 @@ extension ShopsMainViewController: UICollectionViewDataSource {
     case filterCollectionView:
       return shopFilterList.count
     case selectedFilterOptionCollectionView:
-      print("💚 선택 필터 개수:", selectedFilterOptions().count)
-      return selectedFilterOptions().count
+      return selectedFilterOptions.count
     case shopCollectionView:
       return cakeShops.count
     default:
@@ -40,7 +39,7 @@ extension ShopsMainViewController: UICollectionViewDataSource {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! SelectedFilterOptionCell
       cell.delegate = self
-      let options = selectedFilterOptions()
+      let options = selectedFilterOptions
       let option = options[indexPath.row]
       cell.update(with: option)
       return cell

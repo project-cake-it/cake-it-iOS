@@ -9,7 +9,8 @@ import UIKit
 
 protocol FilterDetailViewControllerDelegate: AnyObject {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String])
-  func filterDetailViewController(dismissFilterDetailViewController viewController: FilterDetailViewController, delay: TimeInterval)
+  func filterDetailViewController(dismissFilterDetailViewController viewController: FilterDetailViewController,
+                                  delay: TimeInterval)
 }
 
 final class FilterDetailViewController: UIViewController {

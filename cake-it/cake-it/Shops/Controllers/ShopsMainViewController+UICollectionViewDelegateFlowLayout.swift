@@ -55,7 +55,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
       return CGSize(width: cellWidth, height: FilterCommon.Metric.categoryCellHeight)
     case selectedFilterOptionCollectionView:
       let label = UILabel()
-      let options = selectedFilterOptions()
+      let options = selectedFilterOptions
       let option = options[indexPath.row]
       let title = option.title()
       label.font = Fonts.spoqaHanSans(weight: .Medium, size: 13)

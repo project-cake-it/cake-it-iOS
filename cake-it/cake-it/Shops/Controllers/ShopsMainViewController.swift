@@ -28,6 +28,7 @@ final class ShopsMainViewController: BaseViewController {
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailVC: FilterDetailViewController?
   var selectedFilter: Dictionary<String, [String]> = [:]
+  var selectedFilterOptions: [SelectedFilterOption] = []
   var searchKeyword: [String: String] = [:]
   var highlightedFilterType: FilterCommon.FilterType = .reset
 
@@ -105,39 +106,19 @@ final class ShopsMainViewController: BaseViewController {
 // MARK: - Selected Filter Option
 
 extension ShopsMainViewController {
-  func updateSelectedFilterOption() {
-    let numberOfSelectedFilterOptions = numberOfSelectedFilterOptions()
-    guard numberOfSelectedFilterOptions > 0 else {
+  func updateSelectedFilterOptionCollectionViewLayout() {
+    guard selectedFilterOptions.count > 0 else {
       selectedFilterOptionCollectionViewHeightConstraint.constant = 0
       return
     }
     selectedFilterOptionCollectionViewHeightConstraint.constant = Metric.selectedFilterOptionCollectionViewHeight
-  }
-  
-  func numberOfSelectedFilterOptions() -> Int {
-    var numberOfSelectedFilterOptions = 0
-    selectedFilter.forEach {
-      numberOfSelectedFilterOptions += $1.count
-    }
-    return numberOfSelectedFilterOptions
-  }
-  
-  func selectedFilterOptions() -> [SelectedFilterOption] {
-    var options: [SelectedFilterOption] = []
-    selectedFilter.forEach { key, value in
-      value.forEach {
-        let option = SelectedFilterOption(key: key, value: $0)
-        options.append(option)
-      }
-    }
-    return options
   }
 }
 
 extension ShopsMainViewController: SelectedFilterOptionCellDelegate {
   func selectedFilterOptionCell(closeButtonDidTap fromCell: SelectedFilterOptionCell) {
     guard let indexPath = selectedFilterOptionCollectionView.indexPath(for: fromCell) else { return }
-    let options = selectedFilterOptions()
+    let options = selectedFilterOptions
     let option = options[indexPath.row]
     let key = option.key
     var values = selectedFilter[key]!
@@ -150,7 +131,7 @@ extension ShopsMainViewController: SelectedFilterOptionCellDelegate {
     values.remove(at: selectedValueIndex)
     selectedFilter[key] = values
     
-    updateSelectedFilterOption()
+    updateSelectedFilterOptionCollectionViewLayout()
     filterCollectionView.reloadData()
     selectedFilterOptionCollectionView.reloadData()
     if key == "pickup" {
