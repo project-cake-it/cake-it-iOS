@@ -133,7 +133,8 @@ extension ShopsMainViewController: SelectedFilterOptionCellDelegate {
       }
     }
     values.remove(at: selectedValueIndex)
-    selectedFilter[key] = values
+    selectedFilter[key] = values // Dictionary는 순회하여 key에서 해당 value 값 제거
+    selectedFilterOptions.remove(at: indexPath.row)
     
     updateSelectedFilterOptionCollectionViewLayout()
     filterCollectionView.reloadData()
