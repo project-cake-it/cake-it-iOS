@@ -49,3 +49,9 @@ struct SelectedFilterOption {
     return title
   }
 }
+
+extension SelectedFilterOption: Equatable {
+  static func == (lhs: SelectedFilterOption, rhs: SelectedFilterOption) -> Bool {
+    return (lhs.key == rhs.key) && (lhs.value == rhs.value)
+  }
+}
