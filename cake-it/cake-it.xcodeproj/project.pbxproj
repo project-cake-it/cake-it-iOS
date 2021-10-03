@@ -183,6 +183,7 @@
 		F742608926C007BE00BBF2E7 /* FilterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742608526C007BE00BBF2E7 /* FilterDetailViewController.swift */; };
 		F742608D26C0080600BBF2E7 /* FilterTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742608B26C0080600BBF2E7 /* FilterTableHeaderCell.swift */; };
 		F742608E26C0080600BBF2E7 /* FilterTableHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F742608C26C0080600BBF2E7 /* FilterTableHeaderCell.xib */; };
+		F744C63227073FCA00D2689A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F744C63127073FCA00D2689A /* GoogleService-Info.plist */; };
 		F750DC9D267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */; };
 		F750DD7D267F6BDF008D0F9A /* FilterDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */; };
 		F750DDD8267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F750DDD7267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift */; };
@@ -413,6 +414,7 @@
 		F742608526C007BE00BBF2E7 /* FilterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterDetailViewController.swift; sourceTree = "<group>"; };
 		F742608B26C0080600BBF2E7 /* FilterTableHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTableHeaderCell.swift; sourceTree = "<group>"; };
 		F742608C26C0080600BBF2E7 /* FilterTableHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableHeaderCell.xib; sourceTree = "<group>"; };
+		F744C63127073FCA00D2689A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F750DC9C267F5BF6008D0F9A /* ShopsMainViewController+FilterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsMainViewController+FilterDelegate.swift"; sourceTree = "<group>"; };
 		F750DD7C267F6BDF008D0F9A /* FilterDateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterDateView.xib; sourceTree = "<group>"; };
 		F750DDD7267F7E37008D0F9A /* DesignListViewController+ThemeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignListViewController+ThemeDelegate.swift"; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 		38D8C6F825BC622500C1F10D /* cake-it */ = {
 			isa = PBXGroup;
 			children = (
+				F744C63127073FCA00D2689A /* GoogleService-Info.plist */,
 				F774B91A25E0E0BF006EE0EC /* Test */,
 				8B3AF14425DADFD700B9F48D /* Base */,
 				F774B92B25E0E0BF006EE0EC /* Network */,
@@ -1227,6 +1230,7 @@
 				38D8C6F425BC622500C1F10D /* Resources */,
 				2CA15449D1575865BF9683DF /* [CP] Embed Pods Frameworks */,
 				F32A983E5043E8DE1C321768 /* [CP] Copy Pods Resources */,
+				F744C6332707415500D2689A /* Firebase Crashlytics Run Script */,
 			);
 			buildRules = (
 			);
@@ -1341,6 +1345,7 @@
 				F7A30F5B25F394310023CDD5 /* PhotoUpload.storyboard in Resources */,
 				AC422A1926A08920006ACC20 /* map_pinup_custom@3x.png in Resources */,
 				F759073B267F85C8000ECBD7 /* ThemeDetailView.xib in Resources */,
+				F744C63227073FCA00D2689A /* GoogleService-Info.plist in Resources */,
 				F7A88743265A482800930932 /* FilterBasicCell.xib in Resources */,
 				AC422A3B26A08920006ACC20 /* map_pinup_custom.png in Resources */,
 				F742608E26C0080600BBF2E7 /* FilterTableHeaderCell.xib in Resources */,
@@ -1564,6 +1569,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-cake-it/Pods-cake-it-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F744C6332707415500D2689A /* Firebase Crashlytics Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/$cake-it",
+			);
+			name = "Firebase Crashlytics Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# relsease 때에만 dSYM 업로드\nif [ \"${CONFIGURATION}\" != \"Debug\" ]; then\n    \"${PODS_ROOT}/FirebaseCrashlytics/run\"\n    \"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist -p ios ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1868,6 +1892,7 @@
 				CODE_SIGN_ENTITLEMENTS = "cake-it/cake-itDebug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Y85GKLJ8B2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -11,6 +11,7 @@ import KakaoSDKCommon
 import KakaoSDKAuth
 import NaverThirdPartyLogin
 import GoogleSignIn
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,9 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    configureNaverSDK()
-    configureKakaoSDK()
-    configureGoogleSignInSDK()
+    configureFirebase()
+    configureLoginSDK()
     
     return true
   }
@@ -53,6 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   // MARK: - private method
+  private func configureFirebase() {
+    FirebaseApp.configure()
+  }
+  
+  private func configureLoginSDK() {
+    configureNaverSDK()
+    configureKakaoSDK()
+    configureGoogleSignInSDK()
+  }
+  
   private func configureNaverSDK() {
     let naverLogin = NaverThirdPartyLoginConnection.getSharedInstance()
     naverLogin?.isNaverAppOauthEnable = true
