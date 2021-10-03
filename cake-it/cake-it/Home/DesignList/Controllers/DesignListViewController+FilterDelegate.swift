@@ -59,7 +59,7 @@ extension DesignListViewController: FilterDetailViewControllerDelegate {
     selectedFilterOptionCollectionView.reloadData()
   }
   
-  func filterDetailViewController(dismissFilterDetailViewController viewController: FilterDetailViewController, delay: TimeInterval) {
+  func filterDetailViewController(shouldDismissFilterDetailViewController viewController: FilterDetailViewController, delay: TimeInterval) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) { [weak self] in
       self?.highlightedFilterType = .reset
       self?.filterCategoryCollectionView.reloadData()

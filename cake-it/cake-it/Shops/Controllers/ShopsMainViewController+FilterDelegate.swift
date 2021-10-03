@@ -57,7 +57,7 @@ extension ShopsMainViewController: FilterDetailViewControllerDelegate {
     selectedFilterOptionCollectionView.reloadData()
   }
   
-  func filterDetailViewController(dismissFilterDetailViewController viewController: FilterDetailViewController,
+  func filterDetailViewController(shouldDismissFilterDetailViewController viewController: FilterDetailViewController,
                                   delay: TimeInterval) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) { [weak self] in
       self?.highlightedFilterType = .reset
