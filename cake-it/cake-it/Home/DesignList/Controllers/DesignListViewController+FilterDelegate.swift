@@ -26,7 +26,7 @@ extension DesignListViewController: FilterCategoryCellDelegate {
 // MARK:- FilterDetailView Delegate Method
 extension DesignListViewController: FilterDetailViewControllerDelegate {
     
-  func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
+  func filterDetailViewController(didSelectFilterOptionWithType type: FilterCommon.FilterType, values: [String]) {
     highlightedFilterType = type      // 포커스 된 셀 타입 저장
     filterCategoryCollectionView.reloadData()
     selectedFilter[type.key] = values

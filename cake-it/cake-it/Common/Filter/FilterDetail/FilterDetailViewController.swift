@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FilterDetailViewControllerDelegate: AnyObject {
-  func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String])
+  func filterDetailViewController(didSelectFilterOptionWithType type: FilterCommon.FilterType, values: [String])
   func filterDetailViewController(shouldDismissFilterDetailViewController viewController: FilterDetailViewController,
                                   delay: TimeInterval)
 }
@@ -234,7 +234,7 @@ extension FilterDetailViewController {
       }
     }
     
-    delegate?.filterDetailCellDidTap(type: filterType, values: selectedList)
+    delegate?.filterDetailViewController(didSelectFilterOptionWithType: filterType, values: selectedList)
     filterTableView.reloadData()
   }
   
