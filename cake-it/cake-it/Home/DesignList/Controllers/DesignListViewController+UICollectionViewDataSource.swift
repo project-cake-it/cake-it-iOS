@@ -13,6 +13,8 @@ extension DesignListViewController: UICollectionViewDataSource {
     switch collectionView {
     case designsCollectionView:
       return cakeDesigns.count
+    case selectedFilterOptionCollectionView:
+      return selectedFilterOptions.count
     case filterCategoryCollectionView:
       return cakeFilterList.count
     default:
@@ -22,16 +24,24 @@ extension DesignListViewController: UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    
-    if collectionView == designsCollectionView {
+    switch collectionView {
+    case designsCollectionView:
       let identifier = String(describing: CakeDesignCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! CakeDesignCell
       let cakeDesign = cakeDesigns[indexPath.row]
       cell.update(with: cakeDesign)
       return cell
-    }
-    else if collectionView == filterCategoryCollectionView {
+    case selectedFilterOptionCollectionView:
+      let identifier = String(describing: SelectedFilterOptionCell.self)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
+                                                    for: indexPath) as! SelectedFilterOptionCell
+      cell.delegate = self
+      let options = selectedFilterOptions
+      let option = options[indexPath.row]
+      cell.update(with: option)
+      return cell
+    case filterCategoryCollectionView:
       let identifier = String(describing: FilterCategoryCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! FilterCategoryCell
@@ -40,35 +50,8 @@ extension DesignListViewController: UICollectionViewDataSource {
                   highlightedFilterType: highlightedFilterType,
                   selectedFilter: selectedFilter)
       return cell
-    }
-    else {
+    default:
       return UICollectionViewCell()
-    }
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    if collectionView == designsCollectionView {
-      let id = String(describing: DesignDetailViewController.self)
-      let storyboard = UIStoryboard(name: "Home", bundle: nil)
-      if let designDetailVC = storyboard.instantiateViewController(withIdentifier: id) as? DesignDetailViewController {
-        designDetailVC.designID = cakeDesigns[indexPath.row].id
-        navigationController?.pushViewController(designDetailVC, animated: true)
-      }
-    }
-    else if collectionView == filterCategoryCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
-        cell.isFilterHighlighted = !cell.isFilterHighlighted
-        highlightedFilterType = cell.filterType
-      }
-    }
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    if collectionView == filterCategoryCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
-        cell.isFilterHighlighted = false
-        highlightedFilterType = .reset
-      }
     }
   }
 }

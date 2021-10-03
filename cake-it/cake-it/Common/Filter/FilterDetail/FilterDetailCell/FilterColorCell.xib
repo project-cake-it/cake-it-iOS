@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,13 +23,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="핑크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pek-9y-lUB">
-                        <rect key="frame" x="195" y="10.5" width="24.5" height="17"/>
+                        <rect key="frame" x="44" y="10.5" width="24.5" height="17"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kA-hq-EIH">
-                        <rect key="frame" x="171" y="12.5" width="13" height="13"/>
+                        <rect key="frame" x="20" y="12.5" width="13" height="13"/>
                         <color key="backgroundColor" name="design_pink"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="13" id="HCj-Gs-78Y"/>
@@ -35,7 +37,7 @@
                         </constraints>
                     </view>
                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheck" translatesAutoresizingMaskIntoConstraints="NO" id="NJk-HF-afc">
-                        <rect key="frame" x="219.5" y="9" width="20" height="20"/>
+                        <rect key="frame" x="68.5" y="9" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="9Zq-9R-zot"/>
                             <constraint firstAttribute="height" constant="20" id="OLI-sU-Wtk"/>
@@ -48,7 +50,7 @@
                     <constraint firstItem="NJk-HF-afc" firstAttribute="centerY" secondItem="Pek-9y-lUB" secondAttribute="centerY" id="Foa-7a-oQF"/>
                     <constraint firstItem="Pek-9y-lUB" firstAttribute="centerY" secondItem="2Wz-hp-PmW" secondAttribute="centerY" id="dMJ-fF-EZc"/>
                     <constraint firstItem="NJk-HF-afc" firstAttribute="leading" secondItem="Pek-9y-lUB" secondAttribute="trailing" id="dUE-j0-8Tk"/>
-                    <constraint firstItem="Pek-9y-lUB" firstAttribute="centerX" secondItem="2Wz-hp-PmW" secondAttribute="centerX" id="z7v-Lc-kY2"/>
+                    <constraint firstItem="5kA-hq-EIH" firstAttribute="leading" secondItem="2Wz-hp-PmW" secondAttribute="leading" constant="20" id="p9i-Us-fLg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

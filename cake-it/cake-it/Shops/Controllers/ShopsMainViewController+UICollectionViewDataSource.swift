@@ -13,6 +13,8 @@ extension ShopsMainViewController: UICollectionViewDataSource {
     switch collectionView {
     case filterCollectionView:
       return shopFilterList.count
+    case selectedFilterOptionCollectionView:
+      return selectedFilterOptions.count
     case shopCollectionView:
       return cakeShops.count
     default:
@@ -22,7 +24,8 @@ extension ShopsMainViewController: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    if collectionView == filterCollectionView {
+    switch collectionView {
+    case filterCollectionView:
       let identifier = String(describing: FilterCategoryCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! FilterCategoryCell
@@ -31,26 +34,24 @@ extension ShopsMainViewController: UICollectionViewDataSource {
                   highlightedFilterType: highlightedFilterType,
                   selectedFilter: selectedFilter)
       return cell
-    }
-    else if collectionView == shopCollectionView {
+    case selectedFilterOptionCollectionView:
+      let identifier = String(describing: SelectedFilterOptionCell.self)
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
+                                                    for: indexPath) as! SelectedFilterOptionCell
+      cell.delegate = self
+      let options = selectedFilterOptions
+      let option = options[indexPath.row]
+      cell.update(with: option)
+      return cell
+    case shopCollectionView:
       let identifier = String(describing: CakeShopCell.self)
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
                                                     for: indexPath) as! CakeShopCell
       let cakeShop = cakeShops[indexPath.row]
       cell.update(with: cakeShop)
       return cell
-    }
-    else {
+    default:
       return UICollectionViewCell()
-    }
-  }
-  
-  func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-    if collectionView == filterCollectionView {
-      if let cell = collectionView.cellForItem(at: indexPath) as? FilterCategoryCell {
-        cell.isFilterHighlighted = false
-        highlightedFilterType = .reset
-      }
     }
   }
 }

@@ -12,11 +12,14 @@ final class ShopsMainViewController: BaseViewController {
   enum Metric {
     static let cakeShopCellInterItemVerticalSpace: CGFloat = 4.0
     static let cakeShopCellHeight: CGFloat = 124.0
+    static let selectedFilterOptionCollectionViewHeight: CGFloat = 46.0
   }
   
   @IBOutlet weak var titleView: UIView!
   @IBOutlet weak var titleViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet weak var filterCollectionView: UICollectionView!
+  @IBOutlet var selectedFilterOptionCollectionView: UICollectionView!
+  @IBOutlet var selectedFilterOptionCollectionViewHeightConstraint: NSLayoutConstraint!
   @IBOutlet var shopEmptyView: UIView!
   @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
@@ -25,8 +28,10 @@ final class ShopsMainViewController: BaseViewController {
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
   var filterDetailVC: FilterDetailViewController?
   var selectedFilter: Dictionary<String, [String]> = [:]
+  var selectedFilterOptions: [SelectedFilterOption] = []
   var searchKeyword: [String: String] = [:]
   var highlightedFilterType: FilterCommon.FilterType = .reset
+  var isFetchingCakes = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -39,6 +44,7 @@ final class ShopsMainViewController: BaseViewController {
   }
   
   func fetchCakeShops() {
+    isFetchingCakes = true
     if let _ = self.parent as? SearchResultViewController {
       requestSearchingShops()
     } else {
@@ -55,10 +61,10 @@ final class ShopsMainViewController: BaseViewController {
         self.cakeShops = cakeShops
         self.shopCollectionView.reloadData()
         self.checkEmptyView()
-        
+        self.isFetchingCakes = false
       case .failure(_):
         // TODO: 에러 핸들링
-        break
+        self.isFetchingCakes = false
       }
     }
   }
@@ -73,9 +79,10 @@ final class ShopsMainViewController: BaseViewController {
         self.cakeShops = searchResult.shops
         self.shopCollectionView.reloadData()
         self.checkEmptyView()
-        
+        self.isFetchingCakes = false
       case .failure(let error):
         print(error.localizedDescription)
+        self.isFetchingCakes = false
       }
     }
   }
@@ -99,10 +106,53 @@ final class ShopsMainViewController: BaseViewController {
   }
 }
 
+// MARK: - Selected Filter Option
+
+extension ShopsMainViewController {
+  func updateSelectedFilterOptionCollectionViewLayout() {
+    guard selectedFilterOptions.count > 0 else {
+      selectedFilterOptionCollectionViewHeightConstraint.constant = 0
+      return
+    }
+    selectedFilterOptionCollectionViewHeightConstraint.constant = Metric.selectedFilterOptionCollectionViewHeight
+  }
+}
+
+extension ShopsMainViewController: SelectedFilterOptionCellDelegate {
+  func selectedFilterOptionCell(closeButtonDidTap fromCell: SelectedFilterOptionCell) {
+    guard isFetchingCakes == false else { return }
+    guard let indexPath = selectedFilterOptionCollectionView.indexPath(for: fromCell) else { return }
+    let options = selectedFilterOptions
+    let option = options[indexPath.row]
+    let key = option.key
+    var values = selectedFilter[key]!
+    var selectedValueIndex = 0
+    values.enumerated().forEach { (index, value) in
+      if values.contains(value) {
+        selectedValueIndex = index
+      }
+    }
+    values.remove(at: selectedValueIndex)
+    selectedFilter[key] = values // Dictionary는 순회하여 key에서 해당 value 값 제거
+    selectedFilterOptions.remove(at: indexPath.row)
+    
+    updateSelectedFilterOptionCollectionViewLayout()
+    filterCollectionView.reloadData()
+    selectedFilterOptionCollectionView.reloadData()
+    if key == "pickup" {
+      filterDetailVC?.selectedPickUpDate = nil
+    }
+    fetchCakeShops()
+  }
+}
+
+// MARK: - Configuration
+
 extension ShopsMainViewController {
   private func configure() {
     configureFilterView()
     configureCollectionView()
+    configureSelectedFilterOptionCollectionView()
   }
   
   private func configureFilterView() {
@@ -163,5 +213,16 @@ extension ShopsMainViewController {
   func hideTitleView() {
     titleView.isHidden = true
     titleViewHeightConstraint.constant = 0.0
+  }
+  
+  private func configureSelectedFilterOptionCollectionView() {
+    selectedFilterOptionCollectionViewHeightConstraint.constant = 0
+    selectedFilterOptionCollectionView.delegate = self
+    selectedFilterOptionCollectionView.dataSource = self
+    let identifier = String(describing: SelectedFilterOptionCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    selectedFilterOptionCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    selectedFilterOptionCollectionView.bounces = true
+    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 8)
   }
 }

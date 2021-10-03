@@ -59,6 +59,9 @@
 		8B93B2E82610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E32610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf */; };
 		8B93B2E92610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */; };
 		8B93B2EE2610CF5D0060ACAC /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B93B2ED2610CF5D0060ACAC /* Fonts.swift */; };
+		8BCBECC527081F52005319C7 /* SelectedFilterOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBECC327081F52005319C7 /* SelectedFilterOptionCell.swift */; };
+		8BCBECC627081F52005319C7 /* SelectedFilterOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BCBECC427081F52005319C7 /* SelectedFilterOptionCell.xib */; };
+		8BCBECC827083AE3005319C7 /* SelectedFilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCBECC727083AE3005319C7 /* SelectedFilterOption.swift */; };
 		8BCCDFA826903E0C00259EEE /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCCDFA726903E0C00259EEE /* WebViewController.swift */; };
 		8BD02724265507E300296261 /* ContactToShopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD02723265507E300296261 /* ContactToShopButton.swift */; };
 		8BD18AAC26E4A0C40016DE24 /* LoadingBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD18AAB26E4A0C40016DE24 /* LoadingBlockView.swift */; };
@@ -305,6 +308,9 @@
 		8B93B2E32610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Light.otf"; sourceTree = "<group>"; };
 		8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpoqaHanSansNeo-Medium.otf"; sourceTree = "<group>"; };
 		8B93B2ED2610CF5D0060ACAC /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		8BCBECC327081F52005319C7 /* SelectedFilterOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFilterOptionCell.swift; sourceTree = "<group>"; };
+		8BCBECC427081F52005319C7 /* SelectedFilterOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedFilterOptionCell.xib; sourceTree = "<group>"; };
+		8BCBECC727083AE3005319C7 /* SelectedFilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFilterOption.swift; sourceTree = "<group>"; };
 		8BCCDFA726903E0C00259EEE /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8BD02723265507E300296261 /* ContactToShopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactToShopButton.swift; sourceTree = "<group>"; };
 		8BD18AAB26E4A0C40016DE24 /* LoadingBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingBlockView.swift; sourceTree = "<group>"; };
@@ -804,6 +810,16 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		8BCBECC227081F39005319C7 /* SelectedFilterOption */ = {
+			isa = PBXGroup;
+			children = (
+				8BCBECC327081F52005319C7 /* SelectedFilterOptionCell.swift */,
+				8BCBECC427081F52005319C7 /* SelectedFilterOptionCell.xib */,
+				8BCBECC727083AE3005319C7 /* SelectedFilterOption.swift */,
+			);
+			path = SelectedFilterOption;
+			sourceTree = "<group>";
+		};
 		8BCCDFA626903DF700259EEE /* WebViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1007,6 +1023,7 @@
 		F768D1FF265801940092E3CE /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				8BCBECC227081F39005319C7 /* SelectedFilterOption */,
 				F73B6D052635AEC50043CF89 /* FilterCommon.swift */,
 				F71F331C266290DC00E2E19E /* FilterManager.swift */,
 				F7A887A1265A49D900930932 /* FilterCategory */,
@@ -1328,6 +1345,7 @@
 				AC422A3B26A08920006ACC20 /* map_pinup_custom.png in Resources */,
 				F742608E26C0080600BBF2E7 /* FilterTableHeaderCell.xib in Resources */,
 				AC422A1F26A08920006ACC20 /* map_pinup.png in Resources */,
+				8BCBECC627081F52005319C7 /* SelectedFilterOptionCell.xib in Resources */,
 				38D8C70625BC622700C1F10D /* LaunchScreen.storyboard in Resources */,
 				38D8C70325BC622700C1F10D /* Assets.xcassets in Resources */,
 				8B2A7548261C9AF5007757E5 /* CakeShopCell.xib in Resources */,
@@ -1579,6 +1597,7 @@
 				AC86FA08262C34D2002DED4F /* LoginManager.swift in Sources */,
 				ACC16E71262334960094D6D2 /* LoginSocialType.swift in Sources */,
 				8B1E00B526BFCA4E00377E22 /* ShopDetailAvailableDateViewController+UICollectionVIewDelegate.swift in Sources */,
+				8BCBECC827083AE3005319C7 /* SelectedFilterOption.swift in Sources */,
 				F7A887D3265A4C6700930932 /* FilterDescriptionCell.swift in Sources */,
 				38D8C6FE25BC622500C1F10D /* HomeViewController.swift in Sources */,
 				AC52DE6726902D8400718332 /* PromotionModel.swift in Sources */,
@@ -1596,6 +1615,7 @@
 				8B647B1B262C4D0C003FA732 /* UIView+Border.swift in Sources */,
 				F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */,
 				8B647B26262C53F9003FA732 /* UIStackView+RemoveAllArrangedSubviews.swift in Sources */,
+				8BCBECC527081F52005319C7 /* SelectedFilterOptionCell.swift in Sources */,
 				F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */,
 				8B1E00AB26BFBDCE00377E22 /* Date+Elements.swift in Sources */,
 				8B1DFDE426484C3C0076E14C /* CakeDesignSquareImageCell.swift in Sources */,

@@ -7,9 +7,10 @@
 
 import UIKit
 
-protocol FilterDetailViewDelegate: AnyObject {
-  func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String])
-  func filterDetailViewController(_ dismissFilterDetailViewController: FilterDetailViewController, delay: TimeInterval)
+protocol FilterDetailViewControllerDelegate: AnyObject {
+  func filterDetailViewController(didSelectFilterOptionWithType type: FilterCommon.FilterType, values: [String])
+  func filterDetailViewController(shouldDismissFilterDetailViewController viewController: FilterDetailViewController,
+                                  delay: TimeInterval)
 }
 
 final class FilterDetailViewController: UIViewController {
@@ -36,7 +37,7 @@ final class FilterDetailViewController: UIViewController {
   private(set) var pickUpCalendarCollectionView: UICollectionView!
   private var collectionViewHeightConstraint: NSLayoutConstraint!
   
-  weak var delegate: FilterDetailViewDelegate?
+  weak var delegate: FilterDetailViewControllerDelegate?
   var filterType: FilterCommon.FilterType = .reset
   var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
   var containerViewHeight: CGFloat = 0.0 {
@@ -127,7 +128,7 @@ final class FilterDetailViewController: UIViewController {
   }
   
   @objc private func backgroundViewDidTap() {
-    delegate?.filterDetailViewController(self, delay: 0)
+    delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
   }
   
   func tableCellHeight(type: FilterCommon.FilterType) -> CGFloat {
@@ -205,10 +206,10 @@ extension FilterDetailViewController {
       for value in allValues {
         selectedList.append(value)
       }
-      delegate?.filterDetailViewController(self, delay: 0)
+      delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
     } else if isAllDeselected {
       selectedList.removeAll()
-      delegate?.filterDetailViewController(self, delay: 0)
+      delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
     } else {
       let value = selectedFilterTitle(index: selectedIndex)
       if selectedList.contains(value) {
@@ -216,7 +217,7 @@ extension FilterDetailViewController {
         let index = selectedList.firstIndex(of: value)!
         selectedList.remove(at: index)
         if !FilterManager.shared.isMultiSelectionEnabled(type: filterType) {
-          delegate?.filterDetailViewController(self, delay: 0)
+          delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
         }
       } else {
         // 단일선택인 경우 기존 리스트 값 제거 후 해당 필터만 추가
@@ -225,7 +226,7 @@ extension FilterDetailViewController {
         }
         selectedList.append(value)
         if !FilterManager.shared.isMultiSelectionEnabled(type: filterType) {
-          delegate?.filterDetailViewController(self, delay: 0)
+          delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
         }
       }
       if value == "resetPickUpDate" {
@@ -233,7 +234,7 @@ extension FilterDetailViewController {
       }
     }
     
-    delegate?.filterDetailCellDidTap(type: filterType, values: selectedList)
+    delegate?.filterDetailViewController(didSelectFilterOptionWithType: filterType, values: selectedList)
     filterTableView.reloadData()
   }
   
