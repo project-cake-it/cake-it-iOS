@@ -39,7 +39,14 @@ extension ShopsMainViewController: FilterDetailViewControllerDelegate {
       selectedFilterOptions = selectedFilterOptions.filter { $0.key != type.key }
     }
     let option = SelectedFilterOption(key: type.key, value: value)
-    selectedFilterOptions.append(option)
+    if selectedFilterOptions.contains(option) == false {
+      selectedFilterOptions.append(option)
+    }
+    
+    let actualSelectedOptions = values.map { SelectedFilterOption(key: type.key, value: $0) }
+    selectedFilterOptions = selectedFilterOptions.filter {
+      ($0.key != type.key) || (actualSelectedOptions.contains($0))
+    }
     updateSelectedFilterOptionCollectionViewLayout()
     selectedFilterOptionCollectionView.reloadData()
   }
