@@ -46,7 +46,7 @@ extension UIView {
     label.sizeToFit()
     toastView.addSubview(label)
     
-    let bottomMargin: CGFloat = 50.0
+    let bottomMargin: CGFloat = 125.0
     let horizentalPadding: CGFloat = 30.0
     let verticalPadding: CGFloat = 15.0
     

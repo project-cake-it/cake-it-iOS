@@ -8,14 +8,14 @@
 import UIKit
 import SafariServices
 
-final class MyPageMainViewController: BaseViewController {
+final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDelegate {
   
   @IBOutlet var myPageMessageViewHeight: NSLayoutConstraint!
   @IBOutlet weak var myPageMessageLabel: UILabel!
   @IBOutlet weak var myPageTableView: UITableView!
   
   let sectionTitles: [String] = ["고객센터", "정보"]
-  let cellTitles = [["공지사항", "문의하기"], ["서비스 이용 약관", "개인정보 수집 및 이용", "오픈소스 라이선스", "버전 정보"]]
+  var cellTitles = [["공지사항", "문의하기"], ["서비스 이용 약관", "개인정보 수집 및 이용", "로그인", "버전 정보"]]
   let channelPublicId = "_xcpvHK"
   let headerHeight: CGFloat = 44
   let messageViewHeight = 64
@@ -30,6 +30,8 @@ final class MyPageMainViewController: BaseViewController {
     updateUserInfo()
   }
   
+  // MARK: - private method
+  
   private func configureMyPageTableView() {
     myPageTableView.delegate = self
     myPageTableView.dataSource = self
@@ -37,6 +39,16 @@ final class MyPageMainViewController: BaseViewController {
   
   private func configureUI() {
     myPageMessageLabel.text = String.init(format: Constants.MY_PAGE_MESSAGE, "사용자 닉네임")
+    updateCellTitles()
+  }
+  
+  private func updateCellTitles() {
+    if (LoginManager.shared.isLogin()) {
+      cellTitles[1][2] = Constants.CELL_TITLE_LOGINOUT
+    } else {
+      cellTitles[1][2] = Constants.CELL_TITLE_LOGIN
+    }
+    myPageTableView.reloadData()
   }
   
   private func updateUserInfo() {
@@ -48,8 +60,27 @@ final class MyPageMainViewController: BaseViewController {
     }
   }
   
-  @IBAction func logoutButtonDidTap(_ sender: Any) {
-    //TODO: Test용 로그아웃 버튼
-    LoginManager.shared.resetAccessToken()
+  func updateLogin() {
+    if LoginManager.shared.isLogin() {
+      LoginManager.shared.resetAccessToken()
+      view.showToast(message: Constants.TOAST_MESSAGE_LOGOUT)
+      updateCellTitles()
+    } else {
+      let storyboard = UIStoryboard(name: "Home", bundle: nil)
+      let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.id) as! LoginViewController
+      loginVC.modalPresentationStyle = .overFullScreen
+      loginVC.delegate = self
+      present(loginVC, animated: false, completion: nil)
+    }
+  }
+  
+  // MARK: - delegate
+  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
+    if success {
+      viewController.dismiss(animated: false) {
+        self.updateCellTitles()
+        self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
+      }
+    }
   }
 }

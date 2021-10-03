@@ -494,8 +494,9 @@ extension ShopDetailViewController {
   
   private func moveToLoginPage() {
     let storyboard = UIStoryboard(name: "Home", bundle: nil)
-    let loginViewController = storyboard.instantiateViewController(withIdentifier: LoginViewController.id)
+    let loginViewController = storyboard.instantiateViewController(withIdentifier: LoginViewController.id) as! LoginViewController
     loginViewController.modalPresentationStyle = .overFullScreen
+    loginViewController.delegate = self
     present(loginViewController, animated: true, completion: nil)
   }
   
@@ -510,5 +511,15 @@ extension ShopDetailViewController {
     view.addSubview(loadingBlockView)
     view.bringSubviewToFront(loadingBlockView)
     loadingBlockView.fillSuperView()
+  }
+}
+
+extension ShopDetailViewController : LoginViewcontrollerDelegate {
+  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
+    if success {
+      viewController.dismiss(animated: false) {
+        self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
+      }
+    }
   }
 }

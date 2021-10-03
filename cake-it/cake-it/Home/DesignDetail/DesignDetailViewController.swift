@@ -394,9 +394,20 @@ extension DesignDetailViewController {
   }
   
   private func moveToLoginPage() {
-    if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) {
+    if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) as? LoginViewController{
       loginViewController.modalPresentationStyle = .overFullScreen
+      loginViewController.delegate = self
       present(loginViewController, animated: true, completion: nil)
+    }
+  }
+}
+
+extension DesignDetailViewController : LoginViewcontrollerDelegate {
+  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
+    if success {
+      viewController.dismiss(animated: false) {
+        self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
+      }
     }
   }
 }

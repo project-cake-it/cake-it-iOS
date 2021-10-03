@@ -191,9 +191,10 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
   private func checkLogin() {
     if !LoginManager.shared.verifyAccessToken() {
-      if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) {
+      if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) as? LoginViewController {
         loginViewController.modalPresentationStyle = .overFullScreen
         present(loginViewController, animated: false, completion: nil)
+        loginViewController.delegate = self
       }
     }
   }
@@ -207,6 +208,17 @@ extension HomeViewController: UIScrollViewDelegate {
       currentPromotionIndex = Int(floor(scrollView.contentOffset.x / Constants.SCREEN_WIDTH)) + 1
     default:
       return
+    }
+  }
+}
+
+//MARK: - LoginViewController delegate
+extension HomeViewController: LoginViewcontrollerDelegate {
+  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
+    if success {
+      viewController.dismiss(animated: false) {
+        self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
+      }
     }
   }
 }

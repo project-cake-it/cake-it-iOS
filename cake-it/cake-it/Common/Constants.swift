@@ -35,4 +35,11 @@ enum Constants {
   
   //MARK: - Login
   static let LOGIN_TITLE = "마음을 전하는 가장 달콤한 방법"
+  
+  //MARK: - My page
+  static let CELL_TITLE_LOGIN = "로그인"
+  static let CELL_TITLE_LOGINOUT = "로그아웃"
+  static let CELL_TITLE_VERSION_INFO = "버전 정보"
+  static let TOAST_MESSAGE_LOGIN = "로그인 되었습니다."
+  static let TOAST_MESSAGE_LOGOUT = "로그아웃 되었습니다."
 }
