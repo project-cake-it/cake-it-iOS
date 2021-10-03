@@ -1578,7 +1578,6 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/$cake-it",
 			);
 			name = "Firebase Crashlytics Run Script";
 			outputFileListPaths = (
@@ -1892,6 +1891,7 @@
 				CODE_SIGN_ENTITLEMENTS = "cake-it/cake-itDebug.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = Y85GKLJ8B2;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1924,6 +1924,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_ENTITLEMENTS = "cake-it/cake-itRelease.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = Y85GKLJ8B2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
