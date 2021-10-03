@@ -13,6 +13,7 @@ final class DesignListViewController: BaseViewController {
     static let cakeDesignsCollectionViewSidePadding: CGFloat = 0
     static let cakeDesignCellInterItemHorizontalSpace: CGFloat = 1.0
     static let cakeDesignCellInterItemVerticalSpace: CGFloat = 4.0
+    static let selectedFilterOptionCollectionViewHeight: CGFloat = 46.0
   }
 
   enum NaviArrowDirection {
@@ -28,7 +29,9 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet var designEmptyView: UIView!
   @IBOutlet weak var designsCollectionView: UICollectionView!
   @IBOutlet weak var filterCategoryCollectionView: UICollectionView!
-
+  @IBOutlet var selectedFilterOptionCollectionView: UICollectionView!
+  @IBOutlet var selectedFilterOptionCollectionViewHeightConstraint: NSLayoutConstraint!
+  
   @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var navigationBarHeightConstraint: NSLayoutConstraint!
   
@@ -42,10 +45,12 @@ final class DesignListViewController: BaseViewController {
   }
   fileprivate var selectedTheme: [String: String] = [:]     // 선택된 테마 리스트
   var selectedFilter: [String: [String]] = [:]  // 선택된 필터 리스트
+  var selectedFilterOptions: [SelectedFilterOption] = []
   var searchKeyword: [String: String] = [:]     // 검색 키워드
   var highlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
   var filterDetailVC: FilterDetailViewController?     // 필터 디테일 리스트
   var themeDetailView: ThemeDetailView?       // 테마 디테일 리스트
+  var isFetching = false
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -131,11 +136,52 @@ final class DesignListViewController: BaseViewController {
   }
 }
 
+// MARK: - Selected Filter Option
+
+extension DesignListViewController {
+  func updateSelectedFilterOptionCollectionViewLayout() {
+    guard selectedFilterOptions.count > 0 else {
+      selectedFilterOptionCollectionViewHeightConstraint.constant = 0
+      return
+    }
+    selectedFilterOptionCollectionViewHeightConstraint.constant = Metric.selectedFilterOptionCollectionViewHeight
+  }
+}
+
+extension DesignListViewController: SelectedFilterOptionCellDelegate {
+  func selectedFilterOptionCell(closeButtonDidTap fromCell: SelectedFilterOptionCell) {
+    guard isFetching == false else { return }
+    guard let indexPath = selectedFilterOptionCollectionView.indexPath(for: fromCell) else { return }
+    let options = selectedFilterOptions
+    let option = options[indexPath.row]
+    let key = option.key
+    var values = selectedFilter[key]!
+    var selectedValueIndex = 0
+    values.enumerated().forEach { (index, value) in
+      if values.contains(value) {
+        selectedValueIndex = index
+      }
+    }
+    values.remove(at: selectedValueIndex)
+    selectedFilter[key] = values // Dictionary는 순회하여 key에서 해당 value 값 제거
+    selectedFilterOptions.remove(at: indexPath.row)
+    
+    updateSelectedFilterOptionCollectionViewLayout()
+    designsCollectionView.reloadData()
+    selectedFilterOptionCollectionView.reloadData()
+    if key == "pickup" {
+      filterDetailVC?.selectedPickUpDate = nil
+    }
+    fetchCakeDesigns()
+  }
+}
+
 extension DesignListViewController {
   private func configure() {
     configureNavigationBarView()
     configureFilterView()
     configureCollectionView()
+    configureSelectedFilterOptionCollectionView()
   }
 
   // MARK:- configure navigation bar
@@ -207,5 +253,16 @@ extension DesignListViewController {
   func hideNavigationView() {
     navigationBarView?.isHidden = true
     navigationBarHeightConstraint?.constant = 0.0
+  }
+  
+  private func configureSelectedFilterOptionCollectionView() {
+    selectedFilterOptionCollectionViewHeightConstraint.constant = 0
+    selectedFilterOptionCollectionView.delegate = self
+    selectedFilterOptionCollectionView.dataSource = self
+    let identifier = String(describing: SelectedFilterOptionCell.self)
+    let nib = UINib(nibName: identifier, bundle: nil)
+    selectedFilterOptionCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
+    selectedFilterOptionCollectionView.bounces = true
+    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 8)
   }
 }
