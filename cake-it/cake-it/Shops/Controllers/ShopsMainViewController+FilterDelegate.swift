@@ -23,7 +23,7 @@ extension ShopsMainViewController: FilterCategoryCellDelegate {
   }
 }
 
-extension ShopsMainViewController: FilterDetailViewDelegate {
+extension ShopsMainViewController: FilterDetailViewControllerDelegate {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String]) {
     highlightedFilterType = type      // 포커스 된 셀 타입 저장
     selectedFilter[type.key] = values

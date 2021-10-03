@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol FilterDetailViewDelegate: AnyObject {
+protocol FilterDetailViewControllerDelegate: AnyObject {
   func filterDetailCellDidTap(type: FilterCommon.FilterType, values: [String])
   func filterDetailViewController(_ dismissFilterDetailViewController: FilterDetailViewController, delay: TimeInterval)
 }
@@ -36,7 +36,7 @@ final class FilterDetailViewController: UIViewController {
   private(set) var pickUpCalendarCollectionView: UICollectionView!
   private var collectionViewHeightConstraint: NSLayoutConstraint!
   
-  weak var delegate: FilterDetailViewDelegate?
+  weak var delegate: FilterDetailViewControllerDelegate?
   var filterType: FilterCommon.FilterType = .reset
   var selectedList: [String] = []   // 해당 filterType에 선택된 필터 리스트
   var containerViewHeight: CGFloat = 0.0 {
