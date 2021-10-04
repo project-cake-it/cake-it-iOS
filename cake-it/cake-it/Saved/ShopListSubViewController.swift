@@ -27,6 +27,11 @@ final class ShopListSubViewController: BaseViewController, IndicatorInfoProvider
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    if LoginManager.shared.verifyAccessToken() == false {
+      showEmptyView()
+      return
+    }
+
     fetchCakeShops()
   }
   
@@ -40,6 +45,7 @@ final class ShopListSubViewController: BaseViewController, IndicatorInfoProvider
         self.checkEmptyView()
         
       case .failure(let error):
+        self.showEmptyView()
         print(error.localizedDescription)
       }
     }
@@ -47,10 +53,18 @@ final class ShopListSubViewController: BaseViewController, IndicatorInfoProvider
   
   private func checkEmptyView() {
     if self.savedCakeShops.isEmpty {
-      savedShopEmptyView.isHidden = false
+      showEmptyView()
     } else {
-      savedShopEmptyView.isHidden = true
+      hideEmptyView()
     }
+  }
+  
+  private func showEmptyView() {
+    savedShopEmptyView.isHidden = false
+  }
+  
+  private func hideEmptyView() {
+    savedShopEmptyView.isHidden = true
   }
   
   private func configureCakeShopCollecionView() {

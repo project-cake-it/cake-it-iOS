@@ -22,6 +22,11 @@ final class CakeListSubViewController: BaseViewController, IndicatorInfoProvider
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    if LoginManager.shared.verifyAccessToken() == false {
+      showEmptyView()
+      return
+    }
+
     fetchCakeImages()
   }
   
@@ -35,6 +40,7 @@ final class CakeListSubViewController: BaseViewController, IndicatorInfoProvider
         self.checkEmptyView()
         
       case .failure(let error):
+        self.showEmptyView()
         print(error.localizedDescription)
       }
     }
@@ -43,10 +49,18 @@ final class CakeListSubViewController: BaseViewController, IndicatorInfoProvider
   private func checkEmptyView() {
     guard let savedCakeDesigns = self.savedCakeDesigns else { return }
     if savedCakeDesigns.isEmpty  {
-      savedDesignEmptyView.isHidden = false
+      showEmptyView()
     } else {
-      savedDesignEmptyView.isHidden = true
+      hideEmptyView()
     }
+  }
+  
+  private func showEmptyView() {
+    savedDesignEmptyView.isHidden = false
+  }
+  
+  private func hideEmptyView() {
+    savedDesignEmptyView.isHidden = true
   }
   
   private func configureCakeImageCollectionView() {
