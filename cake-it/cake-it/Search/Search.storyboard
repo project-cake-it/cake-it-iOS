@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="케이크 가게, 디자인, 위치, 재료를 검색해보세요!" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZdI-NS-hn7">
-                                        <rect key="frame" x="20" y="16" width="374" height="18.5"/>
+                                        <rect key="frame" x="20" y="16" width="339" height="18.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -44,16 +44,36 @@
                                             <constraint firstAttribute="height" constant="1" id="r1x-Hc-xDs"/>
                                         </constraints>
                                     </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconsDeleteTag" translatesAutoresizingMaskIntoConstraints="NO" id="gD9-QZ-UIT" userLabel="Clear Button Image">
+                                        <rect key="frame" x="379" y="17.5" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="gD9-QZ-UIT" secondAttribute="height" multiplier="1:1" id="8sX-G5-QCU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xA-I4-nmq" userLabel="Clear Button">
+                                        <rect key="frame" x="369" y="7.5" width="35" height="35"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="clearButtonDidTap:" destination="ErQ-H1-5Ga" eventType="touchUpInside" id="S0o-DE-VTh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="7xA-I4-nmq" firstAttribute="bottom" secondItem="gD9-QZ-UIT" secondAttribute="bottom" constant="10" id="1Ec-eF-tUj"/>
                                     <constraint firstItem="ZdI-NS-hn7" firstAttribute="leading" secondItem="qqB-I3-0uC" secondAttribute="leading" constant="20" id="3Mb-vc-3pQ"/>
+                                    <constraint firstItem="gD9-QZ-UIT" firstAttribute="height" secondItem="qqB-I3-0uC" secondAttribute="height" multiplier="0.3" id="CkG-lg-80U"/>
                                     <constraint firstAttribute="trailing" secondItem="lKj-us-w0d" secondAttribute="trailing" id="Lpq-MH-NWZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="gD9-QZ-UIT" secondAttribute="trailing" constant="20" id="VER-Uo-C7a"/>
                                     <constraint firstItem="lKj-us-w0d" firstAttribute="leading" secondItem="qqB-I3-0uC" secondAttribute="leading" id="Wdf-v7-xa9"/>
+                                    <constraint firstItem="7xA-I4-nmq" firstAttribute="trailing" secondItem="gD9-QZ-UIT" secondAttribute="trailing" constant="10" id="XL7-wy-wOn"/>
+                                    <constraint firstItem="gD9-QZ-UIT" firstAttribute="centerY" secondItem="qqB-I3-0uC" secondAttribute="centerY" id="YNP-ER-QFc"/>
+                                    <constraint firstItem="gD9-QZ-UIT" firstAttribute="leading" secondItem="ZdI-NS-hn7" secondAttribute="trailing" constant="20" id="ZEP-fm-90H"/>
                                     <constraint firstAttribute="height" constant="50" id="aQf-Ok-kY7"/>
                                     <constraint firstAttribute="bottom" secondItem="lKj-us-w0d" secondAttribute="bottom" id="fwa-VJ-Vr4"/>
+                                    <constraint firstItem="7xA-I4-nmq" firstAttribute="top" secondItem="gD9-QZ-UIT" secondAttribute="top" constant="-10" id="ksf-3z-xfQ"/>
+                                    <constraint firstItem="7xA-I4-nmq" firstAttribute="leading" secondItem="gD9-QZ-UIT" secondAttribute="leading" constant="-10" id="ofm-7g-dDa"/>
                                     <constraint firstItem="ZdI-NS-hn7" firstAttribute="centerY" secondItem="qqB-I3-0uC" secondAttribute="centerY" id="rky-60-RL6"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZdI-NS-hn7" secondAttribute="trailing" constant="20" id="zUQ-9y-7Gp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -61,6 +81,7 @@
                         <color key="backgroundColor" name="white"/>
                         <constraints>
                             <constraint firstItem="9aA-1T-BMB" firstAttribute="top" secondItem="qqB-I3-0uC" secondAttribute="top" id="DeB-o7-rl0"/>
+                            <constraint firstItem="qqB-I3-0uC" firstAttribute="centerX" secondItem="9aA-1T-BMB" secondAttribute="centerX" id="SJd-fe-A7F"/>
                             <constraint firstItem="9aA-1T-BMB" firstAttribute="trailing" secondItem="qqB-I3-0uC" secondAttribute="trailing" id="tpi-Uj-OyZ"/>
                             <constraint firstItem="qqB-I3-0uC" firstAttribute="leading" secondItem="09X-kd-n0v" secondAttribute="leading" id="z56-Yx-akO"/>
                         </constraints>
@@ -122,9 +143,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lc-W7-0rD">
-                                                <rect key="frame" x="84" y="19" width="39" height="17.5"/>
+                                                <rect key="frame" x="83" y="18.5" width="41.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
-                                                <color key="textColor" name="pointB"/>
+                                                <color key="textColor" name="primaryColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIj-0L-DbB">
@@ -148,7 +169,7 @@
                                         <rect key="frame" x="207" y="0.0" width="207" height="55"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4E-1O-hEZ">
-                                                <rect key="frame" x="90.5" y="19" width="26" height="17.5"/>
+                                                <rect key="frame" x="89.5" y="18.5" width="28" height="18"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
                                                 <color key="textColor" name="black"/>
                                                 <nil key="highlightedColor"/>
@@ -197,7 +218,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색 결과가 없어요 다른 키워드로 검색해보세요!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j4i-F4-rAN">
-                                                <rect key="frame" x="128.5" y="340" width="157" height="33"/>
+                                                <rect key="frame" x="124.5" y="339.5" width="165" height="34"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -283,14 +304,12 @@
     </scenes>
     <resources>
         <image name="arrowLeft" width="38" height="38"/>
+        <image name="iconsDeleteTag" width="12" height="12"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="grayscale02">
             <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="pointB">
-            <color red="0.34099999070167542" green="0.45100000500679016" blue="0.60000002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryColor">
             <color red="0.87450980392156863" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -36,6 +36,10 @@ final class SearchMainViewController: BaseViewController {
   @objc private func backgroundDidTap() {
     searchTextField.resignFirstResponder()
   }
+  
+  @IBAction func clearButtonDidTap(_ sender: Any) {
+    searchTextField.text = ""
+  }
 }
 
 // MARK:- Private Fuction

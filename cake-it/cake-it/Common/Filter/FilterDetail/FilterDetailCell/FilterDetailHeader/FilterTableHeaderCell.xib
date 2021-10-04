@@ -22,7 +22,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="799-GD-UWU">
-                        <rect key="frame" x="194" y="13.5" width="26" height="17"/>
+                        <rect key="frame" x="20" y="13.5" width="26" height="17"/>
                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                     <constraint firstAttribute="bottom" secondItem="2M2-ex-Jlz" secondAttribute="bottom" id="2wz-n9-ZwJ"/>
                     <constraint firstItem="2M2-ex-Jlz" firstAttribute="top" secondItem="WyO-jG-Gjv" secondAttribute="top" id="JmZ-Ex-aYg"/>
                     <constraint firstItem="2M2-ex-Jlz" firstAttribute="leading" secondItem="WyO-jG-Gjv" secondAttribute="leading" id="SKW-CI-1Gv"/>
-                    <constraint firstItem="799-GD-UWU" firstAttribute="centerX" secondItem="WyO-jG-Gjv" secondAttribute="centerX" id="Wl7-kK-ij6"/>
+                    <constraint firstItem="799-GD-UWU" firstAttribute="leading" secondItem="WyO-jG-Gjv" secondAttribute="leading" constant="20" id="TeL-11-q4F"/>
                     <constraint firstAttribute="trailing" secondItem="2M2-ex-Jlz" secondAttribute="trailing" id="eLh-F7-9wF"/>
                     <constraint firstItem="799-GD-UWU" firstAttribute="centerY" secondItem="WyO-jG-Gjv" secondAttribute="centerY" id="y1L-V6-knB"/>
                 </constraints>
