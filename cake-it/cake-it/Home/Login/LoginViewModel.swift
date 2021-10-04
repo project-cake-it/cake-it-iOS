@@ -8,6 +8,7 @@
 import Foundation
 import KakaoSDKUser
 import KakaoSDKAuth
+import KakaoSDKCommon
 import NaverThirdPartyLogin
 import GoogleSignIn
 import AuthenticationServices
@@ -82,7 +83,14 @@ final class LoginViewModel: BaseViewModel {
   
   private func processKakaoLoginRespone(oauthToken: OAuthToken?, error: Error?) {
     if let error = error {
-      print(error)
+      
+      if let sdkError = error as? SdkError {
+        if sdkError.getClientError().reason == ClientFailureReason.Cancelled {
+          loginCompletion?(false, LoginError.UserCancel)
+          return
+        }
+      }
+      
       loginCompletion?(false, error)
     } else {
       guard let accessToken = oauthToken?.accessToken else {

@@ -60,10 +60,8 @@ final class LoginViewController: UIViewController {
       
       delegate?.loginDidFinish(self, true)
     } else {
-      guard let error = error else { return }
-      
       if error as? LoginError == LoginError.UserCancel {
-        // 구글로그인중 user cancel인 경우 alert을 띄우지 않는다.
+        // 로그인 중 user cancel인 경우 alert을 띄우지 않는다.
         return
       }
       
@@ -83,7 +81,7 @@ final class LoginViewController: UIViewController {
   
   @IBAction func signInWithKakaoButtonDidTap(_ sender: Any) {
     viewModel?.login(by: .KAKAO, completion: { (success, error) in
-      self.finishLogin(success: success)
+      self.finishLogin(success: success, error: error)
     })
   }
   
