@@ -27,7 +27,7 @@ final class ShopListSubViewController: BaseViewController, IndicatorInfoProvider
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    if LoginManager.shared.verifyAccessToken() == false {
+    if LoginManager.shared.isLogin() == false {
       showEmptyView()
       return
     }
