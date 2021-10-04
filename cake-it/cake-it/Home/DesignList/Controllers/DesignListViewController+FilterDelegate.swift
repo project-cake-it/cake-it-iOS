@@ -12,6 +12,7 @@ extension DesignListViewController: FilterCategoryCellDelegate {
   func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
+      resetSelectedFilterOptions()
       return
     }
     
@@ -72,7 +73,6 @@ extension DesignListViewController: FilterDetailViewControllerDelegate {
 extension DesignListViewController {
   func resetFilter() {
     resetCategoryFilter()
-    resetSelectedFilterOptions()
     hideFilterDetailView()
     hideFilterPickUpDate()
   }
@@ -83,9 +83,10 @@ extension DesignListViewController {
   }
   
   private func resetSelectedFilterOptions() {
-    selectedFilterOptionCollectionView.reloadData()
-    selectedFilterOptionCollectionViewHeightConstraint.constant = 0
     selectedFilter.removeAll()
+    selectedFilterOptions = []
+    updateSelectedFilterOptionCollectionViewLayout()
+    selectedFilterOptionCollectionView.reloadData()
   }
   
   private func hideFilterPickUpDate() {
