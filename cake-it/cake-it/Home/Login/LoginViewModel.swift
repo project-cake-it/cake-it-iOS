@@ -12,9 +12,15 @@ import NaverThirdPartyLogin
 import GoogleSignIn
 import AuthenticationServices
 
+enum LoginError: Error {
+  case UserCancel
+  case InvalidAccessToken
+  case InvalidSocialType
+}
+
 final class LoginViewModel: BaseViewModel {
   
-  typealias CommonCompletion = (Bool) -> Void
+  typealias CommonCompletion = (Bool, Error?) -> Void
   
   private var model: LoginModel?
   private var socialType: LoginSocialType?
@@ -77,10 +83,10 @@ final class LoginViewModel: BaseViewModel {
   private func processKakaoLoginRespone(oauthToken: OAuthToken?, error: Error?) {
     if let error = error {
       print(error)
-      loginCompletion?(false)
+      loginCompletion?(false, error)
     } else {
       guard let accessToken = oauthToken?.accessToken else {
-        loginCompletion?(false)
+        loginCompletion?(false, LoginError.InvalidAccessToken)
         return
       }
       
@@ -99,7 +105,7 @@ final class LoginViewModel: BaseViewModel {
   
   private func requestLogin(accessToken: String) {
     guard let socialType = self.socialType else {
-      loginCompletion!(false)
+      loginCompletion!(false, LoginError.InvalidSocialType)
       return
     }
     
@@ -114,13 +120,13 @@ final class LoginViewModel: BaseViewModel {
         let token = result.accessToken
         
         guard LoginManager.shared.saveAccessToken(accessToken: token) else {
-          self.loginCompletion!(false)
+          self.loginCompletion!(false, nil)
           return
         }
         
-        self.loginCompletion!(true)
-      case .failure(_):
-        self.loginCompletion!(false)
+        self.loginCompletion!(true, nil)
+      case .failure(let error):
+        self.loginCompletion!(false, error)
         break
       }
     }
@@ -133,7 +139,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
     guard (naverLoginSDK?.isValidAccessTokenExpireTimeNow()) != nil else { return }
     
     guard let access = naverLoginSDK?.accessToken else {
-      loginCompletion?(false)
+      loginCompletion?(false, LoginError.InvalidAccessToken)
       return
     }
     
@@ -144,7 +150,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
     guard (naverLoginSDK?.isValidAccessTokenExpireTimeNow()) != nil else { return }
     
     guard let access = naverLoginSDK?.accessToken else {
-      loginCompletion?(false)
+      loginCompletion?(false, LoginError.InvalidAccessToken)
       return
     }
     
@@ -156,7 +162,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
   }
   
   func oauth20Connection(_ oauthConnection: NaverThirdPartyLoginConnection!, didFailWithError error: Error!) {
-    self.loginCompletion?(false)
+    self.loginCompletion?(false, nil)
   }
 }
 
@@ -164,7 +170,7 @@ extension LoginViewModel: NaverThirdPartyLoginConnectionDelegate {
 extension LoginViewModel: GIDSignInDelegate {
   func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
     if error != nil {
-      loginCompletion?(false)
+      loginCompletion?(false, LoginError.UserCancel)
       return
     }
     
@@ -184,23 +190,33 @@ extension LoginViewModel: ASAuthorizationControllerDelegate,
     switch authorization.credential {
     case let appleIdCredential as ASAuthorizationAppleIDCredential:
       guard let jwtToken = appleIdCredential.identityToken else {
-        loginCompletion?(false)
+        loginCompletion?(false, nil)
         return
       }
       
       guard let tokenString = String(data: jwtToken, encoding: .utf8) else {
-        loginCompletion?(false)
+        loginCompletion?(false, nil)
         return
       }
       
       self.requestLogin(accessToken: tokenString)
     default:
-      loginCompletion?(false)
+      loginCompletion?(false, nil)
     }
   }
   
   func authorizationController(controller: ASAuthorizationController,
                                didCompleteWithError error: Error) {
-    loginCompletion?(false)
+    guard let asError = error as? ASAuthorizationError else {
+      loginCompletion?(false, nil)
+      return
+    }
+    
+    if asError.code == ASAuthorizationError.Code.canceled || asError.code == ASAuthorizationError.unknown {
+      loginCompletion?(false, LoginError.UserCancel)
+      return
+    }
+    
+    loginCompletion?(false, error)
   }
 }

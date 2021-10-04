@@ -54,32 +54,54 @@ final class LoginViewController: UIViewController {
     }
   }
   
+  private func finishLogin(success: Bool, error: Error?) {
+    if success {
+      self.closeLoginViewController()
+      
+      delegate?.loginDidFinish(self, true)
+    } else {
+      guard let error = error else { return }
+      
+      if error as? LoginError == LoginError.UserCancel {
+        // 구글로그인중 user cancel인 경우 alert을 띄우지 않는다.
+        return
+      }
+      
+      let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
+                                    message: Constants.LOGIN_ALERT_FAIL_MESSAGE,
+                                    preferredStyle: .alert)
+      let okAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default, handler: nil)
+      alert.addAction(okAction)
+      self.present(alert, animated: false, completion: nil)
+    }
+  }
+  
   //MARK: - IBAction
   @IBAction func closeButtonForTestDidTap(_ sender: Any) {
     closeLoginViewController()
   }
   
   @IBAction func signInWithKakaoButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .KAKAO, completion: { (success) in
+    viewModel?.login(by: .KAKAO, completion: { (success, error) in
       self.finishLogin(success: success)
     })
   }
   
   @IBAction func signInWithNaverButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .NAVER, completion: { (success) in
+    viewModel?.login(by: .NAVER, completion: { (success, error) in
       self.finishLogin(success: success)
     })
   }
   
   @IBAction func signInWithGoogleButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .GOOGLE, completion: { (success) in
-      self.finishLogin(success: success)
+    viewModel?.login(by: .GOOGLE, completion: { (success, error) in
+      self.finishLogin(success: success, error: error)
     })
   }
   
   @IBAction func signInWithAppleButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .APPLE, completion: { success in
-      self.finishLogin(success: success)
+    viewModel?.login(by: .APPLE, completion: { success, error in
+      self.finishLogin(success: success, error: error)
     })
   }
   
