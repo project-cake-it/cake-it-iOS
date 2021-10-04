@@ -11,6 +11,7 @@ extension ShopsMainViewController: FilterCategoryCellDelegate {
   func filterCategoryCellDidTap(type: FilterCommon.FilterType, isHighlightedCell: Bool) {
     if type == .reset {
       resetFilter()
+      resetSelectedFilterOptions()
       fetchCakeShops()
       return
     }
@@ -73,15 +74,15 @@ extension ShopsMainViewController {
     highlightedFilterType = .reset
     filterDetailVC?.resetSelectedPickUpDate()
     filterCollectionView.reloadData()
-    resetSelectedFilterOptions()
     hideFilterDetailView()
     hideFilterPickUpDate()
   }
   
-  private func resetSelectedFilterOptions() {
-    selectedFilterOptionCollectionView.reloadData()
-    selectedFilterOptionCollectionViewHeightConstraint.constant = 0
+  func resetSelectedFilterOptions() {
     selectedFilter.removeAll()
+    selectedFilterOptions = []
+    updateSelectedFilterOptionCollectionViewLayout()
+    selectedFilterOptionCollectionView.reloadData()
   }
   
   private func hideFilterPickUpDate() {
