@@ -50,7 +50,7 @@ final class LoginViewController: UIViewController {
                                     preferredStyle: .alert)
       let okAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default, handler: nil)
       alert.addAction(okAction)
-      self.present(alert, animated: false, completion: nil)
+      self.present(alert, animated: true, completion: nil)
     }
   }
   

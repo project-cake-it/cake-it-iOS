@@ -8,6 +8,8 @@
 import Foundation
 import SwiftKeychainWrapper
 
+import NaverThirdPartyLogin
+
 final class LoginManager {
   //TODO: completionHandler로 전달
   static let shared = LoginManager()
@@ -38,6 +40,7 @@ final class LoginManager {
   func resetAccessToken() {
     //서버 로그아웃을 완료한경우 저장된 토큰을 삭제합니다.
     KeychainWrapper.standard.removeObject(forKey: KEY_ACCESS_TOKEN)
+    NaverThirdPartyLoginConnection.getSharedInstance().resetToken()
   }
   
   func isLogin() -> Bool {

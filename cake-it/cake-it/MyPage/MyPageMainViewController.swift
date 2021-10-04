@@ -70,14 +70,14 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
       let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.id) as! LoginViewController
       loginVC.modalPresentationStyle = .overFullScreen
       loginVC.delegate = self
-      present(loginVC, animated: false, completion: nil)
+      present(loginVC, animated: true, completion: nil)
     }
   }
   
   // MARK: - delegate
   func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
     if success {
-      viewController.dismiss(animated: false) {
+      viewController.dismiss(animated: true) {
         self.updateCellTitles()
         self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
       }

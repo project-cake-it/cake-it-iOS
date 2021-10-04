@@ -405,7 +405,7 @@ extension DesignDetailViewController {
 extension DesignDetailViewController : LoginViewcontrollerDelegate {
   func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
     if success {
-      viewController.dismiss(animated: false) {
+      viewController.dismiss(animated: true) {
         self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
       }
     }
