@@ -19,7 +19,7 @@ extension ShopsMainViewController: FilterCategoryCellDelegate {
     if isHighlightedCell {
       showFilterDetailView(type: type)
     } else {
-      hideFilterDetailView()
+      hideFilterDetailContainerView()
     }
   }
 }
@@ -63,7 +63,7 @@ extension ShopsMainViewController: FilterDetailViewControllerDelegate {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) { [weak self] in
       self?.highlightedFilterType = .reset
       self?.filterCollectionView.reloadData()
-      self?.hideFilterDetailView()
+      self?.hideFilterDetailContainerView()
     }
   }
 }
@@ -74,7 +74,7 @@ extension ShopsMainViewController {
     highlightedFilterType = .reset
     filterDetailVC?.resetSelectedPickUpDate()
     filterCollectionView.reloadData()
-    hideFilterDetailView()
+    hideFilterDetailContainerView()
     hideFilterPickUpDate()
   }
   
@@ -105,7 +105,7 @@ extension ShopsMainViewController {
     }
   }
   
-  func hideFilterDetailView() {
+  func hideFilterDetailContainerView() {
     filterDetailContainerView.isHidden = true
   }
 }

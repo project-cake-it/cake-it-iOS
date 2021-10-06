@@ -18,7 +18,7 @@ extension FilterDetailViewController: UICollectionViewDelegateFlowLayout {
       } else {
         selectedPickUpDate = date
       }
-      updateSelectedList()
+      updateSelectedList(selectedIndex: nil)
     }
   }
   

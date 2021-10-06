@@ -7,8 +7,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="SpoqaHanSansNeo-Regular.otf">
-            <string>SpoqaHanSansNeo-Regular</string>
+        <array key="SpoqaHanSansNeo-Medium.otf">
+            <string>SpoqaHanSansNeo-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -23,7 +23,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="799-GD-UWU">
                         <rect key="frame" x="20" y="13.5" width="26" height="17"/>
-                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -34,17 +34,32 @@
                             <action selector="buttonDidTap:" destination="38x-Bu-VjD" eventType="touchUpInside" id="SQY-BW-rsp"/>
                         </connections>
                     </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCheck" translatesAutoresizingMaskIntoConstraints="NO" id="jiu-nL-LE0">
+                        <rect key="frame" x="51" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="35R-Hv-5BH"/>
+                            <constraint firstAttribute="width" constant="20" id="LeX-Wu-BIf"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="2M2-ex-Jlz" secondAttribute="bottom" id="2wz-n9-ZwJ"/>
                     <constraint firstItem="2M2-ex-Jlz" firstAttribute="top" secondItem="WyO-jG-Gjv" secondAttribute="top" id="JmZ-Ex-aYg"/>
+                    <constraint firstItem="jiu-nL-LE0" firstAttribute="centerY" secondItem="799-GD-UWU" secondAttribute="centerY" id="KAG-WI-cos"/>
                     <constraint firstItem="2M2-ex-Jlz" firstAttribute="leading" secondItem="WyO-jG-Gjv" secondAttribute="leading" id="SKW-CI-1Gv"/>
                     <constraint firstItem="799-GD-UWU" firstAttribute="leading" secondItem="WyO-jG-Gjv" secondAttribute="leading" constant="20" id="TeL-11-q4F"/>
+                    <constraint firstItem="jiu-nL-LE0" firstAttribute="leading" secondItem="799-GD-UWU" secondAttribute="trailing" constant="5" id="bJw-Sh-dDp"/>
                     <constraint firstAttribute="trailing" secondItem="2M2-ex-Jlz" secondAttribute="trailing" id="eLh-F7-9wF"/>
                     <constraint firstItem="799-GD-UWU" firstAttribute="centerY" secondItem="WyO-jG-Gjv" secondAttribute="centerY" id="y1L-V6-knB"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="checkImageView" destination="jiu-nL-LE0" id="XjL-hp-Cwg"/>
+            </connections>
             <point key="canvasLocation" x="-294.20289855072468" y="-179.46428571428569"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="icCheck" width="20" height="20"/>
+    </resources>
 </document>
