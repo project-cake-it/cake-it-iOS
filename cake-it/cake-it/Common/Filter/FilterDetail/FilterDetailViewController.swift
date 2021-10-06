@@ -197,8 +197,11 @@ extension FilterDetailViewController {
 // MARK:- Filter Method
 
 extension FilterDetailViewController {
-  func updateSelectedList(selectedIndex: Int?) {
-    if let selectedIndex = selectedIndex {
+  func updateSelectedList(selectedIndex: Int = 0, isAllSelection: Bool = false ) {
+    if isAllSelection {
+      selectedList.removeAll()
+      self.delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
+    } else {
       let value = selectedFilterTitle(index: selectedIndex)
       
       // 이미 존재하는 값일 경우에는 선택 취소
@@ -222,8 +225,6 @@ extension FilterDetailViewController {
       if isAllFilterSelected() || value == "resetPickUpDate" {
         selectedList.removeAll()
       }
-    } else {
-      self.delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
     }
     
     delegate?.filterDetailViewController(didSelectFilterOptionWithType: filterType,
@@ -254,8 +255,7 @@ extension FilterDetailViewController {
 // MARK:- 테이블 헤더셀 전체선택 처리
 extension FilterDetailViewController: FilterTableHeaderCellDelegate {
   func headerCellDidTap(isSelected: Bool) {
-    selectedList.removeAll()
-    updateSelectedList(selectedIndex: nil)
+    updateSelectedList(isAllSelection: true)
   }
 }
 
