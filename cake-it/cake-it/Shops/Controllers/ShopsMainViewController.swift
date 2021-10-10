@@ -13,6 +13,7 @@ final class ShopsMainViewController: BaseViewController {
     static let cakeShopCellInterItemVerticalSpace: CGFloat = 4.0
     static let cakeShopCellHeight: CGFloat = 124.0
     static let selectedFilterOptionCollectionViewHeight: CGFloat = 46.0
+    static let selectedFilterOptionCollectionViewSideContentInset: CGFloat = 16.0
   }
   
   @IBOutlet weak var titleView: UIView!
@@ -223,6 +224,10 @@ extension ShopsMainViewController {
     let nib = UINib(nibName: identifier, bundle: nil)
     selectedFilterOptionCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
     selectedFilterOptionCollectionView.bounces = true
-    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+    let contentInset = UIEdgeInsets(top: 0,
+                                    left: Metric.selectedFilterOptionCollectionViewSideContentInset,
+                                    bottom: 0,
+                                    right: Metric.selectedFilterOptionCollectionViewSideContentInset)
+    selectedFilterOptionCollectionView.contentInset = contentInset
   }
 }
