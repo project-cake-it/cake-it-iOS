@@ -106,7 +106,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
     case filterCollectionView:
       return Metric.filterCollectionViewInterItemSpacing
     case selectedFilterOptionCollectionView:
-      return 8.0
+      return SelectedFilterOptionCell.Metric.interItemSpace
     case shopCollectionView:
       return 0
     default:
