@@ -223,6 +223,6 @@ extension ShopsMainViewController {
     let nib = UINib(nibName: identifier, bundle: nil)
     selectedFilterOptionCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
     selectedFilterOptionCollectionView.bounces = true
-    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 8)
+    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
   }
 }

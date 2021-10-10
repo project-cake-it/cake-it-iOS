@@ -106,7 +106,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
     case filterCollectionView:
       return 8.0
     case selectedFilterOptionCollectionView:
-      return 0
+      return 8.0
     case shopCollectionView:
       return 0
     default:
