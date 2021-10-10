@@ -88,7 +88,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
   ) -> CGFloat {
     switch collectionView {
     case filterCollectionView:
-      return 8.0
+      return Metric.filterCollectionViewInterItemSpacing
     case selectedFilterOptionCollectionView:
       return SelectedFilterOptionCell.Metric.interItemSpace
     case shopCollectionView:
@@ -104,7 +104,7 @@ extension ShopsMainViewController: UICollectionViewDelegateFlowLayout {
   ) -> CGFloat {
     switch collectionView {
     case filterCollectionView:
-      return 8.0
+      return Metric.filterCollectionViewInterItemSpacing
     case selectedFilterOptionCollectionView:
       return 8.0
     case shopCollectionView:

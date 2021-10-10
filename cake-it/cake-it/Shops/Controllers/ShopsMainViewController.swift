@@ -12,6 +12,7 @@ final class ShopsMainViewController: BaseViewController {
   enum Metric {
     static let cakeShopCellInterItemVerticalSpace: CGFloat = 4.0
     static let cakeShopCellHeight: CGFloat = 124.0
+    static let filterCollectionViewInterItemSpacing: CGFloat = 8.0
     static let selectedFilterOptionCollectionViewHeight: CGFloat = 46.0
     static let selectedFilterOptionCollectionViewSideContentInset: CGFloat = 16.0
   }
