@@ -13,6 +13,7 @@ extension FilterDetailViewController: UICollectionViewDelegateFlowLayout {
     if collectionView == pickUpCalendarCollectionView {
       let dates = totalPickUpAvailableDates[currentMonthIndex]
       let date = dates[indexPath.row]
+      guard date.isEnabled else { return }
       if selectedPickUpDate == date {
         selectedPickUpDate = nil
       } else {
