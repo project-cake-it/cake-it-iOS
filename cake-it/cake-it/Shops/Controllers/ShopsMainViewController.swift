@@ -171,7 +171,7 @@ extension ShopsMainViewController {
     guard let detailVC = filterDetailVC else { return }
     detailVC.delegate = self
     filterDetailContainerView.addSubview(detailVC.view)
-    hideFilterDetailView()
+    hideFilterDetailContainerView()
     addChild(detailVC)
   }
 

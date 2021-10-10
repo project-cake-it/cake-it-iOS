@@ -17,8 +17,10 @@ extension FilterDetailViewController: UITableViewDelegate {
       let id = String(describing: FilterTableHeaderCell.self)
       if let headerCell = tableView.dequeueReusableCell(withIdentifier: id) as? FilterTableHeaderCell {
         headerCell.delegate = self
-        if selectedList.count ==  FilterManager.shared.numberOfCase(type: filterType) {
-          headerCell.isCellSelected = true
+        if selectedList.isEmpty || isAllFilterSelected() {
+            headerCell.isCellSelected = true
+        } else {
+            headerCell.isCellSelected = false
         }
         return headerCell
       }

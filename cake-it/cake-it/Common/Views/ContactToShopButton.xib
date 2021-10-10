@@ -24,14 +24,14 @@
             <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 연결" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMA-wW-i82">
-                    <rect key="frame" x="154" y="15" width="59" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카카오 채널로 가게 연결" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMA-wW-i82">
+                    <rect key="frame" x="109.5" y="15" width="148.5" height="18"/>
                     <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
                     <color key="textColor" name="white"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icKakaoChannel" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-kO-yrF">
-                    <rect key="frame" x="130" y="14.5" width="18" height="19"/>
+                    <rect key="frame" x="85.5" y="14.5" width="18" height="19"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="18" id="Co3-ka-g02"/>
                         <constraint firstAttribute="height" constant="19" id="S71-xL-6rP"/>

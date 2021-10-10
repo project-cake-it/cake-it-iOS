@@ -19,7 +19,7 @@ extension DesignListViewController: FilterCategoryCellDelegate {
     if isHighlightedCell {
       showFilterDetailView(type: type)
     } else {
-      hideFilterDetailView()
+      hideFilterDetailContainerView()
     }
   }
 }
@@ -64,7 +64,7 @@ extension DesignListViewController: FilterDetailViewControllerDelegate {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + delay) { [weak self] in
       self?.highlightedFilterType = .reset
       self?.filterCategoryCollectionView.reloadData()
-      self?.hideFilterDetailView()
+      self?.hideFilterDetailContainerView()
     }
   }
 }
@@ -73,7 +73,7 @@ extension DesignListViewController: FilterDetailViewControllerDelegate {
 extension DesignListViewController {
   func resetFilter() {
     resetCategoryFilter()
-    hideFilterDetailView()
+    hideFilterDetailContainerView()
     hideFilterPickUpDate()
   }
   
@@ -104,7 +104,7 @@ extension DesignListViewController {
     filterDetailContainerView.isHidden = false
   }
   
-  func hideFilterDetailView() {
+  func hideFilterDetailContainerView() {
     filterDetailContainerView.isHidden = true
   }
 }

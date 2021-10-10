@@ -15,7 +15,7 @@ class NetworkCommon {
     let data: T
   }
   
-  static let BASE_URL = "http://cake-it.ga:8080/api/v2/"
+  static let BASE_URL = "http://cake-it.shop:8080/api/v2/"
   
   enum API: String {
     case login            = "login"             // 로그인
@@ -27,8 +27,6 @@ class NetworkCommon {
     case savedShops       = "zzim/shops"        // 찜한 가게 조회
     case search           = "search"            // 통합검색
     case notices          = "notices"           // 공지사항
-    case randomNikname    = "nickname"          // TEST - 랜덤 닉네임
-    case uploadPhoto      = "test/post"         // TEST - POST 요청 테스트
     
     var urlString: String {
       return BASE_URL + self.rawValue

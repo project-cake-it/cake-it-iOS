@@ -197,44 +197,38 @@ extension FilterDetailViewController {
 // MARK:- Filter Method
 
 extension FilterDetailViewController {
-  func updateSelectedList(selectedIndex: Int = 0,
-                          isAllSelected: Bool = false,
-                          isAllDeselected: Bool = false) {
-    if isAllSelected {
+  func updateSelectedList(selectedIndex: Int = 0, isAllSelection: Bool = false ) {
+    if isAllSelection {
       selectedList.removeAll()
-      let allValues = FilterManager.shared.allValuesOfCase(type: filterType)
-      for value in allValues {
-        selectedList.append(value)
-      }
-      delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
-    } else if isAllDeselected {
-      selectedList.removeAll()
-      delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
+      self.delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
     } else {
       let value = selectedFilterTitle(index: selectedIndex)
+      
+      // 이미 존재하는 값일 경우에는 선택 취소
       if selectedList.contains(value) {
-        // 이미 존재하는 값일 경우에는 선택 취소
         let index = selectedList.firstIndex(of: value)!
         selectedList.remove(at: index)
         if !FilterManager.shared.isMultiSelectionEnabled(type: filterType) {
-          delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
+          self.delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
         }
-      } else {
-        // 단일선택인 경우 기존 리스트 값 제거 후 해당 필터만 추가
+      }
+      else { // 단일선택인 경우 기존 리스트 값 제거 후 해당 필터만 추가
         if FilterManager.shared.isMultiSelectionEnabled(type: filterType) == false {
           selectedList.removeAll()
         }
         selectedList.append(value)
         if !FilterManager.shared.isMultiSelectionEnabled(type: filterType) {
-          delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
+          self.delegate?.filterDetailViewController(shouldDismissFilterDetailViewController: self, delay: 0)
         }
       }
-      if value == "resetPickUpDate" {
+      
+      if isAllFilterSelected() || value == "resetPickUpDate" {
         selectedList.removeAll()
       }
     }
     
-    delegate?.filterDetailViewController(didSelectFilterOptionWithType: filterType, values: selectedList)
+    delegate?.filterDetailViewController(didSelectFilterOptionWithType: filterType,
+                                         values: selectedList)
     filterTableView.reloadData()
   }
   
@@ -252,16 +246,16 @@ extension FilterDetailViewController {
     case .reset:    return ""
     }
   }
+  
+  func isAllFilterSelected() -> Bool {
+    return selectedList.count == FilterManager.shared.numberOfCase(type: filterType)
+  }
 }
 
 // MARK:- 테이블 헤더셀 전체선택 처리
 extension FilterDetailViewController: FilterTableHeaderCellDelegate {
   func headerCellDidTap(isSelected: Bool) {
-    if isSelected {
-      updateSelectedList(isAllSelected: true)
-    } else {
-      updateSelectedList(isAllDeselected: true)
-    }
+    updateSelectedList(isAllSelection: true)
   }
 }
 
