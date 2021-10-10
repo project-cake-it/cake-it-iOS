@@ -30,7 +30,6 @@ final class LoginViewController: UIViewController {
     super.viewDidLoad()
     
     viewModel = LoginViewModel(viewController: self)
-    
     configureUI()
   }
   
@@ -41,8 +40,7 @@ final class LoginViewController: UIViewController {
   
   private func finishLogin(success: Bool) {
     if success {
-      self.closeLoginViewController()
-      
+      closeLoginViewController()
       delegate?.loginDidFinish(self, true)
     } else {
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
@@ -56,15 +54,13 @@ final class LoginViewController: UIViewController {
   
   private func finishLogin(success: Bool, error: Error?) {
     if success {
-      self.closeLoginViewController()
-      
+      closeLoginViewController()
       delegate?.loginDidFinish(self, true)
     } else {
       if error as? LoginError == LoginError.UserCancel {
         // 로그인 중 user cancel인 경우 alert을 띄우지 않는다.
         return
       }
-      
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
                                     message: Constants.LOGIN_ALERT_FAIL_MESSAGE,
                                     preferredStyle: .alert)
