@@ -48,7 +48,7 @@ final class FilterCommon {
       case .size:       return "크기"
       case .color:      return "색깔"
       case .category:   return "카테고리"
-      case .pickupDate: return "픽업 가능 날짜"
+      case .pickupDate: return "주문 가능 날짜"
       }
     }
   }
