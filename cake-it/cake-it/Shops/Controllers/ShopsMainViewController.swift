@@ -185,9 +185,9 @@ extension ShopsMainViewController {
     filterCollectionView.delegate = self
     filterCollectionView.dataSource = self
     filterCollectionView.contentInset = UIEdgeInsets(top: 0,
-                                                     left: FilterCommon.Metric.categoryCellLeftMargin,
+                                                     left: FilterCommon.Metric.filterCollectionViewSideContentInset,
                                                      bottom: 0,
-                                                     right: 0)
+                                                     right: FilterCommon.Metric.filterCollectionViewSideContentInset)
   }
 
   private func registerFilterCategoryCollectionView() {
