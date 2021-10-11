@@ -101,29 +101,32 @@ final class ShopDetailViewController: BaseViewController {
                                      type: CakeShopDetailResponse.self,
                                      param: "/\(id)"
     ) { result in
-      self.dismissLoadingBlockView()
       switch result {
       case .success(let response):
         self.cakeShop = response.cakeShop
         DispatchQueue.main.async {
           self.updateDetail()
           self.updateMapView()
+          self.dismissLoadingBlockView()
         }
       case .failure(_):
-        let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
-                                                message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
-                                                preferredStyle: .alert)
-        let doneAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { _ in
-          self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.async {
+          self.dismissLoadingBlockView()
+          let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
+                                                  message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
+                                                  preferredStyle: .alert)
+          let doneAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+          }
+          alertController.addAction(doneAction)
+          self.present(alertController, animated: true, completion: nil)
         }
-        alertController.addAction(doneAction)
-        self.present(alertController, animated: true, completion: nil)
       }
     }
   }
   
   private func dismissLoadingBlockView() {
-    UIView.animateCurveEaseOut(withDuration: 0.25, delay: 0.5) {
+    UIView.animateCurveEaseOut(withDuration: 0.35, delay: 0.25) {
       self.loadingBlockView.alpha = 0
     } completion: { [weak self] in
       self?.loadingBlockView.removeFromSuperview()

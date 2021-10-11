@@ -38,6 +38,7 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet weak var kindOfCreamsLabel: UILabel!  // 케이크 크림 종류
   @IBOutlet weak var kindOfSheetsLabel: UILabel!  // 케이크 시트 종류
   @IBOutlet weak var connectShopButton: UIButton! // 가게 연결하기 버튼, 실제로 사용하지 않고 높이만 잡아주는 버튼
+  private var loadingBlockView = LoadingBlockView()
   
   @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
   
@@ -72,10 +73,23 @@ final class DesignDetailViewController: BaseViewController {
       switch response {
       case .success(let result):
         self.cakeDesign = result.design
-        self.configureView()
-        self.fetchCakeImages()
-      case .failure(let error):
-        print(error)
+        DispatchQueue.main.async {
+          self.configureView()
+          self.fetchCakeImages()
+          self.dismissLoadingBlockView()
+        }
+      case .failure(_):
+        DispatchQueue.main.async {
+          self.dismissLoadingBlockView()
+          let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
+                                                  message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
+                                                  preferredStyle: .alert)
+          let doneAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+          }
+          alertController.addAction(doneAction)
+          self.present(alertController, animated: true, completion: nil)
+        }
       }
     }
   }
@@ -94,6 +108,14 @@ final class DesignDetailViewController: BaseViewController {
                                    height: Constants.SCREEN_WIDTH)
       cakeImageView.contentMode = .scaleAspectFill
       self.imageScrollView.addSubview(cakeImageView)
+    }
+  }
+  
+  private func dismissLoadingBlockView() {
+    UIView.animateCurveEaseOut(withDuration: 0.35, delay: 0.25) {
+      self.loadingBlockView.alpha = 0
+    } completion: { [weak self] in
+      self?.loadingBlockView.removeFromSuperview()
     }
   }
   
@@ -171,6 +193,7 @@ extension DesignDetailViewController {
     configureContactShopButton()
     configurePanGesture()
     configureNavigationPopGesture()
+    configureLoadingBlockView()
   }
   
   private func configureNavigationBar() {
@@ -233,6 +256,12 @@ extension DesignDetailViewController {
     orderAvailableDateButton.layer.borderColor = Colors.primaryColor.cgColor
     orderAvailableDateButton.round(cornerRadius: 4)
     connectShopButton.isHidden = true
+  }
+  
+  private func configureLoadingBlockView() {
+    view.addSubview(loadingBlockView)
+    view.bringSubviewToFront(loadingBlockView)
+    loadingBlockView.fillSuperView()
   }
   
   /// 케이크 디자인 찜하기
