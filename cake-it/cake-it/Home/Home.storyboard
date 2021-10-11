@@ -642,7 +642,7 @@
                                                             <constraint firstAttribute="height" constant="48" id="9Tm-5r-Rqq"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="15"/>
-                                                        <state key="normal" title="주문가능 날짜 보기">
+                                                        <state key="normal" title="주문가능 날짜">
                                                             <color key="titleColor" name="primaryColor"/>
                                                         </state>
                                                         <connections>
