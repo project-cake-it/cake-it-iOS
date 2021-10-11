@@ -30,7 +30,6 @@ final class LoginViewController: UIViewController {
     super.viewDidLoad()
     
     viewModel = LoginViewModel(viewController: self)
-    
     configureUI()
   }
   
@@ -41,10 +40,27 @@ final class LoginViewController: UIViewController {
   
   private func finishLogin(success: Bool) {
     if success {
-      self.closeLoginViewController()
-      
+      closeLoginViewController()
       delegate?.loginDidFinish(self, true)
     } else {
+      let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
+                                    message: Constants.LOGIN_ALERT_FAIL_MESSAGE,
+                                    preferredStyle: .alert)
+      let okAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default, handler: nil)
+      alert.addAction(okAction)
+      self.present(alert, animated: true, completion: nil)
+    }
+  }
+  
+  private func finishLogin(success: Bool, error: Error?) {
+    if success {
+      closeLoginViewController()
+      delegate?.loginDidFinish(self, true)
+    } else {
+      if error as? LoginError == LoginError.UserCancel {
+        // 로그인 중 user cancel인 경우 alert을 띄우지 않는다.
+        return
+      }
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
                                     message: Constants.LOGIN_ALERT_FAIL_MESSAGE,
                                     preferredStyle: .alert)
@@ -60,26 +76,26 @@ final class LoginViewController: UIViewController {
   }
   
   @IBAction func signInWithKakaoButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .KAKAO, completion: { (success) in
-      self.finishLogin(success: success)
+    viewModel?.login(by: .KAKAO, completion: { (success, error) in
+      self.finishLogin(success: success, error: error)
     })
   }
   
   @IBAction func signInWithNaverButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .NAVER, completion: { (success) in
+    viewModel?.login(by: .NAVER, completion: { (success, error) in
       self.finishLogin(success: success)
     })
   }
   
   @IBAction func signInWithGoogleButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .GOOGLE, completion: { (success) in
-      self.finishLogin(success: success)
+    viewModel?.login(by: .GOOGLE, completion: { (success, error) in
+      self.finishLogin(success: success, error: error)
     })
   }
   
   @IBAction func signInWithAppleButtonDidTap(_ sender: Any) {
-    viewModel?.login(by: .APPLE, completion: { success in
-      self.finishLogin(success: success)
+    viewModel?.login(by: .APPLE, completion: { success, error in
+      self.finishLogin(success: success, error: error)
     })
   }
   

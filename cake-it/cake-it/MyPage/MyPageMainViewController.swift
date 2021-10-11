@@ -62,22 +62,32 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
   
   func updateLogin() {
     if LoginManager.shared.isLogin() {
-      LoginManager.shared.resetAccessToken()
-      view.showToast(message: Constants.TOAST_MESSAGE_LOGOUT)
-      updateCellTitles()
+      
+      let alert = UIAlertController(title: Constants.LOGOUT_ALERT_TITLE,
+                                    message: Constants.LOGOUT_ALERT_MESSAGE,
+                                    preferredStyle: .alert)
+      let okAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { action in
+        LoginManager.shared.resetAccessToken()
+        self.view.showToast(message: Constants.TOAST_MESSAGE_LOGOUT)
+        self.updateCellTitles()
+      }
+      let cancelAction = UIAlertAction(title: Constants.COMMON_ALERT_CANCEL, style: .default, handler: nil)
+      alert.addAction(okAction)
+      alert.addAction(cancelAction)
+      self.present(alert, animated: true, completion: nil)
     } else {
       let storyboard = UIStoryboard(name: "Home", bundle: nil)
       let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.id) as! LoginViewController
       loginVC.modalPresentationStyle = .overFullScreen
       loginVC.delegate = self
-      present(loginVC, animated: false, completion: nil)
+      present(loginVC, animated: true, completion: nil)
     }
   }
   
   // MARK: - delegate
   func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
     if success {
-      viewController.dismiss(animated: false) {
+      viewController.dismiss(animated: true) {
         self.updateCellTitles()
         self.view.showToast(message: Constants.TOAST_MESSAGE_LOGIN)
       }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Ef-eg-SGs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Ef-eg-SGs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -43,9 +43,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOj-22-eXx">
-                                                <rect key="frame" x="331" y="429.5" width="63" height="28"/>
+                                                <rect key="frame" x="358" y="429.5" width="36" height="28"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="13"/>
-                                                <state key="normal" title="테마 숨기기">
+                                                <state key="normal" title="숨기기">
                                                     <color key="titleColor" name="grayscale03"/>
                                                 </state>
                                                 <connections>
@@ -115,11 +115,11 @@
                                                         </constraints>
                                                     </scrollView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="goD-Ap-MXo">
-                                                        <rect key="frame" x="346" y="368" width="48" height="26"/>
+                                                        <rect key="frame" x="354" y="374" width="40" height="20"/>
                                                         <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="26" id="Dfg-es-sE4"/>
-                                                            <constraint firstAttribute="width" constant="48" id="Id9-NY-F9W"/>
+                                                            <constraint firstAttribute="height" constant="20" id="Dfg-es-sE4"/>
+                                                            <constraint firstAttribute="width" constant="40" id="Id9-NY-F9W"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="white"/>
@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LE-M3-nrE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284.05797101449275" y="40.848214285714285"/>
+            <point key="canvasLocation" x="282.60869565217394" y="40.848214285714285"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="j3Y-mg-hkb">
@@ -220,7 +220,7 @@
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WPV-iZ-aZe">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_round" translatesAutoresizingMaskIntoConstraints="NO" id="WPV-iZ-aZe">
                                 <rect key="frame" x="149.5" y="210" width="115" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="B4i-AF-daB"/>
@@ -763,7 +763,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="바닐라, 초코, 오레오" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfH-WY-3dT">
-                                                        <rect key="frame" x="115" y="217" width="274" height="17"/>
+                                                        <rect key="frame" x="115" y="214.5" width="274" height="17"/>
                                                         <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                                         <color key="textColor" name="grayscale05"/>
                                                         <nil key="highlightedColor"/>
@@ -811,7 +811,7 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-fU-63o">
-                                                <rect key="frame" x="16" y="716" width="382" height="48"/>
+                                                <rect key="frame" x="16" y="715" width="382" height="48"/>
                                                 <color key="backgroundColor" name="pointB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Oy7-21-gxC"/>
@@ -923,6 +923,7 @@
         <image name="icLoginGoogle" width="34" height="38"/>
         <image name="icLoginKakao" width="34" height="38"/>
         <image name="icLoginNaver" width="210" height="210"/>
+        <image name="logo_round" width="4267" height="4267"/>
         <namedColor name="black">
             <color red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
