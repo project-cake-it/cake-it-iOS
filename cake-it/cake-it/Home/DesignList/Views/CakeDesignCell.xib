@@ -37,22 +37,28 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="locatoin | cake size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-Y7-NUq">
-                                <rect key="frame" x="16" y="246" width="103.5" height="14"/>
+                                <rect key="frame" x="12" y="242" width="103.5" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="J75-d5-aWK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="12"/>
                                 <color key="textColor" name="graysacle04"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ue6-wd-Kou">
-                                <rect key="frame" x="16" y="264" width="39" height="21"/>
+                                <rect key="frame" x="12" y="262" width="39" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="GgH-Oq-kwk"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="GgH-Oq-kwk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="14"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUE-s5-fnJ">
-                                <rect key="frame" x="16" y="310" width="34.5" height="17"/>
+                                <rect key="frame" x="12" y="290" width="34.5" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="CdW-BF-6OC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
@@ -63,10 +69,10 @@
                             <constraint firstItem="ue6-wd-Kou" firstAttribute="leading" secondItem="FQt-Y7-NUq" secondAttribute="leading" id="7hw-d0-2zv"/>
                             <constraint firstItem="kIH-kk-rn2" firstAttribute="top" secondItem="Tfq-UC-ucK" secondAttribute="top" id="An1-0a-izt"/>
                             <constraint firstItem="ue6-wd-Kou" firstAttribute="top" secondItem="FQt-Y7-NUq" secondAttribute="bottom" constant="4" id="HDd-YM-4V7"/>
-                            <constraint firstItem="FQt-Y7-NUq" firstAttribute="top" secondItem="kIH-kk-rn2" secondAttribute="bottom" constant="16" id="Hj3-iq-OPk"/>
-                            <constraint firstItem="FQt-Y7-NUq" firstAttribute="leading" secondItem="Tfq-UC-ucK" secondAttribute="leading" constant="16" id="MQ9-AD-o8x"/>
+                            <constraint firstItem="FQt-Y7-NUq" firstAttribute="top" secondItem="kIH-kk-rn2" secondAttribute="bottom" constant="12" id="Hj3-iq-OPk"/>
+                            <constraint firstItem="FQt-Y7-NUq" firstAttribute="leading" secondItem="Tfq-UC-ucK" secondAttribute="leading" constant="12" id="MQ9-AD-o8x"/>
+                            <constraint firstItem="UUE-s5-fnJ" firstAttribute="top" secondItem="ue6-wd-Kou" secondAttribute="bottom" constant="8" id="Xy9-Dc-RI1"/>
                             <constraint firstItem="kIH-kk-rn2" firstAttribute="leading" secondItem="Tfq-UC-ucK" secondAttribute="leading" id="ajT-SJ-n9u"/>
-                            <constraint firstItem="UUE-s5-fnJ" firstAttribute="top" secondItem="FQt-Y7-NUq" secondAttribute="bottom" constant="50" id="f70-1Z-Ch3"/>
                             <constraint firstAttribute="trailing" secondItem="kIH-kk-rn2" secondAttribute="trailing" id="qhZ-pf-XTI"/>
                             <constraint firstItem="UUE-s5-fnJ" firstAttribute="leading" secondItem="FQt-Y7-NUq" secondAttribute="leading" id="tLZ-PM-QSH"/>
                         </constraints>

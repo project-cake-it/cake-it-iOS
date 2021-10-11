@@ -36,19 +36,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpe-H8-Gr7">
-                                <rect key="frame" x="200" y="4" width="273" height="17"/>
+                                <rect key="frame" x="200" y="6" width="273" height="17"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="14"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="inK-Ow-V5Y">
-                                <rect key="frame" x="200" y="25" width="273" height="16"/>
+                                <rect key="frame" x="200" y="27" width="273" height="16"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Regular" family="Spoqa Han Sans Neo" pointSize="13"/>
                                 <color key="textColor" name="grayscale04"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-7s-Ra5">
-                                <rect key="frame" x="200" y="45" width="273" height="18"/>
+                                <rect key="frame" x="200" y="47" width="273" height="18"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="e0j-Tc-IxM"/>
@@ -123,7 +123,7 @@
                             <constraint firstAttribute="trailing" secondItem="2bh-7s-Ra5" secondAttribute="trailing" constant="20" symbolic="YES" placeholder="YES" id="Hhi-wW-8HN"/>
                             <constraint firstItem="inK-Ow-V5Y" firstAttribute="leading" secondItem="kpe-H8-Gr7" secondAttribute="leading" id="IJf-Q8-osU"/>
                             <constraint firstItem="kpe-H8-Gr7" firstAttribute="leading" secondItem="DMQ-4U-HXq" secondAttribute="trailing" constant="12" id="IL6-gU-J88"/>
-                            <constraint firstItem="kpe-H8-Gr7" firstAttribute="top" secondItem="3vH-Eq-dRk" secondAttribute="top" constant="4" id="KWn-L2-oQh"/>
+                            <constraint firstItem="kpe-H8-Gr7" firstAttribute="top" secondItem="3vH-Eq-dRk" secondAttribute="top" constant="6" id="KWn-L2-oQh"/>
                             <constraint firstItem="2bh-7s-Ra5" firstAttribute="top" secondItem="inK-Ow-V5Y" secondAttribute="bottom" constant="4" id="M2W-cU-nsE"/>
                             <constraint firstAttribute="bottom" secondItem="DMQ-4U-HXq" secondAttribute="bottom" id="P28-8I-QGe"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2bh-7s-Ra5" secondAttribute="trailing" constant="20" id="Xw4-h6-0R6"/>
