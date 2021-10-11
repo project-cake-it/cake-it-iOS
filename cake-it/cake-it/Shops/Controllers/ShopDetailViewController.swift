@@ -378,6 +378,7 @@ extension ShopDetailViewController {
     scrollView.delegate = self
     configureLabelLineSpacing()
     configureLoadingBlockView()
+    configureNavigationPopGesture()
   }
   
   private func configurePanGesture() {
@@ -511,6 +512,11 @@ extension ShopDetailViewController {
     view.addSubview(loadingBlockView)
     view.bringSubviewToFront(loadingBlockView)
     loadingBlockView.fillSuperView()
+  }
+  
+  private func configureNavigationPopGesture() {
+    navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
   }
 }
 

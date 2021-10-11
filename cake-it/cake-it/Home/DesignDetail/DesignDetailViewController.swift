@@ -170,6 +170,7 @@ extension DesignDetailViewController {
     configureCakeInformationView()
     configureContactShopButton()
     configurePanGesture()
+    configureNavigationPopGesture()
   }
   
   private func configureNavigationBar() {
@@ -399,6 +400,11 @@ extension DesignDetailViewController {
       loginViewController.delegate = self
       present(loginViewController, animated: true, completion: nil)
     }
+  }
+  
+  private func configureNavigationPopGesture() {
+    navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
   }
 }
 
