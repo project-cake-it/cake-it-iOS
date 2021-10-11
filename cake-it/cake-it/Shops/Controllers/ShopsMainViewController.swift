@@ -12,7 +12,9 @@ final class ShopsMainViewController: BaseViewController {
   enum Metric {
     static let cakeShopCellInterItemVerticalSpace: CGFloat = 4.0
     static let cakeShopCellHeight: CGFloat = 124.0
+    static let filterCollectionViewInterItemSpacing: CGFloat = 8.0
     static let selectedFilterOptionCollectionViewHeight: CGFloat = 46.0
+    static let selectedFilterOptionCollectionViewSideContentInset: CGFloat = 16.0
   }
   
   @IBOutlet weak var titleView: UIView!
@@ -183,9 +185,9 @@ extension ShopsMainViewController {
     filterCollectionView.delegate = self
     filterCollectionView.dataSource = self
     filterCollectionView.contentInset = UIEdgeInsets(top: 0,
-                                                     left: FilterCommon.Metric.categoryCellLeftMargin,
+                                                     left: FilterCommon.Metric.filterCollectionViewSideContentInset,
                                                      bottom: 0,
-                                                     right: 0)
+                                                     right: FilterCommon.Metric.filterCollectionViewSideContentInset)
   }
 
   private func registerFilterCategoryCollectionView() {
@@ -223,6 +225,10 @@ extension ShopsMainViewController {
     let nib = UINib(nibName: identifier, bundle: nil)
     selectedFilterOptionCollectionView.register(nib, forCellWithReuseIdentifier: identifier)
     selectedFilterOptionCollectionView.bounces = true
-    selectedFilterOptionCollectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 8)
+    let contentInset = UIEdgeInsets(top: 0,
+                                    left: Metric.selectedFilterOptionCollectionViewSideContentInset,
+                                    bottom: 0,
+                                    right: Metric.selectedFilterOptionCollectionViewSideContentInset)
+    selectedFilterOptionCollectionView.contentInset = contentInset
   }
 }

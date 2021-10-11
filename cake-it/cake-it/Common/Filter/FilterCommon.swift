@@ -10,7 +10,7 @@ import UIKit
 final class FilterCommon {
   
   enum Metric {
-    static let categoryCellLeftMargin: CGFloat = 16.0
+    static let filterCollectionViewSideContentInset: CGFloat = 16.0
     static let categoryCellLeftInset: CGFloat = 16.0
     static let categoryCellRightInset: CGFloat = 30.0
     static let categoryCellHeight: CGFloat = 35.0

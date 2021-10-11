@@ -98,7 +98,7 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
                       minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     switch collectionView {
     case filterCategoryCollectionView:
-      return 8.0
+      return Metric.filterCollectionViewInterItemSpacing
     case selectedFilterOptionCollectionView:
       return SelectedFilterOptionCell.Metric.interItemSpace
     case designsCollectionView:
@@ -115,12 +115,11 @@ extension DesignListViewController: UICollectionViewDelegateFlowLayout {
     case designsCollectionView:
       return 0.0
     case filterCategoryCollectionView:
-      return 8.0
+      return Metric.filterCollectionViewInterItemSpacing
     case selectedFilterOptionCollectionView:
-      return 0
+      return SelectedFilterOptionCell.Metric.interItemSpace
     default:
       return 0.0
     }
   }
-
 }
