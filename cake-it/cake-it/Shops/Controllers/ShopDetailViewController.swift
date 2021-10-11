@@ -24,6 +24,7 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet var navigationBarTitleLabel: UILabel!
   @IBOutlet weak var shopNameLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var savedButton: UIButton!
@@ -72,8 +73,8 @@ final class ShopDetailViewController: BaseViewController {
     }
   }
   private var cakeShop: CakeShop?
-  private var canContactShopButtonMove = false
-  private var isScrollDirectionDown = false
+  var canContactShopButtonMove = false
+  var isScrollDirectionDown = false
   
   private let MAP_ZOOM_LEVEL_DEFAULT: Int32 = 0
   private let MAP_CONNECT_URL_STRING = "kakaomap://place?id="
@@ -100,29 +101,32 @@ final class ShopDetailViewController: BaseViewController {
                                      type: CakeShopDetailResponse.self,
                                      param: "/\(id)"
     ) { result in
-      self.dismissLoadingBlockView()
       switch result {
       case .success(let response):
         self.cakeShop = response.cakeShop
         DispatchQueue.main.async {
           self.updateDetail()
           self.updateMapView()
+          self.dismissLoadingBlockView()
         }
       case .failure(_):
-        let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
-                                                message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
-                                                preferredStyle: .alert)
-        let doneAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { _ in
-          self.navigationController?.popViewController(animated: true)
+        DispatchQueue.main.async {
+          self.dismissLoadingBlockView()
+          let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
+                                                  message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
+                                                  preferredStyle: .alert)
+          let doneAction = UIAlertAction(title: Constants.COMMON_ALERT_OK, style: .default) { _ in
+            self.navigationController?.popViewController(animated: true)
+          }
+          alertController.addAction(doneAction)
+          self.present(alertController, animated: true, completion: nil)
         }
-        alertController.addAction(doneAction)
-        self.present(alertController, animated: true, completion: nil)
       }
     }
   }
   
   private func dismissLoadingBlockView() {
-    UIView.animateCurveEaseOut(withDuration: 0.25, delay: 0.5) {
+    UIView.animateCurveEaseOut(withDuration: 0.35, delay: 0.25) {
       self.loadingBlockView.alpha = 0
     } completion: { [weak self] in
       self?.loadingBlockView.removeFromSuperview()
@@ -243,6 +247,7 @@ extension ShopDetailViewController {
   private func updateDetail() {
     guard let cakeShop = self.cakeShop else { return }
     
+    navigationBarTitleLabel.text = cakeShop.name
     shopNameLabel.text = cakeShop.name
     addressLabel.text = cakeShop.fullAddress
     
@@ -345,18 +350,6 @@ extension ShopDetailViewController {
   }
 }
 
-// MARK: - UIScrollViewDelegate
-
-extension ShopDetailViewController: UIScrollViewDelegate {
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    let canContactShopButtonMoveThreshold: CGFloat = 156
-    canContactShopButtonMove = scrollView.contentOffset.y >= canContactShopButtonMoveThreshold
-    if canContactShopButtonMove && isScrollDirectionDown {
-      hideContactShopButton()
-    }
-  }
-}
-
 // MARK: - UIGestureRecognizerDelegate
 
 extension ShopDetailViewController: UIGestureRecognizerDelegate {
@@ -372,12 +365,14 @@ extension ShopDetailViewController: UIGestureRecognizerDelegate {
 extension ShopDetailViewController {
   private func configure() {
     configureViews()
+    configureNavigationBarTitleLabel()
     configureCakeDesignCollectionView()
     configureContactShopButton()
     configurePanGesture()
     scrollView.delegate = self
     configureLabelLineSpacing()
     configureLoadingBlockView()
+    configureNavigationPopGesture()
   }
   
   private func configurePanGesture() {
@@ -385,6 +380,11 @@ extension ShopDetailViewController {
                                                       action: #selector(handlePanGesture(_ :)))
     panGestureRecognizer.delegate = self
     self.view.addGestureRecognizer(panGestureRecognizer)
+  }
+  
+  private func configureNavigationBarTitleLabel() {
+    navigationBarTitleLabel.text = ""
+    navigationBarTitleLabel.alpha = 0
   }
   
   @objc private func handlePanGesture(_ sender : UIPanGestureRecognizer) {
@@ -423,7 +423,7 @@ extension ShopDetailViewController {
     }
   }
   
-  private func hideContactShopButton() {
+  func hideContactShopButton() {
     guard canContactShopButtonMove, contactShopButton.displayState != .hidden else { return }
     contactShopButtonBottomConstraint.constant = Metric.contactShopButtonBottomSpaceHidden
     UIView.animate(withDuration: 0.5,
@@ -511,6 +511,11 @@ extension ShopDetailViewController {
     view.addSubview(loadingBlockView)
     view.bringSubviewToFront(loadingBlockView)
     loadingBlockView.fillSuperView()
+  }
+  
+  private func configureNavigationPopGesture() {
+    navigationController?.interactivePopGestureRecognizer?.delegate = nil
+    navigationController?.interactivePopGestureRecognizer?.isEnabled = true
   }
 }
 
