@@ -530,10 +530,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOV-in-YDj">
-                                        <rect key="frame" x="16" y="6" width="38" height="38"/>
+                                        <rect key="frame" x="8" y="5" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="38" id="H0t-D6-EKm"/>
-                                            <constraint firstAttribute="width" constant="38" id="aUf-fA-O5n"/>
+                                            <constraint firstAttribute="height" constant="40" id="H0t-D6-EKm"/>
+                                            <constraint firstAttribute="width" constant="40" id="aUf-fA-O5n"/>
                                             <constraint firstAttribute="width" secondItem="AOV-in-YDj" secondAttribute="height" multiplier="1:1" id="prc-qk-bfb"/>
                                         </constraints>
                                         <color key="tintColor" name="black"/>
@@ -543,8 +543,8 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="케이크 가게 이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3k5-yU-0ch">
-                                        <rect key="frame" x="54" y="16" width="306" height="18"/>
-                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="15"/>
+                                        <rect key="frame" x="48" y="16.5" width="312" height="17"/>
+                                        <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="14"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -563,7 +563,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-ra-Uye" userLabel="Navi Title Button">
-                                        <rect key="frame" x="54" y="0.0" width="306" height="50"/>
+                                        <rect key="frame" x="48" y="0.0" width="312" height="50"/>
                                         <connections>
                                             <action selector="naviTtileButtonDidTap:" destination="NHP-87-oQc" eventType="touchUpInside" id="y1j-cI-ryg"/>
                                         </connections>
@@ -579,7 +579,7 @@
                                     <constraint firstItem="Cay-Bm-flT" firstAttribute="centerY" secondItem="3k5-yU-0ch" secondAttribute="centerY" id="b1q-lK-FsM"/>
                                     <constraint firstItem="Cay-Bm-flT" firstAttribute="leading" secondItem="kyj-ra-Uye" secondAttribute="trailing" id="gRu-S2-24V"/>
                                     <constraint firstItem="kyj-ra-Uye" firstAttribute="leading" secondItem="AOV-in-YDj" secondAttribute="trailing" id="gsI-bz-N6e"/>
-                                    <constraint firstItem="AOV-in-YDj" firstAttribute="leading" secondItem="HJH-3s-3iJ" secondAttribute="leading" constant="16" id="k5C-C5-xQ3"/>
+                                    <constraint firstItem="AOV-in-YDj" firstAttribute="leading" secondItem="HJH-3s-3iJ" secondAttribute="leading" constant="8" id="k5C-C5-xQ3"/>
                                     <constraint firstItem="3k5-yU-0ch" firstAttribute="centerY" secondItem="HJH-3s-3iJ" secondAttribute="centerY" id="nHj-hv-ZSX"/>
                                     <constraint firstItem="Cay-Bm-flT" firstAttribute="leading" secondItem="3k5-yU-0ch" secondAttribute="trailing" id="r6L-a7-G4G"/>
                                     <constraint firstItem="3k5-yU-0ch" firstAttribute="leading" secondItem="AOV-in-YDj" secondAttribute="trailing" id="ulw-Fr-J5K"/>

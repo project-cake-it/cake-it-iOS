@@ -24,6 +24,7 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   @IBOutlet weak var scrollView: UIScrollView!
+  @IBOutlet var navigationBarTitleLabel: UILabel!
   @IBOutlet weak var shopNameLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var savedButton: UIButton!
@@ -72,8 +73,8 @@ final class ShopDetailViewController: BaseViewController {
     }
   }
   private var cakeShop: CakeShop?
-  private var canContactShopButtonMove = false
-  private var isScrollDirectionDown = false
+  var canContactShopButtonMove = false
+  var isScrollDirectionDown = false
   
   private let MAP_ZOOM_LEVEL_DEFAULT: Int32 = 0
   private let MAP_CONNECT_URL_STRING = "kakaomap://place?id="
@@ -243,6 +244,7 @@ extension ShopDetailViewController {
   private func updateDetail() {
     guard let cakeShop = self.cakeShop else { return }
     
+    navigationBarTitleLabel.text = cakeShop.name
     shopNameLabel.text = cakeShop.name
     addressLabel.text = cakeShop.fullAddress
     
@@ -345,18 +347,6 @@ extension ShopDetailViewController {
   }
 }
 
-// MARK: - UIScrollViewDelegate
-
-extension ShopDetailViewController: UIScrollViewDelegate {
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    let canContactShopButtonMoveThreshold: CGFloat = 156
-    canContactShopButtonMove = scrollView.contentOffset.y >= canContactShopButtonMoveThreshold
-    if canContactShopButtonMove && isScrollDirectionDown {
-      hideContactShopButton()
-    }
-  }
-}
-
 // MARK: - UIGestureRecognizerDelegate
 
 extension ShopDetailViewController: UIGestureRecognizerDelegate {
@@ -372,6 +362,7 @@ extension ShopDetailViewController: UIGestureRecognizerDelegate {
 extension ShopDetailViewController {
   private func configure() {
     configureViews()
+    configureNavigationBarTitleLabel()
     configureCakeDesignCollectionView()
     configureContactShopButton()
     configurePanGesture()
@@ -386,6 +377,11 @@ extension ShopDetailViewController {
                                                       action: #selector(handlePanGesture(_ :)))
     panGestureRecognizer.delegate = self
     self.view.addGestureRecognizer(panGestureRecognizer)
+  }
+  
+  private func configureNavigationBarTitleLabel() {
+    navigationBarTitleLabel.text = ""
+    navigationBarTitleLabel.alpha = 0
   }
   
   @objc private func handlePanGesture(_ sender : UIPanGestureRecognizer) {
@@ -424,7 +420,7 @@ extension ShopDetailViewController {
     }
   }
   
-  private func hideContactShopButton() {
+  func hideContactShopButton() {
     guard canContactShopButtonMove, contactShopButton.displayState != .hidden else { return }
     contactShopButtonBottomConstraint.constant = Metric.contactShopButtonBottomSpaceHidden
     UIView.animate(withDuration: 0.5,
