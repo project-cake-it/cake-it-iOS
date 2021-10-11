@@ -34,7 +34,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baD-vI-coZ" userLabel="FindAsTheme View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1051"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1077"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테마로 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEK-fL-o0e">
                                                 <rect key="frame" x="20" y="446" width="87" height="22"/>
@@ -76,13 +76,13 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 핫한 케이크!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-CW-P6I">
-                                                <rect key="frame" x="20" y="630" width="131" height="22"/>
+                                                <rect key="frame" x="20" y="656" width="131" height="22"/>
                                                 <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="18"/>
                                                 <color key="textColor" name="black"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3KC-PB-ssE">
-                                                <rect key="frame" x="0.0" y="676" width="414" height="375"/>
+                                                <rect key="frame" x="0.0" y="702" width="414" height="375"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="375" id="Qzb-0d-VOe"/>
@@ -139,7 +139,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="9ma-CW-P6I" firstAttribute="top" secondItem="5HL-th-Thr" secondAttribute="bottom" constant="30" id="39o-pZ-9HC"/>
+                                            <constraint firstItem="9ma-CW-P6I" firstAttribute="top" secondItem="5HL-th-Thr" secondAttribute="bottom" constant="56" id="39o-pZ-9HC"/>
                                             <constraint firstItem="dEK-fL-o0e" firstAttribute="leading" secondItem="baD-vI-coZ" secondAttribute="leading" constant="20" id="9Ua-gl-pvG"/>
                                             <constraint firstItem="5HL-th-Thr" firstAttribute="top" secondItem="dEK-fL-o0e" secondAttribute="bottom" constant="24" id="DjA-RC-aUy"/>
                                             <constraint firstItem="nmw-eJ-YcA" firstAttribute="top" secondItem="baD-vI-coZ" secondAttribute="top" id="F9U-gI-kJz"/>
