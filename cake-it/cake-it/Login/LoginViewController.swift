@@ -20,7 +20,6 @@ final class LoginViewController: UIViewController {
   @IBOutlet var kakaoLoginButton: UIButton!
   @IBOutlet var googleLoginButton: UIButton!
   @IBOutlet var appleLoginButton: UIButton!
-  @IBOutlet var titleLabel: UILabel!
   
   private var viewModel: LoginViewModel?
   weak var delegate: LoginViewcontrollerDelegate?
@@ -108,11 +107,6 @@ final class LoginViewController: UIViewController {
     appleLoginButton.layer.cornerRadius = loginButtonRadius
     
     googleLoginButton.layer.borderWidth = 1
-    googleLoginButton.layer.borderColor = Colors.grayscale02.cgColor
-    
-    //Label
-    let attributedString = NSMutableAttributedString(string: Constants.LOGIN_TITLE)
-    attributedString.addAttribute(.foregroundColor, value: Colors.primaryColor, range: (Constants.LOGIN_TITLE as NSString).range(of: "달콤한"))
-    titleLabel.attributedText = attributedString
+    googleLoginButton.layer.borderColor = Colors.grayscale02.cgColor    
   }
 }

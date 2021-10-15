@@ -69,6 +69,8 @@
 		<string>SpoqaHanSansNeo-Medium.otf</string>
 		<string>SpoqaHanSansNeo-Light.otf</string>
 		<string>SpoqaHanSansNeo-Bold.otf</string>
+		<string>GlacialIndifference-Regular</string>
+		<string>GlacialIndifference-Bold.otf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>

@@ -176,6 +176,8 @@
 		F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71419632674B75400C6E5EE /* Dictionary+Utils.swift */; };
 		F71F331D266290DC00E2E19E /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F331C266290DC00E2E19E /* FilterManager.swift */; };
 		F73515C42719B3EE002EA6F8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73515C32719B3EE002EA6F8 /* Login.storyboard */; };
+		F73515C72719C50A002EA6F8 /* GlacialIndifference-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F73515C52719C50A002EA6F8 /* GlacialIndifference-Bold.otf */; };
+		F73515C82719C50A002EA6F8 /* GlacialIndifference-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F73515C62719C50A002EA6F8 /* GlacialIndifference-Regular.otf */; };
 		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
 		F742608626C007BE00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742608226C007BD00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift */; };
 		F742608726C007BE00BBF2E7 /* FilterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F742608326C007BD00BBF2E7 /* FilterDetailViewController.xib */; };
@@ -396,6 +398,8 @@
 		F71419632674B75400C6E5EE /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
 		F71F331C266290DC00E2E19E /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		F73515C32719B3EE002EA6F8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		F73515C52719C50A002EA6F8 /* GlacialIndifference-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Bold.otf"; sourceTree = "<group>"; };
+		F73515C62719C50A002EA6F8 /* GlacialIndifference-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Regular.otf"; sourceTree = "<group>"; };
 		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
 		F742608226C007BD00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FilterDetailViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		F742608326C007BD00BBF2E7 /* FilterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterDetailViewController.xib; sourceTree = "<group>"; };
@@ -839,6 +843,8 @@
 		8BEA0F27260CBE5A00743512 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				F73515C52719C50A002EA6F8 /* GlacialIndifference-Bold.otf */,
+				F73515C62719C50A002EA6F8 /* GlacialIndifference-Regular.otf */,
 				8B93B2E02610C9E80060ACAC /* SpoqaHanSansNeo-Bold.otf */,
 				8B93B2E32610C9E90060ACAC /* SpoqaHanSansNeo-Light.otf */,
 				8B93B2E42610C9E90060ACAC /* SpoqaHanSansNeo-Medium.otf */,
@@ -1191,12 +1197,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F73515C72719C50A002EA6F8 /* GlacialIndifference-Bold.otf in Resources */,
 				AC422A3126A08920006ACC20 /* map_pin@3x.png in Resources */,
 				AC422A4126A08920006ACC20 /* map_present_direction.png in Resources */,
 				AC422A4526A08920006ACC20 /* map_present.png in Resources */,
 				AC422A4326A08920006ACC20 /* map_pin.png in Resources */,
 				F742608726C007BE00BBF2E7 /* FilterDetailViewController.xib in Resources */,
 				F7A88748265A483200930932 /* FilterColorCell.xib in Resources */,
+				F73515C82719C50A002EA6F8 /* GlacialIndifference-Regular.otf in Resources */,
 				ACDD76ED269CA97300C62F24 /* terms.html in Resources */,
 				8BEA0F43260CD36000743512 /* CakeDesignCell.xib in Resources */,
 				ACDD76EE269CA97300C62F24 /* personalinfomation.html in Resources */,
