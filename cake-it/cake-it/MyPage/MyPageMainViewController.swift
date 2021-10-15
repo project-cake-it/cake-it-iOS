@@ -30,6 +30,12 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
     updateUserInfo()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    updateCellTitles()
+  }
+  
   // MARK: - private method
   
   private func configureMyPageTableView() {
