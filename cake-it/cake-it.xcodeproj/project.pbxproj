@@ -175,6 +175,7 @@
 		D7C14743F527AA676B781599 /* Pods_cake_it_cake_itUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD838ED07F97AFAABDAAA67 /* Pods_cake_it_cake_itUITests.framework */; };
 		F71419642674B75400C6E5EE /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71419632674B75400C6E5EE /* Dictionary+Utils.swift */; };
 		F71F331D266290DC00E2E19E /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71F331C266290DC00E2E19E /* FilterManager.swift */; };
+		F73515C42719B3EE002EA6F8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73515C32719B3EE002EA6F8 /* Login.storyboard */; };
 		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
 		F742608626C007BE00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742608226C007BD00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift */; };
 		F742608726C007BE00BBF2E7 /* FilterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F742608326C007BD00BBF2E7 /* FilterDetailViewController.xib */; };
@@ -394,6 +395,7 @@
 		ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F71419632674B75400C6E5EE /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
 		F71F331C266290DC00E2E19E /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
+		F73515C32719B3EE002EA6F8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
 		F742608226C007BD00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FilterDetailViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		F742608326C007BD00BBF2E7 /* FilterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterDetailViewController.xib; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				8B3AF14425DADFD700B9F48D /* Base */,
 				F774B92B25E0E0BF006EE0EC /* Network */,
 				38D8C73A25BC631900C1F10D /* Home */,
+				F73515C22719B3D4002EA6F8 /* Login */,
 				8B875CF425DAE602003D9CFA /* Search */,
 				8B875D0525DAE684003D9CFA /* Shops */,
 				8B875D1625DAE721003D9CFA /* Saved */,
@@ -534,7 +537,6 @@
 		38D8C73A25BC631900C1F10D /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				ACC16E6F262334240094D6D2 /* Login */,
 				F73B6D502635B1000043CF89 /* DesignDetail */,
 				8B62C3112600F670005F599A /* DesignList */,
 				8B3AF14525DAE16A00B9F48D /* Home.storyboard */,
@@ -949,12 +951,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		ACC16E6F262334240094D6D2 /* Login */ = {
+		F73515C22719B3D4002EA6F8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				AC1BDC83260756DF0026F5FA /* LoginModel.swift */,
 				ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */,
 				AC94D3872614D10F004063DC /* LoginViewModel.swift */,
+				F73515C32719B3EE002EA6F8 /* Login.storyboard */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1203,6 +1206,7 @@
 				AC422A2926A08920006ACC20 /* copyright.png in Resources */,
 				AC422A1926A08920006ACC20 /* map_pinup_custom@3x.png in Resources */,
 				F759073B267F85C8000ECBD7 /* ThemeDetailView.xib in Resources */,
+				F73515C42719B3EE002EA6F8 /* Login.storyboard in Resources */,
 				F744C63227073FCA00D2689A /* GoogleService-Info.plist in Resources */,
 				F7A88743265A482800930932 /* FilterBasicCell.xib in Resources */,
 				AC422A3B26A08920006ACC20 /* map_pinup_custom.png in Resources */,
