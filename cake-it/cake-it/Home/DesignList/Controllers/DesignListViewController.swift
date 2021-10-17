@@ -176,9 +176,7 @@ extension DesignListViewController: SelectedFilterOptionCellDelegate {
     updateSelectedFilterOptionCollectionViewLayout()
     designsCollectionView.reloadData()
     selectedFilterOptionCollectionView.reloadData()
-    if key == "pickup" {
-      filterDetailVC?.selectedPickUpDate = nil
-    }
+    filterCategoryCollectionView.reloadData()
     fetchCakeDesigns()
   }
 }
