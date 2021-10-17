@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -170,6 +171,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="t6n-zZ-I3N"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Iax-SZ-VDf" firstAttribute="centerX" secondItem="Ej7-23-J1C" secondAttribute="centerX" id="0Y0-TZ-nDc"/>
@@ -198,6 +200,7 @@
                     </view>
                     <connections>
                         <outlet property="appleLoginButton" destination="bKW-9A-jsy" id="1Gz-EE-Sm4"/>
+                        <outlet property="backgroundImageView" destination="DJT-6H-ZvN" id="bKi-2i-zks"/>
                         <outlet property="googleLoginButton" destination="0m2-Ux-JSt" id="60Q-Bo-hZu"/>
                         <outlet property="kakaoLoginButton" destination="k9a-25-QOT" id="gTH-57-QHb"/>
                         <outlet property="naverLoginButton" destination="Vf9-jO-Zzj" id="RbR-gX-lAM"/>

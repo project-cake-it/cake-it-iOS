@@ -16,6 +16,7 @@ final class LoginViewController: UIViewController {
   static let id = "loginViewController"
   let loginButtonRadius: CGFloat = 26
   
+  @IBOutlet var backgroundImageView: UIImageView!
   @IBOutlet var naverLoginButton: UIButton!
   @IBOutlet var kakaoLoginButton: UIButton!
   @IBOutlet var googleLoginButton: UIButton!
@@ -107,6 +108,10 @@ final class LoginViewController: UIViewController {
     appleLoginButton.layer.cornerRadius = loginButtonRadius
     
     googleLoginButton.layer.borderWidth = 1
-    googleLoginButton.layer.borderColor = Colors.grayscale02.cgColor    
+    googleLoginButton.layer.borderColor = Colors.grayscale02.cgColor
+    
+    if let backgroundImage = LoginBackground.randomBackground() {
+      backgroundImageView.image = backgroundImage
+    }
   }
 }

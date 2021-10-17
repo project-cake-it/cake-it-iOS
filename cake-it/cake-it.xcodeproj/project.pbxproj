@@ -178,6 +178,7 @@
 		F73515C42719B3EE002EA6F8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F73515C32719B3EE002EA6F8 /* Login.storyboard */; };
 		F73515C72719C50A002EA6F8 /* GlacialIndifference-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F73515C52719C50A002EA6F8 /* GlacialIndifference-Bold.otf */; };
 		F73515C82719C50A002EA6F8 /* GlacialIndifference-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F73515C62719C50A002EA6F8 /* GlacialIndifference-Regular.otf */; };
+		F73ACE68271C77E50015FA8A /* LoginBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73ACE67271C77E50015FA8A /* LoginBackground.swift */; };
 		F73B6D132635AEC50043CF89 /* FilterCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B6D052635AEC50043CF89 /* FilterCommon.swift */; };
 		F742608626C007BE00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F742608226C007BD00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift */; };
 		F742608726C007BE00BBF2E7 /* FilterDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F742608326C007BD00BBF2E7 /* FilterDetailViewController.xib */; };
@@ -400,6 +401,7 @@
 		F73515C32719B3EE002EA6F8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		F73515C52719C50A002EA6F8 /* GlacialIndifference-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Bold.otf"; sourceTree = "<group>"; };
 		F73515C62719C50A002EA6F8 /* GlacialIndifference-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GlacialIndifference-Regular.otf"; sourceTree = "<group>"; };
+		F73ACE67271C77E50015FA8A /* LoginBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBackground.swift; sourceTree = "<group>"; };
 		F73B6D052635AEC50043CF89 /* FilterCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCommon.swift; sourceTree = "<group>"; };
 		F742608226C007BD00BBF2E7 /* FilterDetailViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FilterDetailViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		F742608326C007BD00BBF2E7 /* FilterDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterDetailViewController.xib; sourceTree = "<group>"; };
@@ -960,6 +962,7 @@
 		F73515C22719B3D4002EA6F8 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				F73ACE67271C77E50015FA8A /* LoginBackground.swift */,
 				AC1BDC83260756DF0026F5FA /* LoginModel.swift */,
 				ACE7B36425E3EE6B0045E489 /* LoginViewController.swift */,
 				AC94D3872614D10F004063DC /* LoginViewModel.swift */,
@@ -1549,6 +1552,7 @@
 				AC52DE692699E70400718332 /* MyPageViewModel.swift in Sources */,
 				AC94D3882614D10F004063DC /* LoginViewModel.swift in Sources */,
 				F742608826C007BE00BBF2E7 /* FilterDetailViewController+UITableViewDataSource.swift in Sources */,
+				F73ACE68271C77E50015FA8A /* LoginBackground.swift in Sources */,
 				8B93B2D92610C3160060ACAC /* Colors.swift in Sources */,
 				F7A88752265A486B00930932 /* BaseFilterCell.swift in Sources */,
 				8BFE3CFE26EE78AE00DDA60D /* FilterDetailViewController+UICollectionViewDelegate.swift in Sources */,
