@@ -424,7 +424,8 @@ extension DesignDetailViewController {
   }
   
   private func moveToLoginPage() {
-    if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) as? LoginViewController{
+    let storyboard = UIStoryboard(name: "Login", bundle: nil)
+    if let loginViewController = storyboard.instantiateViewController(withIdentifier: LoginViewController.id) as? LoginViewController{
       loginViewController.modalPresentationStyle = .overFullScreen
       loginViewController.delegate = self
       present(loginViewController, animated: true, completion: nil)

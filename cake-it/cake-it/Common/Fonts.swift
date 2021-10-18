@@ -19,8 +19,15 @@ enum Fonts {
       return self.rawValue
     }
   }
-  
+
   static func spoqaHanSans(weight: Weight, size: CGFloat) -> UIFont {
     return UIFont(name: "SpoqaHanSansNeo-\(weight)", size: size)!
+  }
+  
+  static func glacialIndifference(weight: Weight, size: CGFloat) -> UIFont {
+    if weight != .Regular || weight != .Bold {
+      return UIFont(name: "GlacialIndifference-Regular", size: size)!
+    }
+    return UIFont(name: "GlacialIndifference-\(weight)", size: size)!
   }
 }

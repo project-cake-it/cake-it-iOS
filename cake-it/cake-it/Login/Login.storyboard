@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="GlacialIndifference-Regular.otf">
+            <string>GlacialIndifference-Regular</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Bold.otf">
+            <string>SpoqaHanSansNeo-Bold</string>
+        </array>
+        <array key="SpoqaHanSansNeo-Medium.otf">
+            <string>SpoqaHanSansNeo-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="jv4-Xq-NLM">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" id="qfG-nC-baA" customClass="LoginViewController" customModule="cake_it" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="azs-Rm-y2h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBackground01" translatesAutoresizingMaskIntoConstraints="NO" id="DJT-6H-ZvN">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLoginIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Ej7-23-J1C">
+                                <rect key="frame" x="184.5" y="124" width="45" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="9tu-Ug-42I"/>
+                                    <constraint firstAttribute="width" constant="45" id="Fge-J5-FDD"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마음을 전하는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iax-SZ-VDf">
+                                <rect key="frame" x="149.5" y="186" width="115" height="24"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
+                                <color key="textColor" name="white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가장 달콤한 방법" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyG-DO-6hY">
+                                <rect key="frame" x="138" y="215" width="138" height="24"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Bold" family="Spoqa Han Sans Neo" pointSize="20"/>
+                                <color key="textColor" name="white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cake'it" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQw-We-NIE">
+                                <rect key="frame" x="137.5" y="248" width="139.5" height="60"/>
+                                <fontDescription key="fontDescription" name="GlacialIndifference-Regular" family="Glacial Indifference" pointSize="50"/>
+                                <color key="textColor" name="white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="특별함을 선물해보세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lhA-bn-7ow">
+                                <rect key="frame" x="104.5" y="547.5" width="205.5" height="25.5"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="21"/>
+                                <color key="textColor" name="white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인하고 시작하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRO-LL-hhN">
+                                <rect key="frame" x="151.5" y="582" width="111" height="16"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSansNeo-Medium" family="Spoqa Han Sans Neo" pointSize="13"/>
+                                <color key="textColor" name="white"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qgG-Dy-lvh">
+                                <rect key="frame" x="48" y="638" width="318" height="52"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vf9-jO-Zzj">
+                                        <rect key="frame" x="0.0" y="0.0" width="52" height="52"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="HGM-BX-bBP"/>
+                                            <constraint firstAttribute="height" constant="52" id="gaN-Pg-Hri"/>
+                                        </constraints>
+                                        <state key="normal" image="icLoginNaver">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInWithNaverButtonDidTap:" destination="qfG-nC-baA" eventType="touchUpInside" id="iBP-eN-McH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9a-25-QOT">
+                                        <rect key="frame" x="88.5" y="0.0" width="52" height="52"/>
+                                        <color key="backgroundColor" red="0.99607843139999996" green="0.8980392157" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="WPB-6p-iD3"/>
+                                            <constraint firstAttribute="height" constant="52" id="lIF-Zo-Qiv"/>
+                                        </constraints>
+                                        <state key="normal" image="icLoginKakao">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInWithKakaoButtonDidTap:" destination="qfG-nC-baA" eventType="touchUpInside" id="gY9-nc-6JM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0m2-Ux-JSt">
+                                        <rect key="frame" x="177.5" y="0.0" width="52" height="52"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="2U3-h9-fEC"/>
+                                            <constraint firstAttribute="height" constant="52" id="lv0-G9-hf4"/>
+                                        </constraints>
+                                        <state key="normal" image="icLoginGoogle">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInWithGoogleButtonDidTap:" destination="qfG-nC-baA" eventType="touchUpInside" id="gEK-xx-wQw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKW-9A-jsy">
+                                        <rect key="frame" x="266" y="0.0" width="52" height="52"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="W3c-eD-zZh"/>
+                                            <constraint firstAttribute="height" constant="52" id="vlO-Sa-kcD"/>
+                                        </constraints>
+                                        <state key="normal" image="icLoginApple">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="signInWithAppleButtonDidTap:" destination="qfG-nC-baA" eventType="touchUpInside" id="jzp-c2-px1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="PHb-12-Ust"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr5-7F-81d" userLabel="Close View">
+                                <rect key="frame" x="157" y="742" width="100" height="19"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-Nf-Sgm" userLabel="Close Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="19"/>
+                                        <connections>
+                                            <action selector="closeButtonForTestDidTap:" destination="qfG-nC-baA" eventType="touchUpInside" id="jGF-FV-vyg"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="먼저 둘러볼게요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FG1-6w-ExI" userLabel="먼저 둘러볼게요">
+                                        <rect key="frame" x="-3.5" y="-0.5" width="107.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="white"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UA2-L0-z63" userLabel="Line View">
+                                        <rect key="frame" x="-3.5" y="20" width="107.5" height="1"/>
+                                        <color key="backgroundColor" name="white"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="ejx-zG-R9W"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="UA2-L0-z63" firstAttribute="centerX" secondItem="FG1-6w-ExI" secondAttribute="centerX" id="96n-f9-fcc"/>
+                                    <constraint firstItem="Y8W-Nf-Sgm" firstAttribute="leading" secondItem="kr5-7F-81d" secondAttribute="leading" id="9pF-ST-cP3"/>
+                                    <constraint firstItem="Y8W-Nf-Sgm" firstAttribute="top" secondItem="kr5-7F-81d" secondAttribute="top" id="DIz-CY-Fdw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y8W-Nf-Sgm" secondAttribute="trailing" id="QuY-Mc-Psh"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y8W-Nf-Sgm" secondAttribute="bottom" id="SO3-2t-rUH"/>
+                                    <constraint firstAttribute="width" secondItem="FG1-6w-ExI" secondAttribute="width" multiplier="0.925926" id="Uuy-nC-P7q"/>
+                                    <constraint firstAttribute="height" constant="19" id="aFi-6X-6rA"/>
+                                    <constraint firstItem="UA2-L0-z63" firstAttribute="top" secondItem="FG1-6w-ExI" secondAttribute="bottom" id="hVq-bV-XaI"/>
+                                    <constraint firstItem="FG1-6w-ExI" firstAttribute="centerX" secondItem="kr5-7F-81d" secondAttribute="centerX" id="rS6-ws-gcQ"/>
+                                    <constraint firstItem="FG1-6w-ExI" firstAttribute="centerY" secondItem="kr5-7F-81d" secondAttribute="centerY" id="woz-lM-I5Q"/>
+                                    <constraint firstItem="UA2-L0-z63" firstAttribute="width" secondItem="FG1-6w-ExI" secondAttribute="width" id="zYn-wB-HFS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t6n-zZ-I3N"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Iax-SZ-VDf" firstAttribute="centerX" secondItem="Ej7-23-J1C" secondAttribute="centerX" id="0Y0-TZ-nDc"/>
+                            <constraint firstItem="DyG-DO-6hY" firstAttribute="top" secondItem="Iax-SZ-VDf" secondAttribute="bottom" constant="5" id="2AJ-zi-IX6"/>
+                            <constraint firstItem="Ej7-23-J1C" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="7fP-7R-hlM"/>
+                            <constraint firstItem="Ej7-23-J1C" firstAttribute="top" secondItem="azs-Rm-y2h" secondAttribute="top" constant="124" id="CMv-Px-4cc"/>
+                            <constraint firstItem="kr5-7F-81d" firstAttribute="top" secondItem="qgG-Dy-lvh" secondAttribute="bottom" constant="52" id="FDh-Ol-ThR"/>
+                            <constraint firstItem="qRO-LL-hhN" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="GGq-Nv-Dn1"/>
+                            <constraint firstItem="qRO-LL-hhN" firstAttribute="top" secondItem="lhA-bn-7ow" secondAttribute="bottom" constant="9" id="IIY-gf-GWy"/>
+                            <constraint firstItem="qgG-Dy-lvh" firstAttribute="top" secondItem="qRO-LL-hhN" secondAttribute="bottom" constant="40" id="ONg-st-sKR"/>
+                            <constraint firstAttribute="trailing" secondItem="DJT-6H-ZvN" secondAttribute="trailing" id="OUV-eL-ugW"/>
+                            <constraint firstItem="qgG-Dy-lvh" firstAttribute="leading" secondItem="azs-Rm-y2h" secondAttribute="leading" constant="48" id="Pbh-iX-7Dp"/>
+                            <constraint firstItem="aQw-We-NIE" firstAttribute="top" secondItem="DyG-DO-6hY" secondAttribute="bottom" constant="9" id="Q2P-a6-dfu"/>
+                            <constraint firstAttribute="trailing" secondItem="qgG-Dy-lvh" secondAttribute="trailing" constant="48" id="SG7-Gp-HXG"/>
+                            <constraint firstItem="lhA-bn-7ow" firstAttribute="top" relation="greaterThanOrEqual" secondItem="aQw-We-NIE" secondAttribute="bottom" constant="10" id="VEe-ax-JTb"/>
+                            <constraint firstItem="kr5-7F-81d" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="Y6R-ST-j9i"/>
+                            <constraint firstItem="DJT-6H-ZvN" firstAttribute="leading" secondItem="azs-Rm-y2h" secondAttribute="leading" id="aIu-zO-ino"/>
+                            <constraint firstAttribute="top" secondItem="DJT-6H-ZvN" secondAttribute="top" id="g7q-Aw-iIN"/>
+                            <constraint firstAttribute="bottom" secondItem="kr5-7F-81d" secondAttribute="bottom" constant="135" id="ghx-1M-jdZ"/>
+                            <constraint firstAttribute="bottom" secondItem="DJT-6H-ZvN" secondAttribute="bottom" id="hS0-dv-tNG"/>
+                            <constraint firstItem="lhA-bn-7ow" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="kdw-eo-mlA"/>
+                            <constraint firstItem="aQw-We-NIE" firstAttribute="centerX" secondItem="DyG-DO-6hY" secondAttribute="centerX" id="m2Q-1w-eCg"/>
+                            <constraint firstItem="Iax-SZ-VDf" firstAttribute="top" secondItem="Ej7-23-J1C" secondAttribute="bottom" constant="25" id="tK0-om-Ws0"/>
+                            <constraint firstItem="DyG-DO-6hY" firstAttribute="centerX" secondItem="Iax-SZ-VDf" secondAttribute="centerX" id="zUf-7v-FTo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="appleLoginButton" destination="bKW-9A-jsy" id="1Gz-EE-Sm4"/>
+                        <outlet property="backgroundImageView" destination="DJT-6H-ZvN" id="bKi-2i-zks"/>
+                        <outlet property="googleLoginButton" destination="0m2-Ux-JSt" id="60Q-Bo-hZu"/>
+                        <outlet property="kakaoLoginButton" destination="k9a-25-QOT" id="gTH-57-QHb"/>
+                        <outlet property="naverLoginButton" destination="Vf9-jO-Zzj" id="RbR-gX-lAM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5JZ-Vy-P0d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1214.4927536231885" y="40.848214285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icLoginApple" width="34" height="38"/>
+        <image name="icLoginGoogle" width="34" height="38"/>
+        <image name="icLoginIcon" width="46" height="38"/>
+        <image name="icLoginKakao" width="34" height="38"/>
+        <image name="icLoginNaver" width="210" height="210"/>
+        <image name="loginBackground01" width="1712" height="3704"/>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -30,6 +30,12 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
     updateUserInfo()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    updateCellTitles()
+  }
+  
   // MARK: - private method
   
   private func configureMyPageTableView() {
@@ -76,7 +82,7 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
       alert.addAction(cancelAction)
       self.present(alert, animated: true, completion: nil)
     } else {
-      let storyboard = UIStoryboard(name: "Home", bundle: nil)
+      let storyboard = UIStoryboard(name: "Login", bundle: nil)
       let loginVC = storyboard.instantiateViewController(withIdentifier: LoginViewController.id) as! LoginViewController
       loginVC.modalPresentationStyle = .overFullScreen
       loginVC.delegate = self

@@ -191,7 +191,8 @@ final class HomeViewController: UIViewController {
 extension HomeViewController {
   private func checkLogin() {
     if !LoginManager.shared.verifyAccessToken() {
-      if let loginViewController = storyboard?.instantiateViewController(withIdentifier: LoginViewController.id) as? LoginViewController {
+      let storyboard = UIStoryboard(name: "Login", bundle: nil)
+      if let loginViewController = storyboard.instantiateViewController(withIdentifier: LoginViewController.id) as? LoginViewController {
         loginViewController.modalPresentationStyle = .overFullScreen
         present(loginViewController, animated: true, completion: nil)
         loginViewController.delegate = self
