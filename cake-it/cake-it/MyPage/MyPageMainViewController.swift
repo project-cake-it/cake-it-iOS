@@ -8,7 +8,7 @@
 import UIKit
 import SafariServices
 
-final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDelegate {
+final class MyPageMainViewController: BaseViewController, LoginViewControllerDelegate {
   
   @IBOutlet var myPageMessageViewHeight: NSLayoutConstraint!
   @IBOutlet weak var myPageMessageLabel: UILabel!
@@ -91,7 +91,7 @@ final class MyPageMainViewController: BaseViewController, LoginViewcontrollerDel
   }
   
   // MARK: - delegate
-  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool) {
+  func loginViewController(didFinishLogIn viewController: LoginViewController, _ success: Bool) {
     if success {
       viewController.dismiss(animated: true) {
         self.updateCellTitles()

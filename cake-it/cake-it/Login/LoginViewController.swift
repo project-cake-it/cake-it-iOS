@@ -7,8 +7,8 @@
 
 import UIKit
 
-protocol LoginViewcontrollerDelegate : AnyObject {
-  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool)
+protocol LoginViewControllerDelegate: AnyObject {
+  func loginViewController(didFinishLogIn viewController: LoginViewController, _ success: Bool)
 }
 
 final class LoginViewController: UIViewController {
@@ -26,7 +26,7 @@ final class LoginViewController: UIViewController {
   @IBOutlet var appleLoginButton: UIButton!
   
   private var viewModel: LoginViewModel?
-  weak var delegate: LoginViewcontrollerDelegate?
+  weak var delegate: LoginViewControllerDelegate?
   
   private var shuffledIndex: [Int] = []
   private var currentImageIndex = 0
@@ -52,7 +52,7 @@ final class LoginViewController: UIViewController {
   private func finishLogin(success: Bool) {
     if success {
       closeLoginViewController()
-      delegate?.loginDidFinish(self, true)
+      delegate?.loginViewController(didFinishLogIn: self, true)
     } else {
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
                                     message: Constants.LOGIN_ALERT_FAIL_MESSAGE,
@@ -66,7 +66,7 @@ final class LoginViewController: UIViewController {
   private func finishLogin(success: Bool, error: Error?) {
     if success {
       closeLoginViewController()
-      delegate?.loginDidFinish(self, true)
+      delegate?.loginViewController(didFinishLogIn: self, true)
     } else {
       if error as? LoginError == LoginError.UserCancel {
         // 로그인 중 user cancel인 경우 alert을 띄우지 않는다.
