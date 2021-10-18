@@ -80,7 +80,6 @@ final class DesignDetailViewController: BaseViewController {
         }
       case .failure(_):
         DispatchQueue.main.async {
-          self.dismissLoadingBlockView()
           let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
                                                   message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
                                                   preferredStyle: .alert)
@@ -133,11 +132,22 @@ final class DesignDetailViewController: BaseViewController {
           let url = TalkApi.shared.makeUrlForChannelChat(channelPublicId: String(shopIdentifier)) else {
       return
     }
-    if UIApplication.shared.canOpenURL(url) {
-      UIApplication.shared.open(url, options: [:], completionHandler: nil)
-    } else {
-      // TODO: 에러 처리
+    
+    let alertController = UIAlertController(
+      title: "케이크 가게와 주문 상담을 시작할까요?",
+      message: "카카오톡 채널 앱으로 이동해요!",
+      preferredStyle: .actionSheet)
+    let okAction = UIAlertAction(title: "예", style: .default) { _ in
+      if UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      } else {
+        // TODO: 에러 처리
+      }
     }
+    let closeAction = UIAlertAction(title: "아니요", style: .cancel, handler: nil)
+    alertController.addAction(okAction)
+    alertController.addAction(closeAction)
+    present(alertController, animated: true, completion: nil)
   }
   
   private func hideTabBar() {
