@@ -45,6 +45,18 @@ final class LoginViewController: UIViewController {
   }
   
   //MARK: - Private method
+  @objc private func changeImage() {
+    currentImageIndex += 1
+    if currentImageIndex >= numberOfImages  { currentImageIndex = 0 }
+    let index = shuffledIndex[currentImageIndex]
+    UIView.transition(with: self.backgroundImageView,
+                      duration: imageTransitionAnimationTime,
+                      options: .transitionCrossDissolve,
+                      animations: { [weak self] in
+                        self?.backgroundImageView.image = self?.cakeImage(by: index)
+                      })
+  }
+  
   private func closeLoginViewController() {
     dismiss(animated: true, completion: nil)
   }
@@ -149,18 +161,6 @@ extension LoginViewController {
       userInfo: nil,
       repeats: true)
     RunLoop.main.add(timer, forMode: .common)
-  }
-  
-  @objc private func changeImage() {
-    currentImageIndex += 1
-    if currentImageIndex >= numberOfImages  { currentImageIndex = 0 }
-    let index = shuffledIndex[currentImageIndex]
-    UIView.transition(with: self.backgroundImageView,
-                      duration: imageTransitionAnimationTime,
-                      options: .transitionCrossDissolve,
-                      animations: { [weak self] in
-                        self?.backgroundImageView.image = self?.cakeImage(by: index)
-                      })
   }
   
   private func cakeImage(by index: Int) -> UIImage? {
