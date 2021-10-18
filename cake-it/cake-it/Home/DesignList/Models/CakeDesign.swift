@@ -20,6 +20,7 @@ struct CakeDesign: Codable {
   let shopAddress: String
   let shopFullAddress: String
   let sizes: [DesignSizeInfo]
+  let orderAvailabilityDates: [String]
   let creamNames: String
   let sheetNames: String
   let shopChannel: String

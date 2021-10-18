@@ -121,7 +121,7 @@ final class DesignDetailViewController: BaseViewController {
   
   @IBAction func orderAvailableDateButtonDidTap(_ sender: Any) {
     // TODO: -> 케이크 디자인 리스트에서 주문 가능 날짜 배열로 변경
-    let availableDates: [String] = []
+    let availableDates = cakeDesign?.orderAvailabilityDates ?? []
     let dateViewController = CakeOrderAvailableDateViewController(availableDates: availableDates)
     dateViewController.modalPresentationStyle = .overFullScreen
     present(dateViewController, animated: false)
