@@ -23,8 +23,6 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>kakaomap</string>
-				<string>kakao</string>
 				<string>com.googleusercontent.apps.911891330500-qis1f628hh0oqdbnoj597cfgkgqnk9r4</string>
 				<string>kakao336e5fa0e2a8c916ffda94b2b64f5c8d</string>
 			</array>
@@ -48,6 +46,7 @@
 	<string>336e5fa0e2a8c916ffda94b2b64f5c8d</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>kakaomap</string>
 		<string>kakaokompassauth</string>
 		<string>kakaolink</string>
 		<string>naversearchapp</string>
