@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DebuggingViewController" customModule="cake_it" customModuleProvider="target">
+            <connections>
+                <outlet property="responseLabel" destination="puT-Id-i9K" id="MWo-IU-WRq"/>
+                <outlet property="userTokenLabel" destination="mo0-IU-iej" id="8kc-7I-MPz"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="로그인 토큰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W89-l6-fji">
+                    <rect key="frame" x="20" y="64" width="100" height="26.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="users API 응답" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IkH-5c-dk5">
+                    <rect key="frame" x="20" y="171" width="140" height="26.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="response" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="puT-Id-i9K">
+                    <rect key="frame" x="20" y="207.5" width="374" height="20.5"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Token" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mo0-IU-iej">
+                    <rect key="frame" x="20" y="100.5" width="374" height="20.5"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="puT-Id-i9K" secondAttribute="trailing" constant="20" id="1BB-zQ-YmJ"/>
+                <constraint firstItem="mo0-IU-iej" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ci1-FK-MfK"/>
+                <constraint firstItem="puT-Id-i9K" firstAttribute="top" secondItem="IkH-5c-dk5" secondAttribute="bottom" constant="10" id="KPW-9V-hyp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mo0-IU-iej" secondAttribute="trailing" constant="20" id="ThK-w4-EQh"/>
+                <constraint firstItem="W89-l6-fji" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="V7F-wm-kry"/>
+                <constraint firstItem="mo0-IU-iej" firstAttribute="top" secondItem="W89-l6-fji" secondAttribute="bottom" constant="10" id="grl-cg-qX9"/>
+                <constraint firstItem="IkH-5c-dk5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nBI-2w-XD4"/>
+                <constraint firstItem="IkH-5c-dk5" firstAttribute="top" secondItem="mo0-IU-iej" secondAttribute="bottom" constant="50" id="oIa-Wu-Bdv"/>
+                <constraint firstItem="puT-Id-i9K" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="voT-3d-gvg"/>
+                <constraint firstItem="W89-l6-fji" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="xY0-eI-Po2"/>
+            </constraints>
+            <point key="canvasLocation" x="18.840579710144929" y="75"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

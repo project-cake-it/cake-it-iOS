@@ -37,4 +37,10 @@ final class InfomationViewController: BaseViewController {
   @IBAction func backButtonDidTap(_ sender: Any) {
     navigationController?.popViewController(animated: true)
   }
+  
+  @IBAction func testButtonDidTap(_ sender: Any) {
+    let id = String(describing: DebuggingViewController.self)
+    let debugVC = DebuggingViewController(nibName: id, bundle: nil)
+    present(debugVC, animated: true, completion: nil)
+  }
 }
