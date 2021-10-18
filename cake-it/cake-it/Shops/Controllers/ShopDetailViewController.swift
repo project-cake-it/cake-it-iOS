@@ -111,7 +111,6 @@ final class ShopDetailViewController: BaseViewController {
         }
       case .failure(_):
         DispatchQueue.main.async {
-          self.dismissLoadingBlockView()
           let alertController = UIAlertController(title: Constants.ALERT_NETWORK_ERROR_TITLE,
                                                   message: Constants.ALERT_NETWORK_ERROR_MESSAGE,
                                                   preferredStyle: .alert)
