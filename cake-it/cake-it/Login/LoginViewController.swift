@@ -15,6 +15,9 @@ final class LoginViewController: UIViewController {
   
   static let id = "loginViewController"
   let loginButtonRadius: CGFloat = 26
+  let numberOfImages = 11
+  let imageTransitionTime: TimeInterval = 1.75
+  let imageTransitionAnimationTime: TimeInterval = 0.75
   
   @IBOutlet var backgroundImageView: UIImageView!
   @IBOutlet var naverLoginButton: UIButton!
@@ -25,12 +28,20 @@ final class LoginViewController: UIViewController {
   private var viewModel: LoginViewModel?
   weak var delegate: LoginViewcontrollerDelegate?
   
+  private var shuffledIndex: [Int] = []
+  private var currentImageIndex = 0
+  private var timer: Timer!
+  
   //MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
     viewModel = LoginViewModel(viewController: self)
-    configureUI()
+    configure()
+  }
+  
+  deinit {
+    timer = nil
   }
   
   //MARK: - Private method
@@ -98,20 +109,63 @@ final class LoginViewController: UIViewController {
       self.finishLogin(success: success, error: error)
     })
   }
+}
+
+// MARK: - Configuration
+
+extension LoginViewController {
+  private func configure() {
+    configureUI()
+    configureIndexes()
+    configureBackgroundImage()
+    configureTimer()
+  }
   
-  //MARK: - configuration
   private func configureUI() {
-    //Button
     naverLoginButton.layer.cornerRadius = loginButtonRadius
     kakaoLoginButton.layer.cornerRadius = loginButtonRadius
     googleLoginButton.layer.cornerRadius = loginButtonRadius
     appleLoginButton.layer.cornerRadius = loginButtonRadius
-    
     googleLoginButton.layer.borderWidth = 1
     googleLoginButton.layer.borderColor = Colors.grayscale02.cgColor
-    
-    if let backgroundImage = LoginBackground.randomBackground() {
-      backgroundImageView.image = backgroundImage
-    }
+  }
+  
+  private func configureIndexes() {
+    var indexes: [Int] = []
+    for i in 0..<numberOfImages { indexes.append(i) }
+    shuffledIndex = indexes.shuffled()
+  }
+  
+  private func configureBackgroundImage() {
+    let index = shuffledIndex[currentImageIndex]
+    backgroundImageView.image = cakeImage(by: index)
+  }
+  
+  private func configureTimer() {
+    timer = Timer.scheduledTimer(
+      timeInterval: imageTransitionTime,
+      target: self,
+      selector: #selector(changeImage),
+      userInfo: nil,
+      repeats: true)
+    RunLoop.main.add(timer, forMode: .common)
+  }
+  
+  @objc private func changeImage() {
+    currentImageIndex += 1
+    if currentImageIndex >= numberOfImages  { currentImageIndex = 0 }
+    let index = shuffledIndex[currentImageIndex]
+    UIView.transition(with: self.backgroundImageView,
+                      duration: imageTransitionAnimationTime,
+                      options: .transitionCrossDissolve,
+                      animations: { [weak self] in
+                        self?.backgroundImageView.image = self?.cakeImage(by: index)
+                      })
+  }
+  
+  private func cakeImage(by index: Int) -> UIImage? {
+    let strIndex = String(format: "%02d", index + 1)
+    let imageName = "loginBackground\(strIndex)"
+    return UIImage(named: imageName)
   }
 }
