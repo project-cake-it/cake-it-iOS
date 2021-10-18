@@ -217,6 +217,8 @@
 		F7B76D0A26B695510024674C /* UIView+Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B76D0926B695510024674C /* UIView+Toast.swift */; };
 		F7BF345C269C5AD2006CE344 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BF345B269C5AD2006CE344 /* SearchResult.swift */; };
 		F7CD313B266CCB7900C9A211 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CD313A266CCB7900C9A211 /* String+Utils.swift */; };
+		F7F09C65271DA65E00D4AE65 /* DebuggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F09C63271DA65E00D4AE65 /* DebuggingViewController.swift */; };
+		F7F09C66271DA65E00D4AE65 /* DebuggingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7F09C64271DA65E00D4AE65 /* DebuggingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -440,6 +442,8 @@
 		F7B76D0926B695510024674C /* UIView+Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Toast.swift"; sourceTree = "<group>"; };
 		F7BF345B269C5AD2006CE344 /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		F7CD313A266CCB7900C9A211 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		F7F09C63271DA65E00D4AE65 /* DebuggingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebuggingViewController.swift; sourceTree = "<group>"; };
+		F7F09C64271DA65E00D4AE65 /* DebuggingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DebuggingViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -763,6 +767,7 @@
 		8B875D2D25DAE7CD003D9CFA /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				F7F09C62271DA62300D4AE65 /* Debugging */,
 				AC52DE6A2699E7AF00718332 /* Models */,
 				8B875D2E25DAE836003D9CFA /* MyPage.storyboard */,
 				AC52DE682699E70400718332 /* MyPageViewModel.swift */,
@@ -1089,6 +1094,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F7F09C62271DA62300D4AE65 /* Debugging */ = {
+			isa = PBXGroup;
+			children = (
+				F7F09C63271DA65E00D4AE65 /* DebuggingViewController.swift */,
+				F7F09C64271DA65E00D4AE65 /* DebuggingViewController.xib */,
+			);
+			path = Debugging;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1257,6 +1271,7 @@
 				8B875D0A25DAE6B3003D9CFA /* Shops.storyboard in Resources */,
 				AC422A2D26A08920006ACC20 /* map_pin_red@3x.png in Resources */,
 				8B875CF625DAE61D003D9CFA /* Search.storyboard in Resources */,
+				F7F09C66271DA65E00D4AE65 /* DebuggingViewController.xib in Resources */,
 				AC422A4B26A08920006ACC20 /* daum_th_line.png in Resources */,
 				AC422A2B26A08920006ACC20 /* th_line.png in Resources */,
 				AC422A3F26A08920006ACC20 /* noimage256.png in Resources */,
@@ -1569,6 +1584,7 @@
 				8B1E00B326BFCA3500377E22 /* ShopDetailAvailableDateViewController+UICollectionViewDataSource.swift in Sources */,
 				F71F331D266290DC00E2E19E /* FilterManager.swift in Sources */,
 				F759073A267F85C8000ECBD7 /* ThemeDetailView+UITableViewDelegate.swift in Sources */,
+				F7F09C65271DA65E00D4AE65 /* DebuggingViewController.swift in Sources */,
 				AC9FD4C3263F0C9100A44862 /* ShopListSubViewController.swift in Sources */,
 				8B647B21262C52B1003FA732 /* PaddingLabel.swift in Sources */,
 				8B62C3142600FE10005F599A /* DesignListViewController.swift in Sources */,
