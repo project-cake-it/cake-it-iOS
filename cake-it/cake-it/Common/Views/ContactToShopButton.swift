@@ -9,11 +9,14 @@ import UIKit
 
 final class ContactToShopButton: UIButton {
   
+  static let title = "케이크 문의하기"
+  
   enum State {
     case floating
     case hidden
   }
   
+  @IBOutlet var buttonTitleLabel: UILabel!
   var displayState: State = .floating
   
   @IBOutlet var contentView: UIView!
@@ -42,6 +45,7 @@ extension ContactToShopButton {
     configureNib()
     configureUserInteractionEnabled()
     configureViews()
+    configureTitle()
   }
   
   private func configureNib() {
@@ -57,5 +61,9 @@ extension ContactToShopButton {
   
   private func configureViews() {
     round(cornerRadius: 8.0, clipsToBounds: true)
+  }
+  
+  private func configureTitle() {
+    buttonTitleLabel.text = Self.title
   }
 }

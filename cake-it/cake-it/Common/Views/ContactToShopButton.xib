@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ContactToShopButton" customModule="cake_it" customModuleProvider="target">
             <connections>
+                <outlet property="buttonTitleLabel" destination="OMA-wW-i82" id="Nho-AX-jc3"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="o1S-e5-6My"/>
             </connections>
         </placeholder>
