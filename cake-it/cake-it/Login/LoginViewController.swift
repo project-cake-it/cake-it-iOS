@@ -28,7 +28,7 @@ final class LoginViewController: UIViewController {
   private var viewModel: LoginViewModel?
   weak var delegate: LoginViewControllerDelegate?
   
-  private var shuffledIndex: [Int] = []
+  private var shuffledIndexes: [Int] = []
   private var currentImageIndex = 0
   private var timer: Timer!
   
@@ -48,7 +48,7 @@ final class LoginViewController: UIViewController {
   @objc private func changeImage() {
     currentImageIndex += 1
     if currentImageIndex >= numberOfImages  { currentImageIndex = 0 }
-    let index = shuffledIndex[currentImageIndex]
+    let index = shuffledIndexes[currentImageIndex]
     UIView.transition(with: self.backgroundImageView,
                       duration: imageTransitionAnimationTime,
                       options: .transitionCrossDissolve,
@@ -145,11 +145,11 @@ extension LoginViewController {
   private func configureIndexes() {
     var indexes: [Int] = []
     for i in 0..<numberOfImages { indexes.append(i) }
-    shuffledIndex = indexes.shuffled()
+    shuffledIndexes = indexes.shuffled()
   }
   
   private func configureBackgroundImage() {
-    let index = shuffledIndex[currentImageIndex]
+    let index = shuffledIndexes[currentImageIndex]
     backgroundImageView.image = cakeImage(by: index)
   }
   
