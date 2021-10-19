@@ -14,10 +14,10 @@ protocol LoginViewControllerDelegate: AnyObject {
 final class LoginViewController: UIViewController {
   
   static let id = "loginViewController"
-  let loginButtonRadius: CGFloat = 26
-  let numberOfImages = 11
-  let imageTransitionTime: TimeInterval = 1.75
-  let imageTransitionAnimationTime: TimeInterval = 0.75
+  private let loginButtonRadius: CGFloat = 26
+  private let numberOfImages = 11
+  private let imageTransitionTime: TimeInterval = 1.75
+  private let imageTransitionAnimationTime: TimeInterval = 0.75
   
   @IBOutlet var backgroundImageView: UIImageView!
   @IBOutlet var naverLoginButton: UIButton!
