@@ -177,7 +177,7 @@
                             <constraint firstItem="Iax-SZ-VDf" firstAttribute="centerX" secondItem="Ej7-23-J1C" secondAttribute="centerX" id="0Y0-TZ-nDc"/>
                             <constraint firstItem="DyG-DO-6hY" firstAttribute="top" secondItem="Iax-SZ-VDf" secondAttribute="bottom" constant="5" id="2AJ-zi-IX6"/>
                             <constraint firstItem="Ej7-23-J1C" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="7fP-7R-hlM"/>
-                            <constraint firstItem="Ej7-23-J1C" firstAttribute="top" secondItem="azs-Rm-y2h" secondAttribute="top" constant="124" id="CMv-Px-4cc"/>
+                            <constraint firstItem="Ej7-23-J1C" firstAttribute="top" secondItem="azs-Rm-y2h" secondAttribute="top" priority="750" constant="124" id="CMv-Px-4cc"/>
                             <constraint firstItem="kr5-7F-81d" firstAttribute="top" secondItem="qgG-Dy-lvh" secondAttribute="bottom" constant="52" id="FDh-Ol-ThR"/>
                             <constraint firstItem="qRO-LL-hhN" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="GGq-Nv-Dn1"/>
                             <constraint firstItem="qRO-LL-hhN" firstAttribute="top" secondItem="lhA-bn-7ow" secondAttribute="bottom" constant="9" id="IIY-gf-GWy"/>
@@ -190,7 +190,7 @@
                             <constraint firstItem="kr5-7F-81d" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="Y6R-ST-j9i"/>
                             <constraint firstItem="DJT-6H-ZvN" firstAttribute="leading" secondItem="azs-Rm-y2h" secondAttribute="leading" id="aIu-zO-ino"/>
                             <constraint firstAttribute="top" secondItem="DJT-6H-ZvN" secondAttribute="top" id="g7q-Aw-iIN"/>
-                            <constraint firstAttribute="bottom" secondItem="kr5-7F-81d" secondAttribute="bottom" constant="135" id="ghx-1M-jdZ"/>
+                            <constraint firstAttribute="bottom" secondItem="kr5-7F-81d" secondAttribute="bottom" priority="250" constant="135" id="ghx-1M-jdZ"/>
                             <constraint firstAttribute="bottom" secondItem="DJT-6H-ZvN" secondAttribute="bottom" id="hS0-dv-tNG"/>
                             <constraint firstItem="lhA-bn-7ow" firstAttribute="centerX" secondItem="azs-Rm-y2h" secondAttribute="centerX" id="kdw-eo-mlA"/>
                             <constraint firstItem="aQw-We-NIE" firstAttribute="centerX" secondItem="DyG-DO-6hY" secondAttribute="centerX" id="m2Q-1w-eCg"/>
