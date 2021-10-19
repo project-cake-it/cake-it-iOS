@@ -90,8 +90,4 @@ class TabBarController: UITabBarController {
       })
     }
   }
-  
-  override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-    AudioServicesPlayAlertSound(1519) // weak boom
-  }
 }
