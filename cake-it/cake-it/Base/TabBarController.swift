@@ -62,6 +62,7 @@ class TabBarController: UITabBarController {
   
   private func initUI() {
     tabBar.tintColor = Colors.primaryColor
+    tabBar.barTintColor = Colors.white
   }
   
   func configureTabBarItem() {
