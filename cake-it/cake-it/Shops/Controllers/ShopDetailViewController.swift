@@ -78,6 +78,7 @@ final class ShopDetailViewController: BaseViewController {
   
   private let MAP_ZOOM_LEVEL_DEFAULT: Int32 = 0
   private let MAP_CONNECT_URL_STRING = "kakaomap://place?id="
+  private let MAP_APP_STORE_URL_STRING = "https://apps.apple.com/kr/app/id304608425"
   
   //MARK: - Life Cycle
   override func viewDidLoad() {
@@ -216,12 +217,19 @@ final class ShopDetailViewController: BaseViewController {
     
     let urlString = "kakaomap://look?p=\(cakeShop.latitude),\(cakeShop.logitude)"
     
-    guard let url = URL.init(string: urlString) else { return }
+    guard let url = URL.init(string: urlString) else {
+      view.showToast(message: Constants.COMMON_NET_ERROR)
+      return
+    }
     
     if UIApplication.shared.canOpenURL(url) {
       UIApplication.shared.open(url, options: [:], completionHandler: nil)
     } else {
-      view.showToast(message: Constants.COMMON_NET_ERROR)
+      guard let kakaomapURL = URL.init(string: MAP_APP_STORE_URL_STRING) else {
+        view.showToast(message: Constants.COMMON_NET_ERROR)
+        return
+      }
+      UIApplication.shared.open(kakaomapURL, options: [:], completionHandler: nil)
     }
   }
   
