@@ -62,6 +62,7 @@ class TabBarController: UITabBarController {
   
   private func initUI() {
     tabBar.tintColor = Colors.primaryColor
+    tabBar.barTintColor = Colors.white
   }
   
   func configureTabBarItem() {
@@ -89,9 +90,5 @@ class TabBarController: UITabBarController {
         self.tabBar.frame.origin.y = Constants.SCREEN_HEIGHT - self.tabBar.frame.size.height
       })
     }
-  }
-  
-  override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
-    AudioServicesPlayAlertSound(1519) // weak boom
   }
 }
