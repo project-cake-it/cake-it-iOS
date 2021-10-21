@@ -81,6 +81,7 @@ final class HomeViewController: UIViewController {
     super.viewWillAppear(animated)
     fetchPromotionImages()
     fetchRankCakeDesign()
+    updatePromotionIndexView(currentPromotionIndex)
   }
   
   override func viewDidAppear(_ animated: Bool) {
