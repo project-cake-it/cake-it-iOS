@@ -207,8 +207,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEm-HL-cBe">
-                                        <rect key="frame" x="16" y="6" width="38" height="38"/>
+                                        <rect key="frame" x="8" y="5" width="40" height="40"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="1I1-XH-DK8"/>
+                                            <constraint firstAttribute="height" constant="40" id="98H-kM-E7V"/>
                                             <constraint firstAttribute="width" secondItem="UEm-HL-cBe" secondAttribute="height" multiplier="1:1" id="vR2-hS-HoT"/>
                                         </constraints>
                                         <color key="tintColor" name="black"/>
@@ -239,16 +241,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Vep-8G-tgO" firstAttribute="centerY" secondItem="IcL-iK-duW" secondAttribute="centerY" id="10z-6a-ziw"/>
+                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="centerY" secondItem="IcL-iK-duW" secondAttribute="centerY" id="3EQ-UC-say"/>
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="trailing" secondItem="xdY-bA-and" secondAttribute="trailing" constant="2" id="4sL-Q2-io9"/>
                                     <constraint firstItem="xdY-bA-and" firstAttribute="centerY" secondItem="Vep-8G-tgO" secondAttribute="centerY" id="KWl-EC-xDa"/>
-                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="top" constant="6" id="Tce-pa-qaI"/>
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="top" constant="6" id="UYj-Ff-brH"/>
                                     <constraint firstAttribute="bottom" secondItem="jv3-QA-chs" secondAttribute="bottom" constant="6" id="XDs-3o-EAM"/>
                                     <constraint firstItem="Vep-8G-tgO" firstAttribute="centerX" secondItem="IcL-iK-duW" secondAttribute="centerX" id="XNa-Cz-Eud"/>
-                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="leading" secondItem="IcL-iK-duW" secondAttribute="leading" constant="16" id="cHm-ra-SwP"/>
+                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="leading" secondItem="IcL-iK-duW" secondAttribute="leading" constant="8" id="cHm-ra-SwP"/>
                                     <constraint firstItem="xdY-bA-and" firstAttribute="leading" secondItem="Vep-8G-tgO" secondAttribute="trailing" constant="1" id="jID-Po-F8w"/>
                                     <constraint firstAttribute="height" constant="50" id="jMA-ei-QD2"/>
-                                    <constraint firstAttribute="bottom" secondItem="UEm-HL-cBe" secondAttribute="bottom" constant="6" id="yq5-JG-Aok"/>
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="leading" secondItem="Vep-8G-tgO" secondAttribute="leading" constant="-2" id="zDJ-Ss-H7k"/>
                                 </constraints>
                             </view>
