@@ -7,14 +7,17 @@
 
 import UIKit
 
-protocol LoginViewcontrollerDelegate : AnyObject {
-  func loginDidFinish(_ viewController: LoginViewController, _ success: Bool)
+protocol LoginViewControllerDelegate: AnyObject {
+  func loginViewController(didFinishLogIn viewController: LoginViewController, _ success: Bool)
 }
 
 final class LoginViewController: UIViewController {
   
   static let id = "loginViewController"
-  let loginButtonRadius: CGFloat = 26
+  private let loginButtonRadius: CGFloat = 26
+  private let numberOfImages = 11
+  private let imageTransitionTime: TimeInterval = 1.75
+  private let imageTransitionAnimationTime: TimeInterval = 0.75
   
   @IBOutlet var backgroundImageView: UIImageView!
   @IBOutlet var naverLoginButton: UIButton!
@@ -23,17 +26,37 @@ final class LoginViewController: UIViewController {
   @IBOutlet var appleLoginButton: UIButton!
   
   private var viewModel: LoginViewModel?
-  weak var delegate: LoginViewcontrollerDelegate?
+  weak var delegate: LoginViewControllerDelegate?
+  
+  private var shuffledIndexes: [Int] = []
+  private var currentImageIndex = 0
+  private var timer: Timer!
   
   //MARK: - Life cycle
   override func viewDidLoad() {
     super.viewDidLoad()
     
     viewModel = LoginViewModel(viewController: self)
-    configureUI()
+    configure()
+  }
+  
+  deinit {
+    timer = nil
   }
   
   //MARK: - Private method
+  @objc private func changeImage() {
+    currentImageIndex += 1
+    if currentImageIndex >= numberOfImages  { currentImageIndex = 0 }
+    let index = shuffledIndexes[currentImageIndex]
+    UIView.transition(with: self.backgroundImageView,
+                      duration: imageTransitionAnimationTime,
+                      options: .transitionCrossDissolve,
+                      animations: { [weak self] in
+                        self?.backgroundImageView.image = self?.cakeImage(by: index)
+                      })
+  }
+  
   private func closeLoginViewController() {
     dismiss(animated: true, completion: nil)
   }
@@ -41,7 +64,7 @@ final class LoginViewController: UIViewController {
   private func finishLogin(success: Bool) {
     if success {
       closeLoginViewController()
-      delegate?.loginDidFinish(self, true)
+      delegate?.loginViewController(didFinishLogIn: self, true)
     } else {
       let alert = UIAlertController(title: Constants.LOGIN_ALERT_FAIL_TITLE,
                                     message: Constants.LOGIN_ALERT_FAIL_MESSAGE,
@@ -55,7 +78,7 @@ final class LoginViewController: UIViewController {
   private func finishLogin(success: Bool, error: Error?) {
     if success {
       closeLoginViewController()
-      delegate?.loginDidFinish(self, true)
+      delegate?.loginViewController(didFinishLogIn: self, true)
     } else {
       if error as? LoginError == LoginError.UserCancel {
         // 로그인 중 user cancel인 경우 alert을 띄우지 않는다.
@@ -98,20 +121,51 @@ final class LoginViewController: UIViewController {
       self.finishLogin(success: success, error: error)
     })
   }
+}
+
+// MARK: - Configuration
+
+extension LoginViewController {
+  private func configure() {
+    configureUI()
+    configureIndexes()
+    configureBackgroundImage()
+    configureTimer()
+  }
   
-  //MARK: - configuration
   private func configureUI() {
-    //Button
     naverLoginButton.layer.cornerRadius = loginButtonRadius
     kakaoLoginButton.layer.cornerRadius = loginButtonRadius
     googleLoginButton.layer.cornerRadius = loginButtonRadius
     appleLoginButton.layer.cornerRadius = loginButtonRadius
-    
     googleLoginButton.layer.borderWidth = 1
     googleLoginButton.layer.borderColor = Colors.grayscale02.cgColor
-    
-    if let backgroundImage = LoginBackground.randomBackground() {
-      backgroundImageView.image = backgroundImage
-    }
+  }
+  
+  private func configureIndexes() {
+    var indexes: [Int] = []
+    for i in 0..<numberOfImages { indexes.append(i) }
+    shuffledIndexes = indexes.shuffled()
+  }
+  
+  private func configureBackgroundImage() {
+    let index = shuffledIndexes[currentImageIndex]
+    backgroundImageView.image = cakeImage(by: index)
+  }
+  
+  private func configureTimer() {
+    timer = Timer.scheduledTimer(
+      timeInterval: imageTransitionTime,
+      target: self,
+      selector: #selector(changeImage),
+      userInfo: nil,
+      repeats: true)
+    RunLoop.main.add(timer, forMode: .common)
+  }
+  
+  private func cakeImage(by index: Int) -> UIImage? {
+    let strIndex = String(format: "%02d", index + 1)
+    let imageName = "loginBackground\(strIndex)"
+    return UIImage(named: imageName)
   }
 }
