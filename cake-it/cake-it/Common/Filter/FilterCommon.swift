@@ -75,8 +75,7 @@ final class FilterCommon {
   
   enum FilterRegion: String, CaseIterable {
     case gangnam    = "강남구"
-    case gwangjin   = "광진구"
-    case gwanak     = "관악구"
+    case gangseo    = "강서구"
     case mapo       = "마포구"
     case seodeamun  = "서대문구"
     case songpa     = "송파구"
