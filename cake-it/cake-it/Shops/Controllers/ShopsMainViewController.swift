@@ -25,6 +25,8 @@ final class ShopsMainViewController: BaseViewController {
   @IBOutlet var shopEmptyView: UIView!
   @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var shopCollectionView: UICollectionView!
+  private let filterLoadingBlockView = UIView()
+  private let loadingBlockView = LoadingBlockView()
   
   var cakeShops: [CakeShop] = []
   private(set) var shopFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .pickupDate]
@@ -33,7 +35,11 @@ final class ShopsMainViewController: BaseViewController {
   var selectedFilterOptions: [SelectedFilterOption] = []
   var searchKeyword: [String: String] = [:]
   var highlightedFilterType: FilterCommon.FilterType = .reset
-  var isFetchingCakes = false
+  var isFetchingCakes = false {
+    didSet {
+      updateLoadingBlockView(isFetchingCakes: isFetchingCakes)
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -68,6 +74,16 @@ final class ShopsMainViewController: BaseViewController {
         // TODO: 에러 핸들링
         self.isFetchingCakes = false
       }
+    }
+  }
+  
+  private func updateLoadingBlockView(isFetchingCakes: Bool) {
+    if isFetchingCakes {
+      loadingBlockView.isHidden = false
+      filterLoadingBlockView.isHidden = false
+    } else {
+      loadingBlockView.isHidden = true
+      filterLoadingBlockView.isHidden = true
     }
   }
   
@@ -155,6 +171,7 @@ extension ShopsMainViewController {
     configureFilterView()
     configureCollectionView()
     configureSelectedFilterOptionCollectionView()
+    configureLoadingBlockViews()
   }
   
   private func configureFilterView() {
@@ -230,5 +247,20 @@ extension ShopsMainViewController {
                                     bottom: 0,
                                     right: Metric.selectedFilterOptionCollectionViewSideContentInset)
     selectedFilterOptionCollectionView.contentInset = contentInset
+  }
+  
+  private func configureLoadingBlockViews() {
+    filterLoadingBlockView.backgroundColor = .white
+    filterLoadingBlockView.alpha = 0.1
+    view.addSubview(filterLoadingBlockView)
+    filterLoadingBlockView.constraints(topAnchor: filterCollectionView.topAnchor,
+                                       leadingAnchor: view.leadingAnchor,
+                                       bottomAnchor: shopCollectionView.topAnchor,
+                                       trailingAnchor: view.trailingAnchor)
+    view.addSubview(loadingBlockView)
+    loadingBlockView.constraints(topAnchor: shopCollectionView.topAnchor,
+                                 leadingAnchor: shopCollectionView.leadingAnchor,
+                                 bottomAnchor: shopCollectionView.bottomAnchor,
+                                 trailingAnchor: shopCollectionView.trailingAnchor)
   }
 }
