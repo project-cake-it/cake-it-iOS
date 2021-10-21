@@ -305,7 +305,7 @@ extension DesignListViewController {
     view.addSubview(filterLoadingBlockView)
     filterLoadingBlockView.constraints(topAnchor: filterCategoryCollectionView.topAnchor,
                                        leadingAnchor: view.leadingAnchor,
-                                       bottomAnchor: designsCollectionView.topAnchor,
+                                       bottomAnchor: view.bottomAnchor,
                                        trailingAnchor: view.trailingAnchor)
   }
 }

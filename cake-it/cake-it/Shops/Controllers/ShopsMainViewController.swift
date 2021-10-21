@@ -261,7 +261,7 @@ extension ShopsMainViewController {
     view.addSubview(filterLoadingBlockView)
     filterLoadingBlockView.constraints(topAnchor: filterCollectionView.topAnchor,
                                        leadingAnchor: view.leadingAnchor,
-                                       bottomAnchor: shopCollectionView.topAnchor,
+                                       bottomAnchor: view.bottomAnchor,
                                        trailingAnchor: view.trailingAnchor)
   }
 }
