@@ -250,17 +250,18 @@ extension ShopsMainViewController {
   }
   
   private func configureLoadingBlockViews() {
-    filterLoadingBlockView.backgroundColor = .white
-    filterLoadingBlockView.alpha = 0.1
-    view.addSubview(filterLoadingBlockView)
-    filterLoadingBlockView.constraints(topAnchor: filterCollectionView.topAnchor,
-                                       leadingAnchor: view.leadingAnchor,
-                                       bottomAnchor: shopCollectionView.topAnchor,
-                                       trailingAnchor: view.trailingAnchor)
     view.addSubview(loadingBlockView)
     loadingBlockView.constraints(topAnchor: shopCollectionView.topAnchor,
                                  leadingAnchor: shopCollectionView.leadingAnchor,
                                  bottomAnchor: shopCollectionView.bottomAnchor,
                                  trailingAnchor: shopCollectionView.trailingAnchor)
+    view.bringSubviewToFront(filterDetailContainerView)
+    filterLoadingBlockView.backgroundColor = .white
+    filterLoadingBlockView.alpha = 0.3
+    view.addSubview(filterLoadingBlockView)
+    filterLoadingBlockView.constraints(topAnchor: filterCollectionView.topAnchor,
+                                       leadingAnchor: view.leadingAnchor,
+                                       bottomAnchor: shopCollectionView.topAnchor,
+                                       trailingAnchor: view.trailingAnchor)
   }
 }
