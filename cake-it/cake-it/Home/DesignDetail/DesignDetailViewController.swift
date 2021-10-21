@@ -14,6 +14,7 @@ final class DesignDetailViewController: BaseViewController {
   enum Metric {
     static let imageScrollViewHeight: CGFloat = Constants.SCREEN_WIDTH
     static let bottomInset: CGFloat = 30.0
+    static let contactShopButtonHeight: CGFloat = 48
     static let contactShopButtonBottomSpaceDefault: CGFloat = -16
     static let contactShopButtonBottomSpaceHidden: CGFloat = 200
   }
@@ -37,7 +38,6 @@ final class DesignDetailViewController: BaseViewController {
   @IBOutlet var cakePriceBySizeLabels: [UILabel]! // 케이크 크기별 가격
   @IBOutlet weak var kindOfCreamsLabel: UILabel!  // 케이크 크림 종류
   @IBOutlet weak var kindOfSheetsLabel: UILabel!  // 케이크 시트 종류
-  @IBOutlet weak var connectShopButton: UIButton! // 가게 연결하기 버튼, 실제로 사용하지 않고 높이만 잡아주는 버튼
   private var loadingBlockView = LoadingBlockView()
   
   @IBOutlet weak var contentViewHeightConstraint: NSLayoutConstraint!
@@ -216,7 +216,7 @@ extension DesignDetailViewController {
     let totalHeight = Metric.imageScrollViewHeight
       + cakeSimpleView.frame.height
       + lineView.frame.height + cakeInformationView.frame.height
-      + connectShopButton.frame.height
+      + Metric.contactShopButtonHeight
       + Metric.bottomInset
     contentViewHeightConstraint.constant = totalHeight
     scrollView.delegate = self
@@ -265,7 +265,6 @@ extension DesignDetailViewController {
     orderAvailableDateButton.layer.borderWidth = 1
     orderAvailableDateButton.layer.borderColor = Colors.primaryColor.cgColor
     orderAvailableDateButton.round(cornerRadius: 4)
-    connectShopButton.isHidden = true
   }
   
   private func configureLoadingBlockView() {
