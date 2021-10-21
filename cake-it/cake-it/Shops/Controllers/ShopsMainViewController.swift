@@ -263,5 +263,7 @@ extension ShopsMainViewController {
                                        leadingAnchor: view.leadingAnchor,
                                        bottomAnchor: view.bottomAnchor,
                                        trailingAnchor: view.trailingAnchor)
+    loadingBlockView.isHidden = true
+    filterLoadingBlockView.isHidden = true
   }
 }
