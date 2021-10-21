@@ -207,8 +207,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UEm-HL-cBe">
-                                        <rect key="frame" x="16" y="6" width="38" height="38"/>
+                                        <rect key="frame" x="8" y="5" width="40" height="40"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="1I1-XH-DK8"/>
+                                            <constraint firstAttribute="height" constant="40" id="98H-kM-E7V"/>
                                             <constraint firstAttribute="width" secondItem="UEm-HL-cBe" secondAttribute="height" multiplier="1:1" id="vR2-hS-HoT"/>
                                         </constraints>
                                         <color key="tintColor" name="black"/>
@@ -239,16 +241,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Vep-8G-tgO" firstAttribute="centerY" secondItem="IcL-iK-duW" secondAttribute="centerY" id="10z-6a-ziw"/>
+                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="centerY" secondItem="IcL-iK-duW" secondAttribute="centerY" id="3EQ-UC-say"/>
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="trailing" secondItem="xdY-bA-and" secondAttribute="trailing" constant="2" id="4sL-Q2-io9"/>
                                     <constraint firstItem="xdY-bA-and" firstAttribute="centerY" secondItem="Vep-8G-tgO" secondAttribute="centerY" id="KWl-EC-xDa"/>
-                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="top" constant="6" id="Tce-pa-qaI"/>
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="top" secondItem="IcL-iK-duW" secondAttribute="top" constant="6" id="UYj-Ff-brH"/>
                                     <constraint firstAttribute="bottom" secondItem="jv3-QA-chs" secondAttribute="bottom" constant="6" id="XDs-3o-EAM"/>
                                     <constraint firstItem="Vep-8G-tgO" firstAttribute="centerX" secondItem="IcL-iK-duW" secondAttribute="centerX" id="XNa-Cz-Eud"/>
-                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="leading" secondItem="IcL-iK-duW" secondAttribute="leading" constant="16" id="cHm-ra-SwP"/>
+                                    <constraint firstItem="UEm-HL-cBe" firstAttribute="leading" secondItem="IcL-iK-duW" secondAttribute="leading" constant="8" id="cHm-ra-SwP"/>
                                     <constraint firstItem="xdY-bA-and" firstAttribute="leading" secondItem="Vep-8G-tgO" secondAttribute="trailing" constant="1" id="jID-Po-F8w"/>
                                     <constraint firstAttribute="height" constant="50" id="jMA-ei-QD2"/>
-                                    <constraint firstAttribute="bottom" secondItem="UEm-HL-cBe" secondAttribute="bottom" constant="6" id="yq5-JG-Aok"/>
                                     <constraint firstItem="jv3-QA-chs" firstAttribute="leading" secondItem="Vep-8G-tgO" secondAttribute="leading" constant="-2" id="zDJ-Ss-H7k"/>
                                 </constraints>
                             </view>
@@ -686,17 +687,6 @@
                                                     <constraint firstItem="oHf-pQ-uMm" firstAttribute="top" secondItem="Ey9-Pb-d3r" secondAttribute="top" id="yM3-VF-OZV"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBe-fU-63o">
-                                                <rect key="frame" x="16" y="715" width="382" height="48"/>
-                                                <color key="backgroundColor" name="pointB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="48" id="Oy7-21-gxC"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="17"/>
-                                                <state key="normal" title="가게 연결">
-                                                    <color key="titleColor" name="white"/>
-                                                </state>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -709,9 +699,7 @@
                                             <constraint firstItem="ejS-p9-uTm" firstAttribute="leading" secondItem="SLj-Ch-yqX" secondAttribute="leading" id="IrQ-I9-6Me"/>
                                             <constraint firstItem="ejS-p9-uTm" firstAttribute="top" secondItem="SLj-Ch-yqX" secondAttribute="bottom" id="OeO-p3-2qR"/>
                                             <constraint firstItem="EDf-sC-d2H" firstAttribute="leading" secondItem="T8q-Fj-oa9" secondAttribute="leading" id="Pb6-bc-XmX"/>
-                                            <constraint firstItem="nBe-fU-63o" firstAttribute="trailing" secondItem="ejS-p9-uTm" secondAttribute="trailing" constant="-16" id="WiJ-PU-cuN"/>
                                             <constraint firstAttribute="height" priority="250" constant="930" id="fpD-4s-QDJ"/>
-                                            <constraint firstItem="nBe-fU-63o" firstAttribute="leading" secondItem="ejS-p9-uTm" secondAttribute="leading" constant="16" id="jNw-0r-jZN"/>
                                             <constraint firstItem="T8q-Fj-oa9" firstAttribute="leading" secondItem="Kmc-tw-UDd" secondAttribute="leading" id="nGI-hp-ErR"/>
                                             <constraint firstItem="EDf-sC-d2H" firstAttribute="trailing" secondItem="T8q-Fj-oa9" secondAttribute="trailing" id="s7G-PJ-xlq"/>
                                             <constraint firstItem="SLj-Ch-yqX" firstAttribute="trailing" secondItem="EDf-sC-d2H" secondAttribute="trailing" id="tHA-QJ-x7s"/>
@@ -734,7 +722,6 @@
                         <constraints>
                             <constraint firstItem="V0K-j5-tBj" firstAttribute="top" secondItem="HJH-3s-3iJ" secondAttribute="bottom" id="59e-XE-JhV"/>
                             <constraint firstItem="vvr-eB-rVh" firstAttribute="trailing" secondItem="HJH-3s-3iJ" secondAttribute="trailing" id="6V1-Wa-iO5"/>
-                            <constraint firstItem="vvr-eB-rVh" firstAttribute="bottom" secondItem="nBe-fU-63o" secondAttribute="bottom" constant="5" id="CFV-Hl-gR5"/>
                             <constraint firstItem="vvr-eB-rVh" firstAttribute="trailing" secondItem="V0K-j5-tBj" secondAttribute="trailing" id="KN8-gg-Teh"/>
                             <constraint firstItem="HJH-3s-3iJ" firstAttribute="leading" secondItem="vvr-eB-rVh" secondAttribute="leading" id="XL7-CM-nJs"/>
                             <constraint firstItem="HJH-3s-3iJ" firstAttribute="top" secondItem="vvr-eB-rVh" secondAttribute="top" id="YbE-eo-GcT"/>
@@ -749,7 +736,6 @@
                         <outlet property="cakeInformationView" destination="ejS-p9-uTm" id="Grq-WB-Nhl"/>
                         <outlet property="cakeSimpleView" destination="EDf-sC-d2H" id="ham-M1-rCm"/>
                         <outlet property="cakeThemeLabel" destination="vOL-Tc-4tg" id="A6e-aF-N7W"/>
-                        <outlet property="connectShopButton" destination="nBe-fU-63o" id="5xd-7q-pwq"/>
                         <outlet property="contentViewHeightConstraint" destination="fpD-4s-QDJ" id="Vrm-jp-EWG"/>
                         <outlet property="imageScrollView" destination="hna-L5-kb9" id="oZg-cF-pbX"/>
                         <outlet property="kindOfCreamsLabel" destination="bfH-WY-3dT" id="YH6-AH-fQQ"/>
@@ -808,9 +794,6 @@
         </namedColor>
         <namedColor name="grayscale05">
             <color red="0.23921568627450981" green="0.23921568627450981" blue="0.23921568627450981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="pointB">
-            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryColor">
             <color red="0.87450980392156863" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

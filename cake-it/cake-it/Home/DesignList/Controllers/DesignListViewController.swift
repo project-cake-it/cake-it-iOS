@@ -37,6 +37,9 @@ final class DesignListViewController: BaseViewController {
   @IBOutlet weak var filterDetailContainerView: UIView!
   @IBOutlet weak var navigationBarHeightConstraint: NSLayoutConstraint!
   
+  private let filterLoadingBlockView = UIView()
+  private let loadingBlockView = LoadingBlockView()
+  
   var cakeDesigns: [CakeDesign] = []
   private(set) var cakeFilterList: [FilterCommon.FilterType] = [.reset, .order, .region, .size, .color, .category]
   var selectedThemeType: FilterCommon.FilterTheme = .birthday  {     // 선택된 디자인 테마
@@ -52,7 +55,11 @@ final class DesignListViewController: BaseViewController {
   var highlightedFilterType: FilterCommon.FilterType = .reset // 현재 포커스된 필터
   var filterDetailVC: FilterDetailViewController?     // 필터 디테일 리스트
   var themeDetailView: ThemeDetailView?       // 테마 디테일 리스트
-  var isFetchingDesigns = false
+  var isFetchingDesigns = false {
+    didSet {
+      updateLoadingBlockView(isFetchingDesigns: isFetchingDesigns)
+    }
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -69,6 +76,16 @@ final class DesignListViewController: BaseViewController {
       requestSearchingDesigns()
     } else {
       requestDesigns()
+    }
+  }
+  
+  private func updateLoadingBlockView(isFetchingDesigns: Bool) {
+    if isFetchingDesigns {
+      loadingBlockView.isHidden = false
+      filterLoadingBlockView.isHidden = false
+    } else {
+      loadingBlockView.isHidden = true
+      filterLoadingBlockView.isHidden = true
     }
   }
   
@@ -187,6 +204,7 @@ extension DesignListViewController {
     configureFilterView()
     configureCollectionView()
     configureSelectedFilterOptionCollectionView()
+    configureLoadingBlockViews()
   }
 
   // MARK:- configure navigation bar
@@ -273,5 +291,21 @@ extension DesignListViewController {
                                     bottom: 0,
                                     right: Metric.selectedFilterOptionCollectionViewSideContentInset)
     selectedFilterOptionCollectionView.contentInset = contentInset
+  }
+  
+  private func configureLoadingBlockViews() {
+    view.addSubview(loadingBlockView)
+    loadingBlockView.constraints(topAnchor: designsCollectionView.topAnchor,
+                                 leadingAnchor: designsCollectionView.leadingAnchor,
+                                 bottomAnchor: designsCollectionView.bottomAnchor,
+                                 trailingAnchor: designsCollectionView.trailingAnchor)
+    view.bringSubviewToFront(filterDetailContainerView)
+    filterLoadingBlockView.backgroundColor = .white
+    filterLoadingBlockView.alpha = 0.3
+    view.addSubview(filterLoadingBlockView)
+    filterLoadingBlockView.constraints(topAnchor: filterCategoryCollectionView.topAnchor,
+                                       leadingAnchor: view.leadingAnchor,
+                                       bottomAnchor: view.bottomAnchor,
+                                       trailingAnchor: view.trailingAnchor)
   }
 }
