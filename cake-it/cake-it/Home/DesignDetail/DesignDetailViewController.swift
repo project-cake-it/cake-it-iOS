@@ -140,6 +140,7 @@ final class DesignDetailViewController: BaseViewController {
     let okAction = UIAlertAction(title: "예", style: .default) { _ in
       if UIApplication.shared.canOpenURL(url) {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        self.logContactShopEventInCakeDesignDetail()
       } else {
         // TODO: 에러 처리
       }
@@ -148,6 +149,16 @@ final class DesignDetailViewController: BaseViewController {
     alertController.addAction(okAction)
     alertController.addAction(closeAction)
     present(alertController, animated: true, completion: nil)
+  }
+  
+  private func logContactShopEventInCakeDesignDetail() {
+    guard let detailData = cakeDesign else { return }
+    FirebaseAnalyticsManager.shared.logContactShopEventInCakeDesignDetail(
+      shopID: String(detailData.shopId),
+      shopName: detailData.shopName,
+      shopAddress: detailData.shopAddress,
+      designID: String(detailData.id),
+      designName: detailData.name)
   }
   
   private func hideTabBar() {
