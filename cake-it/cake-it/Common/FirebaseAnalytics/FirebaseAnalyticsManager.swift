@@ -18,7 +18,7 @@ final class FirebaseAnalyticsManager {
     static let contactShop = "contact_shop"
   }
   
-  func logContactShopEventInShopDetail(shopID: String, shopName: String, shopAddress: String) {
+  func logContactShopEventInShopDetail(with detailData: CakeShop) {
     let currentDate = Date()
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -28,18 +28,13 @@ final class FirebaseAnalyticsManager {
       Event.contactShop,
       parameters: [
         "timestamp": dateString,
-        "shop_id": shopID,
-        "shop_name": shopName,
-        "shop_address": shopAddress
+        "shop_id": detailData.id,
+        "shop_name": detailData.name,
+        "shop_address": detailData.address
       ])
   }
 
-  func logContactShopEventInCakeDesignDetail(
-    shopID: String,
-    shopName: String,
-    shopAddress: String,
-    designID: String,
-    designName: String) {
+  func logContactShopEventInCakeDesignDetail(with detailData: CakeDesign) {
     let currentDate = Date()
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -49,11 +44,11 @@ final class FirebaseAnalyticsManager {
       Event.contactShop,
       parameters: [
         "timestamp": dateString,
-        "shop_id": shopID,
-        "shop_name": shopName,
-        "shop_address": shopAddress,
-        "design_id": designID,
-        "design_name": designName
+        "shop_id": detailData.shopId,
+        "shop_name": detailData.shopName,
+        "shop_address": detailData.shopAddress,
+        "design_id": detailData.id,
+        "design_name": detailData.name
       ])
   }
 }

@@ -247,7 +247,7 @@ final class ShopDetailViewController: BaseViewController {
     let okAction = UIAlertAction(title: "예", style: .default) { _ in
       if UIApplication.shared.canOpenURL(url) {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        self.logContactShopEventInShopDesignDetail()
+        self.logContactShopEvent()
       } else {
   //       TODO: 에러 처리
       }
@@ -258,12 +258,9 @@ final class ShopDetailViewController: BaseViewController {
     present(alertController, animated: true, completion: nil)
   }
   
-  private func logContactShopEventInShopDesignDetail() {
+  private func logContactShopEvent() {
     guard let detailData = cakeShop else { return }
-    FirebaseAnalyticsManager.shared.logContactShopEventInShopDetail(
-      shopID: String(detailData.id),
-      shopName: detailData.name,
-      shopAddress: detailData.address)
+    FirebaseAnalyticsManager.shared.logContactShopEventInShopDetail(with: detailData)
   }
 }
 
