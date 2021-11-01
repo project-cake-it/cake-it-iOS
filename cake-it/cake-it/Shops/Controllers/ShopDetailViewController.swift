@@ -259,8 +259,8 @@ final class ShopDetailViewController: BaseViewController {
   }
   
   private func logContactShopEvent() {
-    guard let detailData = cakeShop else { return }
-    FirebaseAnalyticsManager.shared.logContactShopEventInShopDetail(with: detailData)
+    guard let cakeShop = cakeShop else { return }
+    FirebaseAnalyticsManager.shared.logContactShopEvent(withCakeShop: cakeShop)
   }
 }
 

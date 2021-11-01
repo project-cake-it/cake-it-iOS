@@ -152,8 +152,8 @@ final class DesignDetailViewController: BaseViewController {
   }
   
   private func logContactShopEvent() {
-    guard let detailData = cakeDesign else { return }
-    FirebaseAnalyticsManager.shared.logContactShopEventInCakeDesignDetail(with: detailData)
+    guard let cakeDesign = cakeDesign else { return }
+    FirebaseAnalyticsManager.shared.logContactShopEvent(withCakeDesign: cakeDesign)
   }
   
   private func hideTabBar() {
