@@ -12,7 +12,7 @@ final class FirebaseAnalyticsManager {
   
   static let shared = FirebaseAnalyticsManager()
   
-  init() { }
+  private init() { }
   
   enum Event {
     static let contactShop = "contact_shop"
