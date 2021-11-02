@@ -14,8 +14,10 @@ final class CakeShopCell: UICollectionViewCell {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var addressLabel: UILabel!
   @IBOutlet weak var tagStackView: UIStackView!
-  @IBOutlet weak var miniSizeCakePriceLabel: UILabel!
-  @IBOutlet weak var levelOneSizeCakePriceLabel: UILabel!
+  @IBOutlet weak var firstCakeSizeNameLabel: UILabel!
+  @IBOutlet weak var firstCakeSizePriceLabel: UILabel!
+  @IBOutlet weak var secondCakeSizeNameLabel: UILabel!
+  @IBOutlet weak var secondCakeSizePriceLabel: UILabel!
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -49,16 +51,17 @@ final class CakeShopCell: UICollectionViewCell {
   }
   
   private func updateCakePrice(by sizes: [CakeShopCakeSize]) {
-    sizes.forEach {
-      switch $0.name {
-      case "미니":
-        miniSizeCakePriceLabel.text = String($0.price).moneyFormat.won
-      case "1호":
-        levelOneSizeCakePriceLabel.text = String($0.price).moneyFormat.won
-      default:
-        break
-      }
+    guard sizes.count >= 2 else {
+      [firstCakeSizeNameLabel,
+       firstCakeSizePriceLabel,
+       secondCakeSizeNameLabel,
+       secondCakeSizePriceLabel].forEach { $0?.isHidden = true }
+      return
     }
+    firstCakeSizeNameLabel.text = sizes[0].name
+    firstCakeSizePriceLabel.text = String(sizes[0].price).moneyFormat.won
+    secondCakeSizeNameLabel.text = sizes[1].name
+    secondCakeSizePriceLabel.text = String(sizes[1].price).moneyFormat.won
   }
   
   private func updateTagStackView(tags: [String]) {
