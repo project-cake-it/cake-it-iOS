@@ -51,17 +51,22 @@ final class CakeShopCell: UICollectionViewCell {
   }
   
   private func updateCakePrice(by sizes: [CakeShopCakeSize]) {
-    guard sizes.count >= 2 else {
+    if sizes.count >= 2 {
+      firstCakeSizeNameLabel.text = sizes[0].name
+      firstCakeSizePriceLabel.text = String(sizes[0].price).moneyFormat.won
+      secondCakeSizeNameLabel.text = sizes[1].name
+      secondCakeSizePriceLabel.text = String(sizes[1].price).moneyFormat.won
+    } else if sizes.count == 1 {
+      firstCakeSizeNameLabel.text = sizes[0].name
+      firstCakeSizePriceLabel.text = String(sizes[0].price).moneyFormat.won
+      [secondCakeSizeNameLabel,
+       secondCakeSizePriceLabel].forEach { $0?.isHidden = true }
+    } else {
       [firstCakeSizeNameLabel,
        firstCakeSizePriceLabel,
        secondCakeSizeNameLabel,
        secondCakeSizePriceLabel].forEach { $0?.isHidden = true }
-      return
     }
-    firstCakeSizeNameLabel.text = sizes[0].name
-    firstCakeSizePriceLabel.text = String(sizes[0].price).moneyFormat.won
-    secondCakeSizeNameLabel.text = sizes[1].name
-    secondCakeSizePriceLabel.text = String(sizes[1].price).moneyFormat.won
   }
   
   private func updateTagStackView(tags: [String]) {
