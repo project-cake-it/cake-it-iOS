@@ -77,6 +77,9 @@ final class CakeOrderAvailableDateViewController: UIViewController {
     let minDate = currentDate.after(dayOffset: minDateDayOffset)
     let maxDate = currentDate.after(dayOffset: 30)
     maxMonthOffset = maxDate.month - minDate.month
+    if maxMonthOffset < 0 {
+      maxMonthOffset += 12
+    }
     
     for offset in 0...maxMonthOffset {
       let monthUpdatedDate = minDate.after(monthOffset: offset)
