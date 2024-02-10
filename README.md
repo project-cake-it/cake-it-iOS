@@ -1,7 +1,26 @@
-# Cake'it! iOS
+<h1 align="center">
+  Cake'it! iOS
+</h1>
+<p align="center">
 
-<img src="https://img.shields.io/badge/Swift-5.0-orange" align="left">
+<p align="center">
+ <img src="https://img.shields.io/badge/Swift-5.0-orange">
+ <p align="center">레터링 케이크 예약 플랫폼</p>
+</p>
 
+<br>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/34022757/131891836-66599e7b-e90a-4847-a2f8-c27b66b30085.mov" align="center"> <img src="https://user-images.githubusercontent.com/34022757/131891850-9bea5639-318b-4c41-93bc-c9fcdad7fac4.mov" align="center">
+</p>
+
+<br>
+<br>
+
+---
+
+<br>
+<br>
 <br>
 
 ## 🤖 GroundRule
